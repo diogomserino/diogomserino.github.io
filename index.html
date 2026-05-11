@@ -1,0 +1,1429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Diogo Serino — Financial & Data Analyst. Power BI dashboards, financial modelling, and end-to-end analytics projects.">
+    <meta property="og:title" content="Diogo Serino · Financial & Data Analyst">
+    <meta property="og:description" content="From raw data to boardroom insight — Power BI, SQL, Python, and financial analysis. Available for opportunities.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://raw.githubusercontent.com/diogomserino/Portugal-Data-Intelligence/main/reports/powerbi/charts/economic_dashboard.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Diogo Serino · Financial & Data Analyst">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/diogomserino/Portugal-Data-Intelligence/main/reports/powerbi/charts/economic_dashboard.png">
+    <title>Diogo Serino · Financial & Data Analyst</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%2306111F'/><text x='50' y='72' font-family='system-ui,sans-serif' font-weight='900' font-size='58' text-anchor='middle' fill='%233B6FFF'>D</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* ============================================================
+           VARIABLES
+        ============================================================ */
+        :root {
+            --navy:     #06111F;
+            --navy-800: #0C1D33;
+            --navy-700: #142848;
+            --navy-600: #1A3A5C;
+            --blue:     #3B6FFF;
+            --blue-h:   #2B5FEF;
+            --blue-br:  #7BA7FF;
+            --bg:       #FFFFFF;
+            --bg-alt:   #F5F8FF;
+            --text:     #0C1A2E;
+            --muted:    #5A6E8A;
+            --border:   #DDE7F5;
+            --sh:       0 2px 20px rgba(6,17,31,.07);
+            --sh-lg:    0 10px 48px rgba(6,17,31,.14);
+            --r:        14px;
+            --font-head:'Space Grotesk', -apple-system, sans-serif;
+            --font:     'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --nav-h:    64px;
+            --mw:       1160px;
+        }
+
+        /* ============================================================
+           RESET
+        ============================================================ */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+        body {
+            font-family: var(--font);
+            color: var(--text);
+            background: var(--bg);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        img  { max-width: 100%; height: auto; display: block; }
+        a    { text-decoration: none; color: inherit; }
+        ul   { list-style: none; }
+        .container { max-width: var(--mw); margin: 0 auto; padding: 0 24px; }
+        .section     { padding: 96px 0; }
+        .section-alt { background: var(--bg-alt); }
+        .section-dk  { background: var(--navy); }
+
+        /* ============================================================
+           SCROLL PROGRESS BAR
+        ============================================================ */
+        .progress {
+            position: fixed; top: 0; left: 0;
+            height: 2.5px;
+            background: linear-gradient(90deg, var(--blue) 0%, var(--blue-br) 100%);
+            width: 0%; z-index: 1001; pointer-events: none;
+        }
+
+        /* ============================================================
+           SHARED TYPOGRAPHY
+        ============================================================ */
+        .label {
+            display: inline-block;
+            font-size: 11px; font-weight: 600;
+            letter-spacing: .14em; text-transform: uppercase;
+            color: var(--blue); margin-bottom: 12px;
+        }
+        .section-dk .label { color: var(--blue-br); }
+
+        h2.title {
+            font-family: var(--font-head);
+            font-size: clamp(30px, 4.2vw, 46px);
+            font-weight: 700; color: var(--navy);
+            line-height: 1.08; letter-spacing: -.8px;
+            margin-bottom: 14px;
+        }
+        .section-dk h2.title { color: #fff; }
+
+        .subtitle {
+            font-size: 16px; color: var(--muted);
+            max-width: 540px; line-height: 1.75;
+        }
+        .section-dk .subtitle { color: rgba(255,255,255,.48); }
+        .sec-head { margin-bottom: 56px; }
+
+        /* ============================================================
+           NAV
+        ============================================================ */
+        .nav {
+            position: fixed; top: 0; left: 0; right: 0;
+            height: var(--nav-h); z-index: 900;
+            display: flex; align-items: center;
+            transition: background .3s, box-shadow .3s;
+        }
+        .nav.scrolled {
+            background: rgba(6,17,31,.96);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: 0 1px 0 rgba(255,255,255,.05);
+        }
+        .nav-inner { display: flex; align-items: center; justify-content: space-between; width: 100%; }
+        .logo {
+            font-family: var(--font-head);
+            font-size: 18px; font-weight: 800; color: #fff; letter-spacing: -.4px;
+        }
+        .logo em { color: var(--blue-br); font-style: normal; }
+        .nav-links { display: flex; align-items: center; gap: 2px; }
+        .nav-links a {
+            color: rgba(255,255,255,.56); font-size: 14px; font-weight: 500;
+            padding: 7px 12px; border-radius: 8px;
+            transition: color .2s, background .2s;
+        }
+        .nav-links a:hover, .nav-links a.active { color: #fff; background: rgba(255,255,255,.08); }
+        .nav-links a.cta {
+            background: var(--blue); color: #fff !important;
+            margin-left: 6px; padding: 7px 18px; border-radius: 8px;
+            transition: background .2s, box-shadow .2s, transform .2s;
+        }
+        .nav-links a.cta:hover {
+            background: var(--blue-h);
+            box-shadow: 0 4px 16px rgba(59,111,255,.4);
+            transform: translateY(-1px);
+        }
+        .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 6px; }
+        .hamburger span { width: 22px; height: 2px; background: #fff; border-radius: 2px; transition: all .3s; }
+        .mob-nav {
+            display: none; position: fixed;
+            top: var(--nav-h); left: 0; right: 0;
+            background: rgba(6,17,31,.98); backdrop-filter: blur(16px);
+            padding: 12px 24px 24px; z-index: 899;
+            border-top: 1px solid rgba(255,255,255,.06);
+        }
+        .mob-nav.open { display: block; }
+        .mob-nav a {
+            display: block; color: rgba(255,255,255,.72);
+            font-size: 15px; font-weight: 500;
+            padding: 13px 0; border-bottom: 1px solid rgba(255,255,255,.05);
+            transition: color .2s;
+        }
+        .mob-nav a:hover { color: #fff; }
+
+        /* ============================================================
+           HERO
+        ============================================================ */
+        .hero {
+            min-height: 100vh; background: var(--navy);
+            display: flex; align-items: center;
+            position: relative; overflow: hidden;
+        }
+        /* Dot grid */
+        .hero::before {
+            content: ''; position: absolute; inset: 0;
+            background-image: radial-gradient(circle, rgba(59,111,255,.18) 1px, transparent 1px);
+            background-size: 38px 38px; pointer-events: none;
+        }
+        .hero-glow {
+            position: absolute; width: 1000px; height: 1000px; border-radius: 50%;
+            background: radial-gradient(circle, rgba(59,111,255,.2) 0%, transparent 65%);
+            top: -360px; right: -180px; pointer-events: none;
+            animation: glowPulse 7s ease-in-out infinite alternate;
+        }
+        .hero-glow2 {
+            position: absolute; width: 600px; height: 600px; border-radius: 50%;
+            background: radial-gradient(circle, rgba(100,58,200,.12) 0%, transparent 65%);
+            bottom: -160px; left: -100px; pointer-events: none;
+        }
+        @keyframes glowPulse {
+            from { transform: scale(1) translate(0,0); opacity: .8; }
+            to   { transform: scale(1.08) translate(-20px,20px); opacity: 1; }
+        }
+        @keyframes blink { 0%,100%{ opacity:1; } 50%{ opacity:.25; } }
+
+        /* Hero entrance animations */
+        @keyframes heroIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        .h-a1 { animation: heroIn .65s cubic-bezier(.22,.68,0,1.1) both; animation-delay: .05s; }
+        .h-a2 { animation: heroIn .65s cubic-bezier(.22,.68,0,1.1) both; animation-delay: .18s; }
+        .h-a3 { animation: heroIn .65s cubic-bezier(.22,.68,0,1.1) both; animation-delay: .30s; }
+        .h-a4 { animation: heroIn .65s cubic-bezier(.22,.68,0,1.1) both; animation-delay: .42s; }
+        .h-a5 { animation: heroIn .65s cubic-bezier(.22,.68,0,1.1) both; animation-delay: .54s; }
+        .h-a6 { animation: heroIn .65s cubic-bezier(.22,.68,0,1.1) both; animation-delay: .66s; }
+        .h-a7 { animation: heroIn .55s ease both; animation-delay: .82s; }
+
+        .hero-inner { position: relative; z-index: 1; padding: 140px 0 80px; }
+
+        .hero-badge {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: rgba(59,111,255,.1); border: 1px solid rgba(59,111,255,.24);
+            color: var(--blue-br); font-size: 12px; font-weight: 600;
+            padding: 6px 14px; border-radius: 100px; margin-bottom: 32px;
+            letter-spacing: .02em;
+        }
+        .hero-badge::before {
+            content: ''; width: 7px; height: 7px; border-radius: 50%;
+            background: #22C55E; animation: blink 2s ease-in-out infinite;
+        }
+
+        /* Gradient text on name */
+        .hero-name {
+            font-family: var(--font-head);
+            font-size: clamp(54px, 9.5vw, 104px);
+            font-weight: 800; line-height: 0.9; letter-spacing: -3.5px;
+            color: #fff;
+            background: linear-gradient(140deg, #FFFFFF 0%, #FFFFFF 38%, var(--blue-br) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 24px;
+        }
+
+        .hero-role-wrap {
+            display: flex; align-items: center;
+            font-size: clamp(18px, 2.5vw, 24px);
+            font-weight: 400; color: var(--blue-br);
+            margin-bottom: 22px; letter-spacing: -.2px;
+            min-height: 2em;
+        }
+        .typed-cursor {
+            display: inline-block; width: 2px; height: 1.1em;
+            background: var(--blue-br); margin-left: 3px;
+            animation: cursorBlink .85s ease-in-out infinite;
+            vertical-align: middle; border-radius: 1px;
+        }
+        @keyframes cursorBlink { 0%,100%{ opacity:1; } 50%{ opacity:0; } }
+
+        .hero-tagline {
+            font-size: clamp(15px, 1.8vw, 17px);
+            color: rgba(255,255,255,.62);
+            max-width: 500px; line-height: 1.82; margin-bottom: 48px;
+        }
+        .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 72px; }
+
+        .btn {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 13px 24px; border-radius: 10px;
+            font-size: 14px; font-weight: 600;
+            transition: all .22s; border: none; cursor: pointer; white-space: nowrap;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, var(--blue) 0%, var(--blue-h) 100%);
+            color: #fff; box-shadow: 0 2px 12px rgba(59,111,255,.25);
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 28px rgba(59,111,255,.45);
+        }
+        .btn-ghost {
+            background: transparent; color: rgba(255,255,255,.82);
+            border: 1.5px solid rgba(255,255,255,.16);
+        }
+        .btn-ghost:hover {
+            border-color: rgba(255,255,255,.4);
+            background: rgba(255,255,255,.05);
+            transform: translateY(-2px); color: #fff;
+        }
+
+        .hero-stats { display: flex; gap: 48px; flex-wrap: wrap; margin-bottom: 64px; }
+        .stat { border-left: 2px solid rgba(59,111,255,.35); padding-left: 18px; }
+        .stat-val {
+            font-family: var(--font-head);
+            font-size: 28px; font-weight: 700; color: #fff; line-height: 1; margin-bottom: 5px;
+        }
+        .stat-lbl {
+            font-size: 11px; font-weight: 500; letter-spacing: .05em;
+            text-transform: uppercase; color: rgba(255,255,255,.48);
+        }
+
+        .scroll-hint {
+            display: flex; align-items: center; gap: 10px;
+            color: rgba(255,255,255,.28); font-size: 11px; font-weight: 500;
+            letter-spacing: .1em; text-transform: uppercase;
+        }
+        .scroll-hint svg { animation: bounce 2s ease-in-out infinite; }
+        @keyframes bounce { 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(5px); } }
+
+        /* ============================================================
+           ABOUT
+        ============================================================ */
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+        .about-text p { font-size: 16px; color: var(--muted); line-height: 1.88; margin-bottom: 20px; }
+        .about-text p strong { color: var(--text); font-weight: 600; }
+        .about-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+        .acard {
+            padding: 22px; border-radius: var(--r);
+            border: 1px solid var(--border);
+            background: var(--bg-alt);
+            position: relative; overflow: hidden;
+            transition: border-color .25s, box-shadow .25s, transform .25s;
+        }
+        .acard::before {
+            content: ''; position: absolute;
+            top: 0; left: 0; right: 0; height: 2px;
+            background: linear-gradient(90deg, var(--blue), transparent);
+            opacity: 0; transition: opacity .25s;
+        }
+        .acard:hover { border-color: rgba(59,111,255,.28); box-shadow: var(--sh); transform: translateY(-2px); }
+        .acard:hover::before { opacity: 1; }
+        .acard-ico {
+            width: 42px; height: 42px; border-radius: 11px;
+            background: linear-gradient(135deg, rgba(59,111,255,.12), rgba(59,111,255,.04));
+            border: 1px solid rgba(59,111,255,.15);
+            display: flex; align-items: center; justify-content: center;
+            margin-bottom: 14px; color: var(--blue);
+        }
+        .acard-title { font-size: 14px; font-weight: 600; color: var(--navy); margin-bottom: 6px; }
+        .acard-desc  { font-size: 13px; color: var(--muted); line-height: 1.65; }
+
+        /* ============================================================
+           PROJECTS
+        ============================================================ */
+        .projects-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+        .pcard {
+            background: var(--bg); border: 1px solid var(--border);
+            border-radius: 16px; overflow: hidden;
+            transition: box-shadow .3s, transform .3s, border-color .3s;
+            display: flex; flex-direction: column;
+        }
+        .pcard:hover { transform: translateY(-5px); }
+        .pcard.c-blue:hover   { box-shadow: 0 16px 56px rgba(59,111,255,.16), 0 2px 8px rgba(0,0,0,.04); border-color: rgba(59,111,255,.25); }
+        .pcard.c-violet:hover { box-shadow: 0 16px 56px rgba(124,58,237,.14), 0 2px 8px rgba(0,0,0,.04); border-color: rgba(124,58,237,.22); }
+        .pcard.c-emerald:hover{ box-shadow: 0 16px 56px rgba(5,150,105,.14),  0 2px 8px rgba(0,0,0,.04); border-color: rgba(5,150,105,.22); }
+        .pcard.c-amber:hover  { box-shadow: 0 16px 56px rgba(217,119,6,.12),  0 2px 8px rgba(0,0,0,.04); border-color: rgba(217,119,6,.2); }
+
+        .pimg-wrap {
+            display: block; position: relative; aspect-ratio: 16/9;
+            overflow: hidden; background: var(--navy); text-decoration: none;
+        }
+        .pimg-wrap img.main-img {
+            width: 100%; height: 100%; object-fit: cover;
+            object-position: center top;
+            transition: transform .45s cubic-bezier(.22,.68,0,1);
+            opacity: 1;
+        }
+        .pcard-title a { color: inherit; text-decoration: none; }
+        .pcard-title a:hover { text-decoration: underline; }
+        .pcard:hover .pimg-wrap img.main-img { transform: scale(1.025); }
+
+
+
+        /* Placeholder cards */
+        .pimg-placeholder {
+            height: 100%; display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+            text-align: center; color: #fff; padding: 32px;
+            position: relative; z-index: 1;
+        }
+        .ph-dots {
+            position: absolute; inset: 0;
+            background-image: radial-gradient(circle, rgba(255,255,255,.07) 1px, transparent 1px);
+            background-size: 24px 24px; pointer-events: none;
+        }
+        .pi-icon  { margin-bottom: 16px; opacity: .9; }
+        .pi-title {
+            font-family: var(--font-head);
+            font-size: 20px; font-weight: 700; margin-bottom: 6px;
+        }
+        .pi-sub   { font-size: 12px; opacity: .4; letter-spacing: .02em; }
+
+        .pbadge { display: none; }
+
+        .pbody { padding: 26px 28px 28px; display: flex; flex-direction: column; flex: 1; }
+        .pcard-title {
+            font-family: var(--font-head);
+            font-size: 19px; font-weight: 700; color: var(--navy); margin-bottom: 8px;
+        }
+        .pcard-desc  { font-size: 14px; color: var(--muted); line-height: 1.72; margin-bottom: 14px; }
+
+        .proj-metrics {
+            display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 18px;
+            padding-bottom: 18px; border-bottom: 1px solid var(--border);
+        }
+        .pm {
+            display: inline-flex; align-items: center; gap: 5px;
+            font-size: 11.5px; font-weight: 600; color: var(--navy-600);
+            background: rgba(20,40,72,.05); border: 1px solid rgba(20,40,72,.1);
+            padding: 3px 9px; border-radius: 5px;
+        }
+        .pm svg { color: var(--blue); flex-shrink: 0; }
+
+        .stack-row { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 22px; }
+        .stag {
+            background: var(--bg-alt); color: var(--navy-600);
+            font-size: 12px; font-weight: 500;
+            padding: 4px 10px; border-radius: 6px; border: 1px solid var(--border);
+        }
+        .plinks { display: flex; gap: 10px; flex-wrap: wrap; margin-top: auto; padding-top: 18px; }
+        .plink {
+            display: inline-flex; align-items: center; gap: 6px;
+            font-size: 13px; font-weight: 600;
+            padding: 8px 16px; border-radius: 8px; transition: all .2s;
+        }
+        .plink-dk  { background: var(--navy); color: #fff; }
+        .plink-dk:hover { background: var(--navy-700); }
+        .plink-out { background: transparent; color: var(--text); border: 1px solid var(--border); }
+        .plink-out:hover { border-color: var(--blue); color: var(--blue); }
+        .plink-cs  { background: var(--blue); color: #fff; box-shadow: 0 3px 12px rgba(59,111,255,.22); }
+        .plink-cs:hover { background: var(--blue-h); transform: translateY(-1px); }
+
+        /* ============================================================
+           EXPERIENCE (TIMELINE)
+        ============================================================ */
+        .timeline { position: relative; padding-left: 32px; }
+        .timeline::before {
+            content: ''; position: absolute;
+            left: 0; top: 10px; bottom: 0; width: 2px;
+            background: linear-gradient(to bottom, var(--blue) 0%, var(--border) 100%);
+        }
+        .titem { position: relative; margin-bottom: 48px; }
+        .titem:last-child { margin-bottom: 0; }
+        .tdot {
+            position: absolute; left: -39px; top: 5px;
+            width: 14px; height: 14px; border-radius: 50%;
+            background: var(--blue); border: 3px solid var(--bg);
+            box-shadow: 0 0 0 2px var(--blue);
+        }
+        .titem.current .tdot {
+            animation: dotPulse 2.5s ease-in-out infinite;
+        }
+        @keyframes dotPulse {
+            0%,100% { box-shadow: 0 0 0 2px rgba(59,111,255,.5), 0 0 0 6px rgba(59,111,255,.1); }
+            50%     { box-shadow: 0 0 0 3px rgba(59,111,255,.7), 0 0 0 10px rgba(59,111,255,.06); }
+        }
+        .tperiod {
+            font-size: 11px; font-weight: 700; color: var(--blue);
+            text-transform: uppercase; letter-spacing: .08em; margin-bottom: 6px;
+        }
+        .trole { font-family: var(--font-head); font-size: 19px; font-weight: 700; color: var(--navy); margin-bottom: 2px; }
+        .tco   { font-size: 14px; font-weight: 500; color: var(--muted); margin-bottom: 12px; }
+        .tbulls li {
+            font-size: 14px; color: var(--muted); line-height: 1.68;
+            padding-left: 16px; position: relative; margin-bottom: 7px;
+        }
+        .tbulls li::before {
+            content: ''; position: absolute; left: 0; top: 9px;
+            width: 5px; height: 5px; border-radius: 50%;
+            background: rgba(59,111,255,.45);
+        }
+
+        /* ============================================================
+           SKILLS
+        ============================================================ */
+        .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+        .skcat {
+            background: var(--bg); border: 1px solid var(--border);
+            border-radius: var(--r); padding: 22px;
+            transition: box-shadow .22s, border-color .22s, transform .22s;
+        }
+        .skcat:hover { box-shadow: var(--sh); transform: translateY(-2px); }
+        .skcat-head { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+        .skcat-ico {
+            width: 36px; height: 36px; border-radius: 9px;
+            display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+        }
+        /* Category colours */
+        .skcat.bi   .skcat-ico { background: rgba(59,111,255,.09);  color: #3B6FFF; border: 1px solid rgba(59,111,255,.18); }
+        .skcat.data .skcat-ico { background: rgba(124,58,237,.09);  color: #7C3AED; border: 1px solid rgba(124,58,237,.18); }
+        .skcat.fin  .skcat-ico { background: rgba(5,150,105,.09);   color: #059669; border: 1px solid rgba(5,150,105,.18); }
+        .skcat.ba   .skcat-ico { background: rgba(217,119,6,.09);   color: #D97706; border: 1px solid rgba(217,119,6,.18); }
+        .skcat.ai   .skcat-ico { background: rgba(239,68,68,.09);   color: #DC2626; border: 1px solid rgba(239,68,68,.18); }
+        .skcat.lang .skcat-ico { background: rgba(90,110,138,.09);  color: #5A6E8A; border: 1px solid rgba(90,110,138,.18); }
+
+        .skcat.bi:hover   { border-color: rgba(59,111,255,.25); }
+        .skcat.data:hover { border-color: rgba(124,58,237,.22); }
+        .skcat.fin:hover  { border-color: rgba(5,150,105,.22); }
+        .skcat.ba:hover   { border-color: rgba(217,119,6,.2); }
+        .skcat.ai:hover   { border-color: rgba(239,68,68,.2); }
+        .skcat.lang:hover { border-color: rgba(90,110,138,.2); }
+
+        .skcat-name { font-size: 14px; font-weight: 600; color: var(--navy); }
+        .sktags { display: flex; flex-wrap: wrap; gap: 7px; }
+        .sktag {
+            background: var(--bg-alt); color: var(--text);
+            font-size: 12px; font-weight: 500;
+            padding: 5px 11px; border-radius: 6px; border: 1px solid var(--border);
+        }
+
+        /* ============================================================
+           EDUCATION / CERTS
+        ============================================================ */
+        .edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
+        .edu-sub {
+            font-size: 11px; font-weight: 700; letter-spacing: .1em;
+            text-transform: uppercase; color: var(--muted); margin-bottom: 20px;
+        }
+        .edu-items { display: flex; flex-direction: column; gap: 14px; }
+        .edu-item {
+            display: flex; gap: 14px; padding: 18px;
+            background: var(--bg-alt); border: 1px solid var(--border);
+            border-radius: var(--r); transition: box-shadow .2s, border-color .2s;
+        }
+        .edu-item:hover { box-shadow: var(--sh); border-color: rgba(59,111,255,.2); }
+        .edu-ico {
+            width: 42px; height: 42px; border-radius: 10px;
+            background: rgba(20,40,72,.06);
+            display: flex; align-items: center; justify-content: center;
+            color: var(--navy-600); flex-shrink: 0;
+        }
+        .edu-degree { font-size: 14px; font-weight: 600; color: var(--navy); margin-bottom: 3px; }
+        .edu-school { font-size: 13px; color: var(--muted); margin-bottom: 3px; }
+        .edu-meta   { font-size: 12px; color: var(--muted); display: flex; gap: 10px; }
+        .edu-grade  { color: var(--blue); font-weight: 600; }
+
+        .cert-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        .certcard {
+            background: var(--bg-alt); border: 1px solid var(--border);
+            border-radius: var(--r); padding: 16px 18px;
+            transition: box-shadow .2s, border-color .2s;
+        }
+        .certcard:hover { box-shadow: var(--sh); border-color: rgba(59,111,255,.2); }
+        .certcard-issuer {
+            font-size: 10px; font-weight: 700; color: var(--blue);
+            text-transform: uppercase; letter-spacing: .08em; margin-bottom: 5px;
+        }
+        .certcard-name { font-size: 13px; font-weight: 600; color: var(--navy); margin-bottom: 3px; }
+        .certcard-date { font-size: 12px; color: var(--muted); }
+        .cert-badge {
+            display: inline-block; font-size: 10px; font-weight: 700;
+            background: rgba(34,197,94,.1); color: #16A34A;
+            border: 1px solid rgba(34,197,94,.25);
+            padding: 2px 8px; border-radius: 4px; letter-spacing: .04em;
+            text-transform: uppercase; margin-top: 4px;
+        }
+
+        /* ============================================================
+           CONTACT
+        ============================================================ */
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+        .contact-desc { font-size: 16px; color: rgba(255,255,255,.52); line-height: 1.8; margin-bottom: 28px; }
+        .avail-badge {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: rgba(34,197,94,.1); border: 1px solid rgba(34,197,94,.22);
+            color: #86EFAC; font-size: 12px; font-weight: 600;
+            padding: 6px 14px; border-radius: 100px; margin-top: 20px;
+        }
+        .avail-badge::before {
+            content: ''; width: 7px; height: 7px; border-radius: 50%;
+            background: #22C55E; animation: blink 2s infinite;
+        }
+        .clinks { display: flex; flex-direction: column; gap: 10px; }
+        .clink {
+            display: flex; align-items: center; gap: 14px;
+            padding: 15px 18px;
+            background: rgba(255,255,255,.04);
+            border: 1px solid rgba(255,255,255,.07);
+            border-radius: 12px; color: rgba(255,255,255,.75);
+            font-size: 14px; font-weight: 500; transition: all .2s;
+        }
+        .clink:hover {
+            background: rgba(59,111,255,.12);
+            border-color: rgba(59,111,255,.28);
+            color: #fff; transform: translateX(4px);
+        }
+        .clink-ico {
+            width: 40px; height: 40px; border-radius: 10px;
+            background: rgba(59,111,255,.15);
+            display: flex; align-items: center; justify-content: center;
+            color: #fff; flex-shrink: 0;
+        }
+
+        /* ============================================================
+           FOOTER
+        ============================================================ */
+        .footer {
+            background: #020810; color: rgba(255,255,255,.25);
+            text-align: center; padding: 22px 24px; font-size: 13px;
+            display: flex; align-items: center; justify-content: center;
+            gap: 14px; flex-wrap: wrap;
+        }
+        .footer a { color: rgba(255,255,255,.34); transition: color .2s; }
+        .footer a:hover { color: rgba(255,255,255,.7); }
+        .footer-sep { opacity: .2; }
+
+        /* ============================================================
+           LIGHTBOX
+        ============================================================ */
+        .lightbox {
+            display: none; position: fixed; inset: 0;
+            background: rgba(0,0,0,.94); z-index: 1000;
+            align-items: center; justify-content: center;
+        }
+        .lightbox.open { display: flex; }
+        .lb-img {
+            max-width: 92vw; max-height: 88vh;
+            border-radius: 8px; object-fit: contain;
+            box-shadow: 0 24px 80px rgba(0,0,0,.5);
+        }
+        .lb-close {
+            position: absolute; top: 20px; right: 24px;
+            color: #fff; font-size: 24px; cursor: pointer;
+            width: 40px; height: 40px; display: flex;
+            align-items: center; justify-content: center;
+            border-radius: 50%; background: rgba(255,255,255,.1);
+            transition: background .2s; line-height: 1;
+        }
+        .lb-close:hover { background: rgba(255,255,255,.22); }
+
+        /* ============================================================
+           SCROLL ANIMATIONS
+        ============================================================ */
+        .fade-up {
+            opacity: 0; transform: translateY(22px);
+            transition: opacity .6s ease, transform .6s ease;
+        }
+        .fade-up.in { opacity: 1; transform: translateY(0); }
+
+        /* ============================================================
+           RESPONSIVE
+        ============================================================ */
+        @media (max-width: 1020px) {
+            .skills-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 768px) {
+            .section { padding: 64px 0; }
+            .nav-links { display: none; }
+            .hamburger { display: flex; }
+            .about-grid    { grid-template-columns: 1fr; gap: 36px; }
+            .about-cards   { grid-template-columns: 1fr 1fr; }
+            .projects-grid { grid-template-columns: 1fr; }
+            .skills-grid   { grid-template-columns: repeat(2, 1fr); }
+            .edu-grid      { grid-template-columns: 1fr; gap: 36px; }
+            .cert-grid     { grid-template-columns: 1fr; }
+            .contact-grid  { grid-template-columns: 1fr; gap: 36px; }
+            .hero-stats    { gap: 28px; }
+            .timeline { padding-left: 28px; }
+            .tdot { left: -35px; }
+        }
+        @media (max-width: 520px) {
+            .hero-name { letter-spacing: -2px; }
+            .hero-actions { flex-direction: column; }
+            .btn { justify-content: center; }
+            .hero-stats { flex-direction: column; gap: 16px; }
+            .plinks { flex-direction: column; }
+            .about-cards { grid-template-columns: 1fr; }
+            .skills-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Scroll progress bar -->
+<div class="progress" id="progress"></div>
+
+<!-- ============================================================
+     NAV
+============================================================ -->
+<nav class="nav" id="main-nav">
+    <div class="container nav-inner">
+        <a href="#home" class="logo">DMS<em>.</em></a>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#contact" class="cta">Contact</a></li>
+        </ul>
+        <div class="hamburger" id="hbg" onclick="toggleMenu()">
+            <span></span><span></span><span></span>
+        </div>
+    </div>
+</nav>
+<div class="mob-nav" id="mob-nav">
+    <a href="#about"      onclick="closeMenu()">About</a>
+    <a href="#projects"   onclick="closeMenu()">Projects</a>
+    <a href="#experience" onclick="closeMenu()">Experience</a>
+    <a href="#skills"     onclick="closeMenu()">Skills</a>
+    <a href="#education"  onclick="closeMenu()">Education</a>
+    <a href="#contact"    onclick="closeMenu()">Contact</a>
+</div>
+
+
+<!-- ============================================================
+     HERO
+============================================================ -->
+<section class="hero" id="home">
+    <div class="hero-glow"></div>
+    <div class="hero-glow2"></div>
+    <div class="container hero-inner">
+        <div class="hero-badge h-a1">Open to opportunities &nbsp;·&nbsp; Portugal</div>
+        <h1 class="hero-name h-a2">Diogo<br>Serino</h1>
+        <p class="hero-role-wrap h-a3">
+            <span id="typed-role">Financial &amp; Data Analyst</span><span class="typed-cursor" aria-hidden="true"></span>
+        </p>
+        <p class="hero-tagline h-a4">
+            From raw data to boardroom insight — I build the analytics,
+            dashboards, and models that help companies understand where they stand
+            and where they're going.
+        </p>
+        <div class="hero-actions h-a5">
+            <a href="https://linkedin.com/in/diogomserino" target="_blank" rel="noopener" class="btn btn-ghost">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                LinkedIn
+            </a>
+            <a href="https://github.com/diogomserino" target="_blank" rel="noopener" class="btn btn-ghost">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                GitHub
+            </a>
+        </div>
+        <div class="hero-stats h-a6">
+            <div class="stat">
+                <div class="stat-val">18+</div>
+                <div class="stat-lbl">Months Financial Analyst</div>
+            </div>
+            <div class="stat">
+                <div class="stat-val">4</div>
+                <div class="stat-lbl">End-to-End Projects</div>
+            </div>
+            <div class="stat">
+                <div class="stat-val">€4.8M</div>
+                <div class="stat-lbl">Revenue Modelled</div>
+            </div>
+            <div class="stat">
+                <div class="stat-val">16/20</div>
+                <div class="stat-lbl">Post-Grad Innovation</div>
+            </div>
+        </div>
+        <div class="scroll-hint h-a7">
+            <span>Scroll</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="6 9 12 15 18 9"/>
+            </svg>
+        </div>
+    </div>
+</section>
+
+
+<!-- ============================================================
+     ABOUT
+============================================================ -->
+<section class="section" id="about">
+    <div class="container">
+        <div class="about-grid">
+            <div class="about-text">
+                <div class="label">About me</div>
+                <h2 class="title">A non-linear path<br>with a clear thread</h2>
+                <p>My journey might look non-linear at first glance — but there's a consistent thread: I've always worked at the intersection of <strong>creativity, technology, and business</strong>.</p>
+                <p>I started in design and 3D visualisation, moved into digital marketing, and found my professional home in <strong>financial and data analysis</strong> — where these skills combine most powerfully. At ABB Imobiliária I managed KPIs across a multi-company group, built executive Power BI dashboards, and automated reporting processes that had been done manually for years.</p>
+                <p>Today I build end-to-end analytics projects and consult for SMEs. I use AI professionally to multiply my output. I think in systems, communicate in stories, and care deeply about design.</p>
+            </div>
+            <div class="about-cards">
+                <div class="acard fade-up">
+                    <div class="acard-ico">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="18" y="3" width="4" height="18"/><rect x="10" y="8" width="4" height="13"/><rect x="2" y="13" width="4" height="8"/></svg>
+                    </div>
+                    <div class="acard-title">Financial Rigour</div>
+                    <div class="acard-desc">Budget vs Actual, variance analysis, and KPI monitoring across multi-company groups in a live production setting.</div>
+                </div>
+                <div class="acard fade-up">
+                    <div class="acard-ico">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                    </div>
+                    <div class="acard-title">Technical Depth</div>
+                    <div class="acard-desc">Python, SQL, DAX, Power BI — end-to-end from raw data ingestion to deployment-ready insight.</div>
+                </div>
+                <div class="acard fade-up">
+                    <div class="acard-ico">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                    </div>
+                    <div class="acard-title">Visual Communication</div>
+                    <div class="acard-desc">A design background means dashboards and reports executives actually read — not just export to a slide deck.</div>
+                </div>
+                <div class="acard fade-up">
+                    <div class="acard-ico">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                    </div>
+                    <div class="acard-title">AI-Augmented</div>
+                    <div class="acard-desc">Systematically using AI to cut research from hours to minutes — shipping projects faster without cutting corners.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ============================================================
+     PROJECTS
+============================================================ -->
+<section class="section section-alt" id="projects">
+    <div class="container">
+        <div class="sec-head">
+            <div class="label">Portfolio</div>
+            <h2 class="title">Selected Projects</h2>
+            <p class="subtitle">End-to-end projects with real data, production code, and boardroom-ready deliverables.</p>
+        </div>
+
+        <div class="projects-grid">
+
+            <!-- Project 1 -->
+            <div class="pcard c-blue fade-up">
+                <a href="project-portugal.html" class="pimg-wrap">
+                    <img class="main-img" loading="eager"
+                        src="img/cover-portugal.png"
+                        alt="Portugal Data Intelligence — Public Debt Sustainability">
+                </a>
+                <div class="pbody">
+                    <h3 class="pcard-title"><a href="project-portugal.html">Portugal Data Intelligence</a></h3>
+                    <p class="pcard-desc">Macroeconomic analysis platform for the Portuguese economy (2010–2025) across six pillars. Ingests live data from INE, Banco de Portugal, and Eurostat; runs SARIMAX and STL models; benchmarks against EU-27; and serves a full Power BI dashboard, Streamlit app, and REST API.</p>
+                    <div class="proj-metrics">
+                        <span class="pm">
+                            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="18" y="3" width="4" height="18"/><rect x="10" y="8" width="4" height="13"/><rect x="2" y="13" width="4" height="8"/></svg>
+                            7 Power BI pages
+                        </span>
+                        <span class="pm">
+                            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                            39 DAX measures
+                        </span>
+                        <span class="pm">
+                            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+                            6 live data sources
+                        </span>
+                        <span class="pm">
+                            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                            Docker + CI/CD
+                        </span>
+                    </div>
+                    <div class="stack-row">
+                        <span class="stag hi">Power BI</span>
+                        <span class="stag hi">Python</span>
+                        <span class="stag hi">FastAPI</span>
+                        <span class="stag">Streamlit</span>
+                        <span class="stag">statsmodels</span>
+                        <span class="stag">SQLite</span>
+                        <span class="stag">Docker</span>
+                    </div>
+                    <div class="plinks">
+                        <a href="project-portugal.html" class="plink plink-cs">
+                            Case Study
+                            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                        </a>
+                        <a href="https://diogomserino.github.io/Portugal-Data-Intelligence/" target="_blank" rel="noopener" class="plink plink-dk">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                            Live Report
+                        </a>
+                        <a href="https://github.com/diogomserino/Portugal-Data-Intelligence" target="_blank" rel="noopener" class="plink plink-out">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                            GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="pcard c-violet fade-up">
+                <a href="project-financecorp.html" class="pimg-wrap">
+                    <img class="main-img" loading="eager"
+                        src="img/cover-financecorp.png"
+                        alt="FinanceCorp Analytics — AurumCap Dashboard">
+                </a>
+                <div class="pbody">
+                    <h3 class="pcard-title"><a href="project-financecorp.html">FinanceCorp Analytics</a></h3>
+                    <p class="pcard-desc">Full analytics project for the fictional AurumCap Financial Group (banking, insurance, investments). Models €4.8M revenue across 3 years into a star schema, runs 20 analytical SQL queries, and delivers a multi-page Power BI dashboard and strategic executive presentation.</p>
+                    <div class="proj-metrics">
+                        <span class="pm">
+                            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                            €4.8M modelled
+                        </span>
+                        <span class="pm">
+                            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="18" y="3" width="4" height="18"/><rect x="10" y="8" width="4" height="13"/><rect x="2" y="13" width="4" height="8"/></svg>
+                            5 Power BI pages
+                        </span>
+                        <span class="pm">
+                            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                            20 SQL queries
+                        </span>
+                        <span class="pm">
+                            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+                            11 visualisations
+                        </span>
+                    </div>
+                    <div class="stack-row">
+                        <span class="stag hi">Power BI</span>
+                        <span class="stag hi">SQL</span>
+                        <span class="stag hi">Python</span>
+                        <span class="stag">DAX</span>
+                        <span class="stag">Excel</span>
+                        <span class="stag">pandas</span>
+                        <span class="stag">seaborn</span>
+                    </div>
+                    <div class="plinks">
+                        <a href="project-financecorp.html" class="plink plink-cs">
+                            Case Study
+                            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                        </a>
+                        <a href="https://github.com/diogomserino/financecorp-analytics" target="_blank" rel="noopener" class="plink plink-dk">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                            GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="pcard c-emerald fade-up">
+                <a href="project-fund-governance.html" class="pimg-wrap">
+                    <img class="main-img" loading="lazy"
+                        src="img/cover-fund-governance.png"
+                        alt="Fund Governance Platform — Risk Metrics Dashboard">
+                </a>
+                <div class="pbody">
+                    <h3 class="pcard-title"><a href="project-fund-governance.html">Fund Governance Platform</a></h3>
+                    <p class="pcard-desc">Bilingual (EN/PT) platform simulating a BA's full working day supervising €1.8B across 6 investment funds (4 UCITS + 2 AIFMD). Eight task simulations — NAV reconciliation, UCITS compliance, KYC/AML — plus a 38-chapter reference guide and interactive quizzes.</p>
+                    <div class="proj-metrics">
+                        <span class="pm">8 task simulations</span>
+                        <span class="pm">38-chapter guide</span>
+                        <span class="pm">€1.8B in scope</span>
+                        <span class="pm">EN / PT toggle</span>
+                    </div>
+                    <div class="stack-row">
+                        <span class="stag hi">HTML / CSS / JS</span>
+                        <span class="stag hi">Python</span>
+                        <span class="stag">T-SQL</span>
+                        <span class="stag">UCITS</span>
+                        <span class="stag">AIFMD</span>
+                        <span class="stag">KYC / AML</span>
+                    </div>
+                    <div class="plinks">
+                        <a href="project-fund-governance.html" class="plink plink-cs">
+                            Case Study
+                            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                        </a>
+                        <a href="https://diogomserino.github.io/fund-governance/" target="_blank" rel="noopener" class="plink plink-dk">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                            Live Demo
+                        </a>
+                        <a href="https://github.com/diogomserino/fund-governance" target="_blank" rel="noopener" class="plink plink-out">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                            GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="pcard c-amber fade-up">
+                <a href="project-bi-reference.html" class="pimg-wrap">
+                    <img class="main-img" loading="lazy"
+                        src="img/cover-bi-reference.png"
+                        alt="BI Analytics Reference Guide — Star Schema">
+                </a>
+                <div class="pbody">
+                    <h3 class="pcard-title"><a href="project-bi-reference.html">BI Analytics Reference Guide</a></h3>
+                    <p class="pcard-desc">Interactive HTML reference toolkit for Business Intelligence — Star Schema design, DAX, SQL, Finance &amp; HR KPIs, and modern data stack. Built as a study resource and professional reference. Zero dependencies.</p>
+                    <div class="proj-metrics">
+                        <span class="pm">DAX reference guide</span>
+                        <span class="pm">SQL exercises</span>
+                        <span class="pm">Finance &amp; HR KPIs</span>
+                        <span class="pm">Quiz mode</span>
+                    </div>
+                    <div class="stack-row">
+                        <span class="stag hi">DAX</span>
+                        <span class="stag hi">SQL</span>
+                        <span class="stag hi">Power BI</span>
+                        <span class="stag">Star Schema</span>
+                        <span class="stag">HTML / CSS / JS</span>
+                    </div>
+                    <div class="plinks">
+                        <a href="project-bi-reference.html" class="plink plink-cs">
+                            Case Study
+                            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                        </a>
+                        <a href="https://diogomserino.github.io/bi-analytics-reference/" target="_blank" rel="noopener" class="plink plink-dk">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                            Live Guide
+                        </a>
+                        <a href="https://github.com/diogomserino/bi-analytics-reference" target="_blank" rel="noopener" class="plink plink-out">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                            GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- ============================================================
+     EXPERIENCE
+============================================================ -->
+<section class="section" id="experience">
+    <div class="container">
+        <div class="sec-head">
+            <div class="label">Career</div>
+            <h2 class="title">Experience</h2>
+            <p class="subtitle">From freelance designer to financial analyst — each role built directly on the last.</p>
+        </div>
+
+        <div class="timeline">
+
+            <div class="titem current fade-up">
+                <div class="tdot"></div>
+                <div class="tperiod">Sep 2025 – Present</div>
+                <div class="trole">Data &amp; Financial Analyst</div>
+                <div class="tco">DMS Analytics &nbsp;·&nbsp; Independent &nbsp;·&nbsp; Remote</div>
+                <ul class="tbulls">
+                    <li>Building end-to-end analytics projects — ETL pipelines, Power BI dashboards, statistical models, and REST API backends.</li>
+                    <li>Freelance consulting: business plans and financial analysis for SMEs in Braga / Porto.</li>
+                    <li>Completed Microsoft PL-300 Power BI Data Analyst Associate certification track (May 2026).</li>
+                </ul>
+            </div>
+
+            <div class="titem fade-up">
+                <div class="tdot"></div>
+                <div class="tperiod">Nov 2023 – May 2025 &nbsp;·&nbsp; 18 months</div>
+                <div class="trole">Financial Analyst</div>
+                <div class="tco">ABB Imobiliária Group (real estate &amp; multi-company) &nbsp;·&nbsp; Barcelos &nbsp;·&nbsp; On-site</div>
+                <ul class="tbulls">
+                    <li>Promoted from IEFP trainee to full financial analyst within the group.</li>
+                    <li>Monitored financial and operational KPIs across multiple group companies weekly.</li>
+                    <li>Built executive Power BI and Excel dashboards directly supporting senior management decisions.</li>
+                    <li>Led Budget vs. Actual analysis, forecast cycles, and reporting automation workflows.</li>
+                    <li>Consolidated financial data from multiple PHC ERP sources; delivered quarterly and annual variance reports.</li>
+                </ul>
+            </div>
+
+            <div class="titem fade-up">
+                <div class="tdot"></div>
+                <div class="tperiod">Jan – Dec 2021</div>
+                <div class="trole">Digital Marketing &amp; Web Intern</div>
+                <div class="tco">Office Partner &nbsp;·&nbsp; Porto &nbsp;·&nbsp; Hybrid</div>
+                <ul class="tbulls">
+                    <li>Managed company website (WordPress, HTML/CSS), digital metrics analysis, and SQL-based reporting.</li>
+                </ul>
+            </div>
+
+            <div class="titem fade-up">
+                <div class="tdot"></div>
+                <div class="tperiod">2015 – 2022</div>
+                <div class="trole">Freelance Designer</div>
+                <div class="tco">Graphic Design, Web &amp; 3D Visualisation &nbsp;·&nbsp; Remote &nbsp;·&nbsp; Brand: Dimser</div>
+                <ul class="tbulls">
+                    <li>Graphic design, web design, and interior 3D visualisation for clients across Portugal.</li>
+                    <li>Created and managed a personal brand identity with multiple concurrent clients.</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- ============================================================
+     SKILLS
+============================================================ -->
+<section class="section section-alt" id="skills">
+    <div class="container">
+        <div class="sec-head">
+            <div class="label">Capabilities</div>
+            <h2 class="title">Technical Skills</h2>
+            <p class="subtitle">A cross-disciplinary toolkit built across finance, data, and design — with real depth where it matters most.</p>
+        </div>
+
+        <div class="skills-grid">
+
+            <div class="skcat bi fade-up">
+                <div class="skcat-head">
+                    <div class="skcat-ico">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="18" y="3" width="4" height="18"/><rect x="10" y="8" width="4" height="13"/><rect x="2" y="13" width="4" height="8"/></svg>
+                    </div>
+                    <div class="skcat-name">Business Intelligence</div>
+                </div>
+                <div class="sktags">
+                    <span class="sktag hi">Power BI</span>
+                    <span class="sktag hi">DAX</span>
+                    <span class="sktag hi">Power Query</span>
+                    <span class="sktag hi">Excel (Advanced)</span>
+                    <span class="sktag">Data Visualisation</span>
+                    <span class="sktag">Streamlit</span>
+                </div>
+            </div>
+
+            <div class="skcat data fade-up">
+                <div class="skcat-head">
+                    <div class="skcat-ico">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+                    </div>
+                    <div class="skcat-name">Data &amp; Analytics</div>
+                </div>
+                <div class="sktags">
+                    <span class="sktag hi">SQL</span>
+                    <span class="sktag hi">Python (pandas)</span>
+                    <span class="sktag hi">ETL</span>
+                    <span class="sktag">Data Modelling</span>
+                    <span class="sktag">Statistical Analysis</span>
+                    <span class="sktag">FastAPI</span>
+                </div>
+            </div>
+
+            <div class="skcat fin fade-up">
+                <div class="skcat-head">
+                    <div class="skcat-ico">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                    </div>
+                    <div class="skcat-name">Financial Analysis</div>
+                </div>
+                <div class="sktags">
+                    <span class="sktag hi">Budget vs Actual</span>
+                    <span class="sktag hi">Variance Analysis</span>
+                    <span class="sktag hi">KPI Monitoring</span>
+                    <span class="sktag">Controlling</span>
+                    <span class="sktag">Forecasting</span>
+                    <span class="sktag">PHC ERP</span>
+                </div>
+            </div>
+
+            <div class="skcat ba fade-up">
+                <div class="skcat-head">
+                    <div class="skcat-ico">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                    </div>
+                    <div class="skcat-name">Business Analysis</div>
+                </div>
+                <div class="sktags">
+                    <span class="sktag hi">Requirements Gathering</span>
+                    <span class="sktag">Process Mapping (BPMN)</span>
+                    <span class="sktag">Agile / Scrum</span>
+                    <span class="sktag">Stakeholder Management</span>
+                </div>
+            </div>
+
+            <div class="skcat ai fade-up">
+                <div class="skcat-head">
+                    <div class="skcat-ico">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                    </div>
+                    <div class="skcat-name">AI &amp; Automation</div>
+                </div>
+                <div class="sktags">
+                    <span class="sktag hi">Claude / ChatGPT</span>
+                    <span class="sktag hi">Prompt Engineering</span>
+                    <span class="sktag">Microsoft Copilot</span>
+                    <span class="sktag">Power Automate</span>
+                </div>
+            </div>
+
+            <div class="skcat lang fade-up">
+                <div class="skcat-head">
+                    <div class="skcat-ico">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                    </div>
+                    <div class="skcat-name">Languages</div>
+                </div>
+                <div class="sktags">
+                    <span class="sktag hi">Portuguese (Native)</span>
+                    <span class="sktag hi">English (C1)</span>
+                    <span class="sktag">Spanish (B2)</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- ============================================================
+     EDUCATION & CERTIFICATIONS
+============================================================ -->
+<section class="section" id="education">
+    <div class="container">
+        <div class="sec-head">
+            <div class="label">Credentials</div>
+            <h2 class="title">Education &amp; Certifications</h2>
+        </div>
+
+        <div class="edu-grid">
+
+            <div>
+                <div class="edu-sub">Education</div>
+                <div class="edu-items">
+
+                    <div class="edu-item fade-up">
+                        <div class="edu-ico">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                        </div>
+                        <div>
+                            <div class="edu-degree">Post-Graduate in Innovation &amp; Entrepreneurship</div>
+                            <div class="edu-school">Universidade do Minho</div>
+                            <div class="edu-meta">
+                                <span>Apr – Aug 2025</span>
+                                <span class="edu-grade">16 / 20</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="edu-item fade-up">
+                        <div class="edu-ico">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                        </div>
+                        <div>
+                            <div class="edu-degree">BSc in Business Management</div>
+                            <div class="edu-school">Universidade da Maia</div>
+                            <div class="edu-meta">
+                                <span>2014 – 2023</span>
+                                <span class="edu-grade">12 / 20</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="edu-item fade-up">
+                        <div class="edu-ico">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+                        </div>
+                        <div>
+                            <div class="edu-degree">Secondary — Visual Arts</div>
+                            <div class="edu-school">Escola Secundária Alberto Sampaio</div>
+                            <div class="edu-meta"><span>2011 – 2014</span></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div>
+                <div class="edu-sub">Certifications</div>
+                <div class="cert-grid">
+
+                    <div class="certcard fade-up">
+                        <div class="certcard-issuer">Microsoft</div>
+                        <div class="certcard-name">PL-300 Power BI Data Analyst Associate</div>
+                        <div class="certcard-date">May 2026</div>
+                    </div>
+
+                    <div class="certcard fade-up">
+                        <div class="certcard-issuer">Microsoft · LinkedIn</div>
+                        <div class="certcard-name">Excel Expert (Microsoft 365) Cert Prep</div>
+                        <div class="certcard-date">Dec 2025</div>
+                    </div>
+
+                    <div class="certcard fade-up">
+                        <div class="certcard-issuer">PMI · LinkedIn</div>
+                        <div class="certcard-name">PMI Agile Practitioner Cert Prep</div>
+                        <div class="certcard-date">Apr 2025</div>
+                    </div>
+
+                    <div class="certcard fade-up">
+                        <div class="certcard-issuer">Google</div>
+                        <div class="certcard-name">Digital Marketing Certification</div>
+                        <div class="certcard-date">2020</div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- ============================================================
+     CONTACT
+============================================================ -->
+<section class="section section-dk" id="contact">
+    <div class="container">
+        <div class="contact-grid">
+            <div>
+                <div class="label">Get in touch</div>
+                <h2 class="title">Let's talk</h2>
+                <p class="contact-desc">
+                    I'm actively looking for opportunities—
+                    Financial Analyst, Data Analyst, BI Analyst, Controller, or similar.
+                    If you're working on something interesting, I'd love to hear from you.
+                </p>
+                <div class="avail-badge">Available for opportunities</div>
+            </div>
+            <div class="clinks">
+                <a href="https://linkedin.com/in/diogomserino" target="_blank" rel="noopener" class="clink">
+                    <div class="clink-ico">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                    </div>
+                    linkedin.com/in/diogomserino
+                </a>
+                <a href="https://github.com/diogomserino" target="_blank" rel="noopener" class="clink">
+                    <div class="clink-ico">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                    </div>
+                    github.com/diogomserino
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+<footer class="footer">
+    <span>© 2026 Diogo Martins Serino</span>
+    <span class="footer-sep">·</span>
+    <a href="https://github.com/diogomserino" target="_blank" rel="noopener">GitHub</a>
+    <span class="footer-sep">·</span>
+    <a href="https://linkedin.com/in/diogomserino" target="_blank" rel="noopener">LinkedIn</a>
+
+</footer>
+
+
+<!-- ============================================================
+     LIGHTBOX
+============================================================ -->
+<div class="lightbox" id="lightbox" onclick="closeLb(event)">
+    <img class="lb-img" id="lb-img" src="" alt="Project visualisation">
+    <div class="lb-close" onclick="closeLb()">✕</div>
+</div>
+
+
+<!-- ============================================================
+     JAVASCRIPT
+============================================================ -->
+<script>
+    /* Scroll progress bar */
+    const progressEl = document.getElementById('progress');
+    function updateProgress() {
+        const scrolled = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
+        progressEl.style.width = (scrolled * 100) + '%';
+    }
+    window.addEventListener('scroll', updateProgress, { passive: true });
+
+    /* Nav scroll */
+    const mainNav = document.getElementById('main-nav');
+    window.addEventListener('scroll', () => {
+        mainNav.classList.toggle('scrolled', window.scrollY > 20);
+    }, { passive: true });
+
+    /* Mobile menu */
+    function toggleMenu() { document.getElementById('mob-nav').classList.toggle('open'); }
+    function closeMenu()  { document.getElementById('mob-nav').classList.remove('open'); }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeMenu(); closeLb(); } });
+
+
+    /* Lightbox */
+    function openLb(src) {
+        document.getElementById('lb-img').src = src;
+        document.getElementById('lightbox').classList.add('open');
+        document.body.style.overflow = 'hidden';
+    }
+    function closeLb(e) {
+        if (e && e.target === document.getElementById('lb-img')) return;
+        document.getElementById('lightbox').classList.remove('open');
+        document.body.style.overflow = '';
+    }
+
+    /* Scroll animations with per-container stagger */
+    const io = new IntersectionObserver(entries => {
+        entries.forEach(en => {
+            if (!en.isIntersecting) return;
+            const el = en.target;
+            const siblings = Array.from(el.parentElement.querySelectorAll('.fade-up'));
+            const i = siblings.indexOf(el);
+            el.style.transitionDelay = (i * 80) + 'ms';
+            el.classList.add('in');
+            io.unobserve(el);
+        });
+    }, { threshold: 0.08, rootMargin: '0px 0px -28px 0px' });
+    document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
+
+    /* Active nav on scroll */
+    const navAs = document.querySelectorAll('.nav-links a:not(.cta)');
+    const secs  = document.querySelectorAll('section[id]');
+    window.addEventListener('scroll', () => {
+        let cur = '';
+        secs.forEach(s => { if (window.scrollY >= s.offsetTop - 100) cur = s.id; });
+        navAs.forEach(a => {
+            a.classList.toggle('active', a.getAttribute('href') === `#${cur}`);
+        });
+    }, { passive: true });
+
+    /* Typing animation for hero role */
+    const roles = [
+        'Financial & Data Analyst',
+        'Power BI Developer',
+        'BI & Reporting Analyst',
+        'Business Analyst',
+        'Financial Controller'
+    ];
+    let roleIdx = 0;
+    let charIdx = roles[0].length;
+    let isDeleting = false;
+    const roleEl = document.getElementById('typed-role');
+
+    function typeRole() {
+        const current = roles[roleIdx];
+        if (isDeleting) {
+            charIdx = Math.max(0, charIdx - 1);
+            roleEl.textContent = current.slice(0, charIdx);
+            if (charIdx === 0) {
+                isDeleting = false;
+                roleIdx = (roleIdx + 1) % roles.length;
+                charIdx = 0;
+                setTimeout(typeRole, 380);
+                return;
+            }
+            setTimeout(typeRole, 40);
+        } else {
+            charIdx = Math.min(roles[roleIdx].length, charIdx + 1);
+            roleEl.textContent = roles[roleIdx].slice(0, charIdx);
+            if (charIdx === roles[roleIdx].length) {
+                setTimeout(() => { isDeleting = true; typeRole(); }, 2200);
+                return;
+            }
+            setTimeout(typeRole, 72);
+        }
+    }
+
+    /* Start typing after hero entrance animations complete */
+    window.addEventListener('load', () => setTimeout(() => { isDeleting = true; typeRole(); }, 2500));
+</script>
+
+</body>
+</html>

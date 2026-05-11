@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portugal Data Intelligence — Macroeconomic analytics platform covering the Portuguese economy 2010–2025. Power BI, Python, FastAPI, SARIMAX forecasting.">
+    <title>Portugal Data Intelligence · Diogo Serino</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%2306111F'/><text x='50' y='72' font-family='system-ui,sans-serif' font-weight='900' font-size='58' text-anchor='middle' fill='%233B6FFF'>D</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy:       #06111F;
+            --navy-800:   #0C1D33;
+            --navy-700:   #142848;
+            --navy-600:   #1A3A5C;
+            --accent:     #3B6FFF;
+            --accent-h:   #2B5FEF;
+            --accent-br:  #7BA7FF;
+            --accent-dim: rgba(59,111,255,.1);
+            --accent-glow:rgba(59,111,255,.18);
+            --bg:         #FFFFFF;
+            --bg-alt:     #F5F8FF;
+            --text:       #0C1A2E;
+            --muted:      #5A6E8A;
+            --border:     #DDE7F5;
+            --r:          14px;
+            --font-head:  'Space Grotesk', -apple-system, sans-serif;
+            --font:       'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --nav-h:      64px;
+            --mw:         1160px;
+        }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+        body { font-family: var(--font); color: var(--text); background: var(--bg); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+        img  { max-width: 100%; height: auto; display: block; }
+        a    { text-decoration: none; color: inherit; }
+        ul   { list-style: none; }
+        .container { max-width: var(--mw); margin: 0 auto; padding: 0 24px; }
+        .section     { padding: 80px 0; }
+        .section-alt { background: var(--bg-alt); }
+        .section-dk  { background: var(--navy); }
+
+        /* Progress */
+        .progress { position: fixed; top: 0; left: 0; height: 2.5px; background: linear-gradient(90deg, var(--accent), var(--accent-br)); width: 0%; z-index: 1001; pointer-events: none; }
+
+        /* Nav */
+        nav { position: fixed; top: 0; left: 0; right: 0; height: var(--nav-h); background: rgba(255,255,255,.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); z-index: 1000; transition: box-shadow .2s; }
+        nav.scrolled { box-shadow: 0 2px 20px rgba(6,17,31,.07); }
+        .nav-inner { max-width: var(--mw); margin: 0 auto; padding: 0 24px; height: 100%; display: flex; align-items: center; justify-content: space-between; }
+        .logo { font-family: var(--font-head); font-size: 18px; font-weight: 800; color: var(--navy); letter-spacing: -.5px; }
+        .logo span { color: var(--accent); }
+        .nav-crumb { display: flex; align-items: center; gap: 7px; font-size: 13px; color: var(--muted); }
+        .nav-crumb a { color: var(--accent); font-weight: 500; }
+        .nav-crumb .sep { opacity: .35; }
+        .nav-crumb .curr { color: var(--text); font-weight: 500; }
+        .nav-back { display: inline-flex; align-items: center; gap: 5px; font-size: 13px; font-weight: 500; color: var(--muted); transition: color .2s; }
+        .nav-back svg { transition: transform .2s; }
+        .nav-back:hover { color: var(--accent); }
+        .nav-back:hover svg { transform: translateX(-2px); }
+
+        /* Typography */
+        .label { display: inline-block; font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+        .section-dk .label { color: var(--accent-br); }
+        h2.title { font-family: var(--font-head); font-size: clamp(28px, 3.8vw, 42px); font-weight: 700; color: var(--navy); line-height: 1.08; letter-spacing: -.8px; margin-bottom: 14px; }
+        .section-dk h2.title { color: #fff; }
+        .subtitle { font-size: 16px; color: var(--muted); max-width: 560px; line-height: 1.75; }
+        .section-dk .subtitle { color: rgba(255,255,255,.48); }
+        .sec-head { text-align: center; margin-bottom: 52px; }
+        .sec-head .subtitle { margin: 0 auto; }
+
+        /* Buttons */
+        .btn { display: inline-flex; align-items: center; gap: 8px; padding: 11px 22px; border-radius: 9px; font-family: var(--font); font-size: 14px; font-weight: 600; cursor: pointer; transition: all .2s; border: none; }
+        .btn-primary { background: var(--accent); color: #fff; box-shadow: 0 4px 16px var(--accent-glow); }
+        .btn-primary:hover { background: var(--accent-h); transform: translateY(-1px); box-shadow: 0 6px 22px var(--accent-glow); }
+        .btn-ghost-light { background: rgba(255,255,255,.07); color: rgba(255,255,255,.8); border: 1.5px solid rgba(255,255,255,.2); }
+        .btn-ghost-light:hover { background: rgba(255,255,255,.12); border-color: rgba(255,255,255,.35); }
+        .btn-ghost { background: transparent; color: var(--text); border: 1.5px solid var(--border); }
+        .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+        /* Stack tags */
+        .stag { background: var(--bg-alt); color: var(--navy-600); font-size: 12px; font-weight: 500; padding: 4px 10px; border-radius: 6px; border: 1px solid var(--border); }
+        .stag-dk { background: rgba(255,255,255,.08); color: rgba(255,255,255,.7); border: 1px solid rgba(255,255,255,.14); font-size: 12px; font-weight: 500; padding: 4px 10px; border-radius: 6px; }
+        .stack-row { display: flex; flex-wrap: wrap; gap: 6px; }
+
+        /* Fade-up */
+        .fade-up { opacity: 0; transform: translateY(24px); transition: opacity .6s cubic-bezier(.22,.68,0,1), transform .6s cubic-bezier(.22,.68,0,1); }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+        /* ── HERO ─────────────────────────────────────────── */
+        .proj-hero {
+            padding: calc(var(--nav-h) + 72px) 0 72px;
+            background: var(--navy);
+            background-image:
+                radial-gradient(ellipse 72% 56% at 62% 38%, rgba(59,111,255,.14) 0%, transparent 70%),
+                radial-gradient(circle at 12% 72%, rgba(123,167,255,.06) 0%, transparent 52%);
+            position: relative; overflow: hidden;
+        }
+        .proj-hero::before {
+            content: ''; position: absolute; inset: 0;
+            background-image: radial-gradient(rgba(255,255,255,.028) 1px, transparent 1px);
+            background-size: 32px 32px; pointer-events: none;
+        }
+        .proj-hero-inner { position: relative; }
+        .proj-badge {
+            display: inline-flex; align-items: center; gap: 7px;
+            padding: 5px 13px; border-radius: 20px;
+            background: rgba(59,111,255,.12); border: 1px solid rgba(59,111,255,.28);
+            font-size: 12px; font-weight: 600; letter-spacing: .06em;
+            color: var(--accent-br); margin-bottom: 24px;
+        }
+        h1.proj-title {
+            font-family: var(--font-head);
+            font-size: clamp(46px, 7.5vw, 88px);
+            font-weight: 800; line-height: .92; letter-spacing: -2.8px;
+            background: linear-gradient(140deg, #fff 0%, #fff 38%, var(--accent-br) 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text; margin-bottom: 22px;
+        }
+        .proj-sub { font-size: 18px; color: rgba(255,255,255,.52); line-height: 1.72; max-width: 600px; margin-bottom: 22px; }
+        .proj-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+
+        /* ── METRICS STRIP ─────────────────────────────────── */
+        .metrics-strip { background: #fff; border-bottom: 1px solid var(--border); }
+        .metrics-inner { display: grid; grid-template-columns: repeat(4, 1fr); }
+        .metric { text-align: center; padding: 32px 16px; border-right: 1px solid var(--border); }
+        .metric:last-child { border-right: none; }
+        .metric-val { font-family: var(--font-head); font-size: clamp(26px, 3.2vw, 38px); font-weight: 800; color: var(--navy); line-height: 1; margin-bottom: 7px; }
+        .metric-val em { color: var(--accent); font-style: normal; }
+        .metric-lbl { font-size: 13px; color: var(--muted); font-weight: 500; }
+
+        /* ── OVERVIEW ──────────────────────────────────────── */
+        .overview-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+        .overview-text p { font-size: 16px; line-height: 1.82; color: var(--text); margin-bottom: 18px; }
+        .overview-text p:last-child { margin-bottom: 0; }
+        .overview-img img { border-radius: var(--r); box-shadow: 0 12px 48px rgba(6,17,31,.12); cursor: zoom-in; transition: transform .3s; }
+        .overview-img img:hover { transform: scale(1.015); }
+
+        /* ── STEPS / PIPELINE ──────────────────────────────── */
+        .steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 0; }
+        .step { background: #fff; border: 1px solid var(--border); border-radius: var(--r); padding: 28px 24px; position: relative; overflow: hidden; transition: box-shadow .25s, border-color .25s; }
+        .step:hover { box-shadow: 0 8px 32px var(--accent-glow); border-color: rgba(59,111,255,.22); }
+        .step::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--accent), var(--accent-br)); opacity: 0; transition: opacity .25s; }
+        .step:hover::before { opacity: 1; }
+        .step-num { font-family: var(--font-head); font-size: 40px; font-weight: 800; color: var(--accent-dim); line-height: 1; margin-bottom: 12px; letter-spacing: -1px; }
+        .step-title { font-family: var(--font-head); font-size: 17px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+        .step-desc { font-size: 14px; color: var(--muted); line-height: 1.72; }
+        .step-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 14px; }
+        .step-tags .stag { font-size: 11px; padding: 3px 8px; border-radius: 5px; }
+
+        /* ── PILLARS ───────────────────────────────────────── */
+        .pillars-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .pillar { background: var(--bg-alt); border: 1px solid var(--border); border-radius: 12px; padding: 22px 20px; transition: box-shadow .2s, transform .2s; }
+        .pillar:hover { box-shadow: 0 6px 24px var(--accent-glow); transform: translateY(-2px); border-color: rgba(59,111,255,.2); }
+        .pillar-ico { width: 40px; height: 40px; border-radius: 10px; background: var(--accent-dim); border: 1px solid rgba(59,111,255,.2); display: flex; align-items: center; justify-content: center; color: var(--accent); margin-bottom: 12px; }
+        .pillar-title { font-family: var(--font-head); font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 5px; }
+        .pillar-meta { font-size: 12px; color: var(--accent); font-weight: 600; margin-bottom: 8px; letter-spacing: .02em; }
+        .pillar-desc { font-size: 13px; color: var(--muted); line-height: 1.65; }
+
+        /* ── FINDINGS ──────────────────────────────────────── */
+        .findings-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+        .finding { background: var(--navy-800); border: 1px solid rgba(255,255,255,.07); border-radius: var(--r); padding: 28px 24px; }
+        .finding-stat { font-family: var(--font-head); font-size: 38px; font-weight: 800; color: var(--accent-br); margin-bottom: 7px; line-height: 1; }
+        .finding-label { font-size: 14px; font-weight: 600; color: #fff; margin-bottom: 8px; }
+        .finding-desc { font-size: 13px; color: rgba(255,255,255,.42); line-height: 1.68; }
+
+        /* ── GALLERY ───────────────────────────────────────── */
+        .gallery-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+        .gitem { border-radius: 10px; overflow: hidden; border: 1px solid var(--border); position: relative; cursor: zoom-in; }
+        .gitem img { width: 100%; height: auto; display: block; transition: opacity .25s; }
+        .gitem:hover img { opacity: .92; }
+        .gitem-cap { padding: 9px 12px; background: var(--bg-alt); border-top: 1px solid var(--border); font-size: 12px; font-weight: 500; color: var(--muted); }
+
+        /* ── TECH STACK ────────────────────────────────────── */
+        .tech-cols { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+        .tech-col { background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 22px 20px; }
+        .tech-col-title { font-family: var(--font-head); font-size: 12px; font-weight: 700; color: var(--muted); letter-spacing: .08em; text-transform: uppercase; margin-bottom: 14px; }
+        .tech-tag { font-size: 13px; font-weight: 500; color: var(--text); display: flex; align-items: center; gap: 7px; padding: 4px 0; }
+        .tech-tag::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
+
+        /* ── CTA DARK ──────────────────────────────────────── */
+        .cta-sect { background: var(--navy); padding: 80px 0; text-align: center; }
+        .cta-sect h2 { font-family: var(--font-head); font-size: clamp(26px, 3.2vw, 38px); font-weight: 700; color: #fff; margin-bottom: 14px; letter-spacing: -.6px; }
+        .cta-sect p { font-size: 16px; color: rgba(255,255,255,.45); margin-bottom: 34px; }
+        .cta-actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+
+        /* ── FOOTER ────────────────────────────────────────── */
+        footer { background: var(--navy-800); border-top: 1px solid rgba(255,255,255,.06); padding: 26px 0; }
+        .footer-inner { display: flex; align-items: center; justify-content: space-between; }
+        .footer-copy { font-size: 13px; color: rgba(255,255,255,.28); }
+        .footer-back { display: inline-flex; align-items: center; gap: 5px; font-size: 13px; font-weight: 500; color: var(--accent-br); transition: color .2s; }
+        .footer-back:hover { color: #fff; }
+
+        /* ── LIGHTBOX ──────────────────────────────────────── */
+        .lb { display: none; position: fixed; inset: 0; z-index: 2000; background: rgba(0,0,0,.88); align-items: center; justify-content: center; padding: 20px; }
+        .lb.open { display: flex; }
+        .lb img { max-width: 90vw; max-height: 88vh; border-radius: 10px; object-fit: contain; box-shadow: 0 24px 80px rgba(0,0,0,.5); }
+        .lb-close { position: absolute; top: 20px; right: 24px; background: none; border: none; color: #fff; font-size: 32px; cursor: pointer; line-height: 1; opacity: .6; }
+        .lb-close:hover { opacity: 1; }
+
+        /* ── RESPONSIVE ────────────────────────────────────── */
+        @media (max-width: 900px) {
+            .overview-grid { grid-template-columns: 1fr; gap: 32px; }
+            .steps-grid    { grid-template-columns: 1fr; }
+            .pillars-grid  { grid-template-columns: repeat(2, 1fr); }
+            .findings-grid { grid-template-columns: 1fr; }
+            .gallery-grid  { grid-template-columns: repeat(2, 1fr); }
+            .tech-cols     { grid-template-columns: repeat(2, 1fr); }
+            .metrics-inner { grid-template-columns: repeat(2, 1fr); }
+            .metric:nth-child(2) { border-right: none; }
+            .metric:nth-child(3), .metric:nth-child(4) { border-top: 1px solid var(--border); }
+            .metric:nth-child(4) { border-right: none; }
+        }
+        @media (max-width: 580px) {
+            .pillars-grid { grid-template-columns: 1fr; }
+            .gallery-grid { grid-template-columns: 1fr; }
+            .tech-cols    { grid-template-columns: 1fr; }
+            .nav-crumb    { display: none; }
+            h1.proj-title { letter-spacing: -1.8px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="progress" id="progress"></div>
+
+    <nav id="nav">
+        <div class="nav-inner">
+            <a class="logo" href="index.html">D<span>S</span></a>
+            <div class="nav-crumb">
+                <a href="index.html#projects">Portfolio</a>
+                <span class="sep">/</span>
+                <span class="curr">Portugal Data Intelligence</span>
+            </div>
+            <a class="nav-back" href="index.html#projects">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+                Back
+            </a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="proj-hero">
+        <div class="container proj-hero-inner">
+            <div class="proj-badge">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="18" y="3" width="4" height="18"/><rect x="10" y="8" width="4" height="13"/><rect x="2" y="13" width="4" height="8"/></svg>
+                End-to-End Analytics
+            </div>
+            <h1 class="proj-title">Portugal Data<br>Intelligence</h1>
+            <p class="proj-sub">A macroeconomic analytics platform tracking the Portuguese economy from 2010 to 2025 — from live data ingestion to boardroom-ready dashboards and REST APIs.</p>
+            <div class="stack-row">
+                <span class="stag-dk">Power BI</span>
+                <span class="stag-dk">Python</span>
+                <span class="stag-dk">FastAPI</span>
+                <span class="stag-dk">Streamlit</span>
+                <span class="stag-dk">statsmodels</span>
+                <span class="stag-dk">SQLite</span>
+                <span class="stag-dk">Docker</span>
+            </div>
+            <div class="proj-actions">
+                <a href="https://github.com/diogomserino/Portugal-Data-Intelligence" target="_blank" rel="noopener" class="btn btn-primary">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                    View on GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- METRICS STRIP -->
+    <div class="metrics-strip">
+        <div class="container metrics-inner">
+            <div class="metric">
+                <div class="metric-val"><em>6</em></div>
+                <div class="metric-lbl">Economic pillars</div>
+            </div>
+            <div class="metric">
+                <div class="metric-val"><em>39</em></div>
+                <div class="metric-lbl">DAX measures</div>
+            </div>
+            <div class="metric">
+                <div class="metric-val"><em>6</em></div>
+                <div class="metric-lbl">Live data sources</div>
+            </div>
+            <div class="metric">
+                <div class="metric-val"><em>15</em> yrs</div>
+                <div class="metric-lbl">Time series (2010–2025)</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- OVERVIEW -->
+    <section class="section">
+        <div class="container">
+            <div class="overview-grid">
+                <div class="overview-text fade-up">
+                    <div class="label">Overview</div>
+                    <h2 class="title">One platform,<br>the full economic picture</h2>
+                    <p>Portuguese macroeconomic data is scattered across multiple statistical authorities — INE, Banco de Portugal, PORDATA, and Eurostat — with no integrated platform to consolidate it or benchmark performance against EU peers.</p>
+                    <p>Portugal Data Intelligence closes that gap: a complete end-to-end system that ingests live data, applies time-series forecasting (SARIMAX + STL), generates AI-powered narrative insights, and delivers everything as an interactive Power BI dashboard, a Streamlit web app, and a FastAPI REST API.</p>
+                    <p>Six economic pillars are tracked simultaneously across 15 years — from the sovereign debt crisis through COVID-19 to the post-pandemic rebound.</p>
+                </div>
+                <div class="overview-img fade-up">
+                    <img src="https://raw.githubusercontent.com/diogomserino/Portugal-Data-Intelligence/main/reports/powerbi/charts/inflation_dashboard.png"
+                         alt="Economic Dashboard" onclick="openLb(this.src)" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PIPELINE -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="sec-head fade-up">
+                <div class="label">Architecture</div>
+                <h2 class="title">Three-stage pipeline</h2>
+                <p class="subtitle">From raw CSVs and API calls to Power BI pages and REST endpoints — every layer built and owned.</p>
+            </div>
+            <div class="steps-grid">
+                <div class="step fade-up">
+                    <div class="step-num">01</div>
+                    <div class="step-title">ETL Pipeline</div>
+                    <div class="step-desc">Extracts data via CSV/API from four national sources, applies 15+ validation checks (schema, range, completeness, freshness), transforms via SQL, and loads into SQLite with UUID-based lineage tracking and SHA-256 checksums.</div>
+                    <div class="step-tags">
+                        <span class="stag">Python</span>
+                        <span class="stag">SQLite</span>
+                        <span class="stag">pandas</span>
+                        <span class="stag">NumPy</span>
+                    </div>
+                </div>
+                <div class="step fade-up">
+                    <div class="step-num">02</div>
+                    <div class="step-title">Analytics Layer</div>
+                    <div class="step-desc">STL decomposition to isolate trend, seasonality, and residuals. SARIMAX forecasting with AIC-based model selection. Cross-pillar correlation matrix. Scenario modelling (baseline / optimistic / pessimistic) using Okun's law and credit elasticity.</div>
+                    <div class="step-tags">
+                        <span class="stag">statsmodels</span>
+                        <span class="stag">scikit-learn</span>
+                        <span class="stag">Plotly</span>
+                        <span class="stag">seaborn</span>
+                    </div>
+                </div>
+                <div class="step fade-up">
+                    <div class="step-num">03</div>
+                    <div class="step-title">Output Layer</div>
+                    <div class="step-desc">Seven-page Power BI dashboard with 39 DAX measures. Streamlit interactive web app. FastAPI REST API with JSON endpoints. Self-contained HTML report exports. All containerised with Docker and deployed via CI/CD.</div>
+                    <div class="step-tags">
+                        <span class="stag">Power BI</span>
+                        <span class="stag">FastAPI</span>
+                        <span class="stag">Streamlit</span>
+                        <span class="stag">Docker</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ECONOMIC PILLARS -->
+    <section class="section">
+        <div class="container">
+            <div class="sec-head fade-up">
+                <div class="label">Coverage</div>
+                <h2 class="title">Six economic pillars</h2>
+                <p class="subtitle">Each pillar tracked at monthly or quarterly granularity from 2010 to 2025.</p>
+            </div>
+            <div class="pillars-grid">
+                <div class="pillar fade-up">
+                    <div class="pillar-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+                    <div class="pillar-title">GDP</div>
+                    <div class="pillar-meta">Quarterly · 2010 Q1 – 2025 Q4</div>
+                    <div class="pillar-desc">Full growth cycle — debt crisis contraction, recovery, COVID shock, and post-pandemic rebound — modelled and forecast.</div>
+                </div>
+                <div class="pillar fade-up">
+                    <div class="pillar-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+                    <div class="pillar-title">Unemployment</div>
+                    <div class="pillar-meta">Monthly · Jan 2010 – Dec 2025</div>
+                    <div class="pillar-desc">From 17.5% crisis peak to 6.1% historic lows. Strong correlation with bond yields (r = 0.80) quantified.</div>
+                </div>
+                <div class="pillar fade-up">
+                    <div class="pillar-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+                    <div class="pillar-title">Credit to Economy</div>
+                    <div class="pillar-meta">Monthly · Jan 2010 – Dec 2025</div>
+                    <div class="pillar-desc">Private credit dynamics vs NPL ratios. Inverse relationship with inflation (r = −0.53) measured and visualised.</div>
+                </div>
+                <div class="pillar fade-up">
+                    <div class="pillar-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+                    <div class="pillar-title">Interest Rates</div>
+                    <div class="pillar-meta">Monthly · Jan 2010 – Dec 2025</div>
+                    <div class="pillar-desc">ECB rate trajectory and Portuguese sovereign spreads through zero-rate era and the post-2022 normalisation cycle.</div>
+                </div>
+                <div class="pillar fade-up">
+                    <div class="pillar-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+                    <div class="pillar-title">Inflation (HICP / CPI)</div>
+                    <div class="pillar-meta">Monthly · Jan 2010 – Dec 2025</div>
+                    <div class="pillar-desc">Deflationary period, post-COVID surge, and recent moderation decomposed with STL. Phillips curve visualised.</div>
+                </div>
+                <div class="pillar fade-up">
+                    <div class="pillar-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
+                    <div class="pillar-title">Public Debt</div>
+                    <div class="pillar-meta">Quarterly · 2010 Q1 – 2025 Q4</div>
+                    <div class="pillar-desc">Tracked from 132.9% GDP peak through consolidation. SARIMAX projects three trajectories to 2027.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- KEY FINDINGS -->
+    <section class="section section-dk">
+        <div class="container">
+            <div class="sec-head fade-up">
+                <div class="label">Results</div>
+                <h2 class="title">Key findings</h2>
+                <p class="subtitle">Statistical patterns extracted across 15 years of Portuguese macroeconomic data.</p>
+            </div>
+            <div class="findings-grid">
+                <div class="finding fade-up">
+                    <div class="finding-stat">17.5% → 6.1%</div>
+                    <div class="finding-label">Unemployment peak-to-trough</div>
+                    <div class="finding-desc">Unemployment fell from the 2013 sovereign debt crisis peak of 17.5% to a 2025 historic low of 6.1% — an 11.4 pp recovery tracked and modelled month by month.</div>
+                </div>
+                <div class="finding fade-up">
+                    <div class="finding-stat">132.9% GDP</div>
+                    <div class="finding-label">Public debt at its peak</div>
+                    <div class="finding-desc">Public debt reached its highest point at 132.9% of GDP before fiscal consolidation. Three SARIMAX trajectories model its path to 2027.</div>
+                </div>
+                <div class="finding fade-up">
+                    <div class="finding-stat">r = 0.80</div>
+                    <div class="finding-label">Unemployment–bond yield correlation</div>
+                    <div class="finding-desc">A strong cross-pillar correlation between unemployment and sovereign bond yields — quantified in the full correlation matrix and visualised in the heatmap.</div>
+                </div>
+                <div class="finding fade-up">
+                    <div class="finding-stat">r = −0.53</div>
+                    <div class="finding-label">Credit–inflation inverse relationship</div>
+                    <div class="finding-desc">Private credit and inflation showed a persistent inverse relationship, consistent with the deleveraging dynamics observed post-2012 and post-2022.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="section">
+        <div class="container">
+            <div class="sec-head fade-up">
+                <div class="label">Deliverables</div>
+                <h2 class="title">Dashboard gallery</h2>
+                <p class="subtitle">Seven Power BI pages, each focused on a different analytical angle. Click to zoom.</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gitem fade-up" style="grid-column: 1 / -1;">
+                    <img src="https://raw.githubusercontent.com/diogomserino/Portugal-Data-Intelligence/main/reports/powerbi/charts/economic_dashboard.png" alt="Economic Dashboard" onclick="openLb(this.src)" loading="lazy">
+                    <div class="gitem-cap">Economic Overview Dashboard</div>
+                </div>
+                <div class="gitem fade-up">
+                    <img src="https://raw.githubusercontent.com/diogomserino/Portugal-Data-Intelligence/main/reports/powerbi/charts/phillips_curve.png" alt="EU Benchmark" onclick="openLb(this.src)" loading="lazy">
+                    <div class="gitem-cap">Portugal vs EU-27 Benchmark Radar</div>
+                </div>
+                <div class="gitem fade-up">
+                    <img src="https://raw.githubusercontent.com/diogomserino/Portugal-Data-Intelligence/main/reports/powerbi/charts/correlation_heatmap.png" alt="Correlation Heatmap" onclick="openLb(this.src)" loading="lazy">
+                    <div class="gitem-cap">Cross-pillar Correlation Heatmap</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TECH STACK -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="sec-head fade-up">
+                <div class="label">Technology</div>
+                <h2 class="title">Full tech stack</h2>
+            </div>
+            <div class="tech-cols">
+                <div class="tech-col fade-up">
+                    <div class="tech-col-title">Language & Database</div>
+                    <div class="tech-tag">Python 3.10+</div>
+                    <div class="tech-tag">SQLite 3</div>
+                    <div class="tech-tag">pandas</div>
+                    <div class="tech-tag">NumPy</div>
+                </div>
+                <div class="tech-col fade-up">
+                    <div class="tech-col-title">Analytics & Modelling</div>
+                    <div class="tech-tag">statsmodels (STL, SARIMAX)</div>
+                    <div class="tech-tag">scikit-learn</div>
+                    <div class="tech-tag">matplotlib / seaborn</div>
+                    <div class="tech-tag">Plotly</div>
+                </div>
+                <div class="tech-col fade-up">
+                    <div class="tech-col-title">BI & Dashboards</div>
+                    <div class="tech-tag">Power BI (39 DAX)</div>
+                    <div class="tech-tag">Streamlit</div>
+                    <div class="tech-tag">HTML reports</div>
+                    <div class="tech-tag">OpenAI GPT-4 (optional)</div>
+                </div>
+                <div class="tech-col fade-up">
+                    <div class="tech-col-title">API & Infrastructure</div>
+                    <div class="tech-tag">FastAPI</div>
+                    <div class="tech-tag">Docker</div>
+                    <div class="tech-tag">CI/CD</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-sect">
+        <div class="container">
+            <h2>See the full project</h2>
+            <p>Source code, ETL scripts, DAX measures, and full documentation on GitHub.</p>
+            <div class="cta-actions">
+                <a href="https://github.com/diogomserino/Portugal-Data-Intelligence" target="_blank" rel="noopener" class="btn btn-primary">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                    GitHub Repository
+                </a>
+                <a href="index.html#projects" class="btn btn-ghost-light">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+                    Back to Portfolio
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-inner">
+            <div class="footer-copy">© 2026 Diogo Serino</div>
+            <a class="footer-back" href="index.html#projects">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+                All projects
+            </a>
+        </div>
+    </footer>
+
+    <div class="lb" id="lb" onclick="closeLb()">
+        <button class="lb-close" onclick="closeLb()">×</button>
+        <img id="lb-img" src="" alt="">
+    </div>
+
+    <script>
+        const prog = document.getElementById('progress');
+        window.addEventListener('scroll', () => {
+            prog.style.width = Math.min((window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100, 100) + '%';
+        }, { passive: true });
+
+        const nav = document.getElementById('nav');
+        window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 12), { passive: true });
+
+        const io = new IntersectionObserver(entries => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    const siblings = Array.from(e.target.parentElement.querySelectorAll('.fade-up:not(.visible)'));
+                    setTimeout(() => e.target.classList.add('visible'), siblings.indexOf(e.target) * 80);
+                    io.unobserve(e.target);
+                }
+            });
+        }, { threshold: 0.08 });
+        document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
+
+        function openLb(src) { document.getElementById('lb-img').src = src; document.getElementById('lb').classList.add('open'); document.body.style.overflow = 'hidden'; }
+        function closeLb() { document.getElementById('lb').classList.remove('open'); document.body.style.overflow = ''; }
+        window.addEventListener('keydown', e => { if (e.key === 'Escape') closeLb(); });
+    </script>
+</body>
+</html>
