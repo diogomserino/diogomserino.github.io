@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agile &amp; Scrum Fundamentals — Diogo Serino</title>
+<meta name="description" content="What Agile really means, how Scrum works in practice, the roles, events, and artifacts that make teams ship faster — and the metrics that prove it.">
+    <meta property="og:title" content="Agile & Scrum Fundamentals — Diogo Serino">
+    <meta property="og:description" content="What Agile really means, how Scrum works in practice, the roles, events, and artifacts that make teams ship faster — and the metrics that prove it.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://diogomserino.github.io/articles/agile-scrum-fundamentals.html">
+    <meta property="og:image" content="https://diogomserino.github.io/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://diogomserino.github.io/articles/agile-scrum-fundamentals.html">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Agile & Scrum Fundamentals — Diogo Serino",
+      "description": "What Agile really means, how Scrum works in practice, the roles, events, and artifacts that make teams ship faster — and the metrics that prove it.",
+      "url": "https://diogomserino.github.io/articles/agile-scrum-fundamentals.html",
+      "author": {
+        "@type": "Person",
+        "name": "Diogo Serino",
+        "url": "https://diogomserino.github.io"
+      }
+    }
+    </script>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%2306111F'/><text x='50' y='72' font-family='system-ui,sans-serif' font-weight='900' font-size='58' text-anchor='middle' fill='%233B6FFF'>D</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/main.css">
+<style>
+.proj-hero {
+    background: #1A0800;
+    background-image:
+        radial-gradient(ellipse 72% 56% at 62% 38%, rgba(234,88,12,.22) 0%, transparent 70%),
+        radial-gradient(circle at 12% 72%, rgba(251,146,60,.08) 0%, transparent 52%);
+}
+.progress { background: linear-gradient(90deg, #EA580C, #FB923C); }
+.proj-badge { background: rgba(234,88,12,.12); border-color: rgba(234,88,12,.30); color: #FED7AA; }
+.art-label { color: #EA580C; }
+.vis-card-icon { background: rgba(234,88,12,.10); border-color: rgba(234,88,12,.20); color: #EA580C; }
+.vis-card-title { color: #EA580C; }
+.vis-card-accent { background: #EA580C; border-color: #EA580C; }
+.vis-concept { background: #EA580C; }
+.vis-step::before { background: linear-gradient(90deg, #EA580C, #FB923C); }
+.vis-step-num { color: rgba(234,88,12,.22); }
+.vis-step-title { color: #C2410C; }
+.vis-step:hover { box-shadow: 0 6px 24px rgba(234,88,12,.18); border-color: rgba(234,88,12,.30); }
+.vis-row { border-left-color: rgba(234,88,12,.40); border-color: rgba(234,88,12,.16); }
+.vis-row-label { color: #EA580C; }
+.vis-row-accent { background: rgba(234,88,12,.07); border-color: rgba(234,88,12,.20); }
+.vis-dark-card { background: #EA580C; }
+.vis-compare-left  { border-top-color: #EA580C; }
+.vis-compare-right { border-top-color: #C2410C; }
+.vis-flow-wrap { background: linear-gradient(135deg, rgba(234,88,12,.08), rgba(234,88,12,.05)); border-color: rgba(234,88,12,.18); }
+.vis-flow-box-accent { background: rgba(234,88,12,.14); border-color: rgba(234,88,12,.32); }
+.vis-flow-box-accent .vis-flow-box-title { color: #EA580C; }
+.vis-flow-arrow, .vis-flow-side-arrow { color: #EA580C; }
+.vis-tag-pill { background: rgba(234,88,12,.10); border-color: rgba(234,88,12,.22); color: #EA580C; }
+.vis-flag-item::before { background: #EA580C; }
+.vis-card:hover { box-shadow: 0 4px 20px rgba(234,88,12,.12); border-color: rgba(234,88,12,.22); }
+h1.proj-title { background-image: linear-gradient(140deg, #fff 0%, #fff 42%, #FED7AA 100%); }
+.btn-primary { background: #EA580C; box-shadow: 0 4px 16px rgba(234,88,12,.30); color: #fff; }
+.btn-primary:hover { background: #C2410C; box-shadow: 0 6px 22px rgba(234,88,12,.42); transform: translateY(-2px); }
+.art-callout { border-left-color: #EA580C; }
+</style>
+</head>
+<body>
+
+<div class="progress" id="progress"></div>
+
+<nav class="page-nav" id="main-nav">
+    <div class="nav-inner">
+        <a href="../index.html" class="logo">DMS<span>.</span></a>
+        <div class="nav-crumb">
+            <a href="../index.html#articles">Articles</a>
+            <span class="sep">/</span>
+            <span class="curr">Agile &amp; Scrum Fundamentals</span>
+        </div>
+        <a href="../index.html#articles" class="nav-back">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+            Back
+        </a>
+    </div>
+</nav>
+
+<section class="proj-hero">
+    <div class="container proj-hero-inner">
+        <div class="proj-badge">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
+            Agile &nbsp;·&nbsp; Product
+        </div>
+        <h1 class="proj-title">Agile &amp;<br>Scrum<br>Fundamentals</h1>
+        <p class="proj-sub">What Agile really means, how Scrum works in practice, the roles and events that make teams ship faster — and the metrics that prove it.</p>
+        <div class="stack-row">
+            <span class="stag-dk">Agile</span>
+            <span class="stag-dk">Scrum</span>
+            <span class="stag-dk">Product</span>
+            <span class="stag-dk">Frameworks</span>
+            <span class="stag-dk">Sprint</span>
+        </div>
+        <div class="proj-meta">
+            <span class="proj-meta-item">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                May 2026
+            </span>
+            <span class="proj-meta-item">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                10 min read
+            </span>
+        </div>
+    </div>
+</section>
+
+<div class="art-wrap">
+
+    <div class="art-intro fade-up">
+        <p>Agile is one of the most misused words in business. Teams call themselves Agile while still waterfall-planning a year ahead. Managers use Scrum vocabulary in meetings without running a single sprint. The word has become a buzzword — which makes it easy to forget that behind it lies a genuinely powerful set of ideas about how to build things well under uncertainty.</p>
+        <p>This guide cuts through the noise and builds a clear mental model: what Agile actually means, why Scrum exists, how the framework works in practice, and what distinguishes teams that truly operate iteratively from those that just have daily standups.</p>
+    </div>
+
+    <!-- 1. WHAT IS AGILE -->
+    <div class="art-section fade-up">
+        <span class="art-label">Foundation</span>
+        <h2 class="art-h2">Agile is a mindset, not a methodology</h2>
+        <p class="art-p">In 2001, seventeen software practitioners met in Utah and produced the <strong>Agile Manifesto</strong> — four value statements that challenged the dominant way of building software at the time. These four values are still the core of everything Agile:</p>
+
+        <div class="art-visual">
+            <div class="vis-grid vis-grid-2">
+                <div class="vis-card">
+                    <div class="vis-card-title">Individuals and interactions</div>
+                    <div class="vis-card-sub">over processes and tools. The best process is worthless if the people using it can't communicate or collaborate effectively.</div>
+                </div>
+                <div class="vis-card">
+                    <div class="vis-card-title">Working software</div>
+                    <div class="vis-card-sub">over comprehensive documentation. A working product in front of users tells you more than a perfect spec document ever will.</div>
+                </div>
+                <div class="vis-card">
+                    <div class="vis-card-title">Customer collaboration</div>
+                    <div class="vis-card-sub">over contract negotiation. Requirements change. The relationship with the customer should be built to absorb that, not resist it.</div>
+                </div>
+                <div class="vis-card">
+                    <div class="vis-card-title">Responding to change</div>
+                    <div class="vis-card-sub">over following a plan. Plans are useful. But the world changes. A team that can't adapt is building for a reality that no longer exists.</div>
+                </div>
+            </div>
+        </div>
+
+        <p class="art-p" style="margin-top:20px;">Notice the phrasing: "over," not "instead of." Agile doesn't reject processes, documentation, or planning — it reprioritises. The right side still has value; the left side has more. This distinction matters: Agile done well is disciplined and structured, not chaotic.</p>
+    </div>
+
+    <!-- 2. AGILE VS WATERFALL -->
+    <div class="art-section fade-up">
+        <span class="art-label">Context</span>
+        <h2 class="art-h2">Why Agile replaced Waterfall for most software</h2>
+        <p class="art-p">Waterfall organises work into sequential phases — requirements, design, build, test, deploy — where each phase must be completed before the next begins. This works well when requirements are fully known upfront and don't change. In construction or manufacturing, this is often true. In software, it almost never is.</p>
+
+        <div class="art-visual">
+            <div class="vis-compare">
+                <div class="vis-compare-box vis-compare-left">
+                    <div class="vis-compare-title">Waterfall</div>
+                    <div class="vis-compare-desc">
+                        Requirements gathered once, upfront. Full design before any code. Testing only at the end. User sees the product at delivery.<br><br>
+                        <strong>Works when:</strong> Requirements are fixed and fully known. Changes are rare and expensive to accommodate. Regulatory or physical constraints apply.<br><br>
+                        <strong>Breaks when:</strong> Requirements evolve. Users need to give feedback mid-process. The market moves faster than the plan.
+                    </div>
+                </div>
+                <div class="vis-compare-box vis-compare-right">
+                    <div class="vis-compare-title">Agile</div>
+                    <div class="vis-compare-desc">
+                        Requirements evolve through collaboration. Design and code in short cycles. Testing is continuous. User sees and reacts to working software early.<br><br>
+                        <strong>Works when:</strong> Requirements are uncertain or likely to change. Fast feedback is possible and valuable. The team is cross-functional and co-located (or well-coordinated remotely).<br><br>
+                        <strong>Breaks when:</strong> There's no real access to users or stakeholders. Teams are too large or distributed without strong communication structures.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="art-callout">The most expensive bugs are the ones discovered at the end of a Waterfall project — when the system is complete and fixing one thing breaks ten others. Agile's short cycles surface these problems early, when they're cheap to fix.</div>
+    </div>
+
+    <!-- 3. WHAT IS SCRUM -->
+    <div class="art-section fade-up">
+        <span class="art-label">The Framework</span>
+        <h2 class="art-h2">Scrum: the most widely used Agile framework</h2>
+        <p class="art-p">Agile is a set of values. Scrum is a specific framework for implementing those values. It's the most widely adopted Agile approach — used by the majority of software teams worldwide. Scrum organises work into fixed-length iterations called <strong>Sprints</strong>, with clear roles, events, and artifacts that give teams structure without rigidity.</p>
+        <p class="art-p">Scrum rests on three pillars:</p>
+
+        <div class="art-visual">
+            <div class="vis-grid vis-grid-3">
+                <div class="vis-card vis-card-accent">
+                    <div class="vis-card-title">Transparency</div>
+                    <div class="vis-card-sub">The work, the progress, and the problems are visible to everyone on the team — no hidden work, no private backlogs.</div>
+                </div>
+                <div class="vis-card vis-card-accent">
+                    <div class="vis-card-title">Inspection</div>
+                    <div class="vis-card-sub">Regular review of both the product and the process. Are we building the right thing? Are we building it well? Is the team healthy?</div>
+                </div>
+                <div class="vis-card vis-card-accent">
+                    <div class="vis-card-title">Adaptation</div>
+                    <div class="vis-card-sub">When inspection reveals something is off, the team adjusts. Plans, priorities, or processes change — before the problem compounds.</div>
+                </div>
+            </div>
+        </div>
+
+        <p class="art-p" style="margin-top:20px;">These three pillars explain why Scrum's events exist. The Daily Scrum inspects daily progress. The Sprint Review inspects the product. The Retrospective inspects the team process. Every event is a structured opportunity to see what's real and adapt accordingly.</p>
+    </div>
+
+    <!-- 4. THE SCRUM TEAM -->
+    <div class="art-section fade-up">
+        <span class="art-label">Roles</span>
+        <h2 class="art-h2">The Scrum Team: three roles, one goal</h2>
+        <p class="art-p">A Scrum Team is small (typically 3–9 people), cross-functional (with all skills needed to deliver the product), and self-managing (the team decides how to do the work, not just what). It has exactly three roles:</p>
+
+        <div class="art-visual">
+            <div class="vis-rows">
+                <div class="vis-row">
+                    <div class="vis-row-label">Product Owner</div>
+                    <div class="vis-row-desc"><strong>Accountable for product value.</strong> Owns and prioritises the Product Backlog, defines what gets built and in what order, and represents the voice of the customer and stakeholders. A good PO is decisive, accessible, and willing to say no to low-value work. There is exactly one PO per team.</div>
+                </div>
+                <div class="vis-row">
+                    <div class="vis-row-label">Scrum Master</div>
+                    <div class="vis-row-desc"><strong>Accountable for team effectiveness.</strong> Coaches the team on Scrum, removes impediments that block progress, and facilitates events. Not a project manager or a team lead — the Scrum Master has no authority over the developers. Their job is to help the team help itself.</div>
+                </div>
+                <div class="vis-row">
+                    <div class="vis-row-label">Developers</div>
+                    <div class="vis-row-desc"><strong>Accountable for delivering the Increment.</strong> Everyone who does the work of building the product — engineers, designers, testers, data analysts. In Scrum, "developer" means anyone on the team who creates, not just programmers. They self-organise: no one outside the team assigns tasks.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 5. SCRUM EVENTS -->
+    <div class="art-section fade-up">
+        <span class="art-label">Events</span>
+        <h2 class="art-h2">The five Scrum events</h2>
+        <p class="art-p">Scrum has five formal events, all designed to create regular opportunities for inspection and adaptation. They're not optional ceremonies — skipping them erodes the transparency that Scrum depends on.</p>
+
+        <div class="art-visual">
+            <div class="vis-steps">
+                <div class="vis-step">
+                    <div class="vis-step-num">01</div>
+                    <div class="vis-step-title">The Sprint</div>
+                    <div class="vis-step-desc">A fixed time-box of 1–4 weeks (typically 2) during which the team creates a usable product Increment. Sprints have consistent duration. No changes are made that endanger the Sprint Goal.</div>
+                </div>
+                <div class="vis-step">
+                    <div class="vis-step-num">02</div>
+                    <div class="vis-step-title">Sprint Planning</div>
+                    <div class="vis-step-desc">Opens each Sprint. The team selects items from the Product Backlog and creates a plan for the Sprint. The output is a Sprint Goal and a Sprint Backlog. Time-boxed to 8 hours for a 4-week Sprint.</div>
+                </div>
+                <div class="vis-step">
+                    <div class="vis-step-num">03</div>
+                    <div class="vis-step-title">Daily Scrum</div>
+                    <div class="vis-step-desc">15-minute daily sync for Developers. Inspect progress toward the Sprint Goal, adapt the Sprint Backlog if needed. Not a status report — a coordination meeting. The Scrum Master doesn't chair it; developers run it.</div>
+                </div>
+                <div class="vis-step">
+                    <div class="vis-step-num">04</div>
+                    <div class="vis-step-title">Sprint Review</div>
+                    <div class="vis-step-desc">The team presents the Increment to stakeholders and collects feedback. Not a demo for approval — a working session to inspect what was built and adapt the backlog based on what was learned.</div>
+                </div>
+                <div class="vis-step">
+                    <div class="vis-step-num">05</div>
+                    <div class="vis-step-title">Retrospective</div>
+                    <div class="vis-step-desc">The team inspects itself — how people, relationships, processes, and tools worked this Sprint. They identify improvements and commit to at least one change in the next Sprint. The most undervalued Scrum event.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 6. ARTIFACTS -->
+    <div class="art-section fade-up">
+        <span class="art-label">Artifacts</span>
+        <h2 class="art-h2">The three Scrum artifacts</h2>
+        <p class="art-p">Scrum has three artifacts — each representing a commitment that ensures transparency and focus:</p>
+
+        <div class="art-visual">
+            <div class="vis-grid vis-grid-3">
+                <div class="vis-card">
+                    <div class="vis-card-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+                    </div>
+                    <div class="vis-card-title">Product Backlog</div>
+                    <div class="vis-card-sub">The ordered list of everything that might be needed in the product. Owned by the Product Owner. Always a living document — it evolves as the product and market evolve. The commitment is the <strong>Product Goal</strong>.</div>
+                </div>
+                <div class="vis-card">
+                    <div class="vis-card-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                    </div>
+                    <div class="vis-card-title">Sprint Backlog</div>
+                    <div class="vis-card-sub">The items selected for this Sprint plus the plan for delivering them. Owned by Developers. Visible and updated daily. The commitment is the <strong>Sprint Goal</strong> — why this Sprint matters.</div>
+                </div>
+                <div class="vis-card">
+                    <div class="vis-card-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                    </div>
+                    <div class="vis-card-title">Increment</div>
+                    <div class="vis-card-sub">The sum of all completed Product Backlog items in this Sprint plus all previous Sprints. Must meet the Definition of Done. Must be usable — whether or not the PO decides to release it. The commitment is the <strong>Definition of Done</strong>.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 7. USER STORIES -->
+    <div class="art-section fade-up">
+        <span class="art-label">Writing Work</span>
+        <h2 class="art-h2">User stories and the Definition of Done</h2>
+        <p class="art-p">User stories are the most common format for expressing backlog items. They describe a requirement from the user's perspective, making the goal and context explicit for the whole team:</p>
+
+        <div class="art-visual">
+            <div class="vis-concept" style="max-width:540px; margin:0 auto;">
+                <div class="vis-concept-title" style="font-size:17px;">"As a [type of user], I want [to do something] so that [I get this benefit]."</div>
+                <div class="vis-concept-sub">The format forces you to articulate who the user is, what they want to do, and why — before writing a single line of code.</div>
+            </div>
+        </div>
+
+        <p class="art-p" style="margin-top:20px;">Good user stories follow the <strong>INVEST</strong> criteria: Independent (can be built alone), Negotiable (not a contract), Valuable (delivers user value), Estimable (team can size it), Small (fits in a Sprint), Testable (you can verify done).</p>
+        <p class="art-p">Equally important is the <strong>Definition of Done</strong> — a shared agreement on what "complete" means. Without it, "done" means different things to different people and bugs slip through. A typical DoD includes: code written, unit tests passing, integration tested, reviewed, and deployed to staging.</p>
+    </div>
+
+    <!-- 8. METRICS -->
+    <div class="art-section fade-up">
+        <span class="art-label">Measuring Progress</span>
+        <h2 class="art-h2">Agile metrics that tell you something real</h2>
+        <p class="art-p">Agile produces measurable signals that let teams improve. The most useful metrics track flow, predictability, and quality — not just speed:</p>
+
+        <div class="art-visual">
+            <div class="vis-rows">
+                <div class="vis-row">
+                    <div class="vis-row-label">Velocity</div>
+                    <div class="vis-row-desc">Story points completed per Sprint. Useful for forecasting — "at our current velocity, we'll complete this feature in 3 Sprints." Not a performance metric to compare across teams: story point sizing is team-specific.</div>
+                </div>
+                <div class="vis-row">
+                    <div class="vis-row-label">Burndown Chart</div>
+                    <div class="vis-row-desc">Remaining work over time within a Sprint. Shows whether the team is on track to meet the Sprint Goal. A flat burndown means work isn't getting done; a late steep drop suggests poor work breakdown.</div>
+                </div>
+                <div class="vis-row">
+                    <div class="vis-row-label">Cycle Time</div>
+                    <div class="vis-row-desc">How long it takes for a work item to move from "started" to "done." A leading indicator of team efficiency. Long cycle times signal blockers, unclear requirements, or work that's too large to complete quickly.</div>
+                </div>
+                <div class="vis-row vis-row-accent">
+                    <div class="vis-row-label">Escaped Defects</div>
+                    <div class="vis-row-desc">Bugs found by users after release — not caught during the Sprint. High escaped defects signal a weak Definition of Done or insufficient testing. This is the metric that shows whether "moving fast" is actually creating technical debt.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 9. TAKEAWAY -->
+    <div class="art-section fade-up">
+        <span class="art-label">Takeaway</span>
+        <h2 class="art-h2">Agile works when the team owns it</h2>
+        <p class="art-p">The most common reason Agile fails isn't a misunderstanding of the framework — it's that it's imposed on teams rather than adopted by them. Scrum ceremonies become box-ticking. Retrospectives produce no real change. Standups become status reports to management instead of coordination between peers.</p>
+        <p class="art-p">Agile works when teams use it to get better at building things, not to appear more modern. The sprint cadence, the ceremonies, the artifacts — all of it exists to create <strong>frequent opportunities to learn and adjust</strong>. Teams that understand this use Scrum as a tool. Teams that don't use it as a costume.</p>
+
+        <div class="art-visual">
+            <div class="vis-grid vis-grid-3">
+                <div class="vis-card vis-card-accent">
+                    <div class="vis-card-title">The real output</div>
+                    <div class="vis-card-sub">Not completed sprints. Not velocity numbers. A product that gets measurably better for users every two weeks.</div>
+                </div>
+                <div class="vis-card vis-card-accent">
+                    <div class="vis-card-title">The hardest part</div>
+                    <div class="vis-card-sub">Retrospectives that produce real change, not just discussion. Inspect, adapt, repeat — with enough psychological safety to be honest.</div>
+                </div>
+                <div class="vis-card vis-card-accent">
+                    <div class="vis-card-title">The key signal</div>
+                    <div class="vis-card-sub">Does the team have a working product at the end of every Sprint? If not, something structural is broken — not just the process.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<div class="art-nav">
+    <a class="art-nav-item" href="product-management-fundamentals.html">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+        <div class="art-nav-text">
+            <span class="art-nav-label">Previous</span>
+            <span class="art-nav-title">Product Management Fundamentals</span>
+        </div>
+    </a>
+    <a class="art-nav-item art-nav-next" href="business-model-canvas.html">
+        <div class="art-nav-text">
+            <span class="art-nav-label">Next</span>
+            <span class="art-nav-title">Business Model Canvas</span>
+        </div>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+    </a>
+</div>
+</div>
+
+<section class="cta-sect">
+    <div class="container">
+        <h2>More on product &amp; strategy</h2>
+        <p>I write about Agile, product management, and business frameworks. Follow on LinkedIn for more.</p>
+        <div class="cta-actions">
+            <a href="https://www.linkedin.com/in/diogomserino" target="_blank" rel="noopener" class="btn btn-primary">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                Follow on LinkedIn
+            </a>
+            <a href="../index.html#articles" class="btn btn-ghost-light">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+                Back to Articles
+            </a>
+        </div>
+    </div>
+</section>
+
+<footer class="art-footer">
+    <div class="container footer-inner">
+        <div class="footer-copy">© 2026 Diogo Serino</div>
+        <a class="footer-back" href="../index.html#articles">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+            All articles
+        </a>
+    </div>
+</footer>
+
+<script src="../assets/js/article.js"></script>
+</body>
+</html>

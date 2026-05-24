@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SaaS &amp; Product Metrics — Diogo Serino</title>
+<meta name="description" content="The metrics that define SaaS and product success — DAU/MAU, retention, churn, MRR, CAC, LTV, and how to choose the right ones for your product stage.">
+<meta property="og:title" content="SaaS &amp; Product Metrics — Diogo Serino">
+<meta property="og:description" content="The metrics that define SaaS and product success — DAU/MAU, retention, churn, MRR, CAC, LTV, and how to choose the right ones for your product stage.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://diogomserino.github.io/articles/saas-product-metrics.html">
+<meta property="og:image" content="https://diogomserino.github.io/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://diogomserino.github.io/articles/saas-product-metrics.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "SaaS & Product Metrics — Diogo Serino",
+  "description": "The metrics that define SaaS and product success — DAU/MAU, retention, churn, MRR, CAC, LTV, and how to choose the right ones for your product stage.",
+  "url": "https://diogomserino.github.io/articles/saas-product-metrics.html",
+  "author": {
+    "@type": "Person",
+    "name": "Diogo Serino",
+    "url": "https://diogomserino.github.io"
+  }
+}
+</script>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%2306111F'/><text x='50' y='72' font-family='system-ui,sans-serif' font-weight='900' font-size='58' text-anchor='middle' fill='%233B6FFF'>D</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/main.css">
+<style>
+.proj-hero {
+    background: #051820;
+    background-image:
+        radial-gradient(ellipse 72% 56% at 62% 38%, rgba(8,145,178,.22) 0%, transparent 70%),
+        radial-gradient(circle at 12% 72%, rgba(165,243,252,.07) 0%, transparent 52%);
+}
+.progress { background: linear-gradient(90deg, #0891B2, #67E8F9); }
+.proj-badge { background: rgba(8,145,178,.12); border-color: rgba(8,145,178,.30); color: #A5F3FC; }
+.art-label { color: #0891B2; }
+.vis-card-icon { background: rgba(8,145,178,.10); border-color: rgba(8,145,178,.20); color: #0891B2; }
+.vis-card-title { color: #0891B2; }
+.vis-card-accent { background: #0891B2; border-color: #0891B2; }
+.vis-concept { background: #0891B2; }
+.vis-step::before { background: linear-gradient(90deg, #0891B2, #67E8F9); }
+.vis-step-num { color: rgba(8,145,178,.22); }
+.vis-step-title { color: #0E7490; }
+.vis-step:hover { box-shadow: 0 6px 24px rgba(8,145,178,.18); border-color: rgba(8,145,178,.30); }
+.vis-row { border-left-color: rgba(8,145,178,.40); border-color: rgba(8,145,178,.16); }
+.vis-row-label { color: #0891B2; }
+.vis-row-accent { background: rgba(8,145,178,.07); border-color: rgba(8,145,178,.20); }
+.vis-compare-left  { border-top-color: #0891B2; }
+.vis-compare-right { border-top-color: #0E7490; }
+.vis-flag-item::before { background: #0891B2; }
+.vis-card:hover { box-shadow: 0 4px 20px rgba(8,145,178,.12); border-color: rgba(8,145,178,.22); }
+h1.proj-title { background-image: linear-gradient(140deg, #fff 0%, #fff 42%, #A5F3FC 100%); }
+.btn-primary { background: #0891B2; box-shadow: 0 4px 16px rgba(8,145,178,.30); color: #fff; }
+.btn-primary:hover { background: #0E7490; box-shadow: 0 6px 22px rgba(8,145,178,.42); transform: translateY(-2px); }
+.art-callout { border-left-color: #0891B2; }
+</style>
+</head>
+<body>
+
+<div class="progress" id="progress"></div>
+
+<nav class="page-nav" id="main-nav">
+    <div class="nav-inner">
+        <a href="../index.html" class="logo">DMS<span>.</span></a>
+        <div class="nav-crumb">
+            <a href="../index.html#articles">Articles</a>
+            <span class="sep">/</span>
+            <span class="curr">SaaS &amp; Product Metrics</span>
+        </div>
+        <a href="../index.html#articles" class="nav-back">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+            Back
+        </a>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="proj-hero">
+    <div class="container proj-hero-inner">
+        <div class="proj-badge">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="18" y="3" width="4" height="18"/><rect x="10" y="8" width="4" height="13"/><rect x="2" y="13" width="4" height="8"/></svg>
+            Product &nbsp;·&nbsp; Analytics
+        </div>
+        <h1 class="proj-title">SaaS &amp;<br>Product Metrics</h1>
+        <p class="proj-sub">The metrics that define product success — from engagement and retention to revenue and customer value — and how to choose the right ones for your stage.</p>
+        <div class="stack-row">
+            <span class="stag-dk">Metrics</span>
+            <span class="stag-dk">Analytics</span>
+            <span class="stag-dk">SaaS</span>
+            <span class="stag-dk">Retention</span>
+        </div>
+        <div class="proj-meta">
+            <span class="proj-meta-item">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                May 2026
+            </span>
+            <span class="proj-meta-item">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                8 min read
+            </span>
+        </div>
+    </div>
+</section>
+
+<!-- ARTICLE -->
+<div class="art-wrap">
+
+    <div class="art-intro fade-up">
+        <p>Metrics are how product teams know if they're winning. Not opinions, not gut feel — data that tells you whether users are engaged, whether revenue is growing, whether customers are staying. The problem is that most products have access to dozens of metrics but visibility into the ones that actually matter is harder than it sounds.</p>
+        <p>This guide covers the core SaaS and product metrics — organized by what they measure — and explains how to read them, what they signal, and how to choose which ones to track at your current product stage.</p>
+    </div>
+
+    <!-- 1. ACTIVITY VS OUTCOME -->
+    <div class="art-section fade-up">
+        <span class="art-label">The Fundamental Distinction</span>
+        <h2 class="art-h2">Activity metrics vs outcome metrics</h2>
+        <p class="art-p">Before any specific metric, you need to understand the distinction that shapes how good product teams think about data. Activity metrics count things that happen. Outcome metrics measure whether those things created value.</p>
+
+        <div class="art-visual">
+            <div class="vis-compare">
+                <div class="vis-compare-box vis-compare-left">
+                    <div class="vis-compare-title">Activity metrics (what happened)</div>
+                    <div class="vis-compare-desc">
+                        Page views<br>
+                        Registered users<br>
+                        App downloads<br>
+                        Emails sent<br>
+                        Features shipped<br><br>
+                        These go up over time almost automatically — they don't tell you if the product is working.
+                    </div>
+                </div>
+                <div class="vis-compare-box vis-compare-right">
+                    <div class="vis-compare-title">Outcome metrics (what changed)</div>
+                    <div class="vis-compare-desc">
+                        Day-30 retention rate<br>
+                        DAU/MAU ratio<br>
+                        Net Revenue Retention<br>
+                        Time-to-first-value<br>
+                        Churn rate<br><br>
+                        These only improve if user behaviour actually changes. They're honest.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="art-callout">Vanity metrics make teams feel good without helping them make better decisions. When you're deciding what to measure, ask: "If this number goes up but user behaviour doesn't change, is that good?" If yes — it's probably a vanity metric.</div>
+    </div>
+
+    <!-- 2. ENGAGEMENT -->
+    <div class="art-section fade-up">
+        <span class="art-label">Engagement</span>
+        <h2 class="art-h2">Are users actually using your product?</h2>
+        <p class="art-p">Engagement metrics answer one question: are the people who signed up actually using what you built? These are the first signals of product-market fit — or its absence.</p>
+
+        <div class="art-visual">
+            <div class="vis-rows">
+                <div class="vis-row">
+                    <div class="vis-row-label">DAU / MAU</div>
+                    <div class="vis-row-desc"><strong>Daily Active Users / Monthly Active Users.</strong> Counts of unique users who perform a meaningful action in each period. "Active" must be defined — a login doesn't count; completing a core action does.</div>
+                </div>
+                <div class="vis-row vis-row-accent">
+                    <div class="vis-row-label">DAU/MAU Ratio (Stickiness)</div>
+                    <div class="vis-row-desc"><strong>DAU ÷ MAU × 100.</strong> What percentage of monthly users return on any given day? A ratio of 20% means the average user is active 6 days per month. Slack and WhatsApp are above 50%. Most SaaS products aim for 13–25% depending on use case.</div>
+                </div>
+                <div class="vis-row">
+                    <div class="vis-row-label">Session Length &amp; Frequency</div>
+                    <div class="vis-row-desc">How long users spend per session and how often they return. Interpret carefully: long sessions can mean deep engagement or user confusion. Pair with task completion data to distinguish the two.</div>
+                </div>
+                <div class="vis-row">
+                    <div class="vis-row-label">Feature Adoption Rate</div>
+                    <div class="vis-row-desc">What % of users who could use a feature actually do? Low adoption on a core feature signals a discovery or UX problem. Low adoption on an optional feature may just mean it's not valuable enough to be core.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. RETENTION & CHURN -->
+    <div class="art-section fade-up">
+        <span class="art-label">Retention &amp; Churn</span>
+        <h2 class="art-h2">Do users keep coming back?</h2>
+        <p class="art-p">Retention is the single most important metric for most products. A product with high retention compounds over time. A product with low retention is a leaky bucket — you can pour acquisition spend in and it will drain straight out.</p>
+
+        <div class="art-visual">
+            <div class="vis-grid vis-grid-2">
+                <div class="vis-card">
+                    <div class="vis-card-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                    </div>
+                    <div class="vis-card-title">Retention Rate</div>
+                    <div class="vis-card-sub">% of users from a given cohort who are still active after N days/weeks/months. Day-1, Day-7, and Day-30 retention are standard checkpoints. A flat retention curve (even at a low level) means you have a retained core — a still-falling curve means you haven't found it yet.</div>
+                </div>
+                <div class="vis-card">
+                    <div class="vis-card-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3l7.07 16.97 2.51-7.39 7.39-2.51L3 3z"/><path d="M13 13l6 6"/></svg>
+                    </div>
+                    <div class="vis-card-title">Churn Rate</div>
+                    <div class="vis-card-sub">% of users (or revenue) lost in a given period. Monthly churn of 5% compounds to 46% annual loss — a product dying slowly. 2% monthly churn compounds to 21% annually. Even small improvements in churn have large long-term effects on growth.</div>
+                </div>
+                <div class="vis-card">
+                    <div class="vis-card-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="8" height="8" rx="1"/><rect x="14" y="2" width="8" height="8" rx="1"/><rect x="2" y="14" width="8" height="8" rx="1"/><rect x="14" y="14" width="8" height="8" rx="1"/></svg>
+                    </div>
+                    <div class="vis-card-title">Cohort Analysis</div>
+                    <div class="vis-card-sub">Group users by when they joined (weekly or monthly cohorts) and track their retention over time. This reveals whether retention is improving — cohorts acquired recently may retain better than older ones, which would be masked in aggregate numbers.</div>
+                </div>
+                <div class="vis-card">
+                    <div class="vis-card-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>
+                    </div>
+                    <div class="vis-card-title">Net Revenue Retention (NRR)</div>
+                    <div class="vis-card-sub">For SaaS: revenue retained from existing customers, including expansions and contractions. NRR above 100% means expansion revenue exceeds churn — you're growing from existing customers alone. Best-in-class SaaS companies have NRR of 120–140%.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 4. REVENUE -->
+    <div class="art-section fade-up">
+        <span class="art-label">Revenue</span>
+        <h2 class="art-h2">The financial health of a SaaS product</h2>
+        <p class="art-p">Revenue metrics tell you the financial state of the product. For SaaS, recurring revenue is the fundamental unit — not one-time sales. These metrics are how investors and executives think about a SaaS business.</p>
+
+        <div class="art-visual">
+            <div class="vis-rows">
+                <div class="vis-row vis-row-accent">
+                    <div class="vis-row-label">MRR / ARR</div>
+                    <div class="vis-row-desc"><strong>Monthly / Annual Recurring Revenue.</strong> The predictable, recurring revenue component of the business. MRR = sum of all active subscriptions normalized to monthly value. ARR = MRR × 12. The foundational SaaS health metric — everything else is a component or derivative of it.</div>
+                </div>
+                <div class="vis-row">
+                    <div class="vis-row-label">MRR Components</div>
+                    <div class="vis-row-desc"><strong>New MRR</strong> (revenue from new customers) + <strong>Expansion MRR</strong> (upgrades, upsells from existing customers) − <strong>Contraction MRR</strong> (downgrades) − <strong>Churned MRR</strong> (cancellations) = <strong>Net New MRR</strong>. Each component tells you something different about growth health.</div>
+                </div>
+                <div class="vis-row">
+                    <div class="vis-row-label">ARPU</div>
+                    <div class="vis-row-desc"><strong>Average Revenue Per User.</strong> MRR ÷ number of active customers. Tracks whether you're moving upmarket (ARPU rising) or downmarket (ARPU falling). Also the lens to use when analyzing whether a pricing change improved or hurt revenue per customer.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 5. ACQUISITION -->
+    <div class="art-section fade-up">
+        <span class="art-label">Acquisition</span>
+        <h2 class="art-h2">How much does a customer cost to acquire?</h2>
+        <p class="art-p">Growth isn't free. Acquisition metrics measure the efficiency of your growth engine — how much you're spending to bring new users in, and whether those users are worth what you spent to acquire them.</p>
+
+        <div class="art-visual">
+            <div class="vis-grid vis-grid-3">
+                <div class="vis-card">
+                    <div class="vis-card-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                    </div>
+                    <div class="vis-card-title">CAC</div>
+                    <div class="vis-card-sub"><strong>Customer Acquisition Cost.</strong> Total sales and marketing spend in a period ÷ number of new customers acquired in that period. The benchmark varies by market segment — enterprise CAC can be 10× SMB CAC and still be healthy.</div>
+                </div>
+                <div class="vis-card">
+                    <div class="vis-card-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+                    </div>
+                    <div class="vis-card-title">CAC Payback Period</div>
+                    <div class="vis-card-sub">How many months of revenue it takes to recover the cost of acquiring a customer. CAC ÷ (ARPU × gross margin). Under 12 months is healthy for most SaaS. Over 18 months means the business is capital-intensive and fragile to churn.</div>
+                </div>
+                <div class="vis-card">
+                    <div class="vis-card-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+                    </div>
+                    <div class="vis-card-title">Organic vs Paid</div>
+                    <div class="vis-card-sub">What % of new users come from organic sources (SEO, referral, word-of-mouth) vs paid acquisition (ads, outbound). High organic share reduces CAC and signals genuine product-market fit. Heavy reliance on paid signals that organic demand isn't there yet.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 6. CUSTOMER VALUE -->
+    <div class="art-section fade-up">
+        <span class="art-label">Customer Value</span>
+        <h2 class="art-h2">LTV, LTV:CAC, and satisfaction signals</h2>
+        <p class="art-p">Customer value metrics combine revenue and retention to show the long-term value of your customer base — and whether what you're spending to acquire customers is justified.</p>
+
+        <div class="art-visual">
+            <div class="vis-rows">
+                <div class="vis-row vis-row-accent">
+                    <div class="vis-row-label">LTV</div>
+                    <div class="vis-row-desc"><strong>Customer Lifetime Value.</strong> The total revenue expected from a customer over their lifetime with the product. Simplified formula: ARPU ÷ Churn Rate. A customer paying €50/month with a 5% monthly churn rate has an LTV of €1,000.</div>
+                </div>
+                <div class="vis-row vis-row-accent">
+                    <div class="vis-row-label">LTV:CAC Ratio</div>
+                    <div class="vis-row-desc">The single most important efficiency metric in SaaS. LTV ÷ CAC. A ratio of 3:1 means every €1 spent on acquisition generates €3 in lifetime value — considered healthy. Below 1:1 means you're destroying value. Above 5:1 often means you're underinvesting in growth.</div>
+                </div>
+                <div class="vis-row">
+                    <div class="vis-row-label">NPS</div>
+                    <div class="vis-row-desc"><strong>Net Promoter Score.</strong> "How likely are you to recommend us to a friend?" Responses 0–6 are Detractors, 7–8 Passives, 9–10 Promoters. NPS = % Promoters − % Detractors. Ranges from −100 to +100. More useful as a trend indicator than an absolute number.</div>
+                </div>
+                <div class="vis-row">
+                    <div class="vis-row-label">CSAT</div>
+                    <div class="vis-row-desc"><strong>Customer Satisfaction Score.</strong> Usually a 1–5 rating on a specific interaction (support ticket, onboarding, feature). More transactional than NPS — useful for identifying friction points in specific flows rather than overall sentiment.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 7. CHOOSING METRICS -->
+    <div class="art-section fade-up">
+        <span class="art-label">Framework</span>
+        <h2 class="art-h2">Choosing the right metrics for your stage</h2>
+        <p class="art-p">Not all metrics matter equally at every stage of a product. Tracking LTV:CAC before you have product-market fit is premature. Ignoring churn once you have paying customers is dangerous. The metrics you prioritize should match where your product is in its development.</p>
+
+        <div class="art-visual">
+            <div class="vis-steps">
+                <div class="vis-step">
+                    <div class="vis-step-num">01</div>
+                    <div class="vis-step-title">Pre-PMF: Engagement &amp; Retention</div>
+                    <div class="vis-step-desc">Focus on Day-7 and Day-30 retention, DAU/MAU ratio, and qualitative feedback. You're asking: "Do users find enough value to keep coming back?" Revenue metrics are premature — if retention is broken, growth will only accelerate churn.</div>
+                </div>
+                <div class="vis-step">
+                    <div class="vis-step-num">02</div>
+                    <div class="vis-step-title">Early Growth: Acquisition Efficiency</div>
+                    <div class="vis-step-desc">Once retention is solid, shift attention to CAC, payback period, and organic/paid split. You're asking: "Can we acquire users efficiently at scale?" Retention should remain a secondary monitor — a retention drop after a growth push is a red flag.</div>
+                </div>
+                <div class="vis-step">
+                    <div class="vis-step-num">03</div>
+                    <div class="vis-step-title">Scale: Unit Economics</div>
+                    <div class="vis-step-desc">With stable acquisition and retention, focus on LTV:CAC ratio, NRR, and MRR components. You're asking: "Is the business financially healthy? Are we getting better at monetizing what we've built?" Expansion MRR becomes critical — it's the highest-margin revenue you have.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="art-callout">The most common metric mistake: tracking everything. A dashboard with 40 metrics has zero priority signal. The best product teams have 3–5 metrics they review weekly and one North Star metric that everyone in the organization understands.</div>
+    </div>
+
+<div class="art-nav">
+    <a class="art-nav-item" href="how-i-built-careermatch.html">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+        <div class="art-nav-text">
+            <span class="art-nav-label">Previous</span>
+            <span class="art-nav-title">How I Built TryCareerMatch</span>
+        </div>
+    </a>
+    <a class="art-nav-item art-nav-next" href="prioritization-frameworks.html">
+        <div class="art-nav-text">
+            <span class="art-nav-label">Next</span>
+            <span class="art-nav-title">Prioritization in Practice</span>
+        </div>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+    </a>
+</div>
+</div>
+
+<!-- CTA -->
+<section class="cta-sect">
+    <div class="container">
+        <h2>More on product &amp; analytics</h2>
+        <p>I write about product management, data, and business frameworks. Follow on LinkedIn for more.</p>
+        <div class="cta-actions">
+            <a href="https://www.linkedin.com/in/diogomserino" target="_blank" rel="noopener" class="btn btn-primary">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                Follow on LinkedIn
+            </a>
+            <a href="../index.html#articles" class="btn btn-ghost-light">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+                Back to Articles
+            </a>
+        </div>
+    </div>
+</section>
+
+<footer class="art-footer">
+    <div class="container footer-inner">
+        <div class="footer-copy">© 2026 Diogo Serino</div>
+        <a class="footer-back" href="../index.html#articles">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+            All articles
+        </a>
+    </div>
+</footer>
+
+<script src="../assets/js/article.js"></script>
+</body>
+</html>
