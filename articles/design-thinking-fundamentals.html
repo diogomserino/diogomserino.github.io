@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Design Thinking Fundamentals — Diogo Serino</title>
+<meta name="description" content="How to solve complex problems by starting with people — the five stages of Design Thinking, from deep empathy to tested prototypes.">
+    <meta property="og:title" content="Design Thinking Fundamentals — Diogo Serino">
+    <meta property="og:description" content="How to solve complex problems by starting with people — the five stages of Design Thinking, from deep empathy to tested prototypes.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://diogomserino.github.io/articles/design-thinking-fundamentals.html">
+    <meta property="og:image" content="https://diogomserino.github.io/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://diogomserino.github.io/articles/design-thinking-fundamentals.html">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Design Thinking Fundamentals — Diogo Serino",
+      "description": "How to solve complex problems by starting with people — the five stages of Design Thinking, from deep empathy to tested prototypes.",
+      "url": "https://diogomserino.github.io/articles/design-thinking-fundamentals.html",
+      "author": {
+        "@type": "Person",
+        "name": "Diogo Serino",
+        "url": "https://diogomserino.github.io"
+      }
+    }
+    </script>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%2306111F'/><text x='50' y='72' font-family='system-ui,sans-serif' font-weight='900' font-size='58' text-anchor='middle' fill='%233B6FFF'>D</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/main.css">
+<style>
+.proj-hero {
+    background: #0E0020;
+    background-image:
+        radial-gradient(ellipse 72% 56% at 62% 38%, rgba(126,34,206,.22) 0%, transparent 70%),
+        radial-gradient(circle at 12% 72%, rgba(192,132,252,.08) 0%, transparent 52%);
+}
+.progress { background: linear-gradient(90deg, #7E22CE, #C084FC); }
+.proj-badge { background: rgba(126,34,206,.12); border-color: rgba(126,34,206,.30); color: #E9D5FF; }
+.art-label { color: #7E22CE; }
+.vis-card-icon { background: rgba(126,34,206,.10); border-color: rgba(126,34,206,.20); color: #7E22CE; }
+.vis-card-title { color: #7E22CE; }
+.vis-card-accent { background: #7E22CE; border-color: #7E22CE; }
+.vis-concept { background: #7E22CE; }
+.vis-step::before { background: linear-gradient(90deg, #7E22CE, #C084FC); }
+.vis-step-num { color: rgba(126,34,206,.22); }
+.vis-step-title { color: #6B21A8; }
+.vis-step:hover { box-shadow: 0 6px 24px rgba(126,34,206,.18); border-color: rgba(126,34,206,.30); }
+.vis-row { border-left-color: rgba(126,34,206,.40); border-color: rgba(126,34,206,.16); }
+.vis-row-label { color: #7E22CE; }
+.vis-row-accent { background: rgba(126,34,206,.07); border-color: rgba(126,34,206,.20); }
+.vis-dark-card { background: #7E22CE; }
+.vis-compare-left  { border-top-color: #7E22CE; }
+.vis-compare-right { border-top-color: #6B21A8; }
+.vis-flow-wrap { background: linear-gradient(135deg, rgba(126,34,206,.08), rgba(126,34,206,.05)); border-color: rgba(126,34,206,.18); }
+.vis-flow-box-accent { background: rgba(126,34,206,.14); border-color: rgba(126,34,206,.32); }
+.vis-flow-box-accent .vis-flow-box-title { color: #7E22CE; }
+.vis-flow-arrow, .vis-flow-side-arrow { color: #7E22CE; }
+.vis-tag-pill { background: rgba(126,34,206,.10); border-color: rgba(126,34,206,.22); color: #7E22CE; }
+.vis-flag-item::before { background: #7E22CE; }
+.vis-card:hover { box-shadow: 0 4px 20px rgba(126,34,206,.12); border-color: rgba(126,34,206,.22); }
+h1.proj-title { background-image: linear-gradient(140deg, #fff 0%, #fff 42%, #E9D5FF 100%); }
+.btn-primary { background: #7E22CE; box-shadow: 0 4px 16px rgba(126,34,206,.30); color: #fff; }
+.btn-primary:hover { background: #6B21A8; box-shadow: 0 6px 22px rgba(126,34,206,.42); transform: translateY(-2px); }
+.art-callout { border-left-color: #7E22CE; }
+</style>
+</head>
+<body>
+
+<div class="progress" id="progress"></div>
+
+<nav class="page-nav" id="main-nav">
+    <div class="nav-inner">
+        <a href="../index.html" class="logo">DMS<span>.</span></a>
+        <div class="nav-crumb">
+            <a href="../index.html#articles">Articles</a>
+            <span class="sep">/</span>
+            <span class="curr">Design Thinking Fundamentals</span>
+        </div>
+        <a href="../index.html#articles" class="nav-back">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+            Back
+        </a>
+    </div>
+</nav>
+
+<section class="proj-hero">
+    <div class="container proj-hero-inner">
+        <div class="proj-badge">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+            Design &nbsp;·&nbsp; Innovation
+        </div>
+        <h1 class="proj-title">Design<br>Thinking<br>Fundamentals</h1>
+        <p class="proj-sub">How to solve complex problems by starting with people — the five stages from deep empathy to tested prototypes, and why the process matters more than the output.</p>
+        <div class="stack-row">
+            <span class="stag-dk">Design Thinking</span>
+            <span class="stag-dk">Innovation</span>
+            <span class="stag-dk">User Research</span>
+            <span class="stag-dk">Problem Solving</span>
+        </div>
+        <div class="proj-meta">
+            <span class="proj-meta-item">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                May 2026
+            </span>
+            <span class="proj-meta-item">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                9 min read
+            </span>
+        </div>
+    </div>
+</section>
+
+<div class="art-wrap">
+
+    <div class="art-intro fade-up">
+        <p>Most problems are solved backwards. Someone identifies a symptom, jumps to a solution, and spends months building it — only to discover it doesn't address what the user actually needed. Design Thinking exists as a corrective to this impulse: a structured approach to problem-solving that starts with a deep understanding of people before any solution is proposed.</p>
+        <p>Originally developed at Stanford's d.school and popularised by IDEO, Design Thinking has spread well beyond design studios into product teams, management consulting, healthcare, education, and public policy. The reason is simple: it produces better solutions to complex, human problems than approaches that skip the human part.</p>
+    </div>
+
+    <!-- 1. WHAT IS DESIGN THINKING -->
+    <div class="art-section fade-up">
+        <span class="art-label">Foundation</span>
+        <h2 class="art-h2">A human-centred approach to complex problems</h2>
+        <p class="art-p">Design Thinking is a problem-solving methodology that prioritises understanding the people who experience a problem before attempting to solve it. It is <strong>human-centred</strong> (solutions are designed for real people in real contexts), <strong>collaborative</strong> (diverse perspectives are used intentionally), and <strong>experimental</strong> (ideas are tested quickly with real users, not debated in meeting rooms).</p>
+
+        <div class="art-visual">
+            <div class="vis-grid vis-grid-2">
+                <div class="vis-concept">
+                    <div class="vis-concept-title">Solution-first thinking</div>
+                    <div class="vis-concept-sub">Identify a problem → assume you know the cause → design a solution → build → release → discover users don't want it.</div>
+                </div>
+                <div class="vis-concept">
+                    <div class="vis-concept-title">Design Thinking</div>
+                    <div class="vis-concept-sub">Observe users → understand their reality → define the real problem → explore many solutions → prototype → test → refine.</div>
+                </div>
+            </div>
+        </div>
+
+        <p class="art-p" style="margin-top:20px;">The critical shift is sequencing. Design Thinking delays solution generation until the problem is deeply understood — because the most elegant solution to the wrong problem is still the wrong solution.</p>
+    </div>
+
+    <!-- 2. THE FIVE STAGES -->
+    <div class="art-section fade-up">
+        <span class="art-label">The Process</span>
+        <h2 class="art-h2">The five stages of Design Thinking</h2>
+        <p class="art-p">Design Thinking is typically taught as five stages. These are not strictly sequential — real practice involves constant iteration, moving back and forth as new information emerges. But they provide a clear map of the process:</p>
+
+        <div class="art-visual">
+            <div class="vis-steps">
+                <div class="vis-step">
+                    <div class="vis-step-num">01</div>
+                    <div class="vis-step-title">Empathise</div>
+                    <div class="vis-step-desc">Understand the people you're designing for — their behaviour, motivations, and emotions in context. Interviews, observation, shadowing, and immersion. You can't empathise from a desk.</div>
+                </div>
+                <div class="vis-step">
+                    <div class="vis-step-num">02</div>
+                    <div class="vis-step-title">Define</div>
+                    <div class="vis-step-desc">Synthesise your empathy research into a clear, human-centred problem statement. What is the real problem? For whom? In what context? A well-defined problem is already halfway solved.</div>
+                </div>
+                <div class="vis-step">
+                    <div class="vis-step-num">03</div>
+                    <div class="vis-step-title">Ideate</div>
+                    <div class="vis-step-desc">Generate a wide range of possible solutions without judgement. Quantity over quality. The goal is to explore the full solution space before narrowing — diverge first, converge later.</div>
+                </div>
+                <div class="vis-step">
+                    <div class="vis-step-num">04</div>
+                    <div class="vis-step-title">Prototype</div>
+                    <div class="vis-step-desc">Build quick, cheap representations of your best ideas — paper mockups, wireframes, role-play scenarios. Prototypes are hypotheses made tangible, not finished products.</div>
+                </div>
+                <div class="vis-step">
+                    <div class="vis-step-num">05</div>
+                    <div class="vis-step-title">Test</div>
+                    <div class="vis-step-desc">Put prototypes in front of real users and observe. You're not presenting — you're learning. What works? What confuses? What did you get wrong? Test results feed back into any earlier stage.</div>
+                </div>
+            </div>
+            <div class="art-visual-label">The process is iterative — Test results routinely send the team back to Define or Empathise</div>
+        </div>
+    </div>
+
+    <!-- 3. EMPATHISE -->
+    <div class="art-section fade-up">
+        <span class="art-label">Stage 1</span>
+        <h2 class="art-h2">Empathise: seeing the world through someone else's eyes</h2>
+        <p class="art-p">Empathy in Design Thinking isn't sympathy — it's a rigorous effort to understand how someone else experiences their world. It requires setting aside your own assumptions and genuinely entering the user's context. Three methods drive most empathy work:</p>
+
+        <div class="art-visual">
+            <div class="vis-rows">
+                <div class="vis-row">
+                    <div class="vis-row-label">Observation</div>
+                    <div class="vis-row-desc">Watch people doing the actual thing in their actual context — not in a lab, not described from memory. People are unreliable narrators of their own behaviour. What they do and what they say they do are often different. Observation catches the gap.</div>
+                </div>
+                <div class="vis-row">
+                    <div class="vis-row-label">Interviews</div>
+                    <div class="vis-row-desc">Conversations focused on stories and experiences, not opinions about hypothetical solutions. "Tell me about the last time you tried to do X" reveals far more than "would you use a product that did Y?" Silence is a valid interview technique — let people fill it.</div>
+                </div>
+                <div class="vis-row">
+                    <div class="vis-row-label">Immersion</div>
+                    <div class="vis-row-desc">Where possible, experience the problem yourself. Use the product, go through the process, feel the friction. Short of becoming the user, immersion is the most direct path to genuine understanding — not research slides about the user.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="art-callout">The empathy phase is chronically under-invested. Teams rush through it because they already have a solution in mind. The result is solutions built on assumptions rather than understanding — which is where most innovation failures originate.</div>
+    </div>
+
+    <!-- 4. DEFINE -->
+    <div class="art-section fade-up">
+        <span class="art-label">Stage 2</span>
+        <h2 class="art-h2">Define: the problem statement as a design brief</h2>
+        <p class="art-p">The Define stage transforms empathy research into a clear, actionable problem statement. This is harder than it sounds — raw research is messy, and finding the real problem beneath the stated one requires synthesis and judgment.</p>
+        <p class="art-p">The most common format is the <strong>"How Might We" (HMW) question</strong> — a frame that's specific enough to give direction, open enough to allow creative solutions:</p>
+
+        <div class="art-visual">
+            <div class="vis-grid vis-grid-2">
+                <div class="vis-card" style="background:rgba(239,68,68,.04);border-color:rgba(239,68,68,.18);">
+                    <div class="vis-card-title" style="color:#DC2626;">Too vague</div>
+                    <div class="vis-card-sub">"How might we improve the healthcare experience?" Could generate a million ideas in a million directions. No focus, no constraint, no traction.</div>
+                </div>
+                <div class="vis-card">
+                    <div class="vis-card-title">Well-framed</div>
+                    <div class="vis-card-sub">"How might we help elderly patients in rural areas remember and correctly take daily medication without relying on family support?" Specific user, specific context, specific problem.</div>
+                </div>
+            </div>
+        </div>
+
+        <p class="art-p" style="margin-top:20px;">A good problem statement keeps the team anchored throughout ideation and prototyping. When a proposed solution doesn't address it, you have a principled reason to redirect — not just an opinion.</p>
+    </div>
+
+    <!-- 5. IDEATE -->
+    <div class="art-section fade-up">
+        <span class="art-label">Stage 3</span>
+        <h2 class="art-h2">Ideate: quantity first, quality later</h2>
+        <p class="art-p">Ideation is the divergent phase — the goal is to generate as many possible solutions as possible before evaluating any of them. The common mistake is to evaluate ideas as they emerge, which kills creative risk-taking before it starts.</p>
+        <p class="art-p">Two principles govern good ideation sessions:</p>
+
+        <div class="art-visual">
+            <div class="vis-grid vis-grid-2">
+                <div class="vis-card">
+                    <div class="vis-card-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    </div>
+                    <div class="vis-card-title">Defer judgment</div>
+                    <div class="vis-card-sub">No idea is too wild. No "yes, but." Build on each other's ideas with "yes, and." The ridiculous idea often contains the seed of the breakthrough idea.</div>
+                </div>
+                <div class="vis-card">
+                    <div class="vis-card-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                    </div>
+                    <div class="vis-card-title">Go for volume</div>
+                    <div class="vis-card-sub">Aim for 50 ideas, not 5. The best idea is rarely the first one. Quantity creates the raw material from which quality solutions are selected.</div>
+                </div>
+            </div>
+        </div>
+
+        <p class="art-p" style="margin-top:20px;">After generating ideas, the team converges — dot voting, impact/effort matrices, and explicit criteria aligned with the problem statement are used to select which ideas are worth prototyping. Two or three ideas typically move forward.</p>
+    </div>
+
+    <!-- 6. PROTOTYPE AND TEST -->
+    <div class="art-section fade-up">
+        <span class="art-label">Stages 4 &amp; 5</span>
+        <h2 class="art-h2">Prototype and test: make it real, learn fast</h2>
+        <p class="art-p">Prototyping is the act of making an idea tangible enough to test. The key principle: <strong>build to think, not to present</strong>. A prototype is a learning tool, not a deliverable. The cheaper and faster it is to build, the more failures you can afford — and failures in prototyping are wins, because they're cheap.</p>
+
+        <div class="art-visual">
+            <div class="vis-rows">
+                <div class="vis-row">
+                    <div class="vis-row-label">Paper prototypes</div>
+                    <div class="vis-row-desc">Sketched on paper, assembled with scissors and tape. Can be built in 30 minutes. Effective for testing flows, layouts, and concepts before any digital tool is opened. The roughness actually helps — users give more honest feedback when a prototype doesn't look finished.</div>
+                </div>
+                <div class="vis-row">
+                    <div class="vis-row-label">Wireframes &amp; mockups</div>
+                    <div class="vis-row-desc">Low-fidelity digital screens (Figma, Balsamiq, or even PowerPoint). Show layout and interaction without visual polish. Good for testing navigation, content hierarchy, and interaction patterns with stakeholders or users.</div>
+                </div>
+                <div class="vis-row">
+                    <div class="vis-row-label">Role-play &amp; simulation</div>
+                    <div class="vis-row-desc">For service design or process improvements, simulate the experience physically. Two people play customer and service agent. Other team members observe. Powerful for identifying friction that no screen can capture.</div>
+                </div>
+            </div>
+        </div>
+
+        <p class="art-p" style="margin-top:20px;">Testing is observation, not validation. You're not presenting your idea hoping for approval — you're watching what users do with it and asking neutral questions. "What were you expecting to happen?" and "What would you do next?" reveal more than "Did you like it?"</p>
+    </div>
+
+    <!-- 7. DT vs AGILE vs LEAN -->
+    <div class="art-section fade-up">
+        <span class="art-label">Context</span>
+        <h2 class="art-h2">Design Thinking, Agile, and Lean — how they fit together</h2>
+        <p class="art-p">These three methodologies are often mentioned in the same breath and sometimes confused. They're complementary, not competing:</p>
+
+        <div class="art-visual">
+            <div class="vis-rows">
+                <div class="vis-row">
+                    <div class="vis-row-label">Design Thinking</div>
+                    <div class="vis-row-desc"><strong>Answers: are we solving the right problem?</strong> Used upstream — in discovery, research, and ideation phases. Its outputs (problem statements, prototypes, user insights) feed into Agile or Lean execution. Time horizon: days to weeks of exploratory work.</div>
+                </div>
+                <div class="vis-row">
+                    <div class="vis-row-label">Agile / Scrum</div>
+                    <div class="vis-row-desc"><strong>Answers: are we building it right, iteratively?</strong> Used in execution — once there's sufficient clarity on what to build. Sprints, ceremonies, and artifacts organise the work of a cross-functional team delivering working software in short cycles.</div>
+                </div>
+                <div class="vis-row">
+                    <div class="vis-row-label">Lean Startup</div>
+                    <div class="vis-row-desc"><strong>Answers: is our business model assumption valid?</strong> Used at the business level — testing the viability of a whole product or business concept through the Build-Measure-Learn loop. Works at a higher level of abstraction than Agile.</div>
+                </div>
+            </div>
+        </div>
+
+        <p class="art-p" style="margin-top:20px;">In practice, strong product teams use all three: Design Thinking to discover and define, Agile to build and iterate, and Lean thinking to test whether the whole thing makes business sense. The boundaries are blurry by design.</p>
+    </div>
+
+    <!-- 8. TAKEAWAY -->
+    <div class="art-section fade-up">
+        <span class="art-label">Takeaway</span>
+        <h2 class="art-h2">The discipline of staying curious longer</h2>
+        <p class="art-p">Design Thinking's most important contribution isn't a framework or a set of tools — it's a discipline of staying in the problem space longer than feels comfortable. The natural instinct is to move quickly to solutions. Design Thinking trains teams to resist that instinct until the problem is truly understood.</p>
+        <p class="art-p">This pays off compoundingly. Teams that invest in the Empathise and Define stages fail less often in prototyping. Teams that invest in prototyping fail less often in development. Development failures are exponentially more expensive than prototype failures. Every hour in a user interview is worth ten hours of avoided rework.</p>
+
+        <div class="art-visual">
+            <div class="vis-grid vis-grid-3">
+                <div class="vis-card vis-card-accent">
+                    <div class="vis-card-title">The core insight</div>
+                    <div class="vis-card-sub">You cannot design a good solution to a problem you don't understand. Understanding takes longer than assuming. It's almost always worth it.</div>
+                </div>
+                <div class="vis-card vis-card-accent">
+                    <div class="vis-card-title">The key skill</div>
+                    <div class="vis-card-sub">Asking questions that reveal behaviour, not questions that confirm hypotheses. The best researchers make people feel heard, not interrogated.</div>
+                </div>
+                <div class="vis-card vis-card-accent">
+                    <div class="vis-card-title">The common mistake</div>
+                    <div class="vis-card-sub">Treating Stage 3 (Ideate) as Stage 1. Starting with a solution and then doing "empathy research" to justify it. That's not Design Thinking — it's confirmation bias with a better name.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<div class="art-nav">
+    <a class="art-nav-item" href="business-model-canvas.html">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+        <div class="art-nav-text">
+            <span class="art-nav-label">Previous</span>
+            <span class="art-nav-title">Business Model Canvas</span>
+        </div>
+    </a>
+    <a class="art-nav-item art-nav-next" href="okrs-kpis.html">
+        <div class="art-nav-text">
+            <span class="art-nav-label">Next</span>
+            <span class="art-nav-title">OKRs &amp; KPIs</span>
+        </div>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+    </a>
+</div>
+</div>
+
+<section class="cta-sect">
+    <div class="container">
+        <h2>More on design &amp; innovation</h2>
+        <p>I write about design thinking, product strategy, and business frameworks. Follow on LinkedIn for more.</p>
+        <div class="cta-actions">
+            <a href="https://www.linkedin.com/in/diogomserino" target="_blank" rel="noopener" class="btn btn-primary">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                Follow on LinkedIn
+            </a>
+            <a href="../index.html#articles" class="btn btn-ghost-light">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+                Back to Articles
+            </a>
+        </div>
+    </div>
+</section>
+
+<footer class="art-footer">
+    <div class="container footer-inner">
+        <div class="footer-copy">© 2026 Diogo Serino</div>
+        <a class="footer-back" href="../index.html#articles">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+            All articles
+        </a>
+    </div>
+</footer>
+
+<script src="../assets/js/article.js"></script>
+</body>
+</html>

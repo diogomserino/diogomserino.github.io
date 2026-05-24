@@ -1,0 +1,507 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AML, KYC &amp; Financial Crime Fundamentals — Diogo Serino</title>
+<meta name="description" content="How banks detect and prevent financial crime — AML, KYC, sanctions screening, transaction monitoring, fraud, risk, and beneficial ownership.">
+    <meta property="og:title" content="AML, KYC & Financial Crime Fundamentals — Diogo Serino">
+    <meta property="og:description" content="How banks detect and prevent financial crime — AML, KYC, sanctions screening, transaction monitoring, fraud, risk, and beneficial ownership.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://diogomserino.github.io/articles/aml-kyc.html">
+    <meta property="og:image" content="https://diogomserino.github.io/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://diogomserino.github.io/articles/aml-kyc.html">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "AML, KYC & Financial Crime Fundamentals — Diogo Serino",
+      "description": "How banks detect and prevent financial crime — AML, KYC, sanctions screening, transaction monitoring, fraud, risk, and beneficial ownership.",
+      "url": "https://diogomserino.github.io/articles/aml-kyc.html",
+      "author": {
+        "@type": "Person",
+        "name": "Diogo Serino",
+        "url": "https://diogomserino.github.io"
+      }
+    }
+    </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/main.css">
+<style>
+.proj-hero {
+    background: #061e14;
+    background-image:
+        radial-gradient(ellipse 72% 56% at 62% 38%, rgba(5,150,105,.18) 0%, transparent 70%),
+        radial-gradient(circle at 12% 72%, rgba(52,211,153,.08) 0%, transparent 52%);
+}
+.progress { background: linear-gradient(90deg, #059669, #34D399); }
+.proj-badge { background: rgba(5,150,105,.12); border-color: rgba(5,150,105,.28); }
+.art-label { color: #059669; }
+.vis-card-icon { background: rgba(5,150,105,.1); border-color: rgba(5,150,105,.18); color: #059669; }
+.vis-card-title { color: #059669; }
+.vis-card-accent { background: #059669; border-color: #059669; }
+.vis-concept { background: #059669; }
+.vis-step::before { background: linear-gradient(90deg, #059669, #34D399); }
+.vis-step-num { color: rgba(5,150,105,.22); }
+.vis-step-title { color: #047857; }
+.vis-row { border-left-color: rgba(5,150,105,.35); border-color: rgba(5,150,105,.16); }
+.vis-row-label { color: #059669; }
+.vis-row-accent { background: rgba(5,150,105,.08); border-color: rgba(5,150,105,.22); }
+.vis-dark-card { background: #059669; }
+.vis-compare-left { border-top-color: #059669; }
+.vis-compare-right { border-top-color: #047857; }
+.vis-flow-wrap { background: linear-gradient(135deg, rgba(5,150,105,.08), rgba(5,150,105,.06)); border-color: rgba(5,150,105,.18); }
+.vis-flow-box-accent { background: rgba(5,150,105,.14); border-color: rgba(5,150,105,.32); }
+.vis-flow-box-accent .vis-flow-box-title { color: #059669; }
+.vis-flow-arrow, .vis-flow-side-arrow { color: #059669; }
+.vis-tag-pill { background: rgba(5,150,105,.1); border-color: rgba(5,150,105,.2); color: #059669; }
+.vis-flag-item::before { background: #059669; }
+.vis-card-violet { background: rgba(5,150,105,.08); border-color: rgba(5,150,105,.2); }
+.vis-card-violet .vis-card-title { color: #059669; }
+h1.proj-title { background-image: linear-gradient(140deg, #fff 0%, #fff 38%, #34D399 100%); }
+.btn-primary { background: #059669; box-shadow: 0 4px 16px rgba(5,150,105,.3); }
+.btn-primary:hover { background: #047857; box-shadow: 0 6px 22px rgba(5,150,105,.4); }
+</style>
+</head>
+<body>
+
+<div class="progress" id="progress"></div>
+
+<nav class="page-nav" id="main-nav">
+    <div class="nav-inner">
+        <a href="../index.html" class="logo">DMS<span>.</span></a>
+        <div class="nav-crumb">
+            <a href="../index.html#articles">Articles</a>
+            <span class="sep">/</span>
+            <span class="curr">AML, KYC &amp; Financial Crime</span>
+        </div>
+        <a href="../index.html#articles" class="nav-back">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+            Back
+        </a>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="proj-hero">
+    <div class="container proj-hero-inner">
+        <div class="proj-badge">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Financial Crime
+        </div>
+        <h1 class="proj-title">AML, KYC &amp;<br>Financial Crime<br>Fundamentals</h1>
+        <p class="proj-sub">How banks detect and prevent financial crime — from money laundering and KYC to sanctions screening, transaction monitoring, and risk.</p>
+        <div class="stack-row">
+            <span class="stag-dk">AML</span>
+            <span class="stag-dk">KYC</span>
+            <span class="stag-dk">Compliance</span>
+            <span class="stag-dk">Fraud</span>
+            <span class="stag-dk">Finance</span>
+        </div>
+        <div class="proj-meta">
+            <span class="proj-meta-item">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                May 2025
+            </span>
+            <span class="proj-meta-item">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                9 min read
+            </span>
+        </div>
+    </div>
+</section>
+
+<!-- ARTICLE -->
+<div class="art-wrap">
+
+    <div class="art-intro fade-up">
+        <p>If you've ever opened a bank account, you've been subject to KYC. If you've ever wondered why banks ask for proof of address, or what actually happens when a suspicious transaction is flagged — this guide answers those questions.</p>
+        <p>Financial crime is estimated to cost the global economy trillions of dollars annually. Banks sit at the frontline of detection and prevention, and they've built an entire infrastructure to do it: AML programs, KYC processes, transaction monitoring systems, sanctions screening, and fraud operations. This is a breakdown of how all of it works.</p>
+    </div>
+
+    <!-- 1. FINANCIAL CRIME -->
+    <div class="art-section fade-up">
+        <span class="art-label">Foundation</span>
+        <h2 class="art-h2">What counts as financial crime?</h2>
+        <p class="art-p">Financial crime covers any illegal activity involving money, banks, companies, or financial systems. The range is broad — from street-level fraud to state-level corruption:</p>
+
+        <div class="art-visual">
+            <div class="vis-grid vis-grid-3">
+                <div class="vis-card">
+                    <div class="vis-card-title">Money Laundering</div>
+                    <div class="vis-card-sub">Making illegal money appear legitimate by passing it through the financial system.</div>
+                </div>
+                <div class="vis-card">
+                    <div class="vis-card-title">Bank Fraud &amp; Identity Theft</div>
+                    <div class="vis-card-sub">Deceiving banks or stealing identities to access accounts and credit illegally.</div>
+                </div>
+                <div class="vis-card">
+                    <div class="vis-card-title">Terrorist Financing</div>
+                    <div class="vis-card-sub">Moving money — even from legitimate sources — to fund terrorist activity.</div>
+                </div>
+                <div class="vis-card">
+                    <div class="vis-card-title">Corruption &amp; Bribery</div>
+                    <div class="vis-card-sub">Abuse of power for financial gain, often involving public officials or corporate misconduct.</div>
+                </div>
+                <div class="vis-card">
+                    <div class="vis-card-title">Tax Evasion</div>
+                    <div class="vis-card-sub">Illegally hiding income, assets, or activity from tax authorities.</div>
+                </div>
+                <div class="vis-card">
+                    <div class="vis-card-title">Online Scams &amp; Fake Accounts</div>
+                    <div class="vis-card-sub">Digital fraud schemes targeting individuals or institutions through deception.</div>
+                </div>
+            </div>
+        </div>
+
+        <p class="art-p" style="margin-top:20px;">Banks are <strong>legally required</strong> to detect and prevent these activities. Failure to do so can result in massive regulatory fines, loss of operating licences, and reputational damage. This obligation is why every financial institution maintains dedicated teams in AML, KYC, Compliance, Risk, and Fraud Operations.</p>
+
+        <div class="art-visual">
+            <div class="vis-tags">
+                <span class="vis-tag-pill">AML</span>
+                <span class="vis-tag-pill">KYC</span>
+                <span class="vis-tag-pill">Compliance</span>
+                <span class="vis-tag-pill">Risk</span>
+                <span class="vis-tag-pill">Fraud Operations</span>
+            </div>
+            <div class="art-visual-label">The bank teams responsible for financial crime prevention</div>
+        </div>
+    </div>
+
+    <!-- 2. AML -->
+    <div class="art-section fade-up">
+        <span class="art-label">AML</span>
+        <h2 class="art-h2">Anti-Money Laundering: how dirty money gets "cleaned"</h2>
+        <p class="art-p">Money laundering is the process of making illegally obtained money appear legitimate. It always follows the same three stages — each with a different goal and different detection vulnerability:</p>
+
+        <div class="art-visual">
+            <div class="vis-steps">
+                <div class="vis-step">
+                    <div class="vis-step-num">01</div>
+                    <div class="vis-step-title">Placement</div>
+                    <div class="vis-step-desc">The illegal money enters the financial system for the first time — the riskiest stage. Common technique: breaking large cash sums into smaller deposits to avoid reporting thresholds ("structuring").</div>
+                </div>
+                <div class="vis-step">
+                    <div class="vis-step-num">02</div>
+                    <div class="vis-step-title">Layering</div>
+                    <div class="vis-step-desc">The money is moved many times — across accounts, institutions, jurisdictions, and asset types — to obscure its origin. Shell companies, offshore accounts, and crypto are commonly used.</div>
+                </div>
+                <div class="vis-step">
+                    <div class="vis-step-num">03</div>
+                    <div class="vis-step-title">Integration</div>
+                    <div class="vis-step-desc">The money re-enters the legitimate economy appearing "clean" — invested in property, a business, or luxury goods. At this stage it's extremely hard to distinguish from lawful wealth.</div>
+                </div>
+            </div>
+            <div class="art-visual-label">AML programs target all three stages: monitoring deposits, analyzing transaction patterns, verifying source of funds</div>
+        </div>
+
+        <p class="art-p" style="margin-top:20px;">AML programs are designed to detect and disrupt this process at each stage — catching placement through deposit monitoring, layering through transaction pattern analysis, and integration through source-of-funds verification.</p>
+    </div>
+
+    <!-- 3. KYC -->
+    <div class="art-section fade-up">
+        <span class="art-label">KYC</span>
+        <h2 class="art-h2">Know Your Customer: verifying who you're dealing with</h2>
+        <p class="art-p">Before a bank can open an account or conduct business with a customer, it must verify three things: <strong>who the customer is</strong>, <strong>where their money comes from</strong>, and <strong>whether they represent a financial crime risk</strong>. This process is called KYC — Know Your Customer — and it's mandatory in virtually every jurisdiction.</p>
+
+        <div class="art-visual">
+            <div class="vis-grid vis-grid-3">
+                <div class="vis-card">
+                    <div class="vis-card-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="16" y1="2" x2="16" y2="6"/></svg>
+                    </div>
+                    <div class="vis-card-title">Identification</div>
+                    <div class="vis-card-sub">
+                        Proof of who you are:
+                        <ul><li>Passport</li><li>National ID card</li><li>Driving licence</li></ul>
+                    </div>
+                </div>
+                <div class="vis-card">
+                    <div class="vis-card-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                    </div>
+                    <div class="vis-card-title">Proof of Address</div>
+                    <div class="vis-card-sub">
+                        Confirmation of where you live:
+                        <ul><li>Utility bill</li><li>Bank statement</li></ul>
+                    </div>
+                </div>
+                <div class="vis-card">
+                    <div class="vis-card-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                    </div>
+                    <div class="vis-card-title">Source of Funds</div>
+                    <div class="vis-card-sub">
+                        Where the money comes from:
+                        <ul><li>Salary / payslips</li><li>Business income</li><li>Investment statements</li></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="art-callout">KYC is not a one-time event. Banks are required to perform <strong>ongoing due diligence</strong> and refresh KYC information periodically, or when a customer's risk profile changes — for example, if they begin dealing with high-risk jurisdictions or their transaction patterns shift significantly.</div>
+    </div>
+
+    <!-- 4. SANCTIONS -->
+    <div class="art-section fade-up">
+        <span class="art-label">Sanctions</span>
+        <h2 class="art-h2">Sanctions screening: who is legally blocked from the financial system?</h2>
+        <p class="art-p">Beyond verifying identity, banks must also check whether a customer appears on <strong>sanctions lists</strong> — official lists of individuals, companies, and countries that governments have restricted from the financial system, typically for national security or foreign policy reasons.</p>
+
+        <div class="art-visual">
+            <div class="vis-grid vis-grid-3" style="margin-bottom:14px;">
+                <div class="vis-card vis-card-accent">
+                    <div class="vis-card-title">OFAC</div>
+                    <div class="vis-card-sub">U.S. Office of Foreign Assets Control. One of the most far-reaching globally due to the dollar's role in international transactions.</div>
+                </div>
+                <div class="vis-card vis-card-accent">
+                    <div class="vis-card-title">United Nations</div>
+                    <div class="vis-card-sub">Multilateral sanctions applied by UN Security Council resolutions — binding on all member states.</div>
+                </div>
+                <div class="vis-card vis-card-accent">
+                    <div class="vis-card-title">EU Sanctions Lists</div>
+                    <div class="vis-card-sub">Maintained by the European External Action Service, aligned with EU foreign and security policy.</div>
+                </div>
+            </div>
+            <div class="vis-rows">
+                <div class="vis-row vis-row-accent">
+                    <div class="vis-row-label">What triggers it</div>
+                    <div class="vis-row-desc">A customer whose name or profile matches a sanctions list entry — whether an individual, an entity, or a link to a sanctioned country.</div>
+                </div>
+                <div class="vis-row vis-row-accent">
+                    <div class="vis-row-label">What happens</div>
+                    <div class="vis-row-desc">The bank freezes assets and/or declines to process the transaction, then reports the match to the relevant authorities. Failure to screen — or transacting with sanctioned parties — can result in severe penalties for the bank.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 5. TRANSACTION MONITORING -->
+    <div class="art-section fade-up">
+        <span class="art-label">Transaction Monitoring</span>
+        <h2 class="art-h2">Watching every transaction for suspicious patterns</h2>
+        <p class="art-p">KYC and sanctions screening happen at onboarding — but banks also continuously monitor transactions using automated systems that look for behavior deviating from established patterns or known red flags:</p>
+
+        <div class="art-visual">
+            <div class="vis-rows" style="margin-bottom:14px;">
+                <div class="vis-row">
+                    <div class="vis-row-label">Structuring</div>
+                    <div class="vis-row-desc">Many small transfers designed to stay below reporting thresholds — a classic money laundering technique called "smurfing."</div>
+                </div>
+                <div class="vis-row">
+                    <div class="vis-row-label">High cash deposits</div>
+                    <div class="vis-row-desc">Unusually large cash amounts inconsistent with the customer's declared income or stated business activity.</div>
+                </div>
+                <div class="vis-row">
+                    <div class="vis-row-label">High-risk countries</div>
+                    <div class="vis-row-desc">Transfers to or from jurisdictions with weak AML controls or known links to financial crime.</div>
+                </div>
+                <div class="vis-row">
+                    <div class="vis-row-label">Unusual behavior</div>
+                    <div class="vis-row-desc">Sudden changes in transaction frequency, size, counterparties, or geography that don't match the customer's normal profile.</div>
+                </div>
+            </div>
+            <div class="vis-dark-wrap" style="margin-top:14px;">
+                <div class="vis-dark-card">
+                    <div class="vis-dark-label">When behavior is suspicious</div>
+                    <div class="vis-dark-title">SAR — Suspicious Activity Report</div>
+                    <div class="vis-dark-sub">Filed when a customer's overall activity appears suspicious, even without a specific transaction trigger.</div>
+                </div>
+                <div class="vis-dark-card">
+                    <div class="vis-dark-label">When a transaction is suspicious</div>
+                    <div class="vis-dark-title">STR — Suspicious Transaction Report</div>
+                    <div class="vis-dark-sub">Filed when a specific transaction triggers concern and must be reported to financial intelligence authorities.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="art-callout"><strong>Tipping off is a criminal offence.</strong> Banks are legally prohibited from informing a customer that they have been reported or are under investigation. Doing so — even accidentally — is called "tipping off" and can itself result in criminal charges against the employee who disclosed it.</div>
+    </div>
+
+    <!-- 6. FRAUD VS AML -->
+    <div class="art-section fade-up">
+        <span class="art-label">Fraud vs AML</span>
+        <h2 class="art-h2">Fraud and money laundering: related but distinct</h2>
+        <p class="art-p">These two concepts are often confused, but they refer to different phases of financial crime:</p>
+
+        <div class="art-visual">
+            <div class="vis-compare" style="margin-bottom:20px;">
+                <div class="vis-compare-box vis-compare-left">
+                    <div class="vis-compare-title">Fraud</div>
+                    <div class="vis-compare-desc">Deceiving someone to obtain money or assets illegally. The crime itself generates the illicit funds.</div>
+                </div>
+                <div class="vis-compare-box vis-compare-right">
+                    <div class="vis-compare-title">AML</div>
+                    <div class="vis-compare-desc">Concealing the illegal origin of funds already obtained. What happens after the fraud.</div>
+                </div>
+            </div>
+            <div class="vis-grid vis-grid-3">
+                <div class="vis-card">
+                    <div class="vis-card-title">Card Fraud</div>
+                    <div class="vis-card-sub">Illegal use of payment cards — stolen, cloned, or used without the cardholder's authorisation.</div>
+                </div>
+                <div class="vis-card">
+                    <div class="vis-card-title">Account Takeover</div>
+                    <div class="vis-card-sub">A criminal gains access to a legitimate account through phishing or credential theft, then drains or abuses it.</div>
+                </div>
+                <div class="vis-card">
+                    <div class="vis-card-title">APP Fraud</div>
+                    <div class="vis-card-sub">Authorised Push Payment — the victim is socially engineered into willingly transferring money to a fraudster.</div>
+                </div>
+                <div class="vis-card">
+                    <div class="vis-card-title">Identity Theft</div>
+                    <div class="vis-card-sub">Using another person's identity to open accounts, take out loans, or make purchases without their knowledge.</div>
+                </div>
+                <div class="vis-card">
+                    <div class="vis-card-title">Phishing</div>
+                    <div class="vis-card-sub">Fake emails, SMS, or websites designed to steal credentials, personal information, or payment details.</div>
+                </div>
+            </div>
+        </div>
+
+        <p class="art-p" style="margin-top:20px;">The link between fraud and AML is direct: <strong>fraudulently obtained money almost always needs to be laundered</strong>. This is why fraud and AML teams at banks work closely across both disciplines.</p>
+    </div>
+
+    <!-- 7. RISK -->
+    <div class="art-section fade-up">
+        <span class="art-label">Risk</span>
+        <h2 class="art-h2">What "risk" means in banking</h2>
+        <p class="art-p">In banking, risk is defined as the <strong>possibility of loss or problems</strong>. Effective risk management is central to how financial institutions operate — identifying, measuring, and mitigating risk is a core function, not an afterthought.</p>
+
+        <div class="art-visual">
+            <div class="vis-grid vis-grid-2" style="margin-bottom:14px;">
+                <div class="vis-card">
+                    <div class="vis-card-title">Credit Risk</div>
+                    <div class="vis-card-sub">A borrower cannot repay their loan. The most traditional form of bank risk — managed through credit scoring and collateral.</div>
+                </div>
+                <div class="vis-card">
+                    <div class="vis-card-title">Operational Risk</div>
+                    <div class="vis-card-sub">Losses from system failures, process errors, or people. Includes IT outages, processing mistakes, and internal fraud.</div>
+                </div>
+                <div class="vis-card">
+                    <div class="vis-card-title">Market Risk</div>
+                    <div class="vis-card-sub">Adverse movements in interest rates, exchange rates, or asset prices that affect the value of the bank's portfolio.</div>
+                </div>
+                <div class="vis-card">
+                    <div class="vis-card-title">Fraud Risk</div>
+                    <div class="vis-card-sub">Financial losses from fraudulent activity — both external (cybercrime, customer fraud) and internal (employee misconduct).</div>
+                </div>
+                <div class="vis-card" style="grid-column: 1 / -1;">
+                    <div class="vis-card-title">Compliance Risk</div>
+                    <div class="vis-card-sub">The risk of legal or regulatory penalties from failing to comply with laws, regulations, or internal policies. In financial crime, this means failing to detect and report suspicious activity.</div>
+                </div>
+            </div>
+            <div class="vis-flags">
+                <div class="vis-flags-title">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#B45309" stroke-width="2.5"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                    Financial Crime Red Flags
+                </div>
+                <div class="vis-flags-list">
+                    <div class="vis-flag-item">Avoids questions or provides inconsistent, evasive answers</div>
+                    <div class="vis-flag-item">Suspicious or altered documents during onboarding</div>
+                    <div class="vis-flag-item">Multiple small transfers in quick succession (structuring pattern)</div>
+                    <div class="vis-flag-item">Transaction activity inconsistent with stated income or business</div>
+                    <div class="vis-flag-item">Multiple foreign accounts with no clear business rationale</div>
+                    <div class="vis-flag-item">Unclear, shifting, or implausible business activity</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 8. BENEFICIAL OWNERSHIP -->
+    <div class="art-section fade-up">
+        <span class="art-label">Advanced KYC</span>
+        <h2 class="art-h2">Beneficial ownership: who is really in control?</h2>
+        <p class="art-p">One of the most important — and most challenging — areas of KYC is <strong>beneficial ownership</strong>: identifying the real person who ultimately owns or controls a company or asset, even when they're hidden behind layers of corporate structures. Three concepts are central:</p>
+
+        <div class="art-visual">
+            <div class="vis-grid vis-grid-3">
+                <div class="vis-card">
+                    <div class="vis-card-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                    </div>
+                    <div class="vis-card-title">Source of Funds</div>
+                    <div class="vis-card-sub">Where the money used in a <em>specific transaction</em> came from. Examples: salary, proceeds from a property sale, a business payment.</div>
+                </div>
+                <div class="vis-card">
+                    <div class="vis-card-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                    </div>
+                    <div class="vis-card-title">Source of Wealth</div>
+                    <div class="vis-card-sub">How the person became wealthy <em>overall</em> — the broader picture. Examples: inheritance, long-term investments, building and selling a business.</div>
+                </div>
+                <div class="vis-card">
+                    <div class="vis-card-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                    </div>
+                    <div class="vis-card-title">Beneficial Owner</div>
+                    <div class="vis-card-sub">The real person who ultimately owns or controls a company or fund — even if hidden behind shell companies, nominees, or multiple corporate layers.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="art-callout">Beneficial ownership is increasingly at the center of global financial regulation. The EU's AML directives, the U.S. Corporate Transparency Act, and the UK's Register of Overseas Entities all require companies to disclose their ultimate beneficial owners — precisely because criminals have historically used complex corporate structures to distance themselves from their assets on paper.</div>
+    </div>
+
+    <!-- CONCLUSION -->
+    <div class="art-section fade-up">
+        <span class="art-label">Takeaway</span>
+        <h2 class="art-h2">A system built on verification and vigilance</h2>
+        <p class="art-p">Financial crime prevention is not a single check — it's a layered system. Banks verify identity at onboarding (KYC), screen against sanctions lists, monitor transactions continuously, report suspicious activity to authorities, and assess risk at every stage of the customer relationship.</p>
+        <p class="art-p">Each layer addresses a different vulnerability. KYC catches bad actors at the front door. Transaction monitoring catches unusual patterns once they're inside. Sanctions screening blocks legally restricted parties. Beneficial ownership rules prevent shell companies from providing cover.</p>
+        <p class="art-p">No system is perfect, and financial criminals adapt constantly. But understanding how the framework is constructed — and why — is valuable whether you work in compliance, build financial products, or simply want to make sense of the infrastructure that sits behind every bank account in the world.</p>
+    </div>
+
+
+<div class="art-nav">
+    <a class="art-nav-item" href="what-is-economics.html">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+        <div class="art-nav-text">
+            <span class="art-nav-label">Previous</span>
+            <span class="art-nav-title">Economics Fundamentals</span>
+        </div>
+    </a>
+    <a class="art-nav-item art-nav-next" href="bi-fundamentals.html">
+        <div class="art-nav-text">
+            <span class="art-nav-label">Next</span>
+            <span class="art-nav-title">BI Analytics Fundamentals</span>
+        </div>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+    </a>
+</div>
+</div>
+
+<!-- CTA -->
+<section class="cta-sect">
+    <div class="container">
+        <h2>More on finance &amp; compliance</h2>
+        <p>I share simple breakdowns of economics, finance, and data. Follow on LinkedIn for more.</p>
+        <div class="cta-actions">
+            <a href="https://www.linkedin.com/in/diogomserino" target="_blank" rel="noopener" class="btn btn-primary">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                Follow on LinkedIn
+            </a>
+            <a href="../index.html#articles" class="btn btn-ghost-light">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+                Back to Articles
+            </a>
+        </div>
+    </div>
+</section>
+
+<footer class="art-footer">
+    <div class="container footer-inner">
+        <div class="footer-copy">© 2025 Diogo Serino</div>
+        <a class="footer-back" href="../index.html#articles">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+            All articles
+        </a>
+    </div>
+</footer>
+
+<script src="../assets/js/article.js"></script>
+</body>
+</html>

@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Strategy Frameworks — SWOT, Porter's Five Forces &amp; PESTEL — Diogo Serino</title>
+<meta name="description" content="How to use SWOT, Porter's Five Forces, and PESTEL to analyse competitive position, industry structure, and macro environment — and when to use each.">
+    <meta property="og:title" content="Strategy Frameworks — SWOT, Porter's Five Forces & PESTEL — Diogo Serino">
+    <meta property="og:description" content="How to use SWOT, Porter's Five Forces, and PESTEL to analyse competitive position, industry structure, and macro environment — and when to use each.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://diogomserino.github.io/articles/strategy-frameworks.html">
+    <meta property="og:image" content="https://diogomserino.github.io/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://diogomserino.github.io/articles/strategy-frameworks.html">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Strategy Frameworks — SWOT, Porter's Five Forces & PESTEL — Diogo Serino",
+      "description": "How to use SWOT, Porter's Five Forces, and PESTEL to analyse competitive position, industry structure, and macro environment — and when to use each.",
+      "url": "https://diogomserino.github.io/articles/strategy-frameworks.html",
+      "author": {
+        "@type": "Person",
+        "name": "Diogo Serino",
+        "url": "https://diogomserino.github.io"
+      }
+    }
+    </script>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%2306111F'/><text x='50' y='72' font-family='system-ui,sans-serif' font-weight='900' font-size='58' text-anchor='middle' fill='%233B6FFF'>D</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/main.css">
+<style>
+.proj-hero {
+    background: #001614;
+    background-image:
+        radial-gradient(ellipse 72% 56% at 62% 38%, rgba(15,118,110,.22) 0%, transparent 70%),
+        radial-gradient(circle at 12% 72%, rgba(94,234,212,.08) 0%, transparent 52%);
+}
+.progress { background: linear-gradient(90deg, #0F766E, #2DD4BF); }
+.proj-badge { background: rgba(15,118,110,.12); border-color: rgba(15,118,110,.30); color: #99F6E4; }
+.art-label { color: #0F766E; }
+.vis-card-icon { background: rgba(15,118,110,.10); border-color: rgba(15,118,110,.20); color: #0F766E; }
+.vis-card-title { color: #0F766E; }
+.vis-card-accent { background: #0F766E; border-color: #0F766E; }
+.vis-concept { background: #0F766E; }
+.vis-step::before { background: linear-gradient(90deg, #0F766E, #2DD4BF); }
+.vis-step-num { color: rgba(15,118,110,.22); }
+.vis-step-title { color: #134E4A; }
+.vis-step:hover { box-shadow: 0 6px 24px rgba(15,118,110,.18); border-color: rgba(15,118,110,.30); }
+.vis-row { border-left-color: rgba(15,118,110,.40); border-color: rgba(15,118,110,.16); }
+.vis-row-label { color: #0F766E; }
+.vis-row-accent { background: rgba(15,118,110,.07); border-color: rgba(15,118,110,.20); }
+.vis-dark-card { background: #0F766E; }
+.vis-compare-left  { border-top-color: #0F766E; }
+.vis-compare-right { border-top-color: #134E4A; }
+.vis-flow-wrap { background: linear-gradient(135deg, rgba(15,118,110,.08), rgba(15,118,110,.05)); border-color: rgba(15,118,110,.18); }
+.vis-flow-box-accent { background: rgba(15,118,110,.14); border-color: rgba(15,118,110,.32); }
+.vis-flow-box-accent .vis-flow-box-title { color: #0F766E; }
+.vis-flow-arrow, .vis-flow-side-arrow { color: #0F766E; }
+.vis-tag-pill { background: rgba(15,118,110,.10); border-color: rgba(15,118,110,.22); color: #0F766E; }
+.vis-flag-item::before { background: #0F766E; }
+.vis-card:hover { box-shadow: 0 4px 20px rgba(15,118,110,.12); border-color: rgba(15,118,110,.22); }
+h1.proj-title { background-image: linear-gradient(140deg, #fff 0%, #fff 42%, #99F6E4 100%); }
+.btn-primary { background: #0F766E; box-shadow: 0 4px 16px rgba(15,118,110,.30); color: #fff; }
+.btn-primary:hover { background: #134E4A; box-shadow: 0 6px 22px rgba(15,118,110,.42); transform: translateY(-2px); }
+.art-callout { border-left-color: #0F766E; }
+</style>
+</head>
+<body>
+
+<div class="progress" id="progress"></div>
+
+<nav class="page-nav" id="main-nav">
+    <div class="nav-inner">
+        <a href="../index.html" class="logo">DMS<span>.</span></a>
+        <div class="nav-crumb">
+            <a href="../index.html#articles">Articles</a>
+            <span class="sep">/</span>
+            <span class="curr">Strategy Frameworks</span>
+        </div>
+        <a href="../index.html#articles" class="nav-back">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+            Back
+        </a>
+    </div>
+</nav>
+
+<section class="proj-hero">
+    <div class="container proj-hero-inner">
+        <div class="proj-badge">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+            Strategy &nbsp;·&nbsp; Business
+        </div>
+        <h1 class="proj-title">Strategy<br>Frameworks</h1>
+        <p class="proj-sub">SWOT, Porter's Five Forces, and PESTEL — how to analyse competitive position, industry structure, and macro environment, and when each framework applies.</p>
+        <div class="stack-row">
+            <span class="stag-dk">SWOT</span>
+            <span class="stag-dk">Porter</span>
+            <span class="stag-dk">PESTEL</span>
+            <span class="stag-dk">Strategy</span>
+        </div>
+    </div>
+</section>
+
+<div class="art-wrap">
+
+    <!-- 1. Why frameworks -->
+    <div class="art-section fade-up">
+        <div class="art-label">The Purpose</div>
+        <h2 class="art-h2">Frameworks are thinking tools, not answers</h2>
+        <p class="art-p">SWOT, Porter, and PESTEL don't generate strategy — they structure the thinking that leads to it. A framework applied mechanically produces a list. Applied with rigour, it produces insight. The difference is in the questions you ask and the honesty of the answers.</p>
+
+        <div class="art-callout">
+            <strong>The three layers of strategic analysis:</strong> PESTEL scans the macro environment (what's happening in the world). Porter maps the industry structure (who has power in your market). SWOT synthesises both into an internal view (what does this mean for us specifically).
+        </div>
+    </div>
+
+    <!-- 2. SWOT -->
+    <div class="art-section fade-up">
+        <div class="art-label">Framework 1</div>
+        <h2 class="art-h2">SWOT — Internal meets external</h2>
+        <p class="art-p">SWOT (Strengths, Weaknesses, Opportunities, Threats) is the most used and most misused strategy framework. Done well, it connects internal capabilities to external conditions. Done badly, it's a list of obvious statements that leads to no decision.</p>
+
+        <div class="art-visual">
+            <div class="vis-grid vis-grid-4">
+                <div class="vis-card">
+                    <div class="vis-card-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <div class="vis-card-title">Strengths (internal, positive)</div>
+                    <div class="vis-card-sub">What does the organisation do better than competitors? Proprietary technology, brand loyalty, cost advantages, specialist talent, distribution network, patents. Strengths are only meaningful if they're difficult for competitors to replicate.</div>
+                </div>
+                <div class="vis-card">
+                    <div class="vis-card-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                    </div>
+                    <div class="vis-card-title">Weaknesses (internal, negative)</div>
+                    <div class="vis-card-sub">Where does the organisation underperform? Limited financial resources, skill gaps, outdated infrastructure, high churn, weak brand recognition. Weaknesses are only useful if stated honestly — vague "areas for improvement" don't lead to decisions.</div>
+                </div>
+                <div class="vis-card">
+                    <div class="vis-card-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    </div>
+                    <div class="vis-card-title">Opportunities (external, positive)</div>
+                    <div class="vis-card-sub">What external changes could the organisation exploit? Regulatory shifts, emerging markets, competitor weaknesses, new technology, changing consumer behaviour. Opportunities are only relevant if the organisation has (or can build) a strength to pursue them.</div>
+                </div>
+                <div class="vis-card">
+                    <div class="vis-card-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                    </div>
+                    <div class="vis-card-title">Threats (external, negative)</div>
+                    <div class="vis-card-sub">What external forces could harm the organisation? New entrants, substitute products, regulatory pressure, economic downturn, rising input costs, platform dependency. Threats are most dangerous when they directly attack a weakness.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="art-callout" style="margin-top:28px;">
+            <strong>SWOT's power move — cross-analysis:</strong> The real value is in pairing quadrants. SO (Strength + Opportunity) = strategies to pursue. ST (Strength + Threat) = strategies to defend. WO (Weakness + Opportunity) = gaps to close. WT (Weakness + Threat) = risks to mitigate. Without this cross-analysis, SWOT is just a list.
+        </div>
+    </div>
+
+    <!-- 3. Porter's Five Forces -->
+    <div class="art-section fade-up">
+        <div class="art-label">Framework 2</div>
+        <h2 class="art-h2">Porter's Five Forces — Industry structure</h2>
+        <p class="art-p">Michael Porter's Five Forces (1979) analyses the competitive intensity of an industry and its long-run profitability potential. A highly competitive industry with low barriers to entry and powerful buyers is structurally unattractive. The analysis tells you how much pricing power you actually have.</p>
+
+        <div class="art-visual">
+            <div class="vis-steps">
+                <div class="vis-step">
+                    <div class="vis-step-num">1</div>
+                    <div class="vis-step-title">Competitive Rivalry — How intense is the fight?</div>
+                    <div class="vis-step-desc">High rivalry compresses margins through price wars, product imitation, and marketing spend escalation. Intensity increases with many similarly-sized competitors, low differentiation, high fixed costs, and slow industry growth. Airlines and telecoms are high-rivalry industries. Professional services and pharmaceuticals are lower.</div>
+                </div>
+                <div class="vis-step">
+                    <div class="vis-step-num">2</div>
+                    <div class="vis-step-title">Threat of New Entrants — How easy is it to compete?</div>
+                    <div class="vis-step-desc">High entry barriers protect incumbents. Barriers include: capital requirements, regulatory licences, economies of scale, brand loyalty, network effects, and proprietary technology. Software businesses have low capital barriers (high threat). Semiconductor fabrication has enormous capital requirements (low threat).</div>
+                </div>
+                <div class="vis-step">
+                    <div class="vis-step-num">3</div>
+                    <div class="vis-step-title">Bargaining Power of Suppliers — Who controls inputs?</div>
+                    <div class="vis-step-desc">Powerful suppliers can raise prices, reduce quality, or restrict supply. Power increases when there are few suppliers, switching costs are high, or the input is unique. NVIDIA's dominance in AI GPUs gives it supplier power over cloud providers. A bakery buying flour from a commodity market has weak suppliers.</div>
+                </div>
+                <div class="vis-step">
+                    <div class="vis-step-num">4</div>
+                    <div class="vis-step-title">Bargaining Power of Buyers — Who controls revenue?</div>
+                    <div class="vis-step-desc">Powerful buyers force price concessions, demand higher quality, and play suppliers against each other. Power increases when buyers are few and large, products are undifferentiated, switching costs are low, or buyers are price-sensitive. B2B SaaS selling to enterprise is highly buyer-driven; consumer apps with millions of small users face low buyer power.</div>
+                </div>
+                <div class="vis-step">
+                    <div class="vis-step-num">5</div>
+                    <div class="vis-step-title">Threat of Substitutes — What else solves the problem?</div>
+                    <div class="vis-step-desc">Substitutes are products from different industries that meet the same need. Zoom substitutes for business travel. Streaming substitutes for cinema. The threat is high when the substitute is cheaper, more convenient, or delivers comparable quality. Substitutes cap the price you can charge — customers will switch if the value gap closes.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 4. PESTEL -->
+    <div class="art-section fade-up">
+        <div class="art-label">Framework 3</div>
+        <h2 class="art-h2">PESTEL — The macro environment</h2>
+        <p class="art-p">PESTEL scans the six external forces that affect all organisations operating in a market. Unlike Porter (industry-specific) or SWOT (organisation-specific), PESTEL is sector-agnostic — it maps what's happening in the world that will affect your strategy.</p>
+
+        <div class="art-visual">
+            <div class="vis-rows">
+                <div class="vis-row">
+                    <div class="vis-row-label">Political</div>
+                    <div class="vis-row-desc"><strong>Government policy, regulation, and political stability.</strong> Tax policy, trade agreements, labour laws, subsidies, political risk in target markets. EU AI Act regulatory pressure on tech companies. Post-Brexit trade friction for UK exporters. Government incentives for EV adoption affecting automotive strategy.</div>
+                </div>
+                <div class="vis-row">
+                    <div class="vis-row-label">Economic</div>
+                    <div class="vis-row-desc"><strong>Macroeconomic conditions affecting demand and costs.</strong> GDP growth, inflation, interest rates, unemployment, exchange rates, consumer confidence. High inflation compresses consumer discretionary spending. Rising interest rates increase the cost of capital for expansion. A strong euro makes exports less competitive.</div>
+                </div>
+                <div class="vis-row">
+                    <div class="vis-row-label">Social</div>
+                    <div class="vis-row-desc"><strong>Demographics, cultural shifts, and changing consumer values.</strong> Ageing populations, urbanisation, remote work adoption, sustainability expectations, diversity and inclusion pressures. Gen Z's preference for brand authenticity and social responsibility forces consumer brands to rethink positioning and supply chain ethics.</div>
+                </div>
+                <div class="vis-row">
+                    <div class="vis-row-label">Technological</div>
+                    <div class="vis-row-desc"><strong>Innovation, automation, and digital disruption.</strong> AI, cloud computing, blockchain, IoT, automation. Generative AI is simultaneously a threat (disrupting knowledge work) and an opportunity (enabling new products). Organisations that fail to monitor technological shifts risk being Kodak'd — watching their market evaporate.</div>
+                </div>
+                <div class="vis-row">
+                    <div class="vis-row-label">Environmental</div>
+                    <div class="vis-row-desc"><strong>Climate, sustainability, and resource constraints.</strong> Carbon regulation, ESG investor pressure, resource scarcity, climate risk to supply chains, consumer demand for sustainable products. EU taxonomy regulation reshapes what counts as a "green" investment and determines access to capital for European businesses.</div>
+                </div>
+                <div class="vis-row">
+                    <div class="vis-row-label">Legal</div>
+                    <div class="vis-row-desc"><strong>Laws, compliance requirements, and intellectual property.</strong> Employment law, data protection (GDPR), competition law, consumer protection, IP rights, product liability. GDPR compliance reshaped how European tech companies collect and use data. Non-compliance carries fines of up to 4% of global annual revenue.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 5. When to use each -->
+    <div class="art-section fade-up">
+        <div class="art-label">Application</div>
+        <h2 class="art-h2">When to use which framework</h2>
+        <p class="art-p">These three frameworks are complementary, not interchangeable. Used together in a strategic planning exercise, they build from macro to industry to organisation.</p>
+
+        <div class="art-visual">
+            <div class="vis-compare">
+                <div class="vis-compare-box vis-compare-left">
+                    <div class="vis-compare-title">Use PESTEL when…</div>
+                    <div class="vis-compare-desc">
+                        <ul style="padding-left:16px;margin:0 0 10px;">
+                            <li>Entering a new geography or market</li>
+                            <li>Building a 3–5 year strategic plan</li>
+                            <li>Conducting an environmental scan for investors</li>
+                            <li>Assessing macro risks ahead of a major investment</li>
+                            <li>Understanding regulatory trends before product decisions</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="vis-compare-box vis-compare-right">
+                    <div class="vis-compare-title">Use Porter when…</div>
+                    <div class="vis-compare-desc">
+                        <ul style="padding-left:16px;margin:0 0 10px;">
+                            <li>Evaluating whether to enter an industry</li>
+                            <li>Assessing the structural attractiveness of a segment</li>
+                            <li>Identifying where to compete (niche vs broad)</li>
+                            <li>Understanding why margins in your industry are what they are</li>
+                            <li>Choosing between cost leadership, differentiation, or focus</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="art-callout" style="margin-top:28px;">
+            <strong>Use SWOT last.</strong> SWOT synthesises the outputs of PESTEL (threats and opportunities) and Porter (competitive dynamics) into your specific situation. It's most powerful when the O and T quadrants are informed by external analysis — not gut feelings about "market trends."
+        </div>
+    </div>
+
+    <!-- 6. Takeaway -->
+    <div class="art-section fade-up">
+        <div class="art-label">Takeaway</div>
+        <h2 class="art-h2">Strategy frameworks only work with honest inputs</h2>
+
+        <div class="art-visual">
+            <div class="vis-grid vis-grid-3">
+                <div class="vis-card vis-card-accent">
+                    <div class="vis-card-title">Be specific, not generic</div>
+                    <div class="vis-card-sub">"Strong brand" and "competitive market" are not insights — they're placeholders. Every SWOT entry, every Porter force, every PESTEL factor should be specific enough that someone outside the room understands exactly what you mean and why it matters.</div>
+                </div>
+                <div class="vis-card vis-card-accent">
+                    <div class="vis-card-title">Use them together</div>
+                    <div class="vis-card-sub">PESTEL → Porter → SWOT is a natural sequence for a full strategic analysis. Each layer narrows the focus: from global macro forces, to industry dynamics, to your specific position within that industry. The three together tell a coherent strategic story.</div>
+                </div>
+                <div class="vis-card vis-card-accent">
+                    <div class="vis-card-title">The goal is decisions</div>
+                    <div class="vis-card-sub">A completed framework that leads to no decision is just documentation. Every strategic analysis should end with: "Given this, we will prioritise X, deprioritise Y, and monitor Z." Frameworks earn their keep when they change what the team does next.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<div class="art-nav">
+    <a class="art-nav-item" href="ab-testing-fundamentals.html">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+        <div class="art-nav-text">
+            <span class="art-nav-label">Previous</span>
+            <span class="art-nav-title">A/B Testing &amp; Experimentation</span>
+        </div>
+    </a>
+    <a class="art-nav-item art-nav-next" href="project-management-fundamentals.html">
+        <div class="art-nav-text">
+            <span class="art-nav-label">Next</span>
+            <span class="art-nav-title">Project Management Fundamentals</span>
+        </div>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+    </a>
+</div>
+</div>
+
+<section class="cta-sect">
+    <div class="container">
+        <h2>More on strategy &amp; business</h2>
+        <p>I write about strategy, product management, and business frameworks. Follow on LinkedIn for more.</p>
+        <div class="cta-actions">
+            <a href="https://www.linkedin.com/in/diogomserino" target="_blank" rel="noopener" class="btn btn-primary">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                Follow on LinkedIn
+            </a>
+            <a href="../index.html#articles" class="btn btn-ghost-light">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+                Back to Articles
+            </a>
+        </div>
+    </div>
+</section>
+
+<footer class="art-footer">
+    <div class="container footer-inner">
+        <div class="footer-copy">© 2026 Diogo Serino</div>
+        <a class="footer-back" href="../index.html#articles">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+            All articles
+        </a>
+    </div>
+</footer>
+
+<script src="../assets/js/article.js"></script>
+</body>
+</html>

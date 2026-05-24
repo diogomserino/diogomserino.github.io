@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Go-to-Market Strategy — Diogo Serino</title>
+<meta name="description" content="How to launch a product or service — defining your ICP, positioning, channel strategy, and the metrics that tell you whether your GTM is working.">
+    <meta property="og:title" content="Go-to-Market Strategy — Diogo Serino">
+    <meta property="og:description" content="How to launch a product or service — defining your ICP, positioning, channel strategy, and the metrics that tell you whether your GTM is working.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://diogomserino.github.io/articles/go-to-market-strategy.html">
+    <meta property="og:image" content="https://diogomserino.github.io/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://diogomserino.github.io/articles/go-to-market-strategy.html">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Go-to-Market Strategy — Diogo Serino",
+      "description": "How to launch a product or service — defining your ICP, positioning, channel strategy, and the metrics that tell you whether your GTM is working.",
+      "url": "https://diogomserino.github.io/articles/go-to-market-strategy.html",
+      "author": {
+        "@type": "Person",
+        "name": "Diogo Serino",
+        "url": "https://diogomserino.github.io"
+      }
+    }
+    </script>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%2306111F'/><text x='50' y='72' font-family='system-ui,sans-serif' font-weight='900' font-size='58' text-anchor='middle' fill='%233B6FFF'>D</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/main.css">
+<style>
+.proj-hero {
+    background: #0C1A00;
+    background-image:
+        radial-gradient(ellipse 72% 56% at 62% 38%, rgba(101,163,13,.22) 0%, transparent 70%),
+        radial-gradient(circle at 12% 72%, rgba(217,249,157,.08) 0%, transparent 52%);
+}
+.progress { background: linear-gradient(90deg, #65A30D, #A3E635); }
+.proj-badge { background: rgba(101,163,13,.12); border-color: rgba(101,163,13,.30); color: #D9F99D; }
+.art-label { color: #65A30D; }
+.vis-card-icon { background: rgba(101,163,13,.10); border-color: rgba(101,163,13,.20); color: #65A30D; }
+.vis-card-title { color: #65A30D; }
+.vis-card-accent { background: #65A30D; border-color: #65A30D; }
+.vis-concept { background: #65A30D; }
+.vis-step::before { background: linear-gradient(90deg, #65A30D, #A3E635); }
+.vis-step-num { color: rgba(101,163,13,.22); }
+.vis-step-title { color: #3F6212; }
+.vis-step:hover { box-shadow: 0 6px 24px rgba(101,163,13,.18); border-color: rgba(101,163,13,.30); }
+.vis-row { border-left-color: rgba(101,163,13,.40); border-color: rgba(101,163,13,.16); }
+.vis-row-label { color: #65A30D; }
+.vis-row-accent { background: rgba(101,163,13,.07); border-color: rgba(101,163,13,.20); }
+.vis-dark-card { background: #65A30D; }
+.vis-compare-left  { border-top-color: #65A30D; }
+.vis-compare-right { border-top-color: #3F6212; }
+.vis-flow-wrap { background: linear-gradient(135deg, rgba(101,163,13,.08), rgba(101,163,13,.05)); border-color: rgba(101,163,13,.18); }
+.vis-flow-box-accent { background: rgba(101,163,13,.14); border-color: rgba(101,163,13,.32); }
+.vis-flow-box-accent .vis-flow-box-title { color: #65A30D; }
+.vis-flow-arrow, .vis-flow-side-arrow { color: #65A30D; }
+.vis-tag-pill { background: rgba(101,163,13,.10); border-color: rgba(101,163,13,.22); color: #65A30D; }
+.vis-flag-item::before { background: #65A30D; }
+.vis-card:hover { box-shadow: 0 4px 20px rgba(101,163,13,.12); border-color: rgba(101,163,13,.22); }
+h1.proj-title { background-image: linear-gradient(140deg, #fff 0%, #fff 42%, #D9F99D 100%); }
+.btn-primary { background: #65A30D; box-shadow: 0 4px 16px rgba(101,163,13,.30); color: #fff; }
+.btn-primary:hover { background: #3F6212; box-shadow: 0 6px 22px rgba(101,163,13,.42); transform: translateY(-2px); }
+.art-callout { border-left-color: #65A30D; }
+</style>
+</head>
+<body>
+
+<div class="progress" id="progress"></div>
+
+<nav class="page-nav" id="main-nav">
+    <div class="nav-inner">
+        <a href="../index.html" class="logo">DMS<span>.</span></a>
+        <div class="nav-crumb">
+            <a href="../index.html#articles">Articles</a>
+            <span class="sep">/</span>
+            <span class="curr">Go-to-Market Strategy</span>
+        </div>
+        <a href="../index.html#articles" class="nav-back">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+            Back
+        </a>
+    </div>
+</nav>
+
+<section class="proj-hero">
+    <div class="container proj-hero-inner">
+        <div class="proj-badge">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+            Product &nbsp;·&nbsp; Strategy
+        </div>
+        <h1 class="proj-title">Go-to-Market<br>Strategy</h1>
+        <p class="proj-sub">How to launch a product or service — defining your ideal customer, positioning against alternatives, choosing your channels, and measuring whether any of it is working.</p>
+        <div class="stack-row">
+            <span class="stag-dk">GTM</span>
+            <span class="stag-dk">Launch</span>
+            <span class="stag-dk">Positioning</span>
+            <span class="stag-dk">Strategy</span>
+        </div>
+    </div>
+</section>
+
+<div class="art-wrap">
+
+    <!-- 1. What GTM is -->
+    <div class="art-section fade-up">
+        <div class="art-label">The Definition</div>
+        <h2 class="art-h2">GTM is not a launch plan — it's a system</h2>
+        <p class="art-p">Most "go-to-market plans" are really launch checklists: a press release, some social posts, a product hunt page. A real GTM strategy is a system that defines who you're selling to, what problem you're solving, how you'll reach them, and what you'll measure to know if it's working.</p>
+
+        <div class="art-visual">
+            <div class="vis-compare">
+                <div class="vis-compare-box vis-compare-left">
+                    <div class="vis-compare-title">Launch checklist (not GTM)</div>
+                    <div class="vis-compare-desc">
+                        <ul style="padding-left:16px;margin:0 0 10px;">
+                            <li>Press release published</li>
+                            <li>Social media posts scheduled</li>
+                            <li>Product Hunt page submitted</li>
+                            <li>Email sent to existing list</li>
+                            <li>"We're live!" announcement to team</li>
+                        </ul>
+                        <p style="margin-top:8px;">Activity without strategy. Generates noise but not systematic customer acquisition.</p>
+                    </div>
+                </div>
+                <div class="vis-compare-box vis-compare-right">
+                    <div class="vis-compare-title">GTM strategy</div>
+                    <div class="vis-compare-desc">
+                        <ul style="padding-left:16px;margin:0 0 10px;">
+                            <li>ICP defined with firmographic and behavioural criteria</li>
+                            <li>Positioning mapped against 3 specific alternatives</li>
+                            <li>Primary channel selected based on where ICP buys</li>
+                            <li>Conversion funnel instrumented end-to-end</li>
+                            <li>Success defined: €X ARR in 90 days with Y% retention</li>
+                        </ul>
+                        <p style="margin-top:8px;">Systematic. Every decision is traceable to a hypothesis about the target customer.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. ICP -->
+    <div class="art-section fade-up">
+        <div class="art-label">Ideal Customer Profile</div>
+        <h2 class="art-h2">Who exactly are you selling to?</h2>
+        <p class="art-p">The Ideal Customer Profile (ICP) is the single most important input to a GTM strategy. Everything else — messaging, channel, pricing, sales process — flows from it. A vague ICP produces a diffuse strategy that works for nobody.</p>
+
+        <div class="art-callout">
+            <strong>The ICP test:</strong> Can you name 10 specific companies (B2B) or specific people (B2C) who are your ICP right now? If not, your ICP is still an aspiration — not a definition.
+        </div>
+
+        <div class="art-visual">
+            <div class="vis-rows">
+                <div class="vis-row">
+                    <div class="vis-row-label">Firmographics (B2B)</div>
+                    <div class="vis-row-desc"><strong>The structural characteristics of your best customer.</strong> Industry, company size (employees, revenue), geography, funding stage, tech stack, team structure. Example: "SaaS companies, 10–50 employees, Series A funded, EU-based, with a dedicated growth team." The more specific, the more useful — and the more honest about who you're actually serving.</div>
+                </div>
+                <div class="vis-row">
+                    <div class="vis-row-label">Psychographics</div>
+                    <div class="vis-row-desc"><strong>How they think and make decisions.</strong> What do they read? How do they evaluate new tools? Do they buy top-down (executive decision) or bottom-up (team adoption first)? Are they data-driven or intuition-led? Psychographics determine your messaging tone, channel choice, and sales motion — arguably more than firmographics do.</div>
+                </div>
+                <div class="vis-row">
+                    <div class="vis-row-label">Pain triggers</div>
+                    <div class="vis-row-desc"><strong>What event makes them start looking for a solution?</strong> ICPs rarely buy proactively — they buy reactively, after a trigger. A new hire. A missed quarter. A competitor launch. A regulatory change. Knowing the trigger event tells you when to reach out (timing), what to say (messaging), and where to be present (channel). Trigger-based outreach converts dramatically better than broadcast messaging.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. Positioning -->
+    <div class="art-section fade-up">
+        <div class="art-label">Positioning</div>
+        <h2 class="art-h2">Positioning — what you are in the mind of the buyer</h2>
+        <p class="art-p">April Dunford's definition: positioning is the act of deliberately defining how you are the best at something that a defined market cares deeply about. It's not your tagline. It's the context in which buyers evaluate you.</p>
+
+        <div class="art-visual">
+            <div class="vis-steps">
+                <div class="vis-step">
+                    <div class="vis-step-num">01</div>
+                    <div class="vis-step-title">Define your competitive alternatives</div>
+                    <div class="vis-step-desc">Not your "competitors" — but what buyers actually do today when they don't use your product. The alternative might be a spreadsheet, a manual process, an internal tool, or a combination of three different apps. Your positioning is always relative to these alternatives — not to an imagined set of direct competitors.</div>
+                </div>
+                <div class="vis-step">
+                    <div class="vis-step-num">02</div>
+                    <div class="vis-step-title">Identify your differentiated value</div>
+                    <div class="vis-step-desc">What do you do uniquely well compared to the alternatives? Not "better" in every dimension — that's marketing speak. Specifically better in one or two dimensions that the ICP cares about deeply. Faster to implement? More accurate? Doesn't require an IT team? Works natively with Slack? Focus on the one thing you're genuinely best at.</div>
+                </div>
+                <div class="vis-step">
+                    <div class="vis-step-num">03</div>
+                    <div class="vis-step-title">Map to the value the buyer cares about</div>
+                    <div class="vis-step-desc">Features are not value. "Real-time sync" is a feature. "Your team always has the same data — no more meeting prep time or version conflicts" is value. Every feature should be translated into the business outcome it enables for the ICP. Position on outcomes, not capabilities.</div>
+                </div>
+                <div class="vis-step">
+                    <div class="vis-step-num">04</div>
+                    <div class="vis-step-title">Write a positioning statement</div>
+                    <div class="vis-step-desc">Format: "For [ICP], [product] is the [category] that [differentiated value] — unlike [alternative], which [limitation]." This statement is for internal alignment, not for marketing copy. It gives the whole team a shared frame: product builds to it, marketing translates it, sales uses it to qualify leads.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 4. Channel strategy -->
+    <div class="art-section fade-up">
+        <div class="art-label">Channels</div>
+        <h2 class="art-h2">Channel strategy — where you meet your buyer</h2>
+        <p class="art-p">The right channel is the one your ICP already uses to find and evaluate solutions like yours. Channel choice is not a marketing decision — it's a product-market insight. The ICP's buying behaviour determines your distribution strategy.</p>
+
+        <div class="art-visual">
+            <div class="vis-grid vis-grid-3">
+                <div class="vis-card">
+                    <div class="vis-card-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                    </div>
+                    <div class="vis-card-title">Direct Sales</div>
+                    <div class="vis-card-sub">Outbound outreach (cold email, LinkedIn, calls) combined with inbound follow-up. High touch, high cost, essential for enterprise deals. The rule: if your ACV (annual contract value) is above €10K, you probably need a sales team. Below €1K, self-serve is more efficient. Between €1K–€10K is where hybrid models emerge.</div>
+                </div>
+                <div class="vis-card">
+                    <div class="vis-card-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                    </div>
+                    <div class="vis-card-title">Product-Led Growth (PLG)</div>
+                    <div class="vis-card-sub">The product itself is the primary acquisition and conversion channel. Users discover the product, try it for free, and convert when they hit the value wall or need collaboration features. Requires a product with fast time-to-value, a natural sharing mechanism, and low friction onboarding. Slack, Figma, and Notion are canonical PLG examples.</div>
+                </div>
+                <div class="vis-card">
+                    <div class="vis-card-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    </div>
+                    <div class="vis-card-title">Content & Inbound</div>
+                    <div class="vis-card-sub">Attract buyers through content that ranks for the problems your product solves. SEO, YouTube, podcasts, LinkedIn thought leadership. Slow to build, but creates compounding organic traffic that reduces CAC over time. Best for products where buyers search for solutions before they know any brand name exists.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 5. Launch types -->
+    <div class="art-section fade-up">
+        <div class="art-label">Launch</div>
+        <h2 class="art-h2">How to structure a launch</h2>
+        <p class="art-p">Launches are not binary — there are multiple phases, each with a different goal and a different audience. Most companies skip straight to the full launch and miss the learning that earlier phases generate.</p>
+
+        <div class="art-visual">
+            <div class="vis-steps">
+                <div class="vis-step">
+                    <div class="vis-step-num">01</div>
+                    <div class="vis-step-title">Closed Alpha — internal and design partners</div>
+                    <div class="vis-step-desc">10–20 hand-picked users who represent the ICP and have agreed to give structured feedback. Goal: validate core assumptions about the problem and solution before any polish. These users see a broken, incomplete product — and their feedback shapes the MVP, not the product roadmap.</div>
+                </div>
+                <div class="vis-step">
+                    <div class="vis-step-num">02</div>
+                    <div class="vis-step-title">Closed Beta — invite-only, warm leads</div>
+                    <div class="vis-step-desc">100–500 users from the waitlist or outbound ICP targeting. Goal: validate that the core value proposition works at small scale and identify the friction points in onboarding. Instrument everything: activation rate, time-to-value, D7 retention. A beta that shows strong retention signals is the best possible basis for a full launch.</div>
+                </div>
+                <div class="vis-step">
+                    <div class="vis-step-num">03</div>
+                    <div class="vis-step-title">Public Launch — activate all channels simultaneously</div>
+                    <div class="vis-step-desc">With validated onboarding and measurable retention, activate all channels: Product Hunt, press outreach, paid acquisition, community, partner announcements. The goal is to spike awareness and feed the top of the funnel. Without a validated funnel underneath, a big launch is expensive noise.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 6. GTM metrics -->
+    <div class="art-section fade-up">
+        <div class="art-label">Metrics</div>
+        <h2 class="art-h2">How to measure GTM performance</h2>
+
+        <div class="art-visual">
+            <div class="vis-flags">
+                <div class="vis-flags-title">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                    Watch out for these
+                </div>
+                <div class="vis-flags-list">
+                    <div class="vis-flag-item"><strong>Time to First Customer:</strong> How long from launch to first paying customer (not trial, not free — paying). This is the most important early signal. If it takes more than 30 days post-launch to find a paying customer, the ICP, positioning, or channel is wrong — not the product.</div>
+                    <div class="vis-flag-item"><strong>CAC Payback Period:</strong> How many months of revenue are needed to recover the cost of acquiring one customer. Healthy SaaS targets sub-12 months. Above 18 months means the GTM motion is too expensive relative to the contract value — you need a cheaper channel or higher ACV.</div>
+                    <div class="vis-flag-item"><strong>Sales Cycle Length:</strong> Average days from first contact to closed deal. A 90-day enterprise sales cycle requires a very different GTM than a 3-day self-serve motion. Tracking this by ICP segment reveals which customers convert fastest — and where to focus GTM energy in the early days when runway is limited.</div>
+                    <div class="vis-flag-item"><strong>Win Rate:</strong> Percentage of qualified opportunities that close. Below 20% in B2B usually indicates a positioning or ICP problem — you're reaching the right people but failing to convince them. Above 40% often signals underpricing or underestimating demand — you could be growing faster.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 7. Takeaway -->
+    <div class="art-section fade-up">
+        <div class="art-label">Takeaway</div>
+        <h2 class="art-h2">GTM is a hypothesis, not a plan</h2>
+
+        <div class="art-visual">
+            <div class="vis-grid vis-grid-3">
+                <div class="vis-card vis-card-accent">
+                    <div class="vis-card-title">Start narrow, then expand</div>
+                    <div class="vis-card-sub">The most common GTM mistake is targeting too broadly. Start with the tightest possible ICP — the 50 companies most likely to buy. Win them. Learn from them. Then expand outward. "Land and expand" beats "spray and pray" every time.</div>
+                </div>
+                <div class="vis-card vis-card-accent">
+                    <div class="vis-card-title">Sales learns before marketing scales</div>
+                    <div class="vis-card-sub">Before scaling paid acquisition, do the sales calls yourself. Until a founder or PM has personally closed 10 customers, they don't understand why people buy. That understanding is what makes marketing copy, channel selection, and pricing defensible — not intuition.</div>
+                </div>
+                <div class="vis-card vis-card-accent">
+                    <div class="vis-card-title">GTM never ends</div>
+                    <div class="vis-card-sub">GTM is not a launch event — it's a continuous motion. As the market evolves, new competitors enter, and the product matures, the ICP, positioning, and channel mix all need to evolve with it. The companies that win are those that treat GTM as an ongoing discipline, not a one-time project.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<div class="art-nav">
+    <a class="art-nav-item" href="startup-funding.html">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+        <div class="art-nav-text">
+            <span class="art-nav-label">Previous</span>
+            <span class="art-nav-title">Startup Funding</span>
+        </div>
+    </a>
+    <a class="art-nav-item art-nav-next" href="digital-marketing-fundamentals.html">
+        <div class="art-nav-text">
+            <span class="art-nav-label">Next</span>
+            <span class="art-nav-title">Digital Marketing Fundamentals</span>
+        </div>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+    </a>
+</div>
+</div>
+
+<section class="cta-sect">
+    <div class="container">
+        <h2>More on product &amp; strategy</h2>
+        <p>I write about GTM strategy, product management, and business frameworks. Follow on LinkedIn for more.</p>
+        <div class="cta-actions">
+            <a href="https://www.linkedin.com/in/diogomserino" target="_blank" rel="noopener" class="btn btn-primary">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                Follow on LinkedIn
+            </a>
+            <a href="../index.html#articles" class="btn btn-ghost-light">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+                Back to Articles
+            </a>
+        </div>
+    </div>
+</section>
+
+<footer class="art-footer">
+    <div class="container footer-inner">
+        <div class="footer-copy">© 2026 Diogo Serino</div>
+        <a class="footer-back" href="../index.html#articles">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+            All articles
+        </a>
+    </div>
+</footer>
+
+<script src="../assets/js/article.js"></script>
+</body>
+</html>

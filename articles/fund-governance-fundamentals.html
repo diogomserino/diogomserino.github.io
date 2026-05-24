@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Investment Fund Governance Fundamentals — Diogo Serino</title>
+<meta name="description" content="How fund managers, ManCos, and depositaries keep billions in compliance — UCITS, AIFMD, NAV reconciliation, and the daily workflows of a fund Business Analyst.">
+    <meta property="og:title" content="Investment Fund Governance Fundamentals — Diogo Serino">
+    <meta property="og:description" content="How fund managers, ManCos, and depositaries keep billions in compliance — UCITS, AIFMD, NAV reconciliation, and the daily workflows of a fund Business Analyst.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://diogomserino.github.io/articles/fund-governance-fundamentals.html">
+    <meta property="og:image" content="https://diogomserino.github.io/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://diogomserino.github.io/articles/fund-governance-fundamentals.html">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Investment Fund Governance Fundamentals — Diogo Serino",
+      "description": "How fund managers, ManCos, and depositaries keep billions in compliance — UCITS, AIFMD, NAV reconciliation, and the daily workflows of a fund Business Analyst.",
+      "url": "https://diogomserino.github.io/articles/fund-governance-fundamentals.html",
+      "author": {
+        "@type": "Person",
+        "name": "Diogo Serino",
+        "url": "https://diogomserino.github.io"
+      }
+    }
+    </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/main.css">
+<style>
+.proj-hero {
+    background: #061e14;
+    background-image:
+        radial-gradient(ellipse 72% 56% at 62% 38%, rgba(5,150,105,.18) 0%, transparent 70%),
+        radial-gradient(circle at 12% 72%, rgba(52,211,153,.08) 0%, transparent 52%);
+}
+.progress { background: linear-gradient(90deg, #059669, #34D399); }
+.proj-badge { background: rgba(5,150,105,.12); border-color: rgba(5,150,105,.28); }
+.art-label { color: #059669; }
+.vis-card-icon { background: rgba(5,150,105,.1); border-color: rgba(5,150,105,.18); color: #059669; }
+.vis-card-title { color: #059669; }
+.vis-card-accent { background: #059669; border-color: #059669; }
+.vis-concept { background: #059669; }
+.vis-step::before { background: linear-gradient(90deg, #059669, #34D399); }
+.vis-step-num { color: rgba(5,150,105,.22); }
+.vis-step-title { color: #047857; }
+.vis-row { border-left-color: rgba(5,150,105,.35); border-color: rgba(5,150,105,.16); }
+.vis-row-label { color: #059669; }
+.vis-row-accent { background: rgba(5,150,105,.08); border-color: rgba(5,150,105,.22); }
+.vis-dark-card { background: #059669; }
+.vis-compare-left { border-top-color: #059669; }
+.vis-compare-right { border-top-color: #047857; }
+.vis-flow-wrap { background: linear-gradient(135deg, rgba(5,150,105,.08), rgba(5,150,105,.06)); border-color: rgba(5,150,105,.18); }
+.vis-flow-box-accent { background: rgba(5,150,105,.14); border-color: rgba(5,150,105,.32); }
+.vis-flow-box-accent .vis-flow-box-title { color: #059669; }
+.vis-flow-arrow, .vis-flow-side-arrow { color: #059669; }
+.vis-tag-pill { background: rgba(5,150,105,.1); border-color: rgba(5,150,105,.2); color: #059669; }
+.vis-flag-item::before { background: #059669; }
+.vis-card-violet { background: rgba(5,150,105,.08); border-color: rgba(5,150,105,.2); }
+.vis-card-violet .vis-card-title { color: #059669; }
+h1.proj-title { background-image: linear-gradient(140deg, #fff 0%, #fff 38%, #34D399 100%); }
+.btn-primary { background: #059669; box-shadow: 0 4px 16px rgba(5,150,105,.3); }
+.btn-primary:hover { background: #047857; box-shadow: 0 6px 22px rgba(5,150,105,.4); }
+</style>
+</head>
+<body>
+
+<div class="progress" id="progress"></div>
+
+<nav class="page-nav" id="main-nav">
+    <div class="nav-inner">
+        <a href="../index.html" class="logo">DMS<span>.</span></a>
+        <div class="nav-crumb">
+            <a href="../index.html#articles">Articles</a>
+            <span class="sep">/</span>
+            <span class="curr">Fund Governance Fundamentals</span>
+        </div>
+        <a href="../index.html#articles" class="nav-back">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+            Back
+        </a>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="proj-hero">
+    <div class="container proj-hero-inner">
+        <div class="proj-badge">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            Finance &amp; Compliance
+        </div>
+        <h1 class="proj-title">Investment Fund<br>Governance<br>Fundamentals</h1>
+        <p class="proj-sub">How fund managers, ManCos, and depositaries keep billions in compliance — UCITS, AIFMD, NAV reconciliation, and the daily workflows of a fund Business Analyst.</p>
+        <div class="stack-row">
+            <span class="stag-dk">UCITS</span>
+            <span class="stag-dk">AIFMD</span>
+            <span class="stag-dk">Fund Governance</span>
+            <span class="stag-dk">NAV</span>
+            <span class="stag-dk">Compliance</span>
+        </div>
+        <div class="proj-meta">
+            <span class="proj-meta-item">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                May 2026
+            </span>
+            <span class="proj-meta-item">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                9 min read
+            </span>
+        </div>
+    </div>
+</section>
+
+<!-- ARTICLE -->
+<div class="art-wrap">
+
+    <div class="art-intro fade-up">
+        <p>Every investment fund — from a retail UCITS equity fund to an alternative hedge fund — operates within a tightly controlled governance framework. Billions of euros in investor assets depend on the accuracy of daily NAV calculations, the robustness of compliance monitoring, and the rigour of KYC screening. When any of these break down, the consequences are regulatory, financial, and reputational.</p>
+        <p>This guide explains how fund governance works from the ground up: the fund structures that define what a fund can and cannot do, the regulatory framework that governs how it's managed, the operational chain that produces the daily NAV, and the workflows that a Business Analyst oversees every day to keep everything in order.</p>
+    </div>
+
+    <!-- 1. FUND STRUCTURES -->
+    <div class="art-section fade-up">
+        <span class="art-label">Foundation</span>
+        <h2 class="art-h2">Two fund types, two regulatory regimes</h2>
+        <p class="art-p">The fundamental division in European fund regulation is between <strong>UCITS</strong> and <strong>AIFs</strong>. They serve different investor types, operate under different rules, and impose different obligations on the Management Company.</p>
+
+        <div class="art-visual">
+            <div class="vis-grid vis-grid-2">
+                <div class="vis-concept">
+                    <div class="vis-concept-title">UCITS</div>
+                    <div class="vis-concept-sub">Undertakings for Collective Investment in Transferable Securities. Designed for retail investors. EU-passportable — a UCITS authorised in Ireland can be sold across all EU member states. Strict investment restrictions: diversification limits (5/10/40 rule), eligible asset classes, mandatory liquidity, leverage limits. The global standard for retail funds.</div>
+                </div>
+                <div class="vis-concept">
+                    <div class="vis-concept-title">AIF</div>
+                    <div class="vis-concept-sub">Alternative Investment Fund. Governed by AIFMD. For professional investors only — pension funds, institutional investors, high-net-worth individuals. Fewer investment restrictions: can hold private equity, real estate, commodities, illiquid assets. Higher potential returns, higher risk, less frequent liquidity. Includes hedge funds, PE funds, real estate funds.</div>
+                </div>
+            </div>
+        </div>
+
+        <p class="art-p">The practical consequence of this distinction: a UCITS fund must be able to calculate and publish NAV daily, because retail investors can redeem their units at any time. An AIF can be illiquid by design — a private equity fund might only allow redemptions quarterly, or have no redemption window at all during its investment period.</p>
+
+        <div class="art-callout">
+            The 5/10/40 UCITS diversification rule: no more than 10% of assets in a single issuer, and issuers representing more than 5% of assets cannot collectively exceed 40%. This ensures retail investors are never overexposed to a single company's failure.
+        </div>
+    </div>
+
+    <!-- 2. REGULATORY FRAMEWORK -->
+    <div class="art-section fade-up">
+        <span class="art-label">Regulation</span>
+        <h2 class="art-h2">The three regulations that govern European fund management</h2>
+        <p class="art-p">Fund governance does not operate in a single regulatory silo. Three EU directives intersect in most fund operations, each covering a different aspect of how investment funds are managed and reported:</p>
+
+        <div class="art-visual">
+            <div class="vis-grid vis-grid-3">
+                <div class="vis-card vis-card-accent">
+                    <div class="vis-card-title">AIFMD</div>
+                    <div class="vis-card-sub">Alternative Investment Fund Managers Directive. The framework for managing AIFs. Requires AIFM authorisation, a depositary, risk management policies, remuneration rules, and annual reporting to regulators. Sets the operating conditions for hedge funds, PE, and real estate funds.</div>
+                </div>
+                <div class="vis-card">
+                    <div class="vis-card-title">MiFID II</div>
+                    <div class="vis-card-sub">Markets in Financial Instruments Directive II. Governs investor protection, product governance, best execution, and transaction reporting. Affects how funds distribute their shares and how managers document their investment decisions.</div>
+                </div>
+                <div class="vis-card">
+                    <div class="vis-card-title">EMIR</div>
+                    <div class="vis-card-sub">European Market Infrastructure Regulation. Governs OTC derivatives — clearing through central counterparties, trade reporting to repositories, and risk mitigation for uncleared trades. Affects any fund that uses interest rate swaps, FX forwards, or credit default swaps.</div>
+                </div>
+            </div>
+        </div>
+
+        <p class="art-p">In practice, a Business Analyst in a fund governance role touches all three. AIFMD drives the depositary relationship and risk reporting. MiFID II triggers transaction reporting obligations when the fund trades. EMIR requires daily reconciliation of derivative positions against trade repository records.</p>
+    </div>
+
+    <!-- 3. FUND OPERATIONS -->
+    <div class="art-section fade-up">
+        <span class="art-label">Operations</span>
+        <h2 class="art-h2">The NAV and the three-party structure</h2>
+        <p class="art-p">At the heart of fund operations is the <strong>Net Asset Value</strong>: the total market value of all fund assets minus liabilities, divided by the number of units outstanding. For a UCITS fund, this is calculated and published every business day. It's the price at which investors buy and sell their units — and getting it wrong has direct financial consequences for every investor in the fund.</p>
+
+        <div class="art-visual">
+            <div class="vis-flow-wrap">
+                <div class="vis-flow-row">
+                    <div class="vis-flow-box vis-flow-box-accent">
+                        <div class="vis-flow-box-title">ManCo</div>
+                        <div class="vis-flow-box-sub">Manages investments, oversees compliance, owns the NAV process</div>
+                    </div>
+                    <div class="vis-flow-arrow">⟷</div>
+                    <div class="vis-flow-box">
+                        <div class="vis-flow-box-title">Fund Admin</div>
+                        <div class="vis-flow-box-sub">Calculates NAV independently, processes subscriptions &amp; redemptions</div>
+                    </div>
+                    <div class="vis-flow-arrow">⟷</div>
+                    <div class="vis-flow-box vis-flow-box-accent">
+                        <div class="vis-flow-box-title">Depositary</div>
+                        <div class="vis-flow-box-sub">Safekeeps assets, verifies NAV, oversight of ManCo's compliance</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <p class="art-p">The <strong>Management Company (ManCo)</strong> is the regulated entity that manages the fund. It can delegate portfolio management to an investment manager, but it retains legal responsibility for everything: compliance, risk management, NAV oversight, and investor reporting. The ManCo cannot also be the depositary — this separation is a hard regulatory requirement.</p>
+
+        <p class="art-p">The <strong>Depositary</strong> provides independent oversight. It safekeeps the fund's assets (or verifies that they're being safekept correctly for alternative assets), verifies that the NAV calculated by the fund administrator is correct, and reports to the regulator if it detects any breach of the fund's investment restrictions. It's the check on the ManCo — and it cannot be the same legal entity.</p>
+
+        <p class="art-p">The <strong>Fund Administrator</strong> is usually a third-party service provider that handles the daily operational tasks: calculating the NAV, processing investor subscriptions and redemptions, maintaining the register of unitholders, and producing investor statements. The ManCo reconciles the administrator's NAV against its own internal calculation every day.</p>
+    </div>
+
+    <!-- 4. DAILY WORKFLOWS -->
+    <div class="art-section fade-up">
+        <span class="art-label">Daily Practice</span>
+        <h2 class="art-h2">What a fund BA actually does every day</h2>
+        <p class="art-p">Fund governance roles are among the most process-intensive in asset management. The same workflows repeat daily, weekly, and monthly — but each instance involves real data, real money, and real regulatory consequences if something goes wrong.</p>
+
+        <div class="art-visual">
+            <div class="vis-steps">
+                <div class="vis-step">
+                    <div class="vis-step-num">01</div>
+                    <div class="vis-step-title">NAV Reconciliation</div>
+                    <div class="vis-step-desc">Compare the ManCo's internal NAV calculation against the fund administrator's published NAV. Any discrepancy above the tolerance threshold must be investigated and resolved before the NAV is published to investors. Common sources of differences: pricing discrepancies, FX rate mismatches, accrual timing, and corporate action processing.</div>
+                </div>
+                <div class="vis-step">
+                    <div class="vis-step-num">02</div>
+                    <div class="vis-step-title">UCITS Compliance Monitoring</div>
+                    <div class="vis-step-desc">Check the portfolio against investment restrictions every day. A single-issuer concentration breach (>10% in one name), a liquidity shortfall, or an ineligible asset acquisition must be identified immediately. UCITS rules require breaches to be remediated within specific timeframes — passive breaches (caused by market movements) have more lenient timelines than active breaches (caused by a trading decision).</div>
+                </div>
+                <div class="vis-step">
+                    <div class="vis-step-num">03</div>
+                    <div class="vis-step-title">KYC / AML Screening</div>
+                    <div class="vis-step-desc">Onboard new investors by verifying their identity, screening against sanctions lists (OFAC, EU, UN), assessing money laundering risk, and determining the source of funds for large investments. The fund context adds a layer beyond standard banking KYC: beneficial ownership verification for corporate investors, and ongoing monitoring of existing investors against updated sanctions lists.</div>
+                </div>
+                <div class="vis-step">
+                    <div class="vis-step-num">04</div>
+                    <div class="vis-step-title">Fee Validation</div>
+                    <div class="vis-step-desc">Validate management fees (a percentage of AUM, accrued daily), performance fees (charged only when the fund exceeds its high-water mark — the highest NAV ever recorded), and fund expenses. An error in fee accrual directly overstates or understates the published NAV, affecting every investor's unit price until the error is corrected.</div>
+                </div>
+                <div class="vis-step">
+                    <div class="vis-step-num">05</div>
+                    <div class="vis-step-title">Board Pack Preparation</div>
+                    <div class="vis-step-desc">Monthly or quarterly, compile the fund board pack: NAV summary across all share classes, fund performance vs benchmark, compliance status and any open breaches, risk metrics, liquidity profile, and a narrative commentary on any notable events. The board pack goes to the fund's board of directors and, for regulated funds, may also be reviewed by the depositary.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 5. KYC IN FUNDS -->
+    <div class="art-section fade-up">
+        <span class="art-label">Compliance</span>
+        <h2 class="art-h2">KYC in the fund context: different from banking KYC</h2>
+        <p class="art-p">KYC in investment funds follows the same principles as banking KYC — verify identity, assess risk, monitor ongoing — but the investor profile and the specific checks are different. A fund's investor base is often institutional: pension funds, insurance companies, family offices, and sovereign wealth funds. These are not individuals with a passport; they're legal entities with complex ownership structures.</p>
+
+        <ul class="art-list">
+            <li><strong>Beneficial ownership</strong>: For a corporate investor, the fund must identify the natural persons who ultimately own or control the entity — typically those with >25% ownership or voting rights. This is where fund KYC becomes significantly more complex than retail banking KYC.</li>
+            <li><strong>Source of funds vs source of wealth</strong>: Funds must verify where the specific investment money came from (source of funds) and, for high-risk investors, where the investor's total wealth originated (source of wealth). These are different questions requiring different evidence.</li>
+            <li><strong>Ongoing monitoring</strong>: Existing investors must be re-screened when sanctions lists are updated, when regulatory thresholds are met (large transactions), or on a periodic basis tied to their risk classification (high-risk investors are reviewed more frequently).</li>
+            <li><strong>Politically Exposed Persons (PEPs)</strong>: Government officials, senior executives of state-owned enterprises, and their close associates are classified as PEPs and require enhanced due diligence — additional scrutiny on source of wealth and the nature of their investment.</li>
+        </ul>
+
+        <div class="art-callout">
+            AML and KYC in funds connect directly to the same frameworks used in banking — the regulatory logic is the same. For a deeper breakdown of how financial crime works and how AML programs detect it, see the <a href="aml-kyc.html" style="color: var(--blue); font-weight: 600;">AML, KYC &amp; Financial Crime Fundamentals</a> article.
+        </div>
+    </div>
+
+    <div class="art-github fade-up">
+        <a href="https://github.com/diogomserino/fund-governance" target="_blank" rel="noopener" class="btn btn-primary">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            View on GitHub
+        </a>
+        <span class="art-github-label">Source code and documentation for this project</span>
+    </div>
+
+
+<div class="art-nav">
+    <a class="art-nav-item" href="bi-fundamentals.html">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+        <div class="art-nav-text">
+            <span class="art-nav-label">Previous</span>
+            <span class="art-nav-title">BI Analytics Fundamentals</span>
+        </div>
+    </a>
+    <a class="art-nav-item art-nav-next" href="product-management-fundamentals.html">
+        <div class="art-nav-text">
+            <span class="art-nav-label">Next</span>
+            <span class="art-nav-title">Product Management Fundamentals</span>
+        </div>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+    </a>
+</div>
+</div>
+
+<!-- CTA -->
+<section class="cta-sect">
+    <div class="container">
+        <h2>More articles</h2>
+        <p>Breakdowns of finance, data, and the systems behind them.</p>
+        <div class="cta-actions">
+            <a href="../index.html#articles" class="btn btn-primary">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+                All Articles
+            </a>
+            <a href="aml-kyc.html" class="btn btn-ghost-light">AML &amp; KYC Fundamentals</a>
+            <a href="what-is-economics.html" class="btn btn-ghost-light">Economics Fundamentals</a>
+        </div>
+    </div>
+</section>
+
+<footer class="art-footer">
+    <div class="container footer-inner">
+        <div class="footer-copy">© 2026 Diogo Serino</div>
+        <a href="../index.html#articles" class="footer-back">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+            All articles
+        </a>
+    </div>
+</footer>
+
+<script src="../assets/js/article.js"></script>
+
+</body>
+</html>

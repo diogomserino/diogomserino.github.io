@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portugal Data Intelligence — Macroeconomic analytics platform covering the Portuguese economy 2010–2025. Power BI, Python, FastAPI, SARIMAX forecasting.">
+    <title>Portugal Data Intelligence · Diogo Serino</title>
+    <meta property="og:title" content="Portugal Data Intelligence · Diogo Serino">
+    <meta property="og:description" content="Macroeconomic analytics platform covering the Portuguese economy 2010–2025. Built with Power BI, Python, FastAPI, and SARIMAX forecasting.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://diogomserino.github.io/projects/portugal.html">
+    <meta property="og:image" content="https://diogomserino.github.io/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://diogomserino.github.io/projects/portugal.html">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%2306111F'/><text x='50' y='72' font-family='system-ui,sans-serif' font-weight='900' font-size='58' text-anchor='middle' fill='%233B6FFF'>D</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy:       #06111F;
+            --navy-800:   #0C1D33;
+            --navy-700:   #142848;
+            --navy-600:   #1A3A5C;
+            --accent:     #0891B2;
+            --accent-h:   #0E7490;
+            --accent-br:  #67E8F9;
+            --accent-dim: rgba(8,145,178,.1);
+            --accent-glow:rgba(8,145,178,.18);
+            --bg:         #FFFFFF;
+            --bg-alt:     #F0FAFA;
+            --text:       #0C1A2E;
+            --muted:      #5A6E8A;
+            --border:     #CCE8EE;
+            --r:          14px;
+            --font-head:  'Space Grotesk', -apple-system, sans-serif;
+            --font:       'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --nav-h:      64px;
+            --mw:         1160px;
+        }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+        body { font-family: var(--font); color: var(--text); background: var(--bg); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+        img  { max-width: 100%; height: auto; display: block; }
+        a    { text-decoration: none; color: inherit; }
+        ul   { list-style: none; }
+        .container { max-width: var(--mw); margin: 0 auto; padding: 0 24px; }
+        .section     { padding: 80px 0; }
+        .section-alt { background: var(--bg-alt); }
+        .section-dk  { background: var(--navy); }
+
+        /* Progress */
+        .progress { position: fixed; top: 0; left: 0; height: 2.5px; background: linear-gradient(90deg, var(--accent), var(--accent-br)); width: 0%; z-index: 1001; pointer-events: none; }
+
+        /* Nav */
+        nav { position: fixed; top: 0; left: 0; right: 0; height: var(--nav-h); background: rgba(255,255,255,.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); z-index: 1000; transition: box-shadow .2s; }
+        nav.scrolled { box-shadow: 0 2px 20px rgba(6,17,31,.07); }
+        .nav-inner { max-width: var(--mw); margin: 0 auto; padding: 0 24px; height: 100%; display: flex; align-items: center; justify-content: space-between; }
+        .logo { font-family: var(--font-head); font-size: 18px; font-weight: 800; color: var(--navy); letter-spacing: -.5px; }
+        .logo span { color: var(--accent); }
+        .nav-crumb { display: flex; align-items: center; gap: 7px; font-size: 13px; color: var(--muted); }
+        .nav-crumb a { color: var(--accent); font-weight: 500; }
+        .nav-crumb .sep { opacity: .35; }
+        .nav-crumb .curr { color: var(--text); font-weight: 500; }
+        .nav-back { display: inline-flex; align-items: center; gap: 5px; font-size: 13px; font-weight: 500; color: var(--muted); transition: color .2s; }
+        .nav-back svg { transition: transform .2s; }
+        .nav-back:hover { color: var(--accent); }
+        .nav-back:hover svg { transform: translateX(-2px); }
+
+        /* Typography */
+        .label { display: inline-block; font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+        .section-dk .label { color: var(--accent-br); }
+        h2.title { font-family: var(--font-head); font-size: clamp(28px, 3.8vw, 42px); font-weight: 700; color: var(--navy); line-height: 1.08; letter-spacing: -.8px; margin-bottom: 14px; }
+        .section-dk h2.title { color: #fff; }
+        .subtitle { font-size: 16px; color: var(--muted); max-width: 560px; line-height: 1.75; }
+        .section-dk .subtitle { color: rgba(255,255,255,.48); }
+        .sec-head { text-align: center; margin-bottom: 52px; }
+        .sec-head .subtitle { margin: 0 auto; }
+
+        /* Buttons */
+        .btn { display: inline-flex; align-items: center; gap: 8px; padding: 11px 22px; border-radius: 9px; font-family: var(--font); font-size: 14px; font-weight: 600; cursor: pointer; transition: all .2s; border: none; }
+        .btn-primary { background: var(--accent); color: #fff; box-shadow: 0 4px 16px var(--accent-glow); }
+        .btn-primary:hover { background: var(--accent-h); transform: translateY(-1px); box-shadow: 0 6px 22px var(--accent-glow); }
+        .btn-ghost-light { background: rgba(255,255,255,.07); color: rgba(255,255,255,.8); border: 1.5px solid rgba(255,255,255,.2); }
+        .btn-ghost-light:hover { background: rgba(255,255,255,.12); border-color: rgba(255,255,255,.35); }
+        .btn-ghost { background: transparent; color: var(--text); border: 1.5px solid var(--border); }
+        .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+        /* Tags */
+        .stag { background: var(--bg-alt); color: var(--navy-600); font-size: 12px; font-weight: 500; padding: 4px 10px; border-radius: 6px; border: 1px solid var(--border); }
+        .stag-dk { background: rgba(255,255,255,.08); color: rgba(255,255,255,.7); border: 1px solid rgba(255,255,255,.14); font-size: 12px; font-weight: 500; padding: 4px 10px; border-radius: 6px; }
+        .stack-row { display: flex; flex-wrap: wrap; gap: 6px; }
+
+        /* Hero */
+        .proj-hero {
+            padding: calc(var(--nav-h) + 72px) 0 72px;
+            background: var(--navy);
+            background-image:
+                radial-gradient(ellipse 72% 56% at 62% 38%, rgba(8,145,178,.18) 0%, transparent 70%),
+                radial-gradient(circle at 10% 72%, rgba(103,232,249,.07) 0%, transparent 52%);
+            position: relative; overflow: hidden;
+        }
+        .proj-hero::before {
+            content: ''; position: absolute; inset: 0;
+            background-image: radial-gradient(rgba(255,255,255,.028) 1px, transparent 1px);
+            background-size: 32px 32px; pointer-events: none;
+        }
+        .proj-hero-inner { position: relative; }
+        .proj-badge {
+            display: inline-flex; align-items: center; gap: 7px;
+            padding: 5px 13px; border-radius: 20px;
+            background: rgba(8,145,178,.12); border: 1px solid rgba(8,145,178,.3);
+            font-size: 12px; font-weight: 600; letter-spacing: .06em;
+            color: var(--accent-br); margin-bottom: 24px;
+        }
+        h1.proj-title {
+            font-family: var(--font-head);
+            font-size: clamp(46px, 7.5vw, 80px);
+            font-weight: 800; line-height: .94; letter-spacing: -2.4px;
+            background: linear-gradient(140deg, #fff 0%, #fff 38%, var(--accent-br) 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text; margin-bottom: 22px;
+        }
+        .proj-sub { font-size: 18px; color: rgba(255,255,255,.52); line-height: 1.72; max-width: 600px; margin-bottom: 22px; }
+        .proj-meta { display: flex; align-items: center; gap: 18px; margin-top: 28px; flex-wrap: wrap; }
+        .proj-meta-item { display: flex; align-items: center; gap: 6px; font-size: 13px; color: rgba(255,255,255,.38); }
+
+        /* Plinks */
+        .plinks { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 32px; }
+        .plink { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; padding: 10px 18px; border-radius: 9px; transition: all .2s; }
+        .plink-primary { background: var(--accent); color: #fff; box-shadow: 0 4px 14px var(--accent-glow); }
+        .plink-primary:hover { background: var(--accent-h); transform: translateY(-1px); }
+        .plink-out { background: rgba(255,255,255,.07); color: rgba(255,255,255,.8); border: 1.5px solid rgba(255,255,255,.2); }
+        .plink-out:hover { background: rgba(255,255,255,.12); border-color: rgba(255,255,255,.4); color: #fff; }
+
+        /* Metrics */
+        .metrics-row { display: flex; gap: 32px; flex-wrap: wrap; margin-bottom: 48px; }
+        .metric-item { }
+        .metric-val { font-family: var(--font-head); font-size: 36px; font-weight: 800; color: var(--navy); line-height: 1; letter-spacing: -1.5px; margin-bottom: 4px; }
+        .metric-val span { color: var(--accent); }
+        .metric-lbl { font-size: 13px; color: var(--muted); }
+
+        /* Overview */
+        .overview-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+        .overview-text p { font-size: 15px; line-height: 1.82; color: var(--muted); margin-bottom: 16px; }
+        .overview-text p:last-child { margin-bottom: 0; }
+        .overview-text p strong { color: var(--text); font-weight: 600; }
+        .overview-img img { border-radius: var(--r); box-shadow: 0 12px 48px rgba(6,17,31,.12); cursor: zoom-in; transition: transform .3s; }
+        .overview-img img:hover { transform: scale(1.015); }
+
+        /* Steps / Pipeline */
+        .steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        .step { background: #fff; border: 1px solid var(--border); border-radius: var(--r); padding: 28px 24px; position: relative; overflow: hidden; transition: box-shadow .25s, border-color .25s; }
+        .step:hover { box-shadow: 0 8px 32px var(--accent-glow); border-color: rgba(8,145,178,.25); }
+        .step::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--accent), var(--accent-br)); opacity: 0; transition: opacity .25s; }
+        .step:hover::before { opacity: 1; }
+        .step-num { font-family: var(--font-head); font-size: 40px; font-weight: 800; color: var(--accent-dim); line-height: 1; margin-bottom: 12px; letter-spacing: -1px; }
+        .step-title { font-family: var(--font-head); font-size: 17px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+        .step-desc { font-size: 14px; color: var(--muted); line-height: 1.72; }
+        .step-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 14px; }
+        .step-tags .stag { font-size: 11px; padding: 3px 8px; border-radius: 5px; }
+
+        /* Pillars */
+        .pillars-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .pillar { background: var(--bg-alt); border: 1px solid var(--border); border-radius: 12px; padding: 22px 20px; transition: box-shadow .2s, transform .2s; }
+        .pillar:hover { box-shadow: 0 6px 24px var(--accent-glow); transform: translateY(-2px); border-color: rgba(8,145,178,.25); }
+        .pillar-ico { width: 40px; height: 40px; border-radius: 10px; background: var(--accent-dim); border: 1px solid rgba(8,145,178,.2); display: flex; align-items: center; justify-content: center; color: var(--accent); margin-bottom: 12px; }
+        .pillar-title { font-family: var(--font-head); font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 5px; }
+        .pillar-meta { font-size: 12px; color: var(--accent); font-weight: 600; margin-bottom: 8px; letter-spacing: .02em; }
+        .pillar-desc { font-size: 13px; color: var(--muted); line-height: 1.65; }
+
+        /* Findings */
+        .findings-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+        .finding { background: var(--navy-800); border: 1px solid rgba(255,255,255,.07); border-radius: var(--r); padding: 28px 24px; }
+        .finding-stat { font-family: var(--font-head); font-size: 38px; font-weight: 800; color: var(--accent-br); margin-bottom: 7px; line-height: 1; }
+        .finding-label { font-size: 14px; font-weight: 600; color: #fff; margin-bottom: 8px; }
+        .finding-desc { font-size: 13px; color: rgba(255,255,255,.42); line-height: 1.68; }
+
+        /* Charts */
+        .charts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .chart-card { background: var(--navy); border-radius: var(--r); padding: 22px 20px 16px; }
+        .chart-title { font-family: var(--font-head); font-size: 14px; font-weight: 700; color: #fff; margin-bottom: 3px; letter-spacing: -.2px; }
+        .chart-sub { font-size: 11px; color: rgba(255,255,255,.32); margin-bottom: 14px; }
+        .chart-svg { width: 100%; height: auto; display: block; }
+        .chart-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 10px; flex-wrap: wrap; gap: 4px; }
+        .chart-note { font-size: 11px; color: rgba(255,255,255,.28); }
+        .chart-hi { font-size: 11px; font-weight: 700; color: var(--accent-br); }
+
+        /* Dashboard preview */
+        .dash-preview { background: var(--navy); border-radius: var(--r); padding: 26px 24px; }
+        .dash-badge-row { margin-bottom: 18px; }
+        .dash-badge { font-size: 10px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--accent-br); background: rgba(8,145,178,.12); border: 1px solid rgba(8,145,178,.22); padding: 4px 10px; border-radius: 20px; }
+        .dash-indicator { margin-bottom: 14px; }
+        .dash-indicator:last-child { margin-bottom: 0; }
+        .dash-ind-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px; }
+        .dash-ind-label { font-size: 12px; font-weight: 600; color: rgba(255,255,255,.55); }
+        .dash-ind-change { font-size: 11px; color: var(--accent-br); font-weight: 700; }
+        .dash-bar-pair { display: flex; align-items: center; gap: 7px; margin-bottom: 4px; }
+        .dash-bar-yr { font-size: 10px; color: rgba(255,255,255,.28); width: 30px; flex-shrink: 0; }
+        .dash-bar-track { flex: 1; background: rgba(255,255,255,.06); border-radius: 3px; height: 6px; overflow: hidden; }
+        .dash-bar-fill { height: 100%; border-radius: 3px; }
+        .fill-before { background: rgba(255,255,255,.18); }
+        .fill-after { background: linear-gradient(90deg, var(--accent), var(--accent-br)); }
+        .dash-bar-val { font-size: 11px; font-weight: 600; width: 42px; text-align: right; flex-shrink: 0; color: rgba(255,255,255,.38); }
+        .dash-bar-val.accent { color: var(--accent-br); }
+        .dash-note { font-size: 11px; color: rgba(255,255,255,.2); margin-top: 16px; border-top: 1px solid rgba(255,255,255,.06); padding-top: 12px; }
+
+        /* Tech stack */
+        .tech-cols { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+        .tech-col { background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 22px 20px; }
+        .tech-col-title { font-family: var(--font-head); font-size: 12px; font-weight: 700; color: var(--muted); letter-spacing: .08em; text-transform: uppercase; margin-bottom: 14px; }
+        .tech-tag { font-size: 13px; font-weight: 500; color: var(--text); display: flex; align-items: center; gap: 7px; padding: 4px 0; }
+        .tech-tag::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
+
+        /* CTA */
+        .cta-sect { background: var(--navy); padding: 72px 0; text-align: center; }
+        .cta-sect h2 { font-family: var(--font-head); font-size: clamp(26px, 3.2vw, 36px); font-weight: 700; color: #fff; margin-bottom: 14px; letter-spacing: -.6px; }
+        .cta-sect p { font-size: 16px; color: rgba(255,255,255,.45); margin-bottom: 32px; max-width: 480px; margin-left: auto; margin-right: auto; }
+        .cta-actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+
+        /* Footer */
+        footer { background: var(--navy-800); border-top: 1px solid rgba(255,255,255,.06); padding: 26px 0; }
+        .footer-inner { display: flex; align-items: center; justify-content: space-between; }
+        .footer-copy { font-size: 13px; color: rgba(255,255,255,.28); }
+        .footer-back { display: inline-flex; align-items: center; gap: 5px; font-size: 13px; font-weight: 500; color: rgba(148,163,184,.7); transition: color .2s; }
+        .footer-back:hover { color: #fff; }
+
+        /* Fade-up */
+        .fade-up { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
+        .fade-up.in { opacity: 1; transform: translateY(0); }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .overview-grid  { grid-template-columns: 1fr; gap: 32px; }
+            .steps-grid     { grid-template-columns: 1fr; }
+            .pillars-grid   { grid-template-columns: repeat(2, 1fr); }
+            .findings-grid  { grid-template-columns: 1fr; }
+            .charts-grid    { grid-template-columns: 1fr; }
+            .tech-cols      { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 768px) {
+            .section { padding: 56px 0; }
+            .metrics-row { gap: 20px; }
+        }
+        @media (max-width: 580px) {
+            .pillars-grid  { grid-template-columns: 1fr; }
+            .tech-cols     { grid-template-columns: 1fr; }
+            .nav-crumb     { display: none; }
+            h1.proj-title  { letter-spacing: -1.8px; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .fade-up { transition: none; opacity: 1 !important; transform: none !important; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="progress" id="progress"></div>
+
+<!-- NAV -->
+<nav id="page-nav">
+    <div class="nav-inner">
+        <a href="../index.html" class="logo">DMS<span>.</span></a>
+        <div class="nav-crumb">
+            <a href="../index.html#projects">Portfolio</a>
+            <span class="sep">/</span>
+            <span class="curr">Portugal Data Intelligence</span>
+        </div>
+        <a href="../index.html#projects" class="nav-back">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+            Back
+        </a>
+    </div>
+</nav>
+
+
+<!-- HERO -->
+<div class="proj-hero">
+    <div class="container proj-hero-inner">
+        <div class="proj-badge">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="18" y="3" width="4" height="18"/><rect x="10" y="8" width="4" height="13"/><rect x="2" y="13" width="4" height="8"/></svg>
+            Analytics · Data Engineering
+        </div>
+        <h1 class="proj-title">Portugal Data<br>Intelligence</h1>
+        <p class="proj-sub">
+            A macroeconomic analytics platform tracking the Portuguese economy from <strong style="color:rgba(255,255,255,.75)">2010 to 2025</strong> — from live data ingestion to boardroom-ready dashboards and REST APIs.
+        </p>
+        <div class="stack-row">
+            <span class="stag-dk">Power BI</span>
+            <span class="stag-dk">Python</span>
+            <span class="stag-dk">FastAPI</span>
+            <span class="stag-dk">Streamlit</span>
+            <span class="stag-dk">SARIMAX</span>
+            <span class="stag-dk">SQLite</span>
+            <span class="stag-dk">Docker</span>
+        </div>
+        <div class="plinks">
+            <a href="https://github.com/diogomserino/Portugal-Data-Intelligence" target="_blank" rel="noopener" class="plink plink-primary">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                View on GitHub
+            </a>
+            <a href="../index.html#contact" class="plink plink-out">
+                Work with me
+            </a>
+        </div>
+        <div class="proj-meta">
+            <span class="proj-meta-item">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                15 years of data (2010–2025)
+            </span>
+            <span class="proj-meta-item">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                6 economic pillars
+            </span>
+            <span class="proj-meta-item">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                Solo project
+            </span>
+        </div>
+    </div>
+</div>
+
+
+<!-- METRICS -->
+<section class="section">
+    <div class="container">
+        <div class="metrics-row fade-up">
+            <div class="metric-item">
+                <div class="metric-val">6<span></span></div>
+                <div class="metric-lbl">Economic pillars</div>
+            </div>
+            <div class="metric-item">
+                <div class="metric-val">39<span></span></div>
+                <div class="metric-lbl">DAX measures</div>
+            </div>
+            <div class="metric-item">
+                <div class="metric-val">6<span></span></div>
+                <div class="metric-lbl">Live data sources</div>
+            </div>
+            <div class="metric-item">
+                <div class="metric-val">15<span> yrs</span></div>
+                <div class="metric-lbl">Time series (2010–2025)</div>
+            </div>
+        </div>
+
+        <!-- OVERVIEW -->
+        <div class="overview-grid">
+            <div class="overview-text fade-up">
+                <div class="label">Overview</div>
+                <h2 class="title">One platform,<br>the full economic picture</h2>
+                <p>Portuguese macroeconomic data is scattered across multiple statistical authorities — INE, Banco de Portugal, PORDATA, and Eurostat — with no integrated platform to consolidate it or benchmark performance against EU peers.</p>
+                <p>Portugal Data Intelligence closes that gap: a complete end-to-end system that ingests live data, applies <strong>time-series forecasting</strong> (SARIMAX + STL), generates AI-powered narrative insights, and delivers everything as an interactive Power BI dashboard, a Streamlit web app, and a FastAPI REST API.</p>
+                <p>Six economic pillars are tracked simultaneously across 15 years — from the sovereign debt crisis through COVID-19 to the post-pandemic rebound.</p>
+            </div>
+            <div class="dash-preview fade-up">
+                <div class="dash-badge-row">
+                    <span class="dash-badge">2013 crisis → 2025 recovery</span>
+                </div>
+                <div class="dash-indicator">
+                    <div class="dash-ind-head">
+                        <span class="dash-ind-label">Unemployment Rate</span>
+                        <span class="dash-ind-change">↓ 10.3 pp</span>
+                    </div>
+                    <div class="dash-bar-pair">
+                        <span class="dash-bar-yr">2013</span>
+                        <div class="dash-bar-track"><div class="dash-bar-fill fill-before" style="width:82%"></div></div>
+                        <span class="dash-bar-val">16.4%</span>
+                    </div>
+                    <div class="dash-bar-pair">
+                        <span class="dash-bar-yr">2025</span>
+                        <div class="dash-bar-track"><div class="dash-bar-fill fill-after" style="width:31%"></div></div>
+                        <span class="dash-bar-val accent">6.1%</span>
+                    </div>
+                </div>
+                <div class="dash-indicator">
+                    <div class="dash-ind-head">
+                        <span class="dash-ind-label">Public Debt (% of GDP)</span>
+                        <span class="dash-ind-change">↓ 33.9 pp</span>
+                    </div>
+                    <div class="dash-bar-pair">
+                        <span class="dash-bar-yr">2014</span>
+                        <div class="dash-bar-track"><div class="dash-bar-fill fill-before" style="width:100%"></div></div>
+                        <span class="dash-bar-val">132.9%</span>
+                    </div>
+                    <div class="dash-bar-pair">
+                        <span class="dash-bar-yr">2025</span>
+                        <div class="dash-bar-track"><div class="dash-bar-fill fill-after" style="width:74%"></div></div>
+                        <span class="dash-bar-val accent">99.0%</span>
+                    </div>
+                </div>
+                <div class="dash-indicator">
+                    <div class="dash-ind-head">
+                        <span class="dash-ind-label">Sovereign Bond Yield (10Y)</span>
+                        <span class="dash-ind-change">↓ 3.8 pp</span>
+                    </div>
+                    <div class="dash-bar-pair">
+                        <span class="dash-bar-yr">2013</span>
+                        <div class="dash-bar-track"><div class="dash-bar-fill fill-before" style="width:100%"></div></div>
+                        <span class="dash-bar-val">6.7%</span>
+                    </div>
+                    <div class="dash-bar-pair">
+                        <span class="dash-bar-yr">2025</span>
+                        <div class="dash-bar-track"><div class="dash-bar-fill fill-after" style="width:43%"></div></div>
+                        <span class="dash-bar-val accent">2.9%</span>
+                    </div>
+                </div>
+                <div class="dash-indicator">
+                    <div class="dash-ind-head">
+                        <span class="dash-ind-label">Annual GDP Growth</span>
+                        <span class="dash-ind-change">↑ 3.1 pp</span>
+                    </div>
+                    <div class="dash-bar-pair">
+                        <span class="dash-bar-yr">2013</span>
+                        <div class="dash-bar-track"><div class="dash-bar-fill fill-before" style="width:28%"></div></div>
+                        <span class="dash-bar-val">−1.1%</span>
+                    </div>
+                    <div class="dash-bar-pair">
+                        <span class="dash-bar-yr">2025</span>
+                        <div class="dash-bar-track"><div class="dash-bar-fill fill-after" style="width:56%"></div></div>
+                        <span class="dash-bar-val accent">+2.0%</span>
+                    </div>
+                </div>
+                <div class="dash-note">INE · Banco de Portugal · Eurostat · 2010–2025</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- PIPELINE -->
+<section class="section section-alt">
+    <div class="container">
+        <div class="sec-head fade-up">
+            <div class="label">Architecture</div>
+            <h2 class="title">Three-stage pipeline</h2>
+            <p class="subtitle">From raw CSVs and API calls to Power BI pages and REST endpoints — every layer built and owned.</p>
+        </div>
+        <div class="steps-grid">
+            <div class="step fade-up">
+                <div class="step-num">01</div>
+                <div class="step-title">ETL Pipeline</div>
+                <div class="step-desc">Extracts data via CSV/API from four national sources, applies 15+ validation checks (schema, range, completeness, freshness), transforms via SQL, and loads into SQLite with UUID-based lineage tracking and SHA-256 checksums.</div>
+                <div class="step-tags">
+                    <span class="stag">Python</span>
+                    <span class="stag">SQLite</span>
+                    <span class="stag">pandas</span>
+                    <span class="stag">NumPy</span>
+                </div>
+            </div>
+            <div class="step fade-up">
+                <div class="step-num">02</div>
+                <div class="step-title">Analytics Layer</div>
+                <div class="step-desc">STL decomposition to isolate trend, seasonality, and residuals. SARIMAX forecasting with AIC-based model selection. Cross-pillar correlation matrix. Scenario modelling (baseline / optimistic / pessimistic) using Okun's law and credit elasticity.</div>
+                <div class="step-tags">
+                    <span class="stag">statsmodels</span>
+                    <span class="stag">scikit-learn</span>
+                    <span class="stag">Plotly</span>
+                    <span class="stag">seaborn</span>
+                </div>
+            </div>
+            <div class="step fade-up">
+                <div class="step-num">03</div>
+                <div class="step-title">Output Layer</div>
+                <div class="step-desc">Seven-page Power BI dashboard with 39 DAX measures. Streamlit interactive web app. FastAPI REST API with JSON endpoints. Self-contained HTML report exports. All containerised with Docker and deployed via CI/CD.</div>
+                <div class="step-tags">
+                    <span class="stag">Power BI</span>
+                    <span class="stag">FastAPI</span>
+                    <span class="stag">Streamlit</span>
+                    <span class="stag">Docker</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ECONOMIC PILLARS -->
+<section class="section">
+    <div class="container">
+        <div class="sec-head fade-up">
+            <div class="label">Coverage</div>
+            <h2 class="title">Six economic pillars</h2>
+            <p class="subtitle">Each pillar tracked at monthly or quarterly granularity from 2010 to 2025.</p>
+        </div>
+        <div class="pillars-grid">
+            <div class="pillar fade-up">
+                <div class="pillar-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+                <div class="pillar-title">GDP</div>
+                <div class="pillar-meta">Quarterly · 2010 Q1 – 2025 Q4</div>
+                <div class="pillar-desc">Full growth cycle — debt crisis contraction, recovery, COVID shock, and post-pandemic rebound — modelled and forecast.</div>
+            </div>
+            <div class="pillar fade-up">
+                <div class="pillar-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+                <div class="pillar-title">Unemployment</div>
+                <div class="pillar-meta">Monthly · Jan 2010 – Dec 2025</div>
+                <div class="pillar-desc">From 17.5% crisis peak to 6.1% historic lows. Strong correlation with bond yields (r = 0.80) quantified.</div>
+            </div>
+            <div class="pillar fade-up">
+                <div class="pillar-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+                <div class="pillar-title">Credit to Economy</div>
+                <div class="pillar-meta">Monthly · Jan 2010 – Dec 2025</div>
+                <div class="pillar-desc">Private credit dynamics vs NPL ratios. Inverse relationship with inflation (r = −0.53) measured and visualised.</div>
+            </div>
+            <div class="pillar fade-up">
+                <div class="pillar-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+                <div class="pillar-title">Interest Rates</div>
+                <div class="pillar-meta">Monthly · Jan 2010 – Dec 2025</div>
+                <div class="pillar-desc">ECB rate trajectory and Portuguese sovereign spreads through zero-rate era and the post-2022 normalisation cycle.</div>
+            </div>
+            <div class="pillar fade-up">
+                <div class="pillar-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+                <div class="pillar-title">Inflation (HICP / CPI)</div>
+                <div class="pillar-meta">Monthly · Jan 2010 – Dec 2025</div>
+                <div class="pillar-desc">Deflationary period, post-COVID surge, and recent moderation decomposed with STL. Phillips curve visualised.</div>
+            </div>
+            <div class="pillar fade-up">
+                <div class="pillar-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
+                <div class="pillar-title">Public Debt</div>
+                <div class="pillar-meta">Quarterly · 2010 Q1 – 2025 Q4</div>
+                <div class="pillar-desc">Tracked from 132.9% GDP peak through consolidation. SARIMAX projects three trajectories to 2027.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- KEY FINDINGS -->
+<section class="section section-dk">
+    <div class="container">
+        <div class="sec-head fade-up">
+            <div class="label">Results</div>
+            <h2 class="title">Key findings</h2>
+            <p class="subtitle">Statistical patterns extracted across 15 years of Portuguese macroeconomic data.</p>
+        </div>
+        <div class="findings-grid">
+            <div class="finding fade-up">
+                <div class="finding-stat">17.5% → 6.1%</div>
+                <div class="finding-label">Unemployment peak-to-trough</div>
+                <div class="finding-desc">Unemployment fell from the 2013 sovereign debt crisis peak of 17.5% to a 2025 historic low of 6.1% — an 11.4 pp recovery tracked and modelled month by month.</div>
+            </div>
+            <div class="finding fade-up">
+                <div class="finding-stat">132.9% GDP</div>
+                <div class="finding-label">Public debt at its peak</div>
+                <div class="finding-desc">Public debt reached its highest point at 132.9% of GDP before fiscal consolidation. Three SARIMAX trajectories model its path to 2027.</div>
+            </div>
+            <div class="finding fade-up">
+                <div class="finding-stat">r = 0.80</div>
+                <div class="finding-label">Unemployment–bond yield correlation</div>
+                <div class="finding-desc">A strong cross-pillar correlation between unemployment and sovereign bond yields — quantified in the full correlation matrix and visualised in the heatmap.</div>
+            </div>
+            <div class="finding fade-up">
+                <div class="finding-stat">r = −0.53</div>
+                <div class="finding-label">Credit–inflation inverse relationship</div>
+                <div class="finding-desc">Private credit and inflation showed a persistent inverse relationship, consistent with the deleveraging dynamics observed post-2012 and post-2022.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- DATA CHARTS -->
+<section class="section section-alt">
+    <div class="container">
+        <div class="sec-head fade-up">
+            <div class="label">Data</div>
+            <h2 class="title">Key economic stories</h2>
+            <p class="subtitle">15 years of Portuguese macroeconomic data — from the sovereign debt crisis through COVID-19 to the 2025 recovery.</p>
+        </div>
+        <div class="charts-grid">
+
+            <!-- Chart 1: Unemployment -->
+            <div class="chart-card fade-up">
+                <div class="chart-title">Unemployment Rate</div>
+                <div class="chart-sub">Annual average · % · 2010–2025</div>
+                <svg viewBox="0 0 300 120" class="chart-svg">
+                    <defs>
+                        <linearGradient id="ug" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0%" stop-color="#67E8F9" stop-opacity="0.28"/>
+                            <stop offset="100%" stop-color="#67E8F9" stop-opacity="0.02"/>
+                        </linearGradient>
+                    </defs>
+                    <line x1="10" y1="10" x2="290" y2="10" stroke="rgba(255,255,255,.05)" stroke-width="1"/>
+                    <line x1="10" y1="38" x2="290" y2="38" stroke="rgba(255,255,255,.05)" stroke-width="1"/>
+                    <line x1="10" y1="66" x2="290" y2="66" stroke="rgba(255,255,255,.05)" stroke-width="1"/>
+                    <line x1="10" y1="95" x2="290" y2="95" stroke="rgba(255,255,255,.05)" stroke-width="1"/>
+                    <path d="M 10,55.6 L 28.7,42.6 L 47.3,23.6 L 66,17.5 L 84.7,34.5 L 103.3,44.7 L 122,53.5 L 140.7,67.8 L 159.3,81.4 L 178,84.8 L 196.7,82.8 L 215.3,84.1 L 234,89.6 L 252.7,84.8 L 271.3,85.5 L 290,87.5 L 290,95 L 10,95 Z" fill="url(#ug)"/>
+                    <path d="M 10,55.6 L 28.7,42.6 L 47.3,23.6 L 66,17.5 L 84.7,34.5 L 103.3,44.7 L 122,53.5 L 140.7,67.8 L 159.3,81.4 L 178,84.8 L 196.7,82.8 L 215.3,84.1 L 234,89.6 L 252.7,84.8 L 271.3,85.5 L 290,87.5" fill="none" stroke="#67E8F9" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="66" cy="17.5" r="3.5" fill="#67E8F9"/>
+                    <text x="66" y="13" font-size="9" fill="rgba(255,255,255,.65)" text-anchor="middle" font-family="Inter,sans-serif">16.4%</text>
+                    <circle cx="290" cy="87.5" r="3" fill="#0891B2"/>
+                    <text x="277" y="84" font-size="9" fill="rgba(103,232,249,.75)" text-anchor="middle" font-family="Inter,sans-serif">6.1%</text>
+                    <text x="10" y="111" font-size="9" fill="rgba(255,255,255,.28)" text-anchor="middle" font-family="Inter,sans-serif">2010</text>
+                    <text x="103.3" y="111" font-size="9" fill="rgba(255,255,255,.28)" text-anchor="middle" font-family="Inter,sans-serif">2015</text>
+                    <text x="196.7" y="111" font-size="9" fill="rgba(255,255,255,.28)" text-anchor="middle" font-family="Inter,sans-serif">2020</text>
+                    <text x="290" y="111" font-size="9" fill="rgba(255,255,255,.28)" text-anchor="middle" font-family="Inter,sans-serif">2025</text>
+                </svg>
+                <div class="chart-footer">
+                    <span class="chart-note">Source: INE / Eurostat</span>
+                    <span class="chart-hi">↓ 10.3 pp since 2013 peak</span>
+                </div>
+            </div>
+
+            <!-- Chart 2: GDP Growth -->
+            <div class="chart-card fade-up">
+                <div class="chart-title">GDP Annual Growth Rate</div>
+                <div class="chart-sub">Real growth · % · 2010–2025</div>
+                <svg viewBox="0 0 300 120" class="chart-svg">
+                    <line x1="10" y1="47.2" x2="290" y2="47.2" stroke="rgba(255,255,255,.18)" stroke-width="1" stroke-dasharray="3,3"/>
+                    <rect x="12.3" y="37.1" width="13" height="10.1" rx="1.5" fill="#0891B2" opacity="0.8"/>
+                    <rect x="29.8" y="47.2" width="13" height="9.6" rx="1.5" fill="#EF4444" opacity="0.75"/>
+                    <rect x="47.3" y="47.2" width="13" height="21.3" rx="1.5" fill="#EF4444" opacity="0.8"/>
+                    <rect x="64.8" y="47.2" width="13" height="5.8" rx="1.5" fill="#EF4444" opacity="0.65"/>
+                    <rect x="82.3" y="42.4" width="13" height="4.8" rx="1.5" fill="#0891B2" opacity="0.65"/>
+                    <rect x="99.8" y="37.6" width="13" height="9.6" rx="1.5" fill="#0891B2" opacity="0.75"/>
+                    <rect x="117.3" y="37.1" width="13" height="10.1" rx="1.5" fill="#0891B2" opacity="0.8"/>
+                    <rect x="134.8" y="28.6" width="13" height="18.6" rx="1.5" fill="#0891B2" opacity="0.85"/>
+                    <rect x="152.3" y="33.4" width="13" height="13.8" rx="1.5" fill="#0891B2" opacity="0.8"/>
+                    <rect x="169.8" y="32.9" width="13" height="14.3" rx="1.5" fill="#0891B2" opacity="0.8"/>
+                    <rect x="187.3" y="47.2" width="13" height="44.1" rx="1.5" fill="#EF4444" opacity="0.85"/>
+                    <rect x="204.8" y="18.0" width="13" height="29.2" rx="1.5" fill="#67E8F9" opacity="0.85"/>
+                    <rect x="222.3" y="11.6" width="13" height="35.6" rx="1.5" fill="#67E8F9" opacity="0.9"/>
+                    <rect x="239.8" y="35.0" width="13" height="12.2" rx="1.5" fill="#0891B2" opacity="0.8"/>
+                    <rect x="257.3" y="37.1" width="13" height="10.1" rx="1.5" fill="#0891B2" opacity="0.8"/>
+                    <rect x="274.8" y="36.6" width="13" height="10.6" rx="1.5" fill="#0891B2" opacity="0.8"/>
+                    <text x="19" y="111" font-size="9" fill="rgba(255,255,255,.28)" text-anchor="middle" font-family="Inter,sans-serif">2010</text>
+                    <text x="106" y="111" font-size="9" fill="rgba(255,255,255,.28)" text-anchor="middle" font-family="Inter,sans-serif">2015</text>
+                    <text x="194" y="111" font-size="9" fill="rgba(255,255,255,.28)" text-anchor="middle" font-family="Inter,sans-serif">2020</text>
+                    <text x="281" y="111" font-size="9" fill="rgba(255,255,255,.28)" text-anchor="middle" font-family="Inter,sans-serif">2025</text>
+                </svg>
+                <div class="chart-footer">
+                    <span class="chart-note">Source: INE / World Bank</span>
+                    <span class="chart-hi">+6.7% peak rebound in 2022</span>
+                </div>
+            </div>
+
+            <!-- Chart 3: Inflation -->
+            <div class="chart-card fade-up">
+                <div class="chart-title">Inflation Rate (HICP)</div>
+                <div class="chart-sub">Annual average · % · 2010–2025</div>
+                <svg viewBox="0 0 300 120" class="chart-svg">
+                    <defs>
+                        <linearGradient id="ig" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0%" stop-color="#67E8F9" stop-opacity="0.22"/>
+                            <stop offset="100%" stop-color="#67E8F9" stop-opacity="0.01"/>
+                        </linearGradient>
+                    </defs>
+                    <line x1="10" y1="10" x2="290" y2="10" stroke="rgba(255,255,255,.05)" stroke-width="1"/>
+                    <line x1="10" y1="38" x2="290" y2="38" stroke="rgba(255,255,255,.05)" stroke-width="1"/>
+                    <line x1="10" y1="66" x2="290" y2="66" stroke="rgba(255,255,255,.05)" stroke-width="1"/>
+                    <line x1="10" y1="95" x2="290" y2="95" stroke="rgba(255,255,255,.05)" stroke-width="1"/>
+                    <line x1="10" y1="86.5" x2="290" y2="86.5" stroke="rgba(255,255,255,.1)" stroke-width="1" stroke-dasharray="2,4"/>
+                    <path d="M 10,74.6 L 28.7,55.1 L 47.3,62.7 L 66,83.1 L 84.7,88.2 L 103.3,82.3 L 122,81.4 L 140.7,72.9 L 159.3,78.0 L 178,84.0 L 196.7,87.4 L 215.3,78.9 L 234,20.2 L 252.7,40.6 L 271.3,67.0 L 290,71.2 L 290,95 L 10,95 Z" fill="url(#ig)"/>
+                    <path d="M 10,74.6 L 28.7,55.1 L 47.3,62.7 L 66,83.1 L 84.7,88.2 L 103.3,82.3 L 122,81.4 L 140.7,72.9 L 159.3,78.0 L 178,84.0 L 196.7,87.4 L 215.3,78.9 L 234,20.2 L 252.7,40.6 L 271.3,67.0 L 290,71.2" fill="none" stroke="#67E8F9" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="234" cy="20.2" r="3.5" fill="#EF4444"/>
+                    <text x="234" y="15" font-size="9" fill="rgba(239,68,68,.9)" text-anchor="middle" font-family="Inter,sans-serif">7.8%</text>
+                    <circle cx="290" cy="71.2" r="3" fill="#0891B2"/>
+                    <text x="10" y="111" font-size="9" fill="rgba(255,255,255,.28)" text-anchor="middle" font-family="Inter,sans-serif">2010</text>
+                    <text x="103.3" y="111" font-size="9" fill="rgba(255,255,255,.28)" text-anchor="middle" font-family="Inter,sans-serif">2015</text>
+                    <text x="196.7" y="111" font-size="9" fill="rgba(255,255,255,.28)" text-anchor="middle" font-family="Inter,sans-serif">2020</text>
+                    <text x="290" y="111" font-size="9" fill="rgba(255,255,255,.28)" text-anchor="middle" font-family="Inter,sans-serif">2025</text>
+                </svg>
+                <div class="chart-footer">
+                    <span class="chart-note">Source: INE / Eurostat HICP</span>
+                    <span class="chart-hi">2022 surge: +7.8%</span>
+                </div>
+            </div>
+
+            <!-- Chart 4: Public Debt -->
+            <div class="chart-card fade-up">
+                <div class="chart-title">Public Debt (% of GDP)</div>
+                <div class="chart-sub">Annual · % GDP · 2010–2025</div>
+                <svg viewBox="0 0 300 120" class="chart-svg">
+                    <line x1="10" y1="78" x2="282" y2="78" stroke="rgba(255,255,255,.18)" stroke-width="1" stroke-dasharray="3,3"/>
+                    <text x="286" y="81" font-size="8" fill="rgba(255,255,255,.3)" font-family="Inter,sans-serif">100%</text>
+                    <rect x="12.3" y="84.5" width="13" height="10.5" rx="1.5" fill="#0891B2" opacity="0.75"/>
+                    <rect x="29.8" y="58.6" width="13" height="36.4" rx="1.5" fill="#F59E0B" opacity="0.78"/>
+                    <rect x="47.3" y="33.5" width="13" height="61.5" rx="1.5" fill="#EF4444" opacity="0.72"/>
+                    <rect x="64.8" y="28.7" width="13" height="66.3" rx="1.5" fill="#EF4444" opacity="0.72"/>
+                    <rect x="82.3" y="22.1" width="13" height="72.9" rx="1.5" fill="#EF4444" opacity="0.85"/>
+                    <rect x="99.8" y="29.4" width="13" height="65.6" rx="1.5" fill="#EF4444" opacity="0.7"/>
+                    <rect x="117.3" y="28.6" width="13" height="66.4" rx="1.5" fill="#EF4444" opacity="0.7"/>
+                    <rect x="134.8" y="36.8" width="13" height="58.2" rx="1.5" fill="#F59E0B" opacity="0.7"/>
+                    <rect x="152.3" y="41.4" width="13" height="53.6" rx="1.5" fill="#F59E0B" opacity="0.68"/>
+                    <rect x="169.8" y="49.8" width="13" height="45.2" rx="1.5" fill="#F59E0B" opacity="0.62"/>
+                    <rect x="187.3" y="18.2" width="13" height="76.8" rx="1.5" fill="#EF4444" opacity="0.85"/>
+                    <rect x="204.8" y="31.4" width="13" height="63.6" rx="1.5" fill="#F59E0B" opacity="0.65"/>
+                    <rect x="222.3" y="54.4" width="13" height="40.6" rx="1.5" fill="#F59E0B" opacity="0.58"/>
+                    <rect x="239.8" y="63.9" width="13" height="31.1" rx="1.5" fill="#0891B2" opacity="0.72"/>
+                    <rect x="257.3" y="72.7" width="13" height="22.3" rx="1.5" fill="#0891B2" opacity="0.8"/>
+                    <rect x="274.8" y="79.7" width="13" height="15.3" rx="1.5" fill="#0891B2" opacity="0.88"/>
+                    <text x="88.3" y="18" font-size="9" fill="rgba(255,255,255,.58)" text-anchor="middle" font-family="Inter,sans-serif">132.9%</text>
+                    <text x="19" y="111" font-size="9" fill="rgba(255,255,255,.28)" text-anchor="middle" font-family="Inter,sans-serif">2010</text>
+                    <text x="106" y="111" font-size="9" fill="rgba(255,255,255,.28)" text-anchor="middle" font-family="Inter,sans-serif">2015</text>
+                    <text x="194" y="111" font-size="9" fill="rgba(255,255,255,.28)" text-anchor="middle" font-family="Inter,sans-serif">2020</text>
+                    <text x="281" y="111" font-size="9" fill="rgba(255,255,255,.28)" text-anchor="middle" font-family="Inter,sans-serif">2025</text>
+                </svg>
+                <div class="chart-footer">
+                    <span class="chart-note">Source: Banco de Portugal / Eurostat</span>
+                    <span class="chart-hi">132.9% peak → 99.0% in 2025</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- TECH STACK -->
+<section class="section section-alt">
+    <div class="container">
+        <div class="sec-head fade-up">
+            <div class="label">Technology</div>
+            <h2 class="title">Full tech stack</h2>
+            <p class="subtitle">End-to-end data engineering — every layer built from scratch.</p>
+        </div>
+        <div class="tech-cols">
+            <div class="tech-col fade-up">
+                <div class="tech-col-title">Language & Database</div>
+                <div class="tech-tag">Python 3.10+</div>
+                <div class="tech-tag">SQLite 3</div>
+                <div class="tech-tag">pandas</div>
+                <div class="tech-tag">NumPy</div>
+            </div>
+            <div class="tech-col fade-up">
+                <div class="tech-col-title">Analytics & Modelling</div>
+                <div class="tech-tag">statsmodels (STL, SARIMAX)</div>
+                <div class="tech-tag">scikit-learn</div>
+                <div class="tech-tag">matplotlib / seaborn</div>
+                <div class="tech-tag">Plotly</div>
+            </div>
+            <div class="tech-col fade-up">
+                <div class="tech-col-title">BI & Dashboards</div>
+                <div class="tech-tag">Power BI (39 DAX)</div>
+                <div class="tech-tag">Streamlit</div>
+                <div class="tech-tag">HTML reports</div>
+                <div class="tech-tag">OpenAI GPT-4 (optional)</div>
+            </div>
+            <div class="tech-col fade-up">
+                <div class="tech-col-title">API & Infrastructure</div>
+                <div class="tech-tag">FastAPI</div>
+                <div class="tech-tag">Docker</div>
+                <div class="tech-tag">CI/CD</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- CTA -->
+<div class="cta-sect">
+    <div class="container">
+        <div class="label">Open source</div>
+        <h2>See the full project</h2>
+        <p>Source code, ETL scripts, DAX measures, and full documentation on GitHub.</p>
+        <div class="cta-actions">
+            <a href="https://github.com/diogomserino/Portugal-Data-Intelligence" target="_blank" rel="noopener" class="btn btn-primary">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                GitHub Repository
+            </a>
+            <a href="../index.html#contact" class="btn btn-ghost-light">
+                Work with me
+            </a>
+        </div>
+    </div>
+</div>
+
+
+<footer>
+    <div class="container footer-inner">
+        <span class="footer-copy">© 2026 Diogo Martins Serino</span>
+        <a href="../index.html" class="footer-back">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+            Back to Portfolio
+        </a>
+    </div>
+</footer>
+
+
+<script>
+    const prog = document.getElementById('progress');
+    window.addEventListener('scroll', () => {
+        const s = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
+        prog.style.width = (s * 100) + '%';
+    }, { passive: true });
+
+    const nav = document.getElementById('page-nav');
+    window.addEventListener('scroll', () => {
+        nav.classList.toggle('scrolled', window.scrollY > 20);
+    }, { passive: true });
+
+    const io = new IntersectionObserver(entries => {
+        entries.forEach(en => {
+            if (!en.isIntersecting) return;
+            const el = en.target;
+            const siblings = Array.from(el.parentElement.querySelectorAll('.fade-up'));
+            const i = siblings.indexOf(el);
+            el.style.transitionDelay = (i * 80) + 'ms';
+            el.classList.add('in');
+            io.unobserve(el);
+        });
+    }, { threshold: 0.06, rootMargin: '0px 0px -24px 0px' });
+    document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
+
+</script>
+
+</body>
+</html>

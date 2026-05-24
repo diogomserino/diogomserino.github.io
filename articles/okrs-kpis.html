@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OKRs &amp; KPIs — Diogo Serino</title>
+<meta name="description" content="How Objectives &amp; Key Results and KPIs work together — setting direction, measuring outcomes, avoiding vanity metrics, and building a culture of accountability.">
+    <meta property="og:title" content="OKRs & KPIs — Diogo Serino">
+    <meta property="og:description" content="How Objectives &amp; Key Results and KPIs work together — setting direction, measuring outcomes, avoiding vanity metrics, and building a culture of accountability.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://diogomserino.github.io/articles/okrs-kpis.html">
+    <meta property="og:image" content="https://diogomserino.github.io/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://diogomserino.github.io/articles/okrs-kpis.html">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "OKRs & KPIs — Diogo Serino",
+      "description": "How Objectives &amp; Key Results and KPIs work together — setting direction, measuring outcomes, avoiding vanity metrics, and building a culture of accountability.",
+      "url": "https://diogomserino.github.io/articles/okrs-kpis.html",
+      "author": {
+        "@type": "Person",
+        "name": "Diogo Serino",
+        "url": "https://diogomserino.github.io"
+      }
+    }
+    </script>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%2306111F'/><text x='50' y='72' font-family='system-ui,sans-serif' font-weight='900' font-size='58' text-anchor='middle' fill='%233B6FFF'>D</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/main.css">
+<style>
+.proj-hero {
+    background: #001624;
+    background-image:
+        radial-gradient(ellipse 72% 56% at 62% 38%, rgba(3,105,161,.22) 0%, transparent 70%),
+        radial-gradient(circle at 12% 72%, rgba(56,189,248,.08) 0%, transparent 52%);
+}
+.progress { background: linear-gradient(90deg, #0369A1, #38BDF8); }
+.proj-badge { background: rgba(3,105,161,.12); border-color: rgba(3,105,161,.30); color: #BAE6FD; }
+.art-label { color: #0369A1; }
+.vis-card-icon { background: rgba(3,105,161,.10); border-color: rgba(3,105,161,.20); color: #0369A1; }
+.vis-card-title { color: #0369A1; }
+.vis-card-accent { background: #0369A1; border-color: #0369A1; }
+.vis-concept { background: #0369A1; }
+.vis-step::before { background: linear-gradient(90deg, #0369A1, #38BDF8); }
+.vis-step-num { color: rgba(3,105,161,.22); }
+.vis-step-title { color: #0C4A6E; }
+.vis-step:hover { box-shadow: 0 6px 24px rgba(3,105,161,.18); border-color: rgba(3,105,161,.30); }
+.vis-row { border-left-color: rgba(3,105,161,.40); border-color: rgba(3,105,161,.16); }
+.vis-row-label { color: #0369A1; }
+.vis-row-accent { background: rgba(3,105,161,.07); border-color: rgba(3,105,161,.20); }
+.vis-dark-card { background: #0369A1; }
+.vis-compare-left  { border-top-color: #0369A1; }
+.vis-compare-right { border-top-color: #0C4A6E; }
+.vis-flow-wrap { background: linear-gradient(135deg, rgba(3,105,161,.08), rgba(3,105,161,.05)); border-color: rgba(3,105,161,.18); }
+.vis-flow-box-accent { background: rgba(3,105,161,.14); border-color: rgba(3,105,161,.32); }
+.vis-flow-box-accent .vis-flow-box-title { color: #0369A1; }
+.vis-flow-arrow, .vis-flow-side-arrow { color: #0369A1; }
+.vis-tag-pill { background: rgba(3,105,161,.10); border-color: rgba(3,105,161,.22); color: #0369A1; }
+.vis-flag-item::before { background: #0369A1; }
+.vis-card:hover { box-shadow: 0 4px 20px rgba(3,105,161,.12); border-color: rgba(3,105,161,.22); }
+h1.proj-title { background-image: linear-gradient(140deg, #fff 0%, #fff 42%, #BAE6FD 100%); }
+.btn-primary { background: #0369A1; box-shadow: 0 4px 16px rgba(3,105,161,.30); color: #fff; }
+.btn-primary:hover { background: #0C4A6E; box-shadow: 0 6px 22px rgba(3,105,161,.42); transform: translateY(-2px); }
+.art-callout { border-left-color: #0369A1; }
+</style>
+</head>
+<body>
+
+<div class="progress" id="progress"></div>
+
+<nav class="page-nav" id="main-nav">
+    <div class="nav-inner">
+        <a href="../index.html" class="logo">DMS<span>.</span></a>
+        <div class="nav-crumb">
+            <a href="../index.html#articles">Articles</a>
+            <span class="sep">/</span>
+            <span class="curr">OKRs &amp; KPIs</span>
+        </div>
+        <a href="../index.html#articles" class="nav-back">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+            Back
+        </a>
+    </div>
+</nav>
+
+<section class="proj-hero">
+    <div class="container proj-hero-inner">
+        <div class="proj-badge">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            Strategy &nbsp;·&nbsp; Product
+        </div>
+        <h1 class="proj-title">OKRs &amp;<br>KPIs</h1>
+        <p class="proj-sub">How to set meaningful goals, measure the right outcomes, and build a culture where everyone knows what success looks like — and why vanity metrics are a trap.</p>
+        <div class="stack-row">
+            <span class="stag-dk">OKRs</span>
+            <span class="stag-dk">KPIs</span>
+            <span class="stag-dk">Strategy</span>
+            <span class="stag-dk">Product</span>
+        </div>
+    </div>
+</section>
+
+<div class="art-wrap">
+
+    <!-- 1. Why measuring wrong is dangerous -->
+    <div class="art-section fade-up">
+        <div class="art-label">The Problem</div>
+        <h2 class="art-h2">Most teams measure activity, not progress</h2>
+        <p class="art-p">Reporting 47 tasks completed feels productive. But if none of those tasks moved revenue, retention, or customer satisfaction, the team was busy — not effective. OKRs and KPIs exist to close that gap.</p>
+
+        <div class="art-visual">
+            <div class="vis-compare">
+                <div class="vis-compare-box vis-compare-left">
+                    <div class="vis-compare-title">Activity metrics (the trap)</div>
+                    <div class="vis-compare-desc">
+                        <ul style="padding-left:16px;margin:0 0 10px;">
+                            <li>Sent 200 emails this week</li>
+                            <li>Closed 34 support tickets</li>
+                            <li>Shipped 12 features</li>
+                            <li>Had 8 stakeholder meetings</li>
+                            <li>Wrote 40 pages of documentation</li>
+                        </ul>
+                        High output. No signal on whether anything got better.
+                    </div>
+                </div>
+                <div class="vis-compare-box vis-compare-right">
+                    <div class="vis-compare-title">Outcome metrics (the goal)</div>
+                    <div class="vis-compare-desc">
+                        <ul style="padding-left:16px;margin:0 0 10px;">
+                            <li>Trial-to-paid conversion increased from 8% to 14%</li>
+                            <li>P1 support resolution time dropped by 40%</li>
+                            <li>Feature adoption: 62% of active users in 30 days</li>
+                            <li>NPS improved from 22 to 38</li>
+                            <li>Churn reduced from 5.2% to 3.8% MoM</li>
+                        </ul>
+                        Lower output count. Clear signal that things improved.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. What are OKRs? -->
+    <div class="art-section fade-up">
+        <div class="art-label">The Framework</div>
+        <h2 class="art-h2">What are OKRs?</h2>
+        <p class="art-p">OKRs — Objectives and Key Results — is a goal-setting framework created at Intel by Andy Grove and made famous by Google. It separates <strong>where you want to go</strong> (Objective) from <strong>how you know you got there</strong> (Key Results). The formula is simple, the discipline is hard.</p>
+
+        <div class="art-callout">
+            <strong>The OKR formula:</strong> "We will <em>[Objective]</em>, as measured by <em>[Key Result 1]</em>, <em>[Key Result 2]</em>, and <em>[Key Result 3]</em>."
+        </div>
+
+        <div class="art-visual">
+            <div class="vis-rows">
+                <div class="vis-row">
+                    <div class="vis-row-label">Objective (O)</div>
+                    <div class="vis-row-desc"><strong>The qualitative direction.</strong> An Objective is a short, memorable statement of where the team is headed. It should be ambitious, inspirational, and time-bound — not a task or a metric. "Become the go-to platform for freelance invoicing in Portugal" is an Objective. "Increase revenue" is not.</div>
+                </div>
+                <div class="vis-row">
+                    <div class="vis-row-label">Key Results (KRs)</div>
+                    <div class="vis-row-desc"><strong>The quantitative proof.</strong> Key Results are 2–5 measurable outcomes that prove the Objective was achieved. Each KR has a starting value, a target value, and a deadline. If you can't score it on a scale of 0–1, it's not a Key Result — it's a task. "Launch mobile app" is a task. "App store rating above 4.5 with 500+ reviews by Q3" is a Key Result.</div>
+                </div>
+                <div class="vis-row">
+                    <div class="vis-row-label">Initiatives</div>
+                    <div class="vis-row-desc"><strong>The work underneath.</strong> Initiatives are the projects, tasks, and experiments the team runs to move the Key Results. They live below the OKR layer — not inside it. This keeps OKRs focused on outcomes, not deliverables. A team can change all its initiatives mid-quarter without changing a single OKR.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. Setting strong Objectives -->
+    <div class="art-section fade-up">
+        <div class="art-label">Objectives</div>
+        <h2 class="art-h2">What makes a strong Objective?</h2>
+        <p class="art-p">Objectives set the direction and the ambition. A weak Objective leads to weak Key Results and misaligned effort. A strong Objective makes people want to get out of bed on Monday.</p>
+
+        <div class="art-visual">
+            <div class="vis-grid vis-grid-3">
+                <div class="vis-card">
+                    <div class="vis-card-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <div class="vis-card-title">Ambitious but achievable</div>
+                    <div class="vis-card-sub">A good Objective should feel slightly uncomfortable — like a stretch. If the team is 100% confident they'll hit it, it's not ambitious enough. Google targets 70% achievement; 100% means the bar was set too low.</div>
+                </div>
+                <div class="vis-card">
+                    <div class="vis-card-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
+                    <div class="vis-card-title">Qualitative &amp; memorable</div>
+                    <div class="vis-card-sub">Objectives should be written in plain language that anyone in the company can repeat. "Delight our enterprise customers" beats "Improve customer satisfaction scores across segments." One is a rallying cry; the other is a report title.</div>
+                </div>
+                <div class="vis-card">
+                    <div class="vis-card-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    </div>
+                    <div class="vis-card-title">Time-bound</div>
+                    <div class="vis-card-sub">OKRs live in a cycle — usually quarterly with annual anchors. Without a deadline, an Objective is just a wish. "This quarter" or "by end of Q3" forces prioritisation and creates a natural review moment.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 4. Key Results — anatomy -->
+    <div class="art-section fade-up">
+        <div class="art-label">Key Results</div>
+        <h2 class="art-h2">Anatomy of a strong Key Result</h2>
+        <p class="art-p">Key Results are the hardest part to get right. Most teams write tasks disguised as outcomes. A good Key Result has four properties: it's measurable, outcome-based, has a baseline, and a clear target.</p>
+
+        <div class="art-visual">
+            <div class="vis-steps">
+                <div class="vis-step">
+                    <div class="vis-step-num">01</div>
+                    <div class="vis-step-title">It measures an outcome, not an output</div>
+                    <div class="vis-step-desc">"Ship the onboarding redesign" is an output — a task. "New user activation rate increases from 34% to 55%" is an outcome. The KR doesn't care how you get there; it only cares that the needle moved.</div>
+                </div>
+                <div class="vis-step">
+                    <div class="vis-step-num">02</div>
+                    <div class="vis-step-title">It has a baseline and a target</div>
+                    <div class="vis-step-desc">"Improve retention" is unmeasurable. "Increase 30-day retention from 41% to 58%" is concrete. You need a starting number to know how far you've come, and a target to know when you've arrived. No baseline = no accountability.</div>
+                </div>
+                <div class="vis-step">
+                    <div class="vis-step-num">03</div>
+                    <div class="vis-step-title">It can be scored 0–1</div>
+                    <div class="vis-step-desc">At the end of the cycle, each KR gets a score: 0.0 (no progress) to 1.0 (fully achieved). This makes progress visible and prevents binary pass/fail thinking. A score of 0.7 on an ambitious KR is often better than a 1.0 on a safe one.</div>
+                </div>
+                <div class="vis-step">
+                    <div class="vis-step-num">04</div>
+                    <div class="vis-step-title">It doesn't prescribe how</div>
+                    <div class="vis-step-desc">A Key Result tells the team what to achieve, not how to achieve it. This gives teams autonomy to run experiments, pivot initiatives, and innovate — as long as the outcome target stays in view. Prescribing the how belongs in the initiative layer.</div>
+                </div>
+                <div class="vis-step">
+                    <div class="vis-step-num">05</div>
+                    <div class="vis-step-title">2–5 KRs per Objective</div>
+                    <div class="vis-step-desc">More than 5 KRs per Objective creates cognitive overload and splits focus. If an Objective has 8 KRs, it's probably two Objectives in a trenchcoat. Each KR should represent a distinct dimension of success, not a variation of the same thing.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 5. Good vs Bad OKRs -->
+    <div class="art-section fade-up">
+        <div class="art-label">Examples</div>
+        <h2 class="art-h2">Good vs. bad OKRs in practice</h2>
+        <p class="art-p">The difference between a useful OKR and a decorative one often comes down to specificity and honesty. Here's the same intent written two ways.</p>
+
+        <div class="art-visual">
+            <div class="vis-compare">
+                <div class="vis-compare-box vis-compare-left">
+                    <div class="vis-compare-title">Weak OKR</div>
+                    <div class="vis-compare-desc">
+                        <p style="font-weight:600;margin-bottom:8px;color:var(--text);">Objective: Improve the product</p>
+                        <ul style="padding-left:16px;margin:0 0 10px;">
+                            <li>KR1: Launch 3 new features</li>
+                            <li>KR2: Fix bugs faster</li>
+                            <li>KR3: Improve user satisfaction</li>
+                            <li>KR4: Grow the user base</li>
+                        </ul>
+                        Every KR is either a task, vague, or unmeasurable. You can't score any of them honestly at quarter-end.
+                    </div>
+                </div>
+                <div class="vis-compare-box vis-compare-right">
+                    <div class="vis-compare-title">Strong OKR</div>
+                    <div class="vis-compare-desc">
+                        <p style="font-weight:600;margin-bottom:8px;color:var(--text);">Objective: Make the product indispensable for new users in Q3</p>
+                        <ul style="padding-left:16px;margin:0 0 10px;">
+                            <li>KR1: Day-7 retention increases from 29% to 45%</li>
+                            <li>KR2: Median time-to-first-value drops from 18 min to 6 min</li>
+                            <li>KR3: NPS from users &lt;30 days old increases from 14 to 35</li>
+                        </ul>
+                        Every KR has a baseline, a target, and measures an outcome the Objective actually cares about.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 6. OKR Cadence -->
+    <div class="art-section fade-up">
+        <div class="art-label">Cadence</div>
+        <h2 class="art-h2">How OKR cycles work</h2>
+        <p class="art-p">OKRs are not a once-a-year exercise. They run in nested cycles — annual for direction, quarterly for execution, weekly for check-ins. Each layer serves a different purpose.</p>
+
+        <div class="art-visual">
+            <div class="vis-steps">
+                <div class="vis-step">
+                    <div class="vis-step-num">01</div>
+                    <div class="vis-step-title">Annual OKRs — Setting the horizon</div>
+                    <div class="vis-step-desc">Company-level OKRs set the strategic direction for the year. These are typically 3–5 Objectives that describe what the organisation needs to achieve to fulfil its mission. They cascade down: each team's quarterly OKRs should contribute to at least one annual company OKR.</div>
+                </div>
+                <div class="vis-step">
+                    <div class="vis-step-num">02</div>
+                    <div class="vis-step-title">Quarterly OKRs — The execution unit</div>
+                    <div class="vis-step-desc">The quarter is the primary working unit for OKRs. Teams set 1–3 Objectives with 2–5 KRs each at the start of Q, review progress mid-quarter, and score and retrospect at the end. Quarterly cycles are short enough to stay relevant and long enough to show real movement.</div>
+                </div>
+                <div class="vis-step">
+                    <div class="vis-step-num">03</div>
+                    <div class="vis-step-title">Weekly check-ins — Staying honest</div>
+                    <div class="vis-step-desc">Every week, teams do a brief OKR check-in: What's the current score? What changed? What's blocked? This isn't a status report — it's an early warning system. Falling behind by Week 4 is recoverable. Discovering it in Week 12 is not.</div>
+                </div>
+                <div class="vis-step">
+                    <div class="vis-step-num">04</div>
+                    <div class="vis-step-title">Scoring &amp; retrospective — Closing the loop</div>
+                    <div class="vis-step-desc">At quarter-end, each KR is scored 0.0–1.0. The team discusses what drove the score, what they'd do differently, and which Objectives are worth continuing vs. retiring. Crucially: OKR scores should never be tied to performance bonuses — that destroys ambition and honesty.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 7. What are KPIs? -->
+    <div class="art-section fade-up">
+        <div class="art-label">KPIs</div>
+        <h2 class="art-h2">What are KPIs?</h2>
+        <p class="art-p">Key Performance Indicators are the metrics an organisation uses to evaluate ongoing performance. Unlike OKRs — which are temporary and goal-oriented — KPIs are persistent health monitors. They don't expire at the end of the quarter.</p>
+
+        <div class="art-visual">
+            <div class="vis-rows">
+                <div class="vis-row">
+                    <div class="vis-row-label">What they measure</div>
+                    <div class="vis-row-desc"><strong>Ongoing operational health.</strong> KPIs measure the steady-state performance of a business function. Customer Acquisition Cost (CAC), Monthly Recurring Revenue (MRR), Churn Rate, Net Promoter Score, and Time-to-Hire are KPIs — they're always relevant, tracked continuously, and compared against baselines and benchmarks.</div>
+                </div>
+                <div class="vis-row">
+                    <div class="vis-row-label">Leading vs. lagging</div>
+                    <div class="vis-row-desc"><strong>Two types, both necessary.</strong> Lagging indicators measure outcomes after the fact — revenue, churn, NPS. They're accurate but arrive too late to act on. Leading indicators predict future outcomes — trial signups, feature adoption rate, support ticket volume. Good KPI systems include both: lagging to know what happened, leading to know what's coming.</div>
+                </div>
+                <div class="vis-row">
+                    <div class="vis-row-label">Good KPI design</div>
+                    <div class="vis-row-desc"><strong>Fewer, better, owned.</strong> A KPI is only useful if someone owns it, it can be influenced by team actions, and it's reviewed regularly. A dashboard with 80 KPIs is a dashboard with 0 KPIs — nobody knows what matters. The best teams pick 5–8 KPIs per function and make them visible to everyone on the team every day.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 8. OKRs vs KPIs -->
+    <div class="art-section fade-up">
+        <div class="art-label">OKRs vs KPIs</div>
+        <h2 class="art-h2">They're not the same — and you need both</h2>
+        <p class="art-p">The most common mistake is treating OKRs and KPIs as substitutes. They're not. They answer different questions and operate at different time horizons. The best organisations use them together.</p>
+
+        <div class="art-visual">
+            <div class="vis-compare">
+                <div class="vis-compare-box vis-compare-left">
+                    <div class="vis-compare-title">OKRs</div>
+                    <div class="vis-compare-desc">
+                        <ul style="padding-left:16px;margin:0;">
+                            <li>Temporary — live for one cycle (usually a quarter)</li>
+                            <li>Goal-oriented — define where you want to go</li>
+                            <li>Ambitious by design — 70% achievement is often good</li>
+                            <li>Change quarter to quarter based on strategy</li>
+                            <li>Drive focus and alignment on priorities</li>
+                            <li>Should NOT be tied to compensation</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="vis-compare-box vis-compare-right">
+                    <div class="vis-compare-title">KPIs</div>
+                    <div class="vis-compare-desc">
+                        <ul style="padding-left:16px;margin:0;">
+                            <li>Persistent — tracked continuously, indefinitely</li>
+                            <li>Health monitors — define whether the business is working</li>
+                            <li>Stable baselines — below-target KPIs signal a problem</li>
+                            <li>Change only when the business model changes</li>
+                            <li>Drive accountability on ongoing performance</li>
+                            <li>Often used in performance reviews and bonuses</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="art-callout" style="margin-top:28px;">
+            <strong>The relationship:</strong> A KPI falling below threshold can generate an OKR. If churn is rising (KPI signal), a team might set an OKR to understand and fix the root cause. OKRs create temporary focus; KPIs maintain permanent vigilance.
+        </div>
+    </div>
+
+    <!-- 9. Common Mistakes -->
+    <div class="art-section fade-up">
+        <div class="art-label">Pitfalls</div>
+        <h2 class="art-h2">Common OKR &amp; KPI mistakes</h2>
+        <p class="art-p">Most OKR implementations fail in the first year — not because the framework is wrong, but because teams repeat the same avoidable mistakes.</p>
+
+        <div class="art-visual">
+            <div class="vis-flags">
+                <div class="vis-flags-title">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                    Watch out for these
+                </div>
+                <div class="vis-flags-list">
+                    <div class="vis-flag-item"><strong>Writing tasks as Key Results:</strong> "Launch feature X" is a task. If you can tick it off in a week with no evidence of user impact, it's not a KR. Every Key Result must measure a change in the world, not a change in your to-do list.</div>
+                    <div class="vis-flag-item"><strong>Too many OKRs:</strong> Three Objectives with four KRs each is already 12 things to move. Teams with 10+ OKRs move none of them. OKRs force prioritisation — if everything is a priority, nothing is.</div>
+                    <div class="vis-flag-item"><strong>Set-and-forget:</strong> OKRs written in January and reviewed in December are a bureaucratic exercise. Without weekly check-ins and mid-quarter adjustments, the framework adds overhead without adding value.</div>
+                    <div class="vis-flag-item"><strong>Tying OKRs to bonuses:</strong> When OKR scores affect pay, teams stop being ambitious. They set safe targets they know they'll hit. This is the fastest way to kill the whole point of the framework. Keep OKRs separate from performance reviews.</div>
+                    <div class="vis-flag-item"><strong>Vanity KPIs:</strong> Total registered users, social media followers, and page views feel impressive and are easy to game. If a KPI goes up while revenue goes down, it's a vanity metric. Every KPI should have a clear causal link to business outcomes.</div>
+                    <div class="vis-flag-item"><strong>Top-down cascade without buy-in:</strong> OKRs set entirely by leadership and handed down kill engagement. The best implementations combine top-down strategic direction (annual company OKRs) with bottom-up team OKRs — teams define their own within the company context, then align upward.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 10. Takeaway -->
+    <div class="art-section fade-up">
+        <div class="art-label">Takeaway</div>
+        <h2 class="art-h2">What to remember</h2>
+        <p class="art-p">OKRs and KPIs are not bureaucracy — they're the difference between a team that's busy and a team that's effective. Get these right and everything else becomes easier to prioritise.</p>
+
+        <div class="art-visual">
+            <div class="vis-grid vis-grid-3">
+                <div class="vis-card vis-card-accent">
+                    <div class="vis-card-title">OKRs = direction &amp; focus</div>
+                    <div class="vis-card-sub">Use OKRs to set quarterly priorities, align the team on what matters most, and create a forcing function for real outcome thinking. Keep them ambitious, keep them few.</div>
+                </div>
+                <div class="vis-card vis-card-accent">
+                    <div class="vis-card-title">KPIs = ongoing health</div>
+                    <div class="vis-card-sub">Use KPIs to track the vital signs of your product or business — continuously, not just quarterly. A healthy KPI baseline means your OKRs can safely push into new territory.</div>
+                </div>
+                <div class="vis-card vis-card-accent">
+                    <div class="vis-card-title">Outcomes over outputs</div>
+                    <div class="vis-card-sub">The hardest cultural shift is moving from shipping things to improving things. OKRs make this concrete: if you can't show a measurable change in user or business outcomes, it doesn't count as progress.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<div class="art-nav">
+    <a class="art-nav-item" href="design-thinking-fundamentals.html">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+        <div class="art-nav-text">
+            <span class="art-nav-label">Previous</span>
+            <span class="art-nav-title">Design Thinking Fundamentals</span>
+        </div>
+    </a>
+    <a class="art-nav-item art-nav-next" href="growth-hacking-fundamentals.html">
+        <div class="art-nav-text">
+            <span class="art-nav-label">Next</span>
+            <span class="art-nav-title">Growth Hacking Fundamentals</span>
+        </div>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+    </a>
+</div>
+</div>
+
+<section class="cta-sect">
+    <div class="container">
+        <h2>More on product &amp; strategy</h2>
+        <p>I write about OKRs, product management, and business frameworks. Follow on LinkedIn for more.</p>
+        <div class="cta-actions">
+            <a href="https://www.linkedin.com/in/diogomserino" target="_blank" rel="noopener" class="btn btn-primary">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                Follow on LinkedIn
+            </a>
+            <a href="../index.html#articles" class="btn btn-ghost-light">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+                Back to Articles
+            </a>
+        </div>
+    </div>
+</section>
+
+<footer class="art-footer">
+    <div class="container footer-inner">
+        <div class="footer-copy">© 2026 Diogo Serino</div>
+        <a class="footer-back" href="../index.html#articles">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+            All articles
+        </a>
+    </div>
+</footer>
+
+<script src="../assets/js/article.js"></script>
+</body>
+</html>

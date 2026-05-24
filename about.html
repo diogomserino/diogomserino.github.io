@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About — Diogo Serino · Product Manager</title>
+    <meta name="description" content="Diogo Serino — Product Manager. Background in financial analytics, BI, and design. Creator of TryCareerMatch. Open to PM roles in Portugal / EU.">
+    <meta property="og:title" content="About — Diogo Serino · Product Manager">
+    <meta property="og:description" content="Product Manager with technical depth in Power BI, Python, and SQL, plus 7 years of design experience. Creator of TryCareerMatch. Open to PM roles in Portugal / EU.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://diogomserino.github.io/about.html">
+    <meta property="og:image" content="https://diogomserino.github.io/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://diogomserino.github.io/about.html">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%2306111F'/><text x='50' y='72' font-family='system-ui,sans-serif' font-weight='900' font-size='58' text-anchor='middle' fill='%233B6FFF'>D</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/main.css">
+
+    <style>
+        /* ============================================================
+           ABOUT PAGE NAV
+        ============================================================ */
+        .about-nav {
+            position: fixed; top: 0; left: 0; right: 0;
+            height: var(--nav-h);
+            background: rgba(255,255,255,.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000; transition: box-shadow .2s;
+        }
+        .about-nav.scrolled { box-shadow: 0 2px 20px rgba(6,17,31,.07); }
+        .nav-inner-about {
+            max-width: var(--mw); margin: 0 auto; padding: 0 24px;
+            height: 100%; display: flex; align-items: center;
+            justify-content: space-between;
+        }
+        .logo-about {
+            font-family: var(--font-head);
+            font-size: 18px; font-weight: 800; color: var(--navy);
+            letter-spacing: -.4px;
+        }
+        .logo-about em { color: var(--blue); font-style: normal; }
+        .nav-about-links {
+            display: flex; align-items: center; gap: 2px;
+        }
+        .nav-about-links a {
+            color: var(--muted); font-size: 14px; font-weight: 500;
+            padding: 7px 12px; border-radius: 8px;
+            transition: color .2s, background .2s;
+        }
+        .nav-about-links a:hover { color: var(--navy); background: var(--bg-alt); }
+        .nav-about-links a.home-cta {
+            background: var(--navy); color: #fff !important;
+            margin-left: 6px; padding: 7px 18px; border-radius: 8px;
+            transition: background .2s;
+        }
+        .nav-about-links a.home-cta:hover { background: var(--navy-700); }
+        .hamburger-about {
+            display: none; flex-direction: column;
+            gap: 5px; cursor: pointer; padding: 6px;
+        }
+        .hamburger-about span {
+            width: 22px; height: 2px;
+            background: var(--navy); border-radius: 2px;
+        }
+        .mob-nav-about {
+            display: none; position: fixed;
+            top: var(--nav-h); left: 0; right: 0;
+            background: rgba(255,255,255,.98);
+            backdrop-filter: blur(16px);
+            padding: 12px 24px 24px; z-index: 899;
+            border-top: 1px solid var(--border);
+        }
+        .mob-nav-about.open { display: block; }
+        .mob-nav-about a {
+            display: block; color: var(--muted);
+            font-size: 15px; font-weight: 500;
+            padding: 13px 0; border-bottom: 1px solid var(--border);
+            transition: color .2s;
+        }
+        .mob-nav-about a:hover { color: var(--navy); }
+
+        /* ============================================================
+           ABOUT HERO
+        ============================================================ */
+        .about-hero {
+            padding: calc(var(--nav-h) + 72px) 0 64px;
+            background: var(--bg-alt);
+            border-bottom: 1px solid var(--border);
+        }
+        .about-hero-inner {
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: 80px; align-items: start;
+        }
+        .about-hero-text h1 {
+            font-family: var(--font-head);
+            font-size: clamp(38px, 5vw, 56px);
+            font-weight: 800; color: var(--navy);
+            line-height: 1; letter-spacing: -2px; margin-bottom: 20px;
+        }
+        .about-hero-role {
+            font-size: 15px; color: var(--muted); font-weight: 500;
+            margin-bottom: 28px;
+        }
+        .about-hero-role span { color: var(--blue); }
+        .about-hero-text p {
+            font-size: 16px; color: var(--muted);
+            line-height: 1.88; margin-bottom: 18px;
+        }
+        .about-hero-text p strong { color: var(--text); font-weight: 600; }
+        .about-hero-text p:last-of-type { margin-bottom: 0; }
+
+        .about-stats {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 14px;
+        }
+        .astat {
+            background: var(--bg); border: 1px solid var(--border);
+            border-radius: var(--r); padding: 20px 22px;
+        }
+        .astat-val {
+            font-family: var(--font-head);
+            font-size: 28px; font-weight: 800; color: var(--navy);
+            line-height: 1; margin-bottom: 4px; letter-spacing: -1px;
+        }
+        .astat-val span { color: var(--blue); }
+        .astat-lbl { font-size: 13px; color: var(--muted); line-height: 1.45; }
+
+        /* ============================================================
+           SECTION HEADERS (about page)
+        ============================================================ */
+        .about-section { padding: 72px 0; }
+        .about-section + .about-section { border-top: 1px solid var(--border); }
+        .about-section-header { margin-bottom: 48px; }
+        .about-section-header h2 {
+            font-family: var(--font-head);
+            font-size: clamp(24px, 3vw, 32px); font-weight: 700;
+            color: var(--navy); letter-spacing: -.6px;
+        }
+
+        /* ============================================================
+           EDUCATION GRID
+        ============================================================ */
+        .edu-grid-about {
+            display: grid; grid-template-columns: 1fr; gap: 40px;
+        }
+        .edu-col-label {
+            font-size: 11px; font-weight: 700; letter-spacing: .1em;
+            text-transform: uppercase; color: var(--muted); margin-bottom: 20px;
+        }
+
+        /* ============================================================
+           CONTACT STRIP
+        ============================================================ */
+        .contact-strip {
+            background: var(--navy); padding: 56px 0;
+        }
+        .contact-strip-inner {
+            display: flex; align-items: center;
+            justify-content: space-between; flex-wrap: wrap; gap: 24px;
+        }
+        .contact-strip h2 {
+            font-family: var(--font-head);
+            font-size: clamp(22px, 3vw, 30px);
+            font-weight: 700; color: #fff; letter-spacing: -.5px;
+        }
+        .contact-strip p {
+            font-size: 15px; color: rgba(255,255,255,.45);
+            margin-top: 6px;
+        }
+        .contact-strip-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+
+        /* ============================================================
+           RESPONSIVE
+        ============================================================ */
+        @media (max-width: 900px) {
+            .about-hero-inner { grid-template-columns: 1fr; gap: 40px; }
+        }
+        @media (max-width: 768px) {
+            .nav-about-links { display: none; }
+            .hamburger-about { display: flex; }
+            .edu-grid-about { grid-template-columns: 1fr; gap: 36px; }
+            .about-stats { grid-template-columns: 1fr 1fr; }
+            .contact-strip-inner { flex-direction: column; align-items: flex-start; }
+        }
+        @media (max-width: 520px) {
+            .about-stats { grid-template-columns: 1fr; }
+        }
+
+        /* Skills — hide icons, uniform grey hover, uniform tag color */
+        .skcat-ico { display: none; }
+        .skcat.bi:hover, .skcat.data:hover, .skcat.fin:hover, .skcat.ba:hover,
+        .skcat.ai:hover, .skcat.lang:hover, .skcat.prod:hover, .skcat.design:hover {
+            border-color: rgba(6,17,31,.14);
+        }
+        .sktag.hi {
+            background: var(--bg-alt);
+            border-color: var(--border);
+            color: var(--text);
+        }
+
+        /* Promotion note in timeline */
+        .tpromo {
+            font-size: 13px; color: var(--muted);
+            font-style: italic; margin-bottom: 10px;
+        }
+
+        /* Education entries in timeline */
+        .titem.edu .tdot {
+            background: var(--blue);
+            box-shadow: 0 0 0 3px rgba(59,111,255,.15);
+            animation: none;
+        }
+        .titem.edu .tperiod { color: rgba(59,111,255,.72); }
+        .titem.edu .trole   { color: var(--blue); }
+        .titem.edu .tco     { color: var(--muted); }
+    </style>
+</head>
+<body>
+
+<div class="progress" id="progress"></div>
+
+<!-- NAV -->
+<nav class="about-nav" id="about-nav">
+    <div class="nav-inner-about">
+        <a href="index.html" class="logo-about">DMS<em>.</em></a>
+        <div class="nav-about-links">
+            <a href="#experience">Experience</a>
+            <a href="#skills">Skills</a>
+            <a href="index.html" class="home-cta">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align:middle"><polyline points="15 18 9 12 15 6"/></svg>
+                Portfolio
+            </a>
+        </div>
+        <div class="hamburger-about" id="hbg-about" onclick="toggleMenuAbout()">
+            <span></span><span></span><span></span>
+        </div>
+    </div>
+</nav>
+<div class="mob-nav-about" id="mob-nav-about">
+    <a href="#experience" onclick="closeMenuAbout()">Experience</a>
+    <a href="#skills"     onclick="closeMenuAbout()">Skills</a>
+    <a href="index.html"  onclick="closeMenuAbout()">← Portfolio</a>
+</div>
+
+
+<!-- HERO -->
+<div class="about-hero">
+    <div class="container">
+        <div class="about-hero-inner">
+            <div class="about-hero-text">
+                <div class="label">About me</div>
+                <h1>Diogo<br>Serino</h1>
+                <p class="about-hero-role">
+                    <span>Product Manager</span> — Open to opportunities
+                </p>
+                <p>I'm a Product Manager who builds things and measures what matters. I conceived and launched <strong>TryCareerMatch</strong> end-to-end — discovery, data model, UX, and deployment — a career platform mapping 88 skills against 60+ roles across 9 sectors.</p>
+                <p>My background as a Financial Analyst at ABB Imobiliária means I don't just read dashboards — I build them. Power BI, Python, SQL, KPI frameworks across a multi-company group. I know how executive decisions are made, and I can set up the metrics infrastructure most teams rely on Data to provide.</p>
+                <p>Seven years of design gives me a UX instinct and the ability to prototype quickly. I'm looking for a <strong>Product Manager</strong> role where analytical rigour and design thinking aren't separate departments — they're the same mindset.</p>
+            </div>
+            <div class="about-stats">
+                <div class="astat">
+                    <div class="astat-val" style="font-size:22px; letter-spacing:-.5px;">Data</div>
+                    <div class="astat-lbl">Power BI · Python · SQL · Forecasting</div>
+                </div>
+                <div class="astat">
+                    <div class="astat-val" style="font-size:22px; letter-spacing:-.5px;">Product</div>
+                    <div class="astat-lbl">Agile · OKRs · Roadmapping · Frameworks</div>
+                </div>
+                <div class="astat">
+                    <div class="astat-val" style="font-size:22px; letter-spacing:-.5px;">Design</div>
+                    <div class="astat-lbl">7 Years · Figma · Adobe · UI/UX</div>
+                </div>
+                <div class="astat">
+                    <div class="astat-val" style="font-size:22px; letter-spacing:-.5px;">Finance</div>
+                    <div class="astat-lbl">Budgets · KPIs · Variance · ERP</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- EXPERIENCE -->
+<section class="about-section" id="experience">
+    <div class="container">
+        <div class="about-section-header">
+            <div class="label">Background</div>
+            <h2>Career &amp; Education</h2>
+        </div>
+
+        <div class="timeline">
+
+            <div class="titem current fade-up">
+                <div class="tdot"></div>
+                <div class="tperiod">Sep 2025 – Present</div>
+                <div class="trole">Business &amp; Product Manager</div>
+                <div class="tco">DMS &nbsp;·&nbsp; Independent &nbsp;·&nbsp; Remote</div>
+                <ul class="tbulls">
+                    <li>Conceived, designed, and launched <strong>TryCareerMatch</strong> (<a href="https://trycareermatch.com" target="_blank" rel="noopener" style="color:var(--blue)">trycareermatch.com</a>) — a career discovery platform mapping 88 skills against 60+ roles across 9 sectors using a weighted scoring model; free, no-registration product built for professionals with cross-functional backgrounds.</li>
+                    <li>Designed and built end-to-end analytics platforms — from ETL pipelines and data modelling to Power BI dashboards, REST APIs, and executive reports.</li>
+                    <li>Published 18+ articles on product management, analytics, growth, and business strategy at this portfolio — covering PM fundamentals, Agile/Scrum, OKRs, growth frameworks, and financial analysis.</li>
+                    <li>Freelance consulting: business plans, financial analysis, and viability studies for SMEs in the Braga/Porto region.</li>
+                </ul>
+            </div>
+
+            <div class="titem edu fade-up">
+                <div class="tdot"></div>
+                <div class="tperiod">Apr – Aug 2025</div>
+                <div class="trole">Post-Graduate in Innovation &amp; Entrepreneurship</div>
+                <div class="tco">Universidade do Minho</div>
+            </div>
+
+            <div class="titem fade-up">
+                <div class="tdot"></div>
+                <div class="tperiod">Nov 2023 – May 2025 &nbsp;·&nbsp; 18 months</div>
+                <div class="trole">Financial Analyst</div>
+                <div class="tco">Alexandre Barbosa Borges II Imobiliária, S.A. &nbsp;·&nbsp; Barcelos &nbsp;·&nbsp; On-site</div>
+                <div class="tpromo">Promoted from IEFP trainee to permanent Financial Analyst within the group's controlling and financial reporting team.</div>
+                <ul class="tbulls">
+                    <li>Defined and owned a KPI monitoring framework across multiple group companies — surfacing quarterly variances and proposing corrective actions adopted by senior management.</li>
+                    <li>Designed and shipped executive dashboards (Power BI + Excel) that became the primary tool for investment and resource allocation decisions, replacing ad-hoc manual reports.</li>
+                    <li>Automated reconciliation and reporting workflows, reducing quarterly closing time and eliminating a class of manual errors.</li>
+                    <li>Acted as the data interface between finance, engineering, and operations — translating business requirements into data models and reporting deliverables.</li>
+                    <li>Consolidated financial data from multiple ERP sources; prepared quarterly and annual variance analysis reports.</li>
+                </ul>
+            </div>
+
+            <div class="titem fade-up">
+                <div class="tdot"></div>
+                <div class="tperiod">Jan – Dec 2021</div>
+                <div class="trole">Digital Marketing &amp; Web Intern</div>
+                <div class="tco">Office Partner — Papelaria e Soluções para Escritório Lda &nbsp;·&nbsp; Porto &nbsp;·&nbsp; Hybrid</div>
+                <ul class="tbulls">
+                    <li>Managed and updated company website (WordPress, HTML/CSS) — content updates, layout improvements, and performance fixes.</li>
+                    <li>Tracked and reported on digital performance metrics (traffic, engagement, conversions) — translating data into actionable recommendations.</li>
+                    <li>Created digital assets and visual content for campaigns, applying graphic design skills to maintain brand consistency across channels.</li>
+                    <li>Supported SEO efforts — on-page optimisation, keyword research, and content structuring.</li>
+                </ul>
+            </div>
+
+            <div class="titem edu fade-up">
+                <div class="tdot"></div>
+                <div class="tperiod">2019 – 2023</div>
+                <div class="trole">BSc in Business Management</div>
+                <div class="tco">Universidade da Maia</div>
+            </div>
+
+            <div class="titem fade-up">
+                <div class="tdot"></div>
+                <div class="tperiod">2015 – 2022</div>
+                <div class="trole">Freelance Designer</div>
+                <div class="tco">Graphic Design, Web &amp; 3D Visualisation &nbsp;·&nbsp; Remote</div>
+                <ul class="tbulls">
+                    <li>Managed full project lifecycle client engagements over 7 years: briefing → concept → production → delivery, handling multiple projects simultaneously.</li>
+                    <li>Delivered brand identity systems (logo, visual guidelines, print and digital assets) for clients across Portugal.</li>
+                    <li>Designed and developed websites (WordPress, HTML/CSS, Adobe XD) for small and medium businesses.</li>
+                    <li>Produced interior 3D visualisation renders for architecture and real estate clients.</li>
+                    <li>Entrepreneurship — <strong>Dimser</strong> clothing brand (~2019–2020): built brand identity, social media presence, and online store (WooCommerce/Shopify), handling production and digital marketing end-to-end.</li>
+                    <li>Managed client relationships independently — proposals, scoping, feedback cycles, and final delivery with no account management layer.</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- SKILLS -->
+<section class="about-section section-alt" id="skills">
+    <div class="container">
+        <div class="about-section-header">
+            <div class="label">Capabilities</div>
+            <h2>Technical Skills</h2>
+        </div>
+
+        <div class="skills-grid">
+
+            <div class="skcat bi fade-up">
+                <div class="skcat-head">
+                    <div class="skcat-ico">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="18" y="3" width="4" height="18"/><rect x="10" y="8" width="4" height="13"/><rect x="2" y="13" width="4" height="8"/></svg>
+                    </div>
+                    <div class="skcat-name">Business Intelligence</div>
+                </div>
+                <div class="sktags">
+                    <span class="sktag hi">Power BI</span>
+                    <span class="sktag hi">DAX</span>
+                    <span class="sktag hi">Power Query</span>
+                    <span class="sktag hi">Excel (Advanced)</span>
+                    <span class="sktag">Data Visualisation</span>
+                    <span class="sktag">Streamlit</span>
+                    <span class="sktag">Power Automate</span>
+                </div>
+            </div>
+
+            <div class="skcat data fade-up">
+                <div class="skcat-head">
+                    <div class="skcat-ico">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                    </div>
+                    <div class="skcat-name">Data Engineering</div>
+                </div>
+                <div class="sktags">
+                    <span class="sktag hi">Python</span>
+                    <span class="sktag hi">SQL</span>
+                    <span class="sktag hi">Pandas</span>
+                    <span class="sktag hi">FastAPI</span>
+                    <span class="sktag">ETL Pipelines</span>
+                    <span class="sktag">REST APIs</span>
+                    <span class="sktag">SARIMAX / STL</span>
+                    <span class="sktag">Data Warehouse</span>
+                    <span class="sktag">Star Schema</span>
+                    <span class="sktag">Data Quality</span>
+                </div>
+            </div>
+
+            <div class="skcat fin fade-up">
+                <div class="skcat-head">
+                    <div class="skcat-ico">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                    </div>
+                    <div class="skcat-name">Financial Analysis</div>
+                </div>
+                <div class="sktags">
+                    <span class="sktag hi">Budget vs Actual</span>
+                    <span class="sktag hi">Variance Analysis</span>
+                    <span class="sktag hi">KPI Monitoring</span>
+                    <span class="sktag">Financial Modelling</span>
+                    <span class="sktag">Forecasting</span>
+                    <span class="sktag">ERP</span>
+                </div>
+            </div>
+
+            <div class="skcat prod fade-up">
+                <div class="skcat-head">
+                    <div class="skcat-ico">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/><line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="2" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22" y2="12"/></svg>
+                    </div>
+                    <div class="skcat-name">Product &amp; Strategy</div>
+                </div>
+                <div class="sktags">
+                    <span class="sktag hi">OKRs &amp; KPIs</span>
+                    <span class="sktag hi">Agile / Scrum</span>
+                    <span class="sktag hi">Prioritization Frameworks</span>
+                    <span class="sktag">Product Roadmapping</span>
+                    <span class="sktag">Design Thinking</span>
+                    <span class="sktag">Business Model Canvas</span>
+                </div>
+            </div>
+
+            <div class="skcat ba fade-up">
+                <div class="skcat-head">
+                    <div class="skcat-ico">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    </div>
+                    <div class="skcat-name">Business Analysis</div>
+                </div>
+                <div class="sktags">
+                    <span class="sktag hi">Requirements Analysis</span>
+                    <span class="sktag hi">User Stories</span>
+                    <span class="sktag">Stakeholder Management</span>
+                    <span class="sktag">Process Optimisation</span>
+                    <span class="sktag">Reporting Automation</span>
+                    <span class="sktag">Business Plans</span>
+                    <span class="sktag">SME Consulting</span>
+                    <span class="sktag">BPMN</span>
+                    <span class="sktag">Process Mapping</span>
+                    <span class="sktag">Gap Analysis</span>
+                    <span class="sktag">User Acceptance Testing</span>
+                    <span class="sktag">Stakeholder Workshops</span>
+                </div>
+            </div>
+
+            <div class="skcat design fade-up">
+                <div class="skcat-head">
+                    <div class="skcat-ico">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                    </div>
+                    <div class="skcat-name">Design &amp; Creative</div>
+                </div>
+                <div class="sktags">
+                    <span class="sktag hi">Figma</span>
+                    <span class="sktag hi">Adobe Illustrator</span>
+                    <span class="sktag hi">Adobe Photoshop</span>
+                    <span class="sktag">UI/UX Thinking</span>
+                    <span class="sktag">3D Visualisation</span>
+                    <span class="sktag">Brand Identity</span>
+                </div>
+            </div>
+
+            <div class="skcat ai fade-up">
+                <div class="skcat-head">
+                    <div class="skcat-ico">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                    </div>
+                    <div class="skcat-name">AI &amp; Tools</div>
+                </div>
+                <div class="sktags">
+                    <span class="sktag hi">AI-Augmented Workflows</span>
+                    <span class="sktag">Prompt Engineering</span>
+                    <span class="sktag">HTML / CSS / JS</span>
+                    <span class="sktag">Git / GitHub</span>
+                    <span class="sktag">Notion</span>
+                    <span class="sktag">Jira / Linear</span>
+                    <span class="sktag">VS Code</span>
+                </div>
+            </div>
+
+            <div class="skcat lang fade-up">
+                <div class="skcat-head">
+                    <div class="skcat-ico">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 8l6 6"/><path d="M4 14l6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="M22 22l-5-10-5 10"/><path d="M14 18h6"/></svg>
+                    </div>
+                    <div class="skcat-name">Languages</div>
+                </div>
+                <div class="sktags">
+                    <span class="sktag hi">Portuguese (Native)</span>
+                    <span class="sktag hi">English (C1)</span>
+                    <span class="sktag">Spanish (C1)</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+<!-- CONTACT STRIP -->
+<div class="contact-strip">
+    <div class="container">
+        <div class="contact-strip-inner">
+            <div>
+                <h2>Let's work together</h2>
+                <p>Product Manager or Product Owner — where analytical depth and design thinking are valued.</p>
+            </div>
+            <div class="contact-strip-actions">
+                <a href="https://linkedin.com/in/diogomserino" target="_blank" rel="noopener" class="btn btn-primary">
+                    LinkedIn
+                </a>
+                <a href="cv.html" class="btn btn-ghost">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    Download CV
+                </a>
+                <a href="index.html#contact" class="btn btn-ghost">
+                    Contact
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <span>© 2026 Diogo Martins Serino</span>
+    <span class="footer-sep">·</span>
+    <a href="index.html">Portfolio</a>
+    <span class="footer-sep">·</span>
+    <a href="https://github.com/diogomserino" target="_blank" rel="noopener">GitHub</a>
+    <span class="footer-sep">·</span>
+    <a href="https://linkedin.com/in/diogomserino" target="_blank" rel="noopener">LinkedIn</a>
+</footer>
+
+
+<script>
+    /* Progress bar */
+    const prog = document.getElementById('progress');
+    window.addEventListener('scroll', () => {
+        const s = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
+        prog.style.width = (s * 100) + '%';
+    }, { passive: true });
+
+    /* Nav shadow on scroll */
+    const nav = document.getElementById('about-nav');
+    window.addEventListener('scroll', () => {
+        nav.classList.toggle('scrolled', window.scrollY > 20);
+    }, { passive: true });
+
+    /* Mobile menu */
+    function toggleMenuAbout() { document.getElementById('mob-nav-about').classList.toggle('open'); }
+    function closeMenuAbout()  { document.getElementById('mob-nav-about').classList.remove('open'); }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenuAbout(); });
+
+    /* Fade-up on scroll */
+    const io = new IntersectionObserver(entries => {
+        entries.forEach(en => {
+            if (!en.isIntersecting) return;
+            const el = en.target;
+            const siblings = Array.from(el.parentElement.querySelectorAll('.fade-up'));
+            const i = siblings.indexOf(el);
+            el.style.transitionDelay = (i * 70) + 'ms';
+            el.classList.add('in');
+            io.unobserve(el);
+        });
+    }, { threshold: 0.06, rootMargin: '0px 0px -24px 0px' });
+    document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>

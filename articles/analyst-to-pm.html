@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>From Financial Analyst to Product Manager — Diogo Serino</title>
+<meta name="description" content="What the transition from Financial Analyst to Product Manager actually looks like — what transfers, what doesn't, and how building TryCareerMatch proved it was possible.">
+<meta property="og:title" content="From Financial Analyst to Product Manager — Diogo Serino">
+<meta property="og:description" content="What the transition from Financial Analyst to Product Manager actually looks like — what transfers, what doesn't, and how building TryCareerMatch proved it was possible.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://diogomserino.github.io/articles/analyst-to-pm.html">
+<meta property="og:image" content="https://diogomserino.github.io/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://diogomserino.github.io/articles/analyst-to-pm.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "From Financial Analyst to Product Manager — Diogo Serino",
+  "description": "What the transition from Financial Analyst to Product Manager actually looks like — what transfers, what doesn't, and how building TryCareerMatch proved it was possible.",
+  "url": "https://diogomserino.github.io/articles/analyst-to-pm.html",
+  "author": {
+    "@type": "Person",
+    "name": "Diogo Serino",
+    "url": "https://diogomserino.github.io"
+  }
+}
+</script>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%2306111F'/><text x='50' y='72' font-family='system-ui,sans-serif' font-weight='900' font-size='58' text-anchor='middle' fill='%233B6FFF'>D</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/main.css">
+<style>
+.proj-hero {
+    background: #052416;
+    background-image:
+        radial-gradient(ellipse 72% 56% at 62% 38%, rgba(5,150,105,.22) 0%, transparent 70%),
+        radial-gradient(circle at 12% 72%, rgba(110,231,183,.07) 0%, transparent 52%);
+}
+.progress { background: linear-gradient(90deg, #059669, #6EE7B7); }
+.proj-badge { background: rgba(5,150,105,.12); border-color: rgba(5,150,105,.30); color: #6EE7B7; }
+.art-label { color: #059669; }
+.vis-card-icon { background: rgba(5,150,105,.10); border-color: rgba(5,150,105,.20); color: #059669; }
+.vis-card-title { color: #059669; }
+.vis-card-accent { background: #059669; border-color: #059669; }
+.vis-step::before { background: linear-gradient(90deg, #059669, #6EE7B7); }
+.vis-step-num { color: rgba(5,150,105,.22); }
+.vis-step-title { color: #065F46; }
+.vis-step:hover { box-shadow: 0 6px 24px rgba(5,150,105,.18); border-color: rgba(5,150,105,.30); }
+.vis-row { border-left-color: rgba(5,150,105,.40); border-color: rgba(5,150,105,.16); }
+.vis-row-label { color: #059669; }
+.vis-row-accent { background: rgba(5,150,105,.07); border-color: rgba(5,150,105,.20); }
+.vis-dark-card { background: #059669; }
+.vis-compare-left  { border-top-color: #059669; }
+.vis-compare-right { border-top-color: #065F46; }
+.vis-flow-wrap { background: linear-gradient(135deg, rgba(5,150,105,.08), rgba(5,150,105,.05)); border-color: rgba(5,150,105,.18); }
+.vis-tag-pill { background: rgba(5,150,105,.10); border-color: rgba(5,150,105,.22); color: #059669; }
+.vis-flag-item::before { background: #059669; }
+.vis-card:hover { box-shadow: 0 4px 20px rgba(5,150,105,.12); border-color: rgba(5,150,105,.22); }
+h1.proj-title { background-image: linear-gradient(140deg, #fff 0%, #fff 42%, #6EE7B7 100%); }
+.btn-primary { background: #059669; box-shadow: 0 4px 16px rgba(5,150,105,.30); color: #fff; }
+.btn-primary:hover { background: #065F46; box-shadow: 0 6px 22px rgba(5,150,105,.42); transform: translateY(-2px); }
+.art-callout { border-left-color: #059669; }
+</style>
+</head>
+<body>
+
+<div class="progress" id="progress"></div>
+
+<nav class="page-nav" id="main-nav">
+    <div class="nav-inner">
+        <a href="../index.html" class="logo">DMS<span>.</span></a>
+        <div class="nav-crumb">
+            <a href="../index.html#articles">Articles</a>
+            <span class="sep">/</span>
+            <span class="curr">From Financial Analyst to Product Manager</span>
+        </div>
+        <a href="../index.html#articles" class="nav-back">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+            Back
+        </a>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="proj-hero">
+    <div class="container proj-hero-inner">
+        <div class="proj-badge">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            Career &nbsp;·&nbsp; Personal
+        </div>
+        <h1 class="proj-title">From Financial Analyst<br>to Product Manager</h1>
+        <p class="proj-sub">What the transition actually looks like — what transfers, what doesn't, and why building something yourself is the only honest proof.</p>
+        <div class="stack-row">
+            <span class="stag-dk">Career Transition</span>
+            <span class="stag-dk">Product Management</span>
+            <span class="stag-dk">Financial Analysis</span>
+            <span class="stag-dk">Personal</span>
+        </div>
+        <div class="proj-meta">
+            <span class="proj-meta-item">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                May 2026
+            </span>
+            <span class="proj-meta-item">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                8 min read
+            </span>
+        </div>
+    </div>
+</section>
+
+<!-- ARTICLE -->
+<div class="art-wrap">
+
+    <div class="art-intro fade-up">
+        <p>There's a version of this article that lists ten transferable skills, reassures you that "analysts make great PMs," and ends with a call to action. This isn't that article.</p>
+        <p>The transition from Financial Analyst to Product Manager is real and achievable — but it's not a straight line, and it's not automatic. Some things transfer cleanly. Others don't transfer at all. And a few things that looked like advantages turned out to be liabilities. What follows is my honest account of what that shift actually felt like.</p>
+    </div>
+
+    <!-- 1. THE COMFORTABLE TRAP -->
+    <div class="art-section fade-up">
+        <span class="art-label">The Starting Point</span>
+        <h2 class="art-h2">The comfortable trap</h2>
+        <p class="art-p">For several years I worked as a Financial Analyst in a multi-company group — building the dashboards, KPI frameworks, and financial models that executives used to make decisions. The work was technically demanding. Power BI, Python, SQL, cross-entity consolidations across a group structure. Not many people in the organisation could do it, and that created a particular kind of professional comfort.</p>
+        <p class="art-p">But there was a persistent frustration underneath it. I was close to decisions — sometimes the closest person in the room to the data that informed them — without having any say in what those decisions were. I could tell you what the numbers said. I couldn't tell you what to do about them. That wasn't my role.</p>
+        <p class="art-p">Over time, I noticed I kept asking a different set of questions than the ones my role required. Not "what does this metric show?" but "why are we tracking this metric and not that one?" Not "what happened to revenue in Q3?" but "what product or operational decision caused this, and could we have predicted it?" The analyst role rewarded answering questions. I was increasingly interested in choosing which questions to ask.</p>
+
+        <div class="art-callout">The signal that something needs to change isn't dissatisfaction with the work — it's realising you're consistently asking questions that fall outside your job description.</div>
+    </div>
+
+    <!-- 2. WHAT TRANSFERS -->
+    <div class="art-section fade-up">
+        <span class="art-label">The Honest Inventory</span>
+        <h2 class="art-h2">What actually transfers</h2>
+        <p class="art-p">Not everything, but more than you'd think — and some of it transfers better than most PM candidates can offer.</p>
+
+        <div class="art-visual">
+            <div class="vis-rows">
+                <div class="vis-row vis-row-accent">
+                    <div class="vis-row-label">Comfort with quantitative reasoning</div>
+                    <div class="vis-row-desc">Most PMs talk about metrics. Analysts live in them. The difference matters in practice: knowing how a metric is constructed, what it doesn't capture, and when it's being gamed is a different skill than knowing it exists. That fluency transfers directly to product instrumentation, A/B test design, and retention analysis.</div>
+                </div>
+                <div class="vis-row vis-row-accent">
+                    <div class="vis-row-label">Understanding how executive decisions are made</div>
+                    <div class="vis-row-desc">Working inside a multi-company group meant building reports that went to the board. You learn very quickly how senior stakeholders consume information — what they care about, what they skip, and what they need to see before they'll make a call. That pattern recognition is directly useful when you're writing a business case or presenting a roadmap to leadership.</div>
+                </div>
+                <div class="vis-row vis-row-accent">
+                    <div class="vis-row-label">Structured problem decomposition</div>
+                    <div class="vis-row-desc">Financial modelling is fundamentally about breaking a complex system into its component drivers and understanding how they relate. That structure — hypothesis, variables, interaction effects, sensitivity analysis — maps almost directly onto product problem-solving. It's a different vocabulary, but the cognitive pattern is the same.</div>
+                </div>
+                <div class="vis-row vis-row-accent">
+                    <div class="vis-row-label">Cross-functional translation</div>
+                    <div class="vis-row-desc">In a group structure you're constantly translating between business units, finance, operations, and management — each with different frames, different priorities, and different definitions of the same words. That's 80% of what stakeholder management in product actually is.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. WHAT DOESN'T TRANSFER -->
+    <div class="art-section fade-up">
+        <span class="art-label">The Hard Part</span>
+        <h2 class="art-h2">What doesn't transfer (and surprised me)</h2>
+        <p class="art-p">The things that didn't transfer were harder to anticipate — not because they were obscure, but because they felt like they should work and then didn't.</p>
+
+        <div class="art-visual">
+            <div class="vis-grid vis-grid-2">
+                <div class="vis-card">
+                    <div class="vis-card-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                    </div>
+                    <div class="vis-card-title">Being right vs. being aligned</div>
+                    <div class="vis-card-sub">In analysis, being right is sufficient. The data either supports the conclusion or it doesn't. In product, you can be analytically correct and still fail to move anything — because alignment, trust, and timing matter as much as the quality of the argument. This is genuinely uncomfortable when you're used to the answer being in the spreadsheet.</div>
+                </div>
+                <div class="vis-card">
+                    <div class="vis-card-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                    </div>
+                    <div class="vis-card-title">Influence without authority</div>
+                    <div class="vis-card-sub">Analysts produce outputs that others act on. PMs need to change behaviour without formal authority — across engineering, design, sales, support, and marketing. The levers are completely different: framing, narrative, relationship, timing. This is learnable, but it doesn't arrive automatically with the job title.</div>
+                </div>
+                <div class="vis-card">
+                    <div class="vis-card-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                    </div>
+                    <div class="vis-card-title">User empathy vs. data empathy</div>
+                    <div class="vis-card-sub">I was good at reading data. Reading users is a different skill. Numbers tell you what happened. Users tell you why — but only if you know how to listen, what to ask, and how to separate what they say from what they actually need. That gap is real and requires deliberate practice, not just analytical instinct.</div>
+                </div>
+                <div class="vis-card">
+                    <div class="vis-card-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                    </div>
+                    <div class="vis-card-title">No clear deliverable</div>
+                    <div class="vis-card-sub">Analyst work has a tangible output: a report, a dashboard, a model. The feedback loop is fast and concrete. PM work is often diffuse — you're shaping direction, building context, removing blockers. Weeks can pass with no visible artefact. If your sense of productivity is tied to deliverables, this ambiguity is genuinely disorienting at first.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="art-callout">The transition isn't about acquiring new skills to replace old ones. It's about learning which old instincts to trust and which to override — and that distinction only becomes clear through doing.</div>
+    </div>
+
+    <!-- 4. THE BRIDGE -->
+    <div class="art-section fade-up">
+        <span class="art-label">The Proof of Concept</span>
+        <h2 class="art-h2">Building TryCareerMatch as the bridge</h2>
+        <p class="art-p">At some point, the gap between wanting to do PM work and being able to demonstrate PM experience becomes the central problem. You can't get the role without the experience, and you can't get the experience without the role. The only way out I found was to create the experience myself.</p>
+        <p class="art-p">TryCareerMatch started as a personal problem — I couldn't find a tool that mapped my cross-functional skill profile against specific roles. Six weeks later it was live at trycareermatch.com, used by real people making real career decisions. The whole thing: discovery, data model design, UX decisions, build, deployment. No team, no runway, no existing product to modify.</p>
+
+        <div class="art-visual">
+            <div class="vis-steps">
+                <div class="vis-step">
+                    <div class="vis-step-num">01</div>
+                    <div class="vis-step-title">Discovery without a research team</div>
+                    <div class="vis-step-desc">I had to define the problem, validate the framing, and scope the solution without a researcher, a design sprint, or a backlog. Every product decision required me to be explicit about the assumption I was making and why — which is, it turns out, the core discipline of the role.</div>
+                </div>
+                <div class="vis-step">
+                    <div class="vis-step-num">02</div>
+                    <div class="vis-step-title">Data model as the core product decision</div>
+                    <div class="vis-step-desc">The most critical decision wasn't the interface — it was the 88-skill × 60-role weight matrix underneath it. Getting that wrong would have made every correct UX decision irrelevant. Spending two weeks entirely on the data model before writing any UI code was the highest-leverage choice I made. That sequencing came directly from financial modelling instincts.</div>
+                </div>
+                <div class="vis-step">
+                    <div class="vis-step-num">03</div>
+                    <div class="vis-step-title">Shipping without permission</div>
+                    <div class="vis-step-desc">There's no substitute for the experience of putting something in front of users who didn't ask for it and watching what they actually do. The feedback was immediate and unambiguous in ways that no internal stakeholder review could replicate. This part — shipping — is the one skill that only comes from shipping.</div>
+                </div>
+            </div>
+        </div>
+
+        <p class="art-p">The project didn't just demonstrate that I could do PM work. It answered a more specific question: could I do the parts of PM work that don't come from an analyst background? The answer, imperfectly but credibly, was yes.</p>
+    </div>
+
+    <!-- 5. WHERE I AM NOW -->
+    <div class="art-section fade-up">
+        <span class="art-label">Current State</span>
+        <h2 class="art-h2">Where I am now — and what I'd tell someone starting this</h2>
+        <p class="art-p">I'm at the point in the transition where the analyst background has stopped feeling like a liability and started feeling like an advantage — but only in specific contexts. In teams that are data-mature, where product decisions are expected to be instrumented and measurable, the combination of deep quantitative fluency and PM framing is genuinely differentiated. In teams still building that culture, it's a contribution rather than a given.</p>
+        <p class="art-p">If you're making a similar transition, three things stand out in retrospect:</p>
+
+        <div class="art-visual">
+            <div class="vis-flags">
+                <div class="vis-flags-title">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    Three things I'd tell myself on day one
+                </div>
+                <div class="vis-flags-list">
+                    <div class="vis-flag-item">Build something and ship it. Not a prototype, not a concept doc — something live that real people can use. It doesn't have to be good. It has to be real.</div>
+                    <div class="vis-flag-item">Get out of the data and talk to users earlier than feels comfortable. Analysts are trained to wait until the data is conclusive. Users will give you signal before the data is large enough to be conclusive.</div>
+                    <div class="vis-flag-item">The quantitative instinct is valuable — don't abandon it. Most PM advice is written for people who need to be pushed towards data. You're starting on the other side: you already trust numbers, now you need to learn to trust qualitative signal with the same rigour.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="art-callout">The transition isn't from "analyst" to "PM." It's from "person who answers questions about the system" to "person who decides which questions about the system are worth asking." That shift is about scope, not skill — and scope is a choice.</div>
+    </div>
+
+<div class="art-nav">
+    <a class="art-nav-item" href="product-roadmapping.html">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+        <div class="art-nav-text">
+            <span class="art-nav-label">Previous</span>
+            <span class="art-nav-title">Product Roadmapping</span>
+        </div>
+    </a>
+    <a class="art-nav-item art-nav-next" href="design-background-pm.html">
+        <div class="art-nav-text">
+            <span class="art-nav-label">Next</span>
+            <span class="art-nav-title">What 7 Years of Design Gave Me</span>
+        </div>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+    </a>
+</div>
+</div>
+
+<!-- CTA -->
+<section class="cta-sect">
+    <div class="container">
+        <h2>Find where your skills lead</h2>
+        <p>If you're navigating a transition like this, TryCareerMatch maps your cross-functional profile against 60+ roles. Free, no registration.</p>
+        <div class="cta-actions">
+            <a href="https://trycareermatch.com" target="_blank" rel="noopener" class="btn btn-primary">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                Open TryCareerMatch
+            </a>
+            <a href="../index.html#articles" class="btn btn-ghost-light">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+                Back to Articles
+            </a>
+        </div>
+    </div>
+</section>
+
+<footer class="art-footer">
+    <div class="container footer-inner">
+        <div class="footer-copy">© 2026 Diogo Serino</div>
+        <a class="footer-back" href="../index.html#articles">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+            All articles
+        </a>
+    </div>
+</footer>
+
+<script src="../assets/js/article.js"></script>
+</body>
+</html>

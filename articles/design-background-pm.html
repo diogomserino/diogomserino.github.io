@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What 7 Years of Design Gave Me as a PM — Diogo Serino</title>
+<meta name="description" content="What a design background actually contributes to product management — the real advantages, the blind spots, and the habits that took years to unlearn.">
+<meta property="og:title" content="What 7 Years of Design Gave Me as a PM — Diogo Serino">
+<meta property="og:description" content="What a design background actually contributes to product management — the real advantages, the blind spots, and the habits that took years to unlearn.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://diogomserino.github.io/articles/design-background-pm.html">
+<meta property="og:image" content="https://diogomserino.github.io/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://diogomserino.github.io/articles/design-background-pm.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "What 7 Years of Design Gave Me as a PM — Diogo Serino",
+  "description": "What a design background actually contributes to product management — the real advantages, the blind spots, and the habits that took years to unlearn.",
+  "url": "https://diogomserino.github.io/articles/design-background-pm.html",
+  "author": {
+    "@type": "Person",
+    "name": "Diogo Serino",
+    "url": "https://diogomserino.github.io"
+  }
+}
+</script>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%2306111F'/><text x='50' y='72' font-family='system-ui,sans-serif' font-weight='900' font-size='58' text-anchor='middle' fill='%233B6FFF'>D</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/main.css">
+<style>
+.proj-hero {
+    background: #0f0e2a;
+    background-image:
+        radial-gradient(ellipse 72% 56% at 62% 38%, rgba(79,70,229,.22) 0%, transparent 70%),
+        radial-gradient(circle at 12% 72%, rgba(199,210,254,.07) 0%, transparent 52%);
+}
+.progress { background: linear-gradient(90deg, #4F46E5, #A5B4FC); }
+.proj-badge { background: rgba(79,70,229,.12); border-color: rgba(79,70,229,.30); color: #A5B4FC; }
+.art-label { color: #6366F1; }
+.vis-card-icon { background: rgba(79,70,229,.10); border-color: rgba(79,70,229,.20); color: #4F46E5; }
+.vis-card-title { color: #4F46E5; }
+.vis-card-accent { background: #4F46E5; border-color: #4F46E5; }
+.vis-step::before { background: linear-gradient(90deg, #4F46E5, #A5B4FC); }
+.vis-step-num { color: rgba(79,70,229,.22); }
+.vis-step-title { color: #3730A3; }
+.vis-step:hover { box-shadow: 0 6px 24px rgba(79,70,229,.18); border-color: rgba(79,70,229,.30); }
+.vis-row { border-left-color: rgba(79,70,229,.40); border-color: rgba(79,70,229,.16); }
+.vis-row-label { color: #4F46E5; }
+.vis-row-accent { background: rgba(79,70,229,.07); border-color: rgba(79,70,229,.20); }
+.vis-dark-card { background: #4F46E5; }
+.vis-compare-left  { border-top-color: #4F46E5; }
+.vis-compare-right { border-top-color: #3730A3; }
+.vis-flow-wrap { background: linear-gradient(135deg, rgba(79,70,229,.08), rgba(79,70,229,.05)); border-color: rgba(79,70,229,.18); }
+.vis-tag-pill { background: rgba(79,70,229,.10); border-color: rgba(79,70,229,.22); color: #4F46E5; }
+.vis-flag-item::before { background: #4F46E5; }
+.vis-card:hover { box-shadow: 0 4px 20px rgba(79,70,229,.12); border-color: rgba(79,70,229,.22); }
+h1.proj-title { background-image: linear-gradient(140deg, #fff 0%, #fff 42%, #A5B4FC 100%); }
+.btn-primary { background: #4F46E5; box-shadow: 0 4px 16px rgba(79,70,229,.30); color: #fff; }
+.btn-primary:hover { background: #3730A3; box-shadow: 0 6px 22px rgba(79,70,229,.42); transform: translateY(-2px); }
+.art-callout { border-left-color: #4F46E5; }
+</style>
+</head>
+<body>
+
+<div class="progress" id="progress"></div>
+
+<nav class="page-nav" id="main-nav">
+    <div class="nav-inner">
+        <a href="../index.html" class="logo">DMS<span>.</span></a>
+        <div class="nav-crumb">
+            <a href="../index.html#articles">Articles</a>
+            <span class="sep">/</span>
+            <span class="curr">What 7 Years of Design Gave Me</span>
+        </div>
+        <a href="../index.html#articles" class="nav-back">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+            Back
+        </a>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="proj-hero">
+    <div class="container proj-hero-inner">
+        <div class="proj-badge">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+            Product &nbsp;·&nbsp; Design
+        </div>
+        <h1 class="proj-title">What 7 Years of Design<br>Gave Me as a PM</h1>
+        <p class="proj-sub">Not a list of soft skills. The specific instincts a design background builds, where they're genuinely useful in product work, and the one habit I had to unlearn completely.</p>
+        <div class="stack-row">
+            <span class="stag-dk">Product Management</span>
+            <span class="stag-dk">UX Design</span>
+            <span class="stag-dk">Visual Thinking</span>
+            <span class="stag-dk">Personal</span>
+        </div>
+        <div class="proj-meta">
+            <span class="proj-meta-item">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                May 2026
+            </span>
+            <span class="proj-meta-item">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                7 min read
+            </span>
+        </div>
+    </div>
+</section>
+
+<!-- ARTICLE -->
+<div class="art-wrap">
+
+    <div class="art-intro fade-up">
+        <p>Most articles about design-background PMs say things like "you bring empathy" and "you think about the user." That's not wrong, but it's not the interesting part. Those are table stakes — any PM who doesn't think about the user isn't doing the job.</p>
+        <p>What's actually interesting is the specific, practised instincts that come from years of doing design work. Some of them transfer cleanly into product management and become genuine advantages. A few created habits I've had to deliberately undo. This is my honest account of both.</p>
+    </div>
+
+    <!-- 1. MOST PMs CAN'T SKETCH -->
+    <div class="art-section fade-up">
+        <span class="art-label">Advantage One</span>
+        <h2 class="art-h2">Most PMs can't sketch — and it shows</h2>
+        <p class="art-p">Not sketch in the artistic sense. Sketch in the "pull out a notebook in a meeting and draw how the flow would work" sense. After years of design work, thinking visually becomes a default mode — you don't describe a layout in words, you draw it. You don't explain a user journey in prose, you diagram it.</p>
+        <p class="art-p">In product work, this turns out to be disproportionately useful. When a discussion about a new feature gets abstract, the fastest way to align the room is to put something visible on a whiteboard. When you're writing a spec, a rough wireframe communicates constraints that a paragraph of text leaves ambiguous. When you're reviewing an engineering proposal, a quick flow diagram catches edge cases that pure logic misses.</p>
+        <p class="art-p">The value isn't in the craft of the drawing — nobody cares if the boxes are neat. The value is in the habit of externalising thinking visually, which forces specificity that verbal description doesn't require. You can't draw a vague design.</p>
+
+        <div class="art-callout">Visual thinking isn't a soft skill. It's a precision instrument. When you draw something, every ambiguity becomes a blank space you have to fill in.</div>
+    </div>
+
+    <!-- 2. YOU READ A DESIGN BEFORE IT'S EXPLAINED -->
+    <div class="art-section fade-up">
+        <span class="art-label">Advantage Two</span>
+        <h2 class="art-h2">You read a design before it's explained to you</h2>
+        <p class="art-p">After years of reviewing, critiquing, and iterating on design work, something shifts in how you perceive interfaces. You stop seeing screens and start seeing decisions. A button placement isn't just a button placement — it's a hypothesis about attention and hierarchy. An empty state isn't a gap to fill — it's an opportunity that was taken or missed.</p>
+
+        <div class="art-visual">
+            <div class="vis-rows">
+                <div class="vis-row vis-row-accent">
+                    <div class="vis-row-label">Visual hierarchy</div>
+                    <div class="vis-row-desc">You notice immediately if the most important action on a screen doesn't carry the most visual weight. You can say specifically why — contrast ratio, size, position, whitespace — not just that something feels wrong. That specificity makes design reviews actually useful instead of vague.</div>
+                </div>
+                <div class="vis-row vis-row-accent">
+                    <div class="vis-row-label">Affordance and interaction cost</div>
+                    <div class="vis-row-desc">Years of design teaches you to feel the friction in an interface. A multi-step flow that could be collapsed. A form that asks for information before earning the trust required to give it. A navigation pattern that works on desktop and breaks on mobile. These register as specific problems, not general unease.</div>
+                </div>
+                <div class="vis-row vis-row-accent">
+                    <div class="vis-row-label">Pattern recognition across products</div>
+                    <div class="vis-row-desc">A designer who has worked across different products builds a mental library of what works and what doesn't in various contexts. When evaluating a new design, you're comparing it against patterns you've seen succeed and fail — which is faster and more specific than reasoning from first principles every time.</div>
+                </div>
+            </div>
+        </div>
+
+        <p class="art-p">This matters most in design reviews, where the PM's job isn't to redesign the work but to catch functional problems before they ship. Vague feedback ("this feels clunky") sends the designer back to guess what to fix. Specific feedback ("the primary action is buried below the fold on mobile because the hero image pushes it out of thumb reach") gets fixed in an afternoon.</p>
+    </div>
+
+    <!-- 3. COPY IS A DESIGN DECISION -->
+    <div class="art-section fade-up">
+        <span class="art-label">Advantage Three</span>
+        <h2 class="art-h2">Copy is a design decision</h2>
+        <p class="art-p">This one takes most PMs years to internalise. In a design background, you learn early that words are part of the layout. The label on a button changes the cognitive load of clicking it. The tone of an error message determines whether a frustrated user tries again or abandons. The empty state copy on a new account is sometimes the single highest-leverage onboarding moment in the product.</p>
+
+        <div class="art-visual">
+            <div class="vis-grid vis-grid-2">
+                <div class="vis-card">
+                    <div class="vis-card-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                    </div>
+                    <div class="vis-card-title">Button labels</div>
+                    <div class="vis-card-sub">"Submit" and "Send my message" describe the same action. One tells the user what the system does; the other confirms what the user is doing. The second one converts better because it resolves ambiguity at the moment of commitment. Designers learn this through A/B tests and user testing. Most PMs learn it much later, if at all.</div>
+                </div>
+                <div class="vis-card">
+                    <div class="vis-card-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                    </div>
+                    <div class="vis-card-title">Error messages</div>
+                    <div class="vis-card-sub">"An error occurred" is not a message. It's an absence of one. A good error message names what went wrong, why it matters, and what to do next — in plain language, without blame. Design work forces you to write these under constraint, which builds the muscle quickly. Engineering often treats error messages as developer notes that leaked into production.</div>
+                </div>
+                <div class="vis-card">
+                    <div class="vis-card-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+                    </div>
+                    <div class="vis-card-title">Empty states</div>
+                    <div class="vis-card-sub">The screen a new user sees before they've done anything is one of the most important moments in onboarding. Most products treat it as an afterthought — a grey box with "No data yet." Design-trained PMs recognise it as the first opportunity to show a user what the product is for and make the first action obvious and low-friction.</div>
+                </div>
+                <div class="vis-card">
+                    <div class="vis-card-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                    </div>
+                    <div class="vis-card-title">Onboarding prompts</div>
+                    <div class="vis-card-sub">The first thing a product says to a user sets the register for everything that follows. Formal or friendly, direct or exploratory, confident or apologetic. These aren't just tone preferences — they create expectations about how the product will behave that users carry into every subsequent interaction.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="art-callout">Copy isn't what you add after the design is done. It's part of the design. The PMs who understand this ship better onboarding, clearer interfaces, and fewer support tickets.</div>
+    </div>
+
+    <!-- 4. YOU CAN NAME WHAT'S OFF -->
+    <div class="art-section fade-up">
+        <span class="art-label">Advantage Four</span>
+        <h2 class="art-h2">You can name what's off — precisely</h2>
+        <p class="art-p">There's a version of design feedback that's worse than no feedback at all: "I don't know, it just doesn't feel right." A designer who gets that note has to guess what to fix. They make changes. They show it again. The PM says "closer, but still something." This loop is expensive, demoralising, and usually ends with the designer giving up on understanding the PM's intent and just producing variations until one sticks.</p>
+        <p class="art-p">A design background breaks this cycle. Not because you know better than the designer — you don't, and the instinct to redesign rather than direct is something you have to actively suppress — but because you have a vocabulary for the specific problems you're seeing.</p>
+
+        <div class="art-visual">
+            <div class="vis-steps">
+                <div class="vis-step">
+                    <div class="vis-step-num">01</div>
+                    <div class="vis-step-title">Name the specific problem, not the feeling</div>
+                    <div class="vis-step-desc">Instead of "this feels too heavy," you can say "the body copy is 16px on a 14px baseline grid with tight line-height — it's visually dense and it'll fatigue mobile readers." That's one clear thing to fix, not an invitation to rethink the whole page.</div>
+                </div>
+                <div class="vis-step">
+                    <div class="vis-step-num">02</div>
+                    <div class="vis-step-title">Separate aesthetic preference from functional concern</div>
+                    <div class="vis-step-desc">Design-trained PMs learn to distinguish "I would have done this differently" (irrelevant) from "this creates a functional problem for the user" (the only thing that matters). Most PMs conflate the two and end up redirecting designers based on personal taste, which destroys trust quickly.</div>
+                </div>
+                <div class="vis-step">
+                    <div class="vis-step-num">03</div>
+                    <div class="vis-step-title">Frame feedback as a constraint, not a prescription</div>
+                    <div class="vis-step-desc">"The CTA needs to be more visible on mobile" gives the designer a problem to solve. "Make the button blue and bigger" takes the problem-solving away from them. The former produces better results and a better working relationship. Knowing the difference — and having the restraint to stay in your lane — is something design experience teaches through failure before success.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 5. THE HONEST LIMITATION -->
+    <div class="art-section fade-up">
+        <span class="art-label">The Hard Part</span>
+        <h2 class="art-h2">The honest limitation</h2>
+        <p class="art-p">This is the part most "design-to-PM" articles skip. The same instincts that make design backgrounds useful also create a specific failure mode — and it's worth being explicit about it.</p>
+        <p class="art-p">Designers are trained to care about quality at the level of detail. The spacing is off by 2px. The animation easing isn't quite right. The icon doesn't match the visual language of the rest of the product. These are legitimate concerns in a design context, where quality signals trustworthiness and the detail work compounds over time into a product that feels considered.</p>
+        <p class="art-p">In product management, that instinct can become a liability.</p>
+
+        <div class="art-visual">
+            <div class="vis-flags">
+                <div class="vis-flags-title">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                    Three design instincts that work against you as a PM
+                </div>
+                <div class="vis-flags-list">
+                    <div class="vis-flag-item">Holding a feature until it's polished. In design, shipping something imperfect reflects on your craft. In product, shipping something imperfect is how you find out if the underlying idea is worth refining. The polish instinct delays learning. The habit to override is "this isn't ready" — the honest question is "ready for what, exactly?"</div>
+                    <div class="vis-flag-item">Solving visual problems first. Design backgrounds create a bias toward the visible. But the most important product problems are often invisible: the API that makes a feature technically feasible, the data quality issue that makes a personalisation feature misleading, the operational constraint that determines whether a process scales. If the visual is clean and the infrastructure is broken, you've decorated a problem.</div>
+                    <div class="vis-flag-item">Underweighting engineering complexity. Designers often interact with engineering primarily as a delivery function — the people who build what design specifies. PMs have to hold both the user model and the engineering model at once, and the trade-offs between them are the job. Design instincts don't train for this; they sometimes actively work against it by presenting technically expensive solutions as obviously correct because they're visually elegant.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="art-callout">The design background is an advantage in product work — but only if you know which instincts to follow and which to put aside. The ones you have to put aside are usually the ones that feel most natural, which makes them the hardest to catch.</div>
+    </div>
+
+<div class="art-nav">
+    <a class="art-nav-item" href="analyst-to-pm.html">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+        <div class="art-nav-text">
+            <span class="art-nav-label">Previous</span>
+            <span class="art-nav-title">From Financial Analyst to PM</span>
+        </div>
+    </a>
+    <a class="art-nav-item art-nav-next" href="how-i-built-careermatch.html">
+        <div class="art-nav-text">
+            <span class="art-nav-label">Next</span>
+            <span class="art-nav-title">How I Built CareerMatch</span>
+        </div>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+    </a>
+</div>
+</div>
+
+<!-- CTA -->
+<section class="cta-sect">
+    <div class="container">
+        <h2>See where your background leads</h2>
+        <p>If you're coming from a design background and want to map your skills against PM and adjacent roles, TryCareerMatch does exactly that. Free, no registration.</p>
+        <div class="cta-actions">
+            <a href="https://trycareermatch.com" target="_blank" rel="noopener" class="btn btn-primary">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                Open TryCareerMatch
+            </a>
+            <a href="../index.html#articles" class="btn btn-ghost-light">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+                Back to Articles
+            </a>
+        </div>
+    </div>
+</section>
+
+<footer class="art-footer">
+    <div class="container footer-inner">
+        <div class="footer-copy">© 2026 Diogo Serino</div>
+        <a class="footer-back" href="../index.html#articles">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+            All articles
+        </a>
+    </div>
+</footer>
+
+<script src="../assets/js/article.js"></script>
+</body>
+</html>

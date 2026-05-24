@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TryCareerMatch — Career discovery platform mapping 88 skills against 60+ roles across 9 sectors using a weighted scoring model. Free, no-registration. Built by Diogo Serino.">
+    <title>TryCareerMatch · Diogo Serino</title>
+    <meta property="og:title" content="TryCareerMatch · Diogo Serino">
+    <meta property="og:description" content="Career discovery platform mapping 88 skills against 60+ roles across 9 sectors using a weighted scoring model. Free, no-registration. Full case study.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://diogomserino.github.io/projects/careermatch.html">
+    <meta property="og:image" content="https://diogomserino.github.io/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://diogomserino.github.io/projects/careermatch.html">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%2306111F'/><text x='50' y='72' font-family='system-ui,sans-serif' font-weight='900' font-size='58' text-anchor='middle' fill='%233B6FFF'>D</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy:       #06111F;
+            --navy-800:   #0C1D33;
+            --navy-700:   #142848;
+            --navy-600:   #1A3A5C;
+            --accent:     #3B6FFF;
+            --accent-h:   #2B5FEF;
+            --accent-br:  #7BA7FF;
+            --accent-dim: rgba(59,111,255,.1);
+            --accent-glow:rgba(59,111,255,.18);
+            --bg:         #FFFFFF;
+            --bg-alt:     #F5F8FF;
+            --text:       #0C1A2E;
+            --muted:      #5A6E8A;
+            --border:     #DDE7F5;
+            --r:          14px;
+            --font-head:  'Space Grotesk', -apple-system, sans-serif;
+            --font:       'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --nav-h:      64px;
+            --mw:         1160px;
+        }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+        body { font-family: var(--font); color: var(--text); background: var(--bg); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+        img  { max-width: 100%; height: auto; display: block; }
+        a    { text-decoration: none; color: inherit; }
+        ul   { list-style: none; }
+        .container { max-width: var(--mw); margin: 0 auto; padding: 0 24px; }
+        .section     { padding: 80px 0; }
+        .section-alt { background: var(--bg-alt); }
+        .section-dk  { background: var(--navy); }
+
+        /* Progress */
+        .progress { position: fixed; top: 0; left: 0; height: 2.5px; background: linear-gradient(90deg, var(--accent), var(--accent-br)); width: 0%; z-index: 1001; pointer-events: none; }
+
+        /* Nav */
+        nav { position: fixed; top: 0; left: 0; right: 0; height: var(--nav-h); background: rgba(255,255,255,.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); z-index: 1000; transition: box-shadow .2s; }
+        nav.scrolled { box-shadow: 0 2px 20px rgba(6,17,31,.07); }
+        .nav-inner { max-width: var(--mw); margin: 0 auto; padding: 0 24px; height: 100%; display: flex; align-items: center; justify-content: space-between; }
+        .logo { font-family: var(--font-head); font-size: 18px; font-weight: 800; color: var(--navy); letter-spacing: -.5px; }
+        .logo span { color: var(--accent); }
+        .nav-crumb { display: flex; align-items: center; gap: 7px; font-size: 13px; color: var(--muted); }
+        .nav-crumb a { color: var(--accent); font-weight: 500; }
+        .nav-crumb .sep { opacity: .35; }
+        .nav-crumb .curr { color: var(--text); font-weight: 500; }
+        .nav-back { display: inline-flex; align-items: center; gap: 5px; font-size: 13px; font-weight: 500; color: var(--muted); transition: color .2s; }
+        .nav-back svg { transition: transform .2s; }
+        .nav-back:hover { color: var(--accent); }
+        .nav-back:hover svg { transform: translateX(-2px); }
+
+        /* Typography */
+        .label { display: inline-block; font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+        .section-dk .label { color: var(--accent-br); }
+        h2.title { font-family: var(--font-head); font-size: clamp(28px, 3.8vw, 42px); font-weight: 700; color: var(--navy); line-height: 1.08; letter-spacing: -.8px; margin-bottom: 14px; }
+        .section-dk h2.title { color: #fff; }
+        .subtitle { font-size: 16px; color: var(--muted); max-width: 560px; line-height: 1.75; }
+        .section-dk .subtitle { color: rgba(255,255,255,.48); }
+        .sec-head { text-align: center; margin-bottom: 52px; }
+        .sec-head .subtitle { margin: 0 auto; }
+
+        /* Buttons */
+        .btn { display: inline-flex; align-items: center; gap: 8px; padding: 11px 22px; border-radius: 9px; font-family: var(--font); font-size: 14px; font-weight: 600; cursor: pointer; transition: all .2s; border: none; }
+        .btn-primary { background: var(--accent); color: #fff; box-shadow: 0 4px 16px var(--accent-glow); }
+        .btn-primary:hover { background: var(--accent-h); transform: translateY(-1px); box-shadow: 0 6px 22px var(--accent-glow); }
+        .btn-ghost-light { background: rgba(255,255,255,.07); color: rgba(255,255,255,.8); border: 1.5px solid rgba(255,255,255,.2); }
+        .btn-ghost-light:hover { background: rgba(255,255,255,.12); border-color: rgba(255,255,255,.35); }
+        .btn-ghost { background: transparent; color: var(--text); border: 1.5px solid var(--border); }
+        .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+        /* Tags */
+        .stag { background: var(--bg-alt); color: var(--navy-600); font-size: 12px; font-weight: 500; padding: 4px 10px; border-radius: 6px; border: 1px solid var(--border); }
+        .stag-dk { background: rgba(255,255,255,.08); color: rgba(255,255,255,.7); border: 1px solid rgba(255,255,255,.14); font-size: 12px; font-weight: 500; padding: 4px 10px; border-radius: 6px; }
+        .stack-row { display: flex; flex-wrap: wrap; gap: 6px; }
+
+        /* Project hero */
+        .proj-hero {
+            padding: calc(var(--nav-h) + 72px) 0 72px;
+            background: var(--navy);
+            background-image:
+                radial-gradient(ellipse 72% 56% at 62% 38%, rgba(59,111,255,.16) 0%, transparent 70%),
+                radial-gradient(circle at 10% 72%, rgba(123,167,255,.07) 0%, transparent 52%);
+            position: relative; overflow: hidden;
+        }
+        .proj-hero::before {
+            content: ''; position: absolute; inset: 0;
+            background-image: radial-gradient(rgba(255,255,255,.028) 1px, transparent 1px);
+            background-size: 32px 32px; pointer-events: none;
+        }
+        .proj-hero-inner { position: relative; }
+        .proj-badge {
+            display: inline-flex; align-items: center; gap: 7px;
+            padding: 5px 13px; border-radius: 20px;
+            background: rgba(59,111,255,.12); border: 1px solid rgba(59,111,255,.28);
+            font-size: 12px; font-weight: 600; letter-spacing: .06em;
+            color: var(--accent-br); margin-bottom: 24px;
+        }
+        h1.proj-title {
+            font-family: var(--font-head);
+            font-size: clamp(46px, 7.5vw, 80px);
+            font-weight: 800; line-height: .94; letter-spacing: -2.4px;
+            background: linear-gradient(140deg, #fff 0%, #fff 38%, var(--accent-br) 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text; margin-bottom: 22px;
+        }
+        .proj-sub { font-size: 18px; color: rgba(255,255,255,.52); line-height: 1.72; max-width: 600px; margin-bottom: 22px; }
+        .proj-meta { display: flex; align-items: center; gap: 18px; margin-top: 28px; flex-wrap: wrap; }
+        .proj-meta-item { display: flex; align-items: center; gap: 6px; font-size: 13px; color: rgba(255,255,255,.38); }
+
+        /* Plinks */
+        .plinks { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 32px; }
+        .plink { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; padding: 10px 18px; border-radius: 9px; transition: all .2s; }
+        .plink-primary { background: var(--accent); color: #fff; box-shadow: 0 4px 14px var(--accent-glow); }
+        .plink-primary:hover { background: var(--accent-h); transform: translateY(-1px); }
+        .plink-out { background: rgba(255,255,255,.07); color: rgba(255,255,255,.8); border: 1.5px solid rgba(255,255,255,.2); }
+        .plink-out:hover { background: rgba(255,255,255,.12); border-color: rgba(255,255,255,.4); color: #fff; }
+
+        /* Metrics */
+        .metrics-row { display: flex; gap: 32px; flex-wrap: wrap; margin-bottom: 48px; }
+        .metric-item { }
+        .metric-val { font-family: var(--font-head); font-size: 36px; font-weight: 800; color: var(--navy); line-height: 1; letter-spacing: -1.5px; margin-bottom: 4px; }
+        .metric-val span { color: var(--accent); }
+        .metric-lbl { font-size: 13px; color: var(--muted); }
+
+        /* Section content */
+        .content-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+        .content-text .label { margin-bottom: 8px; }
+        .content-text h2 { font-family: var(--font-head); font-size: clamp(24px, 3vw, 32px); font-weight: 700; color: var(--navy); line-height: 1.1; letter-spacing: -.6px; margin-bottom: 16px; }
+        .content-text p { font-size: 15px; color: var(--muted); line-height: 1.8; margin-bottom: 14px; }
+        .content-text p:last-child { margin-bottom: 0; }
+        .content-text p strong { color: var(--text); font-weight: 600; }
+
+        /* Problem / Solution cards */
+        .ps-card {
+            background: var(--bg-alt); border: 1px solid var(--border);
+            border-radius: var(--r); padding: 28px;
+        }
+        .ps-card-icon {
+            width: 44px; height: 44px; border-radius: 12px;
+            display: flex; align-items: center; justify-content: center;
+            margin-bottom: 16px;
+        }
+        .ps-card-icon.red { background: rgba(220,38,38,.09); border: 1px solid rgba(220,38,38,.18); color: #DC2626; }
+        .ps-card-icon.blue { background: rgba(59,111,255,.09); border: 1px solid rgba(59,111,255,.18); color: var(--accent); }
+        .ps-card-title { font-family: var(--font-head); font-size: 18px; font-weight: 700; color: var(--navy); margin-bottom: 12px; letter-spacing: -.3px; }
+        .ps-card-text { font-size: 14px; color: var(--muted); line-height: 1.78; }
+        .ps-card-text p + p { margin-top: 10px; }
+
+        /* Process steps */
+        .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+        .process-step {
+            background: var(--bg); border: 1px solid var(--border);
+            border-radius: var(--r); padding: 22px 18px;
+            position: relative; overflow: hidden;
+        }
+        .process-step::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-br));
+        }
+        .process-step-num {
+            font-family: var(--font-head); font-size: 32px; font-weight: 800;
+            color: rgba(59,111,255,.16); line-height: 1; margin-bottom: 10px;
+            letter-spacing: -1px;
+        }
+        .process-step-title { font-family: var(--font-head); font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+        .process-step-desc { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+        /* Scoring model visual */
+        .scoring-visual {
+            background: var(--navy);
+            border-radius: var(--r); padding: 32px;
+        }
+        .scoring-title { font-family: var(--font-head); font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 20px; letter-spacing: -.2px; }
+        .scoring-row { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+        .scoring-label { font-size: 12px; font-weight: 600; color: rgba(255,255,255,.5); width: 90px; flex-shrink: 0; }
+        .scoring-bar-wrap { flex: 1; background: rgba(255,255,255,.06); border-radius: 4px; height: 8px; overflow: hidden; }
+        .scoring-bar { height: 100%; background: linear-gradient(90deg, var(--accent), var(--accent-br)); border-radius: 4px; }
+        .scoring-val { font-size: 12px; font-weight: 700; color: var(--accent-br); width: 36px; text-align: right; flex-shrink: 0; }
+        .scoring-note { font-size: 12px; color: rgba(255,255,255,.32); margin-top: 16px; line-height: 1.55; }
+
+        /* Tech stack cards */
+        .tech-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+        .tech-card {
+            background: var(--bg-alt); border: 1px solid var(--border);
+            border-radius: var(--r); padding: 20px 18px;
+            transition: box-shadow .2s, border-color .2s, transform .2s;
+        }
+        .tech-card:hover { box-shadow: 0 4px 20px rgba(59,111,255,.1); border-color: rgba(59,111,255,.2); transform: translateY(-2px); }
+        .tech-card-icon {
+            width: 38px; height: 38px; border-radius: 10px;
+            background: rgba(59,111,255,.08); border: 1px solid rgba(59,111,255,.16);
+            display: flex; align-items: center; justify-content: center;
+            color: var(--accent); margin-bottom: 12px;
+        }
+        .tech-card-name { font-family: var(--font-head); font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+        .tech-card-desc { font-size: 12px; color: var(--muted); line-height: 1.55; }
+
+        /* Lessons */
+        .lessons-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+        .lesson-card {
+            background: var(--bg); border: 1px solid var(--border);
+            border-radius: var(--r); padding: 22px;
+        }
+        .lesson-card.worked { border-top: 3px solid #22C55E; }
+        .lesson-card.changed { border-top: 3px solid var(--accent); }
+        .lesson-type { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; margin-bottom: 10px; }
+        .lesson-type.green { color: #16A34A; }
+        .lesson-type.blue { color: var(--accent); }
+        .lesson-title { font-family: var(--font-head); font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+        .lesson-text { font-size: 13px; color: var(--muted); line-height: 1.65; }
+
+        /* CTA */
+        .cta-sect { background: var(--navy); padding: 72px 0; text-align: center; }
+        .cta-sect h2 { font-family: var(--font-head); font-size: clamp(26px, 3.2vw, 36px); font-weight: 700; color: #fff; margin-bottom: 14px; letter-spacing: -.6px; }
+        .cta-sect p { font-size: 16px; color: rgba(255,255,255,.45); margin-bottom: 32px; max-width: 480px; margin-left: auto; margin-right: auto; }
+        .cta-actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+
+        /* Footer */
+        footer { background: var(--navy-800); border-top: 1px solid rgba(255,255,255,.06); padding: 26px 0; }
+        .footer-inner { display: flex; align-items: center; justify-content: space-between; }
+        .footer-copy { font-size: 13px; color: rgba(255,255,255,.28); }
+        .footer-back { display: inline-flex; align-items: center; gap: 5px; font-size: 13px; font-weight: 500; color: rgba(148,163,184,.7); transition: color .2s; }
+        .footer-back:hover { color: #fff; }
+
+        /* Fade-up */
+        .fade-up { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
+        .fade-up.in { opacity: 1; transform: translateY(0); }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .content-2col { grid-template-columns: 1fr; gap: 32px; }
+            .process-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 768px) {
+            .section { padding: 56px 0; }
+            .metrics-row { gap: 20px; }
+            .tech-grid { grid-template-columns: repeat(2, 1fr); }
+            .lessons-grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 520px) {
+            .process-grid { grid-template-columns: 1fr; }
+            .tech-grid { grid-template-columns: 1fr; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .fade-up { transition: none; opacity: 1 !important; transform: none !important; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="progress" id="progress"></div>
+
+<!-- NAV -->
+<nav id="page-nav">
+    <div class="nav-inner">
+        <a href="../index.html" class="logo">DMS<span>.</span></a>
+        <div class="nav-crumb">
+            <a href="../index.html">Portfolio</a>
+            <span class="sep">/</span>
+            <span class="curr">TryCareerMatch</span>
+        </div>
+        <a href="../index.html" class="nav-back">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+            Back
+        </a>
+    </div>
+</nav>
+
+
+<!-- HERO -->
+<div class="proj-hero">
+    <div class="container proj-hero-inner">
+        <div class="proj-badge">Case Study &nbsp;·&nbsp; Product & Web</div>
+        <h1 class="proj-title">TryCareerMatch</h1>
+        <p class="proj-sub">
+            A career discovery platform that maps <strong style="color:rgba(255,255,255,.75)">88 skills</strong> against
+            <strong style="color:rgba(255,255,255,.75)">60+ roles</strong> across
+            <strong style="color:rgba(255,255,255,.75)">9 sectors</strong> — built to help professionals
+            with non-linear backgrounds find where they actually fit.
+        </p>
+        <div class="stack-row">
+            <span class="stag-dk">HTML / CSS / JS</span>
+            <span class="stag-dk">Weighted Scoring Model</span>
+            <span class="stag-dk">UX Design</span>
+            <span class="stag-dk">Product Strategy</span>
+            <span class="stag-dk">No-Registration</span>
+        </div>
+        <div class="plinks">
+            <a href="https://trycareermatch.com" target="_blank" rel="noopener" class="plink plink-primary">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                Open TryCareerMatch
+            </a>
+            <a href="../index.html#contact" class="plink plink-out">
+                Work with me
+            </a>
+        </div>
+        <div class="proj-meta">
+            <span class="proj-meta-item">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                Launched Sep 2025
+            </span>
+            <span class="proj-meta-item">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                ~6 weeks build
+            </span>
+            <span class="proj-meta-item">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                Solo project
+            </span>
+        </div>
+    </div>
+</div>
+
+
+<!-- METRICS -->
+<section class="section">
+    <div class="container">
+        <div class="metrics-row fade-up">
+            <div class="metric-item">
+                <div class="metric-val">88<span>+</span></div>
+                <div class="metric-lbl">Skills mapped</div>
+            </div>
+            <div class="metric-item">
+                <div class="metric-val">60<span>+</span></div>
+                <div class="metric-lbl">Roles covered</div>
+            </div>
+            <div class="metric-item">
+                <div class="metric-val">9</div>
+                <div class="metric-lbl">Industry sectors</div>
+            </div>
+            <div class="metric-item">
+                <div class="metric-val">0</div>
+                <div class="metric-lbl">Registration required</div>
+            </div>
+        </div>
+
+        <div class="content-2col">
+            <div class="ps-card fade-up">
+                <div class="ps-card-icon red">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                </div>
+                <div class="ps-card-title">The Problem</div>
+                <div class="ps-card-text">
+                    <p>Professionals with non-linear backgrounds — people who've combined design with finance, or technical work with product strategy — struggle to articulate where they fit in the job market.</p>
+                    <p>Traditional career tools assume you fit a clean archetype. They don't account for the reality that many valuable professionals <strong>span multiple domains</strong> and their strongest matches aren't obvious from a job title alone.</p>
+                    <p>The result: misapplied CVs, wasted applications, and a persistent feeling that "I'm qualified but I don't know what to call myself."</p>
+                </div>
+            </div>
+
+            <div class="ps-card fade-up">
+                <div class="ps-card-icon blue">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                <div class="ps-card-title">The Solution</div>
+                <div class="ps-card-text">
+                    <p>TryCareerMatch asks users to rate their proficiency across <strong>88 skills</strong> — from financial modelling and SQL to stakeholder management and UX thinking. A weighted scoring model then calculates their fit against <strong>60+ roles</strong> in 9 sectors.</p>
+                    <p>The output isn't a single "best match" — it's a ranked view of roles where the user's actual skill profile produces the strongest alignment, including surprising secondary matches they may never have considered.</p>
+                    <p>No account, no paywall, no email capture. Just results.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- HOW IT WAS BUILT -->
+<section class="section section-alt">
+    <div class="container">
+        <div class="sec-head fade-up">
+            <div class="label">Process</div>
+            <h2 class="title">How It Was Built</h2>
+            <p class="subtitle">From the initial idea to a working product, in roughly 6 weeks.</p>
+        </div>
+
+        <div class="process-grid">
+            <div class="process-step fade-up">
+                <div class="process-step-num">01</div>
+                <div class="process-step-title">Research & Scoping</div>
+                <div class="process-step-desc">Mapped existing career tools, identified the gap for cross-functional profiles. Defined the scope: which skills, which roles, which sectors would produce meaningful signal.</div>
+            </div>
+            <div class="process-step fade-up">
+                <div class="process-step-num">02</div>
+                <div class="process-step-title">Data Model Design</div>
+                <div class="process-step-desc">Designed the 88-skill taxonomy across 8 categories. For each role, assigned per-skill importance weights (0–3). The scoring logic: user proficiency × role weight, normalised to a 0–100 match score.</div>
+            </div>
+            <div class="process-step fade-up">
+                <div class="process-step-num">03</div>
+                <div class="process-step-title">UX & Interface</div>
+                <div class="process-step-desc">Designed the skill assessment UI — quick, no-friction sliders with clear labels. Results screen showing role match %, sector breakdown, and top-skill alignment highlights.</div>
+            </div>
+            <div class="process-step fade-up">
+                <div class="process-step-num">04</div>
+                <div class="process-step-title">Build & Launch</div>
+                <div class="process-step-desc">Built entirely in vanilla HTML/CSS/JS — no framework, no database. All logic runs client-side. Deployed via Vercel. Promoted through the portfolio's announcement bar.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- SCORING MODEL -->
+<section class="section">
+    <div class="container">
+        <div class="content-2col">
+            <div class="content-text fade-up">
+                <div class="label">Under the hood</div>
+                <h2>The Scoring Model</h2>
+                <p>Each of the 60+ roles has a <strong>skill importance profile</strong> — a vector of weights across the 88 skills, from 0 (irrelevant) to 3 (critical).</p>
+                <p>When a user rates their skills, the model computes a <strong>dot product</strong> between their proficiency ratings and each role's importance weights, then normalises the result to a 0–100 match percentage.</p>
+                <p>This means a Data Analyst with strong SQL and Power BI but no stakeholder management experience will score higher on technical analyst roles than on product manager roles — even if both appear in their results.</p>
+                <p>The skill taxonomy spans <strong>8 categories</strong>: Business Intelligence, Data Engineering, Financial Analysis, Product & Strategy, Business Analysis, Design & Creative, AI & Tools, and Languages.</p>
+            </div>
+            <div class="scoring-visual fade-up">
+                <div class="scoring-title">Example: match profile for "Senior Data Analyst"</div>
+                <div class="scoring-row">
+                    <span class="scoring-label">SQL / Queries</span>
+                    <div class="scoring-bar-wrap"><div class="scoring-bar" style="width:100%"></div></div>
+                    <span class="scoring-val">100%</span>
+                </div>
+                <div class="scoring-row">
+                    <span class="scoring-label">Python / Pandas</span>
+                    <div class="scoring-bar-wrap"><div class="scoring-bar" style="width:90%"></div></div>
+                    <span class="scoring-val">90%</span>
+                </div>
+                <div class="scoring-row">
+                    <span class="scoring-label">Power BI / DAX</span>
+                    <div class="scoring-bar-wrap"><div class="scoring-bar" style="width:85%"></div></div>
+                    <span class="scoring-val">85%</span>
+                </div>
+                <div class="scoring-row">
+                    <span class="scoring-label">Data Modelling</span>
+                    <div class="scoring-bar-wrap"><div class="scoring-bar" style="width:82%"></div></div>
+                    <span class="scoring-val">82%</span>
+                </div>
+                <div class="scoring-row">
+                    <span class="scoring-label">Stakeholder Mgmt</span>
+                    <div class="scoring-bar-wrap"><div class="scoring-bar" style="width:45%"></div></div>
+                    <span class="scoring-val">45%</span>
+                </div>
+                <div class="scoring-row">
+                    <span class="scoring-label">Product Roadmaps</span>
+                    <div class="scoring-bar-wrap"><div class="scoring-bar" style="width:20%"></div></div>
+                    <span class="scoring-val">20%</span>
+                </div>
+                <div class="scoring-note">Skill weights vary per role. The same skill can be critical for one role and irrelevant for another.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- TECH STACK -->
+<section class="section section-alt">
+    <div class="container">
+        <div class="sec-head fade-up">
+            <div class="label">Technology</div>
+            <h2 class="title">Stack</h2>
+            <p class="subtitle">Deliberately minimal — the complexity is in the data model, not the framework.</p>
+        </div>
+
+        <div class="tech-grid">
+            <div class="tech-card fade-up">
+                <div class="tech-card-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                </div>
+                <div class="tech-card-name">HTML / CSS / JS</div>
+                <div class="tech-card-desc">Entirely vanilla — no framework. All scoring logic runs client-side with no backend required. Fast and zero infrastructure cost.</div>
+            </div>
+            <div class="tech-card fade-up">
+                <div class="tech-card-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+                </div>
+                <div class="tech-card-name">Weighted Scoring Model</div>
+                <div class="tech-card-desc">Custom-built data model: 88-skill taxonomy × 60+ role importance matrices. Dot product scoring normalised to 0–100%. Designed from scratch.</div>
+            </div>
+            <div class="tech-card fade-up">
+                <div class="tech-card-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                </div>
+                <div class="tech-card-name">Figma (UX Design)</div>
+                <div class="tech-card-desc">Full UI design and prototyping in Figma before implementation. Designed for clarity and speed — users should reach results in under 3 minutes.</div>
+            </div>
+            <div class="tech-card fade-up">
+                <div class="tech-card-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                </div>
+                <div class="tech-card-name">Vercel (Hosting)</div>
+                <div class="tech-card-desc">Deployed on Vercel for zero-configuration HTTPS, global CDN, and automatic deploys from Git. No backend means no server costs.</div>
+            </div>
+            <div class="tech-card fade-up">
+                <div class="tech-card-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                </div>
+                <div class="tech-card-name">Git / GitHub</div>
+                <div class="tech-card-desc">Version control and deployment pipeline via GitHub. Feature branches for major scoring model changes, with tagged releases.</div>
+            </div>
+            <div class="tech-card fade-up">
+                <div class="tech-card-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                </div>
+                <div class="tech-card-name">AI-Augmented</div>
+                <div class="tech-card-desc">Claude used throughout — for generating role skill matrices, refining UX copy, debugging edge cases in the scoring logic, and accelerating CSS work.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- LESSONS LEARNED -->
+<section class="section">
+    <div class="container">
+        <div class="sec-head fade-up">
+            <div class="label">Retrospective</div>
+            <h2 class="title">Lessons Learned</h2>
+            <p class="subtitle">What worked, and what I'd approach differently next time.</p>
+        </div>
+
+        <div class="lessons-grid">
+            <div class="lesson-card worked fade-up">
+                <div class="lesson-type green">What worked</div>
+                <div class="lesson-title">Staying vanilla</div>
+                <div class="lesson-text">No framework meant no build tooling, no dependency management, and zero deployment friction. For a project of this complexity, vanilla JS was the right call — fast to iterate and easy to debug.</div>
+            </div>
+            <div class="lesson-card worked fade-up">
+                <div class="lesson-type green">What worked</div>
+                <div class="lesson-title">Designing the data first</div>
+                <div class="lesson-text">Spending the first two weeks entirely on the skill taxonomy and role matrices — before writing a single line of UI — paid off enormously. The UX design was straightforward once the data model was solid.</div>
+            </div>
+            <div class="lesson-card worked fade-up">
+                <div class="lesson-type green">What worked</div>
+                <div class="lesson-title">No-registration friction</div>
+                <div class="lesson-text">Removing all friction from the experience — no account, no email, immediate results — was the right product decision. The conversion rate from landing to completing the assessment is high.</div>
+            </div>
+            <div class="lesson-card changed fade-up">
+                <div class="lesson-type blue">What I'd change</div>
+                <div class="lesson-title">More granular skill weighting</div>
+                <div class="lesson-text">The current model uses integer weights (0–3). A continuous scale or sub-skill breakdowns would produce more nuanced results. I'd also add a "seniority" dimension — the importance profile for a junior vs. senior role differs significantly.</div>
+            </div>
+            <div class="lesson-card changed fade-up">
+                <div class="lesson-type blue">What I'd change</div>
+                <div class="lesson-title">Add a saved results flow</div>
+                <div class="lesson-text">Users currently can't save or revisit their results without re-doing the assessment. A lightweight localStorage-based "save session" feature or a shareable results URL would significantly improve retention and word-of-mouth sharing.</div>
+            </div>
+            <div class="lesson-card changed fade-up">
+                <div class="lesson-type blue">What I'd change</div>
+                <div class="lesson-title">Analytics from day one</div>
+                <div class="lesson-text">I added analytics after launch. Starting with even basic event tracking (which skills users score highest, where they drop off in the assessment) would have given me much better data to improve the product in week 2.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- CTA -->
+<div class="cta-sect">
+    <div class="container">
+        <div class="label">Try it</div>
+        <h2>See where your skills lead</h2>
+        <p>Complete the assessment in under 3 minutes — no account, no paywall. Just an honest look at where your profile fits.</p>
+        <div class="cta-actions">
+            <a href="https://trycareermatch.com" target="_blank" rel="noopener" class="btn btn-primary">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                Open TryCareerMatch
+            </a>
+            <a href="../index.html#contact" class="btn btn-ghost-light">
+                Work with me
+            </a>
+        </div>
+    </div>
+</div>
+
+
+<footer>
+    <div class="container footer-inner">
+        <span class="footer-copy">© 2026 Diogo Martins Serino</span>
+        <a href="../index.html" class="footer-back">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+            Back to Portfolio
+        </a>
+    </div>
+</footer>
+
+
+<script>
+    const prog = document.getElementById('progress');
+    window.addEventListener('scroll', () => {
+        const s = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
+        prog.style.width = (s * 100) + '%';
+    }, { passive: true });
+
+    const nav = document.getElementById('page-nav');
+    window.addEventListener('scroll', () => {
+        nav.classList.toggle('scrolled', window.scrollY > 20);
+    }, { passive: true });
+
+    const io = new IntersectionObserver(entries => {
+        entries.forEach(en => {
+            if (!en.isIntersecting) return;
+            const el = en.target;
+            const siblings = Array.from(el.parentElement.querySelectorAll('.fade-up'));
+            const i = siblings.indexOf(el);
+            el.style.transitionDelay = (i * 80) + 'ms';
+            el.classList.add('in');
+            io.unobserve(el);
+        });
+    }, { threshold: 0.06, rootMargin: '0px 0px -24px 0px' });
+    document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
