@@ -161,7 +161,7 @@
         .step-tags .stag { font-size: 11px; padding: 3px 8px; border-radius: 5px; }
 
         /* Pillars */
-        .pillars-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .pillars-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
         .pillar { background: var(--bg-alt); border: 1px solid var(--border); border-radius: 12px; padding: 22px 20px; transition: box-shadow .2s, transform .2s; }
         .pillar:hover { box-shadow: 0 6px 24px var(--accent-glow); transform: translateY(-2px); border-color: rgba(8,145,178,.25); }
         .pillar-ico { width: 40px; height: 40px; border-radius: 10px; background: var(--accent-dim); border: 1px solid rgba(8,145,178,.2); display: flex; align-items: center; justify-content: center; color: var(--accent); margin-bottom: 12px; }
@@ -233,7 +233,7 @@
         @media (max-width: 900px) {
             .overview-grid  { grid-template-columns: 1fr; gap: 32px; }
             .steps-grid     { grid-template-columns: 1fr; }
-            .pillars-grid   { grid-template-columns: repeat(2, 1fr); }
+            .pillars-grid   { grid-template-columns: repeat(3, 1fr); }
             .findings-grid  { grid-template-columns: 1fr; }
             .charts-grid    { grid-template-columns: 1fr; }
             .tech-cols      { grid-template-columns: repeat(2, 1fr); }
@@ -310,7 +310,7 @@
             </span>
             <span class="proj-meta-item">
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-                6 economic pillars
+                12 economic pillars
             </span>
             <span class="proj-meta-item">
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
@@ -326,7 +326,7 @@
     <div class="container">
         <div class="metrics-row fade-up">
             <div class="metric-item">
-                <div class="metric-val">6<span></span></div>
+                <div class="metric-val">12<span></span></div>
                 <div class="metric-lbl">Economic pillars</div>
             </div>
             <div class="metric-item">
@@ -334,8 +334,8 @@
                 <div class="metric-lbl">DAX measures</div>
             </div>
             <div class="metric-item">
-                <div class="metric-val">6<span></span></div>
-                <div class="metric-lbl">Live data sources</div>
+                <div class="metric-val">5<span></span></div>
+                <div class="metric-lbl">Data sources</div>
             </div>
             <div class="metric-item">
                 <div class="metric-val">15<span> yrs</span></div>
@@ -350,7 +350,7 @@
                 <h2 class="title">One platform,<br>the full economic picture</h2>
                 <p>Portuguese macroeconomic data is scattered across multiple statistical authorities — INE, Banco de Portugal, PORDATA, and Eurostat — with no integrated platform to consolidate it or benchmark performance against EU peers.</p>
                 <p>Portugal Data Intelligence closes that gap: a complete end-to-end system that ingests live data, applies <strong>time-series forecasting</strong> (SARIMAX + STL), generates AI-powered narrative insights, and delivers everything as an interactive Power BI dashboard, a Streamlit web app, and a FastAPI REST API.</p>
-                <p>Six economic pillars are tracked simultaneously across 15 years — from the sovereign debt crisis through COVID-19 to the post-pandemic rebound.</p>
+                <p>Twelve economic pillars are tracked simultaneously across 15 years — from the sovereign debt crisis through COVID-19 to the post-pandemic rebound — including regional NUTS2 analysis across Portugal's seven regions and EU-27 benchmarking via radar charts.</p>
             </div>
             <div class="dash-preview fade-up">
                 <div class="dash-badge-row">
@@ -439,7 +439,7 @@
             <div class="step fade-up">
                 <div class="step-num">01</div>
                 <div class="step-title">ETL Pipeline</div>
-                <div class="step-desc">Extracts data via CSV/API from four national sources, applies 15+ validation checks (schema, range, completeness, freshness), transforms via SQL, and loads into SQLite with UUID-based lineage tracking and SHA-256 checksums.</div>
+                <div class="step-desc">Extracts data via CSV/API from five national sources (INE, Banco de Portugal, PORDATA, Eurostat, ECB), applies 15+ validation checks (schema, range, completeness, freshness), transforms via SQL, and loads into SQLite with UUID-based lineage tracking and SHA-256 checksums.</div>
                 <div class="step-tags">
                     <span class="stag">Python</span>
                     <span class="stag">SQLite</span>
@@ -450,7 +450,7 @@
             <div class="step fade-up">
                 <div class="step-num">02</div>
                 <div class="step-title">Analytics Layer</div>
-                <div class="step-desc">STL decomposition to isolate trend, seasonality, and residuals. SARIMAX forecasting with AIC-based model selection. Cross-pillar correlation matrix. Scenario modelling (baseline / optimistic / pessimistic) using Okun's law and credit elasticity.</div>
+                <div class="step-desc">STL decomposition for trend/seasonality isolation. SARIMAX forecasting with AIC-based model selection. VAR and Granger causality for structural relationships. GDP nowcasting via bridge equations. Anomaly detection using z-score and Isolation Forest. Cross-pillar correlation matrix with EU-27 benchmarking.</div>
                 <div class="step-tags">
                     <span class="stag">statsmodels</span>
                     <span class="stag">scikit-learn</span>
@@ -479,8 +479,8 @@
     <div class="container">
         <div class="sec-head fade-up">
             <div class="label">Coverage</div>
-            <h2 class="title">Six economic pillars</h2>
-            <p class="subtitle">Each pillar tracked at monthly or quarterly granularity from 2010 to 2025.</p>
+            <h2 class="title">Twelve economic pillars</h2>
+            <p class="subtitle">Each pillar tracked at monthly, quarterly, or annual granularity from 2010 to 2025.</p>
         </div>
         <div class="pillars-grid">
             <div class="pillar fade-up">
@@ -518,6 +518,36 @@
                 <div class="pillar-title">Public Debt</div>
                 <div class="pillar-meta">Quarterly · 2010 Q1 – 2025 Q4</div>
                 <div class="pillar-desc">Tracked from 132.9% GDP peak through consolidation. SARIMAX projects three trajectories to 2027.</div>
+            </div>
+            <div class="pillar fade-up">
+                <div class="pillar-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+                <div class="pillar-title">Housing Market</div>
+                <div class="pillar-meta">Annual · 2010–2025</div>
+                <div class="pillar-desc">House price indices, rental yields, and construction activity tracked across the post-crisis recovery and the 2017–2025 housing surge.</div>
+            </div>
+            <div class="pillar fade-up">
+                <div class="pillar-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg></div>
+                <div class="pillar-title">Labour Market Detail</div>
+                <div class="pillar-meta">Annual · 2010–2025</div>
+                <div class="pillar-desc">Employment by sector, youth unemployment, long-term unemployment, and wage growth decomposed across the full economic cycle.</div>
+            </div>
+            <div class="pillar fade-up">
+                <div class="pillar-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+                <div class="pillar-title">External Accounts</div>
+                <div class="pillar-meta">Quarterly · 2010 Q1 – 2025 Q4</div>
+                <div class="pillar-desc">Current account balance, trade flows, and tourism revenues. Portugal's shift from current account deficit to sustained surplus modelled over 15 years.</div>
+            </div>
+            <div class="pillar fade-up">
+                <div class="pillar-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+                <div class="pillar-title">Fiscal Structure</div>
+                <div class="pillar-meta">Annual · 2010–2025</div>
+                <div class="pillar-desc">Government revenue vs. expenditure, primary balance, and structural deficit aligned with EU fiscal rules. Consolidation trajectory visualised from austerity to recovery.</div>
+            </div>
+            <div class="pillar fade-up">
+                <div class="pillar-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg></div>
+                <div class="pillar-title">Inequality & Regional</div>
+                <div class="pillar-meta">Annual · 7 NUTS2 regions · 2010–2025</div>
+                <div class="pillar-desc">Gini coefficient, income distribution, and poverty rates at national level. Regional breakdown across Portugal's 7 NUTS2 regions with EU-27 benchmarking.</div>
             </div>
         </div>
     </div>

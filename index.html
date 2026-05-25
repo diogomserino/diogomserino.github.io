@@ -424,16 +424,16 @@
         .cat-econ { background: rgba(59,111,255,.08);  border-color: rgba(59,111,255,.18);  color: #3B6FFF; }
         .cat-data { background: rgba(124,58,237,.08);  border-color: rgba(124,58,237,.18);  color: #7C3AED; }
         .cat-comp { background: rgba(5,150,105,.08);   border-color: rgba(5,150,105,.22);   color: #059669; }
-        .cat-prod   { background: rgba(219,39,119,.08);  border-color: rgba(219,39,119,.18);  color: #DB2777; }
-        .cat-agile  { background: rgba(234,88,12,.08);   border-color: rgba(234,88,12,.18);   color: #EA580C; }
+        .cat-prod   { background: rgba(79,70,229,.08);    border-color: rgba(79,70,229,.18);   color: #4F46E5; }
+        .cat-agile  { background: rgba(13,148,136,.08);  border-color: rgba(13,148,136,.18);  color: #0D9488; }
         .cat-cyan   { background: rgba(8,145,178,.08);   border-color: rgba(8,145,178,.18);   color: #0891B2; }
         .cat-purple { background: rgba(126,34,206,.08);  border-color: rgba(126,34,206,.18);  color: #7E22CE; }
         .cat-sky     { background: rgba(3,105,161,.08);   border-color: rgba(3,105,161,.18);   color: #0369A1; }
         .cat-green   { background: rgba(22,163,74,.08);   border-color: rgba(22,163,74,.18);   color: #16A34A; }
-        .cat-amber   { background: rgba(180,83,9,.08);    border-color: rgba(180,83,9,.18);    color: #B45309; }
+        .cat-amber   { background: rgba(37,99,235,.08);   border-color: rgba(37,99,235,.18);   color: #2563EB; }
         .cat-teal    { background: rgba(15,118,110,.08);  border-color: rgba(15,118,110,.18);  color: #0F766E; }
         .cat-indigo  { background: rgba(67,56,202,.08);   border-color: rgba(67,56,202,.18);   color: #4338CA; }
-        .cat-fuchsia { background: rgba(162,28,175,.08);  border-color: rgba(162,28,175,.18);  color: #A21CAF; }
+        .cat-fuchsia { background: rgba(109,40,217,.08);  border-color: rgba(109,40,217,.18);  color: #6D28D9; }
         .cat-red     { background: rgba(220,38,38,.08);   border-color: rgba(220,38,38,.18);   color: #DC2626; }
         .cat-lime    { background: rgba(101,163,13,.08);  border-color: rgba(101,163,13,.18);  color: #65A30D; }
         .cat-blue    { background: rgba(37,99,235,.08);   border-color: rgba(37,99,235,.18);   color: #2563EB; }
@@ -442,16 +442,16 @@
         .article-card.cat-econ:hover   { border-color: rgba(59,111,255,.32); }
         .article-card.cat-data:hover   { border-color: rgba(124,58,237,.32); }
         .article-card.cat-comp:hover   { border-color: rgba(5,150,105,.35); }
-        .article-card.cat-prod:hover   { border-color: rgba(219,39,119,.32); }
-        .article-card.cat-agile:hover  { border-color: rgba(234,88,12,.32); }
+        .article-card.cat-prod:hover   { border-color: rgba(79,70,229,.32); }
+        .article-card.cat-agile:hover  { border-color: rgba(13,148,136,.32); }
         .article-card.cat-cyan:hover   { border-color: rgba(8,145,178,.32); }
         .article-card.cat-purple:hover { border-color: rgba(126,34,206,.32); }
         .article-card.cat-sky:hover     { border-color: rgba(3,105,161,.32); }
         .article-card.cat-green:hover   { border-color: rgba(22,163,74,.32); }
-        .article-card.cat-amber:hover   { border-color: rgba(180,83,9,.32); }
+        .article-card.cat-amber:hover   { border-color: rgba(37,99,235,.32); }
         .article-card.cat-teal:hover    { border-color: rgba(15,118,110,.32); }
         .article-card.cat-indigo:hover  { border-color: rgba(67,56,202,.32); }
-        .article-card.cat-fuchsia:hover { border-color: rgba(162,28,175,.32); }
+        .article-card.cat-fuchsia:hover { border-color: rgba(109,40,217,.32); }
         .article-card.cat-red:hover     { border-color: rgba(220,38,38,.32); }
         .article-card.cat-lime:hover    { border-color: rgba(101,163,13,.32); }
         .article-card.cat-blue:hover    { border-color: rgba(37,99,235,.32); }
@@ -475,8 +475,8 @@
         /* Load more */
         .article-card.art-hidden { display: none !important; }
         .load-more-wrap { display: flex; justify-content: center; margin-top: 36px; }
-        #load-more-btn { display: inline-flex; align-items: center; gap: 8px; min-width: 190px; justify-content: center; background: #3B6FFF; box-shadow: 0 2px 10px rgba(59,111,255,.35); }
-        #load-more-btn:hover { background: #2855e8; box-shadow: 0 4px 18px rgba(59,111,255,.45); }
+        #load-more-btn { display: inline-flex; align-items: center; gap: 8px; min-width: 190px; justify-content: center; background: #64748B; box-shadow: 0 2px 10px rgba(100,116,139,.25); }
+        #load-more-btn:hover { background: #475569; box-shadow: 0 4px 18px rgba(100,116,139,.35); }
 
         .btn-primary {
             background: #1C2B3C; color: #fff;
@@ -776,43 +776,200 @@
 
         <div class="articles-grid">
 
-            <div class="article-card cat-econ fade-up">
-                <div class="article-cat cat-econ">
+            <div class="article-card cat-prod fade-up">
+                <div class="article-cat cat-prod">
                     <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="1,9 4,5.5 7,7.5 11,2"/>
-                        <polyline points="8.5,2 11,2 11,4.5"/>
+                        <rect x="1" y="1" width="10" height="10" rx="2"/>
+                        <line x1="4" y1="6" x2="8" y2="6"/>
+                        <line x1="6" y1="4" x2="6" y2="8"/>
                     </svg>
-                    Economics
+                    Product
                 </div>
-                <div class="article-card-title">Economics Fundamentals</div>
-                <div class="article-card-desc">A visual guide to how the economy actually works — from the four economic players to macroeconomic fundamentals and what indicators actually measure national health.</div>
+                <div class="article-card-title">How I Built TryCareerMatch</div>
+                <div class="article-card-desc">A behind-the-scenes look at building a career discovery platform — from the data model and weighted scoring to UX decisions and launch.</div>
                 <div class="article-card-tags">
-                    <span class="stag">Economics</span>
-                    <span class="stag">Finance</span>
-                    <span class="stag">Macroeconomics</span>
+                    <span class="stag">Product</span>
+                    <span class="stag">Case Study</span>
+                    <span class="stag">UX</span>
+                    <span class="stag">Scoring Model</span>
                 </div>
-                <a href="articles/what-is-economics.html" class="btn btn-primary article-card-btn">
+                <a href="articles/how-i-built-careermatch.html" class="btn btn-primary article-card-btn">
                     Read article
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
                 </a>
             </div>
 
-            <div class="article-card cat-comp fade-up">
-                <div class="article-cat cat-comp">
-                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M6 1L11 3v4C11 9.5 6 12 6 12S1 9.5 1 7V3z"/>
+            <div class="article-card cat-agile fade-up">
+                <div class="article-cat cat-agile">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/>
                     </svg>
-                    Compliance
+                    Agile
                 </div>
-                <div class="article-card-title">AML, KYC &amp; Financial Crime Fundamentals</div>
-                <div class="article-card-desc">How banks detect and prevent financial crime — Anti-Money Laundering, Know Your Customer, sanctions screening, transaction monitoring, fraud types, and beneficial ownership.</div>
+                <div class="article-card-title">Agile &amp; Scrum Fundamentals</div>
+                <div class="article-card-desc">What Agile really means, how Scrum works in practice, the roles and events that make teams ship faster — and the metrics that prove it.</div>
                 <div class="article-card-tags">
-                    <span class="stag">AML</span>
-                    <span class="stag">KYC</span>
-                    <span class="stag">Compliance</span>
-                    <span class="stag">Finance</span>
+                    <span class="stag">Agile</span>
+                    <span class="stag">Scrum</span>
+                    <span class="stag">Product</span>
+                    <span class="stag">Frameworks</span>
                 </div>
-                <a href="articles/aml-kyc.html" class="btn btn-primary article-card-btn">
+                <a href="articles/agile-scrum-fundamentals.html" class="btn btn-primary article-card-btn">
+                    Read article
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                </a>
+            </div>
+
+            <div class="article-card cat-prod fade-up">
+                <div class="article-cat cat-prod">
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="1" y="1" width="10" height="10" rx="2"/>
+                        <line x1="4" y1="6" x2="8" y2="6"/>
+                        <line x1="6" y1="4" x2="6" y2="8"/>
+                    </svg>
+                    Product
+                </div>
+                <div class="article-card-title">SaaS &amp; Product Metrics</div>
+                <div class="article-card-desc">The metrics that actually matter — DAU/MAU, retention curves, MRR components, CAC, LTV, and how to choose the right ones for your product stage.</div>
+                <div class="article-card-tags">
+                    <span class="stag">Metrics</span>
+                    <span class="stag">Analytics</span>
+                    <span class="stag">SaaS</span>
+                    <span class="stag">Retention</span>
+                </div>
+                <a href="articles/saas-product-metrics.html" class="btn btn-primary article-card-btn">
+                    Read article
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                </a>
+            </div>
+
+            <div class="article-card cat-amber fade-up">
+                <div class="article-cat cat-amber">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2v-4M9 21H5a2 2 0 0 1-2-2v-4m0 0h18"/>
+                    </svg>
+                    Data
+                </div>
+                <div class="article-card-title">A/B Testing &amp; Experimentation</div>
+                <div class="article-card-desc">How to design valid experiments, interpret statistical significance, and build a culture of evidence-based decisions — not gut feel.</div>
+                <div class="article-card-tags">
+                    <span class="stag">A/B Testing</span>
+                    <span class="stag">Statistics</span>
+                    <span class="stag">Experimentation</span>
+                    <span class="stag">Data</span>
+                </div>
+                <a href="articles/ab-testing-fundamentals.html" class="btn btn-primary article-card-btn">
+                    Read article
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                </a>
+            </div>
+
+            <div class="article-card cat-prod fade-up">
+                <div class="article-cat cat-prod">
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="1" y="1" width="10" height="10" rx="2"/>
+                        <line x1="4" y1="6" x2="8" y2="6"/>
+                        <line x1="6" y1="4" x2="6" y2="8"/>
+                    </svg>
+                    Product
+                </div>
+                <div class="article-card-title">Prioritization in Practice</div>
+                <div class="article-card-desc">RICE, ICE, MoSCoW, Kano, and Opportunity Scoring — how each framework works, when to use it, and a side-by-side comparison.</div>
+                <div class="article-card-tags">
+                    <span class="stag">RICE</span>
+                    <span class="stag">MoSCoW</span>
+                    <span class="stag">Kano</span>
+                    <span class="stag">Prioritization</span>
+                </div>
+                <a href="articles/prioritization-frameworks.html" class="btn btn-primary article-card-btn">
+                    Read article
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                </a>
+            </div>
+
+            <div class="article-card cat-prod fade-up">
+                <div class="article-cat cat-prod">
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="1" y="1" width="10" height="10" rx="2"/>
+                        <line x1="4" y1="6" x2="8" y2="6"/>
+                        <line x1="6" y1="4" x2="6" y2="8"/>
+                    </svg>
+                    Product
+                </div>
+                <div class="article-card-title">Product Roadmapping</div>
+                <div class="article-card-desc">What a roadmap is (and isn't), the three main types, how to build one, saying no gracefully, and the anti-patterns that sink most roadmaps.</div>
+                <div class="article-card-tags">
+                    <span class="stag">Roadmap</span>
+                    <span class="stag">Planning</span>
+                    <span class="stag">Stakeholders</span>
+                    <span class="stag">Strategy</span>
+                </div>
+                <a href="articles/product-roadmapping.html" class="btn btn-primary article-card-btn">
+                    Read article
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                </a>
+            </div>
+
+            <div class="article-card cat-prod fade-up">
+                <div class="article-cat cat-prod">
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="1" y="1" width="10" height="10" rx="2"/>
+                        <line x1="4" y1="6" x2="8" y2="6"/>
+                        <line x1="6" y1="4" x2="6" y2="8"/>
+                    </svg>
+                    Product
+                </div>
+                <div class="article-card-title">North Star Metric</div>
+                <div class="article-card-desc">What makes a good North Star Metric, how to choose one, real examples from Spotify, Airbnb, and Slack, and how it fits with OKRs and KPIs.</div>
+                <div class="article-card-tags">
+                    <span class="stag">North Star</span>
+                    <span class="stag">Metrics</span>
+                    <span class="stag">Strategy</span>
+                    <span class="stag">Focus</span>
+                </div>
+                <a href="articles/north-star-metric.html" class="btn btn-primary article-card-btn">
+                    Read article
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                </a>
+            </div>
+
+            <div class="article-card cat-sky fade-up">
+                <div class="article-cat cat-sky">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+                    </svg>
+                    Strategy
+                </div>
+                <div class="article-card-title">OKRs &amp; KPIs</div>
+                <div class="article-card-desc">How to set meaningful goals, measure the right outcomes, and build a culture where everyone knows what success looks like — and why vanity metrics are a trap.</div>
+                <div class="article-card-tags">
+                    <span class="stag">OKRs</span>
+                    <span class="stag">KPIs</span>
+                    <span class="stag">Strategy</span>
+                    <span class="stag">Product</span>
+                </div>
+                <a href="articles/okrs-kpis.html" class="btn btn-primary article-card-btn">
+                    Read article
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                </a>
+            </div>
+
+            <div class="article-card cat-fuchsia fade-up">
+                <div class="article-cat cat-fuchsia">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                    </svg>
+                    Research
+                </div>
+                <div class="article-card-title">Product Discovery &amp; User Research</div>
+                <div class="article-card-desc">How to run interviews, build personas, apply Jobs-to-be-Done, and validate hypotheses before building — so you stop shipping what nobody uses.</div>
+                <div class="article-card-tags">
+                    <span class="stag">Discovery</span>
+                    <span class="stag">UX Research</span>
+                    <span class="stag">JTBD</span>
+                    <span class="stag">Personas</span>
+                </div>
+                <a href="articles/product-discovery-user-research.html" class="btn btn-primary article-card-btn">
                     Read article
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
                 </a>
@@ -841,27 +998,6 @@
                 </a>
             </div>
 
-            <div class="article-card cat-comp fade-up">
-                <div class="article-cat cat-comp">
-                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M6 1L11 3v4C11 9.5 6 12 6 12S1 9.5 1 7V3z"/>
-                    </svg>
-                    Compliance
-                </div>
-                <div class="article-card-title">Investment Fund Governance Fundamentals</div>
-                <div class="article-card-desc">How ManCos, depositaries, and fund administrators keep billions in compliance — UCITS, AIFMD, NAV reconciliation, KYC screening, and the workflows of a fund Business Analyst.</div>
-                <div class="article-card-tags">
-                    <span class="stag">UCITS</span>
-                    <span class="stag">AIFMD</span>
-                    <span class="stag">Fund Governance</span>
-                    <span class="stag">Compliance</span>
-                </div>
-                <a href="articles/fund-governance-fundamentals.html" class="btn btn-primary article-card-btn">
-                    Read article
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
-                </a>
-            </div>
-
             <div class="article-card cat-prod fade-up">
                 <div class="article-cat cat-prod">
                     <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -885,26 +1021,53 @@
                 </a>
             </div>
 
-            <div class="article-card cat-agile fade-up">
-                <div class="article-cat cat-agile">
+            <div class="article-card cat-prod fade-up">
+                <div class="article-cat cat-prod">
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/>
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>
                     </svg>
-                    Agile
+                    Career
                 </div>
-                <div class="article-card-title">Agile &amp; Scrum Fundamentals</div>
-                <div class="article-card-desc">What Agile really means, how Scrum works in practice, the roles and events that make teams ship faster — and the metrics that prove it.</div>
+                <div class="article-card-title">From Financial Analyst to Product Manager</div>
+                <div class="article-card-desc">What the transition actually looks like — what transfers, what doesn't, and why building something yourself is the only honest proof.</div>
                 <div class="article-card-tags">
-                    <span class="stag">Agile</span>
-                    <span class="stag">Scrum</span>
-                    <span class="stag">Product</span>
-                    <span class="stag">Frameworks</span>
+                    <span class="stag">Career</span>
+                    <span class="stag">Transition</span>
+                    <span class="stag">Personal</span>
+                    <span class="stag">PM</span>
                 </div>
-                <a href="articles/agile-scrum-fundamentals.html" class="btn btn-primary article-card-btn">
+                <a href="articles/analyst-to-pm.html" class="btn btn-primary article-card-btn">
                     Read article
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
                 </a>
             </div>
+
+            <div class="article-card cat-prod fade-up">
+                <div class="article-cat cat-prod">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/>
+                    </svg>
+                    Career
+                </div>
+                <div class="article-card-title">What 7 Years of Design Gave Me as a PM</div>
+                <div class="article-card-desc">The specific instincts a design background builds, where they're genuinely useful in product work, and the one habit I had to unlearn completely.</div>
+                <div class="article-card-tags">
+                    <span class="stag">Design</span>
+                    <span class="stag">UX</span>
+                    <span class="stag">Personal</span>
+                    <span class="stag">PM</span>
+                </div>
+                <a href="articles/design-background-pm.html" class="btn btn-primary article-card-btn">
+                    Read article
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                </a>
+            </div>
+
+        
+
+        
+
+        
 
             <div class="article-card cat-cyan fade-up">
                 <div class="article-cat cat-cyan">
@@ -922,90 +1085,6 @@
                     <span class="stag">Frameworks</span>
                 </div>
                 <a href="articles/business-model-canvas.html" class="btn btn-primary article-card-btn">
-                    Read article
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
-                </a>
-            </div>
-
-            <div class="article-card cat-purple fade-up">
-                <div class="article-cat cat-purple">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/>
-                    </svg>
-                    Design
-                </div>
-                <div class="article-card-title">Design Thinking Fundamentals</div>
-                <div class="article-card-desc">The five-stage human-centred design process — from deep empathy and problem definition to ideation, prototyping, and iterative testing.</div>
-                <div class="article-card-tags">
-                    <span class="stag">Design Thinking</span>
-                    <span class="stag">Innovation</span>
-                    <span class="stag">UX</span>
-                    <span class="stag">Frameworks</span>
-                </div>
-                <a href="articles/design-thinking-fundamentals.html" class="btn btn-primary article-card-btn">
-                    Read article
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
-                </a>
-            </div>
-
-            <div class="article-card cat-sky fade-up">
-                <div class="article-cat cat-sky">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
-                    </svg>
-                    Strategy
-                </div>
-                <div class="article-card-title">OKRs &amp; KPIs</div>
-                <div class="article-card-desc">How to set meaningful goals, measure the right outcomes, and build a culture where everyone knows what success looks like — and why vanity metrics are a trap.</div>
-                <div class="article-card-tags">
-                    <span class="stag">OKRs</span>
-                    <span class="stag">KPIs</span>
-                    <span class="stag">Strategy</span>
-                    <span class="stag">Product</span>
-                </div>
-                <a href="articles/okrs-kpis.html" class="btn btn-primary article-card-btn">
-                    Read article
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
-                </a>
-            </div>
-
-            <div class="article-card cat-green fade-up">
-                <div class="article-cat cat-green">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/>
-                    </svg>
-                    Growth
-                </div>
-                <div class="article-card-title">Growth Hacking Fundamentals</div>
-                <div class="article-card-desc">The AARRR framework, growth loops, and the metrics that separate real traction from vanity numbers — essential for Growth Manager and Growth Analyst roles.</div>
-                <div class="article-card-tags">
-                    <span class="stag">Growth</span>
-                    <span class="stag">AARRR</span>
-                    <span class="stag">Acquisition</span>
-                    <span class="stag">Retention</span>
-                </div>
-                <a href="articles/growth-hacking-fundamentals.html" class="btn btn-primary article-card-btn">
-                    Read article
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
-                </a>
-            </div>
-
-            <div class="article-card cat-amber fade-up">
-                <div class="article-cat cat-amber">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2v-4M9 21H5a2 2 0 0 1-2-2v-4m0 0h18"/>
-                    </svg>
-                    Data
-                </div>
-                <div class="article-card-title">A/B Testing &amp; Experimentation</div>
-                <div class="article-card-desc">How to design valid experiments, interpret statistical significance, and build a culture of evidence-based decisions — not gut feel.</div>
-                <div class="article-card-tags">
-                    <span class="stag">A/B Testing</span>
-                    <span class="stag">Statistics</span>
-                    <span class="stag">Experimentation</span>
-                    <span class="stag">Data</span>
-                </div>
-                <a href="articles/ab-testing-fundamentals.html" class="btn btn-primary article-card-btn">
                     Read article
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
                 </a>
@@ -1053,48 +1132,6 @@
                 </a>
             </div>
 
-            <div class="article-card cat-fuchsia fade-up">
-                <div class="article-cat cat-fuchsia">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
-                    </svg>
-                    Research
-                </div>
-                <div class="article-card-title">Product Discovery &amp; User Research</div>
-                <div class="article-card-desc">How to run interviews, build personas, apply Jobs-to-be-Done, and validate hypotheses before building — so you stop shipping what nobody uses.</div>
-                <div class="article-card-tags">
-                    <span class="stag">Discovery</span>
-                    <span class="stag">UX Research</span>
-                    <span class="stag">JTBD</span>
-                    <span class="stag">Personas</span>
-                </div>
-                <a href="articles/product-discovery-user-research.html" class="btn btn-primary article-card-btn">
-                    Read article
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
-                </a>
-            </div>
-
-            <div class="article-card cat-red fade-up">
-                <div class="article-cat cat-red">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                        <line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
-                    </svg>
-                    Venture
-                </div>
-                <div class="article-card-title">Startup Funding</div>
-                <div class="article-card-desc">Pre-seed to Series A — how funding rounds work, what investors look for, the difference between angels and VCs, and how equity gets divided.</div>
-                <div class="article-card-tags">
-                    <span class="stag">Venture Capital</span>
-                    <span class="stag">Startups</span>
-                    <span class="stag">Equity</span>
-                    <span class="stag">Entrepreneurship</span>
-                </div>
-                <a href="articles/startup-funding.html" class="btn btn-primary article-card-btn">
-                    Read article
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
-                </a>
-            </div>
-
             <div class="article-card cat-lime fade-up">
                 <div class="article-cat cat-lime">
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -1116,22 +1153,43 @@
                 </a>
             </div>
 
-            <div class="article-card cat-blue fade-up">
-                <div class="article-cat cat-blue">
+            <div class="article-card cat-green fade-up">
+                <div class="article-cat cat-green">
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                        <rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
+                        <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/>
                     </svg>
-                    Marketing
+                    Growth
                 </div>
-                <div class="article-card-title">Digital Marketing Fundamentals</div>
-                <div class="article-card-desc">SEO, SEM, email marketing, and conversion funnels — how digital channels work and how they connect into a coherent acquisition system.</div>
+                <div class="article-card-title">Growth Hacking Fundamentals</div>
+                <div class="article-card-desc">The AARRR framework, growth loops, and the metrics that separate real traction from vanity numbers — essential for Growth Manager and Growth Analyst roles.</div>
                 <div class="article-card-tags">
-                    <span class="stag">SEO</span>
-                    <span class="stag">SEM</span>
-                    <span class="stag">Email</span>
-                    <span class="stag">Funnels</span>
+                    <span class="stag">Growth</span>
+                    <span class="stag">AARRR</span>
+                    <span class="stag">Acquisition</span>
+                    <span class="stag">Retention</span>
                 </div>
-                <a href="articles/digital-marketing-fundamentals.html" class="btn btn-primary article-card-btn">
+                <a href="articles/growth-hacking-fundamentals.html" class="btn btn-primary article-card-btn">
+                    Read article
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                </a>
+            </div>
+
+            <div class="article-card cat-purple fade-up">
+                <div class="article-cat cat-purple">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/>
+                    </svg>
+                    Design
+                </div>
+                <div class="article-card-title">Design Thinking Fundamentals</div>
+                <div class="article-card-desc">The five-stage human-centred design process — from deep empathy and problem definition to ideation, prototyping, and iterative testing.</div>
+                <div class="article-card-tags">
+                    <span class="stag">Design Thinking</span>
+                    <span class="stag">Innovation</span>
+                    <span class="stag">UX</span>
+                    <span class="stag">Frameworks</span>
+                </div>
+                <a href="articles/design-thinking-fundamentals.html" class="btn btn-primary article-card-btn">
                     Read article
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
                 </a>
@@ -1158,6 +1216,69 @@
                 </a>
             </div>
 
+            <div class="article-card cat-blue fade-up">
+                <div class="article-cat cat-blue">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
+                    </svg>
+                    Marketing
+                </div>
+                <div class="article-card-title">Digital Marketing Fundamentals</div>
+                <div class="article-card-desc">SEO, SEM, email marketing, and conversion funnels — how digital channels work and how they connect into a coherent acquisition system.</div>
+                <div class="article-card-tags">
+                    <span class="stag">SEO</span>
+                    <span class="stag">SEM</span>
+                    <span class="stag">Email</span>
+                    <span class="stag">Funnels</span>
+                </div>
+                <a href="articles/digital-marketing-fundamentals.html" class="btn btn-primary article-card-btn">
+                    Read article
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                </a>
+            </div>
+
+            <div class="article-card cat-red fade-up">
+                <div class="article-cat cat-red">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                    </svg>
+                    Venture
+                </div>
+                <div class="article-card-title">Startup Funding</div>
+                <div class="article-card-desc">Pre-seed to Series A — how funding rounds work, what investors look for, the difference between angels and VCs, and how equity gets divided.</div>
+                <div class="article-card-tags">
+                    <span class="stag">Venture Capital</span>
+                    <span class="stag">Startups</span>
+                    <span class="stag">Equity</span>
+                    <span class="stag">Entrepreneurship</span>
+                </div>
+                <a href="articles/startup-funding.html" class="btn btn-primary article-card-btn">
+                    Read article
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                </a>
+            </div>
+
+            <div class="article-card cat-econ fade-up">
+                <div class="article-cat cat-econ">
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="1,9 4,5.5 7,7.5 11,2"/>
+                        <polyline points="8.5,2 11,2 11,4.5"/>
+                    </svg>
+                    Economics
+                </div>
+                <div class="article-card-title">Economics Fundamentals</div>
+                <div class="article-card-desc">A visual guide to how the economy actually works — from the four economic players to macroeconomic fundamentals and what indicators actually measure national health.</div>
+                <div class="article-card-tags">
+                    <span class="stag">Economics</span>
+                    <span class="stag">Finance</span>
+                    <span class="stag">Macroeconomics</span>
+                </div>
+                <a href="articles/what-is-economics.html" class="btn btn-primary article-card-btn">
+                    Read article
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                </a>
+            </div>
+
             <div class="article-card cat-emerald fade-up">
                 <div class="article-cat cat-emerald">
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -1179,158 +1300,43 @@
                 </a>
             </div>
 
-            <div class="article-card cat-prod fade-up">
-                <div class="article-cat cat-prod">
+            <div class="article-card cat-comp fade-up">
+                <div class="article-cat cat-comp">
                     <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <rect x="1" y="1" width="10" height="10" rx="2"/>
-                        <line x1="4" y1="6" x2="8" y2="6"/>
-                        <line x1="6" y1="4" x2="6" y2="8"/>
+                        <path d="M6 1L11 3v4C11 9.5 6 12 6 12S1 9.5 1 7V3z"/>
                     </svg>
-                    Product
+                    Compliance
                 </div>
-                <div class="article-card-title">How I Built TryCareerMatch</div>
-                <div class="article-card-desc">A behind-the-scenes look at building a career discovery platform — from the data model and weighted scoring to UX decisions and launch.</div>
+                <div class="article-card-title">AML, KYC &amp; Financial Crime Fundamentals</div>
+                <div class="article-card-desc">How banks detect and prevent financial crime — Anti-Money Laundering, Know Your Customer, sanctions screening, transaction monitoring, fraud types, and beneficial ownership.</div>
                 <div class="article-card-tags">
-                    <span class="stag">Product</span>
-                    <span class="stag">Case Study</span>
-                    <span class="stag">UX</span>
-                    <span class="stag">Scoring Model</span>
+                    <span class="stag">AML</span>
+                    <span class="stag">KYC</span>
+                    <span class="stag">Compliance</span>
+                    <span class="stag">Finance</span>
                 </div>
-                <a href="articles/how-i-built-careermatch.html" class="btn btn-primary article-card-btn">
+                <a href="articles/aml-kyc.html" class="btn btn-primary article-card-btn">
                     Read article
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
                 </a>
             </div>
 
-            <div class="article-card cat-prod fade-up">
-                <div class="article-cat cat-prod">
+            <div class="article-card cat-comp fade-up">
+                <div class="article-cat cat-comp">
                     <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <rect x="1" y="1" width="10" height="10" rx="2"/>
-                        <line x1="4" y1="6" x2="8" y2="6"/>
-                        <line x1="6" y1="4" x2="6" y2="8"/>
+                        <path d="M6 1L11 3v4C11 9.5 6 12 6 12S1 9.5 1 7V3z"/>
                     </svg>
-                    Product
+                    Compliance
                 </div>
-                <div class="article-card-title">SaaS &amp; Product Metrics</div>
-                <div class="article-card-desc">The metrics that actually matter — DAU/MAU, retention curves, MRR components, CAC, LTV, and how to choose the right ones for your product stage.</div>
+                <div class="article-card-title">Investment Fund Governance Fundamentals</div>
+                <div class="article-card-desc">How ManCos, depositaries, and fund administrators keep billions in compliance — UCITS, AIFMD, NAV reconciliation, KYC screening, and the workflows of a fund Business Analyst.</div>
                 <div class="article-card-tags">
-                    <span class="stag">Metrics</span>
-                    <span class="stag">Analytics</span>
-                    <span class="stag">SaaS</span>
-                    <span class="stag">Retention</span>
+                    <span class="stag">UCITS</span>
+                    <span class="stag">AIFMD</span>
+                    <span class="stag">Fund Governance</span>
+                    <span class="stag">Compliance</span>
                 </div>
-                <a href="articles/saas-product-metrics.html" class="btn btn-primary article-card-btn">
-                    Read article
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
-                </a>
-            </div>
-
-            <div class="article-card cat-prod fade-up">
-                <div class="article-cat cat-prod">
-                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <rect x="1" y="1" width="10" height="10" rx="2"/>
-                        <line x1="4" y1="6" x2="8" y2="6"/>
-                        <line x1="6" y1="4" x2="6" y2="8"/>
-                    </svg>
-                    Product
-                </div>
-                <div class="article-card-title">Prioritization in Practice</div>
-                <div class="article-card-desc">RICE, ICE, MoSCoW, Kano, and Opportunity Scoring — how each framework works, when to use it, and a side-by-side comparison.</div>
-                <div class="article-card-tags">
-                    <span class="stag">RICE</span>
-                    <span class="stag">MoSCoW</span>
-                    <span class="stag">Kano</span>
-                    <span class="stag">Prioritization</span>
-                </div>
-                <a href="articles/prioritization-frameworks.html" class="btn btn-primary article-card-btn">
-                    Read article
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
-                </a>
-            </div>
-
-            <div class="article-card cat-prod fade-up">
-                <div class="article-cat cat-prod">
-                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <rect x="1" y="1" width="10" height="10" rx="2"/>
-                        <line x1="4" y1="6" x2="8" y2="6"/>
-                        <line x1="6" y1="4" x2="6" y2="8"/>
-                    </svg>
-                    Product
-                </div>
-                <div class="article-card-title">North Star Metric</div>
-                <div class="article-card-desc">What makes a good North Star Metric, how to choose one, real examples from Spotify, Airbnb, and Slack, and how it fits with OKRs and KPIs.</div>
-                <div class="article-card-tags">
-                    <span class="stag">North Star</span>
-                    <span class="stag">Metrics</span>
-                    <span class="stag">Strategy</span>
-                    <span class="stag">Focus</span>
-                </div>
-                <a href="articles/north-star-metric.html" class="btn btn-primary article-card-btn">
-                    Read article
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
-                </a>
-            </div>
-
-            <div class="article-card cat-prod fade-up">
-                <div class="article-cat cat-prod">
-                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <rect x="1" y="1" width="10" height="10" rx="2"/>
-                        <line x1="4" y1="6" x2="8" y2="6"/>
-                        <line x1="6" y1="4" x2="6" y2="8"/>
-                    </svg>
-                    Product
-                </div>
-                <div class="article-card-title">Product Roadmapping</div>
-                <div class="article-card-desc">What a roadmap is (and isn't), the three main types, how to build one, saying no gracefully, and the anti-patterns that sink most roadmaps.</div>
-                <div class="article-card-tags">
-                    <span class="stag">Roadmap</span>
-                    <span class="stag">Planning</span>
-                    <span class="stag">Stakeholders</span>
-                    <span class="stag">Strategy</span>
-                </div>
-                <a href="articles/product-roadmapping.html" class="btn btn-primary article-card-btn">
-                    Read article
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
-                </a>
-            </div>
-
-            <div class="article-card cat-prod fade-up">
-                <div class="article-cat cat-prod">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>
-                    </svg>
-                    Career
-                </div>
-                <div class="article-card-title">From Financial Analyst to Product Manager</div>
-                <div class="article-card-desc">What the transition actually looks like — what transfers, what doesn't, and why building something yourself is the only honest proof.</div>
-                <div class="article-card-tags">
-                    <span class="stag">Career</span>
-                    <span class="stag">Transition</span>
-                    <span class="stag">Personal</span>
-                    <span class="stag">PM</span>
-                </div>
-                <a href="articles/analyst-to-pm.html" class="btn btn-primary article-card-btn">
-                    Read article
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
-                </a>
-            </div>
-
-            <div class="article-card cat-prod fade-up">
-                <div class="article-cat cat-prod">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/>
-                    </svg>
-                    Career
-                </div>
-                <div class="article-card-title">What 7 Years of Design Gave Me as a PM</div>
-                <div class="article-card-desc">The specific instincts a design background builds, where they're genuinely useful in product work, and the one habit I had to unlearn completely.</div>
-                <div class="article-card-tags">
-                    <span class="stag">Design</span>
-                    <span class="stag">UX</span>
-                    <span class="stag">Personal</span>
-                    <span class="stag">PM</span>
-                </div>
-                <a href="articles/design-background-pm.html" class="btn btn-primary article-card-btn">
+                <a href="articles/fund-governance-fundamentals.html" class="btn btn-primary article-card-btn">
                     Read article
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
                 </a>
