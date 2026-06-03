@@ -3,71 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Diogo Serino — Product Manager. I build data-driven products with a design background — from discovery and roadmapping to metrics and execution.">
-    <meta property="og:title" content="Diogo Serino · Product Manager">
-    <meta property="og:description" content="Product Manager with a background in financial analytics, Power BI, and 7 years of design — creator of TryCareerMatch. Open to PM roles in Portugal / EU.">
+    <meta name="description" content="Product Manager pairing hands-on analytics (Power BI, Python, SQL) with 7 years of design. Creator of TryCareerMatch. Open to PM / Product Owner roles in Portugal / EU.">
+    <meta property="og:title" content="Diogo Serino — Product Manager (Analytics &amp; Design)">
+    <meta property="og:description" content="Hands-on Product Manager: product analytics, UX, and end-to-end delivery. Creator of TryCareerMatch. Open to PM / Product Owner roles in Portugal / EU.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://diogomserino.github.io/">
     <meta property="og:image" content="https://diogomserino.github.io/og-image.png">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="canonical" href="https://diogomserino.github.io/">
-    <title>Diogo Serino · Product Manager</title>
+    <title>Diogo Serino — Product Manager | Analytics &amp; Design</title>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%2306111F'/><text x='50' y='72' font-family='system-ui,sans-serif' font-weight='900' font-size='58' text-anchor='middle' fill='%233B6FFF'>D</text></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/main.css">
-    <script>if(localStorage.getItem('cm-ann')){document.documentElement.classList.add('ann-gone');}</script>
 
     <style>
-        /* ============================================================
-           ANNOUNCEMENT BAR
-        ============================================================ */
-        :root { --ann-h: 40px; }
-        html.ann-gone { --ann-h: 0px; }
-        html.ann-gone .ann-bar { display: none; }
-
-        .ann-bar {
-            position: fixed; top: 0; left: 0; right: 0;
-            height: var(--ann-h); z-index: 1000;
-            background: linear-gradient(90deg, #92400E 0%, #B45309 45%, #D97706 100%);
-            display: flex; align-items: center; justify-content: center;
-            overflow: hidden;
-        }
-        .ann-bar-inner {
-            display: flex; align-items: center; gap: 10px;
-            font-size: 13px; color: #fff; font-weight: 500;
-        }
-        .ann-tag {
-            font-size: 14px; line-height: 1; flex-shrink: 0;
-        }
-        .ann-code {
-            display: inline-flex; align-items: center;
-            background: rgba(0,0,0,.22); border: 1px dashed rgba(255,255,255,.5);
-            color: #fff; font-family: 'Courier New', monospace;
-            font-size: 12px; font-weight: 700; letter-spacing: .12em;
-            padding: 2px 9px; border-radius: 5px;
-            white-space: nowrap;
-        }
-        .ann-link {
-            color: #fff; font-weight: 700;
-            text-decoration: underline; text-underline-offset: 2px;
-            white-space: nowrap; transition: opacity .15s;
-        }
-        .ann-link:hover { opacity: .75; }
-        .ann-close {
-            position: absolute; right: 16px;
-            background: none; border: none;
-            color: rgba(255,255,255,.6); cursor: pointer;
-            font-size: 15px; line-height: 1; padding: 8px;
-            border-radius: 4px; transition: color .15s, background .15s;
-        }
-        .ann-close:hover { color: #fff; background: rgba(255,255,255,.12); }
-        @media (max-width: 520px) {
-            .ann-bar-inner { font-size: 11.5px; gap: 7px; }
-            .ann-bar-inner .ann-hide-mob { display: none; }
-            .ann-close { right: 6px; }
-        }
+        /* Announcement bar removed — keep --ann-h at 0 so nav/hero offsets resolve */
+        :root { --ann-h: 0px; }
 
         /* ============================================================
            INDEX NAV (dark)
@@ -104,21 +57,25 @@
             color: #fff; background: rgba(255,255,255,.08);
         }
         .nav-links a.cta {
-            background: rgba(255,255,255,.1); color: #fff !important;
-            border: 1px solid rgba(255,255,255,.2);
+            background: var(--brand); color: #fff !important;
+            border: 1px solid var(--brand);
             margin-left: 6px; padding: 7px 18px; border-radius: 8px;
             transition: background .2s, border-color .2s, transform .2s;
         }
         .nav-links a.cta:hover {
-            background: rgba(255,255,255,.16);
-            border-color: rgba(255,255,255,.32);
+            background: var(--brand-700);
+            border-color: var(--brand-700);
             transform: translateY(-1px);
         }
         .hamburger {
             display: none; flex-direction: column;
             gap: 5px; cursor: pointer; padding: 6px;
+            background: none; border: none;
         }
-        .hamburger span { width: 22px; height: 2px; background: #fff; border-radius: 2px; transition: all .3s; }
+        .hamburger span { width: 22px; height: 2px; background: #fff; border-radius: 2px; transition: transform .3s, opacity .3s; }
+        .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        .hamburger.open span:nth-child(2) { opacity: 0; }
+        .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
         .mob-nav {
             display: none; position: fixed;
             top: calc(var(--nav-h) + var(--ann-h)); left: 0; right: 0;
@@ -193,8 +150,8 @@
         .hero-name {
             font-family: var(--font-head);
             font-size: clamp(54px, 9.5vw, 108px);
-            font-weight: 800; line-height: 0.9; letter-spacing: -3.5px;
-            background: linear-gradient(140deg, #FFFFFF 0%, #FFFFFF 58%, rgba(255,255,255,.48) 100%);
+            font-weight: 800; line-height: 0.9; letter-spacing: -3.5px; text-wrap: balance;
+            background: linear-gradient(140deg, #FFFFFF 0%, #FFFFFF 58%, rgba(255,255,255,.72) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -228,7 +185,7 @@
 
         .scroll-hint {
             display: flex; align-items: center; gap: 10px;
-            color: rgba(255,255,255,.22); font-size: 11px; font-weight: 500;
+            color: rgba(255,255,255,.42); font-size: 11px; font-weight: 500;
             letter-spacing: .1em; text-transform: uppercase;
         }
         .scroll-hint svg { animation: bounce 2.5s ease-in-out infinite; }
@@ -251,21 +208,15 @@
         }
         .about-cta:hover { gap: 12px; }
 
-        .about-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+        .about-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
         .acard {
-            padding: 24px 22px; border-radius: var(--r);
+            padding: 28px 24px; border-radius: var(--r);
             border: 1px solid var(--border); background: var(--bg-alt);
             border-top: 3px solid rgba(100,116,139,.35);
             position: relative; overflow: hidden;
             transition: border-color .25s, box-shadow .25s, transform .25s;
         }
         .acard:hover { border-color: rgba(100,116,139,.25); border-top-color: rgba(100,116,139,.5); box-shadow: var(--sh); transform: translateY(-2px); }
-        .acard-num {
-            font-family: var(--font-head);
-            font-size: 38px; font-weight: 800; line-height: 1;
-            color: var(--amber); opacity: .22;
-            margin-bottom: 10px; letter-spacing: -1.5px;
-        }
         .acard-icon {
             width: 34px; height: 34px;
             display: flex; align-items: center; justify-content: center;
@@ -333,6 +284,7 @@
             background: #22C55E; animation: blink 2s infinite;
         }
         .clinks { display: flex; flex-direction: column; gap: 10px; }
+        .contact-cta { font-size: 15px; padding: 15px 24px; justify-content: center; }
         .clink {
             display: flex; align-items: center; gap: 14px;
             padding: 15px 18px;
@@ -421,56 +373,38 @@
             padding: 4px 10px; border-radius: 6px; margin-bottom: 14px;
             border: 1px solid transparent;
         }
-        .cat-econ { background: rgba(59,111,255,.08);  border-color: rgba(59,111,255,.18);  color: #3B6FFF; }
-        .cat-data { background: rgba(124,58,237,.08);  border-color: rgba(124,58,237,.18);  color: #7C3AED; }
-        .cat-comp { background: rgba(5,150,105,.08);   border-color: rgba(5,150,105,.22);   color: #059669; }
-        .cat-prod   { background: rgba(79,70,229,.08);    border-color: rgba(79,70,229,.18);   color: #4F46E5; }
-        .cat-agile  { background: rgba(13,148,136,.08);  border-color: rgba(13,148,136,.18);  color: #0D9488; }
-        .cat-cyan   { background: rgba(8,145,178,.08);   border-color: rgba(8,145,178,.18);   color: #0891B2; }
-        .cat-purple { background: rgba(126,34,206,.08);  border-color: rgba(126,34,206,.18);  color: #7E22CE; }
-        .cat-sky     { background: rgba(3,105,161,.08);   border-color: rgba(3,105,161,.18);   color: #0369A1; }
-        .cat-green   { background: rgba(22,163,74,.08);   border-color: rgba(22,163,74,.18);   color: #16A34A; }
-        .cat-amber   { background: rgba(37,99,235,.08);   border-color: rgba(37,99,235,.18);   color: #2563EB; }
-        .cat-teal    { background: rgba(15,118,110,.08);  border-color: rgba(15,118,110,.18);  color: #0F766E; }
-        .cat-indigo  { background: rgba(67,56,202,.08);   border-color: rgba(67,56,202,.18);   color: #4338CA; }
-        .cat-fuchsia { background: rgba(109,40,217,.08);  border-color: rgba(109,40,217,.18);  color: #6D28D9; }
-        .cat-red     { background: rgba(220,38,38,.08);   border-color: rgba(220,38,38,.18);   color: #DC2626; }
-        .cat-lime    { background: rgba(101,163,13,.08);  border-color: rgba(101,163,13,.18);  color: #65A30D; }
-        .cat-blue    { background: rgba(37,99,235,.08);   border-color: rgba(37,99,235,.18);   color: #2563EB; }
-        .cat-pink    { background: rgba(190,24,93,.08);   border-color: rgba(190,24,93,.18);   color: #BE185D; }
-        .cat-emerald { background: rgba(4,120,87,.08);    border-color: rgba(4,120,87,.18);    color: #047857; }
-        .article-card.cat-econ:hover   { border-color: rgba(59,111,255,.32); }
-        .article-card.cat-data:hover   { border-color: rgba(124,58,237,.32); }
-        .article-card.cat-comp:hover   { border-color: rgba(5,150,105,.35); }
-        .article-card.cat-prod:hover   { border-color: rgba(79,70,229,.32); }
-        .article-card.cat-agile:hover  { border-color: rgba(13,148,136,.32); }
-        .article-card.cat-cyan:hover   { border-color: rgba(8,145,178,.32); }
-        .article-card.cat-purple:hover { border-color: rgba(126,34,206,.32); }
-        .article-card.cat-sky:hover     { border-color: rgba(3,105,161,.32); }
-        .article-card.cat-green:hover   { border-color: rgba(22,163,74,.32); }
-        .article-card.cat-amber:hover   { border-color: rgba(37,99,235,.32); }
-        .article-card.cat-teal:hover    { border-color: rgba(15,118,110,.32); }
-        .article-card.cat-indigo:hover  { border-color: rgba(67,56,202,.32); }
-        .article-card.cat-fuchsia:hover { border-color: rgba(109,40,217,.32); }
-        .article-card.cat-red:hover     { border-color: rgba(220,38,38,.32); }
-        .article-card.cat-lime:hover    { border-color: rgba(101,163,13,.32); }
-        .article-card.cat-blue:hover    { border-color: rgba(37,99,235,.32); }
-        .article-card.cat-pink:hover    { border-color: rgba(190,24,93,.32); }
-        .article-card.cat-emerald:hover { border-color: rgba(4,120,87,.32); }
+        /* 4 category colours — grouped to match the filter taxonomy */
+        .cat-prod, .cat-agile, .cat-purple, .cat-green, .cat-indigo, .cat-fuchsia, .cat-pink {
+            background: rgba(79,70,229,.08); border-color: rgba(79,70,229,.18); color: #4F46E5;    /* Product — Indigo */
+        }
+        .cat-cyan, .cat-sky, .cat-teal, .cat-lime, .cat-blue, .cat-emerald {
+            background: rgba(13,148,136,.08); border-color: rgba(13,148,136,.18); color: #0D9488;  /* Strategy — Teal */
+        }
+        .cat-data, .cat-amber {
+            background: rgba(124,58,237,.08); border-color: rgba(124,58,237,.18); color: #7C3AED;   /* Data — Violet */
+        }
+        .cat-econ, .cat-comp, .cat-red {
+            background: rgba(180,83,9,.08); border-color: rgba(180,83,9,.20); color: #B45309;        /* Finance — Bronze */
+        }
+        .article-card.cat-prod:hover, .article-card.cat-agile:hover, .article-card.cat-purple:hover, .article-card.cat-green:hover, .article-card.cat-indigo:hover, .article-card.cat-fuchsia:hover, .article-card.cat-pink:hover { border-color: rgba(79,70,229,.32); }
+        .article-card.cat-cyan:hover, .article-card.cat-sky:hover, .article-card.cat-teal:hover, .article-card.cat-lime:hover, .article-card.cat-blue:hover, .article-card.cat-emerald:hover { border-color: rgba(13,148,136,.32); }
+        .article-card.cat-data:hover, .article-card.cat-amber:hover { border-color: rgba(124,58,237,.32); }
+        .article-card.cat-econ:hover, .article-card.cat-comp:hover, .article-card.cat-red:hover { border-color: rgba(180,83,9,.32); }
 
-        /* Article filter bar */
+        /* Article filter — segmented control */
         .art-filters {
-            display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 32px;
+            display: inline-flex; gap: 4px; flex-wrap: wrap; margin-bottom: 32px;
+            padding: 4px; background: var(--bg-alt);
+            border: 1px solid var(--border); border-radius: 12px;
         }
         .art-filter-btn {
-            padding: 7px 18px; border-radius: 20px;
-            border: 1.5px solid var(--border);
-            background: var(--bg); color: var(--muted);
-            font-size: 13px; font-weight: 500; cursor: pointer;
-            transition: all .18s; font-family: var(--font);
+            padding: 7px 16px; border-radius: 8px;
+            border: none; background: transparent; color: var(--muted);
+            font-size: 13px; font-weight: 600; cursor: pointer;
+            transition: color .18s, background .18s, box-shadow .18s; font-family: var(--font);
         }
-        .art-filter-btn:hover { border-color: rgba(6,17,31,.25); color: var(--text); }
-        .art-filter-btn.active { background: var(--navy); border-color: var(--navy); color: #fff; }
+        .art-filter-btn:hover { color: var(--text); }
+        .art-filter-btn.active { background: #fff; color: var(--brand); box-shadow: 0 1px 3px rgba(6,17,31,.1); }
 
         /* Load more */
         .article-card.art-hidden { display: none !important; }
@@ -478,26 +412,16 @@
         #load-more-btn { display: inline-flex; align-items: center; gap: 8px; min-width: 190px; justify-content: center; background: #64748B; box-shadow: 0 2px 10px rgba(100,116,139,.25); }
         #load-more-btn:hover { background: #475569; box-shadow: 0 4px 18px rgba(100,116,139,.35); }
 
-        .btn-primary {
-            background: #1C2B3C; color: #fff;
-            box-shadow: 0 2px 8px rgba(0,0,0,.28);
-        }
-        .btn-primary:hover {
-            background: #243447;
-            box-shadow: 0 4px 16px rgba(0,0,0,.36);
-            transform: translateY(-2px);
-        }
-
         /* ============================================================
            PROJECT CARDS
         ============================================================ */
         .projects-grid {
-            display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
+            display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
             margin-top: 40px;
         }
         .pcard {
             background: var(--bg); border: 1px solid var(--border);
-            border-radius: var(--r); padding: 28px 28px 24px;
+            border-radius: var(--r); padding: 32px 30px 28px;
             display: flex; flex-direction: column; gap: 12px;
             transition: box-shadow .2s, transform .2s;
             position: relative; overflow: hidden;
@@ -505,17 +429,17 @@
         }
         .pcard::before {
             content: ''; position: absolute; top: 0; left: 0; right: 0;
-            height: 3px;
+            height: 4px;
         }
-        .pcard.pcard-pm::before   { background: linear-gradient(90deg,#7C3AED,#A78BFA); }
-        .pcard.pcard-data::before { background: linear-gradient(90deg,#0891B2,#67E8F9); }
+        .pcard.pcard-pm::before   { background: linear-gradient(90deg,#4F46E5,#818CF8); }
+        .pcard.pcard-data::before { background: linear-gradient(90deg,#7C3AED,#A78BFA); }
         .pcard:hover { box-shadow: var(--sh-lg); transform: translateY(-3px); }
         .pcard-type {
             font-size: 11px; font-weight: 700; letter-spacing: .1em;
             text-transform: uppercase; color: var(--muted);
         }
         .pcard-title {
-            font-family: var(--font-head); font-size: 22px; font-weight: 800;
+            font-family: var(--font-head); font-size: 25px; font-weight: 800;
             color: var(--navy); letter-spacing: -.5px; line-height: 1.1;
         }
         .pcard-desc { font-size: 14px; color: var(--muted); line-height: 1.7; flex: 1; }
@@ -530,8 +454,10 @@
       "@type": "Person",
       "name": "Diogo Serino",
       "url": "https://diogomserino.github.io",
-      "jobTitle": "Business & Product Manager",
-      "email": "",
+      "jobTitle": "Product Manager",
+      "description": "Product Manager combining hands-on product analytics (Power BI, Python, SQL) with a design background. Creator of TryCareerMatch.",
+      "knowsAbout": ["Product Management","Product Analytics","Power BI","Python","SQL","UX Design","Agile","OKRs"],
+      "address": { "@type": "PostalAddress", "addressCountry": "PT" },
       "sameAs": [
         "https://linkedin.com/in/diogomserino",
         "https://github.com/diogomserino"
@@ -540,39 +466,29 @@
     </script>
 </head>
 <body>
+<a href="#home" class="skip-link">Skip to content</a>
 
 <div class="progress" id="progress"></div>
-
-<!-- ANNOUNCEMENT BAR -->
-<div class="ann-bar" id="ann-bar">
-    <div class="ann-bar-inner">
-        <span class="ann-tag">🏷️</span>
-        <span class="ann-hide-mob">Exclusive deal on TryCareerMatch · Use code</span>
-        <span class="ann-code">DMSIO</span>
-        <a href="https://trycareermatch.com/" class="ann-link" target="_blank" rel="noopener">→ Claim offer</a>
-    </div>
-    <button class="ann-close" onclick="dismissAnn()" aria-label="Fechar anúncio">✕</button>
-</div>
 
 <!-- NAV -->
 <nav class="nav" id="main-nav">
     <div class="container nav-inner-idx">
         <a href="#home" class="logo-idx">DMS<em>.</em></a>
         <ul class="nav-links">
+            <li><a href="#projects">Work</a></li>
             <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#articles">Articles</a></li>
+            <li><a href="#articles">Writing</a></li>
             <li><a href="#contact" class="cta">Contact</a></li>
         </ul>
-        <div class="hamburger" id="hbg" onclick="toggleMenu()">
+        <button class="hamburger" id="hbg" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mob-nav" onclick="toggleMenu()">
             <span></span><span></span><span></span>
-        </div>
+        </button>
     </div>
 </nav>
 <div class="mob-nav" id="mob-nav">
+    <a href="#projects"  onclick="closeMenu()">Work</a>
     <a href="#about"     onclick="closeMenu()">About</a>
-    <a href="#projects"  onclick="closeMenu()">Projects</a>
-    <a href="#articles"  onclick="closeMenu()">Articles</a>
+    <a href="#articles"  onclick="closeMenu()">Writing</a>
     <a href="#contact"   onclick="closeMenu()">Contact</a>
 </div>
 
@@ -584,28 +500,25 @@
     <div class="container hero-inner">
         <div class="hero-cols">
             <div class="hero-text">
-                <div class="hero-badge h-a1">Open to work &nbsp;·&nbsp; Product Manager &nbsp;·&nbsp; Portugal / EU</div>
+                <div class="hero-badge h-a1">Open to Product Manager roles &nbsp;·&nbsp; Portugal / EU &nbsp;·&nbsp; Remote</div>
                 <h1 class="hero-name h-a2">Diogo<br>Serino</h1>
                 <p class="hero-role h-a3">
                     <span>Product Manager</span>
-                    <span class="hero-role-stack">Analytics-Backed &nbsp;·&nbsp; Design-Led &nbsp;·&nbsp; Builder</span>
+                    <span class="hero-role-stack">Analytics-backed &nbsp;·&nbsp; Design-led &nbsp;·&nbsp; End-to-end</span>
                 </p>
                 <p class="hero-tagline h-a4">
-                    I build products grounded in data and shaped by design thinking.
-                    My background in financial analytics, BI, and 7 years of design gives me
-                    the depth most PMs rely on others to provide.
+                    I work across the full product cycle — discovery, metrics, UX, and delivery.
+                    A background in financial analytics and 7 years of design let me move
+                    from data to interface without hand-offs.
                 </p>
                 <div class="hero-actions h-a5">
+                    <a href="#projects" class="btn btn-brand">
+                        See my work
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </a>
                     <a href="https://linkedin.com/in/diogomserino" target="_blank" rel="noopener" class="btn btn-ghost">
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
                         LinkedIn
-                    </a>
-                    <a href="https://github.com/diogomserino" target="_blank" rel="noopener" class="btn btn-ghost">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                        GitHub
-                    </a>
-                    <a href="about.html" class="btn btn-ghost">
-                        Full Profile
                     </a>
                 </div>
                 <div class="scroll-hint">
@@ -641,18 +554,65 @@
 </section>
 
 
+<!-- PROJECTS -->
+<section class="section" id="projects">
+    <div class="container">
+        <div class="sec-head">
+            <div class="label">Work</div>
+            <h2 class="title">Projects</h2>
+            <p class="subtitle">Selected work — product and analytics, built end-to-end.</p>
+        </div>
+        <div class="projects-grid">
+
+            <div class="pcard pcard-pm fade-up">
+                <div class="pcard-type">Case Study &nbsp;·&nbsp; Product</div>
+                <div class="pcard-title">TryCareerMatch</div>
+                <div class="pcard-desc">A free, no-signup career-discovery platform I built end-to-end — maps 88 skills to 60+ roles across 9 sectors with a weighted scoring model.</div>
+                <div class="pcard-tags">
+                    <span class="stag">Product</span>
+                    <span class="stag">Web App</span>
+                    <span class="stag">Scoring Model</span>
+                    <span class="stag">UX</span>
+                </div>
+                <a href="projects/careermatch.html" class="btn btn-primary" style="margin-top:4px; width:fit-content;">
+                    View case study
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                </a>
+            </div>
+
+            <div class="pcard pcard-data fade-up">
+                <div class="pcard-type">Analytics &nbsp;·&nbsp; Data Engineering</div>
+                <div class="pcard-title">Portugal Data Intelligence</div>
+                <div class="pcard-desc">A macroeconomic analytics platform covering Portugal's economy (2010–2025) — Power BI dashboards, a Python/FastAPI backend, and SARIMAX forecasting.</div>
+                <div class="pcard-tags">
+                    <span class="stag">Power BI</span>
+                    <span class="stag">Python</span>
+                    <span class="stag">FastAPI</span>
+                    <span class="stag">SARIMAX</span>
+                </div>
+                <a href="projects/portugal.html" class="btn btn-primary" style="margin-top:4px; width:fit-content;">
+                    View project
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                </a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
 <!-- ABOUT -->
 <section class="section" id="about">
     <div class="container">
         <div class="about-grid">
             <div class="about-text">
                 <div class="label">About</div>
-                <h2 class="title">Product thinking<br>backed by data and design</h2>
-                <p>I'm a Product Manager who builds things and measures what matters. I conceived and launched <strong>TryCareerMatch</strong> end-to-end — discovery, data model, UX, and deployment — a career platform mapping 88 skills against 60+ roles across 9 sectors.</p>
-                <p>My background as a Financial Analyst at ABB Imobiliária means I don't just read dashboards — I build them. Power BI, Python, SQL, KPI frameworks across a multi-company group. I know how executive decisions are made, and I can set up the metrics infrastructure most teams rely on Data to provide.</p>
-                <p>Seven years of design gives me a UX instinct and the ability to prototype quickly. I'm looking for a <strong>Product Manager</strong> role where analytical rigour and design thinking aren't separate departments — they're the same mindset.</p>
+                <h2 class="title">Data, design, and product<br>in one PM</h2>
+                <p>I'm a Product Manager who builds and measures. I conceived and shipped <strong>TryCareerMatch</strong> end-to-end — discovery, data model, UX, and deployment — a free, no-signup career-discovery platform that maps 88 skills to 60+ roles across 9 sectors.</p>
+                <p>As a Financial Analyst at ABB Imobiliária, I didn't just read dashboards — I built them. Power BI, Python, SQL and KPI frameworks across a multi-company group, where my dashboards replaced manual reports and became the primary tool for investment decisions.</p>
+                <p>Seven years of design give me a UX instinct and fast prototyping. I'm looking for a <strong>Product Manager or Product Owner</strong> role where analytical rigour and design aren't separate departments — they're one mindset.</p>
                 <a href="about.html" class="btn btn-primary" style="margin-top:8px;">
-                    About me
+                    My full background
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
                 </a>
             </div>
@@ -678,7 +638,7 @@
                         </svg>
                     </div>
                     <div class="acard-title">Data-Driven by Default</div>
-                    <div class="acard-desc">Power BI, Python, SQL — I build the metrics infrastructure myself. No waiting on a data team to answer product questions.</div>
+                    <div class="acard-desc">Power BI, Python, SQL — I build the metrics infrastructure myself, so product decisions stay grounded in data.</div>
                 </div>
                 <div class="acard fade-up">
                     <div class="acard-icon">
@@ -705,53 +665,6 @@
                     <div class="acard-desc">Financial analysis at multi-company level taught me how decisions cascade — from data model to board report. I connect product, finance, and strategy.</div>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
-
-
-<!-- PROJECTS -->
-<section class="section" id="projects">
-    <div class="container">
-        <div class="sec-head">
-            <div class="label">Work</div>
-            <h2 class="title">Projects</h2>
-            <p class="subtitle">Selected work — product and analytics, built end-to-end.</p>
-        </div>
-        <div class="projects-grid">
-
-            <div class="pcard pcard-pm fade-up">
-                <div class="pcard-type">Case Study &nbsp;·&nbsp; Product</div>
-                <div class="pcard-title">TryCareerMatch</div>
-                <div class="pcard-desc">Career discovery platform mapping 88 skills against 60+ roles across 9 sectors using a weighted scoring model. Free, no-registration.</div>
-                <div class="pcard-tags">
-                    <span class="stag">Product</span>
-                    <span class="stag">Web App</span>
-                    <span class="stag">Scoring Model</span>
-                    <span class="stag">UX</span>
-                </div>
-                <a href="projects/careermatch.html" class="btn btn-primary" style="margin-top:4px; width:fit-content;">
-                    View case study
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
-                </a>
-            </div>
-
-            <div class="pcard pcard-data fade-up">
-                <div class="pcard-type">Analytics &nbsp;·&nbsp; Data Engineering</div>
-                <div class="pcard-title">Portugal Data Intelligence</div>
-                <div class="pcard-desc">Macroeconomic analytics platform covering the Portuguese economy 2010–2025. Power BI, Python, FastAPI, and SARIMAX forecasting.</div>
-                <div class="pcard-tags">
-                    <span class="stag">Power BI</span>
-                    <span class="stag">Python</span>
-                    <span class="stag">FastAPI</span>
-                    <span class="stag">SARIMAX</span>
-                </div>
-                <a href="projects/portugal.html" class="btn btn-primary" style="margin-top:4px; width:fit-content;">
-                    View project
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
-                </a>
-            </div>
-
         </div>
     </div>
 </section>
@@ -794,6 +707,71 @@
                     <span class="stag">Scoring Model</span>
                 </div>
                 <a href="articles/how-i-built-careermatch.html" class="btn btn-primary article-card-btn">
+                    Read article
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                </a>
+            </div>
+
+            <div class="article-card cat-prod fade-up">
+                <div class="article-cat cat-prod">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>
+                    </svg>
+                    Career
+                </div>
+                <div class="article-card-title">From Financial Analyst to Product Manager</div>
+                <div class="article-card-desc">What the transition actually looks like — what transfers, what doesn't, and why building something yourself is the only honest proof.</div>
+                <div class="article-card-tags">
+                    <span class="stag">Career</span>
+                    <span class="stag">Transition</span>
+                    <span class="stag">Personal</span>
+                    <span class="stag">PM</span>
+                </div>
+                <a href="articles/analyst-to-pm.html" class="btn btn-primary article-card-btn">
+                    Read article
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                </a>
+            </div>
+
+            <div class="article-card cat-prod fade-up">
+                <div class="article-cat cat-prod">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/>
+                    </svg>
+                    Career
+                </div>
+                <div class="article-card-title">What 7 Years of Design Gave Me as a PM</div>
+                <div class="article-card-desc">The specific instincts a design background builds, where they're genuinely useful in product work, and the one habit I had to unlearn completely.</div>
+                <div class="article-card-tags">
+                    <span class="stag">Design</span>
+                    <span class="stag">UX</span>
+                    <span class="stag">Personal</span>
+                    <span class="stag">PM</span>
+                </div>
+                <a href="articles/design-background-pm.html" class="btn btn-primary article-card-btn">
+                    Read article
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                </a>
+            </div>
+
+            <div class="article-card cat-data fade-up">
+                <div class="article-cat cat-data">
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+                        <rect x="1"   y="7"   width="2.5" height="5" rx="1"/>
+                        <rect x="4.8" y="4"   width="2.5" height="8" rx="1"/>
+                        <rect x="8.5" y="1"   width="2.5" height="11" rx="1"/>
+                    </svg>
+                    Analytics
+                </div>
+                <div class="article-card-title">BI Analytics Fundamentals</div>
+                <div class="article-card-desc">From raw tables to business insight — a breakdown of Star Schema data modeling, DAX measures, SQL patterns, and the Finance and HR KPIs that drive real decisions.</div>
+                <div class="article-card-tags">
+                    <span class="stag">Power BI</span>
+                    <span class="stag">DAX</span>
+                    <span class="stag">SQL</span>
+                    <span class="stag">Analytics</span>
+                </div>
+                <a href="articles/bi-fundamentals.html" class="btn btn-primary article-card-btn">
                     Read article
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
                 </a>
@@ -975,29 +953,6 @@
                 </a>
             </div>
 
-            <div class="article-card cat-data fade-up">
-                <div class="article-cat cat-data">
-                    <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
-                        <rect x="1"   y="7"   width="2.5" height="5" rx="1"/>
-                        <rect x="4.8" y="4"   width="2.5" height="8" rx="1"/>
-                        <rect x="8.5" y="1"   width="2.5" height="11" rx="1"/>
-                    </svg>
-                    Analytics
-                </div>
-                <div class="article-card-title">BI Analytics Fundamentals</div>
-                <div class="article-card-desc">From raw tables to business insight — a breakdown of Star Schema data modeling, DAX measures, SQL patterns, and the Finance and HR KPIs that drive real decisions.</div>
-                <div class="article-card-tags">
-                    <span class="stag">Power BI</span>
-                    <span class="stag">DAX</span>
-                    <span class="stag">SQL</span>
-                    <span class="stag">Analytics</span>
-                </div>
-                <a href="articles/bi-fundamentals.html" class="btn btn-primary article-card-btn">
-                    Read article
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
-                </a>
-            </div>
-
             <div class="article-card cat-prod fade-up">
                 <div class="article-cat cat-prod">
                     <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -1020,54 +975,6 @@
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
                 </a>
             </div>
-
-            <div class="article-card cat-prod fade-up">
-                <div class="article-cat cat-prod">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>
-                    </svg>
-                    Career
-                </div>
-                <div class="article-card-title">From Financial Analyst to Product Manager</div>
-                <div class="article-card-desc">What the transition actually looks like — what transfers, what doesn't, and why building something yourself is the only honest proof.</div>
-                <div class="article-card-tags">
-                    <span class="stag">Career</span>
-                    <span class="stag">Transition</span>
-                    <span class="stag">Personal</span>
-                    <span class="stag">PM</span>
-                </div>
-                <a href="articles/analyst-to-pm.html" class="btn btn-primary article-card-btn">
-                    Read article
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
-                </a>
-            </div>
-
-            <div class="article-card cat-prod fade-up">
-                <div class="article-cat cat-prod">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/>
-                    </svg>
-                    Career
-                </div>
-                <div class="article-card-title">What 7 Years of Design Gave Me as a PM</div>
-                <div class="article-card-desc">The specific instincts a design background builds, where they're genuinely useful in product work, and the one habit I had to unlearn completely.</div>
-                <div class="article-card-tags">
-                    <span class="stag">Design</span>
-                    <span class="stag">UX</span>
-                    <span class="stag">Personal</span>
-                    <span class="stag">PM</span>
-                </div>
-                <a href="articles/design-background-pm.html" class="btn btn-primary article-card-btn">
-                    Read article
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
-                </a>
-            </div>
-
-        
-
-        
-
-        
 
             <div class="article-card cat-cyan fade-up">
                 <div class="article-cat cat-cyan">
@@ -1363,24 +1270,19 @@
                 <div class="label">Get in touch</div>
                 <h2 class="title">Let's talk</h2>
                 <p class="contact-desc">
-                    I'm actively looking for opportunities —
-                    Product Manager, Product Owner, Growth Manager, Data Analyst, or similar.
+                    I'm open to <strong>Product Manager</strong> and <strong>Product Owner</strong> roles — remote, or on-site around Portugal.
                     If you're building something interesting, I'd love to hear from you.
                 </p>
-                <div class="avail-badge">Available for opportunities</div>
+                <div class="avail-badge">Available now · Remote · Portugal</div>
             </div>
             <div class="clinks">
-                <a href="https://linkedin.com/in/diogomserino" target="_blank" rel="noopener" class="clink">
-                    <div class="clink-ico">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-                    </div>
-                    linkedin.com/in/diogomserino
+                <a href="https://linkedin.com/in/diogomserino" target="_blank" rel="noopener" class="btn btn-brand contact-cta">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                    Message me on LinkedIn
                 </a>
-                <a href="https://github.com/diogomserino" target="_blank" rel="noopener" class="clink">
-                    <div class="clink-ico">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                    </div>
-                    github.com/diogomserino
+                <a href="https://github.com/diogomserino" target="_blank" rel="noopener" class="btn btn-github contact-cta">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                    See me on GitHub
                 </a>
             </div>
         </div>
@@ -1413,15 +1315,18 @@
         nav.classList.toggle('scrolled', window.scrollY > 20);
     }, { passive: true });
 
-    /* Announcement bar */
-    function dismissAnn() {
-        document.documentElement.classList.add('ann-gone');
-        localStorage.setItem('cm-ann', '1');
-    }
-
     /* Mobile menu */
-    function toggleMenu() { document.getElementById('mob-nav').classList.toggle('open'); }
-    function closeMenu()  { document.getElementById('mob-nav').classList.remove('open'); }
+    const hbg = document.getElementById('hbg');
+    function toggleMenu() {
+        const open = document.getElementById('mob-nav').classList.toggle('open');
+        hbg.classList.toggle('open', open);
+        hbg.setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
+    function closeMenu() {
+        document.getElementById('mob-nav').classList.remove('open');
+        hbg.classList.remove('open');
+        hbg.setAttribute('aria-expanded', 'false');
+    }
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
 
     /* Active nav highlight */
@@ -1444,8 +1349,12 @@
             if (reducedMotion) { el.classList.add('in'); io.unobserve(el); return; }
             const siblings = Array.from(el.parentElement.querySelectorAll('.fade-up'));
             const i = siblings.indexOf(el);
-            el.style.transitionDelay = (i * 100) + 'ms';
+            const delay = Math.min(i * 100, 500);
+            el.style.transitionDelay = delay + 'ms';
             el.classList.add('in');
+            // Clear the entrance stagger once the reveal is done, so the inline
+            // delay doesn't bleed into the hover transition (cards were lifting late).
+            setTimeout(() => { el.style.transitionDelay = ''; }, delay + 700);
             io.unobserve(el);
         });
     }, { threshold: 0.06, rootMargin: '0px 0px -24px 0px' });
@@ -1496,7 +1405,7 @@
     });
 
     /* Article filter + Load More */
-    const BATCH = 4;
+    const BATCH = 6;
     const FILTER_MAP = {
         finance:  ['cat-econ', 'cat-comp', 'cat-red'],
         data:     ['cat-data', 'cat-amber'],
