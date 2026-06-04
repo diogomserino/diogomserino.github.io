@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script>document.documentElement.classList.add('js')</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Diogo Serino — Product Manager | Analytics &amp; Design</title>
@@ -61,6 +62,7 @@
         .hamburger-about {
             display: none; flex-direction: column;
             gap: 5px; cursor: pointer; padding: 6px;
+            background: none; border: none;
         }
         .hamburger-about span {
             width: 22px; height: 2px;
@@ -218,7 +220,9 @@
         .titem.edu .tco     { color: var(--muted); }
     </style>
 </head>
-<body>
+<body data-stagger="70">
+<a href="#main" class="skip-link">Skip to content</a>
+
 
 <div class="progress" id="progress"></div>
 
@@ -230,13 +234,13 @@
             <a href="#experience">Experience</a>
             <a href="#skills">Skills</a>
             <a href="index.html" class="home-cta">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align:middle"><polyline points="15 18 9 12 15 6"/></svg>
+                <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align:middle"><polyline points="15 18 9 12 15 6"/></svg>
                 Portfolio
             </a>
         </div>
-        <div class="hamburger-about" id="hbg-about" onclick="toggleMenuAbout()">
+        <button class="hamburger-about" id="hbg-about" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mob-nav-about" onclick="toggleMenuAbout()">
             <span></span><span></span><span></span>
-        </div>
+        </button>
     </div>
 </nav>
 <div class="mob-nav-about" id="mob-nav-about">
@@ -247,6 +251,7 @@
 
 
 <!-- HERO -->
+<main id="main" tabindex="-1">
 <div class="about-hero">
     <div class="container">
         <div class="about-hero-inner">
@@ -381,7 +386,7 @@
             <div class="skcat bi fade-up">
                 <div class="skcat-head">
                     <div class="skcat-ico">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="18" y="3" width="4" height="18"/><rect x="10" y="8" width="4" height="13"/><rect x="2" y="13" width="4" height="8"/></svg>
+                        <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="18" y="3" width="4" height="18"/><rect x="10" y="8" width="4" height="13"/><rect x="2" y="13" width="4" height="8"/></svg>
                     </div>
                     <div class="skcat-name">Business Intelligence</div>
                 </div>
@@ -399,7 +404,7 @@
             <div class="skcat data fade-up">
                 <div class="skcat-head">
                     <div class="skcat-ico">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                        <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
                     </div>
                     <div class="skcat-name">Data Engineering</div>
                 </div>
@@ -420,7 +425,7 @@
             <div class="skcat fin fade-up">
                 <div class="skcat-head">
                     <div class="skcat-ico">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                        <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
                     </div>
                     <div class="skcat-name">Financial Analysis</div>
                 </div>
@@ -437,7 +442,7 @@
             <div class="skcat prod fade-up">
                 <div class="skcat-head">
                     <div class="skcat-ico">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/><line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="2" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22" y2="12"/></svg>
+                        <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/><line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="2" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22" y2="12"/></svg>
                     </div>
                     <div class="skcat-name">Product &amp; Strategy</div>
                 </div>
@@ -454,7 +459,7 @@
             <div class="skcat ba fade-up">
                 <div class="skcat-head">
                     <div class="skcat-ico">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                        <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
                     </div>
                     <div class="skcat-name">Business Analysis</div>
                 </div>
@@ -477,7 +482,7 @@
             <div class="skcat design fade-up">
                 <div class="skcat-head">
                     <div class="skcat-ico">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                        <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
                     </div>
                     <div class="skcat-name">Design &amp; Creative</div>
                 </div>
@@ -494,7 +499,7 @@
             <div class="skcat ai fade-up">
                 <div class="skcat-head">
                     <div class="skcat-ico">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                        <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
                     </div>
                     <div class="skcat-name">AI &amp; Tools</div>
                 </div>
@@ -512,7 +517,7 @@
             <div class="skcat lang fade-up">
                 <div class="skcat-head">
                     <div class="skcat-ico">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 8l6 6"/><path d="M4 14l6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="M22 22l-5-10-5 10"/><path d="M14 18h6"/></svg>
+                        <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 8l6 6"/><path d="M4 14l6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="M22 22l-5-10-5 10"/><path d="M14 18h6"/></svg>
                     </div>
                     <div class="skcat-name">Languages</div>
                 </div>
@@ -550,6 +555,8 @@
 </div>
 
 
+</main>
+
 <footer class="footer">
     <span>© 2026 Diogo Martins Serino</span>
     <span class="footer-sep">·</span>
@@ -561,38 +568,20 @@
 </footer>
 
 
+<script src="assets/js/site.js"></script>
 <script>
-    /* Progress bar */
-    const prog = document.getElementById('progress');
-    window.addEventListener('scroll', () => {
-        const s = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
-        prog.style.width = (s * 100) + '%';
-    }, { passive: true });
-
-    /* Nav shadow on scroll */
-    const nav = document.getElementById('about-nav');
-    window.addEventListener('scroll', () => {
-        nav.classList.toggle('scrolled', window.scrollY > 20);
-    }, { passive: true });
-
     /* Mobile menu */
-    function toggleMenuAbout() { document.getElementById('mob-nav-about').classList.toggle('open'); }
-    function closeMenuAbout()  { document.getElementById('mob-nav-about').classList.remove('open'); }
+    const hbgAbout = document.getElementById('hbg-about');
+    function toggleMenuAbout() {
+        const open = document.getElementById('mob-nav-about').classList.toggle('open');
+        hbgAbout.setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
+    function closeMenuAbout() {
+        document.getElementById('mob-nav-about').classList.remove('open');
+        hbgAbout.setAttribute('aria-expanded', 'false');
+    }
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenuAbout(); });
 
-    /* Fade-up on scroll */
-    const io = new IntersectionObserver(entries => {
-        entries.forEach(en => {
-            if (!en.isIntersecting) return;
-            const el = en.target;
-            const siblings = Array.from(el.parentElement.querySelectorAll('.fade-up'));
-            const i = siblings.indexOf(el);
-            el.style.transitionDelay = (i * 70) + 'ms';
-            el.classList.add('in');
-            io.unobserve(el);
-        });
-    }, { threshold: 0.06, rootMargin: '0px 0px -24px 0px' });
-    document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
 </script>
 
 </body>

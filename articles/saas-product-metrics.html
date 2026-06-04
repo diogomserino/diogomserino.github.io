@@ -1,6 +1,7 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
+<script>document.documentElement.classList.add('js')</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SaaS &amp; Product Metrics — Diogo Serino</title>
@@ -16,6 +17,8 @@
 {
   "@context": "https://schema.org",
   "@type": "Article",
+      "image": "https://diogomserino.github.io/og-image.png",
+      "publisher": { "@type": "Person", "name": "Diogo Serino", "url": "https://diogomserino.github.io" },
   "headline": "SaaS & Product Metrics — Diogo Serino",
   "description": "The metrics that define SaaS and product success — DAU/MAU, retention, churn, MRR, CAC, LTV, and how to choose the right ones for your product stage.",
   "url": "https://diogomserino.github.io/articles/saas-product-metrics.html",
@@ -63,6 +66,8 @@ h1.proj-title { background-image: linear-gradient(140deg, #fff 0%, #fff 42%, #A5
 </style>
 </head>
 <body>
+<a href="#main" class="skip-link">Skip to content</a>
+
 
 <div class="progress" id="progress"></div>
 
@@ -75,17 +80,18 @@ h1.proj-title { background-image: linear-gradient(140deg, #fff 0%, #fff 42%, #A5
             <span class="curr">SaaS &amp; Product Metrics</span>
         </div>
         <a href="../index.html#articles" class="nav-back">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+            <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
             Back
         </a>
     </div>
 </nav>
 
 <!-- HERO -->
+<main id="main" tabindex="-1">
 <section class="proj-hero">
     <div class="container proj-hero-inner">
         <div class="proj-badge">
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="18" y="3" width="4" height="18"/><rect x="10" y="8" width="4" height="13"/><rect x="2" y="13" width="4" height="8"/></svg>
+            <svg aria-hidden="true" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="18" y="3" width="4" height="18"/><rect x="10" y="8" width="4" height="13"/><rect x="2" y="13" width="4" height="8"/></svg>
             Product &nbsp;·&nbsp; Analytics
         </div>
         <h1 class="proj-title">SaaS &amp;<br>Product Metrics</h1>
@@ -98,7 +104,7 @@ h1.proj-title { background-image: linear-gradient(140deg, #fff 0%, #fff 42%, #A5
         </div>
         <div class="proj-meta">
             <span class="proj-meta-item">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                <svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
                 8 min read
             </span>
         </div>
@@ -187,28 +193,28 @@ h1.proj-title { background-image: linear-gradient(140deg, #fff 0%, #fff 42%, #A5
             <div class="vis-grid vis-grid-2">
                 <div class="vis-card">
                     <div class="vis-card-icon">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
                     </div>
                     <div class="vis-card-title">Retention Rate</div>
                     <div class="vis-card-sub">% of users from a given cohort who are still active after N days/weeks/months. Day-1, Day-7, and Day-30 retention are standard checkpoints. A flat retention curve (even at a low level) means you have a retained core — a still-falling curve means you haven't found it yet.</div>
                 </div>
                 <div class="vis-card">
                     <div class="vis-card-icon">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3l7.07 16.97 2.51-7.39 7.39-2.51L3 3z"/><path d="M13 13l6 6"/></svg>
+                        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3l7.07 16.97 2.51-7.39 7.39-2.51L3 3z"/><path d="M13 13l6 6"/></svg>
                     </div>
                     <div class="vis-card-title">Churn Rate</div>
                     <div class="vis-card-sub">% of users (or revenue) lost in a given period. Monthly churn of 5% compounds to 46% annual loss — a product dying slowly. 2% monthly churn compounds to 21% annually. Even small improvements in churn have large long-term effects on growth.</div>
                 </div>
                 <div class="vis-card">
                     <div class="vis-card-icon">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="8" height="8" rx="1"/><rect x="14" y="2" width="8" height="8" rx="1"/><rect x="2" y="14" width="8" height="8" rx="1"/><rect x="14" y="14" width="8" height="8" rx="1"/></svg>
+                        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="8" height="8" rx="1"/><rect x="14" y="2" width="8" height="8" rx="1"/><rect x="2" y="14" width="8" height="8" rx="1"/><rect x="14" y="14" width="8" height="8" rx="1"/></svg>
                     </div>
                     <div class="vis-card-title">Cohort Analysis</div>
                     <div class="vis-card-sub">Group users by when they joined (weekly or monthly cohorts) and track their retention over time. This reveals whether retention is improving — cohorts acquired recently may retain better than older ones, which would be masked in aggregate numbers.</div>
                 </div>
                 <div class="vis-card">
                     <div class="vis-card-icon">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>
+                        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>
                     </div>
                     <div class="vis-card-title">Net Revenue Retention (NRR)</div>
                     <div class="vis-card-sub">For SaaS: revenue retained from existing customers, including expansions and contractions. NRR above 100% means expansion revenue exceeds churn — you're growing from existing customers alone. Best-in-class SaaS companies have NRR of 120–140%.</div>
@@ -251,21 +257,21 @@ h1.proj-title { background-image: linear-gradient(140deg, #fff 0%, #fff 42%, #A5
             <div class="vis-grid vis-grid-3">
                 <div class="vis-card">
                     <div class="vis-card-icon">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
                     </div>
                     <div class="vis-card-title">CAC</div>
                     <div class="vis-card-sub"><strong>Customer Acquisition Cost.</strong> Total sales and marketing spend in a period ÷ number of new customers acquired in that period. The benchmark varies by market segment — enterprise CAC can be 10× SMB CAC and still be healthy.</div>
                 </div>
                 <div class="vis-card">
                     <div class="vis-card-icon">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+                        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
                     </div>
                     <div class="vis-card-title">CAC Payback Period</div>
                     <div class="vis-card-sub">How many months of revenue it takes to recover the cost of acquiring a customer. CAC ÷ (ARPU × gross margin). Under 12 months is healthy for most SaaS. Over 18 months means the business is capital-intensive and fragile to churn.</div>
                 </div>
                 <div class="vis-card">
                     <div class="vis-card-icon">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+                        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
                     </div>
                     <div class="vis-card-title">Organic vs Paid</div>
                     <div class="vis-card-sub">What % of new users come from organic sources (SEO, referral, word-of-mouth) vs paid acquisition (ads, outbound). High organic share reduces CAC and signals genuine product-market fit. Heavy reliance on paid signals that organic demand isn't there yet.</div>
@@ -333,7 +339,7 @@ h1.proj-title { background-image: linear-gradient(140deg, #fff 0%, #fff 42%, #A5
 
 <div class="art-nav">
     <a class="art-nav-item" href="how-i-built-careermatch.html">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+        <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
         <div class="art-nav-text">
             <span class="art-nav-label">Previous</span>
             <span class="art-nav-title">How I Built TryCareerMatch</span>
@@ -344,7 +350,7 @@ h1.proj-title { background-image: linear-gradient(140deg, #fff 0%, #fff 42%, #A5
             <span class="art-nav-label">Next</span>
             <span class="art-nav-title">Prioritization in Practice</span>
         </div>
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
     </a>
 </div>
 </div>
@@ -356,27 +362,29 @@ h1.proj-title { background-image: linear-gradient(140deg, #fff 0%, #fff 42%, #A5
         <p>I write about product management, data, and business frameworks. Follow on LinkedIn for more.</p>
         <div class="cta-actions">
             <a href="https://www.linkedin.com/in/diogomserino" target="_blank" rel="noopener" class="btn btn-primary">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
                 Follow on LinkedIn
             </a>
             <a href="../index.html#articles" class="btn btn-ghost-light">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+                <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
                 Back to Articles
             </a>
         </div>
     </div>
 </section>
 
+</main>
+
 <footer class="art-footer">
     <div class="container footer-inner">
         <div class="footer-copy">© 2026 Diogo Serino</div>
         <a class="footer-back" href="../index.html#articles">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+            <svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
             All articles
         </a>
     </div>
 </footer>
 
-<script src="../assets/js/article.js"></script>
+<script src="../assets/js/site.js"></script>
 </body>
 </html>

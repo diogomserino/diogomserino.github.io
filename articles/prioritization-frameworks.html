@@ -1,6 +1,7 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
+<script>document.documentElement.classList.add('js')</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Prioritization in Practice — Diogo Serino</title>
@@ -16,6 +17,8 @@
 {
   "@context": "https://schema.org",
   "@type": "Article",
+      "image": "https://diogomserino.github.io/og-image.png",
+      "publisher": { "@type": "Person", "name": "Diogo Serino", "url": "https://diogomserino.github.io" },
   "headline": "Prioritization in Practice — Diogo Serino",
   "description": "How to decide what gets built first — RICE, ICE, MoSCoW, Kano, and Opportunity Scoring explained with examples and a guide on when to use each.",
   "url": "https://diogomserino.github.io/articles/prioritization-frameworks.html",
@@ -63,6 +66,8 @@ h1.proj-title { background-image: linear-gradient(140deg, #fff 0%, #fff 42%, #FE
 </style>
 </head>
 <body>
+<a href="#main" class="skip-link">Skip to content</a>
+
 
 <div class="progress" id="progress"></div>
 
@@ -75,17 +80,18 @@ h1.proj-title { background-image: linear-gradient(140deg, #fff 0%, #fff 42%, #FE
             <span class="curr">Prioritization in Practice</span>
         </div>
         <a href="../index.html#articles" class="nav-back">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+            <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
             Back
         </a>
     </div>
 </nav>
 
 <!-- HERO -->
+<main id="main" tabindex="-1">
 <section class="proj-hero">
     <div class="container proj-hero-inner">
         <div class="proj-badge">
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg aria-hidden="true" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
             Product &nbsp;·&nbsp; Frameworks
         </div>
         <h1 class="proj-title">Prioritization<br>in Practice</h1>
@@ -98,7 +104,7 @@ h1.proj-title { background-image: linear-gradient(140deg, #fff 0%, #fff 42%, #FE
         </div>
         <div class="proj-meta">
             <span class="proj-meta-item">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                <svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
                 7 min read
             </span>
         </div>
@@ -123,21 +129,21 @@ h1.proj-title { background-image: linear-gradient(140deg, #fff 0%, #fff 42%, #FE
             <div class="vis-grid vis-grid-3">
                 <div class="vis-card">
                     <div class="vis-card-icon">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
                     </div>
                     <div class="vis-card-title">Stakeholder pressure</div>
                     <div class="vis-card-sub">Sales wants features that close deals. Engineering wants technical debt cleanup. Marketing wants a better landing page. Leadership wants the big bet. All of them are right in their context — the PM must hold the whole.</div>
                 </div>
                 <div class="vis-card">
                     <div class="vis-card-icon">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
                     </div>
                     <div class="vis-card-title">Opportunity cost is invisible</div>
                     <div class="vis-card-sub">When you build feature A, you don't see the value of feature B that you didn't build. The cost of a bad prioritization decision is real but unobservable — which makes it easy to rationalize almost any choice.</div>
                 </div>
                 <div class="vis-card">
                     <div class="vis-card-icon">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
                     </div>
                     <div class="vis-card-title">Uncertainty is irreducible</div>
                     <div class="vis-card-sub">You never have perfect data on impact before you build. Frameworks don't eliminate uncertainty — they force you to make your estimates explicit so they can be challenged and refined.</div>
@@ -189,21 +195,21 @@ h1.proj-title { background-image: linear-gradient(140deg, #fff 0%, #fff 42%, #FE
             <div class="vis-grid vis-grid-3">
                 <div class="vis-card">
                     <div class="vis-card-icon">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/></svg>
+                        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/></svg>
                     </div>
                     <div class="vis-card-title">Impact (1–10)</div>
                     <div class="vis-card-sub">How much will this move a key metric? 10 = transformative impact on north star. 1 = negligible. Unlike RICE, this doesn't require a specific unit — it's a relative judgment across the backlog.</div>
                 </div>
                 <div class="vis-card">
                     <div class="vis-card-icon">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
                     </div>
                     <div class="vis-card-title">Confidence (1–10)</div>
                     <div class="vis-card-sub">How sure are you of your impact estimate? 10 = we've tested this, data is clear. 1 = pure hypothesis. Low confidence should dampen enthusiasm for high-impact ideas — score honestly.</div>
                 </div>
                 <div class="vis-card">
                     <div class="vis-card-icon">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
                     </div>
                     <div class="vis-card-title">Ease (1–10)</div>
                     <div class="vis-card-sub">How easy is this to implement? 10 = hours of work. 1 = months of work. Note: this is the inverse of Effort in RICE. ICE favors quick wins; RICE explicitly divides by effort to normalize for scale.</div>
@@ -254,21 +260,21 @@ h1.proj-title { background-image: linear-gradient(140deg, #fff 0%, #fff 42%, #FE
             <div class="vis-grid vis-grid-3">
                 <div class="vis-card">
                     <div class="vis-card-icon">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
                     </div>
                     <div class="vis-card-title">Basic Expectations (Must-be)</div>
                     <div class="vis-card-sub">Users expect these. Their presence doesn't increase satisfaction — their absence causes strong dissatisfaction. Example: an app that crashes frequently. Fixing it won't delight users; not fixing it will lose them.</div>
                 </div>
                 <div class="vis-card">
                     <div class="vis-card-icon">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
                     </div>
                     <div class="vis-card-title">Performance Features</div>
                     <div class="vis-card-sub">More is better. These features increase satisfaction proportionally — the faster the app loads, the better. Investing in these has a clear, linear return. Most roadmap features live here.</div>
                 </div>
                 <div class="vis-card">
                     <div class="vis-card-icon">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                     </div>
                     <div class="vis-card-title">Delighters (Attractive)</div>
                     <div class="vis-card-sub">Users don't expect these — they're surprised and delighted when they exist. Their absence doesn't hurt satisfaction. But when present, they generate disproportionate positive response. The "wow" features that drive word-of-mouth.</div>
@@ -341,7 +347,7 @@ h1.proj-title { background-image: linear-gradient(140deg, #fff 0%, #fff 42%, #FE
 
 <div class="art-nav">
     <a class="art-nav-item" href="saas-product-metrics.html">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+        <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
         <div class="art-nav-text">
             <span class="art-nav-label">Previous</span>
             <span class="art-nav-title">SaaS &amp; Product Metrics</span>
@@ -352,7 +358,7 @@ h1.proj-title { background-image: linear-gradient(140deg, #fff 0%, #fff 42%, #FE
             <span class="art-nav-label">Next</span>
             <span class="art-nav-title">North Star Metric</span>
         </div>
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
     </a>
 </div>
 </div>
@@ -364,27 +370,29 @@ h1.proj-title { background-image: linear-gradient(140deg, #fff 0%, #fff 42%, #FE
         <p>I write about product management, data, and business frameworks. Follow on LinkedIn for more.</p>
         <div class="cta-actions">
             <a href="https://www.linkedin.com/in/diogomserino" target="_blank" rel="noopener" class="btn btn-primary">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
                 Follow on LinkedIn
             </a>
             <a href="../index.html#articles" class="btn btn-ghost-light">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+                <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
                 Back to Articles
             </a>
         </div>
     </div>
 </section>
 
+</main>
+
 <footer class="art-footer">
     <div class="container footer-inner">
         <div class="footer-copy">© 2026 Diogo Serino</div>
         <a class="footer-back" href="../index.html#articles">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+            <svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
             All articles
         </a>
     </div>
 </footer>
 
-<script src="../assets/js/article.js"></script>
+<script src="../assets/js/site.js"></script>
 </body>
 </html>

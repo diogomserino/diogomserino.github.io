@@ -1,6 +1,7 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
+<script>document.documentElement.classList.add('js')</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>BI Analytics Fundamentals — Diogo Serino</title>
@@ -12,10 +13,13 @@
     <meta property="og:image" content="https://diogomserino.github.io/og-image.png">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="canonical" href="https://diogomserino.github.io/articles/bi-fundamentals.html">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%2306111F'/><text x='50' y='72' font-family='system-ui,sans-serif' font-weight='900' font-size='58' text-anchor='middle' fill='%233B6FFF'>D</text></svg>">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Article",
+      "image": "https://diogomserino.github.io/og-image.png",
+      "publisher": { "@type": "Person", "name": "Diogo Serino", "url": "https://diogomserino.github.io" },
       "headline": "BI Analytics Fundamentals — Diogo Serino",
       "description": "From raw tables to business insight — a breakdown of data modeling, DAX, SQL, and the KPIs that drive decisions in finance and HR.",
       "url": "https://diogomserino.github.io/articles/bi-fundamentals.html",
@@ -67,6 +71,8 @@ h1.proj-title { background-image: linear-gradient(140deg, #fff 0%, #fff 38%, #A7
 </style>
 </head>
 <body>
+<a href="#main" class="skip-link">Skip to content</a>
+
 
 <div class="progress" id="progress"></div>
 
@@ -79,17 +85,18 @@ h1.proj-title { background-image: linear-gradient(140deg, #fff 0%, #fff 38%, #A7
             <span class="curr">BI Analytics Fundamentals</span>
         </div>
         <a href="../index.html#articles" class="nav-back">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+            <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
             Back
         </a>
     </div>
 </nav>
 
 <!-- HERO -->
+<main id="main" tabindex="-1">
 <section class="proj-hero">
     <div class="container proj-hero-inner">
         <div class="proj-badge">
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="18" y="3" width="4" height="18"/><rect x="10" y="8" width="4" height="13"/><rect x="2" y="13" width="4" height="8"/></svg>
+            <svg aria-hidden="true" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="18" y="3" width="4" height="18"/><rect x="10" y="8" width="4" height="13"/><rect x="2" y="13" width="4" height="8"/></svg>
             Business Intelligence
         </div>
         <h1 class="proj-title">BI Analytics<br>Fundamentals</h1>
@@ -103,7 +110,7 @@ h1.proj-title { background-image: linear-gradient(140deg, #fff 0%, #fff 38%, #A7
         </div>
         <div class="proj-meta">
             <span class="proj-meta-item">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                <svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
                 8 min read
             </span>
         </div>
@@ -129,21 +136,21 @@ h1.proj-title { background-image: linear-gradient(140deg, #fff 0%, #fff 38%, #A7
             <div class="vis-grid vis-grid-3">
                 <div class="vis-card vis-card-accent">
                     <div class="vis-card-icon">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18"/></svg>
+                        <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18"/></svg>
                     </div>
                     <div class="vis-card-title">Fact Table</div>
                     <div class="vis-card-sub">Records events and transactions. Contains numeric measures — revenue, quantity, cost — and foreign keys linking to every dimension. Typically the largest table in the model.</div>
                 </div>
                 <div class="vis-card">
                     <div class="vis-card-icon">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+                        <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
                     </div>
                     <div class="vis-card-title">Dimension Table</div>
                     <div class="vis-card-sub">Describes the context of each fact. Date, Product, Customer, Region, Employee. Contains the attributes you filter and group by in reports — the nouns of your data model.</div>
                 </div>
                 <div class="vis-card">
                     <div class="vis-card-icon">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                        <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
                     </div>
                     <div class="vis-card-title">The Grain</div>
                     <div class="vis-card-sub">The finest level of detail stored in the fact table. "One row per invoice line." Defining the grain first prevents modeling errors that are expensive to fix after the model is built.</div>
@@ -300,7 +307,7 @@ h1.proj-title { background-image: linear-gradient(140deg, #fff 0%, #fff 38%, #A7
 
     <div class="art-github fade-up">
         <a href="https://github.com/diogomserino/bi-analytics-reference" target="_blank" rel="noopener" class="btn btn-primary">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
             View on GitHub
         </a>
         <span class="art-github-label">Source code and data for this reference guide</span>
@@ -309,7 +316,7 @@ h1.proj-title { background-image: linear-gradient(140deg, #fff 0%, #fff 38%, #A7
 
 <div class="art-nav">
     <a class="art-nav-item" href="aml-kyc.html">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+        <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
         <div class="art-nav-text">
             <span class="art-nav-label">Previous</span>
             <span class="art-nav-title">AML, KYC &amp; Financial Crime</span>
@@ -320,7 +327,7 @@ h1.proj-title { background-image: linear-gradient(140deg, #fff 0%, #fff 38%, #A7
             <span class="art-nav-label">Next</span>
             <span class="art-nav-title">Investment Fund Governance</span>
         </div>
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
     </a>
 </div>
 </div>
@@ -332,7 +339,7 @@ h1.proj-title { background-image: linear-gradient(140deg, #fff 0%, #fff 38%, #A7
         <p>Breakdowns of finance, data, and the systems behind them.</p>
         <div class="cta-actions">
             <a href="../index.html#articles" class="btn btn-primary">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+                <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
                 All Articles
             </a>
             <a href="aml-kyc.html" class="btn btn-ghost-light">AML &amp; KYC Fundamentals</a>
@@ -341,17 +348,19 @@ h1.proj-title { background-image: linear-gradient(140deg, #fff 0%, #fff 38%, #A7
     </div>
 </section>
 
+</main>
+
 <footer class="art-footer">
     <div class="container footer-inner">
         <div class="footer-copy">© 2026 Diogo Serino</div>
         <a href="../index.html#articles" class="footer-back">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+            <svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
             All articles
         </a>
     </div>
 </footer>
 
-<script src="../assets/js/article.js"></script>
+<script src="../assets/js/site.js"></script>
 
 </body>
 </html>

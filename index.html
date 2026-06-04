@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script>document.documentElement.classList.add('js')</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Product Manager pairing hands-on analytics (Power BI, Python, SQL) with 7 years of design. Creator of TryCareerMatch. Open to PM / Product Owner roles in Portugal / EU.">
@@ -362,6 +363,7 @@
             .h-bar      { animation: none; opacity: 1; }
             .hero-dot   { animation: none; opacity: 1; }
             .hero-pulse { animation: none; }
+            .h-a1, .h-a2, .h-a3, .h-a4, .h-a5, .hero-visual { animation: none; opacity: 1; }
         }
 
         /* ============================================================
@@ -454,6 +456,7 @@
       "@type": "Person",
       "name": "Diogo Serino",
       "url": "https://diogomserino.github.io",
+      "image": "https://diogomserino.github.io/og-image.png",
       "jobTitle": "Product Manager",
       "description": "Product Manager combining hands-on product analytics (Power BI, Python, SQL) with a design background. Creator of TryCareerMatch.",
       "knowsAbout": ["Product Management","Product Analytics","Power BI","Python","SQL","UX Design","Agile","OKRs"],
@@ -466,7 +469,7 @@
     </script>
 </head>
 <body>
-<a href="#home" class="skip-link">Skip to content</a>
+<a href="#main" class="skip-link">Skip to content</a>
 
 <div class="progress" id="progress"></div>
 
@@ -494,6 +497,7 @@
 
 
 <!-- HERO -->
+<main id="main" tabindex="-1">
 <section class="hero" id="home">
     <div class="hero-glow"></div>
     <div class="hero-glow2"></div>
@@ -514,16 +518,16 @@
                 <div class="hero-actions h-a5">
                     <a href="#projects" class="btn btn-brand">
                         See my work
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                        <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                     </a>
                     <a href="https://linkedin.com/in/diogomserino" target="_blank" rel="noopener" class="btn btn-ghost">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                        <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
                         LinkedIn
                     </a>
                 </div>
                 <div class="scroll-hint">
                     <span>Scroll</span>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                    <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
                 </div>
             </div>
             <div class="hero-visual">
@@ -566,7 +570,7 @@
 
             <div class="pcard pcard-pm fade-up">
                 <div class="pcard-type">Case Study &nbsp;·&nbsp; Product</div>
-                <div class="pcard-title">TryCareerMatch</div>
+                <h3 class="pcard-title">TryCareerMatch</h3>
                 <div class="pcard-desc">A free, no-signup career-discovery platform I built end-to-end — maps 88 skills to 60+ roles across 9 sectors with a weighted scoring model.</div>
                 <div class="pcard-tags">
                     <span class="stag">Product</span>
@@ -576,13 +580,13 @@
                 </div>
                 <a href="projects/careermatch.html" class="btn btn-primary" style="margin-top:4px; width:fit-content;">
                     View case study
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                    <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
                 </a>
             </div>
 
             <div class="pcard pcard-data fade-up">
                 <div class="pcard-type">Analytics &nbsp;·&nbsp; Data Engineering</div>
-                <div class="pcard-title">Portugal Data Intelligence</div>
+                <h3 class="pcard-title">Portugal Data Intelligence</h3>
                 <div class="pcard-desc">A macroeconomic analytics platform covering Portugal's economy (2010–2025) — Power BI dashboards, a Python/FastAPI backend, and SARIMAX forecasting.</div>
                 <div class="pcard-tags">
                     <span class="stag">Power BI</span>
@@ -592,7 +596,7 @@
                 </div>
                 <a href="projects/portugal.html" class="btn btn-primary" style="margin-top:4px; width:fit-content;">
                     View project
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                    <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
                 </a>
             </div>
 
@@ -613,46 +617,46 @@
                 <p>Seven years of design give me a UX instinct and fast prototyping. I'm looking for a <strong>Product Manager or Product Owner</strong> role where analytical rigour and design aren't separate departments — they're one mindset.</p>
                 <a href="about.html" class="btn btn-primary" style="margin-top:8px;">
                     My full background
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                    <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
                 </a>
             </div>
             <div class="about-cards">
                 <div class="acard fade-up">
                     <div class="acard-icon">
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                             <rect x="2" y="2" width="5" height="5" rx="1"/>
                             <rect x="9" y="2" width="5" height="5" rx="1"/>
                             <rect x="2" y="9" width="5" height="5" rx="1"/>
                             <rect x="9" y="9" width="5" height="5" rx="1"/>
                         </svg>
                     </div>
-                    <div class="acard-title">Product Ownership</div>
+                    <h3 class="acard-title">Product Ownership</h3>
                     <div class="acard-desc">Built TryCareerMatch from zero to launch — discovery, data model, UX, and deployment. Full product lifecycle, independently.</div>
                 </div>
                 <div class="acard fade-up">
                     <div class="acard-icon">
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                             <rect x="1" y="9" width="3.5" height="6" rx="1"/>
                             <rect x="6.25" y="5" width="3.5" height="10" rx="1"/>
                             <rect x="11.5" y="1" width="3.5" height="14" rx="1"/>
                         </svg>
                     </div>
-                    <div class="acard-title">Data-Driven by Default</div>
+                    <h3 class="acard-title">Data-Driven by Default</h3>
                     <div class="acard-desc">Power BI, Python, SQL — I build the metrics infrastructure myself, so product decisions stay grounded in data.</div>
                 </div>
                 <div class="acard fade-up">
                     <div class="acard-icon">
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                             <circle cx="8" cy="6" r="3"/>
                             <path d="M2 14c0-3 2.7-5 6-5s6 2 6 5"/>
                         </svg>
                     </div>
-                    <div class="acard-title">Design Intuition</div>
+                    <h3 class="acard-title">Design Intuition</h3>
                     <div class="acard-desc">7 years designing for clients means I prototype fast, give designers a PM they can actually work with, and ship things that look right.</div>
                 </div>
                 <div class="acard fade-up">
                     <div class="acard-icon">
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                             <circle cx="8" cy="8" r="6"/>
                             <circle cx="8" cy="8" r="2"/>
                             <line x1="8" y1="2" x2="8" y2="4"/>
@@ -661,7 +665,7 @@
                             <line x1="12" y1="8" x2="14" y2="8"/>
                         </svg>
                     </div>
-                    <div class="acard-title">Systems Thinking</div>
+                    <h3 class="acard-title">Systems Thinking</h3>
                     <div class="acard-desc">Financial analysis at multi-company level taught me how decisions cascade — from data model to board report. I connect product, finance, and strategy.</div>
                 </div>
             </div>
@@ -691,14 +695,14 @@
 
             <div class="article-card cat-prod fade-up">
                 <div class="article-cat cat-prod">
-                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg aria-hidden="true" width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <rect x="1" y="1" width="10" height="10" rx="2"/>
                         <line x1="4" y1="6" x2="8" y2="6"/>
                         <line x1="6" y1="4" x2="6" y2="8"/>
                     </svg>
                     Product
                 </div>
-                <div class="article-card-title">How I Built TryCareerMatch</div>
+                <h3 class="article-card-title">How I Built TryCareerMatch</h3>
                 <div class="article-card-desc">A behind-the-scenes look at building a career discovery platform — from the data model and weighted scoring to UX decisions and launch.</div>
                 <div class="article-card-tags">
                     <span class="stag">Product</span>
@@ -708,18 +712,18 @@
                 </div>
                 <a href="articles/how-i-built-careermatch.html" class="btn btn-primary article-card-btn">
                     Read article
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                    <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
                 </a>
             </div>
 
             <div class="article-card cat-prod fade-up">
                 <div class="article-cat cat-prod">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>
                     </svg>
                     Career
                 </div>
-                <div class="article-card-title">From Financial Analyst to Product Manager</div>
+                <h3 class="article-card-title">From Financial Analyst to Product Manager</h3>
                 <div class="article-card-desc">What the transition actually looks like — what transfers, what doesn't, and why building something yourself is the only honest proof.</div>
                 <div class="article-card-tags">
                     <span class="stag">Career</span>
@@ -729,18 +733,18 @@
                 </div>
                 <a href="articles/analyst-to-pm.html" class="btn btn-primary article-card-btn">
                     Read article
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                    <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
                 </a>
             </div>
 
             <div class="article-card cat-prod fade-up">
                 <div class="article-cat cat-prod">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                         <circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/>
                     </svg>
                     Career
                 </div>
-                <div class="article-card-title">What 7 Years of Design Gave Me as a PM</div>
+                <h3 class="article-card-title">What 7 Years of Design Gave Me as a PM</h3>
                 <div class="article-card-desc">The specific instincts a design background builds, where they're genuinely useful in product work, and the one habit I had to unlearn completely.</div>
                 <div class="article-card-tags">
                     <span class="stag">Design</span>
@@ -750,20 +754,20 @@
                 </div>
                 <a href="articles/design-background-pm.html" class="btn btn-primary article-card-btn">
                     Read article
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                    <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
                 </a>
             </div>
 
             <div class="article-card cat-data fade-up">
                 <div class="article-cat cat-data">
-                    <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+                    <svg aria-hidden="true" width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
                         <rect x="1"   y="7"   width="2.5" height="5" rx="1"/>
                         <rect x="4.8" y="4"   width="2.5" height="8" rx="1"/>
                         <rect x="8.5" y="1"   width="2.5" height="11" rx="1"/>
                     </svg>
                     Analytics
                 </div>
-                <div class="article-card-title">BI Analytics Fundamentals</div>
+                <h3 class="article-card-title">BI Analytics Fundamentals</h3>
                 <div class="article-card-desc">From raw tables to business insight — a breakdown of Star Schema data modeling, DAX measures, SQL patterns, and the Finance and HR KPIs that drive real decisions.</div>
                 <div class="article-card-tags">
                     <span class="stag">Power BI</span>
@@ -773,18 +777,18 @@
                 </div>
                 <a href="articles/bi-fundamentals.html" class="btn btn-primary article-card-btn">
                     Read article
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                    <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
                 </a>
             </div>
 
             <div class="article-card cat-agile fade-up">
                 <div class="article-cat cat-agile">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                         <polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/>
                     </svg>
                     Agile
                 </div>
-                <div class="article-card-title">Agile &amp; Scrum Fundamentals</div>
+                <h3 class="article-card-title">Agile &amp; Scrum Fundamentals</h3>
                 <div class="article-card-desc">What Agile really means, how Scrum works in practice, the roles and events that make teams ship faster — and the metrics that prove it.</div>
                 <div class="article-card-tags">
                     <span class="stag">Agile</span>
@@ -794,20 +798,20 @@
                 </div>
                 <a href="articles/agile-scrum-fundamentals.html" class="btn btn-primary article-card-btn">
                     Read article
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                    <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
                 </a>
             </div>
 
             <div class="article-card cat-prod fade-up">
                 <div class="article-cat cat-prod">
-                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg aria-hidden="true" width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <rect x="1" y="1" width="10" height="10" rx="2"/>
                         <line x1="4" y1="6" x2="8" y2="6"/>
                         <line x1="6" y1="4" x2="6" y2="8"/>
                     </svg>
                     Product
                 </div>
-                <div class="article-card-title">SaaS &amp; Product Metrics</div>
+                <h3 class="article-card-title">SaaS &amp; Product Metrics</h3>
                 <div class="article-card-desc">The metrics that actually matter — DAU/MAU, retention curves, MRR components, CAC, LTV, and how to choose the right ones for your product stage.</div>
                 <div class="article-card-tags">
                     <span class="stag">Metrics</span>
@@ -817,18 +821,18 @@
                 </div>
                 <a href="articles/saas-product-metrics.html" class="btn btn-primary article-card-btn">
                     Read article
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                    <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
                 </a>
             </div>
 
             <div class="article-card cat-amber fade-up">
                 <div class="article-cat cat-amber">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2v-4M9 21H5a2 2 0 0 1-2-2v-4m0 0h18"/>
                     </svg>
                     Data
                 </div>
-                <div class="article-card-title">A/B Testing &amp; Experimentation</div>
+                <h3 class="article-card-title">A/B Testing &amp; Experimentation</h3>
                 <div class="article-card-desc">How to design valid experiments, interpret statistical significance, and build a culture of evidence-based decisions — not gut feel.</div>
                 <div class="article-card-tags">
                     <span class="stag">A/B Testing</span>
@@ -838,20 +842,20 @@
                 </div>
                 <a href="articles/ab-testing-fundamentals.html" class="btn btn-primary article-card-btn">
                     Read article
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                    <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
                 </a>
             </div>
 
             <div class="article-card cat-prod fade-up">
                 <div class="article-cat cat-prod">
-                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg aria-hidden="true" width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <rect x="1" y="1" width="10" height="10" rx="2"/>
                         <line x1="4" y1="6" x2="8" y2="6"/>
                         <line x1="6" y1="4" x2="6" y2="8"/>
                     </svg>
                     Product
                 </div>
-                <div class="article-card-title">Prioritization in Practice</div>
+                <h3 class="article-card-title">Prioritization in Practice</h3>
                 <div class="article-card-desc">RICE, ICE, MoSCoW, Kano, and Opportunity Scoring — how each framework works, when to use it, and a side-by-side comparison.</div>
                 <div class="article-card-tags">
                     <span class="stag">RICE</span>
@@ -861,20 +865,20 @@
                 </div>
                 <a href="articles/prioritization-frameworks.html" class="btn btn-primary article-card-btn">
                     Read article
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                    <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
                 </a>
             </div>
 
             <div class="article-card cat-prod fade-up">
                 <div class="article-cat cat-prod">
-                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg aria-hidden="true" width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <rect x="1" y="1" width="10" height="10" rx="2"/>
                         <line x1="4" y1="6" x2="8" y2="6"/>
                         <line x1="6" y1="4" x2="6" y2="8"/>
                     </svg>
                     Product
                 </div>
-                <div class="article-card-title">Product Roadmapping</div>
+                <h3 class="article-card-title">Product Roadmapping</h3>
                 <div class="article-card-desc">What a roadmap is (and isn't), the three main types, how to build one, saying no gracefully, and the anti-patterns that sink most roadmaps.</div>
                 <div class="article-card-tags">
                     <span class="stag">Roadmap</span>
@@ -884,20 +888,20 @@
                 </div>
                 <a href="articles/product-roadmapping.html" class="btn btn-primary article-card-btn">
                     Read article
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                    <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
                 </a>
             </div>
 
             <div class="article-card cat-prod fade-up">
                 <div class="article-cat cat-prod">
-                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg aria-hidden="true" width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <rect x="1" y="1" width="10" height="10" rx="2"/>
                         <line x1="4" y1="6" x2="8" y2="6"/>
                         <line x1="6" y1="4" x2="6" y2="8"/>
                     </svg>
                     Product
                 </div>
-                <div class="article-card-title">North Star Metric</div>
+                <h3 class="article-card-title">North Star Metric</h3>
                 <div class="article-card-desc">What makes a good North Star Metric, how to choose one, real examples from Spotify, Airbnb, and Slack, and how it fits with OKRs and KPIs.</div>
                 <div class="article-card-tags">
                     <span class="stag">North Star</span>
@@ -907,18 +911,18 @@
                 </div>
                 <a href="articles/north-star-metric.html" class="btn btn-primary article-card-btn">
                     Read article
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                    <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
                 </a>
             </div>
 
             <div class="article-card cat-sky fade-up">
                 <div class="article-cat cat-sky">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                         <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
                     </svg>
                     Strategy
                 </div>
-                <div class="article-card-title">OKRs &amp; KPIs</div>
+                <h3 class="article-card-title">OKRs &amp; KPIs</h3>
                 <div class="article-card-desc">How to set meaningful goals, measure the right outcomes, and build a culture where everyone knows what success looks like — and why vanity metrics are a trap.</div>
                 <div class="article-card-tags">
                     <span class="stag">OKRs</span>
@@ -928,18 +932,18 @@
                 </div>
                 <a href="articles/okrs-kpis.html" class="btn btn-primary article-card-btn">
                     Read article
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                    <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
                 </a>
             </div>
 
             <div class="article-card cat-fuchsia fade-up">
                 <div class="article-cat cat-fuchsia">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                         <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
                     </svg>
                     Research
                 </div>
-                <div class="article-card-title">Product Discovery &amp; User Research</div>
+                <h3 class="article-card-title">Product Discovery &amp; User Research</h3>
                 <div class="article-card-desc">How to run interviews, build personas, apply Jobs-to-be-Done, and validate hypotheses before building — so you stop shipping what nobody uses.</div>
                 <div class="article-card-tags">
                     <span class="stag">Discovery</span>
@@ -949,20 +953,20 @@
                 </div>
                 <a href="articles/product-discovery-user-research.html" class="btn btn-primary article-card-btn">
                     Read article
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                    <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
                 </a>
             </div>
 
             <div class="article-card cat-prod fade-up">
                 <div class="article-cat cat-prod">
-                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg aria-hidden="true" width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <rect x="1" y="1" width="10" height="10" rx="2"/>
                         <line x1="4" y1="6" x2="8" y2="6"/>
                         <line x1="6" y1="4" x2="6" y2="8"/>
                     </svg>
                     Product
                 </div>
-                <div class="article-card-title">Product Management Fundamentals</div>
+                <h3 class="article-card-title">Product Management Fundamentals</h3>
                 <div class="article-card-desc">What PMs actually do, how the role differs from PO and BA, the product lifecycle, prioritization frameworks, and the metrics that define product success.</div>
                 <div class="article-card-tags">
                     <span class="stag">Product</span>
@@ -972,18 +976,18 @@
                 </div>
                 <a href="articles/product-management-fundamentals.html" class="btn btn-primary article-card-btn">
                     Read article
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                    <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
                 </a>
             </div>
 
             <div class="article-card cat-cyan fade-up">
                 <div class="article-cat cat-cyan">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                         <rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
                     </svg>
                     Strategy
                 </div>
-                <div class="article-card-title">Business Model Canvas</div>
+                <h3 class="article-card-title">Business Model Canvas</h3>
                 <div class="article-card-desc">How to map, analyse, and stress-test a business model — from value propositions and customer segments to revenue streams, cost structure, and strategic misalignments.</div>
                 <div class="article-card-tags">
                     <span class="stag">Strategy</span>
@@ -993,18 +997,18 @@
                 </div>
                 <a href="articles/business-model-canvas.html" class="btn btn-primary article-card-btn">
                     Read article
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                    <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
                 </a>
             </div>
 
             <div class="article-card cat-teal fade-up">
                 <div class="article-cat cat-teal">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                         <polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/>
                     </svg>
                     Strategy
                 </div>
-                <div class="article-card-title">Strategy Frameworks</div>
+                <h3 class="article-card-title">Strategy Frameworks</h3>
                 <div class="article-card-desc">SWOT, Porter's Five Forces, and PESTEL — how to analyse competitive position, industry structure, and macro environment, and when to use each.</div>
                 <div class="article-card-tags">
                     <span class="stag">SWOT</span>
@@ -1014,18 +1018,18 @@
                 </div>
                 <a href="articles/strategy-frameworks.html" class="btn btn-primary article-card-btn">
                     Read article
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                    <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
                 </a>
             </div>
 
             <div class="article-card cat-indigo fade-up">
                 <div class="article-cat cat-indigo">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                         <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
                     </svg>
                     Management
                 </div>
-                <div class="article-card-title">Project Management Fundamentals</div>
+                <h3 class="article-card-title">Project Management Fundamentals</h3>
                 <div class="article-card-desc">PMI/PMBOK vs Agile — the two schools of project management, when to apply each, and how hybrid approaches work in practice.</div>
                 <div class="article-card-tags">
                     <span class="stag">PMI</span>
@@ -1035,18 +1039,18 @@
                 </div>
                 <a href="articles/project-management-fundamentals.html" class="btn btn-primary article-card-btn">
                     Read article
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                    <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
                 </a>
             </div>
 
             <div class="article-card cat-lime fade-up">
                 <div class="article-cat cat-lime">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                         <polygon points="3 11 22 2 13 21 11 13 3 11"/>
                     </svg>
                     Launch
                 </div>
-                <div class="article-card-title">Go-to-Market Strategy</div>
+                <h3 class="article-card-title">Go-to-Market Strategy</h3>
                 <div class="article-card-desc">How to launch a product — defining your ICP, positioning against alternatives, choosing your channels, and measuring whether it's working.</div>
                 <div class="article-card-tags">
                     <span class="stag">GTM</span>
@@ -1056,18 +1060,18 @@
                 </div>
                 <a href="articles/go-to-market-strategy.html" class="btn btn-primary article-card-btn">
                     Read article
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                    <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
                 </a>
             </div>
 
             <div class="article-card cat-green fade-up">
                 <div class="article-cat cat-green">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                         <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/>
                     </svg>
                     Growth
                 </div>
-                <div class="article-card-title">Growth Hacking Fundamentals</div>
+                <h3 class="article-card-title">Growth Hacking Fundamentals</h3>
                 <div class="article-card-desc">The AARRR framework, growth loops, and the metrics that separate real traction from vanity numbers — essential for Growth Manager and Growth Analyst roles.</div>
                 <div class="article-card-tags">
                     <span class="stag">Growth</span>
@@ -1077,18 +1081,18 @@
                 </div>
                 <a href="articles/growth-hacking-fundamentals.html" class="btn btn-primary article-card-btn">
                     Read article
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                    <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
                 </a>
             </div>
 
             <div class="article-card cat-purple fade-up">
                 <div class="article-cat cat-purple">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                         <circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/>
                     </svg>
                     Design
                 </div>
-                <div class="article-card-title">Design Thinking Fundamentals</div>
+                <h3 class="article-card-title">Design Thinking Fundamentals</h3>
                 <div class="article-card-desc">The five-stage human-centred design process — from deep empathy and problem definition to ideation, prototyping, and iterative testing.</div>
                 <div class="article-card-tags">
                     <span class="stag">Design Thinking</span>
@@ -1098,18 +1102,18 @@
                 </div>
                 <a href="articles/design-thinking-fundamentals.html" class="btn btn-primary article-card-btn">
                     Read article
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                    <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
                 </a>
             </div>
 
             <div class="article-card cat-pink fade-up">
                 <div class="article-cat cat-pink">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
                     </svg>
                     Leadership
                 </div>
-                <div class="article-card-title">Communication &amp; Storytelling</div>
+                <h3 class="article-card-title">Communication &amp; Storytelling</h3>
                 <div class="article-card-desc">Executive presentations, data storytelling, stakeholder communication — the skills that separate good managers from great ones.</div>
                 <div class="article-card-tags">
                     <span class="stag">Storytelling</span>
@@ -1119,18 +1123,18 @@
                 </div>
                 <a href="articles/communication-storytelling.html" class="btn btn-primary article-card-btn">
                     Read article
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                    <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
                 </a>
             </div>
 
             <div class="article-card cat-blue fade-up">
                 <div class="article-cat cat-blue">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                         <rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
                     </svg>
                     Marketing
                 </div>
-                <div class="article-card-title">Digital Marketing Fundamentals</div>
+                <h3 class="article-card-title">Digital Marketing Fundamentals</h3>
                 <div class="article-card-desc">SEO, SEM, email marketing, and conversion funnels — how digital channels work and how they connect into a coherent acquisition system.</div>
                 <div class="article-card-tags">
                     <span class="stag">SEO</span>
@@ -1140,18 +1144,18 @@
                 </div>
                 <a href="articles/digital-marketing-fundamentals.html" class="btn btn-primary article-card-btn">
                     Read article
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                    <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
                 </a>
             </div>
 
             <div class="article-card cat-red fade-up">
                 <div class="article-cat cat-red">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                         <line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
                     </svg>
                     Venture
                 </div>
-                <div class="article-card-title">Startup Funding</div>
+                <h3 class="article-card-title">Startup Funding</h3>
                 <div class="article-card-desc">Pre-seed to Series A — how funding rounds work, what investors look for, the difference between angels and VCs, and how equity gets divided.</div>
                 <div class="article-card-tags">
                     <span class="stag">Venture Capital</span>
@@ -1161,19 +1165,19 @@
                 </div>
                 <a href="articles/startup-funding.html" class="btn btn-primary article-card-btn">
                     Read article
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                    <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
                 </a>
             </div>
 
             <div class="article-card cat-econ fade-up">
                 <div class="article-cat cat-econ">
-                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg aria-hidden="true" width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <polyline points="1,9 4,5.5 7,7.5 11,2"/>
                         <polyline points="8.5,2 11,2 11,4.5"/>
                     </svg>
                     Economics
                 </div>
-                <div class="article-card-title">Economics Fundamentals</div>
+                <h3 class="article-card-title">Economics Fundamentals</h3>
                 <div class="article-card-desc">A visual guide to how the economy actually works — from the four economic players to macroeconomic fundamentals and what indicators actually measure national health.</div>
                 <div class="article-card-tags">
                     <span class="stag">Economics</span>
@@ -1182,18 +1186,18 @@
                 </div>
                 <a href="articles/what-is-economics.html" class="btn btn-primary article-card-btn">
                     Read article
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                    <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
                 </a>
             </div>
 
             <div class="article-card cat-emerald fade-up">
                 <div class="article-cat cat-emerald">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
                     </svg>
                     ESG
                 </div>
-                <div class="article-card-title">ESG &amp; Sustainability</div>
+                <h3 class="article-card-title">ESG &amp; Sustainability</h3>
                 <div class="article-card-desc">Environmental, Social, Governance — what ESG means for modern managers, how reporting frameworks work, and how sustainability reshapes strategy.</div>
                 <div class="article-card-tags">
                     <span class="stag">ESG</span>
@@ -1203,18 +1207,18 @@
                 </div>
                 <a href="articles/esg-sustainability.html" class="btn btn-primary article-card-btn">
                     Read article
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                    <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
                 </a>
             </div>
 
             <div class="article-card cat-comp fade-up">
                 <div class="article-cat cat-comp">
-                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg aria-hidden="true" width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M6 1L11 3v4C11 9.5 6 12 6 12S1 9.5 1 7V3z"/>
                     </svg>
                     Compliance
                 </div>
-                <div class="article-card-title">AML, KYC &amp; Financial Crime Fundamentals</div>
+                <h3 class="article-card-title">AML, KYC &amp; Financial Crime Fundamentals</h3>
                 <div class="article-card-desc">How banks detect and prevent financial crime — Anti-Money Laundering, Know Your Customer, sanctions screening, transaction monitoring, fraud types, and beneficial ownership.</div>
                 <div class="article-card-tags">
                     <span class="stag">AML</span>
@@ -1224,18 +1228,18 @@
                 </div>
                 <a href="articles/aml-kyc.html" class="btn btn-primary article-card-btn">
                     Read article
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                    <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
                 </a>
             </div>
 
             <div class="article-card cat-comp fade-up">
                 <div class="article-cat cat-comp">
-                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg aria-hidden="true" width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M6 1L11 3v4C11 9.5 6 12 6 12S1 9.5 1 7V3z"/>
                     </svg>
                     Compliance
                 </div>
-                <div class="article-card-title">Investment Fund Governance Fundamentals</div>
+                <h3 class="article-card-title">Investment Fund Governance Fundamentals</h3>
                 <div class="article-card-desc">How ManCos, depositaries, and fund administrators keep billions in compliance — UCITS, AIFMD, NAV reconciliation, KYC screening, and the workflows of a fund Business Analyst.</div>
                 <div class="article-card-tags">
                     <span class="stag">UCITS</span>
@@ -1245,7 +1249,7 @@
                 </div>
                 <a href="articles/fund-governance-fundamentals.html" class="btn btn-primary article-card-btn">
                     Read article
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                    <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
                 </a>
             </div>
 
@@ -1254,7 +1258,7 @@
         <div class="load-more-wrap">
             <button class="btn btn-primary" id="load-more-btn">
                 Load more articles
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
             </button>
         </div>
     </div>
@@ -1276,12 +1280,16 @@
                 <div class="avail-badge">Available now · Remote · Portugal</div>
             </div>
             <div class="clinks">
-                <a href="https://linkedin.com/in/diogomserino" target="_blank" rel="noopener" class="btn btn-brand contact-cta">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                <a id="email-cta" href="#" class="btn btn-brand contact-cta">
+                    <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
+                    Email me
+                </a>
+                <a href="https://linkedin.com/in/diogomserino" target="_blank" rel="noopener" class="btn btn-ghost-light contact-cta">
+                    <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
                     Message me on LinkedIn
                 </a>
                 <a href="https://github.com/diogomserino" target="_blank" rel="noopener" class="btn btn-github contact-cta">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                    <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
                     See me on GitHub
                 </a>
             </div>
@@ -1289,6 +1297,8 @@
     </div>
 </section>
 
+
+</main>
 
 <footer class="footer">
     <span>© 2026 Diogo Martins Serino</span>
@@ -1301,20 +1311,8 @@
 </footer>
 
 
+<script src="assets/js/site.js"></script>
 <script>
-    /* Progress bar */
-    const prog = document.getElementById('progress');
-    window.addEventListener('scroll', () => {
-        const s = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
-        prog.style.width = (s * 100) + '%';
-    }, { passive: true });
-
-    /* Nav background on scroll */
-    const nav = document.getElementById('main-nav');
-    window.addEventListener('scroll', () => {
-        nav.classList.toggle('scrolled', window.scrollY > 20);
-    }, { passive: true });
-
     /* Mobile menu */
     const hbg = document.getElementById('hbg');
     function toggleMenu() {
@@ -1339,16 +1337,6 @@
             a.classList.toggle('active', a.getAttribute('href') === `#${cur}`);
         });
     }, { passive: true });
-
-    /* Fade-up on scroll — gentle opacity fade, no movement */
-    const io = new IntersectionObserver(entries => {
-        entries.forEach(en => {
-            if (!en.isIntersecting) return;
-            en.target.classList.add('in');
-            io.unobserve(en.target);
-        });
-    }, { threshold: 0.06, rootMargin: '0px 0px -24px 0px' });
-    document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
 
     /* Reading time */
     const READ_TIMES = {
@@ -1390,7 +1378,7 @@
         if (!tagsEl) return;
         const rt = document.createElement('span');
         rt.className = 'read-time';
-        rt.innerHTML = '<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>' + t + ' read';
+        rt.innerHTML = '<svg aria-hidden="true" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>' + t + ' read';
         tagsEl.after(rt);
     });
 
@@ -1450,6 +1438,15 @@
     });
 
     applyVisibility();
+
+    /* Email CTA — address assembled in JS to reduce naive scraping */
+    (function () {
+        const a = document.getElementById('email-cta');
+        if (!a) return;
+        const user = 'diogomserino', domain = 'gmail.com';
+        const subject = encodeURIComponent('Product Manager / Product Owner opportunity');
+        a.href = 'mailto:' + user + '@' + domain + '?subject=' + subject;
+    })();
 </script>
 
 </body>

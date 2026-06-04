@@ -1,6 +1,7 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
+<script>document.documentElement.classList.add('js')</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>North Star Metric — Diogo Serino</title>
@@ -16,6 +17,8 @@
 {
   "@context": "https://schema.org",
   "@type": "Article",
+      "image": "https://diogomserino.github.io/og-image.png",
+      "publisher": { "@type": "Person", "name": "Diogo Serino", "url": "https://diogomserino.github.io" },
   "headline": "North Star Metric — Diogo Serino",
   "description": "What a North Star Metric is, why it matters, how to choose one, and real examples from Spotify, Airbnb, Slack, and Facebook.",
   "url": "https://diogomserino.github.io/articles/north-star-metric.html",
@@ -63,6 +66,8 @@ h1.proj-title { background-image: linear-gradient(140deg, #fff 0%, #fff 42%, #FD
 </style>
 </head>
 <body>
+<a href="#main" class="skip-link">Skip to content</a>
+
 
 <div class="progress" id="progress"></div>
 
@@ -75,17 +80,18 @@ h1.proj-title { background-image: linear-gradient(140deg, #fff 0%, #fff 42%, #FD
             <span class="curr">North Star Metric</span>
         </div>
         <a href="../index.html#articles" class="nav-back">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+            <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
             Back
         </a>
     </div>
 </nav>
 
 <!-- HERO -->
+<main id="main" tabindex="-1">
 <section class="proj-hero">
     <div class="container proj-hero-inner">
         <div class="proj-badge">
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg aria-hidden="true" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
             Product &nbsp;·&nbsp; Strategy
         </div>
         <h1 class="proj-title">North Star<br>Metric</h1>
@@ -98,7 +104,7 @@ h1.proj-title { background-image: linear-gradient(140deg, #fff 0%, #fff 42%, #FD
         </div>
         <div class="proj-meta">
             <span class="proj-meta-item">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                <svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
                 6 min read
             </span>
         </div>
@@ -123,21 +129,21 @@ h1.proj-title { background-image: linear-gradient(140deg, #fff 0%, #fff 42%, #FD
             <div class="vis-grid vis-grid-3">
                 <div class="vis-card">
                     <div class="vis-card-icon">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
                     </div>
                     <div class="vis-card-title">Captures core value</div>
                     <div class="vis-card-sub">It measures the moment when users receive the fundamental value your product promises. Not a proxy for value — the actual delivery of it.</div>
                 </div>
                 <div class="vis-card">
                     <div class="vis-card-icon">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+                        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
                     </div>
                     <div class="vis-card-title">Predicts growth</div>
                     <div class="vis-card-sub">When this metric improves, revenue and retention tend to follow. It's a leading indicator of business health — not a lagging report of what already happened.</div>
                 </div>
                 <div class="vis-card">
                     <div class="vis-card-icon">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
                     </div>
                     <div class="vis-card-title">Aligns the team</div>
                     <div class="vis-card-sub">Anyone in the organization — engineering, design, marketing, support — can understand it and know how their work connects to it. It's a shared direction, not a dashboard for analysts.</div>
@@ -312,7 +318,7 @@ h1.proj-title { background-image: linear-gradient(140deg, #fff 0%, #fff 42%, #FD
 
 <div class="art-nav">
     <a class="art-nav-item" href="prioritization-frameworks.html">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+        <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
         <div class="art-nav-text">
             <span class="art-nav-label">Previous</span>
             <span class="art-nav-title">Prioritization in Practice</span>
@@ -323,7 +329,7 @@ h1.proj-title { background-image: linear-gradient(140deg, #fff 0%, #fff 42%, #FD
             <span class="art-nav-label">Next</span>
             <span class="art-nav-title">Product Roadmapping</span>
         </div>
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
     </a>
 </div>
 </div>
@@ -335,27 +341,29 @@ h1.proj-title { background-image: linear-gradient(140deg, #fff 0%, #fff 42%, #FD
         <p>I write about product management, data, and business frameworks. Follow on LinkedIn for more.</p>
         <div class="cta-actions">
             <a href="https://www.linkedin.com/in/diogomserino" target="_blank" rel="noopener" class="btn btn-primary">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
                 Follow on LinkedIn
             </a>
             <a href="../index.html#articles" class="btn btn-ghost-light">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+                <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
                 Back to Articles
             </a>
         </div>
     </div>
 </section>
 
+</main>
+
 <footer class="art-footer">
     <div class="container footer-inner">
         <div class="footer-copy">© 2026 Diogo Serino</div>
         <a class="footer-back" href="../index.html#articles">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+            <svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
             All articles
         </a>
     </div>
 </footer>
 
-<script src="../assets/js/article.js"></script>
+<script src="../assets/js/site.js"></script>
 </body>
 </html>

@@ -80,7 +80,7 @@ h2.title {
     font-size: 16px; color: var(--muted);
     max-width: 540px; line-height: 1.75;
 }
-.section-dk .subtitle { color: rgba(255,255,255,.48); }
+.section-dk .subtitle { color: rgba(255,255,255,.62); }
 
 /* ============================================================
    PROGRESS BAR
@@ -207,33 +207,18 @@ h2.title {
     50%     { box-shadow: 0 0 0 3px rgba(100,116,139,.7), 0 0 0 10px rgba(100,116,139,.06); }
 }
 
-.fade-up { opacity: 0; }
-.fade-up.in, .fade-up.visible { animation: fadeUp .5s ease both; }
-@keyframes fadeUp { from { opacity: 0; } to { opacity: 1; } }
+/* Whole-card clickable: the primary link is stretched over the card.
+   Card titles stay as headings; only one link per card, so no nesting conflict. */
+.article-card, .pcard { position: relative; }
+.article-card .article-card-btn::after,
+.pcard .btn-primary::after { content: ""; position: absolute; inset: 0; z-index: 1; }
+.article-card .article-card-btn, .pcard .btn-primary { position: static; }
 
-/* ============================================================
-   LIGHTBOX
-============================================================ */
-.lightbox {
-    display: none; position: fixed; inset: 0;
-    background: rgba(0,0,0,.94); z-index: 1000;
-    align-items: center; justify-content: center;
-}
-.lightbox.open { display: flex; }
-.lb-img {
-    max-width: 92vw; max-height: 88vh;
-    border-radius: 8px; object-fit: contain;
-    box-shadow: 0 24px 80px rgba(0,0,0,.5);
-}
-.lb-close {
-    position: absolute; top: 20px; right: 24px;
-    color: #fff; font-size: 22px; cursor: pointer;
-    width: 40px; height: 40px; display: flex;
-    align-items: center; justify-content: center;
-    border-radius: 50%; background: rgba(255,255,255,.1);
-    transition: background .2s; line-height: 1;
-}
-.lb-close:hover { background: rgba(255,255,255,.22); }
+/* Visible by default (no-JS / crawler safe); only hidden when JS is present */
+.fade-up { opacity: 1; }
+.js .fade-up { opacity: 0; }
+.js .fade-up.in, .js .fade-up.visible { animation: fadeUp .5s ease both; }
+@keyframes fadeUp { from { opacity: 0; } to { opacity: 1; } }
 
 /* ============================================================
    FOOTER
@@ -334,7 +319,7 @@ h1.proj-title {
 }
 .proj-meta-item {
     display: flex; align-items: center; gap: 6px;
-    font-size: 13px; color: rgba(255,255,255,.38);
+    font-size: 13px; color: rgba(255,255,255,.62);
 }
 
 /* ============================================================
@@ -551,13 +536,13 @@ h1.proj-title {
 /* CTA dark section (articles) */
 .cta-sect { background: var(--navy); padding: 80px 0; text-align: center; }
 .cta-sect h2 { font-family: var(--font-head); font-size: clamp(26px, 3.2vw, 36px); font-weight: 700; color: #fff; margin-bottom: 14px; letter-spacing: -.6px; }
-.cta-sect p { font-size: 16px; color: rgba(255,255,255,.45); margin-bottom: 34px; max-width: 500px; margin-left: auto; margin-right: auto; }
+.cta-sect p { font-size: 16px; color: rgba(255,255,255,.6); margin-bottom: 34px; max-width: 500px; margin-left: auto; margin-right: auto; }
 .cta-actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
 
 /* Article footer */
 footer.art-footer { background: var(--navy-800); border-top: 1px solid rgba(255,255,255,.06); padding: 26px 0; }
 .footer-inner { display: flex; align-items: center; justify-content: space-between; }
-.footer-copy { font-size: 13px; color: rgba(255,255,255,.28); }
+.footer-copy { font-size: 13px; color: rgba(255,255,255,.6); }
 .footer-back { display: inline-flex; align-items: center; gap: 5px; font-size: 13px; font-weight: 500; color: rgba(148,163,184,.7); transition: color .2s; }
 .footer-back:hover { color: #fff; }
 
@@ -708,6 +693,8 @@ footer.art-footer { background: var(--navy-800); border-top: 1px solid rgba(255,
    FOCUS STATES (keyboard navigation / accessibility)
 ============================================================ */
 *:focus { outline: none; }
+/* Skip-link target (<main>) receives focus programmatically — no visible ring */
+[tabindex="-1"]:focus { outline: none; }
 *:focus-visible {
     outline: 2px solid var(--blue);
     outline-offset: 3px;

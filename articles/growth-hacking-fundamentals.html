@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script>document.documentElement.classList.add('js')</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Growth Hacking Fundamentals — Diogo Serino</title>
@@ -16,6 +17,8 @@
     {
       "@context": "https://schema.org",
       "@type": "Article",
+      "image": "https://diogomserino.github.io/og-image.png",
+      "publisher": { "@type": "Person", "name": "Diogo Serino", "url": "https://diogomserino.github.io" },
       "headline": "Growth Hacking Fundamentals — Diogo Serino",
       "description": "The AARRR framework, growth loops, key acquisition and retention tactics, and the metrics that separate real growth from vanity numbers.",
       "url": "https://diogomserino.github.io/articles/growth-hacking-fundamentals.html",
@@ -69,6 +72,8 @@ h1.proj-title { background-image: linear-gradient(140deg, #fff 0%, #fff 42%, #BB
 </style>
 </head>
 <body>
+<a href="#main" class="skip-link">Skip to content</a>
+
 
 <div class="progress" id="progress"></div>
 
@@ -81,16 +86,17 @@ h1.proj-title { background-image: linear-gradient(140deg, #fff 0%, #fff 42%, #BB
             <span class="curr">Growth Hacking Fundamentals</span>
         </div>
         <a href="../index.html#articles" class="nav-back">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+            <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
             Back
         </a>
     </div>
 </nav>
 
+<main id="main" tabindex="-1">
 <section class="proj-hero">
     <div class="container proj-hero-inner">
         <div class="proj-badge">
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+            <svg aria-hidden="true" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
             Growth &nbsp;·&nbsp; Product
         </div>
         <h1 class="proj-title">Growth<br>Hacking<br>Fundamentals</h1>
@@ -257,21 +263,21 @@ h1.proj-title { background-image: linear-gradient(140deg, #fff 0%, #fff 42%, #BB
             <div class="vis-grid vis-grid-3">
                 <div class="vis-card">
                     <div class="vis-card-icon">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                        <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
                     </div>
                     <div class="vis-card-title">Organic / SEO</div>
                     <div class="vis-card-sub">Slow to build, hard to replicate, and essentially free at scale. Content that ranks drives compounding traffic over years. Best for B2B SaaS, marketplaces, and products where users search for solutions before they know you exist.</div>
                 </div>
                 <div class="vis-card">
                     <div class="vis-card-icon">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                        <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
                     </div>
                     <div class="vis-card-title">Paid Acquisition</div>
                     <div class="vis-card-sub">Fast, scalable, and fully controllable — but stops the moment spending stops. Useful for testing product-market fit quickly or filling gaps while organic scales. The key metric is payback period: how many months until LTV covers CAC.</div>
                 </div>
                 <div class="vis-card">
                     <div class="vis-card-icon">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
                     </div>
                     <div class="vis-card-title">Viral / Referral</div>
                     <div class="vis-card-sub">When existing users bring new users, the acquisition is essentially free. The viral coefficient (K) measures this: if K > 1, the product grows without any external input. Most products have K &lt; 1, but even K = 0.3 meaningfully reduces paid acquisition needs.</div>
@@ -313,7 +319,7 @@ h1.proj-title { background-image: linear-gradient(140deg, #fff 0%, #fff 42%, #BB
         <div class="art-visual">
             <div class="vis-flags">
                 <div class="vis-flags-title">
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                    <svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
                     Watch out for these
                 </div>
                 <div class="vis-flags-list">
@@ -355,7 +361,7 @@ h1.proj-title { background-image: linear-gradient(140deg, #fff 0%, #fff 42%, #BB
 
 <div class="art-nav">
     <a class="art-nav-item" href="okrs-kpis.html">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+        <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
         <div class="art-nav-text">
             <span class="art-nav-label">Previous</span>
             <span class="art-nav-title">OKRs &amp; KPIs</span>
@@ -366,7 +372,7 @@ h1.proj-title { background-image: linear-gradient(140deg, #fff 0%, #fff 42%, #BB
             <span class="art-nav-label">Next</span>
             <span class="art-nav-title">A/B Testing &amp; Experimentation</span>
         </div>
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
     </a>
 </div>
 </div>
@@ -377,27 +383,29 @@ h1.proj-title { background-image: linear-gradient(140deg, #fff 0%, #fff 42%, #BB
         <p>I write about growth, product management, and business frameworks. Follow on LinkedIn for more.</p>
         <div class="cta-actions">
             <a href="https://www.linkedin.com/in/diogomserino" target="_blank" rel="noopener" class="btn btn-primary">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
                 Follow on LinkedIn
             </a>
             <a href="../index.html#articles" class="btn btn-ghost-light">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+                <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
                 Back to Articles
             </a>
         </div>
     </div>
 </section>
 
+</main>
+
 <footer class="art-footer">
     <div class="container footer-inner">
         <div class="footer-copy">© 2026 Diogo Serino</div>
         <a class="footer-back" href="../index.html#articles">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+            <svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
             All articles
         </a>
     </div>
 </footer>
 
-<script src="../assets/js/article.js"></script>
+<script src="../assets/js/site.js"></script>
 </body>
 </html>
