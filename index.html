@@ -1340,22 +1340,12 @@
         });
     }, { passive: true });
 
-    /* Fade-up on scroll */
-    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    /* Fade-up on scroll — gentle opacity fade, no movement */
     const io = new IntersectionObserver(entries => {
         entries.forEach(en => {
             if (!en.isIntersecting) return;
-            const el = en.target;
-            if (reducedMotion) { el.classList.add('in'); io.unobserve(el); return; }
-            const siblings = Array.from(el.parentElement.querySelectorAll('.fade-up'));
-            const i = siblings.indexOf(el);
-            const delay = Math.min(i * 100, 500);
-            el.style.transitionDelay = delay + 'ms';
-            el.classList.add('in');
-            // Clear the entrance stagger once the reveal is done, so the inline
-            // delay doesn't bleed into the hover transition (cards were lifting late).
-            setTimeout(() => { el.style.transitionDelay = ''; }, delay + 700);
-            io.unobserve(el);
+            en.target.classList.add('in');
+            io.unobserve(en.target);
         });
     }, { threshold: 0.06, rootMargin: '0px 0px -24px 0px' });
     document.querySelectorAll('.fade-up').forEach(el => io.observe(el));

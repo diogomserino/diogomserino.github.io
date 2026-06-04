@@ -207,11 +207,9 @@ h2.title {
     50%     { box-shadow: 0 0 0 3px rgba(100,116,139,.7), 0 0 0 10px rgba(100,116,139,.06); }
 }
 
-.fade-up {
-    opacity: 0; transform: translateY(22px);
-    transition: opacity .6s ease, transform .6s ease;
-}
-.fade-up.in, .fade-up.visible { opacity: 1; transform: translateY(0); }
+.fade-up { opacity: 0; }
+.fade-up.in, .fade-up.visible { animation: fadeUp .5s ease both; }
+@keyframes fadeUp { from { opacity: 0; } to { opacity: 1; } }
 
 /* ============================================================
    LIGHTBOX
@@ -691,7 +689,7 @@ footer.art-footer { background: var(--navy-800); border-top: 1px solid rgba(255,
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .fade-up { transition: none; opacity: 1 !important; transform: none !important; }
+    .fade-up { animation: none; opacity: 1 !important; }
 }
 
 /* ============================================================
