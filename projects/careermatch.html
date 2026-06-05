@@ -4,10 +4,10 @@
 <script>document.documentElement.classList.add('js')</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="TryCareerMatch — Career discovery platform mapping 88 skills against 60+ roles across 9 sectors using a weighted scoring model. Free, no-registration. Built by Diogo Serino.">
+    <meta name="description" content="TryCareerMatch — a full-stack career-discovery app (Next.js + FastAPI + PostgreSQL) mapping 95 skills against 60+ roles across 9 sectors with a server-side rule-based scoring engine. Free, no registration. Built by Diogo Serino.">
     <title>TryCareerMatch · Diogo Serino</title>
     <meta property="og:title" content="TryCareerMatch · Diogo Serino">
-    <meta property="og:description" content="Career discovery platform mapping 88 skills against 60+ roles across 9 sectors using a weighted scoring model. Free, no-registration. Full case study.">
+    <meta property="og:description" content="Full-stack career-discovery app (Next.js + FastAPI + PostgreSQL) mapping 95 skills against 60+ roles across 9 sectors with a server-side scoring engine. Free, no registration. Full case study.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://diogomserino.github.io/projects/careermatch.html">
     <meta property="og:image" content="https://diogomserino.github.io/og-image.png">
@@ -299,19 +299,20 @@
 <main id="main" tabindex="-1">
 <div class="proj-hero">
     <div class="container proj-hero-inner">
-        <div class="proj-badge">Case Study &nbsp;·&nbsp; Product & Web</div>
+        <div class="proj-badge">Case Study &nbsp;·&nbsp; Full-Stack Product</div>
         <h1 class="proj-title">TryCareerMatch</h1>
         <p class="proj-sub">
-            A career discovery platform that maps <strong style="color:rgba(255,255,255,.75)">88 skills</strong> against
+            A full-stack career-discovery app that maps <strong style="color:rgba(255,255,255,.75)">95 skills</strong> against
             <strong style="color:rgba(255,255,255,.75)">60+ roles</strong> across
             <strong style="color:rgba(255,255,255,.75)">9 sectors</strong> — built to help professionals
             with non-linear backgrounds find where they actually fit.
         </p>
         <div class="stack-row">
-            <span class="stag-dk">HTML / CSS / JS</span>
-            <span class="stag-dk">Weighted Scoring Model</span>
+            <span class="stag-dk">Next.js 14 · TypeScript</span>
+            <span class="stag-dk">FastAPI · Python</span>
+            <span class="stag-dk">PostgreSQL</span>
+            <span class="stag-dk">Rule-based Scoring</span>
             <span class="stag-dk">UX Design</span>
-            <span class="stag-dk">Product Strategy</span>
             <span class="stag-dk">No-Registration</span>
         </div>
         <div class="plinks">
@@ -330,7 +331,7 @@
             </span>
             <span class="proj-meta-item">
                 <svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                ~6 weeks build
+                Rebuilt full-stack
             </span>
             <span class="proj-meta-item">
                 <svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
@@ -346,7 +347,7 @@
     <div class="container">
         <div class="metrics-row fade-up">
             <div class="metric-item">
-                <div class="metric-val">88<span>+</span></div>
+                <div class="metric-val">95</div>
                 <div class="metric-lbl">Skills mapped</div>
             </div>
             <div class="metric-item">
@@ -382,9 +383,9 @@
                 </div>
                 <div class="ps-card-title">The Solution</div>
                 <div class="ps-card-text">
-                    <p>TryCareerMatch asks users to rate their proficiency across <strong>88 skills</strong> — from financial modelling and SQL to stakeholder management and UX thinking. A weighted scoring model then calculates their fit against <strong>60+ roles</strong> in 9 sectors.</p>
-                    <p>The output isn't a single "best match" — it's a ranked view of roles where the user's actual skill profile produces the strongest alignment, including surprising secondary matches they may never have considered.</p>
-                    <p>No account, no paywall, no email capture. Just results.</p>
+                    <p>TryCareerMatch builds a full profile through a guided <strong>6-step onboarding</strong> — education, experience, skills, interests, and work style. Users pick the skills relevant to them (with search and suggestions) and rate proficiency on those. A server-side <strong>rule-based engine</strong> then scores their fit against <strong>60+ roles</strong> across 9 sectors.</p>
+                    <p>The output isn't a single "best match" — roles are ranked into three tiers (<strong>Ready now</strong>, <strong>With upskilling</strong>, <strong>Long-term goals</strong>), each with a per-dimension score breakdown, skill-gap analysis ("top skills to develop"), career-path and seniority guidance, and a narrative read of the profile.</p>
+                    <p>No account, no paywall, no email capture. Results in about 5 minutes.</p>
                 </div>
             </div>
         </div>
@@ -398,7 +399,7 @@
         <div class="sec-head fade-up">
             <div class="label">Process</div>
             <h2 class="title">How It Was Built</h2>
-            <p class="subtitle">From the initial idea to a working product, in roughly 6 weeks.</p>
+            <p class="subtitle">From a client-side prototype to a full-stack product, rebuilt and iterated since launch.</p>
         </div>
 
         <div class="process-grid">
@@ -410,17 +411,17 @@
             <div class="process-step fade-up">
                 <div class="process-step-num">02</div>
                 <div class="process-step-title">Data Model Design</div>
-                <div class="process-step-desc">Designed the 88-skill taxonomy across 8 categories. For each role, assigned per-skill importance weights (0–3). The scoring logic: user proficiency × role weight, normalised to a 0–100 match score.</div>
+                <div class="process-step-desc">Built a 95-skill taxonomy across 11 groups, plus an importance profile for each of the 60+ roles — required ("must-have") skills, typical education, and experience expectations. Modelled in PostgreSQL.</div>
             </div>
             <div class="process-step fade-up">
                 <div class="process-step-num">03</div>
                 <div class="process-step-title">UX & Interface</div>
-                <div class="process-step-desc">Designed the skill assessment UI — quick, no-friction sliders with clear labels. Results screen showing role match %, sector breakdown, and top-skill alignment highlights.</div>
+                <div class="process-step-desc">Designed a guided 6-step onboarding (Education · Experience · Skills · Interests · Work Style · Review) using segmented pills, steppers, chips, and selectable cards — no endless slider lists. Results screen with tiered matches, score breakdowns, and skill gaps.</div>
             </div>
             <div class="process-step fade-up">
                 <div class="process-step-num">04</div>
                 <div class="process-step-title">Build & Launch</div>
-                <div class="process-step-desc">Built entirely in vanilla HTML/CSS/JS — no framework, no database. All logic runs client-side. Deployed via Vercel. Promoted through the portfolio's announcement bar.</div>
+                <div class="process-step-desc">Built as a full-stack app: a Next.js 14 + TypeScript + Tailwind frontend on Vercel, a FastAPI + async SQLAlchemy backend on Railway, and PostgreSQL on Neon. The scoring engine runs server-side.</div>
             </div>
         </div>
     </div>
@@ -434,10 +435,10 @@
             <div class="content-text fade-up">
                 <div class="label">Under the hood</div>
                 <h2>The Scoring Model</h2>
-                <p>Each of the 60+ roles has a <strong>skill importance profile</strong> — a vector of weights across the 88 skills, from 0 (irrelevant) to 3 (critical).</p>
-                <p>When a user rates their skills, the model computes a <strong>dot product</strong> between their proficiency ratings and each role's importance weights, then normalises the result to a 0–100 match percentage.</p>
-                <p>This means a Data Analyst with strong SQL and Power BI but no stakeholder management experience will score higher on technical analyst roles than on product manager roles — even if both appear in their results.</p>
-                <p>The skill taxonomy spans <strong>8 categories</strong>: Business Intelligence, Data Engineering, Financial Analysis, Product & Strategy, Business Analysis, Design & Creative, AI & Tools, and Languages.</p>
+                <p>Each of the 60+ roles has an <strong>importance profile</strong> across the 95 skills, plus required ("must-have") skills and typical education and experience.</p>
+                <p>The engine scores four weighted blocks — <strong>core skills (50%)</strong>, <strong>adjacent skills (20%)</strong>, <strong>education (15%)</strong>, and <strong>experience (15%)</strong> — then penalises missing must-have skills, infers behavioural skills, aligns interests (RIASEC), and lets strong education and experience compensate for each other.</p>
+                <p>This is why a Data Analyst with strong SQL and Power BI but limited stakeholder management scores higher on analyst roles than on product roles — even when both surface in their results.</p>
+                <p>The skill taxonomy spans <strong>11 groups</strong> across business, data, finance, product, design, and more. A separate rule-based pass writes the narrative profile analysis — there is no LLM in the product itself.</p>
             </div>
             <div class="scoring-visual fade-up">
                 <div class="scoring-title">Example: match profile for "Senior Data Analyst"</div>
@@ -484,7 +485,7 @@
         <div class="sec-head fade-up">
             <div class="label">Technology</div>
             <h2 class="title">Stack</h2>
-            <p class="subtitle">Deliberately minimal — the complexity is in the data model, not the framework.</p>
+            <p class="subtitle">A full-stack app — the depth is in the scoring engine and data model.</p>
         </div>
 
         <div class="tech-grid">
@@ -492,43 +493,43 @@
                 <div class="tech-card-icon">
                     <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
                 </div>
-                <div class="tech-card-name">HTML / CSS / JS</div>
-                <div class="tech-card-desc">Entirely vanilla — no framework. All scoring logic runs client-side with no backend required. Fast and zero infrastructure cost.</div>
+                <div class="tech-card-name">Next.js 14 · TypeScript</div>
+                <div class="tech-card-desc">Frontend built with Next.js 14 (App Router), TypeScript, and Tailwind CSS. Deployed on Vercel with a global CDN and automatic Git deploys.</div>
+            </div>
+            <div class="tech-card fade-up">
+                <div class="tech-card-icon">
+                    <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+                </div>
+                <div class="tech-card-name">FastAPI · Python</div>
+                <div class="tech-card-desc">Backend in FastAPI with async SQLAlchemy. The scoring engine runs server-side, not in the browser. Hosted on Railway.</div>
+            </div>
+            <div class="tech-card fade-up">
+                <div class="tech-card-icon">
+                    <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg>
+                </div>
+                <div class="tech-card-name">PostgreSQL (Neon)</div>
+                <div class="tech-card-desc">Roles, the 95-skill taxonomy, and per-role importance profiles persisted in PostgreSQL on Neon serverless Postgres.</div>
             </div>
             <div class="tech-card fade-up">
                 <div class="tech-card-icon">
                     <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
                 </div>
-                <div class="tech-card-name">Weighted Scoring Model</div>
-                <div class="tech-card-desc">Custom-built data model: 88-skill taxonomy × 60+ role importance matrices. Dot product scoring normalised to 0–100%. Designed from scratch.</div>
+                <div class="tech-card-name">Rule-based Scoring Engine</div>
+                <div class="tech-card-desc">Four weighted blocks (core, adjacent, education, experience), must-have-skill penalties, RIASEC interest alignment, and behavioural-skill inference. The report narrative is rule-based — no LLM in the product.</div>
             </div>
             <div class="tech-card fade-up">
                 <div class="tech-card-icon">
                     <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                 </div>
                 <div class="tech-card-name">Figma (UX Design)</div>
-                <div class="tech-card-desc">Full UI design and prototyping in Figma before implementation. Designed for clarity and speed — users should reach results in under 3 minutes.</div>
-            </div>
-            <div class="tech-card fade-up">
-                <div class="tech-card-icon">
-                    <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-                </div>
-                <div class="tech-card-name">Vercel (Hosting)</div>
-                <div class="tech-card-desc">Deployed on Vercel for zero-configuration HTTPS, global CDN, and automatic deploys from Git. No backend means no server costs.</div>
-            </div>
-            <div class="tech-card fade-up">
-                <div class="tech-card-icon">
-                    <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                </div>
-                <div class="tech-card-name">Git / GitHub</div>
-                <div class="tech-card-desc">Version control and deployment pipeline via GitHub. Feature branches for major scoring model changes, with tagged releases.</div>
+                <div class="tech-card-desc">A guided 6-step onboarding (Education · Experience · Skills · Interests · Work Style · Review), prototyped in Figma. Designed to reach results in about 5 minutes.</div>
             </div>
             <div class="tech-card fade-up">
                 <div class="tech-card-icon">
                     <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
                 </div>
-                <div class="tech-card-name">AI-Augmented</div>
-                <div class="tech-card-desc">Claude used throughout — for generating role skill matrices, refining UX copy, debugging edge cases in the scoring logic, and accelerating CSS work.</div>
+                <div class="tech-card-name">AI-Augmented Build</div>
+                <div class="tech-card-desc">Claude used throughout development — scaffolding, role and skill data, scoring-rule design, and debugging. The product itself uses no LLM.</div>
             </div>
         </div>
     </div>
@@ -547,8 +548,8 @@
         <div class="lessons-grid">
             <div class="lesson-card worked fade-up">
                 <div class="lesson-type green">What worked</div>
-                <div class="lesson-title">Staying vanilla</div>
-                <div class="lesson-text">No framework meant no build tooling, no dependency management, and zero deployment friction. For a project of this complexity, vanilla JS was the right call — fast to iterate and easy to debug.</div>
+                <div class="lesson-title">Rebuilding as full-stack</div>
+                <div class="lesson-text">The client-side prototype proved the concept. Moving the engine server-side (FastAPI + PostgreSQL) let the scoring grow — must-have penalties, interest alignment, richer reports — without shipping all the logic and data to the browser.</div>
             </div>
             <div class="lesson-card worked fade-up">
                 <div class="lesson-type green">What worked</div>
@@ -585,7 +586,7 @@
     <div class="container">
         <div class="label">Try it</div>
         <h2>See where your skills lead</h2>
-        <p>Complete the assessment in under 3 minutes — no account, no paywall. Just an honest look at where your profile fits.</p>
+        <p>Complete the assessment in about 5 minutes — no account, no paywall. Just an honest look at where your profile fits.</p>
         <div class="cta-actions">
             <a href="https://trycareermatch.com" target="_blank" rel="noopener" class="btn btn-primary">
                 <svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
