@@ -372,7 +372,7 @@ h1.proj-title {
 /* ============================================================
    VISUAL COMPONENTS (articles)
 ============================================================ */
-.art-visual { margin: 32px 0 4px; }
+.art-visual { margin: 32px 0 28px; }
 .art-visual-label {
     font-size: 12px; font-weight: 600; color: var(--muted);
     margin-top: 12px; text-align: center; letter-spacing: .02em;
