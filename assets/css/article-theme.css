@@ -1,0 +1,99 @@
+/* ============================================================
+   ARTICLE ACCENT THEME
+   Article colour follows its index category. Add ONE class to
+   <body> — theme-product | theme-strategy | theme-data |
+   theme-finance — and the shared .vis-* / .proj-* components
+   pick up the right palette. No per-article recolour block.
+
+   The four palettes match the category colours used on the
+   homepage article cards, so card colour == page colour.
+============================================================ */
+
+/* ---- palettes (set the variables on <body>) ---- */
+:root,
+.theme-product {            /* Product — Indigo (#4F46E5) */
+    --accent:           #4F46E5;
+    --accent-rgb:       79,70,229;
+    --accent-dark:      #4338CA;
+    --accent-light:     #818CF8;
+    --accent-light-rgb: 129,140,248;
+    --hero-bg:          #0B0A1E;
+}
+.theme-strategy {           /* Strategy — Teal (#0D9488) */
+    --accent:           #0D9488;
+    --accent-rgb:       13,148,136;
+    --accent-dark:      #0F766E;
+    --accent-light:     #5EEAD4;
+    --accent-light-rgb: 94,234,212;
+    --hero-bg:          #04140F;
+}
+.theme-data {               /* Data — Violet (#7C3AED) */
+    --accent:           #7C3AED;
+    --accent-rgb:       124,58,237;
+    --accent-dark:      #6D28D9;
+    --accent-light:     #A78BFA;
+    --accent-light-rgb: 167,139,250;
+    --hero-bg:          #0E0820;
+}
+.theme-finance {            /* Finance — Bronze (#B45309) */
+    --accent:           #B45309;
+    --accent-rgb:       180,83,9;
+    --accent-dark:      #92400E;
+    --accent-light:     #F59E0B;
+    --accent-light-rgb: 245,158,11;
+    --hero-bg:          #160C02;
+}
+
+/* ---- component mapping (uses the variables above) ---- */
+
+/* Hero / chrome */
+.proj-hero {
+    background: var(--hero-bg);
+    background-image:
+        radial-gradient(ellipse 72% 56% at 62% 38%, rgba(var(--accent-rgb), .18) 0%, transparent 70%),
+        radial-gradient(circle at 12% 72%, rgba(var(--accent-light-rgb), .08) 0%, transparent 52%);
+}
+.progress { background: linear-gradient(90deg, var(--accent), var(--accent-light)); }
+.proj-badge { background: rgba(var(--accent-rgb), .12); border-color: rgba(var(--accent-rgb), .28); color: var(--accent-light); }
+h1.proj-title { background-image: linear-gradient(140deg, #fff 0%, #fff 42%, var(--accent-light) 100%); }
+
+/* Body accents */
+.art-label { color: var(--accent); }
+.art-callout { border-left-color: var(--accent); }
+.btn-primary { background: var(--accent); box-shadow: 0 4px 16px rgba(var(--accent-rgb), .30); color: #fff; }
+.btn-primary:hover { background: var(--accent-dark); box-shadow: 0 6px 22px rgba(var(--accent-rgb), .42); transform: translateY(-2px); }
+
+/* Cards */
+.vis-card-icon { background: rgba(var(--accent-rgb), .10); border-color: rgba(var(--accent-rgb), .18); color: var(--accent); }
+.vis-card-title { color: var(--accent); }
+.vis-card-accent { background: var(--accent); border-color: var(--accent); }
+.vis-card:hover { box-shadow: 0 4px 20px rgba(var(--accent-rgb), .12); border-color: rgba(var(--accent-rgb), .22); }
+.vis-card-violet { background: rgba(var(--accent-rgb), .08); border-color: rgba(var(--accent-rgb), .20); }
+.vis-card-violet .vis-card-title { color: var(--accent); }
+.vis-concept { background: var(--accent); }
+
+/* Steps */
+.vis-step::before { background: linear-gradient(90deg, var(--accent), var(--accent-light)); }
+.vis-step-num { color: rgba(var(--accent-rgb), .22); }
+.vis-step-title { color: var(--accent-dark); }
+.vis-step:hover { box-shadow: 0 6px 24px rgba(var(--accent-rgb), .18); border-color: rgba(var(--accent-rgb), .30); }
+
+/* Rows */
+.vis-row { border-left-color: rgba(var(--accent-rgb), .35); border-color: rgba(var(--accent-rgb), .16); }
+.vis-row-label { color: var(--accent); }
+.vis-row-accent { background: rgba(var(--accent-rgb), .07); border-color: rgba(var(--accent-rgb), .22); }
+
+/* Dark + compare */
+.vis-dark-card { background: var(--accent); }
+.vis-compare-left  { border-top-color: var(--accent); }
+.vis-compare-right { border-top-color: var(--accent-dark); }
+
+/* Flow */
+.vis-flow-wrap { background: linear-gradient(135deg, rgba(var(--accent-rgb), .08), rgba(var(--accent-rgb), .06)); border-color: rgba(var(--accent-rgb), .18); }
+.vis-flow-box-accent { background: rgba(var(--accent-rgb), .14); border-color: rgba(var(--accent-rgb), .32); }
+.vis-flow-box-accent .vis-flow-box-title { color: var(--accent); }
+.vis-flow-arrow, .vis-flow-side-arrow { color: var(--accent); }
+
+/* Misc */
+.vis-tag-pill { background: rgba(var(--accent-rgb), .10); border-color: rgba(var(--accent-rgb), .20); color: var(--accent); }
+.vis-flag-item::before { background: var(--accent); }
