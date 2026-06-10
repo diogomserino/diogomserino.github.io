@@ -4,10 +4,10 @@
 <script>document.documentElement.classList.add('js')</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="TryCareerMatch — a full-stack career-discovery app (Next.js + FastAPI + PostgreSQL) mapping 95 skills against 60+ roles across 9 sectors with a server-side rule-based scoring engine. Free, no registration. Built by Diogo Serino.">
+    <meta name="description" content="TryCareerMatch — a full-stack career-discovery app (Next.js + FastAPI + PostgreSQL) mapping 120+ skills against 60+ roles across 9 sectors with a server-side rule-based scoring engine. Free, no registration. Built by Diogo Serino.">
     <title>TryCareerMatch · Diogo Serino</title>
     <meta property="og:title" content="TryCareerMatch · Diogo Serino">
-    <meta property="og:description" content="Full-stack career-discovery app (Next.js + FastAPI + PostgreSQL) mapping 95 skills against 60+ roles across 9 sectors with a server-side scoring engine. Free, no registration. Full case study.">
+    <meta property="og:description" content="Full-stack career-discovery app (Next.js + FastAPI + PostgreSQL) mapping 120+ skills against 60+ roles across 9 sectors with a server-side scoring engine. Free, no registration. Full case study.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://diogomserino.github.io/projects/careermatch.html">
     <meta property="og:image" content="https://diogomserino.github.io/og-image.png">
@@ -302,7 +302,7 @@
         <div class="proj-badge">Case Study &nbsp;·&nbsp; Full-Stack Product</div>
         <h1 class="proj-title">TryCareerMatch</h1>
         <p class="proj-sub">
-            A full-stack career-discovery app that maps <strong style="color:rgba(255,255,255,.75)">95 skills</strong> against
+            A full-stack career-discovery app that maps <strong style="color:rgba(255,255,255,.75)">120+ skills</strong> against
             <strong style="color:rgba(255,255,255,.75)">60+ roles</strong> across
             <strong style="color:rgba(255,255,255,.75)">9 sectors</strong> — built to help professionals
             with non-linear backgrounds find where they actually fit.
@@ -347,7 +347,7 @@
     <div class="container">
         <div class="metrics-row fade-up">
             <div class="metric-item">
-                <div class="metric-val">95</div>
+                <div class="metric-val">120<span>+</span></div>
                 <div class="metric-lbl">Skills mapped</div>
             </div>
             <div class="metric-item">
@@ -411,7 +411,7 @@
             <div class="process-step fade-up">
                 <div class="process-step-num">02</div>
                 <div class="process-step-title">Data Model Design</div>
-                <div class="process-step-desc">Built a 95-skill taxonomy across 11 groups, plus an importance profile for each of the 60+ roles — required ("must-have") skills, typical education, and experience expectations. Modelled in PostgreSQL.</div>
+                <div class="process-step-desc">Built a 120+ skill taxonomy across 11 groups, plus an importance profile for each of the 60+ roles — required ("must-have") skills, typical education, and experience expectations. Modelled in PostgreSQL.</div>
             </div>
             <div class="process-step fade-up">
                 <div class="process-step-num">03</div>
@@ -435,7 +435,7 @@
             <div class="content-text fade-up">
                 <div class="label">Under the hood</div>
                 <h2>The Scoring Model</h2>
-                <p>Each of the 60+ roles has an <strong>importance profile</strong> across the 95 skills, plus required ("must-have") skills and typical education and experience.</p>
+                <p>Each of the 60+ roles has an <strong>importance profile</strong> across the 120+ skills, plus required ("must-have") skills and typical education and experience.</p>
                 <p>The engine scores four weighted blocks — <strong>core skills (50%)</strong>, <strong>adjacent skills (20%)</strong>, <strong>education (15%)</strong>, and <strong>experience (15%)</strong> — then penalises missing must-have skills, infers behavioural skills, aligns interests (RIASEC), and lets strong education and experience compensate for each other.</p>
                 <p>This is why a Data Analyst with strong SQL and Power BI but limited stakeholder management scores higher on analyst roles than on product roles — even when both surface in their results.</p>
                 <p>The skill taxonomy spans <strong>11 groups</strong> across business, data, finance, product, design, and more. A separate rule-based pass writes the narrative profile analysis — there is no LLM in the product itself.</p>
@@ -508,7 +508,7 @@
                     <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg>
                 </div>
                 <div class="tech-card-name">PostgreSQL (Neon)</div>
-                <div class="tech-card-desc">Roles, the 95-skill taxonomy, and per-role importance profiles persisted in PostgreSQL on Neon serverless Postgres.</div>
+                <div class="tech-card-desc">Roles, the 120+ skill taxonomy, and per-role importance profiles persisted in PostgreSQL on Neon serverless Postgres.</div>
             </div>
             <div class="tech-card fade-up">
                 <div class="tech-card-icon">
