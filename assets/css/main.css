@@ -351,6 +351,12 @@ h1.proj-title {
 }
 .art-p { font-size: 16px; line-height: 1.85; color: var(--text); margin-bottom: 16px; }
 .art-p strong { color: var(--navy); font-weight: 600; }
+.art-p code, .art-list code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 0.88em; color: var(--navy);
+    background: var(--bg-alt); border: 1px solid var(--border);
+    padding: 1px 6px; border-radius: 5px;
+}
 .art-list { margin: 14px 0 16px; padding-left: 0; list-style: none; }
 .art-list li {
     font-size: 16px; line-height: 1.78; color: var(--text);

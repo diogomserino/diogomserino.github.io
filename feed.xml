@@ -7,6 +7,18 @@
     <language>en</language>
     <atom:link href="https://diogomserino.github.io/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
+      <title>How I Built Portugal Data Intelligence</title>
+      <link>https://diogomserino.github.io/articles/how-i-built-portugal-data-intelligence.html</link>
+      <guid isPermaLink="true">https://diogomserino.github.io/articles/how-i-built-portugal-data-intelligence.html</guid>
+      <description>The build story behind a 12-pillar macroeconomic platform — the ingestion and data-quality pipeline, the forecasting layer, and the jump from charts to an advisory-grade briefing.</description>
+    </item>
+    <item>
+      <title>How I Build with AI (Without Putting an LLM in the Product)</title>
+      <link>https://diogomserino.github.io/articles/how-i-build-with-ai.html</link>
+      <guid isPermaLink="true">https://diogomserino.github.io/articles/how-i-build-with-ai.html</guid>
+      <description>How I actually use AI to build products faster — research, scaffolding, data, debugging — and why I deliberately keep the shipped product deterministic, with no LLM in the loop.</description>
+    </item>
+    <item>
       <title>How I Built TryCareerMatch</title>
       <link>https://diogomserino.github.io/articles/how-i-built-careermatch.html</link>
       <guid isPermaLink="true">https://diogomserino.github.io/articles/how-i-built-careermatch.html</guid>

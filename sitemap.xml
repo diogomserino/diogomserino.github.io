@@ -4,7 +4,7 @@
   <!-- Core pages -->
   <url>
     <loc>https://diogomserino.github.io/</loc>
-    <lastmod>2026-06-04</lastmod>
+    <lastmod>2026-06-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -147,6 +147,18 @@
   <url>
     <loc>https://diogomserino.github.io/articles/how-i-built-careermatch.html</loc>
     <lastmod>2026-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://diogomserino.github.io/articles/how-i-built-portugal-data-intelligence.html</loc>
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://diogomserino.github.io/articles/how-i-build-with-ai.html</loc>
+    <lastmod>2026-06-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
