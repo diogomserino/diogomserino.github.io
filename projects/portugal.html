@@ -393,7 +393,7 @@
                 <div class="label">Overview</div>
                 <h2 class="title">One platform,<br>the full economic picture</h2>
                 <p>Portuguese macroeconomic data is scattered across multiple statistical authorities — INE, Banco de Portugal, PORDATA, and Eurostat — with no integrated platform to consolidate it or benchmark performance against EU peers.</p>
-                <p>Portugal Data Intelligence closes that gap: a complete end-to-end system that ingests live data, applies <strong>time-series forecasting</strong> (SARIMAX + STL), generates AI-powered narrative insights, and delivers everything as an interactive Power BI dashboard, a Streamlit web app, and a FastAPI REST API.</p>
+                <p>Portugal Data Intelligence closes that gap: a complete end-to-end system that ingests live data, applies <strong>time-series forecasting</strong> (SARIMAX + STL), and turns it into AI-powered narrative insights, a <strong>risk matrix</strong>, and <strong>strategic recommendations</strong> — delivered as an interactive Power BI dashboard, a Streamlit web app, a FastAPI REST API, and a boardroom-ready HTML briefing.</p>
                 <p>Twelve economic pillars are tracked simultaneously across 15 years — from the sovereign debt crisis through COVID-19 to the post-pandemic rebound — including regional NUTS2 analysis across Portugal's seven regions and EU-27 benchmarking via radar charts.</p>
             </div>
             <div class="dash-preview fade-up">
@@ -483,7 +483,7 @@
             <div class="step fade-up">
                 <div class="step-num">01</div>
                 <div class="step-title">ETL Pipeline</div>
-                <div class="step-desc">Extracts data via CSV/API from five national sources (INE, Banco de Portugal, PORDATA, Eurostat, ECB), applies 15+ validation checks (schema, range, completeness, freshness), transforms via SQL, and loads into SQLite with UUID-based lineage tracking and SHA-256 checksums.</div>
+                <div class="step-desc">Extracts data via CSV/API from five national sources (INE, Banco de Portugal, PORDATA, Eurostat, ECB), runs an 8-check data-quality framework (schema, nulls, ranges, outliers, drift, completeness, consistency, freshness), transforms via SQL, and loads into SQLite with UUID-based lineage tracking and SHA-256 checksums.</div>
                 <div class="step-tags">
                     <span class="stag">Python</span>
                     <span class="stag">SQLite</span>
@@ -505,7 +505,7 @@
             <div class="step fade-up">
                 <div class="step-num">03</div>
                 <div class="step-title">Output Layer</div>
-                <div class="step-desc">Power BI dashboard with 39 DAX measures across 7 categories. Four-page Streamlit web app. FastAPI REST API with 7 endpoints. Self-contained HTML reports and multi-sheet Excel exports. Containerised with Docker, covered by a 489-test suite, and deployed via CI/CD.</div>
+                <div class="step-desc">Power BI dashboard with 39 DAX measures across 7 categories. Four-page Streamlit web app. FastAPI REST API with 7 endpoints. A boardroom-ready HTML briefing — including a risk matrix and strategic recommendations — plus multi-sheet Excel exports. Containerised with Docker, covered by a 489-test suite, and deployed via CI/CD.</div>
                 <div class="step-tags">
                     <span class="stag">Power BI</span>
                     <span class="stag">FastAPI</span>
@@ -531,7 +531,7 @@
                 <div class="pillar-ico"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
                 <div class="pillar-title">GDP</div>
                 <div class="pillar-meta">Quarterly · 2010 Q1 – 2025 Q4</div>
-                <div class="pillar-desc">Full growth cycle — debt crisis contraction, recovery, COVID shock, and post-pandemic rebound — modelled and forecast.</div>
+                <div class="pillar-desc">Full growth cycle — debt-crisis contraction (−1.5% avg), COVID shock (−1.3% avg), and rebound to a 1.9% 2025 expansion against a 1.2% long-run trend — modelled and forecast.</div>
             </div>
             <div class="pillar fade-up">
                 <div class="pillar-ico"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
@@ -543,7 +543,7 @@
                 <div class="pillar-ico"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
                 <div class="pillar-title">Credit to Economy</div>
                 <div class="pillar-meta">Monthly · Jan 2010 – Dec 2025</div>
-                <div class="pillar-desc">Private credit dynamics vs NPL ratios, whose inverse relationship with inflation (r = −0.48) is measured and visualised.</div>
+                <div class="pillar-desc">Private credit dynamics vs NPL ratios — down to 2.1% by late 2025 — whose inverse relationship with inflation (r = −0.48) is measured and visualised.</div>
             </div>
             <div class="pillar fade-up">
                 <div class="pillar-ico"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
