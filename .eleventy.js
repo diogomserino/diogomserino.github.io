@@ -4,10 +4,14 @@ module.exports = function (eleventyConfig) {
   // Root-level static files that must keep their exact path (copied verbatim).
   eleventyConfig.addPassthroughCopy({ "src/robots.txt": "robots.txt" });
   eleventyConfig.addPassthroughCopy({ "src/404.html": "404.html" });
-  eleventyConfig.addPassthroughCopy({ "src/feed.xml": "feed.xml" });
 
   // Normalise output URLs: ".../index.html" → ".../" for canonical/og/hreflang.
   eleventyConfig.addFilter("cleanUrl", (url) => (url || "").replace(/index\.html$/, ""));
+
+  // Strip the " — Diogo Serino" brand suffix from a page title (used by the RSS feed).
+  eleventyConfig.addFilter("feedTitle", (t) =>
+    (t || "").replace(/\s*[—–-]\s*Diogo Serino\s*$/, "")
+  );
 
   // Sort an articles collection by their curated `order` (home grid order).
   eleventyConfig.addFilter("sortByOrder", (arr) =>
