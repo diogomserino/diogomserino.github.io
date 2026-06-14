@@ -1,6 +1,6 @@
 # Diogo Serino — Portfolio
 
-Personal portfolio website built with vanilla HTML, CSS, and JavaScript. Deployed via GitHub Pages.
+Personal portfolio and writing site. Built with [Eleventy (11ty)](https://www.11ty.dev/) — content is authored once per language and generated to static HTML. Bilingual (English / Portuguese) and deployed to GitHub Pages via GitHub Actions.
 
 **Live:** [diogomserino.github.io](https://diogomserino.github.io)
 
@@ -8,7 +8,30 @@ Personal portfolio website built with vanilla HTML, CSS, and JavaScript. Deploye
 
 ## Stack
 
-Pure HTML / CSS / JavaScript — no frameworks, no build step, no dependencies.
+- **[Eleventy 3](https://www.11ty.dev/)** static site generator — Nunjucks (`.njk`) layouts and partials, written once and reused across both languages.
+- **Hand-written CSS & JavaScript** — no CSS or JS frameworks. The generated output is plain static HTML/CSS/JS.
+- **Bilingual EN/PT** — separate `/` (EN) and `/pt/` trees sharing a `translationKey`, which auto-wires `hreflang`, the EN&nbsp;|&nbsp;PT language switch, and the per-page language redirect.
+- **GitHub Actions → GitHub Pages** — every push to `main` builds the site and publishes `_site/`.
+
+## Development
+
+```bash
+npm install          # install Eleventy
+npm run serve        # local dev server with live reload
+npm run build        # build the site to _site/
+```
+
+## Structure
+
+```
+src/
+  _includes/   layouts (base.njk) + partials (nav, footer, article-card, lang-switch)
+  _data/       site metadata + UI strings
+  en/          English pages and articles
+  pt/          Portuguese pages and articles
+assets/        CSS, JS, and images (copied through to /assets)
+.eleventy.js   build config (input src/, output _site/)
+```
 
 ## Contact
 
