@@ -742,3 +742,4 @@ footer.art-footer { background: var(--navy-800); border-top: 1px solid rgba(255,
 .lang-switch a.lang-opt:focus-visible { opacity: 1; background: rgba(128,128,128,.16); }
 .lang-switch .is-active { opacity: 1; font-weight: 800; }
 .lang-switch .lang-opt + .lang-opt { border-left: 1px solid currentColor; }
+.nav-right { display: inline-flex; align-items: center; gap: 14px; }

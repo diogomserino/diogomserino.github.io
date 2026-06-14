@@ -1,0 +1,204 @@
+---
+translationKey: "article:how-i-build-with-ai"
+title: "Como Construo com IA (Sem Pôr um LLM no Produto) — Diogo Serino"
+description: "Como uso mesmo a IA para construir produtos mais depressa — pesquisa, scaffolding, dados, debugging — e porque mantenho deliberadamente o produto entregue determinístico, sem LLM no fluxo. Exemplos concretos do TryCareerMatch e do Portugal Data Intelligence."
+ogTitle: "Como Construo com IA (Sem Pôr um LLM no Produto) — Diogo Serino"
+bodyAttr: 'class="theme-product"'
+crumb: "Como Construo com IA"
+articleHeadline: "Como Construo com IA (Sem Pôr um LLM no Produto) — Diogo Serino"
+readingTime: "7 min"
+---
+<main id="main" tabindex="-1">
+<section class="proj-hero">
+    <div class="container proj-hero-inner">
+        <div class="proj-badge">
+            <svg aria-hidden="true" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            Produto &nbsp;·&nbsp; Como Trabalho
+        </div>
+        <h1 class="proj-title">Como Construo<br>com IA</h1>
+        <p class="proj-sub">“Uso IA” é a frase mais inútil de um portfólio em 2026 — toda a gente o diz. A pergunta interessante é onde a deixas tocar no trabalho, e onde deliberadamente não deixas. Aqui está a minha linha, e porque mantenho o LLM fora do produto.</p>
+        <div class="stack-row">
+            <span class="stag-dk">Construção com IA</span>
+            <span class="stag-dk">Produto</span>
+            <span class="stag-dk">Como Trabalho</span>
+            <span class="stag-dk">Pessoal</span>
+        </div>
+        <div class="proj-meta">
+            <span class="proj-meta-item">
+                <svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                7 min de leitura
+            </span>
+        </div>
+    </div>
+</section>
+
+<!-- ARTICLE -->
+<div class="art-wrap">
+
+    <div class="art-intro fade-up">
+        <p>Todas as funções de produto listam agora “AI-augmented” como requisito, e todos os candidatos o reivindicam. Por isso a expressão deixou de significar alguma coisa. Dizer “construo com IA” em 2026 é como dizer “uso um computador” em 2005 — verdade, e completamente desinformativo.</p>
+        <p>O que vale mesmo a pena saber é o critério por baixo disso: que partes do trabalho entrego à IA, que partes guardo para mim e — a linha que a maioria salta — se aquilo que entrego tem sequer um LLM lá dentro. A minha resposta a esta última é normalmente não, e é uma decisão deliberada, não uma limitação. É assim que trabalho de facto.</p>
+    </div>
+
+    <!-- 1. THE DISTINCTION -->
+    <div class="art-section fade-up">
+        <span class="art-label">A Distinção</span>
+        <h2 class="art-h2">Duas perguntas completamente diferentes</h2>
+        <p class="art-p">As pessoas colapsam “IA” numa só coisa. Na prática há duas perguntas separadas, e confundi-las é de onde vem a maior parte da confusão.</p>
+
+        <div class="art-visual">
+            <div class="vis-compare">
+                <div class="vis-compare-box vis-compare-left">
+                    <div class="vis-compare-title">IA na construção</div>
+                    <div class="vis-compare-desc">
+                        Quão depressa e quão bem eu pesquiso, faço scaffolding, gero dados e faço debug.<br><br>
+                        Aqui apoio-me bastante na IA. É um multiplicador de força nas partes de construir que são sobre cobertura e velocidade.
+                    </div>
+                </div>
+                <div class="vis-compare-box vis-compare-right">
+                    <div class="vis-compare-title">IA no produto</div>
+                    <div class="vis-compare-desc">
+                        Se aquilo com que o utilizador interage tem um LLM a tomar decisões em runtime.<br><br>
+                        Aqui sou conservador. Para um produto de scoring ou de aconselhamento, uma caixa-preta não-determinística é normalmente a escolha errada — e vou explicar porquê.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <p class="art-p">Muitos “produtos de IA” em 2026 são na verdade a primeira coisa disfarçada de segunda — um LLM aparafusado a um problema que não precisava dele, porque “AI-powered” vende. Prefiro ser preciso: a IA mudou como construo. Raramente pertence àquilo que entrego.</p>
+    </div>
+
+    <!-- 2. WHERE AI HELPS -->
+    <div class="art-section fade-up">
+        <span class="art-label">Na Construção</span>
+        <h2 class="art-h2">Onde a IA merece mesmo o seu lugar</h2>
+        <p class="art-p">Como builder a solo, a minha limitação nunca são ideias — são horas. A IA dá-me a alavancagem de uma pequena equipa nas partes de construir que são sobre amplitude e ritmo. Concretamente, nos meus projetos:</p>
+
+        <div class="art-visual">
+            <div class="vis-grid vis-grid-2">
+                <div class="vis-card">
+                    <div class="vis-card-title">Pesquisa em escala</div>
+                    <div class="vis-card-sub">Para o TryCareerMatch precisava de perceber o que mais de 60 funções exigem mesmo — em nove setores. A IA comprimiu semanas de leitura de descrições de funções em dias de primeiros rascunhos estruturados que eu depois verificava e refinava. Não decidiu a resposta; levou-me depressa a um ponto de partida revisável.</div>
+                </div>
+                <div class="vis-card">
+                    <div class="vis-card-title">Scaffolding de código</div>
+                    <div class="vis-card-sub">Para o Portugal Data Intelligence, a IA fez o scaffolding da forma repetitiva dos módulos de ETL e rascunhou medidas DAX — o boilerplate que é lento de escrever e fácil de errar subtilmente. A arquitetura e a estatística eram minhas; a IA escreveu a primeira passagem.</div>
+                </div>
+                <div class="vis-card">
+                    <div class="vis-card-title">Gerar dados estruturados</div>
+                    <div class="vis-card-sub">Rascunhar as matrizes iniciais de importância função-competência, ou calibrar séries modeladas face a tendências publicadas, é exatamente o tipo de trabalho de grande volume e regrado que a IA acelera — desde que cada output volte a passar pelo meu critério antes de contar.</div>
+                </div>
+                <div class="vis-card">
+                    <div class="vis-card-title">Debugging &amp; rubber-ducking</div>
+                    <div class="vis-card-sub">Explicar um bug a um modelo atento muitas vezes faz emergir a causa antes de ele responder — e quando responde, é um segundo par de olhos sobre um stack trace à 1 da manhã. Este site que estás a ler foi feito da mesma forma: a IA como par rápido, eu como quem decide.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="art-callout">O padrão é o mesmo de todas as vezes: a IA leva-me depressa a um rascunho revisável. O valor que acrescento é a revisão — o critério sobre o que está certo, o que está errado e o que manter. O rascunho é barato agora; o critério é o trabalho.</div>
+    </div>
+
+    <!-- 3. THE LINE -->
+    <div class="art-section fade-up">
+        <span class="art-label">A Linha</span>
+        <h2 class="art-h2">Porque não há LLM no produto</h2>
+        <p class="art-p">Os dois produtos que construí fazem esta escolha explicitamente, pelas mesmas razões. O TryCareerMatch pontua o teu perfil face às funções com um <strong>motor baseado em regras</strong> — determinístico, explicável, sem qualquer LLM no produto. O Portugal Data Intelligence corre a sua análise sobre modelos estatísticos reais; um LLM é uma camada opcional que só escreve texto, e os números que descreve são sempre os determinísticos.</p>
+
+        <div class="art-visual">
+            <div class="vis-rows">
+                <div class="vis-row vis-row-accent">
+                    <div class="vis-row-label">Determinismo</div>
+                    <div class="vis-row-desc">O mesmo input tem de produzir sempre o mesmo resultado. Uma pontuação de adequação de carreira ou um valor económico que muda entre execuções não é uma funcionalidade — é um bug que o utilizador sente. Os motores baseados em regras são reprodutíveis por construção.</div>
+                </div>
+                <div class="vis-row vis-row-accent">
+                    <div class="vis-row-label">Explicabilidade</div>
+                    <div class="vis-row-desc">Quando o TryCareerMatch ordena uma função, consegue mostrar exatamente porquê — que competências pesaram, onde estão as lacunas. “O modelo disse que sim” não é uma resposta sobre a qual o utilizador possa agir. Cada pontuação remonta a uma regra que consigo apontar.</div>
+                </div>
+                <div class="vis-row vis-row-accent">
+                    <div class="vis-row-label">Confiança &amp; honestidade</div>
+                    <div class="vis-row-desc">Um produto de aconselhamento ganha confiança sendo correto e sendo legível. Esconder uma caixa-preta atrás de uma frase confiante é o oposto disso. Se não consigo explicar como um resultado foi produzido, não o devia estar a entregar como orientação.</div>
+                </div>
+                <div class="vis-row vis-row-accent">
+                    <div class="vis-row-label">Custo &amp; latência</div>
+                    <div class="vis-row-desc">Uma pontuação baseada em regras devolve instantaneamente e de graça. Uma chamada a um LLM acrescenta custo, latência e uma dependência do uptime de outra pessoa — uma má troca quando um motor determinístico faz melhor o trabalho.</div>
+                </div>
+            </div>
+        </div>
+
+        <p class="art-p">Isto não é anti-IA. É saber para que a tecnologia é boa. Um LLM é uma ferramenta brilhante para <em>construir</em> um motor de regras — pesquisar as regras, rascunhá-las, pô-las à prova. É muitas vezes a ferramenta errada para <em>ser</em> o motor de regras em runtime. Distinguir as duas é a maior parte da habilidade.</p>
+    </div>
+
+    <!-- 4. THE METHOD -->
+    <div class="art-section fade-up">
+        <span class="art-label">O Método</span>
+        <h2 class="art-h2">Como trabalho mesmo com ela</h2>
+        <p class="art-p">Usar bem a IA é uma competência, e não é a que as pessoas assumem. Não é sobre escrever prompts espertos — é sobre ser um bom editor e um verificador implacável de trabalho que não escreveste.</p>
+
+        <div class="art-visual">
+            <div class="vis-steps">
+                <div class="vis-step">
+                    <div class="vis-step-num">01</div>
+                    <div class="vis-step-title">Tratá-la como um júnior rápido, não um oráculo</div>
+                    <div class="vis-step-desc">A IA produz um primeiro rascunho confiante de quase tudo. Leio-o como leria o trabalho de um júnior — útil, rápido e assumido errado até ser verificado. A confiança do output não é prova da sua correção.</div>
+                </div>
+                <div class="vis-step">
+                    <div class="vis-step-num">02</div>
+                    <div class="vis-step-title">Verificar tudo o que importa</div>
+                    <div class="vis-step-desc">Cada requisito de função, cada valor gerado, cada linha de lógica feita por scaffolding é verificado face a uma fonte real ou a um teste real antes de poder contar. A IA alucina de forma plausível; a única defesa é a verificação, e é inegociável.</div>
+                </div>
+                <div class="vis-step">
+                    <div class="vis-step-num">03</div>
+                    <div class="vis-step-title">Manter as decisões de critério minhas</div>
+                    <div class="vis-step-desc">Arquitetura, pesos de scoring, o que está no âmbito, o que entregar — ficam comigo. A IA informa-as e acelera o trabalho à volta delas, mas as decisões que definem o produto são a parte que recuso terceirizar.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="art-callout">A IA não baixou os meus padrões — aumentou a minha velocidade. A fasquia do que é correto, explicável e honesto está exatamente onde estava. Só chego lá mais depressa, e posso gastar o tempo poupado no critério que de facto diferencia o trabalho.</div>
+    </div>
+
+    <!-- 5. WHY IT MATTERS -->
+    <div class="art-section fade-up">
+        <span class="art-label">Porque Importa</span>
+        <h2 class="art-h2">O que isto diz sobre como eu construiria numa equipa</h2>
+        <p class="art-p">Para uma equipa early-stage, a versão útil de “AI-augmented” não é alguém que canaliza tudo por um LLM e torce. É alguém que entrega mais depressa <em>e</em> sabe quando não lhe pegar — que distingue entre a IA como acelerador e a IA como passivo que vais andar a debugar em produção durante meses.</p>
+        <p class="art-p">É esse o critério que construí ao entregar de facto com estas ferramentas: usar a IA para avançar depressa na pesquisa, no scaffolding e na iteração; manter o produto determinístico e explicável onde os utilizadores precisam de confiar nele; e ser dono de cada decisão que define o que a coisa realmente é. A velocidade é a parte fácil agora. A disciplina é o diferenciador.</p>
+    </div>
+
+<div class="art-nav">
+    <a class="art-nav-item" href="/pt/articles/how-i-built-portugal-data-intelligence.html">
+        <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+        <div class="art-nav-text">
+            <span class="art-nav-label">Anterior</span>
+            <span class="art-nav-title">Como Construí o Portugal Data Intelligence</span>
+        </div>
+    </a>
+    <a class="art-nav-item art-nav-next" href="/articles/saas-product-metrics.html">
+        <div class="art-nav-text">
+            <span class="art-nav-label">Seguinte</span>
+            <span class="art-nav-title">SaaS &amp; Product Metrics</span>
+        </div>
+        <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+    </a>
+</div>
+</div>
+
+<!-- CTA -->
+<section class="cta-sect">
+    <div class="container">
+        <h2>Vê na prática</h2>
+        <p>Os dois case studies mostram a linha na prática — uma construção acelerada por IA, um produto determinístico.</p>
+        <div class="cta-actions">
+            <a href="/pt/articles/how-i-built-careermatch.html" class="btn btn-primary">
+                Como Construí o TryCareerMatch
+                <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+            </a>
+            <a href="/pt/projects/portugal.html" class="btn btn-ghost-light">
+                Portugal Data Intelligence
+                <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+            </a>
+        </div>
+    </div>
+</section>
+
+</main>
