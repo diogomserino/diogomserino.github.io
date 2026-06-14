@@ -1,0 +1,293 @@
+---
+translationKey: "article:ab-testing-fundamentals"
+title: "A/B Testing & Experimentação — Diogo Serino"
+description: "Como desenhar experiências válidas, interpretar significância estatística, evitar os erros mais comuns e construir uma cultura de decisões baseadas em evidência."
+ogTitle: "A/B Testing & Experimentação — Diogo Serino"
+bodyAttr: 'class="theme-data"'
+crumb: "A/B Testing & Experimentação"
+articleHeadline: "A/B Testing & Experimentação — Diogo Serino"
+readingTime: "7 min"
+---
+<main id="main" tabindex="-1">
+<section class="proj-hero">
+    <div class="container proj-hero-inner">
+        <div class="proj-badge">
+            <svg aria-hidden="true" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2v-4M9 21H5a2 2 0 0 1-2-2v-4m0 0h18"/></svg>
+            Dados &nbsp;·&nbsp; Produto
+        </div>
+        <h1 class="proj-title">A/B Testing<br>&amp;<br>Experimentação</h1>
+        <p class="proj-sub">Como desenhar experiências válidas, interpretar significância estatística e construir uma cultura onde as decisões são guiadas por evidência — não por opiniões ou intuição.</p>
+        <div class="stack-row">
+            <span class="stag-dk">A/B Testing</span>
+            <span class="stag-dk">Estatística</span>
+            <span class="stag-dk">Dados</span>
+            <span class="stag-dk">Produto</span>
+        </div>
+        <div class="proj-meta">
+            <span class="proj-meta-item">
+                <svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                7 min de leitura
+            </span>
+        </div>
+    </div>
+</section>
+
+<div class="art-wrap">
+
+    <!-- 1. Why most tests are wrong -->
+    <div class="art-section fade-up">
+        <div class="art-label">O Problema</div>
+        <h2 class="art-h2">A maioria dos "testes" não são testes</h2>
+        <p class="art-p">As equipas correm testes A/B todos os dias e chegam a conclusões erradas. Não porque os dados mentem — mas porque a experiência foi desenhada de uma forma que torna impossíveis conclusões válidas. Testar mal é pior do que não testar: cria decisões erradas com confiança.</p>
+
+        <div class="art-visual">
+            <div class="vis-compare">
+                <div class="vis-compare-box vis-compare-left">
+                    <div class="vis-compare-title">Experiência inválida</div>
+                    <div class="vis-compare-desc">
+                        <ul style="padding-left:16px;margin:0 0 10px;">
+                            <li>Mudou duas coisas ao mesmo tempo (cor do botão + texto)</li>
+                            <li>Parou o teste quando os resultados "pareciam bons"</li>
+                            <li>Correu durante 3 dias num fim de semana de feriado</li>
+                            <li>Não pré-calculou o tamanho de amostra necessário</li>
+                            <li>Declarou vencedor a p = 0,09 ("perto o suficiente")</li>
+                        </ul>
+                        <p style="margin-top:8px;">O resultado pode estar direcionalmente certo. Mas não há como saber — e agir sobre ele como facto é perigoso.</p>
+                    </div>
+                </div>
+                <div class="vis-compare-box vis-compare-right">
+                    <div class="vis-compare-title">Experiência válida</div>
+                    <div class="vis-compare-desc">
+                        <ul style="padding-left:16px;margin:0 0 10px;">
+                            <li>Uma variável alterada — tudo o resto idêntico</li>
+                            <li>Duração decidida à partida com base no tamanho de amostra</li>
+                            <li>Correu sobre tráfego representativo (mínimo de uma semana)</li>
+                            <li>Tamanho de amostra calculado antes do lançamento (MDE definido)</li>
+                            <li>Decisão tomada num limiar de significância pré-acordado</li>
+                        </ul>
+                        <p style="margin-top:8px;">O resultado pode ser usado com confiança conhecida. Percebes a probabilidade de estares errado.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. The hypothesis framework -->
+    <div class="art-section fade-up">
+        <div class="art-label">Fundamentos</div>
+        <h2 class="art-h2">Começa com uma hipótese, não com a cor de um botão</h2>
+        <p class="art-p">Toda a experiência começa com uma observação sobre o comportamento dos utilizadores, uma mudança proposta e um resultado previsto. Sem esta estrutura, não estás a experimentar — estás a decorar.</p>
+
+        <div class="art-callout">
+            <strong>O formato da hipótese:</strong> "Acreditamos que <em>[mudança]</em> vai causar <em>[resultado]</em> para <em>[segmento de utilizadores]</em>, porque <em>[raciocínio]</em>. Vamos medir isto com <em>[métrica]</em>."
+        </div>
+
+        <div class="art-visual">
+            <div class="vis-steps">
+                <div class="vis-step">
+                    <div class="vis-step-num">01</div>
+                    <div class="vis-step-title">Observação — Que comportamento motivou isto?</div>
+                    <div class="vis-step-desc">Começa com dados, não com ideias. Heatmaps mostram utilizadores a ignorar o CTA. Gravações de sessão mostram abandono num campo específico do formulário. A análise de funil revela que 60% dos utilizadores abandonam o checkout no passo da morada. A observação é a tua evidência de que algo está partido — justifica o teste.</div>
+                </div>
+                <div class="vis-step">
+                    <div class="vis-step-num">02</div>
+                    <div class="vis-step-title">Hipótese — Que mudança vais fazer e porquê?</div>
+                    <div class="vis-step-desc">Sê específico quanto ao mecanismo. "Acreditamos que adicionar um selo de confiança junto ao botão de checkout vai aumentar a conversão porque os utilizadores hesitam em partilhar dados de pagamento com uma marca desconhecida." A cláusula do "porque" obriga-te a pensar de forma causal, não apenas correlacional.</div>
+                </div>
+                <div class="vis-step">
+                    <div class="vis-step-num">03</div>
+                    <div class="vis-step-title">Métrica primária — Qual é a tua única medida de sucesso?</div>
+                    <div class="vis-step-desc">Escolhe uma métrica primária antes de o teste correr. Se medires 20 métricas e declarares vitória naquela que se mexeu, vais encontrar um "vencedor" por puro acaso de todas as vezes. As métricas secundárias podem informar a interpretação — não podem retroativamente tornar-se a medida primária.</div>
+                </div>
+                <div class="vis-step">
+                    <div class="vis-step-num">04</div>
+                    <div class="vis-step-title">Minimum Detectable Effect — Que tamanho de mudança importa?</div>
+                    <div class="vis-step-desc">O MDE é a menor melhoria que justificaria implementar a mudança. Se a tua taxa de conversão é 4% e precisas de um aumento relativo de 20% (para 4,8%), precisas de ~9.500 utilizadores por variante para o detetar com 95% de confiança. Calcula isto antes do teste — determina quanto tempo precisas de o correr.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. Statistical significance -->
+    <div class="art-section fade-up">
+        <div class="art-label">Estatística</div>
+        <h2 class="art-h2">Significância estatística — o que significa mesmo</h2>
+        <p class="art-p">A significância estatística é o conceito mais mal compreendido na experimentação. "95% de confiança" não significa que tens 95% de certeza de que a variante é melhor. Significa: se de facto não houvesse diferença, verias resultados tão extremos por puro acaso apenas 5% das vezes.</p>
+
+        <div class="art-visual">
+            <div class="vis-rows">
+                <div class="vis-row">
+                    <div class="vis-row-label">p-value</div>
+                    <div class="vis-row-desc"><strong>A probabilidade de ver este resultado por acaso.</strong> Um p-value de 0,05 significa que há 5% de probabilidade de ver esta diferença mesmo que a variante não tenha efeito real. O limiar padrão é p &lt; 0,05 para a maioria das decisões de produto. Para decisões de alto risco (pricing, fluxos centrais de checkout), usa p &lt; 0,01. O p-value não é a probabilidade de a tua hipótese ser verdadeira.</div>
+                </div>
+                <div class="vis-row">
+                    <div class="vis-row-label">Poder estatístico</div>
+                    <div class="vis-row-desc"><strong>A probabilidade de detetar um efeito real.</strong> O poder é o reverso da significância. O poder padrão é 80% — ou seja, se houver mesmo um efeito do tamanho do teu MDE, vais detetá-lo 80% das vezes. Testes de baixo poder produzem demasiados falsos negativos: declaras "sem vencedor" quando havia mesmo um. Testes sub-dimensionados são tão enganadores como espreitar cedo.</div>
+                </div>
+                <div class="vis-row">
+                    <div class="vis-row-label">Tamanho de amostra</div>
+                    <div class="vis-row-desc"><strong>Inegociável — calcula antes de começar.</strong> O tamanho de amostra depende de três inputs: a tua taxa de conversão base, o teu MDE e a significância/poder-alvo. Efeitos menores exigem amostras maiores. Uma melhoria relativa de 2% sobre uma taxa de conversão de 50% precisa de muito mais utilizadores do que uma melhoria relativa de 20% sobre uma taxa de 2%. Usa uma calculadora online — não adivinhes.</div>
+                </div>
+                <div class="vis-row">
+                    <div class="vis-row-label">Intervalo de confiança</div>
+                    <div class="vis-row-desc"><strong>O intervalo onde o efeito verdadeiro provavelmente vive.</strong> Um intervalo de confiança de 95% de [+1,2%, +4,8%] significa que o efeito verdadeiro está provavelmente algures nesse intervalo. ICs largos sinalizam testes sub-dimensionados. ICs estreitos (mais dados) dão estimativas precisas. Um IC que inclui zero significa nenhum efeito significativo — mesmo que a estimativa pontual pareça positiva.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 4. Common mistakes -->
+    <div class="art-section fade-up">
+        <div class="art-label">Armadilhas</div>
+        <h2 class="art-h2">Os erros que invalidam experiências</h2>
+        <p class="art-p">Estes são os erros que produzem conclusões erradas com confiança — o resultado mais perigoso na tomada de decisão baseada em dados.</p>
+
+        <div class="art-visual">
+            <div class="vis-flags">
+                <div class="vis-flags-title">
+                    <svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                    Atenção a estes
+                </div>
+                <div class="vis-flags-list">
+                    <div class="vis-flag-item"><strong>Espreitar — parar cedo quando os resultados parecem bons:</strong> O erro mais comum. De cada vez que olhas para os resultados ao vivo e ponderas parar, estás a correr múltiplos testes implícitos, inflacionando a tua taxa de falsos positivos. Se espreitas a p = 0,05 ao dia 3 e é significativo, há uma probabilidade real muito maior de estares errado do que 5%. Compromete-te à partida com uma duração e não olhes cedo.</div>
+                    <div class="vis-flag-item"><strong>Testar várias variantes sem correção:</strong> Testar A vs B vs C vs D em simultâneo multiplica a tua taxa de falsos positivos. Com 4 variantes e p &lt; 0,05, o acaso sozinho produz um "vencedor" ~19% das vezes entre comparações. Usa correção de Bonferroni ou um framework Bayesiano quando testas várias variantes.</div>
+                    <div class="vis-flag-item"><strong>Efeito de novidade:</strong> Os utilizadores envolvem-se mais com qualquer coisa nova — sobretudo utilizadores recorrentes que encontram uma interface alterada. Um teste que corre 3 dias pode captar ganhos impulsionados pela novidade que desaparecem ao fim de uma semana. Inclui sempre pelo menos uma semana completa de tráfego e verifica tendências ao longo do tempo dentro do período do teste.</div>
+                    <div class="vis-flag-item"><strong>Sample Ratio Mismatch (SRM):</strong> Se atribuis 50/50 mas vês 48/52 no tráfego real, a tua aleatorização está partida. O SRM invalida qualquer resultado, independentemente da significância. Verifica isto antes de declarar um vencedor: teste qui-quadrado entre a divisão de tráfego esperada e a real. Corrige sempre o SRM antes de interpretar resultados.</div>
+                    <div class="vis-flag-item"><strong>Viés de sobrevivência na segmentação:</strong> Encontrar "vencedores" em subgrupos post-hoc (o teste ganhou para utilizadores mobile na Alemanha que se registaram nos últimos 30 dias!) é quase de certeza um falso positivo. Pré-especifica quaisquer análises de subgrupo na tua hipótese. Vitórias de segmento post-hoc são hipóteses para o próximo teste, não conclusões acionáveis.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 5. Beyond A/B -->
+    <div class="art-section fade-up">
+        <div class="art-label">Métodos Avançados</div>
+        <h2 class="art-h2">Para além do A/B testing clássico</h2>
+        <p class="art-p">O A/B testing clássico tem limites claros. Quando o tráfego é baixo, as mudanças são complexas ou precisas de iterar mais depressa, vale a pena conhecer estas alternativas.</p>
+
+        <div class="art-visual">
+            <div class="vis-grid vis-grid-3">
+                <div class="vis-card">
+                    <div class="vis-card-icon">
+                        <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                    </div>
+                    <div class="vis-card-title">Testes Multivariados</div>
+                    <div class="vis-card-sub">Testar vários elementos em simultâneo (título + imagem + CTA) para encontrar a melhor combinação. Exige amostras muito maiores — o tráfego necessário escala com o número de combinações. Melhor para páginas de muito tráfego com vários elementos independentes a otimizar.</div>
+                </div>
+                <div class="vis-card">
+                    <div class="vis-card-icon">
+                        <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>
+                    </div>
+                    <div class="vis-card-title">A/B Testing Bayesiano</div>
+                    <div class="vis-card-sub">Em vez de um binário "significativo/não significativo", os métodos Bayesianos dão-te uma probabilidade de a variante B ser melhor do que a A — atualizada continuamente à medida que os dados chegam. Melhor para equipas que precisam de decidir com dados imperfeitos e não podem esperar pelos tamanhos de amostra clássicos.</div>
+                </div>
+                <div class="vis-card">
+                    <div class="vis-card-icon">
+                        <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                    </div>
+                    <div class="vis-card-title">Algoritmos Bandit</div>
+                    <div class="vis-card-sub">Os algoritmos multi-armed bandit deslocam dinamicamente o tráfego para a variante vencedora durante o teste, minimizando a receita perdida por expor utilizadores a uma experiência inferior. Úteis para campanhas de curta duração onde esperar pela significância clássica é demasiado lento.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 6. When NOT to A/B test -->
+    <div class="art-section fade-up">
+        <div class="art-label">Âmbito</div>
+        <h2 class="art-h2">Quando o A/B testing é a ferramenta errada</h2>
+        <p class="art-p">O A/B testing é poderoso mas não é universal. Saber quando não testar é tão importante como saber como testar.</p>
+
+        <div class="art-visual">
+            <div class="vis-compare">
+                <div class="vis-compare-box vis-compare-left">
+                    <div class="vis-compare-title">Bons casos de uso para A/B testing</div>
+                    <div class="vis-compare-desc">
+                        <ul style="padding-left:16px;margin:0 0 10px;">
+                            <li>Texto do CTA, posição do botão, comprimento do formulário</li>
+                            <li>Variações do fluxo de onboarding</li>
+                            <li>Assuntos de email e horas de envio</li>
+                            <li>Apresentação de pricing e packaging</li>
+                            <li>Título e imagem de destaque da homepage</li>
+                        </ul>
+                        <p style="margin-top:8px;">Volume alto, resultado mensurável, mudança isolada — território clássico de A/B.</p>
+                    </div>
+                </div>
+                <div class="vis-compare-box vis-compare-right">
+                    <div class="vis-compare-title">Maus casos de uso para A/B testing</div>
+                    <div class="vis-compare-desc">
+                        <ul style="padding-left:16px;margin:0 0 10px;">
+                            <li>Redesenhos completos de produto (variáveis a mais)</li>
+                            <li>Mudanças com efeitos de rede (contaminação entre grupos)</li>
+                            <li>Páginas de baixo tráfego (anos até atingir significância)</li>
+                            <li>Decisões éticas ou de marca (nem tudo é uma métrica)</li>
+                            <li>Mudanças de comportamento de longo prazo (teste demasiado longo)</li>
+                        </ul>
+                        <p style="margin-top:8px;">Usa antes pesquisa qualitativa, rollouts faseados ou juízo de especialista.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 7. Takeaway -->
+    <div class="art-section fade-up">
+        <div class="art-label">Conclusão</div>
+        <h2 class="art-h2">A experimentação como disciplina</h2>
+        <p class="art-p">O objetivo não é correr mais testes — é aprender mais depressa. As equipas que integram a experimentação na sua cultura entregam melhores produtos, cometem menos erros caros e acumulam aprendizagem ao longo do tempo.</p>
+
+        <div class="art-visual">
+            <div class="vis-grid vis-grid-3">
+                <div class="vis-card vis-card-accent">
+                    <div class="vis-card-title">Desenha antes de construir</div>
+                    <div class="vis-card-sub">Escreve a hipótese, define a métrica primária e calcula o tamanho de amostra necessário antes de escrever uma única linha de código. A maioria das más experiências é mal desenhada — não mal executada.</div>
+                </div>
+                <div class="vis-card vis-card-accent">
+                    <div class="vis-card-title">Aprende com as derrotas</div>
+                    <div class="vis-card-sub">Um teste bem desenhado que não mostra efeito continua a ser valioso — exclui uma hipótese e redireciona o esforço. Equipas com alta velocidade de testes mas baixa taxa de vitórias continuam a aprender mais depressa do que equipas que mal experimentam.</div>
+                </div>
+                <div class="vis-card vis-card-accent">
+                    <div class="vis-card-title">O rigor estatístico é respeito pelas decisões</div>
+                    <div class="vis-card-sub">Cada atalho no desenho do teste — espreitar, sub-dimensionar, ignorar o SRM — é um atalho para conclusões erradas. O custo a jusante de uma má decisão baseada em dados inválidos excede em muito o custo de correr o teste como deve ser.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<div class="art-nav">
+    <a class="art-nav-item" href="/pt/articles/growth-hacking-fundamentals.html">
+        <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+        <div class="art-nav-text">
+            <span class="art-nav-label">Anterior</span>
+            <span class="art-nav-title">Growth Hacking Fundamentals</span>
+        </div>
+    </a>
+    <a class="art-nav-item art-nav-next" href="/pt/articles/strategy-frameworks.html">
+        <div class="art-nav-text">
+            <span class="art-nav-label">Seguinte</span>
+            <span class="art-nav-title">Frameworks de Estratégia</span>
+        </div>
+        <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+    </a>
+</div>
+</div>
+
+<section class="cta-sect">
+    <div class="container">
+        <h2>Mais sobre dados &amp; produto</h2>
+        <p>Escrevo sobre experimentação, analytics e estratégia de produto. Segue no LinkedIn para mais.</p>
+        <div class="cta-actions">
+            <a href="https://www.linkedin.com/in/diogomserino" target="_blank" rel="noopener" class="btn btn-primary">
+                <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                Seguir no LinkedIn
+            </a>
+            <a href="/pt/#articles" class="btn btn-ghost-light">
+                <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+                Voltar aos artigos
+            </a>
+        </div>
+    </div>
+</section>
+
+</main>

@@ -1,0 +1,297 @@
+---
+translationKey: "article:saas-product-metrics"
+title: "Métricas de SaaS & Produto — Diogo Serino"
+description: "As métricas que definem o sucesso de SaaS e de produto — DAU/MAU, retenção, churn, MRR, CAC, LTV, e como escolher as certas para a fase do teu produto."
+ogTitle: "Métricas de SaaS & Produto — Diogo Serino"
+bodyAttr: 'class="theme-product"'
+crumb: "Métricas de SaaS & Produto"
+articleHeadline: "Métricas de SaaS & Produto — Diogo Serino"
+readingTime: "8 min"
+---
+<main id="main" tabindex="-1">
+<section class="proj-hero">
+    <div class="container proj-hero-inner">
+        <div class="proj-badge">
+            <svg aria-hidden="true" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="18" y="3" width="4" height="18"/><rect x="10" y="8" width="4" height="13"/><rect x="2" y="13" width="4" height="8"/></svg>
+            Product &nbsp;·&nbsp; Analytics
+        </div>
+        <h1 class="proj-title">SaaS &amp;<br>Product Metrics</h1>
+        <p class="proj-sub">As métricas que definem o sucesso de um produto — do engagement e da retenção à receita e ao valor do cliente — e como escolher as certas para a tua fase.</p>
+        <div class="stack-row">
+            <span class="stag-dk">Metrics</span>
+            <span class="stag-dk">Analytics</span>
+            <span class="stag-dk">SaaS</span>
+            <span class="stag-dk">Retention</span>
+        </div>
+        <div class="proj-meta">
+            <span class="proj-meta-item">
+                <svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                8 min de leitura
+            </span>
+        </div>
+    </div>
+</section>
+
+<!-- ARTICLE -->
+<div class="art-wrap">
+
+    <div class="art-intro fade-up">
+        <p>As métricas são como as equipas de produto sabem se estão a ganhar. Não opiniões, não intuição — dados que te dizem se os utilizadores estão envolvidos, se a receita está a crescer, se os clientes estão a ficar. O problema é que a maioria dos produtos tem acesso a dezenas de métricas, mas ter visibilidade sobre as que realmente importam é mais difícil do que parece.</p>
+        <p>Este guia cobre as métricas centrais de SaaS e de produto — organizadas pelo que medem — e explica como lê-las, o que sinalizam, e como escolher quais acompanhar na fase atual do teu produto.</p>
+    </div>
+
+    <!-- 1. ACTIVITY VS OUTCOME -->
+    <div class="art-section fade-up">
+        <span class="art-label">A Distinção Fundamental</span>
+        <h2 class="art-h2">Métricas de atividade vs métricas de outcome</h2>
+        <p class="art-p">Antes de qualquer métrica específica, precisas de perceber a distinção que molda a forma como as boas equipas de produto pensam sobre dados. As métricas de atividade contam coisas que acontecem. As métricas de outcome medem se essas coisas criaram valor.</p>
+
+        <div class="art-visual">
+            <div class="vis-compare">
+                <div class="vis-compare-box vis-compare-left">
+                    <div class="vis-compare-title">Métricas de atividade (o que aconteceu)</div>
+                    <div class="vis-compare-desc">
+                        Page views<br>
+                        Utilizadores registados<br>
+                        Downloads da app<br>
+                        Emails enviados<br>
+                        Funcionalidades lançadas<br><br>
+                        Estas sobem ao longo do tempo quase automaticamente — não te dizem se o produto está a funcionar.
+                    </div>
+                </div>
+                <div class="vis-compare-box vis-compare-right">
+                    <div class="vis-compare-title">Métricas de outcome (o que mudou)</div>
+                    <div class="vis-compare-desc">
+                        Taxa de retenção ao dia 30<br>
+                        Rácio DAU/MAU<br>
+                        Net Revenue Retention<br>
+                        Time-to-first-value<br>
+                        Churn rate<br><br>
+                        Estas só melhoram se o comportamento do utilizador mudar de facto. São honestas.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="art-callout">As métricas de vaidade fazem as equipas sentirem-se bem sem as ajudar a tomar melhores decisões. Quando estás a decidir o que medir, pergunta: “Se este número subir mas o comportamento do utilizador não mudar, isso é bom?” Se sim — é provavelmente uma métrica de vaidade.</div>
+    </div>
+
+    <!-- 2. ENGAGEMENT -->
+    <div class="art-section fade-up">
+        <span class="art-label">Engagement</span>
+        <h2 class="art-h2">Os utilizadores estão mesmo a usar o teu produto?</h2>
+        <p class="art-p">As métricas de engagement respondem a uma pergunta: as pessoas que se registaram estão de facto a usar o que construíste? São os primeiros sinais de product-market fit — ou da sua ausência.</p>
+
+        <div class="art-visual">
+            <div class="vis-rows">
+                <div class="vis-row">
+                    <div class="vis-row-label">DAU / MAU</div>
+                    <div class="vis-row-desc"><strong>Daily Active Users / Monthly Active Users.</strong> Contagens de utilizadores únicos que realizam uma ação significativa em cada período. “Ativo” tem de ser definido — um login não conta; completar uma ação central conta.</div>
+                </div>
+                <div class="vis-row">
+                    <div class="vis-row-label">Rácio DAU/MAU (Stickiness)</div>
+                    <div class="vis-row-desc"><strong>DAU ÷ MAU × 100.</strong> Que percentagem de utilizadores mensais regressa num dia qualquer? Um rácio de 20% significa que o utilizador médio está ativo 6 dias por mês. O Slack e o WhatsApp estão acima de 50%. A maioria dos produtos SaaS visa 13–25% consoante o caso de uso.</div>
+                </div>
+                <div class="vis-row">
+                    <div class="vis-row-label">Duração &amp; Frequência de Sessão</div>
+                    <div class="vis-row-desc">Quanto tempo os utilizadores passam por sessão e com que frequência regressam. Interpreta com cuidado: sessões longas podem significar engagement profundo ou confusão do utilizador. Combina com dados de conclusão de tarefas para distinguir os dois.</div>
+                </div>
+                <div class="vis-row">
+                    <div class="vis-row-label">Taxa de Adoção de Funcionalidades</div>
+                    <div class="vis-row-desc">Que % dos utilizadores que poderiam usar uma funcionalidade o fazem de facto? Baixa adoção numa funcionalidade central sinaliza um problema de discovery ou de UX. Baixa adoção numa funcionalidade opcional pode simplesmente significar que não é valiosa o suficiente para ser central.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. RETENTION & CHURN -->
+    <div class="art-section fade-up">
+        <span class="art-label">Retenção &amp; Churn</span>
+        <h2 class="art-h2">Os utilizadores continuam a voltar?</h2>
+        <p class="art-p">A retenção é a métrica mais importante para a maioria dos produtos. Um produto com alta retenção acumula ao longo do tempo. Um produto com baixa retenção é um balde furado — podes despejar gasto em aquisição e ele escoa logo a seguir.</p>
+
+        <div class="art-visual">
+            <div class="vis-grid vis-grid-2">
+                <div class="vis-card">
+                    <div class="vis-card-icon">
+                        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                    </div>
+                    <div class="vis-card-title">Taxa de Retenção</div>
+                    <div class="vis-card-sub">% de utilizadores de um dado cohort que continuam ativos após N dias/semanas/meses. A retenção ao dia 1, dia 7 e dia 30 são checkpoints standard. Uma curva de retenção plana (mesmo a um nível baixo) significa que tens um núcleo retido — uma curva ainda a cair significa que ainda não o encontraste.</div>
+                </div>
+                <div class="vis-card">
+                    <div class="vis-card-icon">
+                        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3l7.07 16.97 2.51-7.39 7.39-2.51L3 3z"/><path d="M13 13l6 6"/></svg>
+                    </div>
+                    <div class="vis-card-title">Churn Rate</div>
+                    <div class="vis-card-sub">% de utilizadores (ou receita) perdidos num dado período. Um churn mensal de 5% acumula em 46% de perda anual — um produto a morrer devagar. 2% de churn mensal acumula em 21% por ano. Mesmo pequenas melhorias no churn têm grandes efeitos de longo prazo no crescimento.</div>
+                </div>
+                <div class="vis-card">
+                    <div class="vis-card-icon">
+                        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="8" height="8" rx="1"/><rect x="14" y="2" width="8" height="8" rx="1"/><rect x="2" y="14" width="8" height="8" rx="1"/><rect x="14" y="14" width="8" height="8" rx="1"/></svg>
+                    </div>
+                    <div class="vis-card-title">Cohort Analysis</div>
+                    <div class="vis-card-sub">Agrupa os utilizadores por quando entraram (cohorts semanais ou mensais) e acompanha a sua retenção ao longo do tempo. Isto revela se a retenção está a melhorar — cohorts adquiridos recentemente podem reter melhor do que os antigos, o que ficaria mascarado em números agregados.</div>
+                </div>
+                <div class="vis-card">
+                    <div class="vis-card-icon">
+                        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>
+                    </div>
+                    <div class="vis-card-title">Net Revenue Retention (NRR)</div>
+                    <div class="vis-card-sub">Para SaaS: receita retida de clientes existentes, incluindo expansões e contrações. Uma NRR acima de 100% significa que a receita de expansão excede o churn — estás a crescer só a partir dos clientes existentes. As empresas SaaS best-in-class têm NRR de 120–140%.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 4. REVENUE -->
+    <div class="art-section fade-up">
+        <span class="art-label">Receita</span>
+        <h2 class="art-h2">A saúde financeira de um produto SaaS</h2>
+        <p class="art-p">As métricas de receita dizem-te o estado financeiro do produto. Para SaaS, a receita recorrente é a unidade fundamental — não as vendas pontuais. É assim que investidores e executivos pensam sobre um negócio SaaS.</p>
+
+        <div class="art-visual">
+            <div class="vis-rows">
+                <div class="vis-row">
+                    <div class="vis-row-label">MRR / ARR</div>
+                    <div class="vis-row-desc"><strong>Monthly / Annual Recurring Revenue.</strong> A componente de receita previsível e recorrente do negócio. MRR = soma de todas as subscrições ativas normalizadas a valor mensal. ARR = MRR × 12. A métrica de saúde fundamental do SaaS — tudo o resto é uma componente ou derivada dela.</div>
+                </div>
+                <div class="vis-row">
+                    <div class="vis-row-label">Componentes do MRR</div>
+                    <div class="vis-row-desc"><strong>New MRR</strong> (receita de novos clientes) + <strong>Expansion MRR</strong> (upgrades, upsells de clientes existentes) − <strong>Contraction MRR</strong> (downgrades) − <strong>Churned MRR</strong> (cancelamentos) = <strong>Net New MRR</strong>. Cada componente diz-te algo diferente sobre a saúde do crescimento.</div>
+                </div>
+                <div class="vis-row">
+                    <div class="vis-row-label">ARPU</div>
+                    <div class="vis-row-desc"><strong>Average Revenue Per User.</strong> MRR ÷ número de clientes ativos. Acompanha se estás a subir de mercado (ARPU a subir) ou a descer (ARPU a cair). É também a lente a usar para analisar se uma mudança de pricing melhorou ou prejudicou a receita por cliente.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 5. ACQUISITION -->
+    <div class="art-section fade-up">
+        <span class="art-label">Aquisição</span>
+        <h2 class="art-h2">Quanto custa adquirir um cliente?</h2>
+        <p class="art-p">O crescimento não é grátis. As métricas de aquisição medem a eficiência do teu motor de crescimento — quanto estás a gastar para trazer novos utilizadores, e se esses utilizadores valem o que gastaste para os adquirir.</p>
+
+        <div class="art-visual">
+            <div class="vis-grid vis-grid-3">
+                <div class="vis-card">
+                    <div class="vis-card-icon">
+                        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                    </div>
+                    <div class="vis-card-title">CAC</div>
+                    <div class="vis-card-sub"><strong>Customer Acquisition Cost.</strong> Gasto total em vendas e marketing num período ÷ número de novos clientes adquiridos nesse período. O benchmark varia por segmento de mercado — o CAC enterprise pode ser 10× o CAC de SMB e continuar saudável.</div>
+                </div>
+                <div class="vis-card">
+                    <div class="vis-card-icon">
+                        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+                    </div>
+                    <div class="vis-card-title">CAC Payback Period</div>
+                    <div class="vis-card-sub">Quantos meses de receita são precisos para recuperar o custo de adquirir um cliente. CAC ÷ (ARPU × margem bruta). Abaixo de 12 meses é saudável para a maioria do SaaS. Acima de 18 meses significa que o negócio é intensivo em capital e frágil ao churn.</div>
+                </div>
+                <div class="vis-card">
+                    <div class="vis-card-icon">
+                        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+                    </div>
+                    <div class="vis-card-title">Orgânico vs Pago</div>
+                    <div class="vis-card-sub">Que % de novos utilizadores vem de fontes orgânicas (SEO, referral, word-of-mouth) vs aquisição paga (anúncios, outbound). Uma alta quota orgânica reduz o CAC e sinaliza product-market fit genuíno. Forte dependência do pago sinaliza que a procura orgânica ainda não está lá.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 6. CUSTOMER VALUE -->
+    <div class="art-section fade-up">
+        <span class="art-label">Valor do Cliente</span>
+        <h2 class="art-h2">LTV, LTV:CAC, e sinais de satisfação</h2>
+        <p class="art-p">As métricas de valor do cliente combinam receita e retenção para mostrar o valor de longo prazo da tua base de clientes — e se o que estás a gastar para adquirir clientes se justifica.</p>
+
+        <div class="art-visual">
+            <div class="vis-rows">
+                <div class="vis-row">
+                    <div class="vis-row-label">LTV</div>
+                    <div class="vis-row-desc"><strong>Customer Lifetime Value.</strong> A receita total esperada de um cliente ao longo da sua vida com o produto. Fórmula simplificada: ARPU ÷ Churn Rate. Um cliente a pagar €50/mês com um churn mensal de 5% tem um LTV de €1.000.</div>
+                </div>
+                <div class="vis-row">
+                    <div class="vis-row-label">Rácio LTV:CAC</div>
+                    <div class="vis-row-desc">A métrica de eficiência mais importante em SaaS. LTV ÷ CAC. Um rácio de 3:1 significa que cada €1 gasto em aquisição gera €3 em lifetime value — considerado saudável. Abaixo de 1:1 significa que estás a destruir valor. Acima de 5:1 muitas vezes significa que estás a subinvestir no crescimento.</div>
+                </div>
+                <div class="vis-row">
+                    <div class="vis-row-label">NPS</div>
+                    <div class="vis-row-desc"><strong>Net Promoter Score.</strong> “Qual a probabilidade de nos recomendares a um amigo?” As respostas 0–6 são Detratores, 7–8 Passivos, 9–10 Promotores. NPS = % Promotores − % Detratores. Varia de −100 a +100. Mais útil como indicador de tendência do que como número absoluto.</div>
+                </div>
+                <div class="vis-row">
+                    <div class="vis-row-label">CSAT</div>
+                    <div class="vis-row-desc"><strong>Customer Satisfaction Score.</strong> Normalmente uma classificação de 1–5 sobre uma interação específica (ticket de suporte, onboarding, funcionalidade). Mais transacional do que o NPS — útil para identificar pontos de fricção em fluxos específicos, em vez de sentimento global.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 7. CHOOSING METRICS -->
+    <div class="art-section fade-up">
+        <span class="art-label">Framework</span>
+        <h2 class="art-h2">Escolher as métricas certas para a tua fase</h2>
+        <p class="art-p">Nem todas as métricas importam igualmente em cada fase de um produto. Acompanhar o LTV:CAC antes de teres product-market fit é prematuro. Ignorar o churn quando já tens clientes pagantes é perigoso. As métricas que priorizas devem corresponder a onde o teu produto está no seu desenvolvimento.</p>
+
+        <div class="art-visual">
+            <div class="vis-steps">
+                <div class="vis-step">
+                    <div class="vis-step-num">01</div>
+                    <div class="vis-step-title">Pré-PMF: Engagement &amp; Retenção</div>
+                    <div class="vis-step-desc">Foca-te na retenção ao dia 7 e dia 30, no rácio DAU/MAU, e no feedback qualitativo. Estás a perguntar: “Os utilizadores encontram valor suficiente para continuar a voltar?” As métricas de receita são prematuras — se a retenção está partida, o crescimento só vai acelerar o churn.</div>
+                </div>
+                <div class="vis-step">
+                    <div class="vis-step-num">02</div>
+                    <div class="vis-step-title">Early Growth: Eficiência de Aquisição</div>
+                    <div class="vis-step-desc">Assim que a retenção está sólida, desloca a atenção para o CAC, o payback period, e a divisão orgânico/pago. Estás a perguntar: “Conseguimos adquirir utilizadores de forma eficiente à escala?” A retenção deve continuar como monitor secundário — uma queda na retenção depois de um push de crescimento é uma bandeira vermelha.</div>
+                </div>
+                <div class="vis-step">
+                    <div class="vis-step-num">03</div>
+                    <div class="vis-step-title">Escala: Unit Economics</div>
+                    <div class="vis-step-desc">Com aquisição e retenção estáveis, foca-te no rácio LTV:CAC, na NRR, e nas componentes do MRR. Estás a perguntar: “O negócio é financeiramente saudável? Estamos a ficar melhores a monetizar o que construímos?” O Expansion MRR torna-se crítico — é a receita de maior margem que tens.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="art-callout">O erro de métricas mais comum: acompanhar tudo. Um dashboard com 40 métricas tem zero sinal de prioridade. As melhores equipas de produto têm 3–5 métricas que revêem semanalmente e uma North Star metric que toda a gente na organização percebe.</div>
+    </div>
+
+<div class="art-nav">
+    <a class="art-nav-item" href="/pt/articles/how-i-build-with-ai.html">
+        <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+        <div class="art-nav-text">
+            <span class="art-nav-label">Anterior</span>
+            <span class="art-nav-title">Como Construo com IA</span>
+        </div>
+    </a>
+    <a class="art-nav-item art-nav-next" href="/pt/articles/prioritization-frameworks.html">
+        <div class="art-nav-text">
+            <span class="art-nav-label">Seguinte</span>
+            <span class="art-nav-title">Priorização na Prática</span>
+        </div>
+        <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+    </a>
+</div>
+</div>
+
+<!-- CTA -->
+<section class="cta-sect">
+    <div class="container">
+        <h2>Mais sobre produto &amp; analytics</h2>
+        <p>Escrevo sobre product management, dados e frameworks de negócio. Segue no LinkedIn para mais.</p>
+        <div class="cta-actions">
+            <a href="https://www.linkedin.com/in/diogomserino" target="_blank" rel="noopener" class="btn btn-primary">
+                <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                Seguir no LinkedIn
+            </a>
+            <a href="/pt/#articles" class="btn btn-ghost-light">
+                <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+                Voltar aos artigos
+            </a>
+        </div>
+    </div>
+</section>
+
+</main>

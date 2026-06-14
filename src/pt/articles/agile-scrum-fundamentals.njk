@@ -1,0 +1,330 @@
+---
+translationKey: "article:agile-scrum-fundamentals"
+title: "Fundamentos de Agile & Scrum — Diogo Serino"
+description: "O que Agile significa mesmo, como o Scrum funciona na prática, os papéis, eventos e artefactos que fazem as equipas entregar mais depressa — e as métricas que o provam."
+ogTitle: "Fundamentos de Agile & Scrum — Diogo Serino"
+bodyAttr: 'class="theme-product"'
+crumb: "Fundamentos de Agile & Scrum"
+articleHeadline: "Fundamentos de Agile & Scrum — Diogo Serino"
+readingTime: "7 min"
+---
+<main id="main" tabindex="-1">
+<section class="proj-hero">
+    <div class="container proj-hero-inner">
+        <div class="proj-badge">
+            <svg aria-hidden="true" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
+            Agile &nbsp;·&nbsp; Produto
+        </div>
+        <h1 class="proj-title">Fundamentos de<br>Agile &amp;<br>Scrum</h1>
+        <p class="proj-sub">O que Agile significa mesmo, como o Scrum funciona na prática, os papéis e eventos que fazem as equipas entregar mais depressa — e as métricas que o provam.</p>
+        <div class="stack-row">
+            <span class="stag-dk">Agile</span>
+            <span class="stag-dk">Scrum</span>
+            <span class="stag-dk">Produto</span>
+            <span class="stag-dk">Frameworks</span>
+            <span class="stag-dk">Sprint</span>
+        </div>
+        <div class="proj-meta">
+            <span class="proj-meta-item">
+                <svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                7 min de leitura
+            </span>
+        </div>
+    </div>
+</section>
+
+<div class="art-wrap">
+
+    <div class="art-intro fade-up">
+        <p>Agile é uma das palavras mais mal usadas no mundo dos negócios. Há equipas que se dizem Agile enquanto ainda planeiam em waterfall com um ano de antecedência. Gestores usam vocabulário Scrum em reuniões sem nunca correr um único sprint. A palavra tornou-se um chavão — o que faz esquecer facilmente que por trás dela está um conjunto genuinamente poderoso de ideias sobre como construir bem sob incerteza.</p>
+        <p>Este guia corta o ruído e constrói um modelo mental claro: o que Agile significa de facto, porque existe o Scrum, como a framework funciona na prática, e o que distingue as equipas que operam mesmo de forma iterativa das que apenas têm daily standups.</p>
+    </div>
+
+    <!-- 1. WHAT IS AGILE -->
+    <div class="art-section fade-up">
+        <span class="art-label">Fundação</span>
+        <h2 class="art-h2">Agile é uma mentalidade, não uma metodologia</h2>
+        <p class="art-p">Em 2001, dezassete profissionais de software reuniram-se no Utah e produziram o <strong>Manifesto Agile</strong> — quatro declarações de valor que desafiaram a forma dominante de construir software na altura. Estes quatro valores continuam a ser o núcleo de tudo o que é Agile:</p>
+
+        <div class="art-visual">
+            <div class="vis-grid vis-grid-2">
+                <div class="vis-card">
+                    <div class="vis-card-title">Indivíduos e interações</div>
+                    <div class="vis-card-sub">acima de processos e ferramentas. O melhor processo não vale nada se as pessoas que o usam não conseguem comunicar nem colaborar de forma eficaz.</div>
+                </div>
+                <div class="vis-card">
+                    <div class="vis-card-title">Software a funcionar</div>
+                    <div class="vis-card-sub">acima de documentação exaustiva. Um produto a funcionar à frente dos utilizadores diz-te mais do que um documento de especificação perfeito alguma vez dirá.</div>
+                </div>
+                <div class="vis-card">
+                    <div class="vis-card-title">Colaboração com o cliente</div>
+                    <div class="vis-card-sub">acima da negociação de contratos. Os requisitos mudam. A relação com o cliente deve ser construída para absorver isso, não para o resistir.</div>
+                </div>
+                <div class="vis-card">
+                    <div class="vis-card-title">Responder à mudança</div>
+                    <div class="vis-card-sub">acima de seguir um plano. Os planos são úteis. Mas o mundo muda. Uma equipa que não se adapta está a construir para uma realidade que já não existe.</div>
+                </div>
+            </div>
+        </div>
+
+        <p class="art-p">Repara na formulação: "acima de", não "em vez de". O Agile não rejeita processos, documentação ou planeamento — repriorisa. O lado direito continua a ter valor; o lado esquerdo tem mais. Esta distinção importa: Agile bem feito é disciplinado e estruturado, não caótico.</p>
+    </div>
+
+    <!-- 2. AGILE VS WATERFALL -->
+    <div class="art-section fade-up">
+        <span class="art-label">Contexto</span>
+        <h2 class="art-h2">Porque o Agile substituiu o Waterfall na maioria do software</h2>
+        <p class="art-p">O Waterfall organiza o trabalho em fases sequenciais — requisitos, design, construção, testes, deployment — em que cada fase tem de estar concluída antes de a seguinte começar. Isto funciona bem quando os requisitos são totalmente conhecidos à partida e não mudam. Na construção ou na indústria, é muitas vezes verdade. No software, quase nunca é.</p>
+
+        <div class="art-visual">
+            <div class="vis-compare">
+                <div class="vis-compare-box vis-compare-left">
+                    <div class="vis-compare-title">Waterfall</div>
+                    <div class="vis-compare-desc">
+                        Requisitos recolhidos uma vez, à partida. Design completo antes de qualquer código. Testes só no fim. O utilizador vê o produto na entrega.<br><br>
+                        <strong>Funciona quando:</strong> Os requisitos são fixos e totalmente conhecidos. As mudanças são raras e caras de acomodar. Aplicam-se restrições regulatórias ou físicas.<br><br>
+                        <strong>Falha quando:</strong> Os requisitos evoluem. Os utilizadores precisam de dar feedback a meio do processo. O mercado move-se mais depressa do que o plano.
+                    </div>
+                </div>
+                <div class="vis-compare-box vis-compare-right">
+                    <div class="vis-compare-title">Agile</div>
+                    <div class="vis-compare-desc">
+                        Os requisitos evoluem através da colaboração. Design e código em ciclos curtos. Testes contínuos. O utilizador vê e reage a software a funcionar cedo.<br><br>
+                        <strong>Funciona quando:</strong> Os requisitos são incertos ou propensos a mudar. O feedback rápido é possível e valioso. A equipa é multidisciplinar e co-localizada (ou bem coordenada à distância).<br><br>
+                        <strong>Falha quando:</strong> Não há acesso real a utilizadores ou stakeholders. As equipas são grandes ou distribuídas de mais, sem estruturas de comunicação fortes.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="art-callout">Os bugs mais caros são os descobertos no fim de um projeto Waterfall — quando o sistema está completo e arranjar uma coisa parte outras dez. Os ciclos curtos do Agile fazem emergir estes problemas cedo, quando são baratos de corrigir.</div>
+    </div>
+
+    <!-- 3. WHAT IS SCRUM -->
+    <div class="art-section fade-up">
+        <span class="art-label">A Framework</span>
+        <h2 class="art-h2">Scrum: a framework Agile mais usada</h2>
+        <p class="art-p">Agile é um conjunto de valores. Scrum é uma framework específica para implementar esses valores. É a abordagem Agile mais adotada — usada pela maioria das equipas de software no mundo. O Scrum organiza o trabalho em iterações de duração fixa chamadas <strong>Sprints</strong>, com papéis, eventos e artefactos claros que dão estrutura às equipas sem rigidez.</p>
+        <p class="art-p">O Scrum assenta em três pilares:</p>
+
+        <div class="art-visual">
+            <div class="vis-grid vis-grid-3">
+                <div class="vis-card vis-card-accent">
+                    <div class="vis-card-title">Transparência</div>
+                    <div class="vis-card-sub">O trabalho, o progresso e os problemas são visíveis para toda a equipa — sem trabalho escondido, sem backlogs privados.</div>
+                </div>
+                <div class="vis-card vis-card-accent">
+                    <div class="vis-card-title">Inspeção</div>
+                    <div class="vis-card-sub">Revisão regular do produto e do processo. Estamos a construir a coisa certa? Estamos a construí-la bem? A equipa está saudável?</div>
+                </div>
+                <div class="vis-card vis-card-accent">
+                    <div class="vis-card-title">Adaptação</div>
+                    <div class="vis-card-sub">Quando a inspeção revela que algo está mal, a equipa ajusta. Planos, prioridades ou processos mudam — antes de o problema se agravar.</div>
+                </div>
+            </div>
+        </div>
+
+        <p class="art-p">Estes três pilares explicam porque existem os eventos do Scrum. A Daily Scrum inspeciona o progresso diário. A Sprint Review inspeciona o produto. A Retrospetiva inspeciona o processo da equipa. Cada evento é uma oportunidade estruturada de ver o que é real e adaptar em conformidade.</p>
+    </div>
+
+    <!-- 4. THE SCRUM TEAM -->
+    <div class="art-section fade-up">
+        <span class="art-label">Papéis</span>
+        <h2 class="art-h2">A Scrum Team: três papéis, um objetivo</h2>
+        <p class="art-p">Uma Scrum Team é pequena (tipicamente 3–9 pessoas), multidisciplinar (com todas as competências necessárias para entregar o produto) e auto-gerida (a equipa decide como fazer o trabalho, não apenas o quê). Tem exatamente três papéis:</p>
+
+        <div class="art-visual">
+            <div class="vis-rows">
+                <div class="vis-row">
+                    <div class="vis-row-label">Product Owner</div>
+                    <div class="vis-row-desc"><strong>Responsável pelo valor do produto.</strong> É dono e prioriza o Product Backlog, define o que se constrói e por que ordem, e representa a voz do cliente e dos stakeholders. Um bom PO é decisivo, acessível e disposto a dizer não a trabalho de baixo valor. Há exatamente um PO por equipa.</div>
+                </div>
+                <div class="vis-row">
+                    <div class="vis-row-label">Scrum Master</div>
+                    <div class="vis-row-desc"><strong>Responsável pela eficácia da equipa.</strong> Faz coaching da equipa em Scrum, remove impedimentos que bloqueiam o progresso e facilita os eventos. Não é um gestor de projeto nem um team lead — o Scrum Master não tem autoridade sobre os developers. A sua função é ajudar a equipa a ajudar-se a si própria.</div>
+                </div>
+                <div class="vis-row">
+                    <div class="vis-row-label">Developers</div>
+                    <div class="vis-row-desc"><strong>Responsáveis por entregar o Increment.</strong> Toda a gente que faz o trabalho de construir o produto — engenheiros, designers, testers, analistas de dados. Em Scrum, "developer" significa qualquer pessoa da equipa que cria, não só programadores. Auto-organizam-se: ninguém fora da equipa atribui tarefas.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 5. SCRUM EVENTS -->
+    <div class="art-section fade-up">
+        <span class="art-label">Eventos</span>
+        <h2 class="art-h2">Os cinco eventos do Scrum</h2>
+        <p class="art-p">O Scrum tem cinco eventos formais, todos desenhados para criar oportunidades regulares de inspeção e adaptação. Não são cerimónias opcionais — saltá-los corrói a transparência de que o Scrum depende.</p>
+
+        <div class="art-visual">
+            <div class="vis-steps">
+                <div class="vis-step">
+                    <div class="vis-step-num">01</div>
+                    <div class="vis-step-title">O Sprint</div>
+                    <div class="vis-step-desc">Uma time-box fixa de 1–4 semanas (tipicamente 2) durante a qual a equipa cria um Increment de produto utilizável. Os Sprints têm duração consistente. Não se fazem mudanças que ponham em risco o Sprint Goal.</div>
+                </div>
+                <div class="vis-step">
+                    <div class="vis-step-num">02</div>
+                    <div class="vis-step-title">Sprint Planning</div>
+                    <div class="vis-step-desc">Abre cada Sprint. A equipa seleciona itens do Product Backlog e cria um plano para o Sprint. O output é um Sprint Goal e um Sprint Backlog. Time-box de 8 horas para um Sprint de 4 semanas.</div>
+                </div>
+                <div class="vis-step">
+                    <div class="vis-step-num">03</div>
+                    <div class="vis-step-title">Daily Scrum</div>
+                    <div class="vis-step-desc">Sincronização diária de 15 minutos para os Developers. Inspecionar o progresso face ao Sprint Goal, adaptar o Sprint Backlog se preciso. Não é um relatório de estado — é uma reunião de coordenação. O Scrum Master não a preside; são os developers que a conduzem.</div>
+                </div>
+                <div class="vis-step">
+                    <div class="vis-step-num">04</div>
+                    <div class="vis-step-title">Sprint Review</div>
+                    <div class="vis-step-desc">A equipa apresenta o Increment aos stakeholders e recolhe feedback. Não é uma demo para aprovação — é uma sessão de trabalho para inspecionar o que foi construído e adaptar o backlog com base no que se aprendeu.</div>
+                </div>
+                <div class="vis-step">
+                    <div class="vis-step-num">05</div>
+                    <div class="vis-step-title">Retrospetiva</div>
+                    <div class="vis-step-desc">A equipa inspeciona-se a si própria — como as pessoas, as relações, os processos e as ferramentas funcionaram neste Sprint. Identifica melhorias e compromete-se com pelo menos uma mudança no Sprint seguinte. O evento de Scrum mais subvalorizado.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 6. ARTIFACTS -->
+    <div class="art-section fade-up">
+        <span class="art-label">Artefactos</span>
+        <h2 class="art-h2">Os três artefactos do Scrum</h2>
+        <p class="art-p">O Scrum tem três artefactos — cada um representando um compromisso que garante transparência e foco:</p>
+
+        <div class="art-visual">
+            <div class="vis-grid vis-grid-3">
+                <div class="vis-card">
+                    <div class="vis-card-icon">
+                        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+                    </div>
+                    <div class="vis-card-title">Product Backlog</div>
+                    <div class="vis-card-sub">A lista ordenada de tudo o que pode ser necessário no produto. Pertence ao Product Owner. É sempre um documento vivo — evolui à medida que o produto e o mercado evoluem. O compromisso é o <strong>Product Goal</strong>.</div>
+                </div>
+                <div class="vis-card">
+                    <div class="vis-card-icon">
+                        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                    </div>
+                    <div class="vis-card-title">Sprint Backlog</div>
+                    <div class="vis-card-sub">Os itens selecionados para este Sprint, mais o plano para os entregar. Pertence aos Developers. Visível e atualizado diariamente. O compromisso é o <strong>Sprint Goal</strong> — porque é que este Sprint importa.</div>
+                </div>
+                <div class="vis-card">
+                    <div class="vis-card-icon">
+                        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                    </div>
+                    <div class="vis-card-title">Increment</div>
+                    <div class="vis-card-sub">A soma de todos os itens do Product Backlog concluídos neste Sprint e em todos os anteriores. Tem de cumprir a Definition of Done. Tem de ser utilizável — quer o PO decida lançá-lo ou não. O compromisso é a <strong>Definition of Done</strong>.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 7. USER STORIES -->
+    <div class="art-section fade-up">
+        <span class="art-label">Escrever o Trabalho</span>
+        <h2 class="art-h2">User stories e a Definition of Done</h2>
+        <p class="art-p">As user stories são o formato mais comum para exprimir itens de backlog. Descrevem um requisito da perspetiva do utilizador, tornando o objetivo e o contexto explícitos para toda a equipa:</p>
+
+        <div class="art-visual">
+            <div class="vis-concept" style="max-width:540px; margin:0 auto;">
+                <div class="vis-concept-title" style="font-size:17px;">"Como [tipo de utilizador], quero [fazer algo] para que [obtenha este benefício]."</div>
+                <div class="vis-concept-sub">O formato obriga-te a articular quem é o utilizador, o que quer fazer e porquê — antes de escrever uma única linha de código.</div>
+            </div>
+        </div>
+
+        <p class="art-p">Boas user stories seguem os critérios <strong>INVEST</strong>: Independent (pode ser construída sozinha), Negotiable (não é um contrato), Valuable (entrega valor ao utilizador), Estimable (a equipa consegue dimensioná-la), Small (cabe num Sprint), Testable (consegues verificar que está feita).</p>
+        <p class="art-p">Igualmente importante é a <strong>Definition of Done</strong> — um acordo partilhado sobre o que "completo" significa. Sem ela, "feito" significa coisas diferentes para pessoas diferentes e os bugs escapam. Uma DoD típica inclui: código escrito, testes unitários a passar, testado em integração, revisto e em staging.</p>
+    </div>
+
+    <!-- 8. METRICS -->
+    <div class="art-section fade-up">
+        <span class="art-label">Medir o Progresso</span>
+        <h2 class="art-h2">Métricas Agile que dizem algo real</h2>
+        <p class="art-p">O Agile produz sinais mensuráveis que permitem às equipas melhorar. As métricas mais úteis acompanham o fluxo, a previsibilidade e a qualidade — não apenas a velocidade:</p>
+
+        <div class="art-visual">
+            <div class="vis-rows">
+                <div class="vis-row">
+                    <div class="vis-row-label">Velocity</div>
+                    <div class="vis-row-desc">Story points concluídos por Sprint. Útil para previsão — "à nossa velocity atual, concluímos esta funcionalidade em 3 Sprints". Não é uma métrica de desempenho para comparar entre equipas: o dimensionamento de story points é específico de cada equipa.</div>
+                </div>
+                <div class="vis-row">
+                    <div class="vis-row-label">Burndown Chart</div>
+                    <div class="vis-row-desc">Trabalho restante ao longo do tempo dentro de um Sprint. Mostra se a equipa está no caminho de cumprir o Sprint Goal. Um burndown plano significa que o trabalho não está a ser feito; uma queda tardia e abrupta sugere má decomposição do trabalho.</div>
+                </div>
+                <div class="vis-row">
+                    <div class="vis-row-label">Cycle Time</div>
+                    <div class="vis-row-desc">Quanto tempo um item de trabalho demora a passar de "iniciado" a "feito". Um indicador antecipado de eficiência da equipa. Cycle times longos sinalizam bloqueios, requisitos pouco claros, ou trabalho grande demais para concluir depressa.</div>
+                </div>
+                <div class="vis-row">
+                    <div class="vis-row-label">Escaped Defects</div>
+                    <div class="vis-row-desc">Bugs encontrados pelos utilizadores após o lançamento — não apanhados durante o Sprint. Muitos escaped defects sinalizam uma Definition of Done fraca ou testes insuficientes. É a métrica que mostra se "andar depressa" está, na verdade, a criar dívida técnica.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 9. TAKEAWAY -->
+    <div class="art-section fade-up">
+        <span class="art-label">Conclusão</span>
+        <h2 class="art-h2">O Agile funciona quando a equipa o faz seu</h2>
+        <p class="art-p">A razão mais comum para o Agile falhar não é uma má compreensão da framework — é ser imposto às equipas em vez de adotado por elas. As cerimónias de Scrum tornam-se check-the-box. As retrospetivas não produzem mudança real. Os standups tornam-se relatórios de estado para a gestão em vez de coordenação entre pares.</p>
+        <p class="art-p">O Agile funciona quando as equipas o usam para ficar melhores a construir coisas, não para parecerem mais modernas. A cadência do sprint, as cerimónias, os artefactos — tudo isto existe para criar <strong>oportunidades frequentes de aprender e ajustar</strong>. As equipas que percebem isto usam o Scrum como ferramenta. As que não percebem usam-no como fantasia.</p>
+
+        <div class="art-visual">
+            <div class="vis-grid vis-grid-3">
+                <div class="vis-card vis-card-accent">
+                    <div class="vis-card-title">O output real</div>
+                    <div class="vis-card-sub">Não são sprints concluídos. Não são números de velocity. É um produto que fica mensuravelmente melhor para os utilizadores a cada duas semanas.</div>
+                </div>
+                <div class="vis-card vis-card-accent">
+                    <div class="vis-card-title">A parte mais difícil</div>
+                    <div class="vis-card-sub">Retrospetivas que produzem mudança real, não só discussão. Inspecionar, adaptar, repetir — com segurança psicológica suficiente para ser honesto.</div>
+                </div>
+                <div class="vis-card vis-card-accent">
+                    <div class="vis-card-title">O sinal-chave</div>
+                    <div class="vis-card-sub">A equipa tem um produto a funcionar no fim de cada Sprint? Se não, algo estrutural está partido — não só o processo.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<div class="art-nav">
+    <a class="art-nav-item" href="/pt/articles/product-management-fundamentals.html">
+        <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+        <div class="art-nav-text">
+            <span class="art-nav-label">Anterior</span>
+            <span class="art-nav-title">Fundamentos de Gestão de Produto</span>
+        </div>
+    </a>
+    <a class="art-nav-item art-nav-next" href="/pt/articles/business-model-canvas.html">
+        <div class="art-nav-text">
+            <span class="art-nav-label">Seguinte</span>
+            <span class="art-nav-title">Business Model Canvas</span>
+        </div>
+        <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+    </a>
+</div>
+</div>
+
+<section class="cta-sect">
+    <div class="container">
+        <h2>Mais sobre produto &amp; estratégia</h2>
+        <p>Escrevo sobre Agile, gestão de produto e frameworks de negócio. Segue no LinkedIn para mais.</p>
+        <div class="cta-actions">
+            <a href="https://www.linkedin.com/in/diogomserino" target="_blank" rel="noopener" class="btn btn-primary">
+                <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                Seguir no LinkedIn
+            </a>
+            <a href="/pt/#articles" class="btn btn-ghost-light">
+                <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+                Voltar aos artigos
+            </a>
+        </div>
+    </div>
+</section>
+
+</main>
