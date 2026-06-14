@@ -190,7 +190,7 @@ structuredData: {"@context": "https://schema.org", "@type": "Person", "name": "D
         <div class="sec-head">
             <div class="label">{{ "Escrita" if lang == "pt" else "Writing" }}</div>
             <h2 class="title">{{ "Artigos" if lang == "pt" else "Articles" }}</h2>
-            <p class="subtitle">{% if lang == "pt" %}Explicações visuais de estratégia de produto, analytics e fundamentos de negócio — feitas para serem claras, não complexas. <span style="white-space:nowrap;opacity:.75;">(artigos em inglês)</span>{% else %}Visual breakdowns of product strategy, analytics, and business fundamentals — built to be clear, not complex.{% endif %}</p>
+            <p class="subtitle">{% if lang == "pt" %}Explicações visuais de estratégia de produto, analytics e fundamentos de negócio — feitas para serem claras, não complexas.{% else %}Visual breakdowns of product strategy, analytics, and business fundamentals — built to be clear, not complex.{% endif %}</p>
         </div>
 
         <div class="art-filters">
@@ -202,7 +202,7 @@ structuredData: {"@context": "https://schema.org", "@type": "Person", "name": "D
         </div>
 
         <div class="articles-grid">
-{% for a in collections.articles | articlesIn("en") | sortByOrder %}
+{% for a in collections.articles | articlesIn("pt") | sortByOrder %}
             {% include "partials/article-card.njk" %}
 {% endfor %}
         </div>
