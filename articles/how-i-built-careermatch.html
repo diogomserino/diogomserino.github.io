@@ -186,7 +186,7 @@
                         <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="9" x2="20" y2="9"/><line x1="4" y1="15" x2="20" y2="15"/><line x1="10" y1="3" x2="8" y2="21"/><line x1="16" y1="3" x2="14" y2="21"/></svg>
                     </div>
                     <div class="vis-card-title">Zero Registration</div>
-                    <div class="vis-card-sub">No account, no email, no friction. The decision to skip registration came from one principle: the product delivers value in the moment of use, so nothing should stand between the user and their result.</div>
+                    <div class="vis-card-sub">No account, no email, no payment — the product is fully free. Anonymous per-browser sessions preserve your progress without ever asking who you are. The principle: value in the moment of use, so nothing stands between the user and their result.</div>
                 </div>
             </div>
         </div>
@@ -223,14 +223,68 @@
         <p class="art-p">On top of those skill weights, the engine scores <strong>four weighted blocks</strong> — core skills (50%), adjacent skills (20%), education (15%), and experience (15%) — and then adjusts the result: it penalises missing must-have skills, infers behavioural skills from the profile, aligns interests using a RIASEC model, and lets strong education and experience compensate for one another. The output is a 0–100 fit score per role, grouped into <strong>Ready now</strong>, <strong>With upskilling</strong>, and <strong>Long-term</strong> tiers. It's a rule-based engine — deterministic and explainable, with no LLM in the loop.</p>
         <p class="art-p">The most important calibration decision was role differentiation. If PM and PO had nearly identical profiles, the tool would produce nearly identical scores for both — useless. The distinctions have to be sharp enough to be meaningful while still being accurate to what those roles actually require.</p>
 
+        <p class="art-p">That skeleton is the original design. What made it genuinely trustworthy on <strong>hybrid and partial profiles</strong> came later — two audit passes that re-calibrated the engine. Four refinements mattered most:</p>
+
+        <div class="art-visual">
+            <div class="vis-rows">
+                <div class="vis-row">
+                    <div class="vis-row-label">Monotonic, capped penalty</div>
+                    <div class="vis-row-desc">Missing must-have skills scale the score down — one missing ×0.85, two ×0.70, three or more ×0.55, with a floor. Crucially it's <em>monotonic</em>: acquiring a skill can never lower your score. An earlier version could, which is exactly the kind of bug that quietly destroys trust.</div>
+                </div>
+                <div class="vis-row">
+                    <div class="vis-row-label">Top-N core saturation</div>
+                    <div class="vis-row-desc">A candidate is measured against a role's six most important core skills (must-haves always included), not the whole list. Without this, once a role's core grew to eight or ten skills, a strong-but-partial profile — a senior with six excellent skills — collapsed, and nothing ever read as "ready now."</div>
+                </div>
+                <div class="vis-row">
+                    <div class="vis-row-label">Behaviour needs evidence</div>
+                    <div class="vis-row-desc">A work-style preference only counts when it actually deviates from neutral. Universal defaults are excluded from scoring, so "soft" roles don't get inflated equally for everyone — the signal has to be real to move the result.</div>
+                </div>
+                <div class="vis-row">
+                    <div class="vis-row-label">Order of operations</div>
+                    <div class="vis-row-desc">The interest bonus is applied <em>before</em> the must-have penalty, so a great interest fit can't rescue a role you're not qualified for. Strong experience can compensate for missing education, and hard filters rule out roles below a mandatory education or seniority bar.</div>
+                </div>
+            </div>
+        </div>
+
         <div class="art-callout">The role data and scoring rules are the core of the product. Getting them right took research into job descriptions, conversations with people in those roles, and many rounds of calibration. It's also where AI was most useful — not to replace judgment, but to accelerate the research phase significantly.</div>
+    </div>
+
+    <!-- 3b. ARCHETYPES -->
+    <div class="art-section fade-up">
+        <span class="art-label">Career Archetypes</span>
+        <h2 class="art-h2">Naming who you are, not just ranking roles</h2>
+        <p class="art-p">The original problem was that career tools assume you fit a clean archetype. The answer I landed on has a nice irony to it: give people a <em>hybrid</em> archetype — a single, memorable identity that sits at the top of the report, above the role ranking. There are <strong>eleven archetypes</strong>, built from <strong>five career forces</strong>: Insight, Craft, Market, People, and Order.</p>
+        <p class="art-p">What makes it more than a personality badge is how it's derived. The forces are never asked — they're <strong>inferred from the same profile</strong> the user already filled in. Each skill group and each experience domain maps to a force; the engine ranks them, and the top two combine into a "bridge" (ten of those). If a third force is strong enough, you become the eleventh — <strong>The Polymath</strong>.</p>
+
+        <div class="art-visual">
+            <div class="vis-rows">
+                <div class="vis-row vis-row-accent">
+                    <div class="vis-row-label">Skills lead, experience reinforces</div>
+                    <div class="vis-row-desc">Skills are the primary signal; experience adds weight at a lower rate. Each force only counts its top five skills, so a force that simply has more entries in the taxonomy can't win on volume alone.</div>
+                </div>
+                <div class="vis-row vis-row-accent">
+                    <div class="vis-row-label">Behavioural skills carry no identity</div>
+                    <div class="vis-row-desc">Anything inferred for everyone is deliberately excluded — if it's universal, it can't define who you are. Identity has to come from what actually distinguishes you.</div>
+                </div>
+                <div class="vis-row vis-row-accent">
+                    <div class="vis-row-label">It admits uncertainty</div>
+                    <div class="vis-row-desc">An archetype needs at least two forces with real signal. Below that it returns nothing and nudges you to complete more of your profile, rather than inventing an identity from noise. Every result carries a confidence level — and "high" requires the second force to be a genuine pillar, not a sliver.</div>
+                </div>
+                <div class="vis-row vis-row-accent">
+                    <div class="vis-row-label">Purely additive</div>
+                    <div class="vis-row-desc">The archetype reads the same scoring snapshot and never changes a single role score. It's a lens on the result, not a thumb on the scale — which keeps the matching honest and the identity layer cleanly separate.</div>
+                </div>
+            </div>
+        </div>
+
+        <p class="art-p">It also turned out to be the product's best <strong>share hook</strong>. "I'm The Architect" travels in a way a ranked list never could — so each archetype gets its own page and a shareable card carrying the user's personal force fingerprint, doing the word-of-mouth work the assessment itself never could.</p>
     </div>
 
     <!-- 4. UX DECISIONS -->
     <div class="art-section fade-up">
         <span class="art-label">UX & Interface</span>
         <h2 class="art-h2">The interface decisions that shaped the experience</h2>
-        <p class="art-p">The input is a guided, six-step onboarding rather than a wall of sliders. The challenge was capturing enough signal for accurate scoring — education, experience, skills, interests, work style — without it ever feeling like paperwork.</p>
+        <p class="art-p">The landing page makes a three-step promise — profile, score, matches. The form behind it is a six-screen wizard, auto-saved as you go, with no account in sight. That gap is deliberate: the promise sets a low bar for starting; the six screens are where the accuracy comes from. The challenge was capturing enough signal — education, experience, skills, interests, work style — without it ever feeling like paperwork.</p>
 
         <div class="art-visual">
             <div class="vis-steps">

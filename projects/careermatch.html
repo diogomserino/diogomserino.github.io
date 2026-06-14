@@ -414,7 +414,7 @@
                 <div class="ps-card-title">The Solution</div>
                 <div class="ps-card-text">
                     <p>TryCareerMatch builds a full profile through a guided <strong>6-step onboarding</strong> — education, experience, skills, interests, and work style. Users pick the skills relevant to them (with search and suggestions) and rate proficiency on those. A server-side <strong>rule-based engine</strong> then scores their fit against <strong>60+ roles</strong> across 9 sectors.</p>
-                    <p>The output isn't a single "best match" — roles are ranked into three tiers (<strong>Ready now</strong>, <strong>With upskilling</strong>, <strong>Long-term goals</strong>), each with a per-dimension score breakdown, skill-gap analysis ("top skills to develop"), career-path and seniority guidance, and a narrative read of the profile.</p>
+                    <p>The output isn't a single "best match" — roles are ranked into three tiers (<strong>Ready now</strong>, <strong>With upskilling</strong>, <strong>Long-term goals</strong>), each with a per-dimension score breakdown, skill-gap analysis ("top skills to develop"), career-path and seniority guidance, and a narrative read of the profile — topped by a <strong>hybrid career archetype</strong> that names the user's blend of strengths.</p>
                     <p>No account, no paywall, no email capture. Results in about 5 minutes.</p>
                 </div>
             </div>
@@ -509,8 +509,53 @@
 </section>
 
 
-<!-- TECH STACK -->
+<!-- CAREER ARCHETYPE -->
 <section class="section section-alt">
+    <div class="container">
+        <div class="content-2col">
+            <div class="content-text fade-up">
+                <div class="label">Identity</div>
+                <h2>Your career archetype</h2>
+                <p>The report doesn't just rank roles — it opens with <strong>who you are</strong>. Eleven hybrid archetypes are built from five career forces: <strong>Insight, Craft, Market, People, and Order</strong>.</p>
+                <p>The forces are never asked. They're <strong>inferred from the same profile</strong> the user already filled in — each skill group and experience domain maps to a force. The top two combine into a named "bridge" (ten of those); a strong third makes you the eleventh, <strong>The Polymath</strong>.</p>
+                <p>It's <strong>purely additive</strong> — it reads the scoring snapshot and never alters a score. And it's honest: with too little signal it returns no archetype rather than inventing one, and every result carries a confidence level.</p>
+            </div>
+            <div class="scoring-visual fade-up">
+                <div class="scoring-title">Example: "The Architect" — Insight × Craft</div>
+                <div class="scoring-row">
+                    <span class="scoring-label">Insight</span>
+                    <div class="scoring-bar-wrap"><div class="scoring-bar" style="width:92%"></div></div>
+                    <span class="scoring-val">92</span>
+                </div>
+                <div class="scoring-row">
+                    <span class="scoring-label">Craft</span>
+                    <div class="scoring-bar-wrap"><div class="scoring-bar" style="width:78%"></div></div>
+                    <span class="scoring-val">78</span>
+                </div>
+                <div class="scoring-row">
+                    <span class="scoring-label">Order</span>
+                    <div class="scoring-bar-wrap"><div class="scoring-bar" style="width:54%"></div></div>
+                    <span class="scoring-val">54</span>
+                </div>
+                <div class="scoring-row">
+                    <span class="scoring-label">Market</span>
+                    <div class="scoring-bar-wrap"><div class="scoring-bar" style="width:33%"></div></div>
+                    <span class="scoring-val">33</span>
+                </div>
+                <div class="scoring-row">
+                    <span class="scoring-label">People</span>
+                    <div class="scoring-bar-wrap"><div class="scoring-bar" style="width:21%"></div></div>
+                    <span class="scoring-val">21</span>
+                </div>
+                <div class="scoring-note">A 0–100 fingerprint per force. The top two name the archetype; each force counts only its strongest skills, so identity comes from depth, not volume.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- TECH STACK -->
+<section class="section">
     <div class="container">
         <div class="sec-head fade-up">
             <div class="label">Technology</div>
@@ -567,7 +612,7 @@
 
 
 <!-- LESSONS LEARNED -->
-<section class="section">
+<section class="section section-alt">
     <div class="container">
         <div class="sec-head fade-up">
             <div class="label">Retrospective</div>
