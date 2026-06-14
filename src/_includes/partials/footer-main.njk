@@ -1,0 +1,14 @@
+{%- set home = "/pt/" if lang == "pt" else "/" -%}
+<footer class="footer">
+    <span>© {{ site.year }} {{ site.author }}</span>
+    <span class="footer-sep">·</span>
+{%- if translationKey == "home" %}
+    <a href="{{ home }}about.html">{{ "Sobre" if lang == "pt" else "About" }}</a>
+{%- else %}
+    <a href="{{ home }}">{{ "Portfólio" if lang == "pt" else "Portfolio" }}</a>
+{%- endif %}
+    <span class="footer-sep">·</span>
+    <a href="{{ site.social.github }}" target="_blank" rel="noopener">GitHub</a>
+    <span class="footer-sep">·</span>
+    <a href="{{ site.social.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>
+</footer>

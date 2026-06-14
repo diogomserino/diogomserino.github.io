@@ -1,0 +1,8 @@
+<div class="article-card {{ a.data.cardClass }} fade-up">
+{{ a.data.cardInner | safe }}
+                <span class="read-time"><svg aria-hidden="true" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>{{ a.data.readingTime }}{{ " de leitura" if lang == "pt" else " read" }}</span>
+                <a href="{{ a.url }}" class="btn btn-primary article-card-btn" aria-label="{{ ('Ler artigo: ' if lang == 'pt' else 'Read article: ') + a.data.cardTitle }}">
+                    {{ "Ler artigo" if lang == "pt" else "Read article" }}
+                    <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                </a>
+            </div>

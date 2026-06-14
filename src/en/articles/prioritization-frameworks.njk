@@ -1,0 +1,309 @@
+---
+translationKey: "article:prioritization-frameworks"
+title: "Prioritization in Practice — Diogo Serino"
+description: "How to decide what gets built first — RICE, ICE, MoSCoW, Kano, and Opportunity Scoring explained with examples and a guide on when to use each."
+ogTitle: "Prioritization in Practice — Diogo Serino"
+bodyAttr: "class=\"theme-product\""
+crumb: "Prioritization in Practice"
+articleHeadline: "Prioritization in Practice — Diogo Serino"
+readingTime: "7 min"
+order: 9
+cardClass: "cat-prod"
+cardTitle: "Prioritization in Practice"
+cardInner: "\n                <div class=\"article-cat cat-prod\">\n                    <svg aria-hidden=\"true\" width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n                        <rect x=\"1\" y=\"1\" width=\"10\" height=\"10\" rx=\"2\"/>\n                        <line x1=\"4\" y1=\"6\" x2=\"8\" y2=\"6\"/>\n                        <line x1=\"6\" y1=\"4\" x2=\"6\" y2=\"8\"/>\n                    </svg>\n                    Product\n                </div>\n                <h3 class=\"article-card-title\">Prioritization in Practice</h3>\n                <div class=\"article-card-desc\">RICE, ICE, MoSCoW, Kano, and Opportunity Scoring — how each framework works, when to use it, and a side-by-side comparison.</div>\n                <div class=\"article-card-tags\">\n                    <span class=\"stag\">RICE</span>\n                    <span class=\"stag\">MoSCoW</span>\n                    <span class=\"stag\">Kano</span>\n                    <span class=\"stag\">Prioritization</span>\n                </div>"
+---
+<main id="main" tabindex="-1">
+<section class="proj-hero">
+    <div class="container proj-hero-inner">
+        <div class="proj-badge">
+            <svg aria-hidden="true" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            Product &nbsp;·&nbsp; Frameworks
+        </div>
+        <h1 class="proj-title">Prioritization<br>in Practice</h1>
+        <p class="proj-sub">How to decide what gets built first — RICE, ICE, MoSCoW, Kano, and Opportunity Scoring, with real examples and a guide on when to use each.</p>
+        <div class="stack-row">
+            <span class="stag-dk">RICE</span>
+            <span class="stag-dk">MoSCoW</span>
+            <span class="stag-dk">Kano</span>
+            <span class="stag-dk">Prioritization</span>
+        </div>
+        <div class="proj-meta">
+            <span class="proj-meta-item">
+                <svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                7 min read
+            </span>
+        </div>
+    </div>
+</section>
+
+<!-- ARTICLE -->
+<div class="art-wrap">
+
+    <div class="art-intro fade-up">
+        <p>Every product team has more good ideas than time to build them. Prioritization is the process of deciding which ideas get built, in what order, and why. Done well, it's the most high-leverage thing a PM does. Done poorly — or not done at all — it produces teams that ship a lot and move nowhere.</p>
+        <p>The frameworks in this guide don't replace judgment — they make your judgment explicit, defensible, and shared. That's the real goal: not a formula that tells you what to build, but a structure that makes trade-offs visible so the team can debate them before building, not after.</p>
+    </div>
+
+    <!-- 1. WHY IT'S HARD -->
+    <div class="art-section fade-up">
+        <span class="art-label">The Problem</span>
+        <h2 class="art-h2">Why prioritization is the hardest PM skill</h2>
+        <p class="art-p">Prioritization is hard for three reasons that compound each other. First, the backlog is infinite — good ideas come from everywhere, and every stakeholder believes theirs is the most important. Second, every "yes" is also a "no" to something else, but the cost of saying no is immediate and the cost of the alternative is hypothetical. Third, the information you'd need to decide with confidence is usually incomplete.</p>
+
+        <div class="art-visual">
+            <div class="vis-grid vis-grid-3">
+                <div class="vis-card">
+                    <div class="vis-card-icon">
+                        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
+                    <div class="vis-card-title">Stakeholder pressure</div>
+                    <div class="vis-card-sub">Sales wants features that close deals. Engineering wants technical debt cleanup. Marketing wants a better landing page. Leadership wants the big bet. All of them are right in their context — the PM must hold the whole.</div>
+                </div>
+                <div class="vis-card">
+                    <div class="vis-card-icon">
+                        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                    </div>
+                    <div class="vis-card-title">Opportunity cost is invisible</div>
+                    <div class="vis-card-sub">When you build feature A, you don't see the value of feature B that you didn't build. The cost of a bad prioritization decision is real but unobservable — which makes it easy to rationalize almost any choice.</div>
+                </div>
+                <div class="vis-card">
+                    <div class="vis-card-icon">
+                        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                    </div>
+                    <div class="vis-card-title">Uncertainty is irreducible</div>
+                    <div class="vis-card-sub">You never have perfect data on impact before you build. Frameworks don't eliminate uncertainty — they force you to make your estimates explicit so they can be challenged and refined.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="art-callout">The goal of prioritization frameworks is not to produce the right answer — it's to make the reasoning transparent enough that the team can have a productive argument about the trade-offs. A well-reasoned decision you can defend beats an intuitive decision you can't explain.</div>
+    </div>
+
+    <!-- 2. RICE -->
+    <div class="art-section fade-up">
+        <span class="art-label">Framework 1</span>
+        <h2 class="art-h2">RICE: the quantified backlog</h2>
+        <p class="art-p">RICE was developed by Intercom and is the most widely used scoring framework in product management. It calculates a priority score for each initiative based on four factors: Reach, Impact, Confidence, and Effort.</p>
+        <p class="art-p"><strong>Formula:</strong> RICE Score = (Reach × Impact × Confidence) ÷ Effort</p>
+
+        <div class="art-visual">
+            <div class="vis-rows">
+                <div class="vis-row">
+                    <div class="vis-row-label">Reach</div>
+                    <div class="vis-row-desc">How many users will this affect per quarter? Use real data where possible — active users who hit the relevant flow, not your entire user base. Example: if 2,000 users/month go through the checkout flow, a checkout improvement Reach = 2,000.</div>
+                </div>
+                <div class="vis-row">
+                    <div class="vis-row-label">Impact</div>
+                    <div class="vis-row-desc">How much will it move the needle for each user it reaches? Use a standard scale: 3 = massive, 2 = high, 1 = medium, 0.5 = low, 0.25 = minimal. This is where most of the subjectivity lives — be conservative and document your reasoning.</div>
+                </div>
+                <div class="vis-row">
+                    <div class="vis-row-label">Confidence</div>
+                    <div class="vis-row-desc">How confident are you in your Reach and Impact estimates? Express as a percentage: 100% = data-backed, 80% = strong qualitative evidence, 50% = gut feel, 20% = speculation. This prevents overconfident estimates from dominating the backlog.</div>
+                </div>
+                <div class="vis-row">
+                    <div class="vis-row-label">Effort</div>
+                    <div class="vis-row-desc">How many person-months does this require? Include design, engineering, QA, and PM time. Estimate in half-person-months. A score of 1 = 1 person-month. This is the denominator — high-effort items need proportionally higher impact to rank well.</div>
+                </div>
+            </div>
+        </div>
+
+        <p class="art-p"><strong>Example:</strong> A checkout flow redesign with Reach = 2,000, Impact = 2, Confidence = 80%, Effort = 3 person-months scores: (2,000 × 2 × 0.8) ÷ 3 = <strong>1,067</strong>. Compare this against a small copy change with Reach = 500, Impact = 1, Confidence = 100%, Effort = 0.1 — score: (500 × 1 × 1) ÷ 0.1 = <strong>5,000</strong>. The small change scores higher — a useful reality check on the "big project" bias.</p>
+    </div>
+
+    <!-- 3. ICE -->
+    <div class="art-section fade-up">
+        <span class="art-label">Framework 2</span>
+        <h2 class="art-h2">ICE: fast triage for large backlogs</h2>
+        <p class="art-p">ICE is a lighter version of RICE designed for speed. It scores each item on three dimensions — Impact, Confidence, and Ease — each rated 1–10, then multiplies them together. ICE Score = Impact × Confidence × Ease.</p>
+
+        <div class="art-visual">
+            <div class="vis-grid vis-grid-3">
+                <div class="vis-card">
+                    <div class="vis-card-icon">
+                        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/></svg>
+                    </div>
+                    <div class="vis-card-title">Impact (1–10)</div>
+                    <div class="vis-card-sub">How much will this move a key metric? 10 = transformative impact on north star. 1 = negligible. Unlike RICE, this doesn't require a specific unit — it's a relative judgment across the backlog.</div>
+                </div>
+                <div class="vis-card">
+                    <div class="vis-card-icon">
+                        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <div class="vis-card-title">Confidence (1–10)</div>
+                    <div class="vis-card-sub">How sure are you of your impact estimate? 10 = we've tested this, data is clear. 1 = pure hypothesis. Low confidence should dampen enthusiasm for high-impact ideas — score honestly.</div>
+                </div>
+                <div class="vis-card">
+                    <div class="vis-card-icon">
+                        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                    </div>
+                    <div class="vis-card-title">Ease (1–10)</div>
+                    <div class="vis-card-sub">How easy is this to implement? 10 = hours of work. 1 = months of work. Note: this is the inverse of Effort in RICE. ICE favors quick wins; RICE explicitly divides by effort to normalize for scale.</div>
+                </div>
+            </div>
+        </div>
+
+        <p class="art-p">ICE is best used when you have a large backlog that needs rapid sorting and you don't have the data for a rigorous RICE analysis. It's also useful in early-stage products where impact estimates are inherently speculative — the precision of RICE would be false precision.</p>
+    </div>
+
+    <!-- 4. MOSCOW -->
+    <div class="art-section fade-up">
+        <span class="art-label">Framework 3</span>
+        <h2 class="art-h2">MoSCoW: scoping releases</h2>
+        <p class="art-p">MoSCoW doesn't produce a ranked list — it produces buckets. Each requirement is categorized as Must have, Should have, Could have, or Won't have (this time). It's designed for release scoping: drawing a clear line between what ships and what doesn't.</p>
+
+        <div class="art-visual">
+            <div class="vis-rows">
+                <div class="vis-row">
+                    <div class="vis-row-label">Must have</div>
+                    <div class="vis-row-desc">The product fails without this. Not "important" — <em>essential</em>. If this isn't shipped, the release doesn't make sense. The test: if this were cut, would the product still deliver its core promise? If no, it's a Must.</div>
+                </div>
+                <div class="vis-row">
+                    <div class="vis-row-label">Should have</div>
+                    <div class="vis-row-desc">Important and expected, but the product ships without it. Typically items that would be noticeable by their absence but don't break the core use case. These are the first candidates to defer if the sprint is at risk.</div>
+                </div>
+                <div class="vis-row">
+                    <div class="vis-row-label">Could have</div>
+                    <div class="vis-row-desc">Nice-to-have if time allows. Low cost to include, low cost to exclude. These can be included as sprint capacity permits — they shouldn't drive planning. If they never get done, that's acceptable.</div>
+                </div>
+                <div class="vis-row">
+                    <div class="vis-row-label">Won't have (this time)</div>
+                    <div class="vis-row-desc">Explicitly out of scope for this release — not forever. This bucket is critical: it prevents scope creep by making exclusions explicit. Stakeholders who know their request is in "Won't have this time" stop pushing for it to sneak in.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="art-callout">The most common MoSCoW mistake: too many Musts. If everything is a Must, nothing is. A healthy release scope has at most 60% of effort in Must have items — otherwise you've just renamed your entire backlog.</div>
+    </div>
+
+    <!-- 5. KANO -->
+    <div class="art-section fade-up">
+        <span class="art-label">Framework 4</span>
+        <h2 class="art-h2">Kano: understanding what users actually value</h2>
+        <p class="art-p">The Kano model is unique among prioritization frameworks because it focuses on <em>user satisfaction</em> rather than effort or impact. It categorizes features by how their presence (or absence) affects user satisfaction — which reveals that not all features contribute to satisfaction equally.</p>
+
+        <div class="art-visual">
+            <div class="vis-grid vis-grid-3">
+                <div class="vis-card">
+                    <div class="vis-card-icon">
+                        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    </div>
+                    <div class="vis-card-title">Basic Expectations (Must-be)</div>
+                    <div class="vis-card-sub">Users expect these. Their presence doesn't increase satisfaction — their absence causes strong dissatisfaction. Example: an app that crashes frequently. Fixing it won't delight users; not fixing it will lose them.</div>
+                </div>
+                <div class="vis-card">
+                    <div class="vis-card-icon">
+                        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                    </div>
+                    <div class="vis-card-title">Performance Features</div>
+                    <div class="vis-card-sub">More is better. These features increase satisfaction proportionally — the faster the app loads, the better. Investing in these has a clear, linear return. Most roadmap features live here.</div>
+                </div>
+                <div class="vis-card">
+                    <div class="vis-card-icon">
+                        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    </div>
+                    <div class="vis-card-title">Delighters (Attractive)</div>
+                    <div class="vis-card-sub">Users don't expect these — they're surprised and delighted when they exist. Their absence doesn't hurt satisfaction. But when present, they generate disproportionate positive response. The "wow" features that drive word-of-mouth.</div>
+                </div>
+            </div>
+        </div>
+
+        <p class="art-p">Kano is most useful in discovery, before building, to classify user requests. A feature request that sounds exciting might be a Basic Expectation — table stakes that everyone else already has. A small, unexpected feature might be a Delighter with outsized impact on NPS and referral. Kano prevents you from investing disproportionately in features that only bring you to parity.</p>
+    </div>
+
+    <!-- 6. OPPORTUNITY SCORING -->
+    <div class="art-section fade-up">
+        <span class="art-label">Framework 5</span>
+        <h2 class="art-h2">Opportunity Scoring: finding the gaps</h2>
+        <p class="art-p">Opportunity Scoring, developed by Tony Ulwick, identifies where users are underserved. For each job-to-be-done or user need, you measure two things: how <em>important</em> the outcome is to users, and how <em>satisfied</em> they currently are with existing solutions. The gap is where the opportunity lives.</p>
+        <p class="art-p"><strong>Opportunity score</strong> = Importance + max(Importance − Satisfaction, 0)</p>
+
+        <div class="art-visual">
+            <div class="vis-compare">
+                <div class="vis-compare-box vis-compare-left">
+                    <div class="vis-compare-title">High importance, low satisfaction</div>
+                    <div class="vis-compare-desc">
+                        <strong>High opportunity.</strong> Users care about this but existing solutions don't serve them well. This is where innovation produces the most value — and where competitive differentiation is most achievable.<br><br>
+                        Example: users say "organizing my work tasks" is critically important but are only somewhat satisfied with current tools.
+                    </div>
+                </div>
+                <div class="vis-compare-box vis-compare-right">
+                    <div class="vis-compare-title">High importance, high satisfaction</div>
+                    <div class="vis-compare-desc">
+                        <strong>Low opportunity.</strong> Users care, and they're already well-served. Investing here means fighting on a crowded battlefield. You'd need to be dramatically better to displace what exists.<br><br>
+                        Example: "sending a message" in a messaging app — important, but Telegram and WhatsApp have it covered.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 7. WHEN TO USE WHICH -->
+    <div class="art-section fade-up">
+        <span class="art-label">Decision Guide</span>
+        <h2 class="art-h2">Which framework to use, and when</h2>
+
+        <div class="art-visual">
+            <div class="vis-rows">
+                <div class="vis-row">
+                    <div class="vis-row-label">Use RICE when</div>
+                    <div class="vis-row-desc">You have data (or can estimate from data), you need to compare a large number of diverse initiatives, and you want a score you can defend to stakeholders. Best for quarterly roadmap planning with an established product.</div>
+                </div>
+                <div class="vis-row">
+                    <div class="vis-row-label">Use ICE when</div>
+                    <div class="vis-row-desc">You're in early-stage or need to triage a large backlog quickly without deep analysis. Also useful for growth experiments where speed matters more than precision. Think of it as RICE with training wheels — faster, less rigorous.</div>
+                </div>
+                <div class="vis-row">
+                    <div class="vis-row-label">Use MoSCoW when</div>
+                    <div class="vis-row-desc">You're scoping a specific release or sprint and need to draw a clear ship/don't-ship line. Particularly useful when stakeholders need to agree on scope before development starts. Pair it with RICE to decide what goes into each bucket.</div>
+                </div>
+                <div class="vis-row">
+                    <div class="vis-row-label">Use Kano when</div>
+                    <div class="vis-row-desc">You're in discovery and want to understand which user needs are table stakes vs differentiators. Useful before investing in user research synthesis — it frames what you're looking for. Also powerful for competitive analysis.</div>
+                </div>
+                <div class="vis-row">
+                    <div class="vis-row-label">Use Opportunity Scoring when</div>
+                    <div class="vis-row-desc">You're defining a new product direction and want to identify the jobs-to-be-done that are most underserved. Requires a user survey, but produces the most direct link between user needs and product bets.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="art-callout">No framework survives first contact with organizational politics. The real value of these tools is that they make your reasoning legible — when a stakeholder pushes back, you're not defending your gut: you're explaining why the numbers work out this way, and inviting them to challenge the assumptions, not the conclusion.</div>
+    </div>
+
+<div class="art-nav">
+    <a class="art-nav-item" href="saas-product-metrics.html">
+        <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+        <div class="art-nav-text">
+            <span class="art-nav-label">Previous</span>
+            <span class="art-nav-title">SaaS &amp; Product Metrics</span>
+        </div>
+    </a>
+    <a class="art-nav-item art-nav-next" href="north-star-metric.html">
+        <div class="art-nav-text">
+            <span class="art-nav-label">Next</span>
+            <span class="art-nav-title">North Star Metric</span>
+        </div>
+        <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+    </a>
+</div>
+</div>
+
+<!-- CTA -->
+<section class="cta-sect">
+    <div class="container">
+        <h2>More on product &amp; strategy</h2>
+        <p>I write about product management, data, and business frameworks. Follow on LinkedIn for more.</p>
+        <div class="cta-actions">
+            <a href="https://www.linkedin.com/in/diogomserino" target="_blank" rel="noopener" class="btn btn-primary">
+                <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                Follow on LinkedIn
+            </a>
+            <a href="../index.html#articles" class="btn btn-ghost-light">
+                <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+                Back to Articles
+            </a>
+        </div>
+    </div>
+</section>
+
+</main>

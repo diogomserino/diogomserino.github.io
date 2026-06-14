@@ -1,0 +1,3 @@
+{%- if cp -%}
+<span class="lang-switch" role="group" aria-label="{{ 'Idioma / Language' if lang == 'pt' else 'Language / Idioma' }}">{% if lang == 'pt' %}<a class="lang-opt" href="{{ cp.url | cleanUrl }}" data-lang-toggle hreflang="en" aria-label="View in English">EN</a><span class="lang-opt is-active" aria-current="true">PT</span>{% else %}<span class="lang-opt is-active" aria-current="true">EN</span><a class="lang-opt" href="{{ cp.url | cleanUrl }}" data-lang-toggle hreflang="pt" aria-label="Ver em Português">PT</a>{% endif %}</span>
+{%- endif -%}

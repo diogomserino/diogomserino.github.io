@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Diogo Serino — Articles</title>
+    <link>https://diogomserino.github.io/</link>
+    <description>Visual breakdowns of product strategy, analytics, and business fundamentals by Diogo Serino, Product Manager &amp; Builder.</description>
+    <language>en</language>
+    <atom:link href="https://diogomserino.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>How I Built Portugal Data Intelligence</title>
+      <link>https://diogomserino.github.io/articles/how-i-built-portugal-data-intelligence.html</link>
+      <guid isPermaLink="true">https://diogomserino.github.io/articles/how-i-built-portugal-data-intelligence.html</guid>
+      <description>The build story behind a 12-pillar macroeconomic platform — the ingestion and data-quality pipeline, the forecasting layer, and the jump from charts to an advisory-grade briefing.</description>
+    </item>
+    <item>
+      <title>How I Build with AI (Without Putting an LLM in the Product)</title>
+      <link>https://diogomserino.github.io/articles/how-i-build-with-ai.html</link>
+      <guid isPermaLink="true">https://diogomserino.github.io/articles/how-i-build-with-ai.html</guid>
+      <description>How I actually use AI to build products faster — research, scaffolding, data, debugging — and why I deliberately keep the shipped product deterministic, with no LLM in the loop.</description>
+    </item>
+    <item>
+      <title>How I Built TryCareerMatch</title>
+      <link>https://diogomserino.github.io/articles/how-i-built-careermatch.html</link>
+      <guid isPermaLink="true">https://diogomserino.github.io/articles/how-i-built-careermatch.html</guid>
+      <description>The full story of building TryCareerMatch — from a client-side prototype to a full-stack app: the problem, the scoring engine, the UX trade-offs, and the rebuild.</description>
+    </item>
+    <item>
+      <title>From Financial Analyst to Product Manager</title>
+      <link>https://diogomserino.github.io/articles/analyst-to-pm.html</link>
+      <guid isPermaLink="true">https://diogomserino.github.io/articles/analyst-to-pm.html</guid>
+      <description>What the transition from Financial Analyst to Product Manager actually looks like — what transfers, what doesn't, and how building TryCareerMatch proved it was possible.</description>
+    </item>
+    <item>
+      <title>What 7 Years of Design Gave Me as a PM</title>
+      <link>https://diogomserino.github.io/articles/design-background-pm.html</link>
+      <guid isPermaLink="true">https://diogomserino.github.io/articles/design-background-pm.html</guid>
+      <description>What a design background actually contributes to product management — the real advantages, the blind spots, and the habits that took years to unlearn.</description>
+    </item>
+    <item>
+      <title>BI Analytics Fundamentals</title>
+      <link>https://diogomserino.github.io/articles/bi-fundamentals.html</link>
+      <guid isPermaLink="true">https://diogomserino.github.io/articles/bi-fundamentals.html</guid>
+      <description>From raw tables to business insight — a breakdown of data modeling, DAX, SQL, and the KPIs that drive decisions in finance and HR.</description>
+    </item>
+    <item>
+      <title>Agile &amp; Scrum Fundamentals</title>
+      <link>https://diogomserino.github.io/articles/agile-scrum-fundamentals.html</link>
+      <guid isPermaLink="true">https://diogomserino.github.io/articles/agile-scrum-fundamentals.html</guid>
+      <description>What Agile really means, how Scrum works in practice, the roles, events, and artifacts that make teams ship faster — and the metrics that prove it.</description>
+    </item>
+    <item>
+      <title>SaaS &amp; Product Metrics</title>
+      <link>https://diogomserino.github.io/articles/saas-product-metrics.html</link>
+      <guid isPermaLink="true">https://diogomserino.github.io/articles/saas-product-metrics.html</guid>
+      <description>The metrics that define SaaS and product success — DAU/MAU, retention, churn, MRR, CAC, LTV, and how to choose the right ones for your product stage.</description>
+    </item>
+    <item>
+      <title>A/B Testing &amp; Experimentation</title>
+      <link>https://diogomserino.github.io/articles/ab-testing-fundamentals.html</link>
+      <guid isPermaLink="true">https://diogomserino.github.io/articles/ab-testing-fundamentals.html</guid>
+      <description>How to design valid experiments, interpret statistical significance, avoid the most common testing mistakes, and build a culture of evidence-based decisions.</description>
+    </item>
+    <item>
+      <title>Prioritization in Practice</title>
+      <link>https://diogomserino.github.io/articles/prioritization-frameworks.html</link>
+      <guid isPermaLink="true">https://diogomserino.github.io/articles/prioritization-frameworks.html</guid>
+      <description>How to decide what gets built first — RICE, ICE, MoSCoW, Kano, and Opportunity Scoring explained with examples and a guide on when to use each.</description>
+    </item>
+    <item>
+      <title>Product Roadmapping</title>
+      <link>https://diogomserino.github.io/articles/product-roadmapping.html</link>
+      <guid isPermaLink="true">https://diogomserino.github.io/articles/product-roadmapping.html</guid>
+      <description>How to build a product roadmap — types, inputs, stakeholder management, how to say no gracefully, and the anti-patterns that destroy team trust.</description>
+    </item>
+    <item>
+      <title>North Star Metric</title>
+      <link>https://diogomserino.github.io/articles/north-star-metric.html</link>
+      <guid isPermaLink="true">https://diogomserino.github.io/articles/north-star-metric.html</guid>
+      <description>What a North Star Metric is, why it matters, how to choose one, and real examples from Spotify, Airbnb, Slack, and Facebook.</description>
+    </item>
+    <item>
+      <title>OKRs &amp; KPIs</title>
+      <link>https://diogomserino.github.io/articles/okrs-kpis.html</link>
+      <guid isPermaLink="true">https://diogomserino.github.io/articles/okrs-kpis.html</guid>
+      <description>How Objectives &amp; Key Results and KPIs work together — setting direction, measuring outcomes, avoiding vanity metrics, and building a culture of accountability.</description>
+    </item>
+    <item>
+      <title>Product Discovery &amp; User Research</title>
+      <link>https://diogomserino.github.io/articles/product-discovery-user-research.html</link>
+      <guid isPermaLink="true">https://diogomserino.github.io/articles/product-discovery-user-research.html</guid>
+      <description>How to run user interviews, build personas, map empathy, apply Jobs-to-be-Done, and validate hypotheses before building — so you stop shipping what nobody uses.</description>
+    </item>
+    <item>
+      <title>Product Management Fundamentals</title>
+      <link>https://diogomserino.github.io/articles/product-management-fundamentals.html</link>
+      <guid isPermaLink="true">https://diogomserino.github.io/articles/product-management-fundamentals.html</guid>
+      <description>What PMs actually do, how the role differs from PO and BA, the product lifecycle, prioritization frameworks, and the metrics that define product success.</description>
+    </item>
+    <item>
+      <title>Business Model Canvas</title>
+      <link>https://diogomserino.github.io/articles/business-model-canvas.html</link>
+      <guid isPermaLink="true">https://diogomserino.github.io/articles/business-model-canvas.html</guid>
+      <description>How to map, analyse, and stress-test any business using the 9 building blocks of the Business Model Canvas — from value proposition to revenue streams.</description>
+    </item>
+    <item>
+      <title>Strategy Frameworks — SWOT, Porter's Five Forces &amp; PESTEL</title>
+      <link>https://diogomserino.github.io/articles/strategy-frameworks.html</link>
+      <guid isPermaLink="true">https://diogomserino.github.io/articles/strategy-frameworks.html</guid>
+      <description>How to use SWOT, Porter's Five Forces, and PESTEL to analyse competitive position, industry structure, and macro environment — and when to use each.</description>
+    </item>
+    <item>
+      <title>Project Management Fundamentals — PMI vs Agile</title>
+      <link>https://diogomserino.github.io/articles/project-management-fundamentals.html</link>
+      <guid isPermaLink="true">https://diogomserino.github.io/articles/project-management-fundamentals.html</guid>
+      <description>The two schools of project management — PMI/PMBOK and Agile — how each works, when to apply them, and how hybrid approaches are used in practice.</description>
+    </item>
+    <item>
+      <title>Go-to-Market Strategy</title>
+      <link>https://diogomserino.github.io/articles/go-to-market-strategy.html</link>
+      <guid isPermaLink="true">https://diogomserino.github.io/articles/go-to-market-strategy.html</guid>
+      <description>How to launch a product or service — defining your ICP, positioning, channel strategy, and the metrics that tell you whether your GTM is working.</description>
+    </item>
+    <item>
+      <title>Growth Hacking Fundamentals</title>
+      <link>https://diogomserino.github.io/articles/growth-hacking-fundamentals.html</link>
+      <guid isPermaLink="true">https://diogomserino.github.io/articles/growth-hacking-fundamentals.html</guid>
+      <description>The AARRR framework, growth loops, key acquisition and retention tactics, and the metrics that separate real growth from vanity numbers.</description>
+    </item>
+    <item>
+      <title>Design Thinking Fundamentals</title>
+      <link>https://diogomserino.github.io/articles/design-thinking-fundamentals.html</link>
+      <guid isPermaLink="true">https://diogomserino.github.io/articles/design-thinking-fundamentals.html</guid>
+      <description>How to solve complex problems by starting with people — the five stages of Design Thinking, from deep empathy to tested prototypes.</description>
+    </item>
+    <item>
+      <title>Communication &amp; Storytelling for Business</title>
+      <link>https://diogomserino.github.io/articles/communication-storytelling.html</link>
+      <guid isPermaLink="true">https://diogomserino.github.io/articles/communication-storytelling.html</guid>
+      <description>How to structure executive presentations, write for busy stakeholders, tell stories with data, and communicate across different audiences — the skills that separate good managers from great ones.</description>
+    </item>
+    <item>
+      <title>Digital Marketing Fundamentals</title>
+      <link>https://diogomserino.github.io/articles/digital-marketing-fundamentals.html</link>
+      <guid isPermaLink="true">https://diogomserino.github.io/articles/digital-marketing-fundamentals.html</guid>
+      <description>SEO, SEM, email marketing, and conversion funnels — how digital marketing channels work, how to measure them, and how they connect into a coherent acquisition system.</description>
+    </item>
+    <item>
+      <title>Startup Funding — From Idea to Investor</title>
+      <link>https://diogomserino.github.io/articles/startup-funding.html</link>
+      <guid isPermaLink="true">https://diogomserino.github.io/articles/startup-funding.html</guid>
+      <description>Pre-seed, seed, Series A — how startup funding rounds work, what investors look for, the difference between angels and VCs, and how to think about your cap table.</description>
+    </item>
+    <item>
+      <title>Economics Fundamentals</title>
+      <link>https://diogomserino.github.io/articles/what-is-economics.html</link>
+      <guid isPermaLink="true">https://diogomserino.github.io/articles/what-is-economics.html</guid>
+      <description>A visual guide to how the economy actually works — economic players, the circular flow, the role of banks and government, and macroeconomic fundamentals.</description>
+    </item>
+    <item>
+      <title>ESG &amp; Sustainability — A Manager's Guide</title>
+      <link>https://diogomserino.github.io/articles/esg-sustainability.html</link>
+      <guid isPermaLink="true">https://diogomserino.github.io/articles/esg-sustainability.html</guid>
+      <description>Environmental, Social, and Governance — what ESG means for modern managers, how reporting frameworks work, and how sustainability is reshaping business strategy.</description>
+    </item>
+    <item>
+      <title>AML, KYC &amp; Financial Crime Fundamentals</title>
+      <link>https://diogomserino.github.io/articles/aml-kyc.html</link>
+      <guid isPermaLink="true">https://diogomserino.github.io/articles/aml-kyc.html</guid>
+      <description>How banks detect and prevent financial crime — AML, KYC, sanctions screening, transaction monitoring, fraud, risk, and beneficial ownership.</description>
+    </item>
+    <item>
+      <title>Investment Fund Governance Fundamentals</title>
+      <link>https://diogomserino.github.io/articles/fund-governance-fundamentals.html</link>
+      <guid isPermaLink="true">https://diogomserino.github.io/articles/fund-governance-fundamentals.html</guid>
+      <description>How fund managers, ManCos, and depositaries keep billions in compliance — UCITS, AIFMD, NAV reconciliation, and the daily workflows of a fund Business Analyst.</description>
+    </item>
+  </channel>
+</rss>

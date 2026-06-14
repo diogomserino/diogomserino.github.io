@@ -1,0 +1,10 @@
+{%- set home = "/pt/" if lang == "pt" else "/" -%}
+<footer class="art-footer">
+    <div class="container footer-inner">
+        <div class="footer-copy">© {{ site.year }} {{ site.author }}</div>
+        <a class="footer-back" href="{{ home }}#articles">
+            <svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+            {{ "Todos os artigos" if lang == "pt" else "All articles" }}
+        </a>
+    </div>
+</footer>

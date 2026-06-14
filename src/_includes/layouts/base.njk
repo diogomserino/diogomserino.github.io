@@ -1,0 +1,70 @@
+{%- set otherLang = "en" if lang == "pt" else "pt" -%}
+{%- set cp = collections.all | counterpart(translationKey, lang) -%}
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+<head>
+<script>document.documentElement.classList.add('js')</script>
+{%- if cp %}
+<script>(function(){try{if(localStorage.getItem('preferred-lang')==='{{ otherLang }}')location.replace('{{ cp.url | cleanUrl }}');}catch(e){}})();</script>
+{%- endif %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <meta name="description" content="{{ description }}">
+    <meta property="og:title" content="{{ ogTitle or title }}">
+    <meta property="og:description" content="{{ ogDescription or description }}">
+    <meta property="og:type" content="{{ ogType or 'website' }}">
+    <meta property="og:site_name" content="{{ site.name }}">
+    <meta property="og:locale" content="{{ 'pt_PT' if lang == 'pt' else 'en_US' }}">
+    <meta property="og:locale:alternate" content="{{ 'en_US' if lang == 'pt' else 'pt_PT' }}">
+    <meta property="og:url" content="{{ site.url }}{{ page.url | cleanUrl }}">
+    <meta property="og:image" content="{{ ogImage or site.ogImage }}">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="{{ site.url }}{{ page.url | cleanUrl }}">
+{%- if cp %}
+    <link rel="alternate" hreflang="{{ lang }}" href="{{ site.url }}{{ page.url | cleanUrl }}">
+    <link rel="alternate" hreflang="{{ otherLang }}" href="{{ site.url }}{{ cp.url | cleanUrl }}">
+    <link rel="alternate" hreflang="x-default" href="{{ site.url }}{{ (page.url if lang == 'en' else cp.url) | cleanUrl }}">
+{%- endif %}
+{%- if feed %}
+    <link rel="alternate" type="application/rss+xml" title="Diogo Serino — Articles" href="/feed.xml">
+{%- endif %}
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%2306111F'/><text x='50' y='72' font-family='system-ui,sans-serif' font-weight='900' font-size='58' text-anchor='middle' fill='%233B6FFF'>D</text></svg>">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/img/favicon-192.png">
+    <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+{%- for href in styles %}
+    <link rel="stylesheet" href="{{ href }}">
+{%- endfor %}
+{%- if structuredData %}
+    <script type="application/ld+json">{{ structuredData | dump | safe }}</script>
+{%- endif %}
+{%- if breadcrumb %}
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"{{ 'Início' if lang == 'pt' else 'Home' }}","item":"{{ site.url }}{{ '/pt/' if lang == 'pt' else '/' }}"},{"@type":"ListItem","position":2,"name":"{{ 'Projetos' if lang == 'pt' else 'Projects' }}","item":"{{ site.url }}{{ '/pt/' if lang == 'pt' else '/' }}#projects"},{"@type":"ListItem","position":3,"name":{{ breadcrumb | dump | safe }}}]}</script>
+{%- endif %}
+{%- if articleHeadline %}
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"{{ 'Início' if lang == 'pt' else 'Home' }}","item":"{{ site.url }}{{ '/pt/' if lang == 'pt' else '/' }}"},{"@type":"ListItem","position":2,"name":"{{ 'Artigos' if lang == 'pt' else 'Articles' }}","item":"{{ site.url }}{{ '/pt/' if lang == 'pt' else '/' }}#articles"},{"@type":"ListItem","position":3,"name":{{ crumb | dump | safe }}}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","image":"{{ site.ogImage }}","publisher":{"@type":"Person","name":{{ site.name | dump | safe }},"url":"{{ site.url }}"},"headline":{{ articleHeadline | dump | safe }},"description":{{ description | dump | safe }},"url":"{{ site.url }}{{ page.url | cleanUrl }}","author":{"@type":"Person","name":{{ site.name | dump | safe }},"url":"{{ site.url }}"}}</script>
+{%- endif %}
+</head>
+<body{% if bodyAttr %} {{ bodyAttr | safe }}{% endif %}>
+<a href="#main" class="skip-link">{{ "Saltar para o conteúdo" if lang == "pt" else "Skip to content" }}</a>
+<div class="progress" id="progress"></div>
+{%- if nav %}
+{% include nav %}
+{%- endif %}
+{{ content | safe }}
+{%- if footer %}
+{% include footer %}
+{%- endif %}
+<script src="/assets/js/site.js"></script>
+{%- for src in scripts %}
+<script src="{{ src }}"></script>
+{%- endfor %}
+</body>
+</html>

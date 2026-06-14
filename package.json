@@ -1,0 +1,15 @@
+{
+  "name": "diogomserino-portfolio",
+  "version": "1.0.0",
+  "description": "Diogo Serino — portfolio (Eleventy, bilingual EN/PT)",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build": "eleventy",
+    "serve": "eleventy --serve",
+    "clean": "rimraf _site"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  }
+}

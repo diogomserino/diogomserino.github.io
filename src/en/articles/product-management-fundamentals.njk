@@ -1,0 +1,412 @@
+---
+translationKey: "article:product-management-fundamentals"
+title: "Product Management Fundamentals — Diogo Serino"
+description: "What PMs actually do, how the role differs from PO and BA, the product lifecycle, prioritization frameworks, and the metrics that define product success."
+ogTitle: "Product Management Fundamentals — Diogo Serino"
+bodyAttr: "class=\"theme-product\""
+crumb: "Product Management Fundamentals"
+articleHeadline: "Product Management Fundamentals — Diogo Serino"
+readingTime: "8 min"
+order: 14
+cardClass: "cat-prod"
+cardTitle: "Product Management Fundamentals"
+cardInner: "\n                <div class=\"article-cat cat-prod\">\n                    <svg aria-hidden=\"true\" width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n                        <rect x=\"1\" y=\"1\" width=\"10\" height=\"10\" rx=\"2\"/>\n                        <line x1=\"4\" y1=\"6\" x2=\"8\" y2=\"6\"/>\n                        <line x1=\"6\" y1=\"4\" x2=\"6\" y2=\"8\"/>\n                    </svg>\n                    Product\n                </div>\n                <h3 class=\"article-card-title\">Product Management Fundamentals</h3>\n                <div class=\"article-card-desc\">What PMs actually do, how the role differs from PO and BA, the product lifecycle, prioritization frameworks, and the metrics that define product success.</div>\n                <div class=\"article-card-tags\">\n                    <span class=\"stag\">Product</span>\n                    <span class=\"stag\">Strategy</span>\n                    <span class=\"stag\">Agile</span>\n                    <span class=\"stag\">Frameworks</span>\n                </div>"
+---
+<main id="main" tabindex="-1">
+<section class="proj-hero">
+    <div class="container proj-hero-inner">
+        <div class="proj-badge">
+            <svg aria-hidden="true" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="2" width="20" height="20" rx="4"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+            Product &nbsp;·&nbsp; Strategy
+        </div>
+        <h1 class="proj-title">Product<br>Management<br>Fundamentals</h1>
+        <p class="proj-sub">What PMs actually do, how the role differs from PO and BA, the product lifecycle, prioritization frameworks, and the metrics that define success.</p>
+        <div class="stack-row">
+            <span class="stag-dk">Product Management</span>
+            <span class="stag-dk">Strategy</span>
+            <span class="stag-dk">Agile</span>
+            <span class="stag-dk">Frameworks</span>
+            <span class="stag-dk">OKRs</span>
+        </div>
+        <div class="proj-meta">
+            <span class="proj-meta-item">
+                <svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                8 min read
+            </span>
+        </div>
+    </div>
+</section>
+
+<!-- ARTICLE -->
+<div class="art-wrap">
+
+    <div class="art-intro fade-up">
+        <p>Product Manager is one of the most talked-about roles in the technology and business world — and one of the least understood. Ask ten people what a PM does and you'll get ten different answers. Some will say "they own the product." Others will say "they're basically a mini-CEO." A few will confuse the role with Project Manager, Product Owner, or Business Analyst.</p>
+        <p>This guide cuts through the noise. It explains what product management actually is, what distinguishes a PM from adjacent roles, how products move through their lifecycle, and what frameworks and metrics PMs use every day to decide what gets built, why, and when.</p>
+    </div>
+
+    <!-- 1. WHAT IS PRODUCT MANAGEMENT -->
+    <div class="art-section fade-up">
+        <span class="art-label">Definition</span>
+        <h2 class="art-h2">Product management is about solving the right problems</h2>
+        <p class="art-p">Product management is the discipline of identifying problems worth solving, defining solutions that create value for users and the business, and guiding cross-functional teams to deliver and improve those solutions over time.</p>
+        <p class="art-p">The key word is <strong>problems</strong>. PMs are not feature factories. Their job is not to build everything stakeholders request — it's to understand what users actually need, determine which of those needs are also commercially viable, and make sure the team builds the right things in the right order.</p>
+
+        <div class="art-visual">
+            <div class="vis-grid vis-grid-2">
+                <div class="vis-concept">
+                    <div class="vis-concept-title">User Value</div>
+                    <div class="vis-concept-sub">Does this solve a real problem that users care enough about to change their behaviour for?</div>
+                </div>
+                <div class="vis-concept">
+                    <div class="vis-concept-title">Business Value</div>
+                    <div class="vis-concept-sub">Does solving this problem generate revenue, reduce costs, or advance a strategic objective?</div>
+                </div>
+            </div>
+        </div>
+
+        <p class="art-p">The overlap between these two is where good products live. A feature that users love but that doesn't serve the business is a hobby. A feature that serves the business but that users don't want is shelfware. Product management is the practice of finding and building in the intersection.</p>
+
+        <div class="art-callout">A useful heuristic: if you removed this feature, would users notice and complain? If the answer is no, you probably shouldn't have built it in the first place.</div>
+    </div>
+
+    <!-- 2. WHAT PMs ACTUALLY DO -->
+    <div class="art-section fade-up">
+        <span class="art-label">The Role</span>
+        <h2 class="art-h2">What product managers actually do all day</h2>
+        <p class="art-p">PMs sit at the intersection of business, technology, and user experience. Their work spans four broad areas — not sequential phases, but ongoing, parallel responsibilities:</p>
+
+        <div class="art-visual">
+            <div class="vis-grid vis-grid-2">
+                <div class="vis-card">
+                    <div class="vis-card-icon">
+                        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                    </div>
+                    <div class="vis-card-title">Discover</div>
+                    <div class="vis-card-sub">Talk to users, analyze data, map the competitive landscape, and identify the problems most worth solving.</div>
+                </div>
+                <div class="vis-card">
+                    <div class="vis-card-icon">
+                        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                    </div>
+                    <div class="vis-card-title">Define</div>
+                    <div class="vis-card-sub">Translate insights into requirements — user stories, acceptance criteria, roadmaps, and PRDs that engineering and design can act on.</div>
+                </div>
+                <div class="vis-card">
+                    <div class="vis-card-icon">
+                        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
+                    <div class="vis-card-title">Align</div>
+                    <div class="vis-card-sub">Work across engineering, design, data, sales, and leadership to keep everyone moving toward the same goal with shared context.</div>
+                </div>
+                <div class="vis-card">
+                    <div class="vis-card-icon">
+                        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                    </div>
+                    <div class="vis-card-title">Measure</div>
+                    <div class="vis-card-sub">Define success metrics before launch, track them after, and use the data to decide what to build next — or what to stop building.</div>
+                </div>
+            </div>
+        </div>
+
+        <p class="art-p">Notice what isn't on this list: PMs don't write code, don't design the UI, and don't manage engineers' day-to-day work. They lead through influence and context, not authority. This is why communication, analytical thinking, and stakeholder management are the most critical PM skills — not technical execution.</p>
+    </div>
+
+    <!-- 3. PM vs PO vs BA vs Project Manager -->
+    <div class="art-section fade-up">
+        <span class="art-label">Role Clarity</span>
+        <h2 class="art-h2">PM vs PO vs BA vs Project Manager</h2>
+        <p class="art-p">These four roles are commonly conflated — especially in smaller organizations where one person often wears multiple hats. But they have distinct responsibilities, and understanding the differences matters when hiring, building teams, or positioning yourself.</p>
+
+        <div class="art-visual">
+            <div class="vis-rows">
+                <div class="vis-row">
+                    <div class="vis-row-label">Product Manager</div>
+                    <div class="vis-row-desc"><strong>Owns the product vision and strategy.</strong> Decides <em>what</em> to build and <em>why</em> — based on user research, business goals, and market context. Accountable for product outcomes (growth, retention, revenue). Works across the entire product lifecycle.</div>
+                </div>
+                <div class="vis-row">
+                    <div class="vis-row-label">Product Owner</div>
+                    <div class="vis-row-desc"><strong>A Scrum-specific role that manages the backlog.</strong> Decides sprint priorities, writes and refines user stories, and accepts or rejects completed work. Often works within a vision set by a PM — focused on <em>execution</em> rather than strategy. In small teams, PM and PO are often the same person.</div>
+                </div>
+                <div class="vis-row">
+                    <div class="vis-row-label">Business Analyst</div>
+                    <div class="vis-row-desc"><strong>Bridges business needs and technical implementation.</strong> Specializes in gathering requirements, mapping processes, documenting systems, and ensuring solutions match what stakeholders actually need. More analytical and documentation-focused; less responsible for vision and strategy.</div>
+                </div>
+                <div class="vis-row">
+                    <div class="vis-row-label">Project Manager</div>
+                    <div class="vis-row-desc"><strong>Owns delivery, not the product.</strong> Responsible for timelines, resources, risks, and ensuring the project ships on schedule and budget. Manages the <em>how</em> and <em>when</em>, not the <em>what</em> and <em>why</em>. Often works alongside PMs rather than instead of them.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="art-callout">The simplest way to remember: PM asks "are we building the right thing?", PO asks "are we building it right in this sprint?", BA asks "do we understand it correctly?", and Project Manager asks "will we deliver it on time?"</div>
+    </div>
+
+    <!-- 4. THE PRODUCT LIFECYCLE -->
+    <div class="art-section fade-up">
+        <span class="art-label">How Products Move</span>
+        <h2 class="art-h2">The product lifecycle: five stages</h2>
+        <p class="art-p">Products don't spring into existence fully formed. They move through a repeating cycle — from understanding a problem all the way to shipping and learning from real usage. Good PMs are always running multiple stages in parallel across different features and bets.</p>
+
+        <div class="art-visual">
+            <div class="vis-steps">
+                <div class="vis-step">
+                    <div class="vis-step-num">01</div>
+                    <div class="vis-step-title">Discover</div>
+                    <div class="vis-step-desc">User interviews, data analysis, competitive research. The goal: deeply understand the problem before proposing any solution.</div>
+                </div>
+                <div class="vis-step">
+                    <div class="vis-step-num">02</div>
+                    <div class="vis-step-title">Define</div>
+                    <div class="vis-step-desc">Scope the solution, write user stories, set success metrics, and align stakeholders. The goal: everyone knows what's being built and why.</div>
+                </div>
+                <div class="vis-step">
+                    <div class="vis-step-num">03</div>
+                    <div class="vis-step-title">Build</div>
+                    <div class="vis-step-desc">Engineering and design build the solution in iterations. PM clears blockers, answers questions, and keeps priorities clear throughout.</div>
+                </div>
+                <div class="vis-step">
+                    <div class="vis-step-num">04</div>
+                    <div class="vis-step-title">Launch</div>
+                    <div class="vis-step-desc">Ship to users — often in phases (beta, gradual rollout). Coordinate with marketing, support, and sales for a smooth go-live.</div>
+                </div>
+                <div class="vis-step">
+                    <div class="vis-step-num">05</div>
+                    <div class="vis-step-title">Learn</div>
+                    <div class="vis-step-desc">Measure against success metrics. What worked? What didn't? What do users say? Insights from this stage feed directly into the next Discover phase.</div>
+                </div>
+            </div>
+            <div class="art-visual-label">The cycle is continuous — "Learn" loops back into "Discover" for the next iteration</div>
+        </div>
+
+        <p class="art-p">This is sometimes called the <strong>Double Diamond</strong> (diverge on problems, converge on solutions, diverge on possibilities, converge on what to ship) or the <strong>Build-Measure-Learn loop</strong> from Lean Startup. The names differ; the logic is the same: don't build without understanding, don't ship without measuring, don't measure without acting on the data.</p>
+    </div>
+
+    <!-- 5. DISCOVERY -->
+    <div class="art-section fade-up">
+        <span class="art-label">Discovery</span>
+        <h2 class="art-h2">Finding the real problem</h2>
+        <p class="art-p">The most expensive mistake in product management is building the wrong thing well. Discovery exists to prevent this. It's not a one-time phase — it's an ongoing discipline of getting close enough to users that you understand what's actually breaking in their lives, not just what they say they want.</p>
+        <p class="art-p">Three tools drive most discovery work:</p>
+
+        <div class="art-visual">
+            <div class="vis-grid vis-grid-3">
+                <div class="vis-card">
+                    <div class="vis-card-icon">
+                        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                    </div>
+                    <div class="vis-card-title">User Interviews</div>
+                    <div class="vis-card-sub">1-on-1 conversations focused on understanding behaviour, context, and pain — not validating your existing assumptions. Ask "tell me about the last time you..." not "would you use a feature that..."</div>
+                </div>
+                <div class="vis-card">
+                    <div class="vis-card-icon">
+                        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+                    </div>
+                    <div class="vis-card-title">Jobs-to-be-Done</div>
+                    <div class="vis-card-sub">A framework for understanding what users are really hiring your product to do. People don't want a drill — they want a hole in the wall. What outcome is the user actually trying to achieve?</div>
+                </div>
+                <div class="vis-card">
+                    <div class="vis-card-icon">
+                        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                    </div>
+                    <div class="vis-card-title">Data Analysis</div>
+                    <div class="vis-card-sub">Funnel drop-offs, feature usage rates, session recordings, and support tickets tell you where users get stuck at scale — what interviews reveal qualitatively, data confirms quantitatively.</div>
+                </div>
+            </div>
+        </div>
+
+        <p class="art-p">A good problem statement is specific: "Users who try to complete X in context Y are abandoning at step Z because they can't do W." This level of precision makes it clear what a solution needs to address — and gives you a metric to track improvement against.</p>
+    </div>
+
+    <!-- 6. PRIORITIZATION -->
+    <div class="art-section fade-up">
+        <span class="art-label">Prioritization</span>
+        <h2 class="art-h2">Deciding what gets built first</h2>
+        <p class="art-p">Every backlog has more good ideas than the team can build. Prioritization is the PM's most visible and most contested decision — and it needs to be defensible. The best PMs use frameworks to make the logic transparent, not to replace judgment with a formula.</p>
+        <p class="art-p">Three frameworks cover most situations:</p>
+
+        <div class="art-visual">
+            <div class="vis-compare">
+                <div class="vis-compare-box vis-compare-left">
+                    <div class="vis-compare-title">RICE Scoring</div>
+                    <div class="vis-compare-desc">Score each initiative on four dimensions:<br><br>
+                        <strong>Reach</strong> — how many users will this affect per quarter?<br>
+                        <strong>Impact</strong> — how much will it move the needle? (0.25 to 3×)<br>
+                        <strong>Confidence</strong> — how sure are we? (0–100%)<br>
+                        <strong>Effort</strong> — how many person-months?<br><br>
+                        Score = (Reach × Impact × Confidence) ÷ Effort. Higher score = higher priority.
+                    </div>
+                </div>
+                <div class="vis-compare-box vis-compare-right">
+                    <div class="vis-compare-title">MoSCoW Method</div>
+                    <div class="vis-compare-desc">Categorize requirements into four buckets:<br><br>
+                        <strong>Must have</strong> — the product fails without this.<br>
+                        <strong>Should have</strong> — important, but the product ships without it.<br>
+                        <strong>Could have</strong> — nice-to-have if time allows.<br>
+                        <strong>Won't have (this time)</strong> — explicitly out of scope for now.<br><br>
+                        Useful for scoping releases and aligning stakeholders on trade-offs.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="art-visual" style="margin-top:14px;">
+            <div class="vis-rows">
+                <div class="vis-row vis-row-accent">
+                    <div class="vis-row-label">ICE Scoring</div>
+                    <div class="vis-row-desc">A lighter version of RICE: <strong>Impact × Confidence × Ease</strong>. Each scored 1–10. Useful for quick triage when you need relative ordering fast, not rigorous calculation. Less precise than RICE but faster to run across a large backlog.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="art-callout">No framework removes the need for judgment. RICE and MoSCoW make trade-offs explicit and debatable — which is the real goal. If your stakeholders disagree with a priority decision, you want that conversation to happen before building, not after.</div>
+    </div>
+
+    <!-- 7. CROSS-FUNCTIONAL COLLABORATION -->
+    <div class="art-section fade-up">
+        <span class="art-label">Cross-Functional Work</span>
+        <h2 class="art-h2">Who PMs work with — and how</h2>
+        <p class="art-p">PMs are the connective tissue of a product organization. They have no direct reports, but they depend on — and are depended on by — almost every function in the company. The ability to work effectively across these relationships is what separates average PMs from great ones.</p>
+
+        <div class="art-visual">
+            <div class="vis-grid vis-grid-3">
+                <div class="vis-card">
+                    <div class="vis-card-icon">
+                        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                    </div>
+                    <div class="vis-card-title">Engineering</div>
+                    <div class="vis-card-sub">Closest partner. PMs provide context on the "why"; engineers provide constraint on the "how". The best PM-engineering relationships are built on mutual respect and technical literacy.</div>
+                </div>
+                <div class="vis-card">
+                    <div class="vis-card-icon">
+                        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+                    </div>
+                    <div class="vis-card-title">Design (UX)</div>
+                    <div class="vis-card-sub">PMs define the problem; designers define the experience. The PM should not design the solution — their job is to give designers the problem space, the user context, and the constraints.</div>
+                </div>
+                <div class="vis-card">
+                    <div class="vis-card-icon">
+                        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="18" y="3" width="4" height="18"/><rect x="10" y="8" width="4" height="13"/><rect x="2" y="13" width="4" height="8"/></svg>
+                    </div>
+                    <div class="vis-card-title">Data & Analytics</div>
+                    <div class="vis-card-sub">Data teams help PMs measure impact, instrument features, and run experiments. A PM who can't define a success metric or read a funnel is operating blind.</div>
+                </div>
+                <div class="vis-card">
+                    <div class="vis-card-icon">
+                        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1.24h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.82a16 16 0 0 0 5.34 5.34l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16.92z"/></svg>
+                    </div>
+                    <div class="vis-card-title">Sales & Customer Success</div>
+                    <div class="vis-card-sub">Front-line intelligence. Sales tells PMs what's blocking deals; CS tells them what's causing churn. These conversations should be regular, not occasional.</div>
+                </div>
+                <div class="vis-card">
+                    <div class="vis-card-icon">
+                        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    </div>
+                    <div class="vis-card-title">Marketing</div>
+                    <div class="vis-card-sub">PMs and marketing co-own go-to-market. PMs explain what the product does and who it's for; marketing translates that into messaging, positioning, and launch plans.</div>
+                </div>
+                <div class="vis-card">
+                    <div class="vis-card-icon">
+                        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                    </div>
+                    <div class="vis-card-title">Leadership & Exec</div>
+                    <div class="vis-card-sub">PMs need to communicate strategy upward — why they're prioritizing certain bets, what the expected impact is, and how it aligns with company goals. This requires storytelling, not just reporting.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 8. METRICS -->
+    <div class="art-section fade-up">
+        <span class="art-label">Measuring Success</span>
+        <h2 class="art-h2">Metrics that actually tell you something</h2>
+        <p class="art-p">One of the most critical PM skills is defining what success looks like before shipping — not scrambling to find metrics that look good afterward. Metrics should be chosen because they're causally connected to the outcome you care about, not because they're easy to measure.</p>
+
+        <div class="art-visual">
+            <div class="vis-rows">
+                <div class="vis-row">
+                    <div class="vis-row-label">North Star Metric</div>
+                    <div class="vis-row-desc">A single metric that best captures the core value your product delivers to users. Spotify's is time spent listening. Airbnb's is nights booked. Slack's is messages sent per user. It should be leading (predicts revenue) not lagging (reports it).</div>
+                </div>
+                <div class="vis-row">
+                    <div class="vis-row-label">OKRs</div>
+                    <div class="vis-row-desc"><strong>Objectives and Key Results.</strong> The Objective is qualitative and ambitious ("Dramatically improve onboarding"). The Key Results are specific and measurable ("Increase Day-7 retention from 38% to 55%", "Reduce time-to-first-value under 5 minutes"). OKRs cascade from company to team to individual.</div>
+                </div>
+                <div class="vis-row">
+                    <div class="vis-row-label">Leading vs Lagging</div>
+                    <div class="vis-row-desc">Lagging indicators (revenue, churn rate) tell you what already happened. Leading indicators (feature adoption, activation rate, NPS) tell you what's about to happen. PMs should track both but act on the leading ones — they give you time to correct course.</div>
+                </div>
+                <div class="vis-row">
+                    <div class="vis-row-label">AARRR Framework</div>
+                    <div class="vis-row-desc">Dave McClure's pirate metrics: <strong>Acquisition</strong> (how users find you), <strong>Activation</strong> (first experience — did they "get it"?), <strong>Retention</strong> (do they come back?), <strong>Referral</strong> (do they bring others?), <strong>Revenue</strong> (do they pay?). Helps PMs diagnose where the biggest drop-offs are.</div>
+                </div>
+            </div>
+        </div>
+
+        <p class="art-p">A trap to avoid: <strong>vanity metrics</strong>. Total registered users, app downloads, and page views look good in a deck but don't tell you if the product is actually working. Focus on metrics that change when user behaviour changes — not ones that only go up because time passes.</p>
+    </div>
+
+    <!-- 9. TAKEAWAY -->
+    <div class="art-section fade-up">
+        <span class="art-label">Takeaway</span>
+        <h2 class="art-h2">The T-shaped profile that makes PMs effective</h2>
+        <p class="art-p">Product management is one of the few roles that rewards a genuinely broad background. The most effective PMs are <strong>T-shaped</strong>: deep expertise in one or two domains (analytics, design, engineering, finance) combined with broad fluency across many others.</p>
+        <p class="art-p">This is what makes the role accessible to people with non-traditional paths. A designer who understands data, a business analyst who thinks in systems, a financial analyst who knows how to talk to users — all of these profiles can make exceptional PMs. The common thread isn't a degree or a title; it's the ability to hold business context, user empathy, and technical constraint in mind simultaneously and make decisions under uncertainty.</p>
+        <p class="art-p">The frameworks in this guide — RICE, MoSCoW, OKRs, AARRR — are tools, not rules. They make your thinking explicit and your decisions defensible. But the underlying work is still judgment: knowing which problem matters most, when the data is good enough to act on, and when to push back on a stakeholder request that would derail the team from what actually matters.</p>
+
+        <div class="art-visual">
+            <div class="vis-grid vis-grid-3">
+                <div class="vis-card vis-card-accent">
+                    <div class="vis-card-title">The core skill</div>
+                    <div class="vis-card-sub">Making good decisions under uncertainty with incomplete information — and communicating those decisions in a way that builds trust across the team.</div>
+                </div>
+                <div class="vis-card vis-card-accent">
+                    <div class="vis-card-title">The hardest part</div>
+                    <div class="vis-card-sub">Saying no — and explaining why — to requests from stakeholders, engineers, and leadership without destroying the relationship or losing credibility.</div>
+                </div>
+                <div class="vis-card vis-card-accent">
+                    <div class="vis-card-title">The real output</div>
+                    <div class="vis-card-sub">Not features shipped. Not specs written. Outcomes: users achieving goals, business metrics improving, and the team building better products over time.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<div class="art-nav">
+    <a class="art-nav-item" href="fund-governance-fundamentals.html">
+        <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+        <div class="art-nav-text">
+            <span class="art-nav-label">Previous</span>
+            <span class="art-nav-title">Investment Fund Governance</span>
+        </div>
+    </a>
+    <a class="art-nav-item art-nav-next" href="agile-scrum-fundamentals.html">
+        <div class="art-nav-text">
+            <span class="art-nav-label">Next</span>
+            <span class="art-nav-title">Agile &amp; Scrum Fundamentals</span>
+        </div>
+        <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+    </a>
+</div>
+</div>
+
+<!-- CTA -->
+<section class="cta-sect">
+    <div class="container">
+        <h2>More on product &amp; strategy</h2>
+        <p>I write about product management, data, and business frameworks. Follow on LinkedIn for more.</p>
+        <div class="cta-actions">
+            <a href="https://www.linkedin.com/in/diogomserino" target="_blank" rel="noopener" class="btn btn-primary">
+                <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                Follow on LinkedIn
+            </a>
+            <a href="../index.html#articles" class="btn btn-ghost-light">
+                <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+                Back to Articles
+            </a>
+        </div>
+    </div>
+</section>
+
+</main>

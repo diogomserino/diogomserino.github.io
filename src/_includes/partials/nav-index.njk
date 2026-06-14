@@ -1,0 +1,23 @@
+<!-- NAV -->
+<nav class="nav" id="main-nav">
+    <div class="container nav-inner-idx">
+        <a href="#home" class="logo-idx">DMS<em>.</em></a>
+        <ul class="nav-links">
+            <li><a href="#projects">{{ "Trabalho" if lang == "pt" else "Work" }}</a></li>
+            <li><a href="#about">{{ "Sobre" if lang == "pt" else "About" }}</a></li>
+            <li><a href="#articles">{{ "Artigos" if lang == "pt" else "Writing" }}</a></li>
+            <li>{% include "partials/lang-switch.njk" %}</li>
+            <li><a href="#contact" class="cta">{{ "Contacto" if lang == "pt" else "Contact" }}</a></li>
+        </ul>
+        <button class="hamburger" id="hbg" type="button" aria-label="{{ 'Abrir/fechar menu de navegação' if lang == 'pt' else 'Toggle navigation menu' }}" aria-expanded="false" aria-controls="mob-nav" onclick="toggleMenu()">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+<div class="mob-nav" id="mob-nav">
+    <a href="#projects"  onclick="closeMenu()">{{ "Trabalho" if lang == "pt" else "Work" }}</a>
+    <a href="#about"     onclick="closeMenu()">{{ "Sobre" if lang == "pt" else "About" }}</a>
+    <a href="#articles"  onclick="closeMenu()">{{ "Artigos" if lang == "pt" else "Writing" }}</a>
+    <a href="#contact"   onclick="closeMenu()">{{ "Contacto" if lang == "pt" else "Contact" }}</a>
+    {% include "partials/lang-switch.njk" %}
+</div>

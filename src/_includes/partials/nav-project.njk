@@ -1,0 +1,19 @@
+{%- set home = "/pt/" if lang == "pt" else "/" -%}
+<!-- NAV -->
+<nav id="page-nav">
+    <div class="nav-inner">
+        <a href="{{ home }}" class="logo">DMS<span>.</span></a>
+        <div class="nav-crumb">
+            <a href="{{ home }}#projects">{{ "Portfólio" if lang == "pt" else "Portfolio" }}</a>
+            <span class="sep">/</span>
+            <span class="curr">{{ crumb }}</span>
+        </div>
+        <div class="nav-right">
+            {% include "partials/lang-switch.njk" %}
+            <a href="{{ home }}#projects" class="nav-back">
+                <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+                {{ "Voltar" if lang == "pt" else "Back" }}
+            </a>
+        </div>
+    </div>
+</nav>

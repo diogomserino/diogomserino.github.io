@@ -6,3 +6,7 @@ Thumbs.db
 .vscode/
 .idea/
 *.swp
+
+# Eleventy / Node
+node_modules/
+_site/

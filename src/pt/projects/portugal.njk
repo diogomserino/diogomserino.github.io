@@ -1,0 +1,550 @@
+---
+layout: layouts/base.njk
+nav: partials/nav-project.njk
+footer: partials/footer-project.njk
+styles: ["/assets/css/portugal.css"]
+bodyAttr: 'data-stagger="80"'
+translationKey: portugal
+crumb: "Portugal Data Intelligence"
+breadcrumb: "Portugal Data Intelligence"
+title: "Portugal Data Intelligence · Diogo Serino"
+description: "Portugal Data Intelligence — Plataforma de analytics macroeconómica sobre a economia portuguesa 2010–2025. Power BI, Python, FastAPI e previsão com SARIMAX."
+ogDescription: "Plataforma de analytics macroeconómica sobre a economia portuguesa 2010–2025. Construída com Power BI, Python, FastAPI e previsão com SARIMAX."
+---
+<main id="main" tabindex="-1">
+<div class="proj-hero">
+    <div class="container proj-hero-inner">
+        <div class="proj-badge">
+            <svg aria-hidden="true" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="18" y="3" width="4" height="18"/><rect x="10" y="8" width="4" height="13"/><rect x="2" y="13" width="4" height="8"/></svg>
+            Analytics · Engenharia de Dados
+        </div>
+        <h1 class="proj-title">Portugal Data<br>Intelligence</h1>
+        <p class="proj-sub">
+            Uma plataforma de analytics macroeconómica que acompanha a economia portuguesa de <strong style="color:rgba(255,255,255,.75)">2010 a 2025</strong> — da ingestão de dados em tempo real a dashboards prontos para administração e APIs REST.
+        </p>
+        <div class="stack-row">
+            <span class="stag-dk">Power BI</span>
+            <span class="stag-dk">Python</span>
+            <span class="stag-dk">FastAPI</span>
+            <span class="stag-dk">Streamlit</span>
+            <span class="stag-dk">SARIMAX</span>
+            <span class="stag-dk">SQLite</span>
+            <span class="stag-dk">Docker</span>
+        </div>
+        <div class="plinks">
+            <a href="https://diogomserino.github.io/Portugal-Data-Intelligence/" target="_blank" rel="noopener" class="plink plink-primary">
+                <svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                Ver relatório ao vivo
+            </a>
+            <a href="https://github.com/diogomserino/Portugal-Data-Intelligence" target="_blank" rel="noopener" class="plink plink-out">
+                <svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                Ver no GitHub
+            </a>
+            <a href="/pt/#contact" class="plink plink-out">
+                Trabalha comigo
+            </a>
+        </div>
+        <div class="proj-meta">
+            <span class="proj-meta-item">
+                <svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                15 anos de dados (2010–2025)
+            </span>
+            <span class="proj-meta-item">
+                <svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                12 pilares económicos
+            </span>
+            <span class="proj-meta-item">
+                <svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                Projeto a solo
+            </span>
+        </div>
+    </div>
+</div>
+
+
+<!-- METRICS -->
+<section class="section">
+    <div class="container">
+        <div class="metrics-row fade-up">
+            <div class="metric-item">
+                <div class="metric-val">12<span></span></div>
+                <div class="metric-lbl">Pilares económicos</div>
+            </div>
+            <div class="metric-item">
+                <div class="metric-val">39<span></span></div>
+                <div class="metric-lbl">Medidas DAX</div>
+            </div>
+            <div class="metric-item">
+                <div class="metric-val">5<span></span></div>
+                <div class="metric-lbl">Fontes de dados</div>
+            </div>
+            <div class="metric-item">
+                <div class="metric-val">15<span> anos</span></div>
+                <div class="metric-lbl">Séries temporais (2010–2025)</div>
+            </div>
+        </div>
+
+        <!-- OVERVIEW -->
+        <div class="overview-grid">
+            <div class="overview-text fade-up">
+                <div class="label">Visão geral</div>
+                <h2 class="title">Uma plataforma,<br>o panorama económico completo</h2>
+                <p>Os dados macroeconómicos portugueses estão dispersos por várias autoridades estatísticas — INE, Banco de Portugal, PORDATA e Eurostat — sem uma plataforma integrada que os consolide ou que compare o desempenho com os pares da UE.</p>
+                <p>O Portugal Data Intelligence fecha essa lacuna: um sistema completo de ponta a ponta que ingere dados em tempo real, aplica <strong>previsão de séries temporais</strong> (SARIMAX + STL) e os transforma em insights narrativos gerados por IA, uma <strong>matriz de risco</strong> e <strong>recomendações estratégicas</strong> — entregues como um dashboard interativo em Power BI, uma web app em Streamlit, uma API REST em FastAPI e um briefing em HTML pronto para administração.</p>
+                <p>Doze pilares económicos são acompanhados em simultâneo ao longo de 15 anos — da crise da dívida soberana, passando pela COVID-19, até à recuperação pós-pandemia — incluindo análise regional NUTS2 nas sete regiões de Portugal e benchmarking com a UE-27 através de gráficos radar.</p>
+            </div>
+            <div class="dash-preview fade-up">
+                <div class="dash-badge-row">
+                    <span class="dash-badge">Picos de crise → recuperação 2025</span>
+                </div>
+                <div class="dash-indicator">
+                    <div class="dash-ind-head">
+                        <span class="dash-ind-label">Taxa de Desemprego</span>
+                        <span class="dash-ind-change">↓ 11.2 pp</span>
+                    </div>
+                    <div class="dash-bar-pair">
+                        <span class="dash-bar-yr">2013</span>
+                        <div class="dash-bar-track"><div class="dash-bar-fill fill-before" style="width:86%"></div></div>
+                        <span class="dash-bar-val">17.2%</span>
+                    </div>
+                    <div class="dash-bar-pair">
+                        <span class="dash-bar-yr">2025</span>
+                        <div class="dash-bar-track"><div class="dash-bar-fill fill-after" style="width:30%"></div></div>
+                        <span class="dash-bar-val accent">6.0%</span>
+                    </div>
+                </div>
+                <div class="dash-indicator">
+                    <div class="dash-ind-head">
+                        <span class="dash-ind-label">Dívida Pública (% do PIB)</span>
+                        <span class="dash-ind-change">↓ 47.8 pp</span>
+                    </div>
+                    <div class="dash-bar-pair">
+                        <span class="dash-bar-yr">2021</span>
+                        <div class="dash-bar-track"><div class="dash-bar-fill fill-before" style="width:100%"></div></div>
+                        <span class="dash-bar-val">137.5%</span>
+                    </div>
+                    <div class="dash-bar-pair">
+                        <span class="dash-bar-yr">2025</span>
+                        <div class="dash-bar-track"><div class="dash-bar-fill fill-after" style="width:65%"></div></div>
+                        <span class="dash-bar-val accent">89.7%</span>
+                    </div>
+                </div>
+                <div class="dash-indicator">
+                    <div class="dash-ind-head">
+                        <span class="dash-ind-label">Yield da Dívida Soberana (10A)</span>
+                        <span class="dash-ind-change">↓ 3.2 pp</span>
+                    </div>
+                    <div class="dash-bar-pair">
+                        <span class="dash-bar-yr">2013</span>
+                        <div class="dash-bar-track"><div class="dash-bar-fill fill-before" style="width:100%"></div></div>
+                        <span class="dash-bar-val">6.3%</span>
+                    </div>
+                    <div class="dash-bar-pair">
+                        <span class="dash-bar-yr">2025</span>
+                        <div class="dash-bar-track"><div class="dash-bar-fill fill-after" style="width:49%"></div></div>
+                        <span class="dash-bar-val accent">3.1%</span>
+                    </div>
+                </div>
+                <div class="dash-indicator">
+                    <div class="dash-ind-head">
+                        <span class="dash-ind-label">Crescimento Anual do PIB</span>
+                        <span class="dash-ind-change">↑ 2.9 pp</span>
+                    </div>
+                    <div class="dash-bar-pair">
+                        <span class="dash-bar-yr">2013</span>
+                        <div class="dash-bar-track"><div class="dash-bar-fill fill-before" style="width:28%"></div></div>
+                        <span class="dash-bar-val">−1.0%</span>
+                    </div>
+                    <div class="dash-bar-pair">
+                        <span class="dash-bar-yr">2025</span>
+                        <div class="dash-bar-track"><div class="dash-bar-fill fill-after" style="width:56%"></div></div>
+                        <span class="dash-bar-val accent">+1.9%</span>
+                    </div>
+                </div>
+                <div class="dash-note">INE · Banco de Portugal · Eurostat · 2010–2025</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- PIPELINE -->
+<section class="section section-alt">
+    <div class="container">
+        <div class="sec-head fade-up">
+            <div class="label">Arquitetura</div>
+            <h2 class="title">Pipeline em três fases</h2>
+            <p class="subtitle">De CSVs em bruto e chamadas de API a páginas de Power BI e endpoints REST — cada camada construída e gerida por mim.</p>
+        </div>
+        <div class="steps-grid">
+            <div class="step fade-up">
+                <div class="step-num">01</div>
+                <div class="step-title">Pipeline de ETL</div>
+                <div class="step-desc">Extrai dados via CSV/API de cinco fontes nacionais (INE, Banco de Portugal, PORDATA, Eurostat, BCE), corre um framework de qualidade de dados com 8 verificações (esquema, nulos, intervalos, outliers, drift, completude, consistência, atualidade), transforma via SQL e carrega em SQLite com rastreio de linhagem por UUID e checksums SHA-256.</div>
+                <div class="step-tags">
+                    <span class="stag">Python</span>
+                    <span class="stag">SQLite</span>
+                    <span class="stag">pandas</span>
+                    <span class="stag">NumPy</span>
+                </div>
+            </div>
+            <div class="step fade-up">
+                <div class="step-num">02</div>
+                <div class="step-title">Camada de Analytics</div>
+                <div class="step-desc">Decomposição STL para isolar tendência/sazonalidade. Previsão com SARIMAX e ensemble, com seleção baseada em AIC e backtesting de janela expansível. VAR e causalidade de Granger para relações estruturais. Nowcasting do PIB via bridge equations. Deteção de anomalias (z-score + Isolation Forest) a alimentar um motor de alertas por limiares em 11 indicadores. Matriz de correlação entre pilares com benchmarking da UE-27.</div>
+                <div class="step-tags">
+                    <span class="stag">statsmodels</span>
+                    <span class="stag">scikit-learn</span>
+                    <span class="stag">Plotly</span>
+                    <span class="stag">seaborn</span>
+                </div>
+            </div>
+            <div class="step fade-up">
+                <div class="step-num">03</div>
+                <div class="step-title">Camada de Saída</div>
+                <div class="step-desc">Dashboard em Power BI com 39 medidas DAX em 7 categorias. Web app em Streamlit com quatro páginas. API REST em FastAPI com 7 endpoints. Um briefing em HTML pronto para administração — incluindo matriz de risco e recomendações estratégicas — mais exportações para Excel multi-folha. Containerizado com Docker, coberto por uma suite de 489 testes e implementado via CI/CD.</div>
+                <div class="step-tags">
+                    <span class="stag">Power BI</span>
+                    <span class="stag">FastAPI</span>
+                    <span class="stag">Streamlit</span>
+                    <span class="stag">Docker</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ECONOMIC PILLARS -->
+<section class="section">
+    <div class="container">
+        <div class="sec-head fade-up">
+            <div class="label">Cobertura</div>
+            <h2 class="title">Doze pilares económicos</h2>
+            <p class="subtitle">Cada pilar acompanhado com granularidade mensal, trimestral ou anual, de 2010 a 2025.</p>
+        </div>
+        <div class="pillars-grid">
+            <div class="pillar fade-up">
+                <div class="pillar-ico"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+                <div class="pillar-title">PIB</div>
+                <div class="pillar-meta">Trimestral · 2010 T1 – 2025 T4</div>
+                <div class="pillar-desc">Ciclo de crescimento completo — contração na crise da dívida (−1,5% méd.), choque da COVID (−1,3% méd.) e recuperação para uma expansão de 1,9% em 2025 face a uma tendência de longo prazo de 1,2% — modelado e previsto.</div>
+            </div>
+            <div class="pillar fade-up">
+                <div class="pillar-ico"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+                <div class="pillar-title">Desemprego</div>
+                <div class="pillar-meta">Mensal · jan 2010 – dez 2025</div>
+                <div class="pillar-desc">De um pico de crise de 18,3% a mínimos históricos de 5,6%. Forte correlação com as yields da dívida (r = 0,71) quantificada.</div>
+            </div>
+            <div class="pillar fade-up">
+                <div class="pillar-ico"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+                <div class="pillar-title">Crédito à Economia</div>
+                <div class="pillar-meta">Mensal · jan 2010 – dez 2025</div>
+                <div class="pillar-desc">Dinâmica do crédito privado vs. rácios de NPL — a descer para 2,1% no final de 2025 — cuja relação inversa com a inflação (r = −0,48) é medida e visualizada.</div>
+            </div>
+            <div class="pillar fade-up">
+                <div class="pillar-ico"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+                <div class="pillar-title">Taxas de Juro</div>
+                <div class="pillar-meta">Mensal · jan 2010 – dez 2025</div>
+                <div class="pillar-desc">Trajetória das taxas do BCE e spreads da dívida soberana portuguesa, da era de taxas zero ao ciclo de normalização pós-2022.</div>
+            </div>
+            <div class="pillar fade-up">
+                <div class="pillar-ico"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+                <div class="pillar-title">Inflação (IHPC / IPC)</div>
+                <div class="pillar-meta">Mensal · jan 2010 – dez 2025</div>
+                <div class="pillar-desc">Período deflacionário, surto pós-COVID e moderação recente, decompostos com STL. Curva de Phillips visualizada.</div>
+            </div>
+            <div class="pillar fade-up">
+                <div class="pillar-ico"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
+                <div class="pillar-title">Dívida Pública</div>
+                <div class="pillar-meta">Trimestral · 2010 T1 – 2025 T4</div>
+                <div class="pillar-desc">Acompanhada do pico de 137,5% do PIB, passando pela consolidação, até abaixo de 90%. Previsões SARIMAX com cenários base, otimista e pessimista.</div>
+            </div>
+            <div class="pillar fade-up">
+                <div class="pillar-ico"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+                <div class="pillar-title">Mercado da Habitação</div>
+                <div class="pillar-meta">Anual · 2010–2025</div>
+                <div class="pillar-desc">Índices de preços da habitação, yields de arrendamento e atividade de construção, acompanhados ao longo da recuperação pós-crise e da escalada habitacional de 2017–2025.</div>
+            </div>
+            <div class="pillar fade-up">
+                <div class="pillar-ico"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg></div>
+                <div class="pillar-title">Detalhe do Mercado de Trabalho</div>
+                <div class="pillar-meta">Anual · 2010–2025</div>
+                <div class="pillar-desc">Emprego por setor, desemprego jovem, desemprego de longa duração e crescimento salarial, decompostos ao longo de todo o ciclo económico.</div>
+            </div>
+            <div class="pillar fade-up">
+                <div class="pillar-ico"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+                <div class="pillar-title">Contas Externas</div>
+                <div class="pillar-meta">Trimestral · 2010 T1 – 2025 T4</div>
+                <div class="pillar-desc">Saldo da balança corrente, fluxos comerciais e receitas do turismo. A passagem de Portugal de défice corrente a superavit sustentado, modelada ao longo de 15 anos.</div>
+            </div>
+            <div class="pillar fade-up">
+                <div class="pillar-ico"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+                <div class="pillar-title">Estrutura Orçamental</div>
+                <div class="pillar-meta">Anual · 2010–2025</div>
+                <div class="pillar-desc">Receita vs. despesa pública, saldo primário e défice estrutural alinhados com as regras orçamentais da UE. Trajetória de consolidação visualizada da austeridade à recuperação.</div>
+            </div>
+            <div class="pillar fade-up">
+                <div class="pillar-ico"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg></div>
+                <div class="pillar-title">Desigualdade &amp; Rendimento</div>
+                <div class="pillar-meta">Anual · 2010–2025</div>
+                <div class="pillar-desc">Coeficiente de Gini, distribuição de rendimento e taxas de pobreza a nível nacional — acompanhando como a recuperação foi (e não foi) partilhada pelas famílias.</div>
+            </div>
+            <div class="pillar fade-up">
+                <div class="pillar-ico"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+                <div class="pillar-title">Regional (NUTS2)</div>
+                <div class="pillar-meta">Anual · 7 regiões NUTS2 · 2010–2025</div>
+                <div class="pillar-desc">PIB per capita, desemprego e rendimento discriminados pelas 7 regiões NUTS2 de Portugal, com benchmarking da UE-27 através de gráficos radar.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- KEY FINDINGS -->
+<section class="section section-dk">
+    <div class="container">
+        <div class="sec-head fade-up">
+            <div class="label">Resultados</div>
+            <h2 class="title">Principais conclusões</h2>
+            <p class="subtitle">Padrões estatísticos extraídos de 15 anos de dados macroeconómicos portugueses.</p>
+        </div>
+        <div class="findings-grid">
+            <div class="finding fade-up">
+                <div class="finding-stat">18,3% → 5,6%</div>
+                <div class="finding-label">Desemprego: do pico ao mínimo</div>
+                <div class="finding-desc">O desemprego caiu do pico mensal de 18,3% na crise da dívida soberana de 2013 para um mínimo histórico de 5,6% em dezembro de 2025 — uma recuperação de 12,7 pp acompanhada e modelada mês a mês.</div>
+            </div>
+            <div class="finding fade-up">
+                <div class="finding-stat">137,5% do PIB</div>
+                <div class="finding-label">Dívida pública no pico</div>
+                <div class="finding-desc">A dívida pública atingiu um pico de 137,5% do PIB durante o choque da COVID-19 antes de a consolidação a reduzir para 89,7% em 2025. Cenários SARIMAX modelam a sua trajetória futura.</div>
+            </div>
+            <div class="finding fade-up">
+                <div class="finding-stat">r = 0,71</div>
+                <div class="finding-label">Correlação desemprego–yield da dívida</div>
+                <div class="finding-desc">Uma forte correlação entre pilares, entre o desemprego e as yields da dívida soberana — quantificada na matriz de correlação completa e visualizada no heatmap.</div>
+            </div>
+            <div class="finding fade-up">
+                <div class="finding-stat">r = −0,48</div>
+                <div class="finding-label">Relação inversa inflação–NPL</div>
+                <div class="finding-desc">A inflação e os rácios de crédito malparado moveram-se de forma inversa ao longo do ciclo — uma dinâmica persistente quantificada na matriz de correlação entre pilares.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- DATA CHARTS -->
+<section class="section section-alt">
+    <div class="container">
+        <div class="sec-head fade-up">
+            <div class="label">Dados</div>
+            <h2 class="title">As principais histórias económicas</h2>
+            <p class="subtitle">15 anos de dados macroeconómicos portugueses — da crise da dívida soberana, passando pela COVID-19, até à recuperação de 2025.</p>
+        </div>
+        <div class="charts-grid">
+
+            <!-- Chart 1: Unemployment -->
+            <div class="chart-card fade-up">
+                <div class="chart-title">Taxa de Desemprego</div>
+                <div class="chart-sub">Média anual · % · 2010–2025</div>
+                <svg aria-hidden="true" viewBox="0 0 300 120" class="chart-svg">
+                    <defs>
+                        <linearGradient id="ug" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0%" stop-color="#67E8F9" stop-opacity="0.28"/>
+                            <stop offset="100%" stop-color="#67E8F9" stop-opacity="0.02"/>
+                        </linearGradient>
+                    </defs>
+                    <line x1="10" y1="10" x2="290" y2="10" stroke="rgba(255,255,255,.05)" stroke-width="1"/>
+                    <line x1="10" y1="38" x2="290" y2="38" stroke="rgba(255,255,255,.05)" stroke-width="1"/>
+                    <line x1="10" y1="66" x2="290" y2="66" stroke="rgba(255,255,255,.05)" stroke-width="1"/>
+                    <line x1="10" y1="95" x2="290" y2="95" stroke="rgba(255,255,255,.05)" stroke-width="1"/>
+                    <path d="M 10,55.6 L 28.7,42.6 L 47.3,23.6 L 66,17.5 L 84.7,34.5 L 103.3,44.7 L 122,53.5 L 140.7,67.8 L 159.3,81.4 L 178,84.8 L 196.7,82.8 L 215.3,84.1 L 234,89.6 L 252.7,84.8 L 271.3,85.5 L 290,87.5 L 290,95 L 10,95 Z" fill="url(#ug)"/>
+                    <path d="M 10,55.6 L 28.7,42.6 L 47.3,23.6 L 66,17.5 L 84.7,34.5 L 103.3,44.7 L 122,53.5 L 140.7,67.8 L 159.3,81.4 L 178,84.8 L 196.7,82.8 L 215.3,84.1 L 234,89.6 L 252.7,84.8 L 271.3,85.5 L 290,87.5" fill="none" stroke="#67E8F9" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="66" cy="17.5" r="3.5" fill="#67E8F9"/>
+                    <text x="66" y="13" font-size="9" fill="rgba(255,255,255,.65)" text-anchor="middle" font-family="Inter,sans-serif">17.2%</text>
+                    <circle cx="290" cy="87.5" r="3" fill="#0891B2"/>
+                    <text x="277" y="84" font-size="9" fill="rgba(103,232,249,.75)" text-anchor="middle" font-family="Inter,sans-serif">6.0%</text>
+                    <text x="10" y="111" font-size="9" fill="rgba(255,255,255,.28)" text-anchor="middle" font-family="Inter,sans-serif">2010</text>
+                    <text x="103.3" y="111" font-size="9" fill="rgba(255,255,255,.28)" text-anchor="middle" font-family="Inter,sans-serif">2015</text>
+                    <text x="196.7" y="111" font-size="9" fill="rgba(255,255,255,.28)" text-anchor="middle" font-family="Inter,sans-serif">2020</text>
+                    <text x="290" y="111" font-size="9" fill="rgba(255,255,255,.28)" text-anchor="middle" font-family="Inter,sans-serif">2025</text>
+                </svg>
+                <div class="chart-footer">
+                    <span class="chart-note">Fonte: INE / Eurostat</span>
+                    <span class="chart-hi">↓ 11,2 pp desde 2013 (média anual)</span>
+                </div>
+            </div>
+
+            <!-- Chart 2: GDP Growth -->
+            <div class="chart-card fade-up">
+                <div class="chart-title">Taxa de Crescimento Anual do PIB</div>
+                <div class="chart-sub">Crescimento real · % · 2010–2025</div>
+                <svg aria-hidden="true" viewBox="0 0 300 120" class="chart-svg">
+                    <line x1="10" y1="47.2" x2="290" y2="47.2" stroke="rgba(255,255,255,.18)" stroke-width="1" stroke-dasharray="3,3"/>
+                    <rect x="12.3" y="37.1" width="13" height="10.1" rx="1.5" fill="#0891B2" opacity="0.8"/>
+                    <rect x="29.8" y="47.2" width="13" height="9.6" rx="1.5" fill="#EF4444" opacity="0.75"/>
+                    <rect x="47.3" y="47.2" width="13" height="21.3" rx="1.5" fill="#EF4444" opacity="0.8"/>
+                    <rect x="64.8" y="47.2" width="13" height="5.8" rx="1.5" fill="#EF4444" opacity="0.65"/>
+                    <rect x="82.3" y="42.4" width="13" height="4.8" rx="1.5" fill="#0891B2" opacity="0.65"/>
+                    <rect x="99.8" y="37.6" width="13" height="9.6" rx="1.5" fill="#0891B2" opacity="0.75"/>
+                    <rect x="117.3" y="37.1" width="13" height="10.1" rx="1.5" fill="#0891B2" opacity="0.8"/>
+                    <rect x="134.8" y="28.6" width="13" height="18.6" rx="1.5" fill="#0891B2" opacity="0.85"/>
+                    <rect x="152.3" y="33.4" width="13" height="13.8" rx="1.5" fill="#0891B2" opacity="0.8"/>
+                    <rect x="169.8" y="32.9" width="13" height="14.3" rx="1.5" fill="#0891B2" opacity="0.8"/>
+                    <rect x="187.3" y="47.2" width="13" height="44.1" rx="1.5" fill="#EF4444" opacity="0.85"/>
+                    <rect x="204.8" y="18.0" width="13" height="29.2" rx="1.5" fill="#67E8F9" opacity="0.85"/>
+                    <rect x="222.3" y="11.6" width="13" height="35.6" rx="1.5" fill="#67E8F9" opacity="0.9"/>
+                    <rect x="239.8" y="35.0" width="13" height="12.2" rx="1.5" fill="#0891B2" opacity="0.8"/>
+                    <rect x="257.3" y="37.1" width="13" height="10.1" rx="1.5" fill="#0891B2" opacity="0.8"/>
+                    <rect x="274.8" y="36.6" width="13" height="10.6" rx="1.5" fill="#0891B2" opacity="0.8"/>
+                    <text x="19" y="111" font-size="9" fill="rgba(255,255,255,.28)" text-anchor="middle" font-family="Inter,sans-serif">2010</text>
+                    <text x="106" y="111" font-size="9" fill="rgba(255,255,255,.28)" text-anchor="middle" font-family="Inter,sans-serif">2015</text>
+                    <text x="194" y="111" font-size="9" fill="rgba(255,255,255,.28)" text-anchor="middle" font-family="Inter,sans-serif">2020</text>
+                    <text x="281" y="111" font-size="9" fill="rgba(255,255,255,.28)" text-anchor="middle" font-family="Inter,sans-serif">2025</text>
+                </svg>
+                <div class="chart-footer">
+                    <span class="chart-note">Fonte: INE / Banco Mundial</span>
+                    <span class="chart-hi">+7,0% de recuperação máxima em 2022</span>
+                </div>
+            </div>
+
+            <!-- Chart 3: Inflation -->
+            <div class="chart-card fade-up">
+                <div class="chart-title">Taxa de Inflação (IHPC)</div>
+                <div class="chart-sub">Média anual · % · 2010–2025</div>
+                <svg aria-hidden="true" viewBox="0 0 300 120" class="chart-svg">
+                    <defs>
+                        <linearGradient id="ig" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0%" stop-color="#67E8F9" stop-opacity="0.22"/>
+                            <stop offset="100%" stop-color="#67E8F9" stop-opacity="0.01"/>
+                        </linearGradient>
+                    </defs>
+                    <line x1="10" y1="10" x2="290" y2="10" stroke="rgba(255,255,255,.05)" stroke-width="1"/>
+                    <line x1="10" y1="38" x2="290" y2="38" stroke="rgba(255,255,255,.05)" stroke-width="1"/>
+                    <line x1="10" y1="66" x2="290" y2="66" stroke="rgba(255,255,255,.05)" stroke-width="1"/>
+                    <line x1="10" y1="95" x2="290" y2="95" stroke="rgba(255,255,255,.05)" stroke-width="1"/>
+                    <line x1="10" y1="86.5" x2="290" y2="86.5" stroke="rgba(255,255,255,.1)" stroke-width="1" stroke-dasharray="2,4"/>
+                    <path d="M 10,74.6 L 28.7,55.1 L 47.3,62.7 L 66,83.1 L 84.7,88.2 L 103.3,82.3 L 122,81.4 L 140.7,72.9 L 159.3,78.0 L 178,84.0 L 196.7,87.4 L 215.3,78.9 L 234,20.2 L 252.7,40.6 L 271.3,67.0 L 290,71.2 L 290,95 L 10,95 Z" fill="url(#ig)"/>
+                    <path d="M 10,74.6 L 28.7,55.1 L 47.3,62.7 L 66,83.1 L 84.7,88.2 L 103.3,82.3 L 122,81.4 L 140.7,72.9 L 159.3,78.0 L 178,84.0 L 196.7,87.4 L 215.3,78.9 L 234,20.2 L 252.7,40.6 L 271.3,67.0 L 290,71.2" fill="none" stroke="#67E8F9" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="234" cy="20.2" r="3.5" fill="#EF4444"/>
+                    <text x="234" y="15" font-size="9" fill="rgba(239,68,68,.9)" text-anchor="middle" font-family="Inter,sans-serif">8.1%</text>
+                    <circle cx="290" cy="71.2" r="3" fill="#0891B2"/>
+                    <text x="10" y="111" font-size="9" fill="rgba(255,255,255,.28)" text-anchor="middle" font-family="Inter,sans-serif">2010</text>
+                    <text x="103.3" y="111" font-size="9" fill="rgba(255,255,255,.28)" text-anchor="middle" font-family="Inter,sans-serif">2015</text>
+                    <text x="196.7" y="111" font-size="9" fill="rgba(255,255,255,.28)" text-anchor="middle" font-family="Inter,sans-serif">2020</text>
+                    <text x="290" y="111" font-size="9" fill="rgba(255,255,255,.28)" text-anchor="middle" font-family="Inter,sans-serif">2025</text>
+                </svg>
+                <div class="chart-footer">
+                    <span class="chart-note">Fonte: INE / Eurostat IHPC</span>
+                    <span class="chart-hi">8,1% méd. em 2022 · 10,6% pico</span>
+                </div>
+            </div>
+
+            <!-- Chart 4: Public Debt -->
+            <div class="chart-card fade-up">
+                <div class="chart-title">Dívida Pública (% do PIB)</div>
+                <div class="chart-sub">Anual · % PIB · 2010–2025</div>
+                <svg aria-hidden="true" viewBox="0 0 300 120" class="chart-svg">
+                    <line x1="10" y1="78" x2="282" y2="78" stroke="rgba(255,255,255,.18)" stroke-width="1" stroke-dasharray="3,3"/>
+                    <text x="286" y="81" font-size="8" fill="rgba(255,255,255,.3)" font-family="Inter,sans-serif">100%</text>
+                    <rect x="12.3" y="84.5" width="13" height="10.5" rx="1.5" fill="#0891B2" opacity="0.75"/>
+                    <rect x="29.8" y="58.6" width="13" height="36.4" rx="1.5" fill="#F59E0B" opacity="0.78"/>
+                    <rect x="47.3" y="33.5" width="13" height="61.5" rx="1.5" fill="#EF4444" opacity="0.72"/>
+                    <rect x="64.8" y="28.7" width="13" height="66.3" rx="1.5" fill="#EF4444" opacity="0.72"/>
+                    <rect x="82.3" y="22.1" width="13" height="72.9" rx="1.5" fill="#EF4444" opacity="0.85"/>
+                    <rect x="99.8" y="29.4" width="13" height="65.6" rx="1.5" fill="#EF4444" opacity="0.7"/>
+                    <rect x="117.3" y="28.6" width="13" height="66.4" rx="1.5" fill="#EF4444" opacity="0.7"/>
+                    <rect x="134.8" y="36.8" width="13" height="58.2" rx="1.5" fill="#F59E0B" opacity="0.7"/>
+                    <rect x="152.3" y="41.4" width="13" height="53.6" rx="1.5" fill="#F59E0B" opacity="0.68"/>
+                    <rect x="169.8" y="49.8" width="13" height="45.2" rx="1.5" fill="#F59E0B" opacity="0.62"/>
+                    <rect x="187.3" y="18.2" width="13" height="76.8" rx="1.5" fill="#EF4444" opacity="0.85"/>
+                    <rect x="204.8" y="31.4" width="13" height="63.6" rx="1.5" fill="#F59E0B" opacity="0.65"/>
+                    <rect x="222.3" y="54.4" width="13" height="40.6" rx="1.5" fill="#F59E0B" opacity="0.58"/>
+                    <rect x="239.8" y="63.9" width="13" height="31.1" rx="1.5" fill="#0891B2" opacity="0.72"/>
+                    <rect x="257.3" y="72.7" width="13" height="22.3" rx="1.5" fill="#0891B2" opacity="0.8"/>
+                    <rect x="274.8" y="79.7" width="13" height="15.3" rx="1.5" fill="#0891B2" opacity="0.88"/>
+                    <text x="204" y="14" font-size="9" fill="rgba(255,255,255,.58)" text-anchor="middle" font-family="Inter,sans-serif">137.5%</text>
+                    <text x="19" y="111" font-size="9" fill="rgba(255,255,255,.28)" text-anchor="middle" font-family="Inter,sans-serif">2010</text>
+                    <text x="106" y="111" font-size="9" fill="rgba(255,255,255,.28)" text-anchor="middle" font-family="Inter,sans-serif">2015</text>
+                    <text x="194" y="111" font-size="9" fill="rgba(255,255,255,.28)" text-anchor="middle" font-family="Inter,sans-serif">2020</text>
+                    <text x="281" y="111" font-size="9" fill="rgba(255,255,255,.28)" text-anchor="middle" font-family="Inter,sans-serif">2025</text>
+                </svg>
+                <div class="chart-footer">
+                    <span class="chart-note">Fonte: Banco de Portugal / Eurostat</span>
+                    <span class="chart-hi">Pico de 137,5% → 89,7% em 2025</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- TECH STACK -->
+<section class="section section-alt">
+    <div class="container">
+        <div class="sec-head fade-up">
+            <div class="label">Tecnologia</div>
+            <h2 class="title">Stack tecnológica completa</h2>
+            <p class="subtitle">Engenharia de dados de ponta a ponta — cada camada construída de raiz.</p>
+        </div>
+        <div class="tech-cols">
+            <div class="tech-col fade-up">
+                <div class="tech-col-title">Linguagem & Base de Dados</div>
+                <div class="tech-tag">Python 3.10+</div>
+                <div class="tech-tag">SQLite 3</div>
+                <div class="tech-tag">pandas</div>
+                <div class="tech-tag">NumPy</div>
+            </div>
+            <div class="tech-col fade-up">
+                <div class="tech-col-title">Analytics & Modelação</div>
+                <div class="tech-tag">statsmodels (STL, SARIMAX)</div>
+                <div class="tech-tag">scikit-learn / SciPy</div>
+                <div class="tech-tag">matplotlib / seaborn</div>
+                <div class="tech-tag">Plotly</div>
+            </div>
+            <div class="tech-col fade-up">
+                <div class="tech-col-title">BI & Dashboards</div>
+                <div class="tech-tag">Power BI (39 DAX)</div>
+                <div class="tech-tag">Streamlit</div>
+                <div class="tech-tag">Relatórios HTML · exportação Excel</div>
+                <div class="tech-tag">OpenAI GPT-4 (opcional)</div>
+            </div>
+            <div class="tech-col fade-up">
+                <div class="tech-col-title">API & Infraestrutura</div>
+                <div class="tech-tag">FastAPI (7 endpoints)</div>
+                <div class="tech-tag">Docker</div>
+                <div class="tech-tag">CI/CD · pytest (489 testes)</div>
+                <div class="tech-tag">MkDocs</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- CTA -->
+<div class="cta-sect">
+    <div class="container">
+        <div class="label">Open source</div>
+        <h2>Vê o projeto completo</h2>
+        <p>Explora o relatório interativo, ou mergulha no código — scripts de ETL, medidas DAX e documentação completa no GitHub.</p>
+        <div class="cta-actions">
+            <a href="https://diogomserino.github.io/Portugal-Data-Intelligence/" target="_blank" rel="noopener" class="btn btn-primary">
+                <svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                Ver relatório ao vivo
+            </a>
+            <a href="https://github.com/diogomserino/Portugal-Data-Intelligence" target="_blank" rel="noopener" class="btn btn-ghost-light">
+                <svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                Repositório no GitHub
+            </a>
+            <a href="/pt/#contact" class="btn btn-ghost-light">
+                Trabalha comigo
+            </a>
+        </div>
+    </div>
+</div>
+
+
+</main>
