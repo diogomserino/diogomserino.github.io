@@ -1,3 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://diogomserino.github.io/sitemap.xml
