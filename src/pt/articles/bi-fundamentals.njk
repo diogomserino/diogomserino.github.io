@@ -1,7 +1,7 @@
 ---
 translationKey: "article:bi-fundamentals"
 title: "Fundamentos de BI & Analytics — Diogo Serino"
-description: "De tabelas em bruto a insight de negócio — uma explicação de modelação de dados, DAX, SQL e os KPIs que guiam decisões em finanças e RH."
+description: "De tabelas em bruto a insight de negócio: uma explicação de modelação de dados, DAX, SQL e os KPIs que guiam decisões em finanças e RH."
 ogTitle: "Fundamentos de BI & Analytics — Diogo Serino"
 bodyAttr: 'class="theme-data"'
 crumb: "Fundamentos de BI & Analytics"
@@ -20,7 +20,7 @@ cardInner: |
                     Analytics
                 </div>
                 <h3 class="article-card-title">Fundamentos de BI &amp; Analytics</h3>
-                <div class="article-card-desc">De tabelas em bruto a insight de negócio — modelação de dados em Star Schema, medidas DAX, padrões de SQL, e os KPIs de Finanças e RH que conduzem decisões reais.</div>
+                <div class="article-card-desc">De tabelas em bruto a insight de negócio: modelação de dados em Star Schema, medidas DAX, padrões de SQL, e os KPIs de Finanças e RH que conduzem decisões reais.</div>
                 <div class="article-card-tags">
                     <span class="stag">Power BI</span>
                     <span class="stag">DAX</span>
@@ -36,7 +36,7 @@ cardInner: |
             Business Intelligence
         </div>
         <h1 class="proj-title">BI &amp; Analytics<br>Fundamentos</h1>
-        <p class="proj-sub">De tabelas em bruto a insight de negócio — uma explicação de modelação de dados, DAX, SQL e os KPIs que guiam decisões em finanças e RH.</p>
+        <p class="proj-sub">De tabelas em bruto a insight de negócio: uma explicação de modelação de dados, DAX, SQL e os KPIs que guiam decisões em finanças e RH.</p>
         <div class="stack-row">
             <span class="stag-dk">Power BI</span>
             <span class="stag-dk">DAX</span>
@@ -57,15 +57,15 @@ cardInner: |
 <div class="art-wrap">
 
     <div class="art-intro fade-up">
-        <p>Business Intelligence tornou-se um daqueles termos que significam tudo e nada ao mesmo tempo. Pergunta a dez pessoas e terás dez respostas — dashboards, data warehouses, SQL, "transformar dados em decisões". Todas parcialmente certas. Nenhuma completa.</p>
-        <p>Este guia constrói o quadro de raiz. Do modelo de dados que torna a analytics possível, passando pela linguagem que alimenta as medidas do Power BI, até aos KPIs de domínio que de facto respondem a perguntas de negócio. No fim, terás um mapa mental claro de como a stack de BI se encaixa — e onde cada peça mais importa.</p>
+        <p>Business Intelligence tornou-se um daqueles termos que significam tudo e nada ao mesmo tempo. Pergunta a dez pessoas e terás dez respostas: dashboards, data warehouses, SQL, "transformar dados em decisões". Todas parcialmente certas. Nenhuma completa.</p>
+        <p>Este guia constrói o quadro de raiz. Do modelo de dados que torna a analytics possível, passando pela linguagem que alimenta as medidas do Power BI, até aos KPIs de domínio que de facto respondem a perguntas de negócio. No fim, terás um mapa mental claro de como a stack de BI se encaixa, e onde cada peça mais importa.</p>
     </div>
 
     <!-- 1. DATA MODELING -->
     <div class="art-section fade-up">
         <span class="art-label">Fundação</span>
         <h2 class="art-h2">Star Schema: a estrutura que torna o BI rápido</h2>
-        <p class="art-p">Antes de qualquer medida DAX ou query SQL poder funcionar corretamente, o modelo de dados tem de estar certo. A maioria dos problemas de performance em BI — relatórios lentos, totais errados, medidas que se comportam de forma inesperada — remonta a um modelo mal desenhado. Acerta no modelo e tudo o resto fica mais fácil.</p>
+        <p class="art-p">Antes de qualquer medida DAX ou query SQL poder funcionar corretamente, o modelo de dados tem de estar certo. A maioria dos problemas de performance em BI (relatórios lentos, totais errados, medidas que se comportam de forma inesperada) remonta a um modelo mal desenhado. Acerta no modelo e tudo o resto fica mais fácil.</p>
         <p class="art-p">O padrão dominante em BI é o <strong>Star Schema</strong>. Organiza os dados em dois tipos de tabelas:</p>
 
         <div class="art-visual">
@@ -75,14 +75,14 @@ cardInner: |
                         <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18"/></svg>
                     </div>
                     <div class="vis-card-title">Fact Table</div>
-                    <div class="vis-card-sub">Regista eventos e transações. Contém medidas numéricas — receita, quantidade, custo — e chaves estrangeiras que ligam a cada dimensão. Tipicamente a maior tabela do modelo.</div>
+                    <div class="vis-card-sub">Regista eventos e transações. Contém medidas numéricas (receita, quantidade, custo) e chaves estrangeiras que ligam a cada dimensão. Tipicamente a maior tabela do modelo.</div>
                 </div>
                 <div class="vis-card">
                     <div class="vis-card-icon">
                         <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
                     </div>
                     <div class="vis-card-title">Dimension Table</div>
-                    <div class="vis-card-sub">Descreve o contexto de cada facto. Data, Produto, Cliente, Região, Colaborador. Contém os atributos por que filtras e agrupas nos relatórios — os substantivos do teu modelo de dados.</div>
+                    <div class="vis-card-sub">Descreve o contexto de cada facto. Data, Produto, Cliente, Região, Colaborador. Contém os atributos por que filtras e agrupas nos relatórios, os substantivos do teu modelo de dados.</div>
                 </div>
                 <div class="vis-card">
                     <div class="vis-card-icon">
@@ -94,8 +94,8 @@ cardInner: |
             </div>
         </div>
 
-        <p class="art-p">A forma de "estrela" emerge naturalmente: a fact table fica no centro, com as dimension tables a irradiar para fora. Cada chave estrangeira na fact table liga à chave primária de uma dimensão. Uma fact table de vendas pode ter chaves para Data, Cliente, Produto e Região — quatro dimension tables, quatro pontas da estrela.</p>
-        <p class="art-p">A alternativa é o Snowflake Schema, onde as dimensões são normalizadas em subdimensões. Poupa armazenamento mas obriga o Power BI a fazer mais joins, abranda as queries e torna o DAX significativamente mais complexo de escrever. Para a maioria das cargas de BI, o <strong>Star Schema ganha ao Snowflake</strong> — a troca de um pouco mais de armazenamento por medidas dramaticamente mais simples e melhor performance compensa quase sempre.</p>
+        <p class="art-p">A forma de "estrela" emerge naturalmente: a fact table fica no centro, com as dimension tables a irradiar para fora. Cada chave estrangeira na fact table liga à chave primária de uma dimensão. Uma fact table de vendas pode ter chaves para Data, Cliente, Produto e Região, quatro dimension tables, quatro pontas da estrela.</p>
+        <p class="art-p">A alternativa é o Snowflake Schema, onde as dimensões são normalizadas em subdimensões. Poupa armazenamento mas obriga o Power BI a fazer mais joins, abranda as queries e torna o DAX significativamente mais complexo de escrever. Para a maioria das cargas de BI, o <strong>Star Schema ganha ao Snowflake</strong>. A troca de um pouco mais de armazenamento por medidas dramaticamente mais simples e melhor performance compensa quase sempre.</p>
 
         <div class="art-callout">
             O erro de modelação mais comum: misturar factos de grains diferentes na mesma tabela. Se a tua fact table tem uma linha por fatura mas tentas acrescentar uma linha por objetivo mensal, misturaste dois grains. Separa-os em fact tables distintas e constrói um modelo que as consiga relacionar corretamente.
@@ -113,17 +113,17 @@ cardInner: |
                 <div class="vis-step">
                     <div class="vis-step-num">01</div>
                     <div class="vis-step-title">Filter Context</div>
-                    <div class="vis-step-desc">Toda a medida DAX executa dentro de um filter context — o conjunto de filtros aplicados por rótulos de linha, cabeçalhos de coluna, slicers e filtros de relatório. A mesma medida devolve valores diferentes consoante onde está colocada. Perceber isto é 80% do DAX.</div>
+                    <div class="vis-step-desc">Toda a medida DAX executa dentro de um filter context, o conjunto de filtros aplicados por rótulos de linha, cabeçalhos de coluna, slicers e filtros de relatório. A mesma medida devolve valores diferentes consoante onde está colocada. Perceber isto é 80% do DAX.</div>
                 </div>
                 <div class="vis-step">
                     <div class="vis-step-num">02</div>
                     <div class="vis-step-title">CALCULATE()</div>
-                    <div class="vis-step-desc">A função mais importante em DAX. Avalia uma expressão num filter context modificado. Toda a medida avançada — crescimento homólogo, % do total, médias móveis — usa o CALCULATE para acrescentar, remover ou sobrepor filtros antes de calcular um resultado.</div>
+                    <div class="vis-step-desc">A função mais importante em DAX. Avalia uma expressão num filter context modificado. Toda a medida avançada (crescimento homólogo, % do total, médias móveis) usa o CALCULATE para acrescentar, remover ou sobrepor filtros antes de calcular um resultado.</div>
                 </div>
                 <div class="vis-step">
                     <div class="vis-step-num">03</div>
                     <div class="vis-step-title">Time Intelligence</div>
-                    <div class="vis-step-desc">TOTALYTD, DATEADD, SAMEPERIODLASTYEAR. As funções temporais nativas do Power BI exigem uma tabela de dimensão de datas adequada e sem lacunas — datas contínuas da mais antiga à mais recente dos teus dados, marcada como tabela de datas.</div>
+                    <div class="vis-step-desc">TOTALYTD, DATEADD, SAMEPERIODLASTYEAR. As funções temporais nativas do Power BI exigem uma tabela de dimensão de datas adequada e sem lacunas: datas contínuas da mais antiga à mais recente dos teus dados, marcada como tabela de datas.</div>
                 </div>
             </div>
         </div>
@@ -145,21 +145,21 @@ cardInner: |
     <div class="art-section fade-up">
         <span class="art-label">SQL</span>
         <h2 class="art-h2">Padrões de SQL que todo o analista de BI usa</h2>
-        <p class="art-p">SQL é a linguagem do data warehouse — a camada onde os dados de origem em bruto são transformados em tabelas limpas e modeladas que o Power BI consegue consultar. Para além do básico SELECT/WHERE/GROUP BY, a analytics de BI depende muito de um conjunto específico de padrões:</p>
+        <p class="art-p">SQL é a linguagem do data warehouse, a camada onde os dados de origem em bruto são transformados em tabelas limpas e modeladas que o Power BI consegue consultar. Para além do básico SELECT/WHERE/GROUP BY, a analytics de BI depende muito de um conjunto específico de padrões.</p>
 
         <div class="art-visual">
             <div class="vis-rows">
                 <div class="vis-row">
                     <div class="vis-row-label">Window Functions</div>
-                    <div class="vis-row-desc">ROW_NUMBER, RANK, LAG, LEAD, SUM OVER PARTITION BY. Permitem cálculos ao longo de linhas sem colapsar os resultados. Essenciais para totais acumulados, comparações período-a-período e ranking dentro de grupos — operações que o GROUP BY sozinho não consegue fazer.</div>
+                    <div class="vis-row-desc">ROW_NUMBER, RANK, LAG, LEAD, SUM OVER PARTITION BY. Permitem cálculos ao longo de linhas sem colapsar os resultados. Essenciais para totais acumulados, comparações período-a-período e ranking dentro de grupos, operações que o GROUP BY sozinho não consegue fazer.</div>
                 </div>
                 <div class="vis-row">
                     <div class="vis-row-label">CTEs</div>
-                    <div class="vis-row-desc">Common Table Expressions com a cláusula WITH. Partem queries complexas em passos nomeados e legíveis, em vez de subqueries profundamente aninhadas. Cada CTE pode referenciar as anteriores — o resultado é SQL que se lê como uma história passo a passo de como os dados são transformados.</div>
+                    <div class="vis-row-desc">Common Table Expressions com a cláusula WITH. Partem queries complexas em passos nomeados e legíveis, em vez de subqueries profundamente aninhadas. Cada CTE pode referenciar as anteriores; o resultado é SQL que se lê como uma história passo a passo de como os dados são transformados.</div>
                 </div>
                 <div class="vis-row">
                     <div class="vis-row-label">Tipos de JOIN</div>
-                    <div class="vis-row-desc">INNER (só linhas correspondentes), LEFT (todas as da esquerda, nulos para as sem correspondência à direita), FULL OUTER (todas as linhas de ambas). O mais mal usado: LEFT JOIN seguido de WHERE tabela_direita.id IS NOT NULL — é idêntico a um INNER JOIN, mas mais difícil de ler e às vezes mais lento.</div>
+                    <div class="vis-row-desc">INNER (só linhas correspondentes), LEFT (todas as da esquerda, nulos para as sem correspondência à direita), FULL OUTER (todas as linhas de ambas). O mais mal usado: LEFT JOIN seguido de WHERE tabela_direita.id IS NOT NULL, idêntico a um INNER JOIN, mas mais difícil de ler e às vezes mais lento.</div>
                 </div>
                 <div class="vis-row">
                     <div class="vis-row-label">Qualidade de Dados</div>
@@ -175,7 +175,7 @@ cardInner: |
     <div class="art-section fade-up">
         <span class="art-label">Conhecimento de Domínio</span>
         <h2 class="art-h2">Os KPIs que os stakeholders de negócio pedem mesmo</h2>
-        <p class="art-p">Competências técnicas de BI sem conhecimento de domínio produzem dashboards que ninguém usa. As métricas que aparecem nos relatórios executivos e nos board packs seguem padrões reconhecíveis na maioria das indústrias. Finanças e RH são os dois domínios mais comuns para analistas de BI — e cada um tem o seu próprio vocabulário.</p>
+        <p class="art-p">Competências técnicas de BI sem conhecimento de domínio produzem dashboards que ninguém usa. As métricas que aparecem nos relatórios executivos e nos board packs seguem padrões reconhecíveis na maioria das indústrias. Finanças e RH são os dois domínios mais comuns para analistas de BI, e cada um tem o seu próprio vocabulário.</p>
 
         <div class="art-visual">
             <div class="vis-dark-grid">
@@ -192,7 +192,7 @@ cardInner: |
             </div>
         </div>
 
-        <p class="art-p">O erro mais comum nos dashboards de finanças: confundir <strong>Orçamentado vs Real</strong> com <strong>Previsão vs Real</strong>. O orçamento é fixado no início do ano e mede contra o plano original. A previsão atualiza-se ao longo do ano e reflete a melhor estimativa atual de onde o ano vai terminar. Um bom dashboard de FP&A acompanha ambos — o desvio do orçamento diz-te onde estás face ao plano; a previsão diz-te para onde vais.</p>
+        <p class="art-p">O erro mais comum nos dashboards de finanças: confundir <strong>Orçamentado vs Real</strong> com <strong>Previsão vs Real</strong>. O orçamento é fixado no início do ano e mede contra o plano original. A previsão atualiza-se ao longo do ano e reflete a melhor estimativa atual de onde o ano vai terminar. Um bom dashboard de FP&A acompanha ambos: o desvio do orçamento diz-te onde estás face ao plano; a previsão diz-te para onde vais.</p>
 
         <p class="art-p">Na analytics de RH, <strong>headcount</strong> parece simples mas tem três definições válidas: num momento (colaboradores ativos numa data específica), médio (headcount médio ao longo de um período) e ajustado a FTE (ponderado para part-time). Quando os stakeholders dizem "headcount", esclarece sempre qual a definição que querem antes de construir a medida.</p>
     </div>
@@ -201,7 +201,7 @@ cardInner: |
     <div class="art-section fade-up">
         <span class="art-label">Arquitetura</span>
         <h2 class="art-h2">A stack de BI moderna: por onde os dados passam antes do Power BI</h2>
-        <p class="art-p">O Power BI é a última milha — a camada de visualização com que os executivos interagem. Por trás dele está uma stack que ingere, armazena e transforma os dados antes de chegarem a um dashboard. Perceber a stack ajuda-te a fazer debug de problemas, a comunicar com engenheiros de dados e a desenhar soluções que escalam.</p>
+        <p class="art-p">O Power BI é a última milha, a camada de visualização com que os executivos interagem. Por trás dele está uma stack que ingere, armazena e transforma os dados antes de chegarem a um dashboard. Perceber a stack ajuda-te a fazer debug de problemas, a comunicar com engenheiros de dados e a desenhar soluções que escalam.</p>
 
         <div class="art-visual">
             <div class="vis-flow-wrap">
@@ -234,11 +234,11 @@ cardInner: |
             </div>
         </div>
 
-        <p class="art-p">O <strong>data warehouse</strong> está tipicamente organizado em camadas: uma camada raw que guarda os dados de origem exatamente como recebidos, uma camada de staging onde os dados são limpos e padronizados, e uma camada de marts onde vivem os star schemas específicos de cada domínio — o mart de Finanças, o de RH, o de Vendas. O Power BI liga-se à camada de marts.</p>
+        <p class="art-p">O <strong>data warehouse</strong> está tipicamente organizado em camadas: uma camada raw que guarda os dados de origem exatamente como recebidos, uma camada de staging onde os dados são limpos e padronizados, e uma camada de marts onde vivem os star schemas específicos de cada domínio: o mart de Finanças, o de RH, o de Vendas. O Power BI liga-se à camada de marts.</p>
 
-        <p class="art-p">A <strong>camada de transformação</strong> — a lógica SQL que move os dados de raw para mart — é cada vez mais construída com dbt (data build tool), que te deixa escrever transformações SQL como modelos versionados, testados e documentados. No lado cloud, as combinações comuns são Snowflake + dbt + Fivetran, ou Azure Synapse + Power BI numa stack nativa da Microsoft.</p>
+        <p class="art-p">A <strong>camada de transformação</strong> (a lógica SQL que move os dados de raw para mart) é cada vez mais construída com dbt (data build tool), que te deixa escrever transformações SQL como modelos versionados, testados e documentados. No lado cloud, as combinações comuns são Snowflake + dbt + Fivetran, ou Azure Synapse + Power BI numa stack nativa da Microsoft.</p>
 
-        <p class="art-p">Como analista de BI, não precisas de construir o pipeline de ingestão — mas precisas de saber que existe, perceber como os dados chegam ao warehouse, e ser capaz de rastrear um número errado de trás para a frente pelas camadas até encontrar onde correu mal.</p>
+        <p class="art-p">Como analista de BI, não precisas de construir o pipeline de ingestão, mas precisas de saber que existe, perceber como os dados chegam ao warehouse, e ser capaz de rastrear um número errado de trás para a frente pelas camadas até encontrar onde correu mal.</p>
     </div>
 
     <div class="art-github fade-up">

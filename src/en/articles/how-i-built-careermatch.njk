@@ -1,7 +1,7 @@
 ---
 translationKey: "article:how-i-built-careermatch"
 title: "How I Built TryCareerMatch — Diogo Serino"
-description: "The full story of building TryCareerMatch — from a client-side prototype to a full-stack app: the problem, the scoring engine, the UX trade-offs, and the rebuild."
+description: "The full story of building TryCareerMatch, from a client-side prototype to a full-stack app: the problem, the scoring engine, the UX trade-offs, and the rebuild."
 ogTitle: "How I Built TryCareerMatch — Diogo Serino"
 bodyAttr: "class=\"theme-product\""
 crumb: "How I Built TryCareerMatch"
@@ -10,7 +10,7 @@ readingTime: "9 min"
 order: 0
 cardClass: "cat-prod"
 cardTitle: "How I Built TryCareerMatch"
-cardInner: "\n                <div class=\"article-cat cat-prod\">\n                    <svg aria-hidden=\"true\" width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n                        <rect x=\"1\" y=\"1\" width=\"10\" height=\"10\" rx=\"2\"/>\n                        <line x1=\"4\" y1=\"6\" x2=\"8\" y2=\"6\"/>\n                        <line x1=\"6\" y1=\"4\" x2=\"6\" y2=\"8\"/>\n                    </svg>\n                    Product\n                </div>\n                <h3 class=\"article-card-title\">How I Built TryCareerMatch</h3>\n                <div class=\"article-card-desc\">A behind-the-scenes look at building TryCareerMatch — from the scoring engine and the full-stack rebuild to the UX trade-offs and launch.</div>\n                <div class=\"article-card-tags\">\n                    <span class=\"stag\">Product</span>\n                    <span class=\"stag\">Case Study</span>\n                    <span class=\"stag\">UX</span>\n                    <span class=\"stag\">Scoring Engine</span>\n                </div>"
+cardInner: "\n                <div class=\"article-cat cat-prod\">\n                    <svg aria-hidden=\"true\" width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n                        <rect x=\"1\" y=\"1\" width=\"10\" height=\"10\" rx=\"2\"/>\n                        <line x1=\"4\" y1=\"6\" x2=\"8\" y2=\"6\"/>\n                        <line x1=\"6\" y1=\"4\" x2=\"6\" y2=\"8\"/>\n                    </svg>\n                    Product\n                </div>\n                <h3 class=\"article-card-title\">How I Built TryCareerMatch</h3>\n                <div class=\"article-card-desc\">A behind-the-scenes look at building TryCareerMatch, from the scoring engine and the full-stack rebuild to the UX trade-offs and launch.</div>\n                <div class=\"article-card-tags\">\n                    <span class=\"stag\">Product</span>\n                    <span class=\"stag\">Case Study</span>\n                    <span class=\"stag\">UX</span>\n                    <span class=\"stag\">Scoring Engine</span>\n                </div>"
 ---
 <main id="main" tabindex="-1">
 <section class="proj-hero">
@@ -20,7 +20,7 @@ cardInner: "\n                <div class=\"article-cat cat-prod\">\n            
             Product &nbsp;·&nbsp; Case Study
         </div>
         <h1 class="proj-title">How I Built<br>TryCareerMatch</h1>
-        <p class="proj-sub">From a personal frustration to a live product — the decisions, trade-offs, and lessons from building TryCareerMatch end-to-end.</p>
+        <p class="proj-sub">From a personal frustration to a live product: the decisions, trade-offs, and lessons from building TryCareerMatch end-to-end.</p>
         <div class="stack-row">
             <span class="stag-dk">Product Management</span>
             <span class="stag-dk">Full-Stack</span>
@@ -41,14 +41,14 @@ cardInner: "\n                <div class=\"article-cat cat-prod\">\n            
 
     <div class="art-intro fade-up">
         <p>TryCareerMatch started as a personal problem. After years of working across design, digital marketing, and financial analysis, I found myself struggling to answer one deceptively simple question: which product roles actually fit my background? Job descriptions were written for archetypal candidates, not for people whose skills had been built across multiple fields. Standard career tools gave me personality types and generic advice. None of them looked at what I could actually do and mapped it to what specific roles required.</p>
-        <p>So I built it myself — first as a quick client-side prototype to test whether the idea even worked, then, once it clearly did, as a proper full-stack product. What follows is the honest account of how that happened: the problem, the product decisions, the trade-offs, and what I'd still change.</p>
+        <p>So I built it myself. First as a quick client-side prototype to test whether the idea even worked, then, once it clearly did, as a proper full-stack product. What follows is the honest account of how that happened: the problem, the product decisions, the trade-offs, and what I'd still change.</p>
     </div>
 
     <!-- 1. THE PROBLEM -->
     <div class="art-section fade-up">
         <span class="art-label">Discovery</span>
         <h2 class="art-h2">The problem: skills without a map</h2>
-        <p class="art-p">The core frustration was this: most career discovery tools either tell you what you <em>are</em> (a personality type, a strengths profile) or show you what's available (job listings). Neither answers the question that actually matters for a career transition: <em>given what I can do, which roles am I closest to — and which skills are holding me back?</em></p>
+        <p class="art-p">The core frustration was this: most career discovery tools either tell you what you <em>are</em> (a personality type, a strengths profile) or show you what's available (job listings). Neither answers the question that actually matters for a career transition: <em>given what I can do, which roles am I closest to, and which skills are holding me back?</em></p>
         <p class="art-p">The people who feel this most acutely are professionals with non-linear or cross-functional backgrounds. Specialists fit neatly into their category. Generalists, career changers, and people who've built skills across multiple domains are left to piece together their own map.</p>
 
         <div class="art-visual">
@@ -60,13 +60,13 @@ cardInner: "\n                <div class=\"article-cat cat-prod\">\n            
                         Generic role suggestions ("You might like Marketing")<br>
                         Job boards filtered by title or keyword<br>
                         Salary benchmarks by role and location<br><br>
-                        Useful — but none of them take your actual profile as input.
+                        Useful, but none of them take your actual profile as input.
                     </div>
                 </div>
                 <div class="vis-compare-box vis-compare-right">
                     <div class="vis-compare-title">What TryCareerMatch does instead</div>
                     <div class="vis-compare-desc">
-                        Builds a full profile — education, experience, skills, interests<br>
+                        Builds a full profile from education, experience, skills, interests<br>
                         Maps it against 60+ roles across 9 sectors<br>
                         Ranks matches as Ready now, With upskilling, or Long-term<br>
                         Shows the specific skills to develop for a target role<br><br>
@@ -76,7 +76,7 @@ cardInner: "\n                <div class=\"article-cat cat-prod\">\n            
             </div>
         </div>
 
-        <div class="art-callout">The framing that unlocked the product: stop thinking about "what type of person are you?" and start asking "which roles value what you've already built?" These are very different questions with very different answers.</div>
+        <div class="art-callout">The framing that made the product click: stop thinking about "what type of person are you?" and start asking "which roles value what you've already built?" These are very different questions with very different answers.</div>
     </div>
 
     <!-- 2. THE CONCEPT -->
@@ -84,8 +84,8 @@ cardInner: "\n                <div class=\"article-cat cat-prod\">\n            
         <span class="art-label">Product Concept</span>
         <h2 class="art-h2">The core decision: mapping, not matching</h2>
         <p class="art-p">Early in the design process, I had two competing models in mind.</p>
-        <p class="art-p">The first was a <strong>quiz approach</strong>: ask users a series of questions about how they like to work, what energizes them, and how they handle conflict. This is what most career tools do. It's engaging, but it produces personality profiles — not capability-to-role mappings. And it's inherently subjective; people answer based on self-perception, not what they can do.</p>
-        <p class="art-p">The second was a <strong>capability approach</strong>: have people describe what they've actually done — education, experience, the skills they hold and how strong they are, plus their interests and work style — then score that against a model of what each role needs. Less of a personality test, far more useful. That's what I built.</p>
+        <p class="art-p">The first was a <strong>quiz approach</strong>: ask users a series of questions about how they like to work, what energizes them, and how they handle conflict. This is what most career tools do. It's engaging, but it produces personality profiles, not capability-to-role mappings. And it's inherently subjective; people answer based on self-perception, not what they can do.</p>
+        <p class="art-p">The second was a <strong>capability approach</strong>: have people describe what they've actually done (education, experience, the skills they hold and how strong they are, plus their interests and work style), then score that against a model of what each role needs. Less of a personality test, far more useful. That's what I built.</p>
 
         <div class="art-visual">
             <div class="vis-grid vis-grid-3">
@@ -94,21 +94,21 @@ cardInner: "\n                <div class=\"article-cat cat-prod\">\n            
                         <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
                     </div>
                     <div class="vis-card-title">120+ Skills</div>
-                    <div class="vis-card-sub">Organised into 11 groups (data, finance, product, design, management, and more). Users pick the ones relevant to them rather than rating all 120+ — enough coverage to be meaningful without the fatigue.</div>
+                    <div class="vis-card-sub">Organised into 11 groups (data, finance, product, design, management, and more). Users pick the ones relevant to them rather than rating all 120+, enough coverage to be meaningful without the fatigue.</div>
                 </div>
                 <div class="vis-card">
                     <div class="vis-card-icon">
                         <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="2"/><path d="M7 12h10M12 7v10"/></svg>
                     </div>
                     <div class="vis-card-title">60+ Roles</div>
-                    <div class="vis-card-sub">Specific enough to be useful — "Product Manager" and "Product Owner" are separate entries with distinct profiles. Covers 9 sectors from Tech to Finance to Government.</div>
+                    <div class="vis-card-sub">Specific enough to be useful. "Product Manager" and "Product Owner" are separate entries with distinct profiles. Covers 9 sectors from Tech to Finance to Government.</div>
                 </div>
                 <div class="vis-card">
                     <div class="vis-card-icon">
                         <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="9" x2="20" y2="9"/><line x1="4" y1="15" x2="20" y2="15"/><line x1="10" y1="3" x2="8" y2="21"/><line x1="16" y1="3" x2="14" y2="21"/></svg>
                     </div>
                     <div class="vis-card-title">Zero Registration</div>
-                    <div class="vis-card-sub">No account, no email, no payment — the product is fully free. Anonymous per-browser sessions preserve your progress without ever asking who you are. The principle: value in the moment of use, so nothing stands between the user and their result.</div>
+                    <div class="vis-card-sub">No account, no email, no payment. The product is fully free. Anonymous per-browser sessions preserve your progress without ever asking who you are. The principle: value in the moment of use, so nothing stands between the user and their result.</div>
                 </div>
             </div>
         </div>
@@ -118,8 +118,8 @@ cardInner: "\n                <div class=\"article-cat cat-prod\">\n            
     <div class="art-section fade-up">
         <span class="art-label">Scoring Engine</span>
         <h2 class="art-h2">Designing the scoring system</h2>
-        <p class="art-p">The hardest part of TryCareerMatch was never the interface — it was the scoring. Every one of the 60+ roles needs an importance profile: which skills are core, which are merely adjacent, which are non-negotiable "must-haves", plus the education and experience typically expected. That's thousands of judgment calls, each grounded in real job descriptions.</p>
-        <p class="art-p">Within a role, each skill carries an importance level — how much it actually moves the needle:</p>
+        <p class="art-p">The hardest part of TryCareerMatch was never the interface. It was the scoring. Every one of the 60+ roles needs an importance profile: which skills are core, which are merely adjacent, which are non-negotiable "must-haves", plus the education and experience typically expected. That's thousands of judgment calls, each grounded in real job descriptions.</p>
+        <p class="art-p">Within a role, each skill carries an importance level that reflects how much it actually moves the needle.</p>
 
         <div class="art-visual">
             <div class="vis-rows">
@@ -129,7 +129,7 @@ cardInner: "\n                <div class=\"article-cat cat-prod\">\n            
                 </div>
                 <div class="vis-row">
                     <div class="vis-row-label">Weight 1</div>
-                    <div class="vis-row-desc">Helpful. A minor positive signal — useful context but not expected. Example: basic SQL for a Product Manager role.</div>
+                    <div class="vis-row-desc">Helpful. A minor positive signal, useful context but not expected. Example: basic SQL for a Product Manager role.</div>
                 </div>
                 <div class="vis-row">
                     <div class="vis-row-label">Weight 2</div>
@@ -142,24 +142,24 @@ cardInner: "\n                <div class=\"article-cat cat-prod\">\n            
             </div>
         </div>
 
-        <p class="art-p">On top of those skill weights, the engine scores <strong>four weighted blocks</strong> — core skills (50%), adjacent skills (20%), education (15%), and experience (15%) — and then adjusts the result: it penalises missing must-have skills, infers behavioural skills from the profile, aligns interests using a RIASEC model, and lets strong education and experience compensate for one another. The output is a 0–100 fit score per role, grouped into <strong>Ready now</strong>, <strong>With upskilling</strong>, and <strong>Long-term</strong> tiers. It's a rule-based engine — deterministic and explainable, with no LLM in the loop.</p>
-        <p class="art-p">The most important calibration decision was role differentiation. If PM and PO had nearly identical profiles, the tool would produce nearly identical scores for both — useless. The distinctions have to be sharp enough to be meaningful while still being accurate to what those roles actually require.</p>
+        <p class="art-p">On top of those skill weights, the engine scores <strong>four weighted blocks</strong> (core skills 50%, adjacent skills 20%, education 15%, and experience 15%) and then adjusts the result: it penalises missing must-have skills, infers behavioural skills from the profile, aligns interests using a RIASEC model, and lets strong education and experience compensate for one another. The output is a 0–100 fit score per role, grouped into <strong>Ready now</strong>, <strong>With upskilling</strong>, and <strong>Long-term</strong> tiers. It's a rule-based engine, deterministic and explainable, with no LLM in the loop.</p>
+        <p class="art-p">The most important calibration decision was role differentiation. If PM and PO had nearly identical profiles, the tool would produce nearly identical scores for both, which is useless. The distinctions have to be sharp enough to be meaningful while still being accurate to what those roles actually require.</p>
 
-        <p class="art-p">That skeleton is the original design. What made it genuinely trustworthy on <strong>hybrid and partial profiles</strong> came later — two audit passes that re-calibrated the engine. Four refinements mattered most:</p>
+        <p class="art-p">That skeleton is the original design. What made it genuinely trustworthy on <strong>hybrid and partial profiles</strong> came later, through two audit passes that re-calibrated the engine. Four refinements mattered most.</p>
 
         <div class="art-visual">
             <div class="vis-rows">
                 <div class="vis-row">
                     <div class="vis-row-label">Monotonic, capped penalty</div>
-                    <div class="vis-row-desc">Missing must-have skills scale the score down — one missing ×0.85, two ×0.70, three or more ×0.55, with a floor. Crucially it's <em>monotonic</em>: acquiring a skill can never lower your score. An earlier version could, which is exactly the kind of bug that quietly destroys trust.</div>
+                    <div class="vis-row-desc">Missing must-have skills scale the score down, with one missing ×0.85, two ×0.70, three or more ×0.55, and a floor. Crucially it's <em>monotonic</em>: acquiring a skill can never lower your score. An earlier version could, which is exactly the kind of bug that quietly destroys trust.</div>
                 </div>
                 <div class="vis-row">
                     <div class="vis-row-label">Top-N core saturation</div>
-                    <div class="vis-row-desc">A candidate is measured against a role's six most important core skills (must-haves always included), not the whole list. Without this, once a role's core grew to eight or ten skills, a strong-but-partial profile — a senior with six excellent skills — collapsed, and nothing ever read as "ready now."</div>
+                    <div class="vis-row-desc">A candidate is measured against a role's six most important core skills (must-haves always included), not the whole list. Without this, once a role's core grew to eight or ten skills, a strong-but-partial profile (a senior with six excellent skills) collapsed, and nothing ever read as "ready now."</div>
                 </div>
                 <div class="vis-row">
                     <div class="vis-row-label">Behaviour needs evidence</div>
-                    <div class="vis-row-desc">A work-style preference only counts when it actually deviates from neutral. Universal defaults are excluded from scoring, so "soft" roles don't get inflated equally for everyone — the signal has to be real to move the result.</div>
+                    <div class="vis-row-desc">A work-style preference only counts when it actually deviates from neutral. Universal defaults are excluded from scoring, so "soft" roles don't get inflated equally for everyone; the signal has to be real to move the result.</div>
                 </div>
                 <div class="vis-row">
                     <div class="vis-row-label">Order of operations</div>
@@ -168,15 +168,15 @@ cardInner: "\n                <div class=\"article-cat cat-prod\">\n            
             </div>
         </div>
 
-        <div class="art-callout">The role data and scoring rules are the core of the product. Getting them right took research into job descriptions, conversations with people in those roles, and many rounds of calibration. It's also where AI was most useful — not to replace judgment, but to accelerate the research phase significantly.</div>
+        <div class="art-callout">The role data and scoring rules are the core of the product. Getting them right took research into job descriptions, conversations with people in those roles, and many rounds of calibration. It's also where AI was most useful, not to replace judgment but to accelerate the research phase significantly.</div>
     </div>
 
     <!-- 3b. ARCHETYPES -->
     <div class="art-section fade-up">
         <span class="art-label">Career Archetypes</span>
         <h2 class="art-h2">Naming who you are, not just ranking roles</h2>
-        <p class="art-p">The original problem was that career tools assume you fit a clean archetype. The answer I landed on has a nice irony to it: give people a <em>hybrid</em> archetype — a single, memorable identity that sits at the top of the report, above the role ranking. There are <strong>eleven archetypes</strong>, built from <strong>five career forces</strong>: Insight, Craft, Market, People, and Order.</p>
-        <p class="art-p">What makes it more than a personality badge is how it's derived. The forces are never asked — they're <strong>inferred from the same profile</strong> the user already filled in. Each skill group and each experience domain maps to a force; the engine ranks them, and the top two combine into a "bridge" (ten of those). If a third force is strong enough, you become the eleventh — <strong>The Polymath</strong>.</p>
+        <p class="art-p">The original problem was that career tools assume you fit a clean archetype. The answer I landed on has a nice irony to it: give people a <em>hybrid</em> archetype, a single, memorable identity that sits at the top of the report, above the role ranking. There are <strong>eleven archetypes</strong>, built from <strong>five career forces</strong>: Insight, Craft, Market, People, and Order.</p>
+        <p class="art-p">What makes it more than a personality badge is how it's derived. The forces are never asked. They're <strong>inferred from the same profile</strong> the user already filled in. Each skill group and each experience domain maps to a force; the engine ranks them, and the top two combine into a "bridge" (ten of those). If a third force is strong enough, you become the eleventh, <strong>The Polymath</strong>.</p>
 
         <div class="art-visual">
             <div class="vis-rows">
@@ -186,27 +186,27 @@ cardInner: "\n                <div class=\"article-cat cat-prod\">\n            
                 </div>
                 <div class="vis-row vis-row-accent">
                     <div class="vis-row-label">Behavioural skills carry no identity</div>
-                    <div class="vis-row-desc">Anything inferred for everyone is deliberately excluded — if it's universal, it can't define who you are. Identity has to come from what actually distinguishes you.</div>
+                    <div class="vis-row-desc">Anything inferred for everyone is deliberately excluded. If it's universal, it can't define who you are. Identity has to come from what actually distinguishes you.</div>
                 </div>
                 <div class="vis-row vis-row-accent">
                     <div class="vis-row-label">It admits uncertainty</div>
-                    <div class="vis-row-desc">An archetype needs at least two forces with real signal. Below that it returns nothing and nudges you to complete more of your profile, rather than inventing an identity from noise. Every result carries a confidence level — and "high" requires the second force to be a genuine pillar, not a sliver.</div>
+                    <div class="vis-row-desc">An archetype needs at least two forces with real signal. Below that it returns nothing and nudges you to complete more of your profile, rather than inventing an identity from noise. Every result carries a confidence level, and "high" requires the second force to be a genuine pillar, not a sliver.</div>
                 </div>
                 <div class="vis-row vis-row-accent">
                     <div class="vis-row-label">Purely additive</div>
-                    <div class="vis-row-desc">The archetype reads the same scoring snapshot and never changes a single role score. It's a lens on the result, not a thumb on the scale — which keeps the matching honest and the identity layer cleanly separate.</div>
+                    <div class="vis-row-desc">The archetype reads the same scoring snapshot and never changes a single role score. It's a lens on the result, not a thumb on the scale, which keeps the matching honest and the identity layer cleanly separate.</div>
                 </div>
             </div>
         </div>
 
-        <p class="art-p">It also turned out to be the product's best <strong>share hook</strong>. "I'm The Architect" travels in a way a ranked list never could — so each archetype gets its own page and a shareable card carrying the user's personal force fingerprint, doing the word-of-mouth work the assessment itself never could.</p>
+        <p class="art-p">It also turned out to be the product's best <strong>share hook</strong>. "I'm The Architect" travels in a way a ranked list never could, so each archetype gets its own page and a shareable card carrying the user's personal force fingerprint, doing the word-of-mouth work the assessment itself never could.</p>
     </div>
 
     <!-- 4. UX DECISIONS -->
     <div class="art-section fade-up">
         <span class="art-label">UX & Interface</span>
         <h2 class="art-h2">The interface decisions that shaped the experience</h2>
-        <p class="art-p">The landing page makes a three-step promise — profile, score, matches. The form behind it is a six-screen wizard, auto-saved as you go, with no account in sight. That gap is deliberate: the promise sets a low bar for starting; the six screens are where the accuracy comes from. The challenge was capturing enough signal — education, experience, skills, interests, work style — without it ever feeling like paperwork.</p>
+        <p class="art-p">The landing page makes a three-step promise: profile, score, matches. The form behind it is a six-screen wizard, auto-saved as you go, with no account in sight. That gap is deliberate: the promise sets a low bar for starting; the six screens are where the accuracy comes from. The challenge was capturing enough signal (education, experience, skills, interests, work style) without it ever feeling like paperwork.</p>
 
         <div class="art-visual">
             <div class="vis-steps">
@@ -218,30 +218,30 @@ cardInner: "\n                <div class=\"article-cat cat-prod\">\n            
                 <div class="vis-step">
                     <div class="vis-step-num">02</div>
                     <div class="vis-step-title">Pick skills, then rate them</div>
-                    <div class="vis-step-desc">Instead of rating all 120+ skills, users search and select the ones relevant to them (with suggestions), then set proficiency only on those. Less fatigue, better signal. Inputs use segmented pills, steppers, chips, and selectable cards — not endless sliders.</div>
+                    <div class="vis-step-desc">Instead of rating all 120+ skills, users search and select the ones relevant to them (with suggestions), then set proficiency only on those. Less fatigue, better signal. Inputs use segmented pills, steppers, chips, and selectable cards, not endless sliders.</div>
                 </div>
                 <div class="vis-step">
                     <div class="vis-step-num">03</div>
                     <div class="vis-step-title">Tiered results</div>
-                    <div class="vis-step-desc">Matches are grouped into Ready now, With upskilling, and Long-term goals — so users see both where they fit today and where they could grow, instead of a single flat ranking.</div>
+                    <div class="vis-step-desc">Matches are grouped into Ready now, With upskilling, and Long-term goals, so users see both where they fit today and where they could grow, instead of a single flat ranking.</div>
                 </div>
                 <div class="vis-step">
                     <div class="vis-step-num">04</div>
                     <div class="vis-step-title">Breakdown &amp; skill gaps</div>
-                    <div class="vis-step-desc">Each match opens a per-dimension score breakdown and a "top skills to develop" list — turning a discovery result into a concrete, actionable next step.</div>
+                    <div class="vis-step-desc">Each match opens a per-dimension score breakdown and a "top skills to develop" list, turning a discovery result into a concrete, actionable next step.</div>
                 </div>
             </div>
         </div>
 
-        <p class="art-p">The feature I most wanted at the start — a per-role skill-gap view — is now built in: every match shows the skills that would most improve it. That's what turns TryCareerMatch from a discovery tool into an active development one.</p>
+        <p class="art-p">The feature I most wanted at the start (a per-role skill-gap view) is now built in: every match shows the skills that would most improve it. That's what turns TryCareerMatch from a discovery tool into an active development one.</p>
     </div>
 
     <!-- 5. BUILD & LAUNCH -->
     <div class="art-section fade-up">
         <span class="art-label">Build &amp; Launch</span>
         <h2 class="art-h2">Stack, the rebuild, and what AI changed</h2>
-        <p class="art-p">The first version was deliberately minimal — vanilla HTML, CSS, and JavaScript, with all the scoring logic running client-side. That was exactly the right call to validate the idea quickly and cheaply. Once it proved genuinely useful, I rebuilt it as a full-stack product so the engine could grow.</p>
-        <p class="art-p">The current stack: a <strong>Next.js 14 + TypeScript + Tailwind</strong> frontend on Vercel, a <strong>FastAPI + async SQLAlchemy</strong> backend on Railway, and <strong>PostgreSQL</strong> (Neon) for the roles, the 120+ skill taxonomy, and the importance profiles. The scoring engine now runs server-side — which let it carry far more than a single client-side script ever could.</p>
+        <p class="art-p">The first version was deliberately minimal: vanilla HTML, CSS, and JavaScript, with all the scoring logic running client-side. That was exactly the right call to validate the idea quickly and cheaply. Once it proved genuinely useful, I rebuilt it as a full-stack product so the engine could grow.</p>
+        <p class="art-p">The current stack: a <strong>Next.js 14 + TypeScript + Tailwind</strong> frontend on Vercel, a <strong>FastAPI + async SQLAlchemy</strong> backend on Railway, and <strong>PostgreSQL</strong> (Neon) for the roles, the 120+ skill taxonomy, and the importance profiles. The scoring engine now runs server-side, which let it carry far more than a single client-side script ever could.</p>
 
         <div class="art-visual">
             <div class="vis-grid vis-grid-2">
@@ -250,26 +250,26 @@ cardInner: "\n                <div class=\"article-cat cat-prod\">\n            
                         <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
                     </div>
                     <div class="vis-card-title">From prototype to full-stack</div>
-                    <div class="vis-card-sub">v1 was a client-side prototype to test the concept. v2 is a server-side engine with a real database — room for must-have penalties, interest alignment, and the richer, tiered reports that didn't fit in the original script.</div>
+                    <div class="vis-card-sub">v1 was a client-side prototype to test the concept. v2 is a server-side engine with a real database, with room for must-have penalties, interest alignment, and the richer, tiered reports that didn't fit in the original script.</div>
                 </div>
                 <div class="vis-card">
                     <div class="vis-card-icon">
                         <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
                     </div>
                     <div class="vis-card-title">AI as a build accelerator</div>
-                    <div class="vis-card-sub">Claude accelerated the work throughout — role and skill data, scoring-rule design, scaffolding, and debugging. The product itself uses no LLM; the report narrative is rule-based and deterministic.</div>
+                    <div class="vis-card-sub">Claude accelerated the work throughout, across role and skill data, scoring-rule design, scaffolding, and debugging. The product itself uses no LLM; the report narrative is rule-based and deterministic.</div>
                 </div>
             </div>
         </div>
 
-        <p class="art-p">Launch was quiet by design. I shared it in a few communities where the problem resonated — professionals in career transition, people with non-linear backgrounds — and let organic sharing do the rest. The no-registration model makes sharing frictionless: send someone a link, they use it immediately, no account required.</p>
+        <p class="art-p">Launch was quiet by design. I shared it in a few communities where the problem resonated (professionals in career transition, people with non-linear backgrounds) and let organic sharing do the rest. The no-registration model makes sharing frictionless: send someone a link, they use it immediately, no account required.</p>
     </div>
 
     <!-- 6. RESULTS & LESSONS -->
     <div class="art-section fade-up">
         <span class="art-label">Retrospective</span>
         <h2 class="art-h2">What worked, what I'd change</h2>
-        <p class="art-p">TryCareerMatch has had real users and real sessions. More importantly, it solved the problem I originally had — and I've heard from others who found it genuinely useful for their own career thinking. That's the metric that matters most at this stage.</p>
+        <p class="art-p">TryCareerMatch has had real users and real sessions. More importantly, it solved the problem I originally had, and I've heard from others who found it genuinely useful for their own career thinking. That's the metric that matters most at this stage.</p>
         <p class="art-p">But honest retrospectives require acknowledging what I'd still do differently. A few things stand out:</p>
 
         <div class="art-visual">
@@ -284,24 +284,24 @@ cardInner: "\n                <div class=\"article-cat cat-prod\">\n            
                 </div>
                 <div class="vis-row vis-row-accent">
                     <div class="vis-row-label">What worked: the rebuild</div>
-                    <div class="vis-row-desc">Moving the engine server-side was worth it. A real backend and database made room for must-have penalties, interest alignment, and the tiered, broken-down reports — none of which fit comfortably in the original client-side script.</div>
+                    <div class="vis-row-desc">Moving the engine server-side was worth it. A real backend and database made room for must-have penalties, interest alignment, and the tiered, broken-down reports, none of which fit comfortably in the original client-side script.</div>
                 </div>
                 <div class="vis-row">
                     <div class="vis-row-label">What I'd change: result persistence</div>
-                    <div class="vis-row-desc">Without an account, results disappear when the session ends. A shareable results link (or a lightweight saved session) would let people revisit and compare their matches over time — without reintroducing registration friction.</div>
+                    <div class="vis-row-desc">Without an account, results disappear when the session ends. A shareable results link (or a lightweight saved session) would let people revisit and compare their matches over time, without reintroducing registration friction.</div>
                 </div>
                 <div class="vis-row">
                     <div class="vis-row-label">What I'd change: side-by-side compare</div>
-                    <div class="vis-row-desc">Users weighing two close matches still have to flip between them. A compare view — two roles, their score breakdowns and skill gaps next to each other — would make the "which one?" decision much easier.</div>
+                    <div class="vis-row-desc">Users weighing two close matches still have to flip between them. A compare view (two roles, their score breakdowns and skill gaps next to each other) would make the "which one?" decision much easier.</div>
                 </div>
                 <div class="vis-row">
                     <div class="vis-row-label">What I'd change: broader coverage</div>
-                    <div class="vis-row-desc">60+ roles across 9 sectors cover a lot, but there are gaps — more niche and emerging roles, and better localisation of titles and expectations by country.</div>
+                    <div class="vis-row-desc">60+ roles across 9 sectors cover a lot, but there are gaps, like more niche and emerging roles, and better localisation of titles and expectations by country.</div>
                 </div>
             </div>
         </div>
 
-        <div class="art-callout">The most useful retrospective question: "if I started over today, knowing what I know, what would I change in week one?" For me: design the scoring around a database from the start. The client-side prototype was perfect for proving the idea — but the real product always wanted a backend, and building toward that earlier would have saved a full rebuild.</div>
+        <div class="art-callout">The most useful retrospective question: "if I started over today, knowing what I know, what would I change in week one?" For me: design the scoring around a database from the start. The client-side prototype was perfect for proving the idea, but the real product always wanted a backend, and building toward that earlier would have saved a full rebuild.</div>
     </div>
 
 <div class="art-nav art-nav--no-prev">

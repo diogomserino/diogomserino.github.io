@@ -8,7 +8,7 @@ translationKey: careermatch
 crumb: "TryCareerMatch"
 breadcrumb: "TryCareerMatch"
 title: "TryCareerMatch · Diogo Serino"
-description: "TryCareerMatch — a free, no-signup full-stack career-discovery app (Next.js, FastAPI, PostgreSQL) mapping 120+ skills to 60+ roles across 9 sectors."
+description: "TryCareerMatch is a free, no-signup full-stack career-discovery app (Next.js, FastAPI, PostgreSQL) mapping 120+ skills to 60+ roles across 9 sectors."
 ogDescription: "Full-stack career-discovery app (Next.js + FastAPI + PostgreSQL) mapping 120+ skills against 60+ roles across 9 sectors with a server-side scoring engine. Free, no registration. Full case study."
 ---
 <main id="main" tabindex="-1">
@@ -19,7 +19,7 @@ ogDescription: "Full-stack career-discovery app (Next.js + FastAPI + PostgreSQL)
         <p class="proj-sub">
             A full-stack career-discovery app that maps <strong style="color:rgba(255,255,255,.75)">120+ skills</strong> against
             <strong style="color:rgba(255,255,255,.75)">60+ roles</strong> across
-            <strong style="color:rgba(255,255,255,.75)">9 sectors</strong> — built to help professionals
+            <strong style="color:rgba(255,255,255,.75)">9 sectors</strong>, built to help professionals
             with non-linear backgrounds find where they actually fit.
         </p>
         <div class="stack-row">
@@ -86,7 +86,7 @@ ogDescription: "Full-stack career-discovery app (Next.js + FastAPI + PostgreSQL)
                 </div>
                 <div class="ps-card-title">The Problem</div>
                 <div class="ps-card-text">
-                    <p>Professionals with non-linear backgrounds — people who've combined design with finance, or technical work with product strategy — struggle to articulate where they fit in the job market.</p>
+                    <p>Professionals with non-linear backgrounds (people who've combined design with finance, or technical work with product strategy) struggle to articulate where they fit in the job market.</p>
                     <p>Traditional career tools assume you fit a clean archetype. They don't account for the reality that many valuable professionals <strong>span multiple domains</strong> and their strongest matches aren't obvious from a job title alone.</p>
                     <p>The result: misapplied CVs, wasted applications, and a persistent feeling that "I'm qualified but I don't know what to call myself."</p>
                 </div>
@@ -98,8 +98,8 @@ ogDescription: "Full-stack career-discovery app (Next.js + FastAPI + PostgreSQL)
                 </div>
                 <div class="ps-card-title">The Solution</div>
                 <div class="ps-card-text">
-                    <p>TryCareerMatch builds a full profile through a guided <strong>6-step onboarding</strong> — education, experience, skills, interests, and work style. Users pick the skills relevant to them (with search and suggestions) and rate proficiency on those. A server-side <strong>rule-based engine</strong> then scores their fit against <strong>60+ roles</strong> across 9 sectors.</p>
-                    <p>The output isn't a single "best match" — roles are ranked into three tiers (<strong>Ready now</strong>, <strong>With upskilling</strong>, <strong>Long-term goals</strong>), each with a per-dimension score breakdown, skill-gap analysis ("top skills to develop"), career-path and seniority guidance, and a narrative read of the profile — topped by a <strong>hybrid career archetype</strong> that names the user's blend of strengths.</p>
+                    <p>TryCareerMatch builds a full profile through a guided <strong>6-step onboarding</strong> that covers education, experience, skills, interests, and work style. Users pick the skills relevant to them (with search and suggestions) and rate proficiency on those. A server-side <strong>rule-based engine</strong> then scores their fit against <strong>60+ roles</strong> across 9 sectors.</p>
+                    <p>The output isn't a single "best match"; roles are ranked into three tiers (<strong>Ready now</strong>, <strong>With upskilling</strong>, <strong>Long-term goals</strong>), each with a per-dimension score breakdown, skill-gap analysis ("top skills to develop"), career-path and seniority guidance, and a narrative read of the profile, topped by a <strong>hybrid career archetype</strong> that names the user's blend of strengths.</p>
                     <p>No account, no paywall, no email capture. Results in about 5 minutes.</p>
                 </div>
             </div>
@@ -126,12 +126,12 @@ ogDescription: "Full-stack career-discovery app (Next.js + FastAPI + PostgreSQL)
             <div class="process-step fade-up">
                 <div class="process-step-num">02</div>
                 <div class="process-step-title">Data Model Design</div>
-                <div class="process-step-desc">Built a 120+ skill taxonomy across 11 groups, plus an importance profile for each of the 60+ roles — required ("must-have") skills, typical education, and experience expectations. Modelled in PostgreSQL.</div>
+                <div class="process-step-desc">Built a 120+ skill taxonomy across 11 groups, plus an importance profile for each of the 60+ roles, covering required ("must-have") skills, typical education, and experience expectations. Modelled in PostgreSQL.</div>
             </div>
             <div class="process-step fade-up">
                 <div class="process-step-num">03</div>
                 <div class="process-step-title">UX & Interface</div>
-                <div class="process-step-desc">Designed a guided 6-step onboarding (Education · Experience · Skills · Interests · Work Style · Review) using segmented pills, steppers, chips, and selectable cards — no endless slider lists. Results screen with tiered matches, score breakdowns, and skill gaps.</div>
+                <div class="process-step-desc">Designed a guided 6-step onboarding (Education · Experience · Skills · Interests · Work Style · Review) using segmented pills, steppers, chips, and selectable cards, not endless slider lists. Results screen with tiered matches, score breakdowns, and skill gaps.</div>
             </div>
             <div class="process-step fade-up">
                 <div class="process-step-num">04</div>
@@ -151,9 +151,9 @@ ogDescription: "Full-stack career-discovery app (Next.js + FastAPI + PostgreSQL)
                 <div class="label">Under the hood</div>
                 <h2>The Scoring Model</h2>
                 <p>Each of the 60+ roles has an <strong>importance profile</strong> across the 120+ skills, plus required ("must-have") skills and typical education and experience.</p>
-                <p>The engine scores four weighted blocks — <strong>core skills (50%)</strong>, <strong>adjacent skills (20%)</strong>, <strong>education (15%)</strong>, and <strong>experience (15%)</strong> — then penalises missing must-have skills, infers behavioural skills, aligns interests (RIASEC), and lets strong education and experience compensate for each other.</p>
-                <p>This is why a Data Analyst with strong SQL and Power BI but limited stakeholder management scores higher on analyst roles than on product roles — even when both surface in their results.</p>
-                <p>The skill taxonomy spans <strong>11 groups</strong> across business, data, finance, product, design, and more. A separate rule-based pass writes the narrative profile analysis — there is no LLM in the product itself.</p>
+                <p>The engine scores four weighted blocks: <strong>core skills (50%)</strong>, <strong>adjacent skills (20%)</strong>, <strong>education (15%)</strong>, and <strong>experience (15%)</strong>. It then penalises missing must-have skills, infers behavioural skills, aligns interests (RIASEC), and lets strong education and experience compensate for each other.</p>
+                <p>This is why a Data Analyst with strong SQL and Power BI but limited stakeholder management scores higher on analyst roles than on product roles, even when both surface in their results.</p>
+                <p>The skill taxonomy spans <strong>11 groups</strong> across business, data, finance, product, design, and more. A separate rule-based pass writes the narrative profile analysis. There's no LLM in the product itself.</p>
             </div>
             <div class="scoring-visual fade-up">
                 <div class="scoring-title">Example: match profile for "Senior Data Analyst"</div>
@@ -201,12 +201,12 @@ ogDescription: "Full-stack career-discovery app (Next.js + FastAPI + PostgreSQL)
             <div class="content-text fade-up">
                 <div class="label">Identity</div>
                 <h2>Your career archetype</h2>
-                <p>The report doesn't just rank roles — it opens with <strong>who you are</strong>. Eleven hybrid archetypes are built from five career forces: <strong>Insight, Craft, Market, People, and Order</strong>.</p>
-                <p>The forces are never asked. They're <strong>inferred from the same profile</strong> the user already filled in — each skill group and experience domain maps to a force. The top two combine into a named "bridge" (ten of those); a strong third makes you the eleventh, <strong>The Polymath</strong>.</p>
-                <p>It's <strong>purely additive</strong> — it reads the scoring snapshot and never alters a score. And it's honest: with too little signal it returns no archetype rather than inventing one, and every result carries a confidence level.</p>
+                <p>The report doesn't just rank roles. It opens with <strong>who you are</strong>. Eleven hybrid archetypes are built from five career forces: <strong>Insight, Craft, Market, People, and Order</strong>.</p>
+                <p>The forces are never asked. They're <strong>inferred from the same profile</strong> the user already filled in. Each skill group and experience domain maps to a force. The top two combine into a named "bridge" (ten of those); a strong third makes you the eleventh, <strong>The Polymath</strong>.</p>
+                <p>It's <strong>purely additive</strong>. It reads the scoring snapshot and never alters a score. And it's honest: with too little signal it returns no archetype rather than inventing one, and every result carries a confidence level.</p>
             </div>
             <div class="scoring-visual fade-up">
-                <div class="scoring-title">Example: "The Architect" — Insight × Craft</div>
+                <div class="scoring-title">Example: "The Architect" · Insight × Craft</div>
                 <div class="scoring-row">
                     <span class="scoring-label">Insight</span>
                     <div class="scoring-bar-wrap"><div class="scoring-bar" style="width:92%"></div></div>
@@ -245,7 +245,7 @@ ogDescription: "Full-stack career-discovery app (Next.js + FastAPI + PostgreSQL)
         <div class="sec-head fade-up">
             <div class="label">Technology</div>
             <h2 class="title">Stack</h2>
-            <p class="subtitle">A full-stack app — the depth is in the scoring engine and data model.</p>
+            <p class="subtitle">A full-stack app where the depth is in the scoring engine and data model.</p>
         </div>
 
         <div class="tech-grid">
@@ -275,7 +275,7 @@ ogDescription: "Full-stack career-discovery app (Next.js + FastAPI + PostgreSQL)
                     <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
                 </div>
                 <div class="tech-card-name">Rule-based Scoring Engine</div>
-                <div class="tech-card-desc">Four weighted blocks (core, adjacent, education, experience), must-have-skill penalties, RIASEC interest alignment, and behavioural-skill inference. The report narrative is rule-based — no LLM in the product.</div>
+                <div class="tech-card-desc">Four weighted blocks (core, adjacent, education, experience), must-have-skill penalties, RIASEC interest alignment, and behavioural-skill inference. The report narrative is rule-based, with no LLM in the product.</div>
             </div>
             <div class="tech-card fade-up">
                 <div class="tech-card-icon">
@@ -289,7 +289,7 @@ ogDescription: "Full-stack career-discovery app (Next.js + FastAPI + PostgreSQL)
                     <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
                 </div>
                 <div class="tech-card-name">AI-Augmented Build</div>
-                <div class="tech-card-desc">Claude used throughout development — scaffolding, role and skill data, scoring-rule design, and debugging. The product itself uses no LLM.</div>
+                <div class="tech-card-desc">Claude used throughout development for scaffolding, role and skill data, scoring-rule design, and debugging. The product itself uses no LLM.</div>
             </div>
         </div>
     </div>
@@ -309,22 +309,22 @@ ogDescription: "Full-stack career-discovery app (Next.js + FastAPI + PostgreSQL)
             <div class="lesson-card worked fade-up">
                 <div class="lesson-type green">What worked</div>
                 <div class="lesson-title">Rebuilding as full-stack</div>
-                <div class="lesson-text">The client-side prototype proved the concept. Moving the engine server-side (FastAPI + PostgreSQL) let the scoring grow — must-have penalties, interest alignment, richer reports — without shipping all the logic and data to the browser.</div>
+                <div class="lesson-text">The client-side prototype proved the concept. Moving the engine server-side (FastAPI + PostgreSQL) let the scoring grow (must-have penalties, interest alignment, richer reports) without shipping all the logic and data to the browser.</div>
             </div>
             <div class="lesson-card worked fade-up">
                 <div class="lesson-type green">What worked</div>
                 <div class="lesson-title">Designing the data first</div>
-                <div class="lesson-text">Spending the first two weeks entirely on the skill taxonomy and role matrices — before writing a single line of UI — paid off enormously. The UX design was straightforward once the data model was solid.</div>
+                <div class="lesson-text">Spending the first two weeks entirely on the skill taxonomy and role matrices (before writing a single line of UI) paid off enormously. The UX design was straightforward once the data model was solid.</div>
             </div>
             <div class="lesson-card worked fade-up">
                 <div class="lesson-type green">What worked</div>
                 <div class="lesson-title">No-registration friction</div>
-                <div class="lesson-text">Removing all friction from the experience — no account, no email, immediate results — was the right product decision. The conversion rate from landing to completing the assessment is high.</div>
+                <div class="lesson-text">Removing all friction from the experience (no account, no email, immediate results) was the right product decision. The conversion rate from landing to completing the assessment is high.</div>
             </div>
             <div class="lesson-card changed fade-up">
                 <div class="lesson-type blue">What I'd change</div>
                 <div class="lesson-title">More granular skill weighting</div>
-                <div class="lesson-text">The current model uses integer weights (0–3). A continuous scale or sub-skill breakdowns would produce more nuanced results. I'd also add a "seniority" dimension — the importance profile for a junior vs. senior role differs significantly.</div>
+                <div class="lesson-text">The current model uses integer weights (0–3). A continuous scale or sub-skill breakdowns would produce more nuanced results. I'd also add a "seniority" dimension, since the importance profile for a junior vs. senior role differs significantly.</div>
             </div>
             <div class="lesson-card changed fade-up">
                 <div class="lesson-type blue">What I'd change</div>
@@ -346,7 +346,7 @@ ogDescription: "Full-stack career-discovery app (Next.js + FastAPI + PostgreSQL)
     <div class="container">
         <div class="label">Try it</div>
         <h2>See where your skills lead</h2>
-        <p>Complete the assessment in about 5 minutes — no account, no paywall. Just an honest look at where your profile fits.</p>
+        <p>Complete the assessment in about 5 minutes, with no account and no paywall. Just an honest look at where your profile fits.</p>
         <div class="cta-actions">
             <a href="https://trycareermatch.com" target="_blank" rel="noopener" class="btn btn-primary">
                 <svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>

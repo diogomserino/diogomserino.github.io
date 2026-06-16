@@ -1,7 +1,7 @@
 ---
 translationKey: "article:how-i-built-careermatch"
 title: "Como Construí o TryCareerMatch — Diogo Serino"
-description: "A história completa de construir o TryCareerMatch — de um protótipo client-side a uma app full-stack: o problema, o motor de scoring, os trade-offs de UX e a reconstrução."
+description: "A história completa de construir o TryCareerMatch, de um protótipo client-side a uma app full-stack: o problema, o motor de scoring, os trade-offs de UX e a reconstrução."
 ogTitle: "Como Construí o TryCareerMatch — Diogo Serino"
 bodyAttr: 'class="theme-product"'
 crumb: "Como Construí o TryCareerMatch"
@@ -20,7 +20,7 @@ cardInner: |
                     Produto
                 </div>
                 <h3 class="article-card-title">Como Construí o TryCareerMatch</h3>
-                <div class="article-card-desc">Os bastidores de construir o TryCareerMatch — do motor de scoring e da reconstrução full-stack aos trade-offs de UX e ao lançamento.</div>
+                <div class="article-card-desc">Os bastidores de construir o TryCareerMatch, do motor de scoring e da reconstrução full-stack aos trade-offs de UX e ao lançamento.</div>
                 <div class="article-card-tags">
                     <span class="stag">Produto</span>
                     <span class="stag">Case Study</span>
@@ -36,7 +36,7 @@ cardInner: |
             Produto &nbsp;·&nbsp; Case Study
         </div>
         <h1 class="proj-title">Como Construí o<br>TryCareerMatch</h1>
-        <p class="proj-sub">De uma frustração pessoal a um produto live — as decisões, os trade-offs e as lições de construir o TryCareerMatch de ponta a ponta.</p>
+        <p class="proj-sub">De uma frustração pessoal a um produto live: as decisões, os trade-offs e as lições de construir o TryCareerMatch de ponta a ponta.</p>
         <div class="stack-row">
             <span class="stag-dk">Gestão de Produto</span>
             <span class="stag-dk">Full-Stack</span>
@@ -57,14 +57,14 @@ cardInner: |
 
     <div class="art-intro fade-up">
         <p>O TryCareerMatch começou como um problema pessoal. Depois de anos a trabalhar entre design, marketing digital e análise financeira, dei por mim a debater-me com uma pergunta enganadoramente simples: que funções de produto encaixam mesmo no meu percurso? As descrições de funções são escritas para candidatos arquetípicos, não para pessoas cujas competências foram construídas em vários campos. As ferramentas de carreira habituais davam-me tipos de personalidade e conselhos genéricos. Nenhuma olhava para o que eu sabia mesmo fazer e o mapeava ao que funções específicas exigiam.</p>
-        <p>Por isso construí-o eu — primeiro como um protótipo rápido client-side para testar se a ideia sequer funcionava e, depois de ficar claro que sim, como um produto full-stack a sério. O que se segue é o relato honesto de como aconteceu: o problema, as decisões de produto, os trade-offs e o que eu ainda mudaria.</p>
+        <p>Por isso construí-o eu. Primeiro como um protótipo rápido client-side para testar se a ideia sequer funcionava e, depois de ficar claro que sim, como um produto full-stack a sério. O que se segue é o relato honesto de como aconteceu: o problema, as decisões de produto, os trade-offs e o que eu ainda mudaria.</p>
     </div>
 
     <!-- 1. THE PROBLEM -->
     <div class="art-section fade-up">
         <span class="art-label">Discovery</span>
         <h2 class="art-h2">O problema: competências sem mapa</h2>
-        <p class="art-p">A frustração central era esta: a maioria das ferramentas de descoberta de carreira ou te diz o que <em>és</em> (um tipo de personalidade, um perfil de pontos fortes) ou te mostra o que existe (anúncios de emprego). Nenhuma responde à pergunta que de facto importa numa transição de carreira: <em>dado o que sei fazer, de que funções estou mais perto — e que competências me estão a travar?</em></p>
+        <p class="art-p">A frustração central era esta: a maioria das ferramentas de descoberta de carreira ou te diz o que <em>és</em> (um tipo de personalidade, um perfil de pontos fortes) ou te mostra o que existe (anúncios de emprego). Nenhuma responde à pergunta que de facto importa numa transição de carreira: <em>dado o que sei fazer, de que funções estou mais perto, e que competências me estão a travar?</em></p>
         <p class="art-p">Quem sente isto mais agudamente são os profissionais com percursos não-lineares ou multidisciplinares. Os especialistas encaixam direitinhos na sua categoria. Os generalistas, quem muda de carreira e quem construiu competências em vários domínios ficam a montar o seu próprio mapa.</p>
 
         <div class="art-visual">
@@ -76,13 +76,13 @@ cardInner: |
                         Sugestões genéricas de funções ("Talvez gostes de Marketing")<br>
                         Bolsas de emprego filtradas por título ou palavra-chave<br>
                         Referências salariais por função e localização<br><br>
-                        Úteis — mas nenhuma usa o teu perfil real como input.
+                        Úteis, mas nenhuma usa o teu perfil real como input.
                     </div>
                 </div>
                 <div class="vis-compare-box vis-compare-right">
                     <div class="vis-compare-title">O que o TryCareerMatch faz em vez disso</div>
                     <div class="vis-compare-desc">
-                        Constrói um perfil completo — formação, experiência, competências, interesses<br>
+                        Constrói um perfil completo a partir de formação, experiência, competências, interesses<br>
                         Mapeia-o face a mais de 60 funções em 9 setores<br>
                         Ordena as correspondências como Pronto agora, Com upskilling ou Longo prazo<br>
                         Mostra as competências específicas a desenvolver para uma função-alvo<br><br>
@@ -100,8 +100,8 @@ cardInner: |
         <span class="art-label">Conceito de Produto</span>
         <h2 class="art-h2">A decisão central: mapear, não emparelhar</h2>
         <p class="art-p">Logo no início do processo de design, tinha dois modelos a competir na cabeça.</p>
-        <p class="art-p">O primeiro era uma <strong>abordagem de questionário</strong>: fazer ao utilizador uma série de perguntas sobre como gosta de trabalhar, o que o energiza e como lida com conflitos. É o que a maioria das ferramentas de carreira faz. É envolvente, mas produz perfis de personalidade — não mapeamentos de capacidade-para-função. E é inerentemente subjetivo; as pessoas respondem com base na autoperceção, não no que sabem fazer.</p>
-        <p class="art-p">O segundo era uma <strong>abordagem de capacidade</strong>: pedir às pessoas que descrevam o que fizeram mesmo — formação, experiência, as competências que têm e quão fortes são, mais os seus interesses e estilo de trabalho — e depois pontuar isso face a um modelo do que cada função precisa. Menos um teste de personalidade, muito mais útil. Foi o que construí.</p>
+        <p class="art-p">O primeiro era uma <strong>abordagem de questionário</strong>: fazer ao utilizador uma série de perguntas sobre como gosta de trabalhar, o que o energiza e como lida com conflitos. É o que a maioria das ferramentas de carreira faz. É envolvente, mas produz perfis de personalidade, não mapeamentos de capacidade-para-função. E é inerentemente subjetivo; as pessoas respondem com base na autoperceção, não no que sabem fazer.</p>
+        <p class="art-p">O segundo era uma <strong>abordagem de capacidade</strong>: pedir às pessoas que descrevam o que fizeram mesmo (formação, experiência, as competências que têm e quão fortes são, mais os seus interesses e estilo de trabalho) e depois pontuar isso face a um modelo do que cada função precisa. Menos um teste de personalidade, muito mais útil. Foi o que construí.</p>
 
         <div class="art-visual">
             <div class="vis-grid vis-grid-3">
@@ -110,21 +110,21 @@ cardInner: |
                         <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
                     </div>
                     <div class="vis-card-title">Mais de 120 competências</div>
-                    <div class="vis-card-sub">Organizadas em 11 grupos (dados, finanças, produto, design, gestão e mais). O utilizador escolhe as relevantes para si em vez de classificar as 120+ — cobertura suficiente para ser significativa sem a fadiga.</div>
+                    <div class="vis-card-sub">Organizadas em 11 grupos (dados, finanças, produto, design, gestão e mais). O utilizador escolhe as relevantes para si em vez de classificar as 120+, cobertura suficiente para ser significativa sem a fadiga.</div>
                 </div>
                 <div class="vis-card">
                     <div class="vis-card-icon">
                         <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="2"/><path d="M7 12h10M12 7v10"/></svg>
                     </div>
                     <div class="vis-card-title">Mais de 60 funções</div>
-                    <div class="vis-card-sub">Específicas o suficiente para serem úteis — "Product Manager" e "Product Owner" são entradas separadas, com perfis distintos. Cobre 9 setores, de Tech a Finanças e Administração Pública.</div>
+                    <div class="vis-card-sub">Específicas o suficiente para serem úteis. "Product Manager" e "Product Owner" são entradas separadas, com perfis distintos. Cobre 9 setores, de Tech a Finanças e Administração Pública.</div>
                 </div>
                 <div class="vis-card">
                     <div class="vis-card-icon">
                         <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="9" x2="20" y2="9"/><line x1="4" y1="15" x2="20" y2="15"/><line x1="10" y1="3" x2="8" y2="21"/><line x1="16" y1="3" x2="14" y2="21"/></svg>
                     </div>
                     <div class="vis-card-title">Zero registo</div>
-                    <div class="vis-card-sub">Sem conta, sem email, sem pagamento — o produto é totalmente gratuito. Sessões anónimas por browser preservam o teu progresso sem nunca perguntar quem és. O princípio: valor no momento de uso, para que nada se interponha entre o utilizador e o seu resultado.</div>
+                    <div class="vis-card-sub">Sem conta, sem email, sem pagamento. O produto é totalmente gratuito. Sessões anónimas por browser preservam o teu progresso sem nunca perguntar quem és. O princípio: valor no momento de uso, para que nada se interponha entre o utilizador e o seu resultado.</div>
                 </div>
             </div>
         </div>
@@ -134,8 +134,8 @@ cardInner: |
     <div class="art-section fade-up">
         <span class="art-label">Motor de Scoring</span>
         <h2 class="art-h2">Desenhar o sistema de scoring</h2>
-        <p class="art-p">A parte mais difícil do TryCareerMatch nunca foi a interface — foi o scoring. Cada uma das mais de 60 funções precisa de um perfil de importância: que competências são centrais, quais são apenas adjacentes, quais são "must-haves" inegociáveis, mais a formação e a experiência tipicamente esperadas. São milhares de decisões de critério, cada uma ancorada em descrições de funções reais.</p>
-        <p class="art-p">Dentro de uma função, cada competência tem um nível de importância — o quanto realmente faz diferença:</p>
+        <p class="art-p">A parte mais difícil do TryCareerMatch nunca foi a interface. Foi o scoring. Cada uma das mais de 60 funções precisa de um perfil de importância: que competências são centrais, quais são apenas adjacentes, quais são "must-haves" inegociáveis, mais a formação e a experiência tipicamente esperadas. São milhares de decisões de critério, cada uma ancorada em descrições de funções reais.</p>
+        <p class="art-p">Dentro de uma função, cada competência tem um nível de importância que reflete o quanto realmente faz diferença.</p>
 
         <div class="art-visual">
             <div class="vis-rows">
@@ -145,7 +145,7 @@ cardInner: |
                 </div>
                 <div class="vis-row">
                     <div class="vis-row-label">Peso 1</div>
-                    <div class="vis-row-desc">Útil. Um sinal positivo menor — contexto útil mas não esperado. Exemplo: SQL básico para uma função de Product Manager.</div>
+                    <div class="vis-row-desc">Útil. Um sinal positivo menor, contexto útil mas não esperado. Exemplo: SQL básico para uma função de Product Manager.</div>
                 </div>
                 <div class="vis-row">
                     <div class="vis-row-label">Peso 2</div>
@@ -158,24 +158,24 @@ cardInner: |
             </div>
         </div>
 
-        <p class="art-p">Por cima destes pesos de competências, o motor pontua <strong>quatro blocos ponderados</strong> — competências centrais (50%), competências adjacentes (20%), formação (15%) e experiência (15%) — e depois ajusta o resultado: penaliza competências must-have em falta, infere competências comportamentais a partir do perfil, alinha interesses com um modelo RIASEC e deixa que formação e experiência fortes compensem uma à outra. O output é uma pontuação de adequação de 0–100 por função, agrupada nos níveis <strong>Pronto agora</strong>, <strong>Com upskilling</strong> e <strong>Longo prazo</strong>. É um motor baseado em regras — determinístico e explicável, sem qualquer LLM no fluxo.</p>
-        <p class="art-p">A decisão de calibração mais importante foi a diferenciação de funções. Se PM e PO tivessem perfis quase idênticos, a ferramenta produziria pontuações quase idênticas para ambos — inútil. As distinções têm de ser nítidas o suficiente para serem significativas, mantendo-se fiéis ao que essas funções de facto exigem.</p>
+        <p class="art-p">Por cima destes pesos de competências, o motor pontua <strong>quatro blocos ponderados</strong> (competências centrais 50%, competências adjacentes 20%, formação 15% e experiência 15%) e depois ajusta o resultado: penaliza competências must-have em falta, infere competências comportamentais a partir do perfil, alinha interesses com um modelo RIASEC e deixa que formação e experiência fortes compensem uma à outra. O output é uma pontuação de adequação de 0–100 por função, agrupada nos níveis <strong>Pronto agora</strong>, <strong>Com upskilling</strong> e <strong>Longo prazo</strong>. É um motor baseado em regras, determinístico e explicável, sem qualquer LLM no fluxo.</p>
+        <p class="art-p">A decisão de calibração mais importante foi a diferenciação de funções. Se PM e PO tivessem perfis quase idênticos, a ferramenta produziria pontuações quase idênticas para ambos, o que é inútil. As distinções têm de ser nítidas o suficiente para serem significativas, mantendo-se fiéis ao que essas funções de facto exigem.</p>
 
-        <p class="art-p">Esse esqueleto é o desenho original. O que o tornou genuinamente fiável em <strong>perfis híbridos e parciais</strong> veio depois — duas passagens de auditoria que recalibraram o motor. Quatro refinamentos foram os que mais contaram:</p>
+        <p class="art-p">Esse esqueleto é o desenho original. O que o tornou genuinamente fiável em <strong>perfis híbridos e parciais</strong> veio depois, através de duas passagens de auditoria que recalibraram o motor. Quatro refinamentos foram os que mais contaram.</p>
 
         <div class="art-visual">
             <div class="vis-rows">
                 <div class="vis-row">
                     <div class="vis-row-label">Penalização monótona e limitada</div>
-                    <div class="vis-row-desc">Competências must-have em falta reduzem a pontuação — uma em falta ×0,85, duas ×0,70, três ou mais ×0,55, com um piso. Crucialmente é <em>monótona</em>: adquirir uma competência nunca pode baixar a tua pontuação. Uma versão anterior podia, e é exatamente o tipo de bug que destrói a confiança em silêncio.</div>
+                    <div class="vis-row-desc">Competências must-have em falta reduzem a pontuação, com uma em falta ×0,85, duas ×0,70, três ou mais ×0,55, e um piso. Crucialmente é <em>monótona</em>: adquirir uma competência nunca pode baixar a tua pontuação. Uma versão anterior podia, e é exatamente o tipo de bug que destrói a confiança em silêncio.</div>
                 </div>
                 <div class="vis-row">
                     <div class="vis-row-label">Saturação Top-N do core</div>
-                    <div class="vis-row-desc">Um candidato é medido face às seis competências centrais mais importantes de uma função (must-haves sempre incluídos), não face à lista toda. Sem isto, assim que o core de uma função crescia para oito ou dez competências, um perfil forte-mas-parcial — um sénior com seis competências excelentes — colapsava, e nada chegava a ler-se como "pronto agora".</div>
+                    <div class="vis-row-desc">Um candidato é medido face às seis competências centrais mais importantes de uma função (must-haves sempre incluídos), não face à lista toda. Sem isto, assim que o core de uma função crescia para oito ou dez competências, um perfil forte-mas-parcial (um sénior com seis competências excelentes) colapsava, e nada chegava a ler-se como "pronto agora".</div>
                 </div>
                 <div class="vis-row">
                     <div class="vis-row-label">O comportamento precisa de evidência</div>
-                    <div class="vis-row-desc">Uma preferência de estilo de trabalho só conta quando de facto se desvia do neutro. Os defaults universais são excluídos do scoring, para que funções "soft" não fiquem inflacionadas por igual para toda a gente — o sinal tem de ser real para mover o resultado.</div>
+                    <div class="vis-row-desc">Uma preferência de estilo de trabalho só conta quando de facto se desvia do neutro. Os defaults universais são excluídos do scoring, para que funções "soft" não fiquem inflacionadas por igual para toda a gente; o sinal tem de ser real para mover o resultado.</div>
                 </div>
                 <div class="vis-row">
                     <div class="vis-row-label">Ordem das operações</div>
@@ -184,15 +184,15 @@ cardInner: |
             </div>
         </div>
 
-        <div class="art-callout">Os dados das funções e as regras de scoring são o núcleo do produto. Acertar neles exigiu pesquisa de descrições de funções, conversas com pessoas nessas funções e muitas rondas de calibração. É também onde a IA foi mais útil — não para substituir o critério, mas para acelerar significativamente a fase de pesquisa.</div>
+        <div class="art-callout">Os dados das funções e as regras de scoring são o núcleo do produto. Acertar neles exigiu pesquisa de descrições de funções, conversas com pessoas nessas funções e muitas rondas de calibração. É também onde a IA foi mais útil, não para substituir o critério mas para acelerar significativamente a fase de pesquisa.</div>
     </div>
 
     <!-- 3b. ARCHETYPES -->
     <div class="art-section fade-up">
         <span class="art-label">Arquétipos de Carreira</span>
         <h2 class="art-h2">Dar nome a quem és, não só ordenar funções</h2>
-        <p class="art-p">O problema original era que as ferramentas de carreira assumem que encaixas num arquétipo limpo. A resposta a que cheguei tem uma ironia gira: dar às pessoas um arquétipo <em>híbrido</em> — uma identidade única e memorável, no topo do relatório, acima da ordenação de funções. Há <strong>onze arquétipos</strong>, construídos a partir de <strong>cinco forças de carreira</strong>: Insight, Craft, Market, People e Order.</p>
-        <p class="art-p">O que o torna mais do que um crachá de personalidade é como é derivado. As forças nunca são perguntadas — são <strong>inferidas a partir do mesmo perfil</strong> que o utilizador já preencheu. Cada grupo de competências e cada domínio de experiência mapeia para uma força; o motor ordena-as, e as duas principais combinam-se numa "ponte" (dez dessas). Se uma terceira força for forte o suficiente, tornas-te o décimo primeiro — <strong>The Polymath</strong>.</p>
+        <p class="art-p">O problema original era que as ferramentas de carreira assumem que encaixas num arquétipo limpo. A resposta a que cheguei tem uma ironia gira: dar às pessoas um arquétipo <em>híbrido</em>, uma identidade única e memorável, no topo do relatório, acima da ordenação de funções. Há <strong>onze arquétipos</strong>, construídos a partir de <strong>cinco forças de carreira</strong>: Insight, Craft, Market, People e Order.</p>
+        <p class="art-p">O que o torna mais do que um crachá de personalidade é como é derivado. As forças nunca são perguntadas. São <strong>inferidas a partir do mesmo perfil</strong> que o utilizador já preencheu. Cada grupo de competências e cada domínio de experiência mapeia para uma força; o motor ordena-as, e as duas principais combinam-se numa "ponte" (dez dessas). Se uma terceira força for forte o suficiente, tornas-te o décimo primeiro, <strong>The Polymath</strong>.</p>
 
         <div class="art-visual">
             <div class="vis-rows">
@@ -202,27 +202,27 @@ cardInner: |
                 </div>
                 <div class="vis-row vis-row-accent">
                     <div class="vis-row-label">As competências comportamentais não carregam identidade</div>
-                    <div class="vis-row-desc">Tudo o que é inferido para toda a gente é deliberadamente excluído — se é universal, não pode definir quem és. A identidade tem de vir do que de facto te distingue.</div>
+                    <div class="vis-row-desc">Tudo o que é inferido para toda a gente é deliberadamente excluído. Se é universal, não pode definir quem és. A identidade tem de vir do que de facto te distingue.</div>
                 </div>
                 <div class="vis-row vis-row-accent">
                     <div class="vis-row-label">Admite incerteza</div>
-                    <div class="vis-row-desc">Um arquétipo precisa de pelo menos duas forças com sinal real. Abaixo disso não devolve nada e sugere que completes mais do teu perfil, em vez de inventar uma identidade a partir de ruído. Cada resultado traz um nível de confiança — e "elevado" exige que a segunda força seja um pilar genuíno, não uma esquírola.</div>
+                    <div class="vis-row-desc">Um arquétipo precisa de pelo menos duas forças com sinal real. Abaixo disso não devolve nada e sugere que completes mais do teu perfil, em vez de inventar uma identidade a partir de ruído. Cada resultado traz um nível de confiança, e "elevado" exige que a segunda força seja um pilar genuíno, não uma esquírola.</div>
                 </div>
                 <div class="vis-row vis-row-accent">
                     <div class="vis-row-label">Puramente aditivo</div>
-                    <div class="vis-row-desc">O arquétipo lê o mesmo retrato de pontuação e nunca altera uma única pontuação de função. É uma lente sobre o resultado, não um dedo na balança — o que mantém o emparelhamento honesto e a camada de identidade bem separada.</div>
+                    <div class="vis-row-desc">O arquétipo lê o mesmo retrato de pontuação e nunca altera uma única pontuação de função. É uma lente sobre o resultado, não um dedo na balança, o que mantém o emparelhamento honesto e a camada de identidade bem separada.</div>
                 </div>
             </div>
         </div>
 
-        <p class="art-p">Acabou também por ser o melhor <strong>share hook</strong> do produto. "Sou The Architect" viaja de uma forma que uma lista ordenada nunca conseguiria — por isso cada arquétipo tem a sua própria página e um cartão partilhável com a impressão digital de forças do utilizador, a fazer o trabalho de boca a boca que a avaliação em si nunca faria.</p>
+        <p class="art-p">Acabou também por ser o melhor <strong>share hook</strong> do produto. "Sou The Architect" viaja de uma forma que uma lista ordenada nunca conseguiria, por isso cada arquétipo tem a sua própria página e um cartão partilhável com a impressão digital de forças do utilizador, a fazer o trabalho de boca a boca que a avaliação em si nunca faria.</p>
     </div>
 
     <!-- 4. UX DECISIONS -->
     <div class="art-section fade-up">
         <span class="art-label">UX & Interface</span>
         <h2 class="art-h2">As decisões de interface que moldaram a experiência</h2>
-        <p class="art-p">A landing page faz uma promessa de três passos — perfil, pontuação, correspondências. O formulário por trás é um wizard de seis ecrãs, guardado automaticamente à medida que avanças, sem conta à vista. Essa diferença é deliberada: a promessa põe a fasquia de entrada baixa; os seis ecrãs são de onde vem a precisão. O desafio foi capturar sinal suficiente — formação, experiência, competências, interesses, estilo de trabalho — sem nunca parecer papelada.</p>
+        <p class="art-p">A landing page faz uma promessa de três passos: perfil, pontuação, correspondências. O formulário por trás é um wizard de seis ecrãs, guardado automaticamente à medida que avanças, sem conta à vista. Essa diferença é deliberada: a promessa põe a fasquia de entrada baixa; os seis ecrãs são de onde vem a precisão. O desafio foi capturar sinal suficiente (formação, experiência, competências, interesses, estilo de trabalho) sem nunca parecer papelada.</p>
 
         <div class="art-visual">
             <div class="vis-steps">
@@ -234,30 +234,30 @@ cardInner: |
                 <div class="vis-step">
                     <div class="vis-step-num">02</div>
                     <div class="vis-step-title">Escolher competências, depois classificá-las</div>
-                    <div class="vis-step-desc">Em vez de classificar as 120+ competências, o utilizador pesquisa e seleciona as relevantes (com sugestões) e só define proficiência nessas. Menos fadiga, melhor sinal. Os inputs usam pills segmentados, steppers, chips e cartões selecionáveis — não sliders infinitos.</div>
+                    <div class="vis-step-desc">Em vez de classificar as 120+ competências, o utilizador pesquisa e seleciona as relevantes (com sugestões) e só define proficiência nessas. Menos fadiga, melhor sinal. Os inputs usam pills segmentados, steppers, chips e cartões selecionáveis, não sliders infinitos.</div>
                 </div>
                 <div class="vis-step">
                     <div class="vis-step-num">03</div>
                     <div class="vis-step-title">Resultados por níveis</div>
-                    <div class="vis-step-desc">As correspondências são agrupadas em Pronto agora, Com upskilling e Objetivos a longo prazo — para que o utilizador veja onde encaixa hoje e onde poderia crescer, em vez de uma única lista plana.</div>
+                    <div class="vis-step-desc">As correspondências são agrupadas em Pronto agora, Com upskilling e Objetivos a longo prazo, para que o utilizador veja onde encaixa hoje e onde poderia crescer, em vez de uma única lista plana.</div>
                 </div>
                 <div class="vis-step">
                     <div class="vis-step-num">04</div>
                     <div class="vis-step-title">Detalhe &amp; lacunas de competências</div>
-                    <div class="vis-step-desc">Cada correspondência abre um detalhe de pontuação por dimensão e uma lista de "principais competências a desenvolver" — transformando um resultado de descoberta num próximo passo concreto e acionável.</div>
+                    <div class="vis-step-desc">Cada correspondência abre um detalhe de pontuação por dimensão e uma lista de "principais competências a desenvolver", transformando um resultado de descoberta num próximo passo concreto e acionável.</div>
                 </div>
             </div>
         </div>
 
-        <p class="art-p">A funcionalidade que mais queria no início — uma vista de lacunas de competências por função — está agora integrada: cada correspondência mostra as competências que mais a melhorariam. É isso que transforma o TryCareerMatch de uma ferramenta de descoberta numa de desenvolvimento ativo.</p>
+        <p class="art-p">A funcionalidade que mais queria no início (uma vista de lacunas de competências por função) está agora integrada: cada correspondência mostra as competências que mais a melhorariam. É isso que transforma o TryCareerMatch de uma ferramenta de descoberta numa de desenvolvimento ativo.</p>
     </div>
 
     <!-- 5. BUILD & LAUNCH -->
     <div class="art-section fade-up">
         <span class="art-label">Construção &amp; Lançamento</span>
         <h2 class="art-h2">A stack, a reconstrução e o que a IA mudou</h2>
-        <p class="art-p">A primeira versão foi deliberadamente mínima — HTML, CSS e JavaScript puros, com toda a lógica de scoring a correr no client-side. Foi exatamente a escolha certa para validar a ideia depressa e barato. Assim que provou ser genuinamente útil, reconstruí-a como um produto full-stack para o motor poder crescer.</p>
-        <p class="art-p">A stack atual: um frontend <strong>Next.js 14 + TypeScript + Tailwind</strong> na Vercel, um backend <strong>FastAPI + SQLAlchemy assíncrono</strong> na Railway, e <strong>PostgreSQL</strong> (Neon) para as funções, a taxonomia de mais de 120 competências e os perfis de importância. O motor de scoring corre agora no servidor — o que lhe permitiu carregar muito mais do que um único script client-side alguma vez conseguiria.</p>
+        <p class="art-p">A primeira versão foi deliberadamente mínima: HTML, CSS e JavaScript puros, com toda a lógica de scoring a correr no client-side. Foi exatamente a escolha certa para validar a ideia depressa e barato. Assim que provou ser genuinamente útil, reconstruí-a como um produto full-stack para o motor poder crescer.</p>
+        <p class="art-p">A stack atual: um frontend <strong>Next.js 14 + TypeScript + Tailwind</strong> na Vercel, um backend <strong>FastAPI + SQLAlchemy assíncrono</strong> na Railway, e <strong>PostgreSQL</strong> (Neon) para as funções, a taxonomia de mais de 120 competências e os perfis de importância. O motor de scoring corre agora no servidor, o que lhe permitiu carregar muito mais do que um único script client-side alguma vez conseguiria.</p>
 
         <div class="art-visual">
             <div class="vis-grid vis-grid-2">
@@ -266,26 +266,26 @@ cardInner: |
                         <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
                     </div>
                     <div class="vis-card-title">De protótipo a full-stack</div>
-                    <div class="vis-card-sub">A v1 era um protótipo client-side para testar o conceito. A v2 é um motor no servidor com uma base de dados real — espaço para penalizações de must-have, alinhamento de interesses e os relatórios mais ricos e por níveis que não cabiam no script original.</div>
+                    <div class="vis-card-sub">A v1 era um protótipo client-side para testar o conceito. A v2 é um motor no servidor com uma base de dados real, com espaço para penalizações de must-have, alinhamento de interesses e os relatórios mais ricos e por níveis que não cabiam no script original.</div>
                 </div>
                 <div class="vis-card">
                     <div class="vis-card-icon">
                         <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
                     </div>
                     <div class="vis-card-title">IA como acelerador de construção</div>
-                    <div class="vis-card-sub">O Claude acelerou o trabalho do princípio ao fim — dados de funções e competências, desenho das regras de scoring, scaffolding e debugging. O produto em si não usa qualquer LLM; a narrativa do relatório é baseada em regras e determinística.</div>
+                    <div class="vis-card-sub">O Claude acelerou o trabalho do princípio ao fim, em dados de funções e competências, desenho das regras de scoring, scaffolding e debugging. O produto em si não usa qualquer LLM; a narrativa do relatório é baseada em regras e determinística.</div>
                 </div>
             </div>
         </div>
 
-        <p class="art-p">O lançamento foi discreto por opção. Partilhei-o em algumas comunidades onde o problema ressoava — profissionais em transição de carreira, pessoas com percursos não-lineares — e deixei a partilha orgânica fazer o resto. O modelo sem registo torna a partilha sem fricção: envias um link a alguém, essa pessoa usa-o de imediato, sem conta.</p>
+        <p class="art-p">O lançamento foi discreto por opção. Partilhei-o em algumas comunidades onde o problema ressoava (profissionais em transição de carreira, pessoas com percursos não-lineares) e deixei a partilha orgânica fazer o resto. O modelo sem registo torna a partilha sem fricção: envias um link a alguém, essa pessoa usa-o de imediato, sem conta.</p>
     </div>
 
     <!-- 6. RESULTS & LESSONS -->
     <div class="art-section fade-up">
         <span class="art-label">Retrospetiva</span>
         <h2 class="art-h2">O que resultou, o que eu mudaria</h2>
-        <p class="art-p">O TryCareerMatch teve utilizadores reais e sessões reais. Mais importante, resolveu o problema que eu tinha originalmente — e ouvi de outras pessoas que o acharam genuinamente útil para pensar a sua própria carreira. É essa a métrica que mais importa nesta fase.</p>
+        <p class="art-p">O TryCareerMatch teve utilizadores reais e sessões reais. Mais importante, resolveu o problema que eu tinha originalmente, e ouvi de outras pessoas que o acharam genuinamente útil para pensar a sua própria carreira. É essa a métrica que mais importa nesta fase.</p>
         <p class="art-p">Mas retrospetivas honestas exigem reconhecer o que eu ainda faria de forma diferente. Algumas coisas saltam à vista:</p>
 
         <div class="art-visual">
@@ -300,24 +300,24 @@ cardInner: |
                 </div>
                 <div class="vis-row vis-row-accent">
                     <div class="vis-row-label">O que resultou: a reconstrução</div>
-                    <div class="vis-row-desc">Mover o motor para o servidor valeu a pena. Um backend e uma base de dados reais abriram espaço para penalizações de must-have, alinhamento de interesses e os relatórios por níveis e detalhados — nada disto cabia confortavelmente no script client-side original.</div>
+                    <div class="vis-row-desc">Mover o motor para o servidor valeu a pena. Um backend e uma base de dados reais abriram espaço para penalizações de must-have, alinhamento de interesses e os relatórios por níveis e detalhados, nada disto cabia confortavelmente no script client-side original.</div>
                 </div>
                 <div class="vis-row">
                     <div class="vis-row-label">O que eu mudaria: persistência dos resultados</div>
-                    <div class="vis-row-desc">Sem conta, os resultados desaparecem quando a sessão termina. Um link de resultados partilhável (ou uma sessão guardada e leve) deixaria as pessoas rever e comparar as suas correspondências ao longo do tempo — sem reintroduzir a fricção do registo.</div>
+                    <div class="vis-row-desc">Sem conta, os resultados desaparecem quando a sessão termina. Um link de resultados partilhável (ou uma sessão guardada e leve) deixaria as pessoas rever e comparar as suas correspondências ao longo do tempo, sem reintroduzir a fricção do registo.</div>
                 </div>
                 <div class="vis-row">
                     <div class="vis-row-label">O que eu mudaria: comparação lado a lado</div>
-                    <div class="vis-row-desc">Quem pondera duas correspondências próximas ainda tem de alternar entre elas. Uma vista de comparação — duas funções, com os seus detalhes de pontuação e lacunas de competências lado a lado — tornaria a decisão "qual delas?" muito mais fácil.</div>
+                    <div class="vis-row-desc">Quem pondera duas correspondências próximas ainda tem de alternar entre elas. Uma vista de comparação (duas funções, com os seus detalhes de pontuação e lacunas de competências lado a lado) tornaria a decisão "qual delas?" muito mais fácil.</div>
                 </div>
                 <div class="vis-row">
                     <div class="vis-row-label">O que eu mudaria: cobertura mais ampla</div>
-                    <div class="vis-row-desc">Mais de 60 funções em 9 setores cobrem muito, mas há lacunas — funções mais de nicho e emergentes, e melhor localização de títulos e expectativas por país.</div>
+                    <div class="vis-row-desc">Mais de 60 funções em 9 setores cobrem muito, mas há lacunas, como funções mais de nicho e emergentes, e melhor localização de títulos e expectativas por país.</div>
                 </div>
             </div>
         </div>
 
-        <div class="art-callout">A pergunta de retrospetiva mais útil: "se recomeçasse hoje, sabendo o que sei, o que mudaria na primeira semana?". Para mim: desenhar o scoring à volta de uma base de dados desde o início. O protótipo client-side foi perfeito para provar a ideia — mas o produto real sempre quis um backend, e construir nessa direção mais cedo teria poupado uma reconstrução inteira.</div>
+        <div class="art-callout">A pergunta de retrospetiva mais útil: "se recomeçasse hoje, sabendo o que sei, o que mudaria na primeira semana?". Para mim: desenhar o scoring à volta de uma base de dados desde o início. O protótipo client-side foi perfeito para provar a ideia, mas o produto real sempre quis um backend, e construir nessa direção mais cedo teria poupado uma reconstrução inteira.</div>
     </div>
 
 <div class="art-nav art-nav--no-prev">

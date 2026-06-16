@@ -1,7 +1,7 @@
 ---
 translationKey: "article:how-i-build-with-ai"
 title: "How I Build with AI (Without Putting an LLM in the Product) — Diogo Serino"
-description: "How I use AI to build products faster — research, scaffolding, data, debugging — and why I keep the shipped product deterministic, with no LLM in the loop."
+description: "How I use AI to build products faster (research, scaffolding, data, debugging) and why I keep the shipped product deterministic, with no LLM in the loop."
 ogTitle: "How I Build with AI (Without Putting an LLM in the Product) — Diogo Serino"
 bodyAttr: "class=\"theme-product\""
 crumb: "How I Build with AI"
@@ -10,7 +10,7 @@ readingTime: "7 min"
 order: 2
 cardClass: "cat-prod"
 cardTitle: "How I Build with AI"
-cardInner: "\n                <div class=\"article-cat cat-prod\">\n                    <svg aria-hidden=\"true\" width=\"12\" height=\"12\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n                        <polygon points=\"13 2 3 14 12 14 11 22 21 10 12 10 13 2\"/>\n                    </svg>\n                    Product\n                </div>\n                <h3 class=\"article-card-title\">How I Build with AI</h3>\n                <div class=\"article-card-desc\">Where I let AI touch the work and where I deliberately don't — and why I keep the shipped product deterministic, with no LLM in the loop. Concrete examples from both case studies.</div>\n                <div class=\"article-card-tags\">\n                    <span class=\"stag\">AI-Augmented</span>\n                    <span class=\"stag\">Product</span>\n                    <span class=\"stag\">How I Work</span>\n                    <span class=\"stag\">Personal</span>\n                </div>"
+cardInner: "\n                <div class=\"article-cat cat-prod\">\n                    <svg aria-hidden=\"true\" width=\"12\" height=\"12\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n                        <polygon points=\"13 2 3 14 12 14 11 22 21 10 12 10 13 2\"/>\n                    </svg>\n                    Product\n                </div>\n                <h3 class=\"article-card-title\">How I Build with AI</h3>\n                <div class=\"article-card-desc\">Where I let AI touch the work and where I deliberately don't, and why I keep the shipped product deterministic, with no LLM in the loop. Concrete examples from both case studies.</div>\n                <div class=\"article-card-tags\">\n                    <span class=\"stag\">AI-Augmented</span>\n                    <span class=\"stag\">Product</span>\n                    <span class=\"stag\">How I Work</span>\n                    <span class=\"stag\">Personal</span>\n                </div>"
 ---
 <main id="main" tabindex="-1">
 <section class="proj-hero">
@@ -20,7 +20,7 @@ cardInner: "\n                <div class=\"article-cat cat-prod\">\n            
             Product &nbsp;·&nbsp; How I Work
         </div>
         <h1 class="proj-title">How I Build<br>with AI</h1>
-        <p class="proj-sub">"I use AI" is the most useless line in a 2026 portfolio — everyone says it. The interesting question is where you let it touch the work, and where you deliberately don't. Here's my actual line, and why I keep the LLM out of the product.</p>
+        <p class="proj-sub">"I use AI" is the most useless line in a 2026 portfolio. Everyone says it. The interesting question is where you let it touch the work, and where you deliberately don't. Here's my actual line, and why I keep the LLM out of the product.</p>
         <div class="stack-row">
             <span class="stag-dk">AI-Augmented Build</span>
             <span class="stag-dk">Product</span>
@@ -40,8 +40,8 @@ cardInner: "\n                <div class=\"article-cat cat-prod\">\n            
 <div class="art-wrap">
 
     <div class="art-intro fade-up">
-        <p>Every product role now lists "AI-augmented" as a requirement, and every candidate now claims it. So the phrase has stopped meaning anything. Saying "I build with AI" in 2026 is like saying "I use a computer" in 2005 — true, and completely uninformative.</p>
-        <p>What's actually worth knowing is the judgment underneath it: which parts of the work I hand to AI, which parts I keep, and — the line most people skip — whether the thing I ship has an LLM inside it at all. My answer to that last one is usually no, and that's a deliberate decision, not a limitation. This is how I actually work.</p>
+        <p>Every product role now lists "AI-augmented" as a requirement, and every candidate now claims it. So the phrase has stopped meaning anything. Saying "I build with AI" in 2026 is like saying "I use a computer" in 2005. True, but completely uninformative.</p>
+        <p>What's actually worth knowing is the judgment underneath it: which parts of the work I hand to AI, which parts I keep, and (the line most people skip) whether the thing I ship has an LLM inside it at all. My answer to that last one is usually no, and that's a deliberate decision, not a limitation. This is how I actually work.</p>
     </div>
 
     <!-- 1. THE DISTINCTION -->
@@ -63,60 +63,60 @@ cardInner: "\n                <div class=\"article-cat cat-prod\">\n            
                     <div class="vis-compare-title">AI in the product</div>
                     <div class="vis-compare-desc">
                         Whether the thing the user interacts with has an LLM making decisions at runtime.<br><br>
-                        Here I'm conservative. For a scoring or advice product, a non-deterministic black box is usually the wrong call — and I'll explain why.
+                        Here I'm conservative. For a scoring or advice product, a non-deterministic black box is usually the wrong call, and I'll explain why.
                     </div>
                 </div>
             </div>
         </div>
 
-        <p class="art-p">A lot of "AI products" in 2026 are really the first thing dressed up as the second — an LLM bolted onto a problem that didn't need one, because "AI-powered" sells. I'd rather be precise: AI changed how I build. It rarely belongs in what I ship.</p>
+        <p class="art-p">A lot of "AI products" in 2026 are really the first thing dressed up as the second, an LLM bolted onto a problem that didn't need one, because "AI-powered" sells. I'd rather be precise: AI changed how I build. It rarely belongs in what I ship.</p>
     </div>
 
     <!-- 2. WHERE AI HELPS -->
     <div class="art-section fade-up">
         <span class="art-label">In the Build</span>
         <h2 class="art-h2">Where AI genuinely earns its place</h2>
-        <p class="art-p">As a solo builder, my constraint is never ideas — it's hours. AI gives me the leverage of a small team on the parts of building that are about breadth and momentum. Concretely, across my projects:</p>
+        <p class="art-p">As a solo builder, my constraint is never ideas. It's hours. AI gives me the leverage of a small team on the parts of building that are about breadth and momentum. Here's how that plays out across my projects.</p>
 
         <div class="art-visual">
             <div class="vis-grid vis-grid-2">
                 <div class="vis-card">
                     <div class="vis-card-title">Research at scale</div>
-                    <div class="vis-card-sub">For TryCareerMatch I needed to understand what 60+ roles actually require — across nine sectors. AI compressed weeks of reading job descriptions into days of structured first drafts I could then verify and refine. It didn't decide the answer; it got me to a reviewable starting point fast.</div>
+                    <div class="vis-card-sub">For TryCareerMatch I needed to understand what 60+ roles actually require, across nine sectors. AI compressed weeks of reading job descriptions into days of structured first drafts I could then verify and refine. It didn't decide the answer; it got me to a reviewable starting point fast.</div>
                 </div>
                 <div class="vis-card">
                     <div class="vis-card-title">Scaffolding code</div>
-                    <div class="vis-card-sub">For Portugal Data Intelligence, AI scaffolded the repetitive shape of the ETL modules and drafted DAX measures — the boilerplate that's slow to type and easy to get subtly wrong. I owned the architecture and the statistics; AI typed the first pass.</div>
+                    <div class="vis-card-sub">For Portugal Data Intelligence, AI scaffolded the repetitive shape of the ETL modules and drafted DAX measures, the boilerplate that's slow to type and easy to get subtly wrong. I owned the architecture and the statistics; AI typed the first pass.</div>
                 </div>
                 <div class="vis-card">
                     <div class="vis-card-title">Generating structured data</div>
-                    <div class="vis-card-sub">Drafting the initial role-skill importance matrices, or calibrating modelled series to published trends, is exactly the kind of high-volume, rules-bound work AI accelerates — provided every output passes back through my judgment before it counts.</div>
+                    <div class="vis-card-sub">Drafting the initial role-skill importance matrices, or calibrating modelled series to published trends, is exactly the kind of high-volume, rules-bound work AI accelerates, provided every output passes back through my judgment before it counts.</div>
                 </div>
                 <div class="vis-card">
                     <div class="vis-card-title">Debugging &amp; rubber-ducking</div>
-                    <div class="vis-card-sub">Explaining a bug to an attentive model often surfaces the cause before it answers — and when it does answer, it's a second pair of eyes on a stack trace at 1am. This site you're reading was built the same way: AI as a fast pair, me as the one deciding.</div>
+                    <div class="vis-card-sub">Explaining a bug to an attentive model often surfaces the cause before it answers. And when it does answer, it's a second pair of eyes on a stack trace at 1am. This site you're reading was built the same way: AI as a fast pair, me as the one deciding.</div>
                 </div>
             </div>
         </div>
 
-        <div class="art-callout">The pattern is the same every time: AI gets me to a reviewable draft fast. The value I add is the review — the judgment about what's right, what's wrong, and what to keep. The draft is cheap now; the judgment is the job.</div>
+        <div class="art-callout">The pattern is the same every time: AI gets me to a reviewable draft fast. The value I add is the review, the judgment about what's right, what's wrong, and what to keep. The draft is cheap now; the judgment is the job.</div>
     </div>
 
     <!-- 3. THE LINE -->
     <div class="art-section fade-up">
         <span class="art-label">The Line</span>
         <h2 class="art-h2">Why there's no LLM in the product</h2>
-        <p class="art-p">Both products I've built make this choice explicitly, for the same reasons. TryCareerMatch scores your profile against roles with a <strong>rule-based engine</strong> — deterministic, explainable, no LLM anywhere in the product. Portugal Data Intelligence runs its analysis on real statistical models; an LLM is an optional layer that only writes prose, and the numbers it describes are always the deterministic ones.</p>
+        <p class="art-p">Both products I've built make this choice explicitly, for the same reasons. TryCareerMatch scores your profile against roles with a <strong>rule-based engine</strong>, deterministic and explainable, with no LLM anywhere in the product. Portugal Data Intelligence runs its analysis on real statistical models; an LLM is an optional layer that only writes prose, and the numbers it describes are always the deterministic ones.</p>
 
         <div class="art-visual">
             <div class="vis-rows">
                 <div class="vis-row vis-row-accent">
                     <div class="vis-row-label">Determinism</div>
-                    <div class="vis-row-desc">The same input must always produce the same result. A career-fit score or an economic figure that changes between runs isn't a feature — it's a bug the user can feel. Rule-based engines are reproducible by construction.</div>
+                    <div class="vis-row-desc">The same input must always produce the same result. A career-fit score or an economic figure that changes between runs isn't a feature. It's a bug the user can feel. Rule-based engines are reproducible by construction.</div>
                 </div>
                 <div class="vis-row vis-row-accent">
                     <div class="vis-row-label">Explainability</div>
-                    <div class="vis-row-desc">When TryCareerMatch ranks a role, it can show exactly why — which skills carried weight, where the gaps are. "The model said so" is not an answer a user can act on. Every score traces back to a rule I can point to.</div>
+                    <div class="vis-row-desc">When TryCareerMatch ranks a role, it can show exactly why: which skills carried weight, where the gaps are. "The model said so" is not an answer a user can act on. Every score traces back to a rule I can point to.</div>
                 </div>
                 <div class="vis-row vis-row-accent">
                     <div class="vis-row-label">Trust &amp; honesty</div>
@@ -124,26 +124,26 @@ cardInner: "\n                <div class=\"article-cat cat-prod\">\n            
                 </div>
                 <div class="vis-row vis-row-accent">
                     <div class="vis-row-label">Cost &amp; latency</div>
-                    <div class="vis-row-desc">A rule-based score returns instantly and for free. An LLM call adds cost, latency, and a dependency on someone else's uptime — a bad trade when a deterministic engine does the job better.</div>
+                    <div class="vis-row-desc">A rule-based score returns instantly and for free. An LLM call adds cost, latency, and a dependency on someone else's uptime, a bad trade when a deterministic engine does the job better.</div>
                 </div>
             </div>
         </div>
 
-        <p class="art-p">This isn't anti-AI. It's knowing what the technology is good at. An LLM is a brilliant tool for <em>building</em> a rules engine — researching the rules, drafting them, stress-testing them. It's often the wrong tool for <em>being</em> the rules engine at runtime. Telling those two apart is most of the skill.</p>
+        <p class="art-p">This isn't anti-AI. It's knowing what the technology is good at. An LLM is a brilliant tool for <em>building</em> a rules engine: researching the rules, drafting them, stress-testing them. It's often the wrong tool for <em>being</em> the rules engine at runtime. Telling those two apart is most of the skill.</p>
     </div>
 
     <!-- 4. THE METHOD -->
     <div class="art-section fade-up">
         <span class="art-label">The Method</span>
         <h2 class="art-h2">How I actually work with it</h2>
-        <p class="art-p">Using AI well is a skill, and it's not the one people assume. It's not about writing clever prompts — it's about being a good editor and a relentless verifier of work you didn't write yourself.</p>
+        <p class="art-p">Using AI well is a skill, and it's not the one people assume. It's not about writing clever prompts. It's about being a good editor and a relentless verifier of work you didn't write yourself.</p>
 
         <div class="art-visual">
             <div class="vis-steps">
                 <div class="vis-step">
                     <div class="vis-step-num">01</div>
                     <div class="vis-step-title">Treat it as a fast junior, not an oracle</div>
-                    <div class="vis-step-desc">AI produces a confident first draft of almost anything. I read it the way I'd read a junior's work — useful, fast, and assumed wrong until checked. The confidence of the output is not evidence of its correctness.</div>
+                    <div class="vis-step-desc">AI produces a confident first draft of almost anything. I read it the way I'd read a junior's work: useful, fast, and assumed wrong until checked. The confidence of the output is not evidence of its correctness.</div>
                 </div>
                 <div class="vis-step">
                     <div class="vis-step-num">02</div>
@@ -153,19 +153,19 @@ cardInner: "\n                <div class=\"article-cat cat-prod\">\n            
                 <div class="vis-step">
                     <div class="vis-step-num">03</div>
                     <div class="vis-step-title">Keep the judgment calls mine</div>
-                    <div class="vis-step-desc">Architecture, scoring weights, what's in scope, what to ship — these stay with me. AI informs them and accelerates the work around them, but the decisions that define the product are the part I refuse to outsource.</div>
+                    <div class="vis-step-desc">Architecture, scoring weights, what's in scope, what to ship all stay with me. AI informs them and accelerates the work around them, but the decisions that define the product are the part I refuse to outsource.</div>
                 </div>
             </div>
         </div>
 
-        <div class="art-callout">AI didn't lower my standards — it raised my velocity. The bar for what's correct, explainable, and honest is exactly where it was. I just get to it faster, and I get to spend the saved time on the judgment that actually differentiates the work.</div>
+        <div class="art-callout">AI didn't lower my standards. It raised my velocity. The bar for what's correct, explainable, and honest is exactly where it was. I just get to it faster, and I get to spend the saved time on the judgment that actually differentiates the work.</div>
     </div>
 
     <!-- 5. WHY IT MATTERS -->
     <div class="art-section fade-up">
         <span class="art-label">Why It Matters</span>
         <h2 class="art-h2">What this says about how I'd build on a team</h2>
-        <p class="art-p">For an early-stage team, the useful version of "AI-augmented" isn't someone who pipes everything through an LLM and hopes. It's someone who ships faster <em>and</em> knows when not to reach for it — who can tell the difference between AI as an accelerant and AI as a liability you'll be debugging in production for months.</p>
+        <p class="art-p">For an early-stage team, the useful version of "AI-augmented" isn't someone who pipes everything through an LLM and hopes. It's someone who ships faster <em>and</em> knows when not to reach for it, who can tell the difference between AI as an accelerant and AI as a liability you'll be debugging in production for months.</p>
         <p class="art-p">That's the judgment I've built by actually shipping with these tools: use AI to move fast on research, scaffolding, and iteration; keep the product deterministic and explainable where users need to trust it; and own every decision that defines what the thing actually is. The speed is the easy part now. The discipline is the differentiator.</p>
     </div>
 
@@ -191,7 +191,7 @@ cardInner: "\n                <div class=\"article-cat cat-prod\">\n            
 <section class="cta-sect">
     <div class="container">
         <h2>See it in the work</h2>
-        <p>Both case studies show the line in practice — an AI-accelerated build, a deterministic product.</p>
+        <p>Both case studies show the line in practice: an AI-accelerated build, a deterministic product.</p>
         <div class="cta-actions">
             <a href="how-i-built-careermatch.html" class="btn btn-primary">
                 How I Built TryCareerMatch

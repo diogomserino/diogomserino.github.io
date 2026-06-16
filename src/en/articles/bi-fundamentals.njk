@@ -1,7 +1,7 @@
 ---
 translationKey: "article:bi-fundamentals"
 title: "BI Analytics Fundamentals — Diogo Serino"
-description: "From raw tables to business insight — a breakdown of data modeling, DAX, SQL, and the KPIs that drive decisions in finance and HR."
+description: "From raw tables to business insight: a breakdown of data modeling, DAX, SQL, and the KPIs that drive decisions in finance and HR."
 ogTitle: "BI Analytics Fundamentals — Diogo Serino"
 bodyAttr: "class=\"theme-data\""
 crumb: "BI Analytics Fundamentals"
@@ -10,7 +10,7 @@ readingTime: "8 min"
 order: 5
 cardClass: "cat-data"
 cardTitle: "BI Analytics Fundamentals"
-cardInner: "\n                <div class=\"article-cat cat-data\">\n                    <svg aria-hidden=\"true\" width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" fill=\"currentColor\">\n                        <rect x=\"1\"   y=\"7\"   width=\"2.5\" height=\"5\" rx=\"1\"/>\n                        <rect x=\"4.8\" y=\"4\"   width=\"2.5\" height=\"8\" rx=\"1\"/>\n                        <rect x=\"8.5\" y=\"1\"   width=\"2.5\" height=\"11\" rx=\"1\"/>\n                    </svg>\n                    Analytics\n                </div>\n                <h3 class=\"article-card-title\">BI Analytics Fundamentals</h3>\n                <div class=\"article-card-desc\">From raw tables to business insight — a breakdown of Star Schema data modeling, DAX measures, SQL patterns, and the Finance and HR KPIs that drive real decisions.</div>\n                <div class=\"article-card-tags\">\n                    <span class=\"stag\">Power BI</span>\n                    <span class=\"stag\">DAX</span>\n                    <span class=\"stag\">SQL</span>\n                    <span class=\"stag\">Analytics</span>\n                </div>"
+cardInner: "\n                <div class=\"article-cat cat-data\">\n                    <svg aria-hidden=\"true\" width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" fill=\"currentColor\">\n                        <rect x=\"1\"   y=\"7\"   width=\"2.5\" height=\"5\" rx=\"1\"/>\n                        <rect x=\"4.8\" y=\"4\"   width=\"2.5\" height=\"8\" rx=\"1\"/>\n                        <rect x=\"8.5\" y=\"1\"   width=\"2.5\" height=\"11\" rx=\"1\"/>\n                    </svg>\n                    Analytics\n                </div>\n                <h3 class=\"article-card-title\">BI Analytics Fundamentals</h3>\n                <div class=\"article-card-desc\">From raw tables to business insight: a breakdown of Star Schema data modeling, DAX measures, SQL patterns, and the Finance and HR KPIs that drive real decisions.</div>\n                <div class=\"article-card-tags\">\n                    <span class=\"stag\">Power BI</span>\n                    <span class=\"stag\">DAX</span>\n                    <span class=\"stag\">SQL</span>\n                    <span class=\"stag\">Analytics</span>\n                </div>"
 ---
 <main id="main" tabindex="-1">
 <section class="proj-hero">
@@ -20,7 +20,7 @@ cardInner: "\n                <div class=\"article-cat cat-data\">\n            
             Business Intelligence
         </div>
         <h1 class="proj-title">BI Analytics<br>Fundamentals</h1>
-        <p class="proj-sub">From raw tables to business insight — a breakdown of data modeling, DAX, SQL, and the KPIs that drive decisions in finance and HR.</p>
+        <p class="proj-sub">From raw tables to business insight: a breakdown of data modeling, DAX, SQL, and the KPIs that drive decisions in finance and HR.</p>
         <div class="stack-row">
             <span class="stag-dk">Power BI</span>
             <span class="stag-dk">DAX</span>
@@ -41,15 +41,15 @@ cardInner: "\n                <div class=\"article-cat cat-data\">\n            
 <div class="art-wrap">
 
     <div class="art-intro fade-up">
-        <p>Business Intelligence has become one of those terms that means everything and nothing at the same time. Ask ten people and you'll get ten answers — dashboards, data warehouses, SQL, "turning data into decisions." All partially right. None complete.</p>
-        <p>This guide builds the picture from the ground up. From the data model that makes analytics possible, through the language that powers Power BI measures, to the domain KPIs that actually answer business questions. By the end, you'll have a clear mental map of how the BI stack fits together — and where each piece matters most.</p>
+        <p>Business Intelligence has become one of those terms that means everything and nothing at the same time. Ask ten people and you'll get ten answers: dashboards, data warehouses, SQL, "turning data into decisions." All partially right. None complete.</p>
+        <p>This guide builds the picture from the ground up. From the data model that makes analytics possible, through the language that powers Power BI measures, to the domain KPIs that actually answer business questions. By the end, you'll have a clear mental map of how the BI stack fits together, and where each piece matters most.</p>
     </div>
 
     <!-- 1. DATA MODELING -->
     <div class="art-section fade-up">
         <span class="art-label">Foundation</span>
         <h2 class="art-h2">Star Schema: the structure that makes BI fast</h2>
-        <p class="art-p">Before any DAX measure or SQL query can work correctly, the data model has to be right. Most BI performance problems — slow reports, wrong totals, measures that behave unexpectedly — trace back to a poorly designed model. Get the model right and everything else becomes easier.</p>
+        <p class="art-p">Before any DAX measure or SQL query can work correctly, the data model has to be right. Most BI performance problems (slow reports, wrong totals, measures that behave unexpectedly) trace back to a poorly designed model. Get the model right and everything else becomes easier.</p>
         <p class="art-p">The dominant pattern in BI is the <strong>Star Schema</strong>. It organises data into two types of tables:</p>
 
         <div class="art-visual">
@@ -59,14 +59,14 @@ cardInner: "\n                <div class=\"article-cat cat-data\">\n            
                         <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18"/></svg>
                     </div>
                     <div class="vis-card-title">Fact Table</div>
-                    <div class="vis-card-sub">Records events and transactions. Contains numeric measures — revenue, quantity, cost — and foreign keys linking to every dimension. Typically the largest table in the model.</div>
+                    <div class="vis-card-sub">Records events and transactions. Contains numeric measures (revenue, quantity, cost) and foreign keys linking to every dimension. Typically the largest table in the model.</div>
                 </div>
                 <div class="vis-card">
                     <div class="vis-card-icon">
                         <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
                     </div>
                     <div class="vis-card-title">Dimension Table</div>
-                    <div class="vis-card-sub">Describes the context of each fact. Date, Product, Customer, Region, Employee. Contains the attributes you filter and group by in reports — the nouns of your data model.</div>
+                    <div class="vis-card-sub">Describes the context of each fact. Date, Product, Customer, Region, Employee. Contains the attributes you filter and group by in reports, the nouns of your data model.</div>
                 </div>
                 <div class="vis-card">
                     <div class="vis-card-icon">
@@ -78,8 +78,8 @@ cardInner: "\n                <div class=\"article-cat cat-data\">\n            
             </div>
         </div>
 
-        <p class="art-p">The "star" shape emerges naturally: the fact table sits at the centre, with dimension tables radiating outward. Each foreign key in the fact table connects to the primary key of one dimension. A sales fact table might have keys to Date, Customer, Product, and Region — four dimension tables, four points of the star.</p>
-        <p class="art-p">The alternative is Snowflake Schema, where dimensions are normalised into sub-dimensions. It saves storage but forces Power BI to perform more joins, slows down queries, and makes DAX significantly more complex to write. For most BI workloads, <strong>Star Schema beats Snowflake</strong> — the trade-off of slightly more storage for dramatically simpler measures and faster performance is almost always worth it.</p>
+        <p class="art-p">The "star" shape emerges naturally: the fact table sits at the centre, with dimension tables radiating outward. Each foreign key in the fact table connects to the primary key of one dimension. A sales fact table might have keys to Date, Customer, Product, and Region, four dimension tables, four points of the star.</p>
+        <p class="art-p">The alternative is Snowflake Schema, where dimensions are normalised into sub-dimensions. It saves storage but forces Power BI to perform more joins, slows down queries, and makes DAX significantly more complex to write. For most BI workloads, <strong>Star Schema beats Snowflake</strong>. The trade-off of slightly more storage for dramatically simpler measures and faster performance is almost always worth it.</p>
 
         <div class="art-callout">
             The most common modeling mistake: mixing facts from different grains in the same table. If your fact table has one row per invoice but you try to add one row per monthly target, you've mixed two grains. Split them into separate fact tables and build a model that can relate them correctly.
@@ -97,17 +97,17 @@ cardInner: "\n                <div class=\"article-cat cat-data\">\n            
                 <div class="vis-step">
                     <div class="vis-step-num">01</div>
                     <div class="vis-step-title">Filter Context</div>
-                    <div class="vis-step-desc">Every DAX measure executes inside a filter context — the set of filters applied by row labels, column headers, slicers, and report filters. The same measure returns different values depending on where it's placed. Understanding this is 80% of DAX.</div>
+                    <div class="vis-step-desc">Every DAX measure executes inside a filter context, the set of filters applied by row labels, column headers, slicers, and report filters. The same measure returns different values depending on where it's placed. Understanding this is 80% of DAX.</div>
                 </div>
                 <div class="vis-step">
                     <div class="vis-step-num">02</div>
                     <div class="vis-step-title">CALCULATE()</div>
-                    <div class="vis-step-desc">The most important function in DAX. It evaluates an expression in a modified filter context. Every advanced measure — year-over-year growth, % of total, rolling averages — uses CALCULATE to add, remove, or override filters before computing a result.</div>
+                    <div class="vis-step-desc">The most important function in DAX. It evaluates an expression in a modified filter context. Every advanced measure (year-over-year growth, % of total, rolling averages) uses CALCULATE to add, remove, or override filters before computing a result.</div>
                 </div>
                 <div class="vis-step">
                     <div class="vis-step-num">03</div>
                     <div class="vis-step-title">Time Intelligence</div>
-                    <div class="vis-step-desc">TOTALYTD, DATEADD, SAMEPERIODLASTYEAR. Power BI's built-in time functions require a proper date dimension table with no gaps — continuous dates from the earliest to the latest date in your data, marked as a date table.</div>
+                    <div class="vis-step-desc">TOTALYTD, DATEADD, SAMEPERIODLASTYEAR. Power BI's built-in time functions require a proper date dimension table with no gaps: continuous dates from the earliest to the latest date in your data, marked as a date table.</div>
                 </div>
             </div>
         </div>
@@ -129,21 +129,21 @@ cardInner: "\n                <div class=\"article-cat cat-data\">\n            
     <div class="art-section fade-up">
         <span class="art-label">SQL</span>
         <h2 class="art-h2">SQL patterns every BI analyst uses</h2>
-        <p class="art-p">SQL is the language of the data warehouse — the layer where raw source data is transformed into clean, modeled tables that Power BI can query. Beyond basic SELECT/WHERE/GROUP BY, BI analytics relies heavily on a specific set of patterns:</p>
+        <p class="art-p">SQL is the language of the data warehouse, the layer where raw source data is transformed into clean, modeled tables that Power BI can query. Beyond basic SELECT/WHERE/GROUP BY, BI analytics relies heavily on a specific set of patterns.</p>
 
         <div class="art-visual">
             <div class="vis-rows">
                 <div class="vis-row">
                     <div class="vis-row-label">Window Functions</div>
-                    <div class="vis-row-desc">ROW_NUMBER, RANK, LAG, LEAD, SUM OVER PARTITION BY. Allow calculations across rows without collapsing results. Essential for running totals, period-over-period comparisons, and ranking within groups — operations that GROUP BY alone cannot do.</div>
+                    <div class="vis-row-desc">ROW_NUMBER, RANK, LAG, LEAD, SUM OVER PARTITION BY. Allow calculations across rows without collapsing results. Essential for running totals, period-over-period comparisons, and ranking within groups, operations that GROUP BY alone cannot do.</div>
                 </div>
                 <div class="vis-row">
                     <div class="vis-row-label">CTEs</div>
-                    <div class="vis-row-desc">WITH clause Common Table Expressions. Break complex queries into named, readable steps instead of deeply nested subqueries. Each CTE can reference previous ones — the result is SQL that reads like a step-by-step story of how the data is transformed.</div>
+                    <div class="vis-row-desc">WITH clause Common Table Expressions. Break complex queries into named, readable steps instead of deeply nested subqueries. Each CTE can reference previous ones; the result is SQL that reads like a step-by-step story of how the data is transformed.</div>
                 </div>
                 <div class="vis-row">
                     <div class="vis-row-label">JOIN types</div>
-                    <div class="vis-row-desc">INNER (only matching rows), LEFT (all left rows, nulls for non-matches on right), FULL OUTER (all rows from both). The most misused: LEFT JOIN followed by WHERE right_table.id IS NOT NULL — this is identical to INNER JOIN but harder to read and occasionally slower.</div>
+                    <div class="vis-row-desc">INNER (only matching rows), LEFT (all left rows, nulls for non-matches on right), FULL OUTER (all rows from both). The most misused: LEFT JOIN followed by WHERE right_table.id IS NOT NULL, which is identical to INNER JOIN but harder to read and occasionally slower.</div>
                 </div>
                 <div class="vis-row">
                     <div class="vis-row-label">Data Quality</div>
@@ -159,7 +159,7 @@ cardInner: "\n                <div class=\"article-cat cat-data\">\n            
     <div class="art-section fade-up">
         <span class="art-label">Domain Knowledge</span>
         <h2 class="art-h2">The KPIs that business stakeholders actually ask for</h2>
-        <p class="art-p">Technical BI skills without domain knowledge produce dashboards nobody uses. The metrics that appear on executive reports and board packs follow recognisable patterns across most industries. Finance and HR are the two most common domains for BI analysts — and each has its own vocabulary.</p>
+        <p class="art-p">Technical BI skills without domain knowledge produce dashboards nobody uses. The metrics that appear on executive reports and board packs follow recognisable patterns across most industries. Finance and HR are the two most common domains for BI analysts, and each has its own vocabulary.</p>
 
         <div class="art-visual">
             <div class="vis-dark-grid">
@@ -176,7 +176,7 @@ cardInner: "\n                <div class=\"article-cat cat-data\">\n            
             </div>
         </div>
 
-        <p class="art-p">The most common mistake in finance dashboards: confusing <strong>Budget vs Actual</strong> with <strong>Forecast vs Actual</strong>. Budget is fixed at the start of the year and measures against the original plan. Forecast updates throughout the year and reflects the best current estimate of where the year will end. A good FP&A dashboard tracks both — the budget variance tells you where you are vs. the plan; the forecast tells you where you're going.</p>
+        <p class="art-p">The most common mistake in finance dashboards: confusing <strong>Budget vs Actual</strong> with <strong>Forecast vs Actual</strong>. Budget is fixed at the start of the year and measures against the original plan. Forecast updates throughout the year and reflects the best current estimate of where the year will end. A good FP&A dashboard tracks both: the budget variance tells you where you are vs. the plan; the forecast tells you where you're going.</p>
 
         <p class="art-p">In HR analytics, <strong>headcount</strong> sounds simple but has three valid definitions: point-in-time (employees active on a specific date), average (mean headcount over a period), and FTE-adjusted (weighted for part-time). When stakeholders say "headcount," always clarify which definition they mean before building the measure.</p>
     </div>
@@ -185,7 +185,7 @@ cardInner: "\n                <div class=\"article-cat cat-data\">\n            
     <div class="art-section fade-up">
         <span class="art-label">Architecture</span>
         <h2 class="art-h2">The modern BI stack: where the data goes before Power BI</h2>
-        <p class="art-p">Power BI is the last mile — the visualisation layer that executives interact with. Behind it is a stack that ingests, stores, and transforms data before it ever reaches a dashboard. Understanding the stack helps you debug problems, communicate with data engineers, and design solutions that scale.</p>
+        <p class="art-p">Power BI is the last mile, the visualisation layer that executives interact with. Behind it is a stack that ingests, stores, and transforms data before it ever reaches a dashboard. Understanding the stack helps you debug problems, communicate with data engineers, and design solutions that scale.</p>
 
         <div class="art-visual">
             <div class="vis-flow-wrap">
@@ -218,11 +218,11 @@ cardInner: "\n                <div class=\"article-cat cat-data\">\n            
             </div>
         </div>
 
-        <p class="art-p">The <strong>data warehouse</strong> is typically organised in layers: a raw layer that stores source data exactly as received, a staging layer where data is cleaned and standardised, and a mart layer where domain-specific star schemas live — the Finance mart, the HR mart, the Sales mart. Power BI connects to the mart layer.</p>
+        <p class="art-p">The <strong>data warehouse</strong> is typically organised in layers: a raw layer that stores source data exactly as received, a staging layer where data is cleaned and standardised, and a mart layer where domain-specific star schemas live: the Finance mart, the HR mart, the Sales mart. Power BI connects to the mart layer.</p>
 
-        <p class="art-p">The <strong>transformation layer</strong> — the SQL logic that moves data from raw to mart — is increasingly built with dbt (data build tool), which lets you write SQL transformations as version-controlled, tested, documented models. On the cloud side, the common combinations are Snowflake + dbt + Fivetran, or Azure Synapse + Power BI in a Microsoft-native stack.</p>
+        <p class="art-p">The <strong>transformation layer</strong> (the SQL logic that moves data from raw to mart) is increasingly built with dbt (data build tool), which lets you write SQL transformations as version-controlled, tested, documented models. On the cloud side, the common combinations are Snowflake + dbt + Fivetran, or Azure Synapse + Power BI in a Microsoft-native stack.</p>
 
-        <p class="art-p">As a BI analyst, you don't need to build the ingestion pipeline — but you need to know it exists, understand how data arrives in the warehouse, and be able to trace a wrong number backwards through the layers to find where it went wrong.</p>
+        <p class="art-p">As a BI analyst, you don't need to build the ingestion pipeline, but you need to know it exists, understand how data arrives in the warehouse, and be able to trace a wrong number backwards through the layers to find where it went wrong.</p>
     </div>
 
     <div class="art-github fade-up">

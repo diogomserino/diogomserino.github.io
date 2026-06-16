@@ -1,7 +1,7 @@
 ---
 translationKey: "article:how-i-built-portugal-data-intelligence"
 title: "Como Construí o Portugal Data Intelligence — Diogo Serino"
-description: "Como construí o Portugal Data Intelligence — plataforma macro de 12 pilares: pipeline de ETL, camada de previsão e o salto para um briefing de nível consultivo."
+description: "Como construí o Portugal Data Intelligence, plataforma macro de 12 pilares: pipeline de ETL, camada de previsão e o salto para um briefing de nível consultivo."
 ogTitle: "Como Construí o Portugal Data Intelligence — Diogo Serino"
 bodyAttr: 'class="theme-data"'
 crumb: "Como Construí o Portugal Data Intelligence"
@@ -20,7 +20,7 @@ cardInner: |
                     Dados
                 </div>
                 <h3 class="article-card-title">Como Construí o Portugal Data Intelligence</h3>
-                <div class="article-card-desc">A história de construir uma plataforma macroeconómica de 12 pilares — o pipeline de ingestão e qualidade de dados, a camada de previsão, e o salto dos gráficos para um briefing de nível consultivo.</div>
+                <div class="article-card-desc">A história de construir uma plataforma macroeconómica de 12 pilares: o pipeline de ingestão e qualidade de dados, a camada de previsão, e o salto dos gráficos para um briefing de nível consultivo.</div>
                 <div class="article-card-tags">
                     <span class="stag">Data Engineering</span>
                     <span class="stag">Forecasting</span>
@@ -36,7 +36,7 @@ cardInner: |
             Engenharia de Dados &nbsp;·&nbsp; Case Study
         </div>
         <h1 class="proj-title">Como Construí o Portugal<br>Data Intelligence</h1>
-        <p class="proj-sub">Não é mais um dashboard. A história de construir uma plataforma macroeconómica de 12 pilares — o pipeline de ingestão e qualidade de dados, a camada de previsão e o salto dos gráficos para um briefing de nível consultivo.</p>
+        <p class="proj-sub">Não é mais um dashboard. A história de construir uma plataforma macroeconómica de 12 pilares: o pipeline de ingestão e qualidade de dados, a camada de previsão e o salto dos gráficos para um briefing de nível consultivo.</p>
         <div class="stack-row">
             <span class="stag-dk">Engenharia de Dados</span>
             <span class="stag-dk">Python · SQL</span>
@@ -56,46 +56,46 @@ cardInner: |
 <div class="art-wrap">
 
     <div class="art-intro fade-up">
-        <p>Durante alguns anos trabalhei como Analista Financeiro — a pessoa que construía os dashboards que os executivos usavam para decidir. Era bom a transformar um emaranhado de números num único gráfico que respondia a uma pergunta. Mas batia constantemente nos limites do que uma ferramenta de BI consegue fazer, e queria saber o que estava do outro lado: a ingestão, a modelação, a previsão, a disciplina de engenharia que está por baixo de um dashboard antes de alguém ver um gráfico.</p>
-        <p>O Portugal Data Intelligence é onde fui descobrir. É uma plataforma macroeconómica de ponta a ponta que acompanha a economia portuguesa em doze pilares, de 2010 a 2025 — e deliberadamente não fica por "aqui está um gráfico bonito". Este é o relato honesto de como o construí, do que escolhi fazer como deve ser, e onde tracei as linhas.</p>
+        <p>Durante alguns anos trabalhei como Analista Financeiro, a pessoa que construía os dashboards que os executivos usavam para decidir. Era bom a transformar um emaranhado de números num único gráfico que respondia a uma pergunta. Mas batia constantemente nos limites do que uma ferramenta de BI consegue fazer, e queria saber o que estava do outro lado: a ingestão, a modelação, a previsão, a disciplina de engenharia que está por baixo de um dashboard antes de alguém ver um gráfico.</p>
+        <p>O Portugal Data Intelligence é onde fui descobrir. É uma plataforma macroeconómica de ponta a ponta que acompanha a economia portuguesa em doze pilares, de 2010 a 2025, e deliberadamente não fica por "aqui está um gráfico bonito". Este é o relato honesto de como o construí, do que escolhi fazer como deve ser, e onde tracei as linhas.</p>
     </div>
 
     <!-- 1. THE PROBLEM -->
     <div class="art-section fade-up">
         <span class="art-label">O Problema</span>
         <h2 class="art-h2">Os dados económicos de Portugal estão em todo o lado e em lado nenhum</h2>
-        <p class="art-p">Se quiseres perceber como a economia portuguesa se moveu pela crise da dívida soberana, pela COVID e pela recuperação, os dados existem — mas estão dispersos por várias autoridades estatísticas nacionais e europeias, cada uma com o seu portal, formato, cadência e manias. O INE publica uma coisa, o Banco de Portugal outra, o Eurostat e o BCE mais duas. Não há um único sítio que os consolide, os alinhe numa linha temporal comum e te deixe fazer perguntas transversais como <em>"como é que o desemprego e as yields da dívida soberana se moveram juntos?"</em></p>
-        <p class="art-p">Esse era o problema à superfície. A verdadeira razão por que o construí foi empurrar a minha própria profundidade — levar um projeto de respostas brutas de API até um briefing pronto para administração, sendo dono de cada camada pelo meio, em vez de herdar um dataset limpo e fazer só a última milha.</p>
+        <p class="art-p">Se quiseres perceber como a economia portuguesa se moveu pela crise da dívida soberana, pela COVID e pela recuperação, os dados existem, mas estão dispersos por várias autoridades estatísticas nacionais e europeias, cada uma com o seu portal, formato, cadência e manias. O INE publica uma coisa, o Banco de Portugal outra, o Eurostat e o BCE mais duas. Não há um único sítio que os consolide, os alinhe numa linha temporal comum e te deixe fazer perguntas transversais como <em>"como é que o desemprego e as yields da dívida soberana se moveram juntos?"</em></p>
+        <p class="art-p">Esse era o problema à superfície. A verdadeira razão por que o construí foi empurrar a minha própria profundidade, levar um projeto de respostas brutas de API até um briefing pronto para administração, sendo dono de cada camada pelo meio, em vez de herdar um dataset limpo e fazer só a última milha.</p>
 
-        <div class="art-callout">Um dashboard responde a perguntas que já sabes fazer. Eu queria construir a camada por baixo dele — a parte que decide se os números do dashboard são sequer de confiança.</div>
+        <div class="art-callout">Um dashboard responde a perguntas que já sabes fazer. Eu queria construir a camada por baixo dele, a parte que decide se os números do dashboard são sequer de confiança.</div>
     </div>
 
     <!-- 2. SCOPE & HONESTY -->
     <div class="art-section fade-up">
         <span class="art-label">Âmbito</span>
         <h2 class="art-h2">A primeira decisão: o que é real e o que é modelado</h2>
-        <p class="art-p">Doze pilares ao longo de quinze anos são muita superfície, e nem tudo está disponível através de uma API aberta e limpa. A decisão inicial mais importante não foi técnica — foi sobre honestidade. Dividi os dados em dois níveis e tornei a divisão explícita em todo o lado onde importa.</p>
+        <p class="art-p">Doze pilares ao longo de quinze anos são muita superfície, e nem tudo está disponível através de uma API aberta e limpa. A decisão inicial mais importante não foi técnica. Foi sobre honestidade. Dividi os dados em dois níveis e tornei a divisão explícita em todo o lado onde importa.</p>
 
         <div class="art-visual">
             <div class="vis-compare">
                 <div class="vis-compare-box vis-compare-left">
                     <div class="vis-compare-title">Séries oficiais</div>
                     <div class="vis-compare-desc">
-                        Os seis pilares macrofinanceiros centrais — PIB, desemprego, inflação, taxas de juro, crédito, dívida pública — mais desigualdade e regional NUTS2.<br><br>
+                        Os seis pilares macrofinanceiros centrais (PIB, desemprego, inflação, taxas de juro, crédito, dívida pública) mais desigualdade e regional NUTS2.<br><br>
                         Obtidos das APIs abertas oficiais do Eurostat, do BCE e do Banco de Portugal. Estes carregam os valores publicados.
                     </div>
                 </div>
                 <div class="vis-compare-box vis-compare-right">
                     <div class="vis-compare-title">Estimativas modeladas</div>
                     <div class="vis-compare-desc">
-                        Os pilares estendidos — habitação, detalhe do mercado de trabalho, contas externas, estrutura orçamental — e o benchmark da UE.<br><br>
-                        Calibrados face a tendências publicadas onde não há dados granulares via API aberta. Acompanham as dinâmicas reais, mas não são os registos oficiais brutos — e o projeto di-lo.
+                        Os pilares estendidos (habitação, detalhe do mercado de trabalho, contas externas, estrutura orçamental) e o benchmark da UE.<br><br>
+                        Calibrados face a tendências publicadas onde não há dados granulares via API aberta. Acompanham as dinâmicas reais, mas não são os registos oficiais brutos, e o projeto di-lo.
                     </div>
                 </div>
             </div>
         </div>
 
-        <p class="art-p">Teria sido fácil apresentar os doze pilares como se tivessem todos a mesma autoridade. Não o fiz, porque no momento em que alguém descobre um número modelado apresentado como evangelho, deixa de confiar em todos. O dataset commitado é determinístico e reproduzível a partir de um snapshot, por isso qualquer um o pode reconstruir e obter o mesmo resultado — e a documentação de proveniência dos dados explica exatamente que pilares são quais.</p>
+        <p class="art-p">Teria sido fácil apresentar os doze pilares como se tivessem todos a mesma autoridade. Não o fiz, porque no momento em que alguém descobre um número modelado apresentado como evangelho, deixa de confiar em todos. O dataset commitado é determinístico e reproduzível a partir de um snapshot, por isso qualquer um o pode reconstruir e obter o mesmo resultado, e a documentação de proveniência dos dados explica exatamente que pilares são quais.</p>
 
         <div class="art-callout">Em analytics, a forma mais rápida de destruir a própria credibilidade é exagerar a proveniência dos dados. Rotular as séries modeladas com honestidade não me custou nada e comprou à plataforma toda a sua confiança.</div>
     </div>
@@ -104,24 +104,24 @@ cardInner: |
     <div class="art-section fade-up">
         <span class="art-label">Arquitetura</span>
         <h2 class="art-h2">Um pipeline em três fases, cada camada minha</h2>
-        <p class="art-p">O sistema é um único comando (<code>python main.py</code>) que corre três fases de ponta a ponta. Mantê-las bem separadas — extrair, analisar, entregar — significou que podia reconstruir qualquer camada sem tocar nas outras, e testar cada uma isoladamente.</p>
+        <p class="art-p">O sistema é um único comando (<code>python main.py</code>) que corre três fases de ponta a ponta. Mantê-las bem separadas (extrair, analisar, entregar) significou que podia reconstruir qualquer camada sem tocar nas outras, e testar cada uma isoladamente.</p>
 
         <div class="art-visual">
             <div class="vis-steps">
                 <div class="vis-step">
                     <div class="vis-step-num">01</div>
                     <div class="vis-step-title">ETL &amp; ingestão</div>
-                    <div class="vis-step-desc">Extrai de cinco fontes (INE, Banco de Portugal, PORDATA, Eurostat, BCE) via CSV/API com cache em disco, transforma com SQL e carrega em SQLite — com linhagem de execução por UUID e checksums SHA-256, para que cada número seja rastreável a um lote.</div>
+                    <div class="vis-step-desc">Extrai de cinco fontes (INE, Banco de Portugal, PORDATA, Eurostat, BCE) via CSV/API com cache em disco, transforma com SQL e carrega em SQLite, com linhagem de execução por UUID e checksums SHA-256, para que cada número seja rastreável a um lote.</div>
                 </div>
                 <div class="vis-step">
                     <div class="vis-step-num">02</div>
                     <div class="vis-step-title">Camada de analytics</div>
-                    <div class="vis-step-desc">Decomposição, previsão, causalidade, nowcasting, deteção de anomalias e correlação entre pilares — o motor estatístico que transforma séries limpas em estrutura e sinal.</div>
+                    <div class="vis-step-desc">Decomposição, previsão, causalidade, nowcasting, deteção de anomalias e correlação entre pilares, o motor estatístico que transforma séries limpas em estrutura e sinal.</div>
                 </div>
                 <div class="vis-step">
                     <div class="vis-step-num">03</div>
                     <div class="vis-step-title">Camada de saída</div>
-                    <div class="vis-step-desc">Power BI (39 medidas DAX), uma app Streamlit de quatro páginas, uma API REST em FastAPI, exportações Excel multi-folha e um briefing HTML autocontido — a mesma análise, entregue para cinco audiências diferentes.</div>
+                    <div class="vis-step-desc">Power BI (39 medidas DAX), uma app Streamlit de quatro páginas, uma API REST em FastAPI, exportações Excel multi-folha e um briefing HTML autocontido, a mesma análise entregue para cinco audiências diferentes.</div>
                 </div>
             </div>
         </div>
@@ -133,7 +133,7 @@ cardInner: |
     <div class="art-section fade-up">
         <span class="art-label">Qualidade de Dados</span>
         <h2 class="art-h2">A camada aborrecida que decide tudo</h2>
-        <p class="art-p">Um único número errado num dashboard macro não é um bug cosmético — é o tipo de coisa que leva um leitor a descartar em silêncio o relatório inteiro. Por isso, antes de qualquer série chegar à camada de analytics, passa por um <strong>framework de validação com oito verificações</strong>. Cada pilar, cada carga, todas as vezes.</p>
+        <p class="art-p">Um único número errado num dashboard macro não é um bug cosmético. É o tipo de coisa que leva um leitor a descartar em silêncio o relatório inteiro. Por isso, antes de qualquer série chegar à camada de analytics, passa por um <strong>framework de validação com oito verificações</strong>. Cada pilar, cada carga, todas as vezes.</p>
 
         <div class="art-visual">
             <div class="vis-grid vis-grid-4">
@@ -148,28 +148,28 @@ cardInner: |
             </div>
         </div>
 
-        <p class="art-p">Cada execução escreve um relatório de qualidade em JSON e um registo de linhagem — um <code>run_id</code> UUID, checksums de ficheiros, metadados de proveniência — para que, se um número parecer errado, o consiga rastrear de trás para a frente pelas camadas até ao lote e à fonte exatos que o produziram. Essa rastreabilidade é a diferença entre "acho que os dados estão bem" e "consigo provar de onde isto veio".</p>
+        <p class="art-p">Cada execução escreve um relatório de qualidade em JSON e um registo de linhagem (um <code>run_id</code> UUID, checksums de ficheiros, metadados de proveniência) para que, se um número parecer errado, o consiga rastrear de trás para a frente pelas camadas até ao lote e à fonte exatos que o produziram. Essa rastreabilidade é a diferença entre "acho que os dados estão bem" e "consigo provar de onde isto veio".</p>
     </div>
 
     <!-- 5. ANALYTICS -->
     <div class="art-section fade-up">
         <span class="art-label">Analytics</span>
         <h2 class="art-h2">Para além dos gráficos: o que a camada de analytics faz mesmo</h2>
-        <p class="art-p">É aqui que o instinto de um analista financeiro encontrou um toolkit estatístico mais profundo. O objetivo nunca foi prever o PIB português melhor do que o banco central — foi demonstrar os métodos como deve ser, com validação honesta em vez de uma linha confiante traçada para o futuro.</p>
+        <p class="art-p">É aqui que o instinto de um analista financeiro encontrou um toolkit estatístico mais profundo. O objetivo nunca foi prever o PIB português melhor do que o banco central. Foi demonstrar os métodos como deve ser, com validação honesta em vez de uma linha confiante traçada para o futuro.</p>
 
         <div class="art-visual">
             <div class="vis-rows">
                 <div class="vis-row vis-row-accent">
                     <div class="vis-row-label">Decomposição</div>
-                    <div class="vis-row-desc">O STL separa o desemprego, a inflação e o PIB em componentes de tendência, sazonal e residual — para que uma oscilação sazonal nunca seja confundida com uma mudança estrutural.</div>
+                    <div class="vis-row-desc">O STL separa o desemprego, a inflação e o PIB em componentes de tendência, sazonal e residual, para que uma oscilação sazonal nunca seja confundida com uma mudança estrutural.</div>
                 </div>
                 <div class="vis-row vis-row-accent">
                     <div class="vis-row-label">Previsão</div>
-                    <div class="vis-row-desc">SARIMAX com seleção automática de ordem por AIC, mais um ensemble multi-modelo — e, crucialmente, <strong>backtesting de janela expansível</strong> que reporta MAE, RMSE, MAPE e precisão direcional. Uma previsão que não fizeste backtest é só um palpite confiante.</div>
+                    <div class="vis-row-desc">SARIMAX com seleção automática de ordem por AIC, mais um ensemble multi-modelo e, crucialmente, <strong>backtesting de janela expansível</strong> que reporta MAE, RMSE, MAPE e precisão direcional. Uma previsão que não fizeste backtest é só um palpite confiante.</div>
                 </div>
                 <div class="vis-row vis-row-accent">
                     <div class="vis-row-label">Causalidade</div>
-                    <div class="vis-row-desc">Um modelo VAR com funções de impulso-resposta, decomposição de variância e testes de causalidade de Granger entre PIB, desemprego, inflação e dívida — para perguntar que séries movem de facto quais.</div>
+                    <div class="vis-row-desc">Um modelo VAR com funções de impulso-resposta, decomposição de variância e testes de causalidade de Granger entre PIB, desemprego, inflação e dívida, para perguntar que séries movem de facto quais.</div>
                 </div>
                 <div class="vis-row vis-row-accent">
                     <div class="vis-row-label">Nowcasting</div>
@@ -181,7 +181,7 @@ cardInner: |
                 </div>
                 <div class="vis-row vis-row-accent">
                     <div class="vis-row-label">Correlação entre pilares</div>
-                    <div class="vis-row-desc">Uma matriz de Pearson completa que faz emergir as relações que vale a pena reportar — a ligação desemprego–yield da dívida (r = 0,71), o inverso inflação–NPL (r = −0,48) — com benchmarking da UE-27 para contexto.</div>
+                    <div class="vis-row-desc">Uma matriz de Pearson completa que faz emergir as relações que vale a pena reportar (a ligação desemprego–yield da dívida, r = 0,71; o inverso inflação–NPL, r = −0,48), com benchmarking da UE-27 para contexto.</div>
                 </div>
             </div>
         </div>
@@ -193,7 +193,7 @@ cardInner: |
     <div class="art-section fade-up">
         <span class="art-label">O Salto</span>
         <h2 class="art-h2">De "aqui estão os dados" para "aqui está o que significam"</h2>
-        <p class="art-p">A maior coisa que separa este projeto de um conjunto arrumado de gráficos é a camada final. Um dashboard obriga o leitor a fazer a interpretação. Um entregável consultivo faz a interpretação por ele — e assume uma posição. A plataforma gera um briefing HTML autocontido que termina não com um gráfico, mas com uma <strong>matriz de risco</strong> e <strong>recomendações estratégicas</strong>.</p>
+        <p class="art-p">A maior coisa que separa este projeto de um conjunto arrumado de gráficos é a camada final. Um dashboard obriga o leitor a fazer a interpretação. Um entregável consultivo faz a interpretação por ele, e assume uma posição. A plataforma gera um briefing HTML autocontido que termina não com um gráfico, mas com uma <strong>matriz de risco</strong> e <strong>recomendações estratégicas</strong>.</p>
 
         <div class="art-visual">
             <div class="vis-grid vis-grid-3">
@@ -202,43 +202,43 @@ cardInner: |
                         <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
                     </div>
                     <div class="vis-card-title">Insights narrativos</div>
-                    <div class="vis-card-sub">Um motor baseado em regras escreve o comentário por pilar e entre pilares. Um modelo OpenAI é um aprimoramento <em>opcional</em> — o relatório é totalmente gerado sem ele, e os números que descreve são sempre os determinísticos.</div>
+                    <div class="vis-card-sub">Um motor baseado em regras escreve o comentário por pilar e entre pilares. Um modelo OpenAI é um aprimoramento <em>opcional</em>. O relatório é totalmente gerado sem ele, e os números que descreve são sempre os determinísticos.</div>
                 </div>
                 <div class="vis-card">
                     <div class="vis-card-icon">
                         <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
                     </div>
                     <div class="vis-card-title">Matriz de risco</div>
-                    <div class="vis-card-sub">Indicadores pontuados por probabilidade e impacto, para que o briefing nomeie onde a economia está exposta — não só onde já esteve.</div>
+                    <div class="vis-card-sub">Indicadores pontuados por probabilidade e impacto, para que o briefing nomeie onde a economia está exposta, não só onde já esteve.</div>
                 </div>
                 <div class="vis-card">
                     <div class="vis-card-icon">
                         <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
                     </div>
                     <div class="vis-card-title">Recomendações estratégicas</div>
-                    <div class="vis-card-sub">O "então e depois?" — leituras concretas ancoradas na análise, mais cenários base / otimista / pessimista calibrados com elasticidades da lei de Okun e da taxa de crédito.</div>
+                    <div class="vis-card-sub">O "então e depois?": leituras concretas ancoradas na análise, mais cenários base / otimista / pessimista calibrados com elasticidades da lei de Okun e da taxa de crédito.</div>
                 </div>
             </div>
         </div>
 
-        <p class="art-p">Manter o relatório determinístico foi uma decisão de produto deliberada, não uma limitação. Para algo apresentado como análise económica, um número que muda de cada vez que regeneras a página é pior do que inútil — é um buraco de confiança. O LLM acelera a prosa; nunca decide os valores.</p>
+        <p class="art-p">Manter o relatório determinístico foi uma decisão de produto deliberada, não uma limitação. Para algo apresentado como análise económica, um número que muda de cada vez que regeneras a página é pior do que inútil. É um buraco de confiança. O LLM acelera a prosa; nunca decide os valores.</p>
     </div>
 
     <!-- 7. ENGINEERING DISCIPLINE -->
     <div class="art-section fade-up">
         <span class="art-label">Engenharia</span>
         <h2 class="art-h2">Porque é que um projeto de portfólio tem 489 testes</h2>
-        <p class="art-p">Seria razoável perguntar porque é que um projeto de analytics a solo precisa de uma suite de testes real, de containers e de CI. A resposta é que a disciplina de engenharia <em>é</em> parte do que o projeto pretende demonstrar — que consigo construir trabalho de dados da forma como uma equipa teria mesmo de o manter.</p>
+        <p class="art-p">Seria razoável perguntar porque é que um projeto de analytics a solo precisa de uma suite de testes real, de containers e de CI. A resposta é que a disciplina de engenharia <em>é</em> parte do que o projeto pretende demonstrar, que consigo construir trabalho de dados da forma como uma equipa teria mesmo de o manter.</p>
 
         <div class="art-visual">
             <div class="vis-grid vis-grid-2">
                 <div class="vis-card">
                     <div class="vis-card-title">Uma suite de testes real</div>
-                    <div class="vis-card-sub">489 testes em 38 ficheiros cobrem as transformações de ETL, as verificações de validação e as funções analíticas. Quando mudo uma regra de scoring ou uma transformação, a suite diz-me imediatamente o que parti — a mesma rede de segurança que deixa uma equipa avançar depressa sem partir os números.</div>
+                    <div class="vis-card-sub">489 testes em 38 ficheiros cobrem as transformações de ETL, as verificações de validação e as funções analíticas. Quando mudo uma regra de scoring ou uma transformação, a suite diz-me imediatamente o que parti, a mesma rede de segurança que deixa uma equipa avançar depressa sem partir os números.</div>
                 </div>
                 <div class="vis-card">
                     <div class="vis-card-title">Reproduzível por construção</div>
-                    <div class="vis-card-sub">Execução em Docker, um snapshot de dados brutos commitado e um único ponto de entrada significam que qualquer um pode clonar o repo e reconstruir exatamente a mesma base de dados, gráficos e relatório — offline e de forma determinística. O CI corre-o a cada push; o MkDocs documenta-o.</div>
+                    <div class="vis-card-sub">Execução em Docker, um snapshot de dados brutos commitado e um único ponto de entrada significam que qualquer um pode clonar o repo e reconstruir exatamente a mesma base de dados, gráficos e relatório, offline e de forma determinística. O CI corre-o a cada push; o MkDocs documenta-o.</div>
                 </div>
             </div>
         </div>
@@ -254,7 +254,7 @@ cardInner: |
             <div class="vis-rows">
                 <div class="vis-row vis-row-accent">
                     <div class="vis-row-label">O que resultou: qualidade antes de esperteza</div>
-                    <div class="vis-row-desc">Gastar o esforço inicial no framework de oito verificações e na linhagem — antes de qualquer modelação — significou que nunca tive de debugar uma previsão que era, na verdade, uma linha de dados má. Cada hora em qualidade de dados poupou várias a jusante.</div>
+                    <div class="vis-row-desc">Gastar o esforço inicial no framework de oito verificações e na linhagem (antes de qualquer modelação) significou que nunca tive de debugar uma previsão que era, na verdade, uma linha de dados má. Cada hora em qualidade de dados poupou várias a jusante.</div>
                 </div>
                 <div class="vis-row vis-row-accent">
                     <div class="vis-row-label">O que resultou: a camada consultiva</div>
@@ -262,16 +262,16 @@ cardInner: |
                 </div>
                 <div class="vis-row">
                     <div class="vis-row-label">O que eu mudaria: mais cobertura por API ao vivo</div>
-                    <div class="vis-row-desc">Os pilares estendidos modelados são honestos, mas a próxima versão devia puxar mais deles de fontes ao vivo e encolher o conjunto calibrado — a plataforma foi construída para fazer essa troca de forma limpa, via a flag <code>is_provisional</code> e o modo de refresh.</div>
+                    <div class="vis-row-desc">Os pilares estendidos modelados são honestos, mas a próxima versão devia puxar mais deles de fontes ao vivo e encolher o conjunto calibrado. A plataforma foi construída para fazer essa troca de forma limpa, via a flag <code>is_provisional</code> e o modo de refresh.</div>
                 </div>
                 <div class="vis-row">
                     <div class="vis-row-label">O que eu mudaria: intervalos de confiança em todo o lado</div>
-                    <div class="vis-row-desc">As previsões reportam métricas de erro, mas os gráficos públicos podiam mostrar os intervalos de previsão de forma mais proeminente — uma única linha para o futuro parece sempre mais certa do que é, e o honesto é mostrar o cone.</div>
+                    <div class="vis-row-desc">As previsões reportam métricas de erro, mas os gráficos públicos podiam mostrar os intervalos de previsão de forma mais proeminente. Uma única linha para o futuro parece sempre mais certa do que é, e o honesto é mostrar o cone.</div>
                 </div>
             </div>
         </div>
 
-        <div class="art-callout">A lição que transitou diretamente de volta para o trabalho de produto: o valor da análise não é o gráfico, é a decisão que muda. Constrói tudo — o portão de qualidade, a previsão, o briefing — de trás para a frente, a partir da decisão que alguém precisa de tomar.</div>
+        <div class="art-callout">A lição que transitou diretamente de volta para o trabalho de produto: o valor da análise não é o gráfico, é a decisão que muda. Constrói tudo (o portão de qualidade, a previsão, o briefing) de trás para a frente, a partir da decisão que alguém precisa de tomar.</div>
     </div>
 
 <div class="art-nav">
@@ -296,7 +296,7 @@ cardInner: |
 <section class="cta-sect">
     <div class="container">
         <h2>Vê a plataforma</h2>
-        <p>Explora o briefing interativo, ou mergulha no código — o pipeline de ETL, o motor de analytics e a documentação completa estão no GitHub.</p>
+        <p>Explora o briefing interativo, ou mergulha no código: o pipeline de ETL, o motor de analytics e a documentação completa estão no GitHub.</p>
         <div class="cta-actions">
             <a href="https://diogomserino.github.io/Portugal-Data-Intelligence/" target="_blank" rel="noopener" class="btn btn-primary">
                 <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>

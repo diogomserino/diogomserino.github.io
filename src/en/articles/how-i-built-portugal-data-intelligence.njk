@@ -1,7 +1,7 @@
 ---
 translationKey: "article:how-i-built-portugal-data-intelligence"
 title: "How I Built Portugal Data Intelligence — Diogo Serino"
-description: "The build story of Portugal Data Intelligence — a 12-pillar macro platform: the ETL pipeline, the forecasting layer, and the leap to an advisory-grade briefing."
+description: "The build story of Portugal Data Intelligence, a 12-pillar macro platform: the ETL pipeline, the forecasting layer, and the leap to an advisory-grade briefing."
 ogTitle: "How I Built Portugal Data Intelligence — Diogo Serino"
 bodyAttr: "class=\"theme-data\""
 crumb: "How I Built Portugal Data Intelligence"
@@ -10,7 +10,7 @@ readingTime: "9 min"
 order: 1
 cardClass: "cat-data"
 cardTitle: "How I Built Portugal Data Intelligence"
-cardInner: "\n                <div class=\"article-cat cat-data\">\n                    <svg aria-hidden=\"true\" width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" fill=\"currentColor\">\n                        <rect x=\"1\"   y=\"7\"   width=\"2.5\" height=\"5\" rx=\"1\"/>\n                        <rect x=\"4.8\" y=\"4\"   width=\"2.5\" height=\"8\" rx=\"1\"/>\n                        <rect x=\"8.5\" y=\"1\"   width=\"2.5\" height=\"11\" rx=\"1\"/>\n                    </svg>\n                    Data\n                </div>\n                <h3 class=\"article-card-title\">How I Built Portugal Data Intelligence</h3>\n                <div class=\"article-card-desc\">The build story behind a 12-pillar macroeconomic platform — the ingestion and data-quality pipeline, the forecasting layer, and the jump from charts to an advisory-grade briefing.</div>\n                <div class=\"article-card-tags\">\n                    <span class=\"stag\">Data Engineering</span>\n                    <span class=\"stag\">Forecasting</span>\n                    <span class=\"stag\">Case Study</span>\n                    <span class=\"stag\">Power BI</span>\n                </div>"
+cardInner: "\n                <div class=\"article-cat cat-data\">\n                    <svg aria-hidden=\"true\" width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" fill=\"currentColor\">\n                        <rect x=\"1\"   y=\"7\"   width=\"2.5\" height=\"5\" rx=\"1\"/>\n                        <rect x=\"4.8\" y=\"4\"   width=\"2.5\" height=\"8\" rx=\"1\"/>\n                        <rect x=\"8.5\" y=\"1\"   width=\"2.5\" height=\"11\" rx=\"1\"/>\n                    </svg>\n                    Data\n                </div>\n                <h3 class=\"article-card-title\">How I Built Portugal Data Intelligence</h3>\n                <div class=\"article-card-desc\">The build story behind a 12-pillar macroeconomic platform: the ingestion and data-quality pipeline, the forecasting layer, and the jump from charts to an advisory-grade briefing.</div>\n                <div class=\"article-card-tags\">\n                    <span class=\"stag\">Data Engineering</span>\n                    <span class=\"stag\">Forecasting</span>\n                    <span class=\"stag\">Case Study</span>\n                    <span class=\"stag\">Power BI</span>\n                </div>"
 ---
 <main id="main" tabindex="-1">
 <section class="proj-hero">
@@ -20,7 +20,7 @@ cardInner: "\n                <div class=\"article-cat cat-data\">\n            
             Data Engineering &nbsp;·&nbsp; Case Study
         </div>
         <h1 class="proj-title">How I Built Portugal<br>Data Intelligence</h1>
-        <p class="proj-sub">Not another dashboard. The build story of a 12-pillar macroeconomic platform — the ingestion and data-quality pipeline, the forecasting layer, and the jump from charts to an advisory-grade briefing.</p>
+        <p class="proj-sub">Not another dashboard. The build story of a 12-pillar macroeconomic platform: the ingestion and data-quality pipeline, the forecasting layer, and the jump from charts to an advisory-grade briefing.</p>
         <div class="stack-row">
             <span class="stag-dk">Data Engineering</span>
             <span class="stag-dk">Python · SQL</span>
@@ -40,46 +40,46 @@ cardInner: "\n                <div class=\"article-cat cat-data\">\n            
 <div class="art-wrap">
 
     <div class="art-intro fade-up">
-        <p>For a few years I worked as a Financial Analyst — the person who built the dashboards executives used to make decisions. I was good at turning a tangle of numbers into a single chart that answered a question. But I kept hitting the edges of what a BI tool can do, and I wanted to know what was on the other side: the ingestion, the modelling, the forecasting, the engineering discipline that sits underneath a dashboard before anyone sees a chart.</p>
-        <p>Portugal Data Intelligence is where I went to find out. It's an end-to-end macroeconomic platform that tracks the Portuguese economy across twelve pillars from 2010 to 2025 — and it deliberately doesn't stop at "here's a nice chart." This is the honest account of how I built it, what I chose to do properly, and where I drew the lines.</p>
+        <p>For a few years I worked as a Financial Analyst, the person who built the dashboards executives used to make decisions. I was good at turning a tangle of numbers into a single chart that answered a question. But I kept hitting the edges of what a BI tool can do, and I wanted to know what was on the other side: the ingestion, the modelling, the forecasting, the engineering discipline that sits underneath a dashboard before anyone sees a chart.</p>
+        <p>Portugal Data Intelligence is where I went to find out. It's an end-to-end macroeconomic platform that tracks the Portuguese economy across twelve pillars from 2010 to 2025, and it deliberately doesn't stop at "here's a nice chart." This is the honest account of how I built it, what I chose to do properly, and where I drew the lines.</p>
     </div>
 
     <!-- 1. THE PROBLEM -->
     <div class="art-section fade-up">
         <span class="art-label">The Problem</span>
         <h2 class="art-h2">Portugal's economic data is everywhere and nowhere</h2>
-        <p class="art-p">If you want to understand how the Portuguese economy moved through the sovereign debt crisis, COVID, and the rebound, the data exists — but it's scattered across several national and European statistical authorities, each with its own portal, format, cadence, and quirks. INE publishes one thing, Banco de Portugal another, Eurostat and the ECB two more. There's no single place that consolidates them, lines them up on a common timeline, and lets you ask cross-cutting questions like <em>"how did unemployment and sovereign bond yields actually move together?"</em></p>
-        <p class="art-p">That was the surface problem. The real reason I built it was to push my own depth — to take a project from raw API responses all the way to a boardroom-ready briefing, owning every layer in between, instead of inheriting a clean dataset and only doing the last mile.</p>
+        <p class="art-p">If you want to understand how the Portuguese economy moved through the sovereign debt crisis, COVID, and the rebound, the data exists, but it's scattered across several national and European statistical authorities, each with its own portal, format, cadence, and quirks. INE publishes one thing, Banco de Portugal another, Eurostat and the ECB two more. There's no single place that consolidates them, lines them up on a common timeline, and lets you ask cross-cutting questions like <em>"how did unemployment and sovereign bond yields actually move together?"</em></p>
+        <p class="art-p">That was the surface problem. The real reason I built it was to push my own depth, to take a project from raw API responses all the way to a boardroom-ready briefing, owning every layer in between, instead of inheriting a clean dataset and only doing the last mile.</p>
 
-        <div class="art-callout">A dashboard answers questions you already know to ask. I wanted to build the layer underneath it — the part that decides whether the numbers in the dashboard can be trusted at all.</div>
+        <div class="art-callout">A dashboard answers questions you already know to ask. I wanted to build the layer underneath it, the part that decides whether the numbers in the dashboard can be trusted at all.</div>
     </div>
 
     <!-- 2. SCOPE & HONESTY -->
     <div class="art-section fade-up">
         <span class="art-label">Scope</span>
         <h2 class="art-h2">The first decision: what's real, and what's modelled</h2>
-        <p class="art-p">Twelve pillars across fifteen years is a lot of surface area, and not all of it is available through a clean open API. The most important early decision wasn't technical — it was about honesty. I split the data into two tiers and made the split explicit everywhere it matters.</p>
+        <p class="art-p">Twelve pillars across fifteen years is a lot of surface area, and not all of it is available through a clean open API. The most important early decision wasn't technical. It was about honesty. I split the data into two tiers and made the split explicit everywhere it matters.</p>
 
         <div class="art-visual">
             <div class="vis-compare">
                 <div class="vis-compare-box vis-compare-left">
                     <div class="vis-compare-title">Official series</div>
                     <div class="vis-compare-desc">
-                        The six core macro-financial pillars — GDP, unemployment, inflation, interest rates, credit, public debt — plus inequality and regional NUTS2.<br><br>
+                        The six core macro-financial pillars (GDP, unemployment, inflation, interest rates, credit, public debt) plus inequality and regional NUTS2.<br><br>
                         Fetched from the official Eurostat, ECB, and Banco de Portugal open APIs. These carry the published values.
                     </div>
                 </div>
                 <div class="vis-compare-box vis-compare-right">
                     <div class="vis-compare-title">Modelled estimates</div>
                     <div class="vis-compare-desc">
-                        The extended pillars — housing, labour detail, external accounts, fiscal structure — and the EU benchmark.<br><br>
-                        Calibrated to published trends where granular data isn't available via an open API. They track the real dynamics, but they are not the raw official records — and the project says so.
+                        The extended pillars (housing, labour detail, external accounts, fiscal structure) and the EU benchmark.<br><br>
+                        Calibrated to published trends where granular data isn't available via an open API. They track the real dynamics, but they are not the raw official records, and the project says so.
                     </div>
                 </div>
             </div>
         </div>
 
-        <p class="art-p">It would have been easy to present all twelve pillars as if they carried equal authority. I didn't, because the moment someone discovers one modelled number presented as gospel, they stop trusting all of them. The committed dataset is deterministic and reproducible from a snapshot, so anyone can rebuild it and get the same result — and the data-provenance documentation spells out exactly which pillars are which.</p>
+        <p class="art-p">It would have been easy to present all twelve pillars as if they carried equal authority. I didn't, because the moment someone discovers one modelled number presented as gospel, they stop trusting all of them. The committed dataset is deterministic and reproducible from a snapshot, so anyone can rebuild it and get the same result, and the data-provenance documentation spells out exactly which pillars are which.</p>
 
         <div class="art-callout">In analytics, the fastest way to destroy your own credibility is to overstate the provenance of your data. Labelling the modelled series honestly cost me nothing and bought the whole platform its trust.</div>
     </div>
@@ -88,24 +88,24 @@ cardInner: "\n                <div class=\"article-cat cat-data\">\n            
     <div class="art-section fade-up">
         <span class="art-label">Architecture</span>
         <h2 class="art-h2">A three-stage pipeline, every layer owned</h2>
-        <p class="art-p">The system is a single command (<code>python main.py</code>) that runs three stages end to end. Keeping them cleanly separated — extract, analyse, deliver — meant I could rebuild any one layer without touching the others, and test each in isolation.</p>
+        <p class="art-p">The system is a single command (<code>python main.py</code>) that runs three stages end to end. Keeping them cleanly separated (extract, analyse, deliver) meant I could rebuild any one layer without touching the others, and test each in isolation.</p>
 
         <div class="art-visual">
             <div class="vis-steps">
                 <div class="vis-step">
                     <div class="vis-step-num">01</div>
                     <div class="vis-step-title">ETL &amp; ingestion</div>
-                    <div class="vis-step-desc">Extract from five sources (INE, Banco de Portugal, PORDATA, Eurostat, ECB) via CSV/API with a disk cache, transform with SQL, and load into SQLite — with UUID-based run lineage and SHA-256 checksums so every number is traceable to a batch.</div>
+                    <div class="vis-step-desc">Extract from five sources (INE, Banco de Portugal, PORDATA, Eurostat, ECB) via CSV/API with a disk cache, transform with SQL, and load into SQLite, with UUID-based run lineage and SHA-256 checksums so every number is traceable to a batch.</div>
                 </div>
                 <div class="vis-step">
                     <div class="vis-step-num">02</div>
                     <div class="vis-step-title">Analytics layer</div>
-                    <div class="vis-step-desc">Decomposition, forecasting, causality, nowcasting, anomaly detection, and cross-pillar correlation — the statistical engine that turns clean series into structure and signal.</div>
+                    <div class="vis-step-desc">Decomposition, forecasting, causality, nowcasting, anomaly detection, and cross-pillar correlation, the statistical engine that turns clean series into structure and signal.</div>
                 </div>
                 <div class="vis-step">
                     <div class="vis-step-num">03</div>
                     <div class="vis-step-title">Output layer</div>
-                    <div class="vis-step-desc">Power BI (39 DAX measures), a four-page Streamlit app, a FastAPI REST API, multi-sheet Excel exports, and a self-contained HTML briefing — the same analysis, delivered for five different audiences.</div>
+                    <div class="vis-step-desc">Power BI (39 DAX measures), a four-page Streamlit app, a FastAPI REST API, multi-sheet Excel exports, and a self-contained HTML briefing, the same analysis delivered for five different audiences.</div>
                 </div>
             </div>
         </div>
@@ -117,7 +117,7 @@ cardInner: "\n                <div class=\"article-cat cat-data\">\n            
     <div class="art-section fade-up">
         <span class="art-label">Data Quality</span>
         <h2 class="art-h2">The boring layer that decides everything</h2>
-        <p class="art-p">A single wrong number in a macro dashboard isn't a cosmetic bug — it's the kind of thing that makes a reader quietly discount the entire report. So before any series reaches the analytics layer, it passes an <strong>eight-check validation framework</strong>. Every pillar, every load, every time.</p>
+        <p class="art-p">A single wrong number in a macro dashboard isn't a cosmetic bug. It's the kind of thing that makes a reader quietly discount the entire report. So before any series reaches the analytics layer, it passes an <strong>eight-check validation framework</strong>. Every pillar, every load, every time.</p>
 
         <div class="art-visual">
             <div class="vis-grid vis-grid-4">
@@ -132,28 +132,28 @@ cardInner: "\n                <div class=\"article-cat cat-data\">\n            
             </div>
         </div>
 
-        <p class="art-p">Each run writes a JSON quality report and a lineage record — a UUID <code>run_id</code>, file checksums, provenance metadata — so if a number looks wrong I can trace it backwards through the layers to the exact batch and source that produced it. That traceability is the difference between "I think the data's fine" and "I can prove where this came from."</p>
+        <p class="art-p">Each run writes a JSON quality report and a lineage record (a UUID <code>run_id</code>, file checksums, provenance metadata) so if a number looks wrong I can trace it backwards through the layers to the exact batch and source that produced it. That traceability is the difference between "I think the data's fine" and "I can prove where this came from."</p>
     </div>
 
     <!-- 5. ANALYTICS -->
     <div class="art-section fade-up">
         <span class="art-label">Analytics</span>
         <h2 class="art-h2">Beyond charts: what the analytics layer actually does</h2>
-        <p class="art-p">This is where a financial analyst's instinct met a deeper statistical toolkit. The goal was never to forecast Portuguese GDP better than the central bank — it was to demonstrate the methods properly, with honest validation rather than a confident line drawn into the future.</p>
+        <p class="art-p">This is where a financial analyst's instinct met a deeper statistical toolkit. The goal was never to forecast Portuguese GDP better than the central bank. It was to demonstrate the methods properly, with honest validation rather than a confident line drawn into the future.</p>
 
         <div class="art-visual">
             <div class="vis-rows">
                 <div class="vis-row vis-row-accent">
                     <div class="vis-row-label">Decomposition</div>
-                    <div class="vis-row-desc">STL splits unemployment, inflation, and GDP into trend, seasonal, and residual components — so a seasonal swing never gets mistaken for a structural shift.</div>
+                    <div class="vis-row-desc">STL splits unemployment, inflation, and GDP into trend, seasonal, and residual components, so a seasonal swing never gets mistaken for a structural shift.</div>
                 </div>
                 <div class="vis-row vis-row-accent">
                     <div class="vis-row-label">Forecasting</div>
-                    <div class="vis-row-desc">SARIMAX with automatic order selection via AIC, plus a multi-model ensemble — and, crucially, <strong>expanding-window backtesting</strong> that reports MAE, RMSE, MAPE, and directional accuracy. A forecast you haven't backtested is just a confident guess.</div>
+                    <div class="vis-row-desc">SARIMAX with automatic order selection via AIC, plus a multi-model ensemble and, crucially, <strong>expanding-window backtesting</strong> that reports MAE, RMSE, MAPE, and directional accuracy. A forecast you haven't backtested is just a confident guess.</div>
                 </div>
                 <div class="vis-row vis-row-accent">
                     <div class="vis-row-label">Causality</div>
-                    <div class="vis-row-desc">A VAR model with impulse-response functions, variance decomposition, and Granger causality tests across GDP, unemployment, inflation, and debt — to ask which series actually move which.</div>
+                    <div class="vis-row-desc">A VAR model with impulse-response functions, variance decomposition, and Granger causality tests across GDP, unemployment, inflation, and debt, to ask which series actually move which.</div>
                 </div>
                 <div class="vis-row vis-row-accent">
                     <div class="vis-row-label">Nowcasting</div>
@@ -165,7 +165,7 @@ cardInner: "\n                <div class=\"article-cat cat-data\">\n            
                 </div>
                 <div class="vis-row vis-row-accent">
                     <div class="vis-row-label">Cross-pillar correlation</div>
-                    <div class="vis-row-desc">A full Pearson matrix that surfaces the relationships worth reporting — the unemployment–bond-yield link (r = 0.71), the inflation–NPL inverse (r = −0.48) — with EU-27 benchmarking for context.</div>
+                    <div class="vis-row-desc">A full Pearson matrix that surfaces the relationships worth reporting (the unemployment–bond-yield link, r = 0.71; the inflation–NPL inverse, r = −0.48), with EU-27 benchmarking for context.</div>
                 </div>
             </div>
         </div>
@@ -177,7 +177,7 @@ cardInner: "\n                <div class=\"article-cat cat-data\">\n            
     <div class="art-section fade-up">
         <span class="art-label">The Leap</span>
         <h2 class="art-h2">From "here's the data" to "here's what it means"</h2>
-        <p class="art-p">The single biggest thing that separates this project from a tidy set of charts is the final layer. A dashboard makes a reader do the interpretation. An advisory deliverable does the interpretation for them — and stakes a position. The platform generates a self-contained HTML briefing that ends not with a chart but with a <strong>risk matrix</strong> and <strong>strategic recommendations</strong>.</p>
+        <p class="art-p">The single biggest thing that separates this project from a tidy set of charts is the final layer. A dashboard makes a reader do the interpretation. An advisory deliverable does the interpretation for them, and stakes a position. The platform generates a self-contained HTML briefing that ends not with a chart but with a <strong>risk matrix</strong> and <strong>strategic recommendations</strong>.</p>
 
         <div class="art-visual">
             <div class="vis-grid vis-grid-3">
@@ -186,43 +186,43 @@ cardInner: "\n                <div class=\"article-cat cat-data\">\n            
                         <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
                     </div>
                     <div class="vis-card-title">Narrative insights</div>
-                    <div class="vis-card-sub">A rule-based engine writes the per-pillar and cross-pillar commentary. An OpenAI model is an <em>optional</em> enhancement — the report is fully generated without it, and the numbers it describes are always the deterministic ones.</div>
+                    <div class="vis-card-sub">A rule-based engine writes the per-pillar and cross-pillar commentary. An OpenAI model is an <em>optional</em> enhancement. The report is fully generated without it, and the numbers it describes are always the deterministic ones.</div>
                 </div>
                 <div class="vis-card">
                     <div class="vis-card-icon">
                         <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
                     </div>
                     <div class="vis-card-title">Risk matrix</div>
-                    <div class="vis-card-sub">Indicators scored by likelihood and impact, so the briefing names where the economy is exposed — not just where it's been.</div>
+                    <div class="vis-card-sub">Indicators scored by likelihood and impact, so the briefing names where the economy is exposed, not just where it's been.</div>
                 </div>
                 <div class="vis-card">
                     <div class="vis-card-icon">
                         <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
                     </div>
                     <div class="vis-card-title">Strategic recommendations</div>
-                    <div class="vis-card-sub">The "so what" — concrete read-outs grounded in the analysis, plus baseline / optimistic / pessimistic scenarios calibrated with Okun's-law and credit-rate elasticities.</div>
+                    <div class="vis-card-sub">The "so what": concrete read-outs grounded in the analysis, plus baseline / optimistic / pessimistic scenarios calibrated with Okun's-law and credit-rate elasticities.</div>
                 </div>
             </div>
         </div>
 
-        <p class="art-p">Keeping the report deterministic was a deliberate product decision, not a limitation. For something presented as economic analysis, a number that changes every time you regenerate the page is worse than useless — it's a trust hole. The LLM accelerates the prose; it never decides the figures.</p>
+        <p class="art-p">Keeping the report deterministic was a deliberate product decision, not a limitation. For something presented as economic analysis, a number that changes every time you regenerate the page is worse than useless. It's a trust hole. The LLM accelerates the prose; it never decides the figures.</p>
     </div>
 
     <!-- 7. ENGINEERING DISCIPLINE -->
     <div class="art-section fade-up">
         <span class="art-label">Engineering</span>
         <h2 class="art-h2">Why a portfolio project has 489 tests</h2>
-        <p class="art-p">It would be reasonable to ask why a solo analytics project needs a real test suite, containers, and CI. The answer is that the engineering discipline <em>is</em> part of what the project is meant to demonstrate — that I can build data work the way a team would actually have to maintain it.</p>
+        <p class="art-p">It would be reasonable to ask why a solo analytics project needs a real test suite, containers, and CI. The answer is that the engineering discipline <em>is</em> part of what the project is meant to demonstrate, that I can build data work the way a team would actually have to maintain it.</p>
 
         <div class="art-visual">
             <div class="vis-grid vis-grid-2">
                 <div class="vis-card">
                     <div class="vis-card-title">A real test suite</div>
-                    <div class="vis-card-sub">489 tests across 38 files cover the ETL transforms, the validation checks, and the analytical functions. When I change a scoring rule or a transform, the suite tells me immediately what I broke — the same safety net that lets a team move fast without breaking the numbers.</div>
+                    <div class="vis-card-sub">489 tests across 38 files cover the ETL transforms, the validation checks, and the analytical functions. When I change a scoring rule or a transform, the suite tells me immediately what I broke, the same safety net that lets a team move fast without breaking the numbers.</div>
                 </div>
                 <div class="vis-card">
                     <div class="vis-card-title">Reproducible by construction</div>
-                    <div class="vis-card-sub">Dockerised execution, a committed raw snapshot, and a single entry point mean anyone can clone the repo and rebuild the exact same database, charts, and report — offline and deterministically. CI runs it on every push; MkDocs documents it.</div>
+                    <div class="vis-card-sub">Dockerised execution, a committed raw snapshot, and a single entry point mean anyone can clone the repo and rebuild the exact same database, charts, and report, offline and deterministically. CI runs it on every push; MkDocs documents it.</div>
                 </div>
             </div>
         </div>
@@ -238,7 +238,7 @@ cardInner: "\n                <div class=\"article-cat cat-data\">\n            
             <div class="vis-rows">
                 <div class="vis-row vis-row-accent">
                     <div class="vis-row-label">What worked: quality before cleverness</div>
-                    <div class="vis-row-desc">Spending the early effort on the eight-check framework and lineage — before any modelling — meant I never had to debug a forecast that was actually a bad row. Every hour on data quality saved several downstream.</div>
+                    <div class="vis-row-desc">Spending the early effort on the eight-check framework and lineage (before any modelling) meant I never had to debug a forecast that was actually a bad row. Every hour on data quality saved several downstream.</div>
                 </div>
                 <div class="vis-row vis-row-accent">
                     <div class="vis-row-label">What worked: the advisory layer</div>
@@ -246,16 +246,16 @@ cardInner: "\n                <div class=\"article-cat cat-data\">\n            
                 </div>
                 <div class="vis-row">
                     <div class="vis-row-label">What I'd change: more live API coverage</div>
-                    <div class="vis-row-desc">The modelled extended pillars are honest, but the next version should pull more of them from live sources and shrink the calibrated set — the platform is built to make that swap cleanly, via the <code>is_provisional</code> flag and the refresh mode.</div>
+                    <div class="vis-row-desc">The modelled extended pillars are honest, but the next version should pull more of them from live sources and shrink the calibrated set. The platform is built to make that swap cleanly, via the <code>is_provisional</code> flag and the refresh mode.</div>
                 </div>
                 <div class="vis-row">
                     <div class="vis-row-label">What I'd change: confidence intervals everywhere</div>
-                    <div class="vis-row-desc">The forecasts report error metrics, but the public charts could show prediction intervals more prominently — a single line into the future always looks more certain than it is, and the honest thing is to show the cone.</div>
+                    <div class="vis-row-desc">The forecasts report error metrics, but the public charts could show prediction intervals more prominently. A single line into the future always looks more certain than it is, and the honest thing is to show the cone.</div>
                 </div>
             </div>
         </div>
 
-        <div class="art-callout">The lesson that transferred straight back into product work: the value of analysis isn't the chart, it's the decision it changes. Build everything — the quality gate, the forecast, the briefing — backwards from the decision someone needs to make.</div>
+        <div class="art-callout">The lesson that transferred straight back into product work: the value of analysis isn't the chart, it's the decision it changes. Build everything (the quality gate, the forecast, the briefing) backwards from the decision someone needs to make.</div>
     </div>
 
 <div class="art-nav">
@@ -280,7 +280,7 @@ cardInner: "\n                <div class=\"article-cat cat-data\">\n            
 <section class="cta-sect">
     <div class="container">
         <h2>See the platform</h2>
-        <p>Explore the interactive briefing, or dig into the source — the ETL pipeline, the analytics engine, and the full documentation are on GitHub.</p>
+        <p>Explore the interactive briefing, or dig into the source: the ETL pipeline, the analytics engine, and the full documentation are on GitHub.</p>
         <div class="cta-actions">
             <a href="https://diogomserino.github.io/Portugal-Data-Intelligence/" target="_blank" rel="noopener" class="btn btn-primary">
                 <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
