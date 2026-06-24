@@ -374,6 +374,40 @@ h1.proj-title {
     border-radius: 0 10px 10px 0; padding: 18px 20px; margin: 24px 0;
     font-size: 15px; color: var(--muted); line-height: 1.75;
 }
+/* Case-study question prompt (the quoted case question above an answer) */
+.case-q {
+    display: flex; gap: 12px; align-items: flex-start;
+    background: var(--bg-alt); border: 1px solid var(--border);
+    border-left: 3px solid var(--slate); border-radius: 0 10px 10px 0;
+    padding: 14px 18px; margin-bottom: 22px;
+    font-size: 15px; font-style: italic; color: var(--navy); line-height: 1.6;
+}
+.case-q-tag {
+    font-family: var(--font-head); font-style: normal; font-weight: 800;
+    font-size: 12px; letter-spacing: .04em; color: #fff;
+    background: var(--slate); border-radius: 6px; padding: 3px 9px;
+    flex-shrink: 0; margin-top: 1px;
+}
+/* Data table (P&L and metric comparisons) */
+.art-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.art-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.art-table th, .art-table td {
+    padding: 10px 14px; text-align: left;
+    border-bottom: 1px solid var(--border); white-space: nowrap;
+}
+.art-table thead th {
+    font-family: var(--font-head); font-weight: 700; font-size: 12px;
+    letter-spacing: .04em; text-transform: uppercase; color: var(--navy);
+    border-bottom: 2px solid var(--border);
+}
+.art-table td.num, .art-table th.num { text-align: right; font-variant-numeric: tabular-nums; }
+.art-table .art-table-group td {
+    font-family: var(--font-head); font-weight: 700; font-size: 11px;
+    letter-spacing: .1em; text-transform: uppercase; color: var(--slate);
+    background: var(--bg-alt);
+}
+.art-table .art-table-key td { font-weight: 700; color: var(--navy); }
+.art-table tbody tr:last-child td { border-bottom: none; }
 
 /* ============================================================
    VISUAL COMPONENTS (articles)

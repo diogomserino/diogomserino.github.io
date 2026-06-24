@@ -97,3 +97,9 @@ h1.proj-title { background-image: linear-gradient(140deg, #fff 0%, #fff 42%, var
 /* Misc */
 .vis-tag-pill { background: rgba(var(--accent-rgb), .10); border-color: rgba(var(--accent-rgb), .20); color: var(--accent); }
 .vis-flag-item::before { background: var(--accent); }
+
+/* Case-study extras (question prompt + data table) */
+.case-q { border-left-color: var(--accent); }
+.case-q-tag { background: var(--accent); }
+.art-table thead th { border-bottom-color: rgba(var(--accent-rgb), .35); }
+.art-table .art-table-key td { background: rgba(var(--accent-rgb), .07); color: var(--accent-dark); }
