@@ -1,16 +1,16 @@
 ---
 translationKey: "article:how-i-build-with-ai"
-title: "How I Build with AI (Without Putting an LLM in the Product) — Diogo Serino"
-description: "How I use AI to build products faster (research, scaffolding, data, debugging) and why I keep the shipped product deterministic, with no LLM in the loop."
-ogTitle: "How I Build with AI (Without Putting an LLM in the Product) — Diogo Serino"
+title: "How I Build with AI (Without Putting an LLM in the Decisions) — Diogo Serino"
+description: "How I use AI to build products faster (research, scaffolding, data, debugging) and why I keep the shipped product deterministic, with no LLM in the decisions."
+ogTitle: "How I Build with AI (Without Putting an LLM in the Decisions) — Diogo Serino"
 bodyAttr: "class=\"theme-product\""
 crumb: "How I Build with AI"
-articleHeadline: "How I Build with AI (Without Putting an LLM in the Product) — Diogo Serino"
+articleHeadline: "How I Build with AI (Without Putting an LLM in the Decisions) — Diogo Serino"
 readingTime: "7 min"
 order: 2
 cardClass: "cat-prod"
 cardTitle: "How I Build with AI"
-cardInner: "\n                <div class=\"article-cat cat-prod\">\n                    <svg aria-hidden=\"true\" width=\"12\" height=\"12\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n                        <polygon points=\"13 2 3 14 12 14 11 22 21 10 12 10 13 2\"/>\n                    </svg>\n                    Product\n                </div>\n                <h3 class=\"article-card-title\">How I Build with AI</h3>\n                <div class=\"article-card-desc\">Where I let AI touch the work and where I deliberately don't, and why I keep the shipped product deterministic, with no LLM in the loop. Concrete examples from both case studies.</div>\n                <div class=\"article-card-tags\">\n                    <span class=\"stag\">AI-Augmented</span>\n                    <span class=\"stag\">Product</span>\n                    <span class=\"stag\">How I Work</span>\n                    <span class=\"stag\">Personal</span>\n                </div>"
+cardInner: "\n                <div class=\"article-cat cat-prod\">\n                    <svg aria-hidden=\"true\" width=\"12\" height=\"12\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n                        <polygon points=\"13 2 3 14 12 14 11 22 21 10 12 10 13 2\"/>\n                    </svg>\n                    Product\n                </div>\n                <h3 class=\"article-card-title\">How I Build with AI</h3>\n                <div class=\"article-card-desc\">Where I let AI touch the work and where I deliberately don't, and why I keep the shipped product deterministic, with no LLM in the decisions. Concrete examples from both case studies.</div>\n                <div class=\"article-card-tags\">\n                    <span class=\"stag\">AI-Augmented</span>\n                    <span class=\"stag\">Product</span>\n                    <span class=\"stag\">How I Work</span>\n                    <span class=\"stag\">Personal</span>\n                </div>"
 ---
 <main id="main" tabindex="-1">
 <section class="proj-hero">
@@ -20,7 +20,7 @@ cardInner: "\n                <div class=\"article-cat cat-prod\">\n            
             Product &nbsp;·&nbsp; How I Work
         </div>
         <h1 class="proj-title">How I Build<br>with AI</h1>
-        <p class="proj-sub">"I use AI" is the most useless line in a 2026 portfolio. Everyone says it. The interesting question is where you let it touch the work, and where you deliberately don't. Here's my actual line, and why I keep the LLM out of the product.</p>
+        <p class="proj-sub">"I use AI" is the most useless line in a 2026 portfolio. Everyone says it. The interesting question is where you let it touch the work, and where you deliberately don't. Here's my actual line, and why I keep the LLM out of the decisions.</p>
         <div class="stack-row">
             <span class="stag-dk">AI-Augmented Build</span>
             <span class="stag-dk">Product</span>
@@ -41,7 +41,7 @@ cardInner: "\n                <div class=\"article-cat cat-prod\">\n            
 
     <div class="art-intro fade-up">
         <p>Every product role now lists "AI-augmented" as a requirement, and every candidate now claims it. So the phrase has stopped meaning anything. Saying "I build with AI" in 2026 is like saying "I use a computer" in 2005. True, but completely uninformative.</p>
-        <p>What's actually worth knowing is the judgment underneath it: which parts of the work I hand to AI, which parts I keep, and (the line most people skip) whether the thing I ship has an LLM inside it at all. My answer to that last one is usually no, and that's a deliberate decision, not a limitation. This is how I actually work.</p>
+        <p>What's actually worth knowing is the judgment underneath it: which parts of the work I hand to AI, which parts I keep, and (the line most people skip) whether I let an LLM make the decisions the user relies on. My answer to that one is no, and that's a deliberate decision, not a limitation. This is how I actually work.</p>
     </div>
 
     <!-- 1. THE DISTINCTION -->
@@ -82,7 +82,7 @@ cardInner: "\n                <div class=\"article-cat cat-prod\">\n            
             <div class="vis-grid vis-grid-2">
                 <div class="vis-card">
                     <div class="vis-card-title">Research at scale</div>
-                    <div class="vis-card-sub">For TryCareerMatch I needed to understand what 60+ roles actually require, across nine sectors. AI compressed weeks of reading job descriptions into days of structured first drafts I could then verify and refine. It didn't decide the answer; it got me to a reviewable starting point fast.</div>
+                    <div class="vis-card-sub">For TryCareerMatch I needed to understand what 85+ roles actually require, across ten sectors. AI compressed weeks of reading job descriptions into days of structured first drafts I could then verify and refine. It didn't decide the answer; it got me to a reviewable starting point fast.</div>
                 </div>
                 <div class="vis-card">
                     <div class="vis-card-title">Scaffolding code</div>
@@ -105,8 +105,8 @@ cardInner: "\n                <div class=\"article-cat cat-prod\">\n            
     <!-- 3. THE LINE -->
     <div class="art-section fade-up">
         <span class="art-label">The Line</span>
-        <h2 class="art-h2">Why there's no LLM in the product</h2>
-        <p class="art-p">Both products I've built make this choice explicitly, for the same reasons. TryCareerMatch scores your profile against roles with a <strong>rule-based engine</strong>, deterministic and explainable, with no LLM anywhere in the product. Portugal Data Intelligence runs its analysis on real statistical models; an LLM is an optional layer that only writes prose, and the numbers it describes are always the deterministic ones.</p>
+        <h2 class="art-h2">Why there's no LLM in the decisions</h2>
+        <p class="art-p">Both products I've built make this choice explicitly, for the same reasons. TryCareerMatch scores your profile against roles with a <strong>rule-based engine</strong>, deterministic and explainable, and no LLM ever touches the scoring or ranking. A newer paid report tier can add a Claude-written narrative on top, but it only describes the deterministic scores, never changes them. Portugal Data Intelligence makes the same split: its analysis runs on real statistical models, and an LLM is an optional layer that only writes prose, with the numbers it describes always the deterministic ones.</p>
 
         <div class="art-visual">
             <div class="vis-rows">
