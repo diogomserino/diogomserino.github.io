@@ -67,7 +67,7 @@ cardInner: "\n                <div class=\"article-cat cat-prod\">\n            
                     <div class="vis-compare-title">What TryCareerMatch does instead</div>
                     <div class="vis-compare-desc">
                         Builds a full profile from education, experience, skills, interests<br>
-                        Maps it against 60+ roles across 9 sectors<br>
+                        Maps it against 85+ roles across 10 sectors<br>
                         Ranks matches as Ready now, With upskilling, or Long-term<br>
                         Shows the specific skills to develop for a target role<br><br>
                         No personality test. No registration. Profile in, matches out.
@@ -93,22 +93,22 @@ cardInner: "\n                <div class=\"article-cat cat-prod\">\n            
                     <div class="vis-card-icon">
                         <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
                     </div>
-                    <div class="vis-card-title">120+ Skills</div>
-                    <div class="vis-card-sub">Organised into 11 groups (data, finance, product, design, management, and more). Users pick the ones relevant to them rather than rating all 120+, enough coverage to be meaningful without the fatigue.</div>
+                    <div class="vis-card-title">125+ Skills</div>
+                    <div class="vis-card-sub">Organised into 11 groups (data, finance, product, design, management, and more). Users pick the ones relevant to them rather than rating all 125+, enough coverage to be meaningful without the fatigue.</div>
                 </div>
                 <div class="vis-card">
                     <div class="vis-card-icon">
                         <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="2"/><path d="M7 12h10M12 7v10"/></svg>
                     </div>
-                    <div class="vis-card-title">60+ Roles</div>
-                    <div class="vis-card-sub">Specific enough to be useful. "Product Manager" and "Product Owner" are separate entries with distinct profiles. Covers 9 sectors from Tech to Finance to Government.</div>
+                    <div class="vis-card-title">85+ Roles</div>
+                    <div class="vis-card-sub">Specific enough to be useful. "Product Manager" and "Product Owner" are separate entries with distinct profiles. Covers 10 sectors from Tech to Finance to Government.</div>
                 </div>
                 <div class="vis-card">
                     <div class="vis-card-icon">
                         <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="9" x2="20" y2="9"/><line x1="4" y1="15" x2="20" y2="15"/><line x1="10" y1="3" x2="8" y2="21"/><line x1="16" y1="3" x2="14" y2="21"/></svg>
                     </div>
                     <div class="vis-card-title">Zero Registration</div>
-                    <div class="vis-card-sub">No account, no email, no payment. The product is fully free. Anonymous per-browser sessions preserve your progress without ever asking who you are. The principle: value in the moment of use, so nothing stands between the user and their result.</div>
+                    <div class="vis-card-sub">No account, no email, no signup. The core report is free, with optional paid add-ons on top. Anonymous per-browser sessions preserve your progress without ever asking who you are. The principle: value in the moment of use, so nothing stands between the user and their result.</div>
                 </div>
             </div>
         </div>
@@ -118,7 +118,7 @@ cardInner: "\n                <div class=\"article-cat cat-prod\">\n            
     <div class="art-section fade-up">
         <span class="art-label">Scoring Engine</span>
         <h2 class="art-h2">Designing the scoring system</h2>
-        <p class="art-p">The hardest part of TryCareerMatch was never the interface. It was the scoring. Every one of the 60+ roles needs an importance profile: which skills are core, which are merely adjacent, which are non-negotiable "must-haves", plus the education and experience typically expected. That's thousands of judgment calls, each grounded in real job descriptions.</p>
+        <p class="art-p">The hardest part of TryCareerMatch was never the interface. It was the scoring. Every one of the 85+ roles needs an importance profile: which skills are core, which are merely adjacent, which are non-negotiable "must-haves", plus the education and experience typically expected. That's thousands of judgment calls, each grounded in real job descriptions.</p>
         <p class="art-p">Within a role, each skill carries an importance level that reflects how much it actually moves the needle.</p>
 
         <div class="art-visual">
@@ -218,7 +218,7 @@ cardInner: "\n                <div class=\"article-cat cat-prod\">\n            
                 <div class="vis-step">
                     <div class="vis-step-num">02</div>
                     <div class="vis-step-title">Pick skills, then rate them</div>
-                    <div class="vis-step-desc">Instead of rating all 120+ skills, users search and select the ones relevant to them (with suggestions), then set proficiency only on those. Less fatigue, better signal. Inputs use segmented pills, steppers, chips, and selectable cards, not endless sliders.</div>
+                    <div class="vis-step-desc">Instead of rating all 125+ skills, users search and select the ones relevant to them (with suggestions), then set proficiency only on those. Less fatigue, better signal. Inputs use segmented pills, steppers, chips, and selectable cards, not endless sliders.</div>
                 </div>
                 <div class="vis-step">
                     <div class="vis-step-num">03</div>
@@ -241,7 +241,7 @@ cardInner: "\n                <div class=\"article-cat cat-prod\">\n            
         <span class="art-label">Build &amp; Launch</span>
         <h2 class="art-h2">Stack, the rebuild, and what AI changed</h2>
         <p class="art-p">The first version was deliberately minimal: vanilla HTML, CSS, and JavaScript, with all the scoring logic running client-side. That was exactly the right call to validate the idea quickly and cheaply. Once it proved genuinely useful, I rebuilt it as a full-stack product so the engine could grow.</p>
-        <p class="art-p">The current stack: a <strong>Next.js 14 + TypeScript + Tailwind</strong> frontend on Vercel, a <strong>FastAPI + async SQLAlchemy</strong> backend on Railway, and <strong>PostgreSQL</strong> (Neon) for the roles, the 120+ skill taxonomy, and the importance profiles. The scoring engine now runs server-side, which let it carry far more than a single client-side script ever could.</p>
+        <p class="art-p">The current stack: a <strong>Next.js 15 + TypeScript + Tailwind</strong> frontend on Vercel, a <strong>FastAPI + async SQLAlchemy</strong> backend on Railway, and <strong>PostgreSQL</strong> (Neon) for the roles, the 125+ skill taxonomy, and the importance profiles. The scoring engine now runs server-side, which let it carry far more than a single client-side script ever could.</p>
 
         <div class="art-visual">
             <div class="vis-grid vis-grid-2">
@@ -257,7 +257,7 @@ cardInner: "\n                <div class=\"article-cat cat-prod\">\n            
                         <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
                     </div>
                     <div class="vis-card-title">AI as a build accelerator</div>
-                    <div class="vis-card-sub">Claude accelerated the work throughout, across role and skill data, scoring-rule design, scaffolding, and debugging. The product itself uses no LLM; the report narrative is rule-based and deterministic.</div>
+                    <div class="vis-card-sub">Claude accelerated the work throughout, across role and skill data, scoring-rule design, scaffolding, and debugging. In the product, the matching and ranking use no LLM. The free report's narrative is rule-based and deterministic; a newer paid report tier optionally uses Claude for a deeper narrative on top of the same scores.</div>
                 </div>
             </div>
         </div>
@@ -286,9 +286,9 @@ cardInner: "\n                <div class=\"article-cat cat-prod\">\n            
                     <div class="vis-row-label">What worked: the rebuild</div>
                     <div class="vis-row-desc">Moving the engine server-side was worth it. A real backend and database made room for must-have penalties, interest alignment, and the tiered, broken-down reports, none of which fit comfortably in the original client-side script.</div>
                 </div>
-                <div class="vis-row">
-                    <div class="vis-row-label">What I'd change: result persistence</div>
-                    <div class="vis-row-desc">Without an account, results disappear when the session ends. A shareable results link (or a lightweight saved session) would let people revisit and compare their matches over time, without reintroducing registration friction.</div>
+                <div class="vis-row vis-row-accent">
+                    <div class="vis-row-label">What worked: saved results</div>
+                    <div class="vis-row-desc">This started as a gap I'd flagged, and it shipped. Users can now save their profile via a passwordless magic-link email and return to their results later, without redoing the six-step assessment.</div>
                 </div>
                 <div class="vis-row">
                     <div class="vis-row-label">What I'd change: side-by-side compare</div>
@@ -296,7 +296,7 @@ cardInner: "\n                <div class=\"article-cat cat-prod\">\n            
                 </div>
                 <div class="vis-row">
                     <div class="vis-row-label">What I'd change: broader coverage</div>
-                    <div class="vis-row-desc">60+ roles across 9 sectors cover a lot, but there are gaps, like more niche and emerging roles, and better localisation of titles and expectations by country.</div>
+                    <div class="vis-row-desc">85+ roles across 10 sectors cover a lot, but there are gaps, like more niche and emerging roles, and better localisation of titles and expectations by country.</div>
                 </div>
             </div>
         </div>
@@ -319,7 +319,7 @@ cardInner: "\n                <div class=\"article-cat cat-prod\">\n            
 <section class="cta-sect">
     <div class="container">
         <h2>See it live</h2>
-        <p>Map your profile against 60+ roles across 9 sectors. Free, no registration required.</p>
+        <p>Map your profile against 85+ roles across 10 sectors. Free, no registration required.</p>
         <div class="cta-actions">
             <a href="https://trycareermatch.com" target="_blank" rel="noopener" class="btn btn-primary">
                 <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
