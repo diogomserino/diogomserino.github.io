@@ -10,3 +10,6 @@ Thumbs.db
 # Eleventy / Node
 node_modules/
 _site/
+
+# Personal CV (local only, never pushed)
+CV/
