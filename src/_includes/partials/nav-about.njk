@@ -4,8 +4,8 @@
     <div class="nav-inner-about">
         <a href="{{ home }}" class="logo-about">DMS<em>.</em></a>
         <div class="nav-about-links">
-            <a href="#experience">{{ "Experiência" if lang == "pt" else "Experience" }}</a>
-            <a href="#skills">{{ "Competências" if lang == "pt" else "Skills" }}</a>
+            <a href="#path">{{ "Percurso" if lang == "pt" else "Path" }}</a>
+            <a href="#work">{{ "Projetos" if lang == "pt" else "Projects" }}</a>
             {% include "partials/lang-switch.njk" %}
             <a href="{{ home }}" class="home-cta">
                 <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align:middle"><polyline points="15 18 9 12 15 6"/></svg>
@@ -18,8 +18,8 @@
     </div>
 </nav>
 <div class="mob-nav-about" id="mob-nav-about">
-    <a href="#experience" onclick="closeMenuAbout()">{{ "Experiência" if lang == "pt" else "Experience" }}</a>
-    <a href="#skills"     onclick="closeMenuAbout()">{{ "Competências" if lang == "pt" else "Skills" }}</a>
+    <a href="#path" onclick="closeMenuAbout()">{{ "Percurso" if lang == "pt" else "Path" }}</a>
+    <a href="#work" onclick="closeMenuAbout()">{{ "Projetos" if lang == "pt" else "Projects" }}</a>
     <a href="{{ home }}"  onclick="closeMenuAbout()">← {{ "Portfólio" if lang == "pt" else "Portfolio" }}</a>
     {% include "partials/lang-switch.njk" %}
 </div>
