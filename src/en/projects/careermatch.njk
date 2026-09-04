@@ -8,8 +8,8 @@ translationKey: careermatch
 crumb: "TryCareerMatch"
 breadcrumb: "TryCareerMatch"
 title: "TryCareerMatch · Diogo Serino"
-description: "TryCareerMatch is a free, no-signup full-stack career-discovery app (Next.js, FastAPI, PostgreSQL) mapping 125+ skills to 85+ roles across 10 sectors."
-ogDescription: "Full-stack career-discovery app (Next.js + FastAPI + PostgreSQL) mapping 125+ skills against 85+ roles across 10 sectors with a server-side scoring engine. Free, no registration. Full case study."
+description: "TryCareerMatch is a free career-discovery app (Next.js, FastAPI, PostgreSQL) mapping 130+ skills to 100+ roles across 10 sectors. Free report, no account."
+ogDescription: "Full-stack career-discovery app (Next.js + FastAPI + PostgreSQL) mapping 130+ skills against 100+ roles across 10 sectors with a server-side scoring engine. Free report, no account. Full case study."
 ---
 <main id="main" tabindex="-1">
 <div class="proj-hero">
@@ -17,8 +17,8 @@ ogDescription: "Full-stack career-discovery app (Next.js + FastAPI + PostgreSQL)
         <div class="proj-badge">Case Study &nbsp;·&nbsp; Full-Stack Product</div>
         <h1 class="proj-title">TryCareerMatch</h1>
         <p class="proj-sub">
-            A full-stack career-discovery app that maps <strong style="color:rgba(255,255,255,.75)">125+ skills</strong> against
-            <strong style="color:rgba(255,255,255,.75)">85+ roles</strong> across
+            A full-stack career-discovery app that maps <strong style="color:rgba(255,255,255,.75)">130+ skills</strong> against
+            <strong style="color:rgba(255,255,255,.75)">100+ roles</strong> across
             <strong style="color:rgba(255,255,255,.75)">10 sectors</strong>, built to help professionals
             with non-linear backgrounds find where they actually fit.
         </p>
@@ -62,11 +62,11 @@ ogDescription: "Full-stack career-discovery app (Next.js + FastAPI + PostgreSQL)
     <div class="container">
         <div class="metrics-row fade-up">
             <div class="metric-item">
-                <div class="metric-val">125<span>+</span></div>
+                <div class="metric-val">130<span>+</span></div>
                 <div class="metric-lbl">Skills mapped</div>
             </div>
             <div class="metric-item">
-                <div class="metric-val">85<span>+</span></div>
+                <div class="metric-val">100<span>+</span></div>
                 <div class="metric-lbl">Roles covered</div>
             </div>
             <div class="metric-item">
@@ -98,9 +98,9 @@ ogDescription: "Full-stack career-discovery app (Next.js + FastAPI + PostgreSQL)
                 </div>
                 <div class="ps-card-title">The Solution</div>
                 <div class="ps-card-text">
-                    <p>TryCareerMatch builds a full profile through a guided <strong>6-step onboarding</strong> that covers education, experience, skills, interests, and work style. Users pick the skills relevant to them (with search and suggestions) and rate proficiency on those. A server-side <strong>rule-based engine</strong> then scores their fit against <strong>85+ roles</strong> across 10 sectors.</p>
+                    <p>TryCareerMatch builds a full profile through a guided <strong>6-step onboarding</strong> that covers education, experience, skills, interests, and work style. Users pick the skills relevant to them (with search and suggestions) and rate proficiency on those. A server-side <strong>rule-based engine</strong> then scores their fit against <strong>100+ roles</strong> across 10 sectors.</p>
                     <p>The output isn't a single "best match"; roles are ranked into three tiers (<strong>Ready now</strong>, <strong>With upskilling</strong>, <strong>Long-term goals</strong>), each with a per-dimension score breakdown, skill-gap analysis ("top skills to develop"), career-path and seniority guidance, and a narrative read of the profile, topped by a <strong>hybrid career archetype</strong> that names the user's blend of strengths.</p>
-                    <p>No account needed for your free report. Optional paid add-ons (a deeper report, coaching) and a save-your-results flow exist, but nothing is required to see your results. Results in about 5 minutes.</p>
+                    <p>No account needed for your free report. A paid Deep Report ($30) adds a longer, Claude-written narrative on the same rule-based scores, and now requires a free account with a confirmed email to save it; coaching is also available as a paid add-on. Results in about 5 minutes.</p>
                 </div>
             </div>
         </div>
@@ -126,7 +126,7 @@ ogDescription: "Full-stack career-discovery app (Next.js + FastAPI + PostgreSQL)
             <div class="process-step fade-up">
                 <div class="process-step-num">02</div>
                 <div class="process-step-title">Data Model Design</div>
-                <div class="process-step-desc">Built a 125+ skill taxonomy across 11 groups, plus an importance profile for each of the 85+ roles, covering required ("must-have") skills, typical education, and experience expectations. Modelled in PostgreSQL.</div>
+                <div class="process-step-desc">Built a 130+ skill taxonomy across 11 groups, plus an importance profile for each of the 100+ roles, covering required ("must-have") skills, typical education, and experience expectations. Modelled in PostgreSQL.</div>
             </div>
             <div class="process-step fade-up">
                 <div class="process-step-num">03</div>
@@ -150,7 +150,7 @@ ogDescription: "Full-stack career-discovery app (Next.js + FastAPI + PostgreSQL)
             <div class="content-text fade-up">
                 <div class="label">Under the hood</div>
                 <h2>The Scoring Model</h2>
-                <p>Each of the 85+ roles has an <strong>importance profile</strong> across the 125+ skills, plus required ("must-have") skills and typical education and experience.</p>
+                <p>Each of the 100+ roles has an <strong>importance profile</strong> across the 130+ skills, plus required ("must-have") skills and typical education and experience.</p>
                 <p>The engine scores four weighted blocks: <strong>core skills (50%)</strong>, <strong>adjacent skills (20%)</strong>, <strong>education (15%)</strong>, and <strong>experience (15%)</strong>. It then penalises missing must-have skills, infers behavioural skills, aligns interests (RIASEC), and lets strong education and experience compensate for each other.</p>
                 <p>This is why a Data Analyst with strong SQL and Power BI but limited stakeholder management scores higher on analyst roles than on product roles, even when both surface in their results.</p>
                 <p>The skill taxonomy spans <strong>11 groups</strong> across business, data, finance, product, design, and more. A separate rule-based pass writes the narrative in the free report. The matching and ranking engine is 100% rule-based, and always will be. The only LLM anywhere in the product sits in a newer paid report tier, which uses Claude to generate a deeper personalised narrative on top of those same rule-based scores.</p>
@@ -268,7 +268,7 @@ ogDescription: "Full-stack career-discovery app (Next.js + FastAPI + PostgreSQL)
                     <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg>
                 </div>
                 <div class="tech-card-name">PostgreSQL (Neon)</div>
-                <div class="tech-card-desc">Roles, the 125+ skill taxonomy, and per-role importance profiles persisted in PostgreSQL on Neon serverless Postgres.</div>
+                <div class="tech-card-desc">Roles, the 130+ skill taxonomy, and per-role importance profiles persisted in PostgreSQL on Neon serverless Postgres.</div>
             </div>
             <div class="tech-card fade-up">
                 <div class="tech-card-icon">
