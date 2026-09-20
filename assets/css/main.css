@@ -518,7 +518,7 @@ h1.proj-title {
 .vis-dark-wrap { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
 
 /* Compare boxes (Fraud vs AML) */
-.vis-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 20px; }
+.vis-compare { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-bottom: 20px; }
 .vis-compare-box { background: var(--bg-alt); border: 1px solid var(--border); border-radius: 12px; padding: 20px; }
 .vis-compare-left  { border-top: 3px solid var(--blue-accent); }
 .vis-compare-right { border-top: 3px solid #413a85; }
@@ -705,12 +705,23 @@ footer.art-footer { background: var(--navy-800); border-top: 1px solid rgba(255,
     .art-wrap { padding: 48px 20px 64px; }
 }
 @media (max-width: 520px) {
+    .footer { gap: 8px 20px; }
+    .footer-sep { display: none; }
     .plinks { flex-direction: column; }
     .skills-grid { grid-template-columns: 1fr; }
     .btn { justify-content: center; }
 }
 @media (max-width: 400px) {
     .vis-grid-3, .vis-grid-32 { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+    .vis-flow-row { flex-direction: column; gap: 4px; }
+    .vis-flow-row .vis-flow-box { width: 100%; min-width: 0; flex: none; }
+    .vis-flow-arrow { transform: rotate(90deg); padding: 4px 0; }
+    .vis-flow-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; padding: 22px 16px; }
+    .bmc-grid { min-width: 520px; }
+    .vis-compare { grid-template-columns: 1fr; }
 }
 
 @media (prefers-reduced-motion: reduce) {
