@@ -228,7 +228,7 @@
 
         /* Footer */
         footer { background: var(--navy-800); border-top: 1px solid rgba(255,255,255,.06); padding: 26px 0; }
-        .footer-inner { display: flex; align-items: center; justify-content: space-between; }
+        .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px 20px; }
         .footer-copy { font-size: 13px; color: rgba(255,255,255,.28); }
         .footer-back { display: inline-flex; align-items: center; gap: 5px; font-size: 13px; font-weight: 500; color: rgba(148,163,184,.7); transition: color .2s; }
         .footer-back:hover { color: #fff; }
@@ -245,7 +245,7 @@
         }
         @media (max-width: 768px) {
             .section { padding: 56px 0; }
-            .metrics-row { gap: 20px; }
+            .metrics-row { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px 20px; }
             .tech-grid { grid-template-columns: repeat(2, 1fr); }
             .lessons-grid { grid-template-columns: 1fr; }
             .nav-crumb { display: none; }
